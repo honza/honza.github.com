@@ -1,0 +1,220 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Thoughts on web programming, open source hacking and the like. Honza Pokorny is a web developer in Halifax, Canada" >
+  <meta name="viewport" content="width=550, maximum-scale=1.0" />
+  <meta name="readability-verification" content="cXteMUVfc4F4DwUmDFS563269y9HLgfxK34fvdMC"/>
+  <title>How I use git - Honza Pokorny</title>
+  <link rel="stylesheet" href="/media/screen.css" type="text/css" />
+  <link rel="alternate" type="application/atom+xml" title="News-Feed" href="http://honza.ca/atom.xml" />
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-4330851-12']);
+        _gaq.push(['_trackPageview']);
+
+        (function(){
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>    
+
+    <script type="text/javascript">
+    /* <![CDATA[ */
+        (function() {
+            var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+            
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto'
+            
+            t.parentNode.insertBefore(s, t);
+        })();
+    /* ]]> */
+    </script>
+        
+</head>
+<body>
+
+    <div id="wrap">
+        <div id="banner" class="body">
+            <h1><a href="/">Honza Pokorny</a></h1>
+        </div>
+        <p>Thoughts on web programming and the world of technology</p>
+        
+
+<p class="article_date date">
+    May 11, 2012
+</p>
+
+<div id="content">
+    <div class="section" id="how-i-use-git">
+<h3>How I use&nbsp;git</h3>
+<p>Recently, I have noticed that there are quite a few wrappers around git to give
+you a nicer interface to work with.  The new commands promise to be easy to
+remember and make your life less frustrating.  I &#xFB01;nd these a little silly
+because git on its own is a great tool.  Here I&#8217;m going to describe how I use
+git to convince you (and myself) that it&#8217;s not that&nbsp;hard.</p>
+<div class="section" id="cloning">
+<h4>Cloning</h4>
+<p>This couldn&#8217;t be any&nbsp;simpler:</p>
+<pre class="literal-block">
+git clone git://github.com/honza/dot&#xFB01;les.git
+</pre>
+</div>
+<div class="section" id="committing">
+<h4>Committing</h4>
+<p>Once I have cloned a repo, I start to make changes.  To see what &#xFB01;les I have
+changed, I&nbsp;run</p>
+<pre class="literal-block">
+git status
+</pre>
+<p>Or to see what actual changes I&nbsp;made</p>
+<pre class="literal-block">
+git diff
+</pre>
+<p>Then, when I&#8217;m ready to commit, I stage the &#xFB01;les.  The index is one of my
+favorite features of git.  It lets me decide what changes I want to commit.
+Maybe I correct something as I work on something else.  Those things aren&#8217;t
+related so they shouldn&#8217;t go into the same commit.  I grew up on Mercurial and
+not having the index in Mercurial now really bothers&nbsp;me.</p>
+<p>To stage all changed &#xFB01;les, I&nbsp;do</p>
+<pre class="literal-block">
+git add -u
+</pre>
+<p>If I decide that the changes I made are stupid and I want to get rid of them, I&nbsp;do</p>
+<pre class="literal-block">
+git checkout .
+</pre>
+<p>To make sure all staged changes are the right&nbsp;ones</p>
+<pre class="literal-block">
+git diff --cached
+</pre>
+</div>
+<div class="section" id="stashing">
+<h4>Stashing</h4>
+<p>I often stash my code.  Sometimes you need to look at some code in a different
+branch, sometimes I notice something is broken and I want to see if I broke it
+or&nbsp;not.</p>
+<pre class="literal-block">
+git stash
+</pre>
+<p>will stash your changes.  To get it back I&nbsp;do</p>
+<pre class="literal-block">
+git stash pop
+</pre>
+<p>And also, often I will see what I had&nbsp;stashed</p>
+<pre class="literal-block">
+git stash list
+</pre>
+</div>
+<div class="section" id="branches">
+<h4>Branches</h4>
+<p>Creating new branches is simple and&nbsp;cheap</p>
+<pre class="literal-block">
+git checkout -b new_branch
+</pre>
+<p>Delete a&nbsp;branch</p>
+<pre class="literal-block">
+git branch -d branch_name
+</pre>
+<p>Or delete a branch on a remote&nbsp;server</p>
+<pre class="literal-block">
+git push origin :branch_name
+</pre>
+</div>
+<div class="section" id="rebasing">
+<h4>Rebasing</h4>
+<p>I have <a class="reference external" href="http://honza.ca/2011/05/the-importance-of-git-rebase">written</a> on
+rebasing before.  It makes your history much nicer.  Any time I pull code from
+a remote repository, I&nbsp;do</p>
+<pre class="literal-block">
+git pull --rebase
+</pre>
+<p>Or, if it&#8217;s a speci&#xFB01;c&nbsp;branch</p>
+<pre class="literal-block">
+git pull --rebase origin dev
+</pre>
+</div>
+<div class="section" id="bisecting">
+<h4>Bisecting</h4>
+<p>I <em>love</em> the bisect commnad in git.  You can use it to determine which commit
+introduced a bug.  This is especially useful if you have a comprehensive test
+suite.  For example, the latest commit is broken and you remember that all
+tests where passing in version 1.2.  This example uses&nbsp;Django.</p>
+<pre class="literal-block">
+git bisect start HEAD v1.2 --      # HEAD is bad, v1.2 is good
+git bisect run python manage.py test
+</pre>
+<p>Git will then keep running your tests until it &#xFB01;nds the &#xFB01;rst commit that&#8217;s&nbsp;broken.</p>
+</div>
+<div class="section" id="merging">
+<h4>Merging</h4>
+<p>When a feature branch is &#xFB01;nished, I merge it into master&nbsp;with</p>
+<pre class="literal-block">
+git checkout master
+git merge --no-ff feature
+</pre>
+</div>
+<div class="section" id="viewing-history">
+<h4>Viewing&nbsp;history</h4>
+<p>For viewing history, I really like the following&nbsp;command</p>
+<pre class="literal-block">
+git log --pretty=format:&quot;%h - %an, %ar : %s&quot;'
+</pre>
+<p>This gives you the commit <span class="caps">SHA</span>, then the author&#8217;s name, how long ago it was made
+and a brief, one-line summary of the changes.  I have it aliased as <tt class="docutils literal">gitl</tt>.
+I also use a simple graph to see the relationships between&nbsp;branches</p>
+<pre class="literal-block">
+git log --oneline --graph
+</pre>
+</div>
+<div class="section" id="upgrading-all-submodules-in-a-project">
+<h4>Upgrading all submodules in a&nbsp;project</h4>
+<p>This one is great, too.  I use it to upgrade all of my vim&nbsp;plugins.</p>
+<pre class="literal-block">
+git submodule foreach git pull
+</pre>
+</div>
+<div class="section" id="pulling-and-pushing">
+<h4>Pulling and&nbsp;pushing</h4>
+<p>This is pretty straight&nbsp;forward</p>
+<pre class="literal-block">
+git pull
+git pull origin dev
+
+git push
+git push origin dev
+</pre>
+</div>
+<div class="section" id="conclusion">
+<h4>Conclusion</h4>
+<p>Once you learn what git calls what, it&#8217;s pretty easy to just google the thing
+you&#8217;re trying to do.  I&#8217;m de&#xFB01;nitely not an expert but this gets me&nbsp;by.</p>
+</div>
+</div>
+
+</div>
+
+<span class="article_buttons">
+    <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+    <a href="http://twitter.com/share" class="twitter-share-button"
+        data-url="http://honza.ca/2012/05/how-i-use-git"
+        data-via="_honza"
+        data-text="How I use git"
+        data-count="none">Tweet</a>
+    <a href="http://honza.ca/2012/05/how-i-use-git"
+        class="FlattrButton"
+        rev="flattr;uid:honza;button:compact;"
+        title="How I use git"
+        style="display:none"></a>
+
+</span>
+
+
+    </div>
+
+</body>
+</html>

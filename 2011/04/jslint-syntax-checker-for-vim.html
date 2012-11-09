@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Thoughts on web programming, open source hacking and the like. Honza Pokorny is a web developer in Halifax, Canada" >
+  <meta name="viewport" content="width=550, maximum-scale=1.0" />
+  <meta name="readability-verification" content="cXteMUVfc4F4DwUmDFS563269y9HLgfxK34fvdMC"/>
+  <title>JSLint syntax checker for vim - Honza Pokorny</title>
+  <link rel="stylesheet" href="/media/screen.css" type="text/css" />
+  <link rel="alternate" type="application/atom+xml" title="News-Feed" href="http://honza.ca/atom.xml" />
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-4330851-12']);
+        _gaq.push(['_trackPageview']);
+
+        (function(){
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>    
+
+    <script type="text/javascript">
+    /* <![CDATA[ */
+        (function() {
+            var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+            
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto'
+            
+            t.parentNode.insertBefore(s, t);
+        })();
+    /* ]]> */
+    </script>
+        
+</head>
+<body>
+
+    <div id="wrap">
+        <div id="banner" class="body">
+            <h1><a href="/">Honza Pokorny</a></h1>
+        </div>
+        <p>Thoughts on web programming and the world of technology</p>
+        
+
+<p class="article_date date">
+    April 05, 2011
+</p>
+
+<div id="content">
+    <div class="section" id="jslint-syntax-checker-for-vim">
+<h3>JSLint syntax checker for&nbsp;vim</h3>
+<p>Douglas Crockford&#8217;s <a class="reference external" href="http://www.jslint.com/">JSLint</a> script is almost a golden standard when it comes
+to checking the syntax and general sanity of your javascript &#xFB01;les. Being lazy
+by nature, I got tired of copying and pasting my code into the web&nbsp;form.</p>
+<p>I wanted to be able to run the JSLint tool from the command line. JSLint itself
+is written in javascript. It&#8217;s a 6000-line beast. How do you run a javascript
+library as a command line utility? The answer is <a class="reference external" href="http://nodejs.org/">node.js</a>.</p>
+<p>I wrote a quick little script that takes a single argument (your &#xFB01;le) and runs
+JSLint over it, printing any errors to the console. I call it <tt class="docutils literal">jslintnode.js</tt>
+and the code is on <a class="reference external" href="https://github.com/honza/jslintnode.js">Github</a>.</p>
+<p>Well, checking my &#xFB01;les from the command line is certainly better than using
+the web interface. But I still have to run it over and over. As you may know,
+I&#8217;m fanatical <a class="reference external" href="http://www.vim.org">vim</a> user. There is a cool plugin called <a class="reference external" href="https://github.com/scrooloose/syntastic">syntastic</a> which
+runs through the &#xFB01;le you are editing each time you save it. It puts little
+<tt class="docutils literal">&gt;&gt;&gt;</tt> characters next to the line you are editing which tells you that you
+screwed up and need to &#xFB01;x that&nbsp;line.</p>
+<p>However, by default, syntastic uses the <tt class="docutils literal">jsl</tt> utility to check javascript
+&#xFB01;les. With a little bit of work, you can modify the original script to use our
+<tt class="docutils literal">jslintnode.js</tt> utility.</p>
+<p>Go into the <tt class="docutils literal">/syntax_checkers/</tt> directory and open up the <tt class="docutils literal">javascript.vim</tt>
+&#xFB01;le.</p>
+<p>Change this&nbsp;line:</p>
+<div class="highlight"><pre><span class="k">if</span> <span class="p">!</span>executable<span class="p">(</span><span class="s1">&#39;jsl&#39;</span><span class="p">)</span>
+</pre></div>
+<p>to&nbsp;this:</p>
+<div class="highlight"><pre><span class="k">if</span> <span class="p">!</span>executable<span class="p">(</span><span class="s1">&#39;jslintnode.js&#39;</span><span class="p">)</span>
+</pre></div>
+<p>And replace the body of the <tt class="docutils literal">SyntaxCheckers_javascript_GetLocList()</tt> function
+with the&nbsp;following:</p>
+<div class="highlight"><pre><span class="k">let</span> <span class="nb">makeprg</span> <span class="p">=</span> <span class="s2">&quot;jslintnode.js &quot;</span>.shellescape<span class="p">(</span>expand<span class="p">(</span><span class="s1">&#39;%&#39;</span><span class="p">))</span>
+<span class="k">let</span> <span class="nb">errorformat</span><span class="p">=</span><span class="s1">&#39;%W%f(%l): lint warning: %m,%-Z%p^,%W%f(%l): warning: %m,%-Z%p^,%E%f(%l): SyntaxError: %m,%-Z%p^,%-G&#39;</span>
+<span class="k">return</span> SyntasticMake<span class="p">(</span>{ <span class="s1">&#39;makeprg&#39;</span>: <span class="nb">makeprg</span><span class="p">,</span> <span class="s1">&#39;errorformat&#39;</span>: <span class="nb">errorformat</span> }<span class="p">)</span>
+</pre></div>
+<p>Save and restart&nbsp;vim.</p>
+<p>That&#8217;s it. Now as you&#8217;re editing any javascript &#xFB01;les you will get instant
+feedback as to the quality of your code as judged by JSLint. And remember that
+<em>JSLint will hurt your feelings</em>.</p>
+</div>
+
+</div>
+
+<span class="article_buttons">
+    <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+    <a href="http://twitter.com/share" class="twitter-share-button"
+        data-url="http://honza.ca/2011/04/jslint-syntax-checker-for-vim"
+        data-via="_honza"
+        data-text="JSLint syntax checker for vim"
+        data-count="none">Tweet</a>
+    <a href="http://honza.ca/2011/04/jslint-syntax-checker-for-vim"
+        class="FlattrButton"
+        rev="flattr;uid:honza;button:compact;"
+        title="JSLint syntax checker for vim"
+        style="display:none"></a>
+
+</span>
+
+
+    </div>
+
+</body>
+</html>

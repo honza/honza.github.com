@@ -1,0 +1,13 @@
+site_name: Socrates site
+author: Honza
+posts_per_page: 0
+url: http://honza.ca
+date_format: "%B %d, %Y"
+text_processor: extension
+templates: django
+append_slash: false
+url_include_day: false
+initial_header_level: 3
+punctuation: true
+ligatures: true
+deploy_dir: "../"

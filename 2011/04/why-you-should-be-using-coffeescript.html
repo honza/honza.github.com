@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Thoughts on web programming, open source hacking and the like. Honza Pokorny is a web developer in Halifax, Canada" >
+  <meta name="viewport" content="width=550, maximum-scale=1.0" />
+  <meta name="readability-verification" content="cXteMUVfc4F4DwUmDFS563269y9HLgfxK34fvdMC"/>
+  <title>Why you should be using CoffeeScript - Honza Pokorny</title>
+  <link rel="stylesheet" href="/media/screen.css" type="text/css" />
+  <link rel="alternate" type="application/atom+xml" title="News-Feed" href="http://honza.ca/atom.xml" />
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-4330851-12']);
+        _gaq.push(['_trackPageview']);
+
+        (function(){
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>    
+
+    <script type="text/javascript">
+    /* <![CDATA[ */
+        (function() {
+            var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+            
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto'
+            
+            t.parentNode.insertBefore(s, t);
+        })();
+    /* ]]> */
+    </script>
+        
+</head>
+<body>
+
+    <div id="wrap">
+        <div id="banner" class="body">
+            <h1><a href="/">Honza Pokorny</a></h1>
+        </div>
+        <p>Thoughts on web programming and the world of technology</p>
+        
+
+<p class="article_date date">
+    April 11, 2011
+</p>
+
+<div id="content">
+    <div class="section" id="why-you-should-be-using-coffeescript">
+<h3>Why you should be using&nbsp;CoffeeScript</h3>
+<p>I&#8217;m sure you&#8217;ve heard of CoffeeScript. Everyone is talking about it, it seems.
+It&#8217;s a beautiful language with a simple syntax that you use to write
+Javascript. CoffeeScript compiles to Javascript. Here is why I think you should
+be using&nbsp;it:</p>
+<div class="section" id="readability">
+<h4>Readability</h4>
+<p>CoffeeScript is designed to be beautiful and readable. There is no unnecessary
+&#xFB02;uff. Less syntax boilerplate, fewer mistakes.&nbsp;Compare:</p>
+<div class="highlight"><pre><span class="c1">// regular javascript</span>
+<span class="kd">var</span> <span class="nx">author</span> <span class="o">=</span> <span class="s2">&quot;William Shakespeare&quot;</span><span class="p">;</span>
+<span class="c1">// coffeescript</span>
+<span class="nx">author</span> <span class="o">=</span> <span class="s2">&quot;William Shakespeare&quot;</span>
+</pre></div>
+<p>Indentation is also important in CoffeeScript - just like in Python. This makes
+closures and blocks easier to&nbsp;spot.</p>
+</div>
+<div class="section" id="valid-code">
+<h4>Valid&nbsp;Code</h4>
+<p>There are many different coding styles when it comes to writing Javascript. The
+good thing about CoffeeScript is that the Javascript it generates is valid - it
+passes <a class="reference external" href="http://www.javascriptlint.com/">Javascript Lint</a>. And if your code isn&#8217;t valid CoffeeScript, it
+won&#8217;t compile. It&#8217;s a win-win. This is perhaps my favorite&nbsp;feature.</p>
+</div>
+<div class="section" id="easy-class-inheritance">
+<h4>Easy class&nbsp;inheritance</h4>
+<p>This is just great. It reminds me of Python and&nbsp;Ruby:</p>
+<div class="highlight"><pre><span class="k">class</span> <span class="nx">Animal</span>
+    <span class="nv">constructor: </span><span class="nf">(@name) -&gt;</span>
+
+    <span class="nv">move: </span><span class="nf">(meters) -&gt;</span>
+        <span class="nx">alert</span> <span class="nx">@name</span> <span class="o">+</span> <span class="s">&quot; moved </span><span class="si">#{</span><span class="nx">meters</span><span class="si">}</span><span class="s">m.&quot;</span>
+
+<span class="k">class</span> <span class="nx">Dog</span> <span class="k">extends</span> <span class="nx">Animal</span>
+    <span class="nv">move: </span><span class="o">-&gt;</span>
+        <span class="nx">alert</span> <span class="s">&quot;Whoof...&quot;</span>
+        <span class="k">super</span> <span class="mi">5</span>
+</pre></div>
+<p>Compiles to this in&nbsp;Javascript:</p>
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">Animal</span><span class="p">,</span> <span class="nx">Dog</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">__hasProp</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">,</span> <span class="nx">__extends</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">child</span><span class="p">,</span> <span class="nx">parent</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">key</span> <span class="k">in</span> <span class="nx">parent</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">__hasProp</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">parent</span><span class="p">,</span> <span class="nx">key</span><span class="p">))</span> <span class="nx">child</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="nx">parent</span><span class="p">[</span><span class="nx">key</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="kd">function</span> <span class="nx">ctor</span><span class="p">()</span> <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">constructor</span> <span class="o">=</span> <span class="nx">child</span><span class="p">;</span> <span class="p">}</span>
+    <span class="nx">ctor</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="nx">parent</span><span class="p">.</span><span class="nx">prototype</span><span class="p">;</span>
+    <span class="nx">child</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ctor</span><span class="p">;</span>
+    <span class="nx">child</span><span class="p">.</span><span class="nx">__super__</span> <span class="o">=</span> <span class="nx">parent</span><span class="p">.</span><span class="nx">prototype</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">child</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="nx">Animal</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">function</span> <span class="nx">Animal</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">Animal</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">move</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">meters</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">alert</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="p">(</span><span class="s2">&quot; moved &quot;</span> <span class="o">+</span> <span class="nx">meters</span> <span class="o">+</span> <span class="s2">&quot;m.&quot;</span><span class="p">));</span>
+    <span class="p">};</span>
+    <span class="k">return</span> <span class="nx">Animal</span><span class="p">;</span>
+<span class="p">})();</span>
+<span class="nx">Dog</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">function</span> <span class="nx">Dog</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">Dog</span><span class="p">.</span><span class="nx">__super__</span><span class="p">.</span><span class="nx">constructor</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nx">__extends</span><span class="p">(</span><span class="nx">Dog</span><span class="p">,</span> <span class="nx">Animal</span><span class="p">);</span>
+    <span class="nx">Dog</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">move</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Whoof...&quot;</span><span class="p">);</span>
+        <span class="k">return</span>
+        <span class="nx">Dog</span><span class="p">.</span><span class="nx">__super__</span><span class="p">.</span><span class="nx">move</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+    <span class="p">};</span>
+    <span class="k">return</span> <span class="nx">Dog</span><span class="p">;</span>
+<span class="p">})();</span>
+</pre></div>
+<p>Quite a difference, huh? Think how much time you&#8217;d need to understand each
+version and make any changes required. In my mind, this encourages better code
+organization and&nbsp;structure.</p>
+</div>
+<div class="section" id="node-js-awesomeness">
+<h4>Node.js&nbsp;awesomeness</h4>
+<p>CoffeeScript comes with a Node.js utility, <tt class="docutils literal">coffee</tt>. You can write your
+Node.js code in CoffeeScript and run it with <tt class="docutils literal">coffee &#xFB01;le.js</tt>. The utility
+wraps the CoffeeScript compiler and the <tt class="docutils literal">node</tt> executable. This way, you can
+whip up a quick server in no time.&nbsp;Genius.</p>
+</div>
+<div class="section" id="easy-debugging">
+<h4>Easy&nbsp;debugging</h4>
+<p>With tools like <a class="reference external" href="http://code.google.com/webtoolkit/">Google Web Toolkit</a>, your code compiles to <em>mini&#xFB01;ed</em>
+javascript. Non-mini&#xFB01;ed code is obviously easier (possible?) to read and&nbsp;debug.</p>
+</div>
+</div>
+
+</div>
+
+<span class="article_buttons">
+    <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+    <a href="http://twitter.com/share" class="twitter-share-button"
+        data-url="http://honza.ca/2011/04/why-you-should-be-using-coffeescript"
+        data-via="_honza"
+        data-text="Why you should be using CoffeeScript"
+        data-count="none">Tweet</a>
+    <a href="http://honza.ca/2011/04/why-you-should-be-using-coffeescript"
+        class="FlattrButton"
+        rev="flattr;uid:honza;button:compact;"
+        title="Why you should be using CoffeeScript"
+        style="display:none"></a>
+
+</span>
+
+
+    </div>
+
+</body>
+</html>

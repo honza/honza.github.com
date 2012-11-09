@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Thoughts on web programming, open source hacking and the like. Honza Pokorny is a web developer in Halifax, Canada" >
+  <meta name="viewport" content="width=550, maximum-scale=1.0" />
+  <meta name="readability-verification" content="cXteMUVfc4F4DwUmDFS563269y9HLgfxK34fvdMC"/>
+  <title>How Rackspace deleted my server - Honza Pokorny</title>
+  <link rel="stylesheet" href="/media/screen.css" type="text/css" />
+  <link rel="alternate" type="application/atom+xml" title="News-Feed" href="http://honza.ca/atom.xml" />
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-4330851-12']);
+        _gaq.push(['_trackPageview']);
+
+        (function(){
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>    
+
+    <script type="text/javascript">
+    /* <![CDATA[ */
+        (function() {
+            var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+            
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto'
+            
+            t.parentNode.insertBefore(s, t);
+        })();
+    /* ]]> */
+    </script>
+        
+</head>
+<body>
+
+    <div id="wrap">
+        <div id="banner" class="body">
+            <h1><a href="/">Honza Pokorny</a></h1>
+        </div>
+        <p>Thoughts on web programming and the world of technology</p>
+        
+
+<p class="article_date date">
+    February 15, 2012
+</p>
+
+<div id="content">
+    <div class="section" id="how-rackspace-deleted-my-server">
+<h3>How Rackspace deleted my&nbsp;server</h3>
+<p>I have been with Rackspace for a while now and never had problems.  The server
+has been fast and responsive and their prices are great.  However, what
+happened yesterday blew my mind and totally made me change how I view server
+providers as a whole&#8212;including the likes of <span class="caps">AWS</span> and&nbsp;Heroku.</p>
+<p>Here is how it went&nbsp;down.</p>
+<div class="section" id="pm-cst">
+<h4>2:07pm&nbsp;<span class="caps">CST</span></h4>
+<p>I got an email from one of my administrators that the front end was
+unreachable.  I immediately tried to visit the web application in my browser,
+log into the machine via <span class="caps">SSH</span> and ping the server <span class="caps">IP</span> address.  All failed.  I
+went on the Rackspace Cloud Server Live Chat to raise the issue with&nbsp;them.</p>
+</div>
+<div class="section" id="id1">
+<h4>2:48pm&nbsp;<span class="caps">CST</span></h4>
+<p>I was told to open a ticket through the admin console.  So I did and I handed
+the ticket number to the operator who said they&#8217;d pass it on to&nbsp;operations.</p>
+</div>
+<div class="section" id="id2">
+<h4>5:05pm&nbsp;<span class="caps">CST</span></h4>
+<p>I got a reply on the ticket.  All it says is <em>we&#8217;re working on it</em>.  At this
+point, I&#8217;m freaking out because I have been down for over three&nbsp;hours.</p>
+</div>
+<div class="section" id="id3">
+<h4>6:00pm&nbsp;<span class="caps">CST</span></h4>
+<p>Still no word from Rackspace.  I got on the phone and explained the issue and
+that I didn&#8217;t feel it was being taken seriously.  The operator got the account
+manager on the phone who in turn got a <em>tech guy</em> on the call.  They said that
+the <span class="caps">VM</span> wasn&#8217;t built properly when I &#xFB01;rst created it like 6 months ago and that
+at that time it was queued up to be deleted and rebuilt.  It took this long to
+&#xFB01;nally come down the queue and actually get deleted.  They said they would
+rebuild the server and let me keep the same <span class="caps">IP</span> and that I would get an email
+with new&nbsp;credentials.</p>
+</div>
+<div class="section" id="id4">
+<h4>6:17pm&nbsp;<span class="caps">CST</span></h4>
+<p>I received said email and started to restore the server.  Luckily, I had a
+working Chef script which made this very simple to do.  I think I was back
+online in about 30&nbsp;minutes.</p>
+</div>
+<div class="section" id="conclusion">
+<h4>Conclusion</h4>
+<p>Everyone has been really nice and apologetic.  They even gave me a month&#8217;s
+credit to cover the damages.  I still think Rackspace is great but this whole
+incident made me realize that anything can fail and that you should design your
+application for easy recovery.  And test your&nbsp;backups!</p>
+</div>
+</div>
+
+</div>
+
+<span class="article_buttons">
+    <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+    <a href="http://twitter.com/share" class="twitter-share-button"
+        data-url="http://honza.ca/2012/02/how-rackspace-deleted-my-server"
+        data-via="_honza"
+        data-text="How Rackspace deleted my server"
+        data-count="none">Tweet</a>
+    <a href="http://honza.ca/2012/02/how-rackspace-deleted-my-server"
+        class="FlattrButton"
+        rev="flattr;uid:honza;button:compact;"
+        title="How Rackspace deleted my server"
+        style="display:none"></a>
+
+</span>
+
+
+    </div>
+
+</body>
+</html>

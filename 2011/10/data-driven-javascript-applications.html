@@ -1,0 +1,174 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Thoughts on web programming, open source hacking and the like. Honza Pokorny is a web developer in Halifax, Canada" >
+  <meta name="viewport" content="width=550, maximum-scale=1.0" />
+  <meta name="readability-verification" content="cXteMUVfc4F4DwUmDFS563269y9HLgfxK34fvdMC"/>
+  <title>Data-driven javascript applications - Honza Pokorny</title>
+  <link rel="stylesheet" href="/media/screen.css" type="text/css" />
+  <link rel="alternate" type="application/atom+xml" title="News-Feed" href="http://honza.ca/atom.xml" />
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-4330851-12']);
+        _gaq.push(['_trackPageview']);
+
+        (function(){
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>    
+
+    <script type="text/javascript">
+    /* <![CDATA[ */
+        (function() {
+            var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+            
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto'
+            
+            t.parentNode.insertBefore(s, t);
+        })();
+    /* ]]> */
+    </script>
+        
+</head>
+<body>
+
+    <div id="wrap">
+        <div id="banner" class="body">
+            <h1><a href="/">Honza Pokorny</a></h1>
+        </div>
+        <p>Thoughts on web programming and the world of technology</p>
+        
+
+<p class="article_date date">
+    October 25, 2011
+</p>
+
+<div id="content">
+    <div class="section" id="data-driven-javascript-applications">
+<h3>Data-driven javascript&nbsp;applications</h3>
+<p>Over the last few weeks, I have been trying to think of a way to design medium
+to large client-heavy web applications. There are many projects and ideas
+&#xFB02;oating around that are meant to help you with this and I have had a look at
+quite a few of them. I don&#8217;t mean to say that I found the best one &#8212; just one
+that I&nbsp;like.</p>
+<p>I want to talk about data-driven applications. What I mean is that everything
+you do somehow manipulates or shows speci&#xFB01;c data. Let me describe what I mean
+by a way of example. I have been working on a piece of photo gallery software
+called <a class="reference external" href="https://github.com/honza/rembrant">rembrant</a>. The interface for actually organizing your images into
+albums is very&nbsp;client-heavy.</p>
+<p>The user interface is similar to that of iPhoto. The larger panel displays a
+grid of small thumbnails. The sidebar shows a list of albums and a count of
+selected&nbsp;images.</p>
+<p>When the application loads, it makes two calls to the server: one to get a list
+of all images (image models, including metadata), and a second to get album
+information. Everything else in the <span class="caps">UI</span> is based on these two lists. The list of
+albums and the image grid are pretty&nbsp;self-explanatory.</p>
+<p>Once the browser has this data, we can start building out the <em>views</em>. A view
+is a little windows, or a perspective upon a piece of data. It&#8217;s meant to
+display the data in a meaningful way to the user. For example, in our
+application, there is a list of albums in the sidebar. These are represented as
+list items with anchor&nbsp;tags:</p>
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">SidebarView</span> <span class="o">=</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">View</span><span class="p">.</span><span class="kr">extends</span><span class="p">({</span>
+  <span class="nx">el</span><span class="o">:</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#sidebar&#39;</span><span class="p">),</span>
+
+  <span class="nx">events</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s1">&#39;click #new-album-link&#39;</span><span class="o">:</span> <span class="s1">&#39;newAlbum&#39;</span>
+  <span class="p">},</span>
+
+  <span class="nx">initialize</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">collection</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="s1">&#39;reset&#39;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">render</span><span class="p">,</span> <span class="k">this</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">collection</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="s1">&#39;add&#39;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">,</span> <span class="k">this</span><span class="p">);</span>
+  <span class="p">},</span>
+
+  <span class="nx">add</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">album</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">albumView</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SidebarAlbumView</span><span class="p">({</span>
+      <span class="nx">model</span><span class="o">:</span> <span class="nx">album</span>
+    <span class="p">});</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">el</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">albumView</span><span class="p">.</span><span class="nx">el</span><span class="p">);</span>
+  <span class="p">},</span>
+
+  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">collection</span><span class="p">.</span><span class="nx">models</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">collection</span><span class="p">.</span><span class="nx">models</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+<p>Here you can see we are binding the view to an existing <span class="caps">DOM</span> element with an <span class="caps">ID</span>
+of <em>sidebar</em>. The <tt class="docutils literal">&#64;collection</tt> variable is the collection of albums we spoke
+about earlier. The view subscribes to the collection&#8217;s <em>reset</em> and <em>add</em>
+events. When a new album is added to the collection, the view will
+automatically update itself. Also, the <em>events</em> hash allows us to bind event
+handlers to <span class="caps">DOM</span> elements in the&nbsp;sidebar.</p>
+<p>You may have noticed that I&#8217;m using Backbone to actually structure the
+application. I &#xFB01;nd that Backbone provides a good compromise between structure
+and freedom to do as you please. To be honest, it took me a good while to wrap
+my head around what Backbone is trying to do for you. It may seem a little
+wordy at times but you shouldn&#8217;t expect your application to consist of little&nbsp;code.</p>
+<p>Now, suppose we wanted to add a count to each album list item which would
+indicate how many photos are currently in that album. This is easily done by
+inspecting the photos collection. Backbone provides a simple way to &#xFB01;lter your
+collection based on prede&#xFB01;ned criteria. To get all photos that belong to the
+album with an <span class="caps">ID</span> of <tt class="docutils literal">1</tt>, we would&nbsp;do:</p>
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">PhotoCollection</span> <span class="o">=</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">Collection</span><span class="p">.</span><span class="kr">extends</span><span class="p">({</span>
+  <span class="nx">model</span><span class="o">:</span> <span class="nx">Photo</span><span class="p">,</span>
+  <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;/photos&#39;</span><span class="p">,</span>
+
+  <span class="nx">byAlbum</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">&#xFB01;lter</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">photo</span><span class="p">)</span> <span class="p">{</span>
+     <span class="k">return</span> <span class="nx">_</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">photo</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;albums&#39;</span><span class="p">),</span> <span class="nx">id</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="c1">// collection is an instance of PhotoCollection</span>
+<span class="nx">photos</span> <span class="o">=</span> <span class="nx">collection</span><span class="p">.</span><span class="nx">byAlbum</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</pre></div>
+<p>As you can see, this is very simple and elegant. Now, if a photo is deleted, it
+will be removed from the collection. This will be re&#xFB02;ected both in the grid
+and in the sidebar. It will all work automatically because all of the views are
+looking at the same date. They are subscribed to the data&#8217;s events and react&nbsp;accordingly.</p>
+<p>The nice thing is that you don&#8217;t have to worry about changing classes, binding
+data to <span class="caps">DOM</span> elements, attaching click handlers, making <span class="caps">AJAX</span> requests, none of
+this. The dif&#xFB01;cult part about this approach is deciding what your elementary
+data is and how you should get it. In the case of <a class="reference external" href="https://github.com/honza/rembrant">rembrant</a> it was pretty&nbsp;simple.</p>
+<div class="section" id="further-reading">
+<h4>Further&nbsp;Reading</h4>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/honza/rembrant">rembrant</a> for a real world&nbsp;implementation</li>
+<li><a class="reference internal" href="#backbone-js">Backbone.js</a></li>
+<li><a class="reference internal" href="#spine-js">Spine.js</a></li>
+<li><a class="reference internal" href="#google-web-toolkit">Google Web&nbsp;Toolkit</a></li>
+<li><a class="reference internal" href="#cappuccino">Cappuccino</a></li>
+</ul>
+<span class="target" id="cappuccino"><span id="google-web-toolkit"></span><span id="spine-js"></span><span id="backbone-js"></span></span></div>
+</div>
+
+</div>
+
+<span class="article_buttons">
+    <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+    <a href="http://twitter.com/share" class="twitter-share-button"
+        data-url="http://honza.ca/2011/10/data-driven-javascript-applications"
+        data-via="_honza"
+        data-text="Data-driven javascript applications"
+        data-count="none">Tweet</a>
+    <a href="http://honza.ca/2011/10/data-driven-javascript-applications"
+        class="FlattrButton"
+        rev="flattr;uid:honza;button:compact;"
+        title="Data-driven javascript applications"
+        style="display:none"></a>
+
+</span>
+
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Thoughts on web programming, open source hacking and the like. Honza Pokorny is a web developer in Halifax, Canada" >
+  <meta name="viewport" content="width=550, maximum-scale=1.0" />
+  <meta name="readability-verification" content="cXteMUVfc4F4DwUmDFS563269y9HLgfxK34fvdMC"/>
+  <title>Using Chef with small Django apps - Honza Pokorny</title>
+  <link rel="stylesheet" href="/media/screen.css" type="text/css" />
+  <link rel="alternate" type="application/atom+xml" title="News-Feed" href="http://honza.ca/atom.xml" />
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-4330851-12']);
+        _gaq.push(['_trackPageview']);
+
+        (function(){
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>    
+
+    <script type="text/javascript">
+    /* <![CDATA[ */
+        (function() {
+            var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+            
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto'
+            
+            t.parentNode.insertBefore(s, t);
+        })();
+    /* ]]> */
+    </script>
+        
+</head>
+<body>
+
+    <div id="wrap">
+        <div id="banner" class="body">
+            <h1><a href="/">Honza Pokorny</a></h1>
+        </div>
+        <p>Thoughts on web programming and the world of technology</p>
+        
+
+<p class="article_date date">
+    September 20, 2011
+</p>
+
+<div id="content">
+    <div class="section" id="using-chef-with-small-django-apps">
+<h3>Using Chef with small Django&nbsp;apps</h3>
+<p>This year at <a class="reference external" href="http://djangocon.us">DjangoCon</a>, it seemed like everybody was talking about automatic
+deployments and namely <a class="reference external" href="http://www.opscode.com/chef/">Chef</a>. After coming home from the conference, I spent
+a considerable amount of time learning chef and thinking about how it can be
+best used with small to medium size Django apps. In this post, I will walk you
+through how Chef works and how it can help you make awesome web&nbsp;apps.</p>
+<p>When I say small apps, I mean single-server deployments. This means that your
+web server, your database, memcached, rabbitmq, etc is installed on a single
+Ubuntu <span class="caps">VM</span>. When learning Chef, I found that most of the available tutorials
+focus on multi-server setups and are too complex for ordinary&nbsp;apps.</p>
+<p>Unfortunately, Chef is written in Ruby and it can be a little tricky to debug
+since all the tracebacks are meaningless to a Python developer. However, don&#8217;t
+despair, you can usually tell pretty quickly what&#8217;s going on. To test your
+deployment, we will be using <a class="reference external" href="http://vagrantup.com">Vagrant</a> which is an awesome tool for running
+virtual machines on your development&nbsp;machine.</p>
+<div class="section" id="what-we-will-install">
+<h4>What we will&nbsp;install</h4>
+<p>Our Django application will be deployed using the&nbsp;following:</p>
+<ul class="simple">
+<li>nginx</li>
+<li>gunicorn</li>
+<li>postgresql</li>
+<li>memcached</li>
+<li>rabbitmq</li>
+<li>git</li>
+</ul>
+<p>Your development machine will need to have <a class="reference external" href="http://docs.fab&#xFB01;le.org/en/1.2.2/index.html">Fabric</a>&nbsp;installed.</p>
+</div>
+<div class="section" id="how-chef-works">
+<h4>How Chef&nbsp;works</h4>
+<p>Chef is a tool that is installed on your server. You give it a bunch
+con&#xFB01;guration &#xFB01;les and tell it to provision server with the necessary packages
+and settings. This means that our automatic deployment will have to parts: Chef
+con&#xFB01;guration &#xFB01;les for the sever, and several Fabric tasks to install Chef
+remotely and start the provisioning&nbsp;process.</p>
+<p>So, to con&#xFB01;gure Chef, we will create a <em>deploy</em> directory inside our project&#8217;s
+repository. I like to keep the following&nbsp;structure:</p>
+<div class="highlight"><pre><span class="gp">$</span> ls -a
+<span class="go">.git coolapp docs deploy <span class="caps">README</span>.md Vagrant&#xFB01;le fab&#xFB01;le.py</span>
+</pre></div>
+<p>&#8230; where <em>coolapp</em> is your Django project. We will focus on the <em>deploy</em>
+directory and the <em>fab&#xFB01;le</em>. Chef is a cook how prepares your server for
+dinner. So, Chef needs some cookbooks and recipes. Each cookbook is a directory
+that contains various con&#xFB01;guration &#xFB01;les for a speci&#xFB01;c application that you
+want installed. So for example, you will have a <em>PostgreSQL cookbook</em> and a
+<em>nginx cookbook</em>. The  deploy directory will contain a directory called
+<em>cookbooks</em> which will contain all other cookbooks. Now, the good news is that
+you don&#8217;t have to make the cookbooks yourself. <a class="reference external" href="http://www.opscode.com">Opscode</a>, the company behind
+Chef, maintains a large selection of cookbooks on <a class="reference external" href="https://github.com/opscode/cookbooks">Github</a>. You can copy and
+paste the cookbooks you need for you project. We will need the&nbsp;following:</p>
+<ul class="simple">
+<li>build-essential (for building from&nbsp;source)</li>
+<li>erlang (rabbitmq depends on&nbsp;this)</li>
+<li>git</li>
+<li>memcached</li>
+<li>nginx</li>
+<li>postgresql</li>
+<li>python (for virtualenv and python header&nbsp;&#xFB01;les)</li>
+<li>rabbitmq</li>
+</ul>
+</div>
+<div class="section" id="cookbooks">
+<h4>Cookbooks</h4>
+<p>Each cookbook contains a <em>recipes</em> directory. Each recipe tells Chef how this
+particular application is to be installed and con&#xFB01;gured. For example, it will
+tell nginx to create an entry in <em>sites-available</em> and <em>sites-enabled</em>. Or, it
+will restart PostreSQL when it&#8217;s done being&nbsp;installed.</p>
+<p>There is also a <em>&#xFB01;les</em> directory and a <em>templates</em> directory. Templates are
+Ruby templates which de&#xFB01;ne a particular con&#xFB01;guration &#xFB01;le. For example, in
+order for Chef to be able to properly con&#xFB01;gure nginx with the proper server
+name, it needs to know on what domain your application will be hosted. More on
+this later, but there is a master &#xFB01;le which has all your settings in it and
+Chef reads from that and substitutes the necessary values. The <em>&#xFB01;les</em>
+directory contains &#xFB01;les that need no further modi&#xFB01;cation and can be copied
+over&nbsp;verbatim.</p>
+</div>
+<div class="section" id="node-json">
+<h4>node.json</h4>
+<p>The <em>node.json</em> &#xFB01;le is a per project &#xFB01;le that speci&#xFB01;es certain values for
+Chef to use. For example, you can tell Chef what you want your PostgreSQL
+database to be called, what the name of your django project is, etc. It has a
+simple <span class="caps">JSON</span>&nbsp;syntax.</p>
+</div>
+<div class="section" id="your-app-s-recipe">
+<h4>Your app&#8217;s&nbsp;recipe</h4>
+<p>Your application is going to need a simple recipe. This means creating a
+cookbook bearing your project&#8217;s name and creating a <em>recipes</em> directory within
+in. The recipe should be called <em>default.rb</em> and all it needs to include is a
+list of applications to install. For&nbsp;example:</p>
+<div class="highlight"><pre><span class="c1"># Example django app cookbook</span>
+
+<span class="n">execute</span> <span class="s2">&quot;Update apt repos&quot;</span> <span class="k">do</span>
+    <span class="n">command</span> <span class="s2">&quot;apt-get update&quot;</span>
+<span class="k">end</span>
+
+<span class="n">include_recipe</span> <span class="s1">&#39;nginx&#39;</span>
+<span class="n">include_recipe</span> <span class="s1">&#39;build-essential&#39;</span>
+<span class="n">include_recipe</span> <span class="s1">&#39;python&#39;</span>
+<span class="n">include_recipe</span> <span class="s1">&#39;postgresql::server&#39;</span>
+<span class="n">include_recipe</span> <span class="s1">&#39;memcached&#39;</span>
+<span class="n">include_recipe</span> <span class="s1">&#39;runit&#39;</span>
+<span class="n">include_recipe</span> <span class="s1">&#39;git&#39;</span>
+
+<span class="n">execute</span> <span class="s2">&quot;restart postgres&quot;</span> <span class="k">do</span>
+    <span class="n">command</span> <span class="s2">&quot;sudo /etc/init.d/postgresql-8.4 restart&quot;</span>
+<span class="k">end</span>
+
+<span class="n">execute</span> <span class="s2">&quot;create-database&quot;</span> <span class="k">do</span>
+    <span class="n">command</span> <span class="s2">&quot;createdb -U postgres -O postgres </span><span class="si">#{</span><span class="n">node</span><span class="o">[</span><span class="ss">:dbname</span><span class="o">]</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">end</span>
+</pre></div>
+<p>You can see it&#8217;s pretty simple. We update Ubuntu&#8217;s repositories, include some
+recipes, restart PostgreSQL and create a new&nbsp;database.</p>
+</div>
+<div class="section" id="start-the-engines">
+<h4>Start the&nbsp;engines</h4>
+<p>At this point, you can try out your con&#xFB01;guration with Vagrant. To help you
+out, I have create a <a class="reference external" href="https://github.com/honza/django-chef">template</a> project on Github that you can download and
+use out of the&nbsp;box.</p>
+<p>The next big part is writing the Fabric scripts. You will want the following&nbsp;tasks:</p>
+<ul>
+<li><p class="&#xFB01;rst">Install&nbsp;Chef</p>
+</li>
+<li><p class="&#xFB01;rst">Transfer the cookbooks directory to the&nbsp;server</p>
+</li>
+<li><dl class="&#xFB01;rst docutils">
+<dt>Bootstrap the Django&nbsp;project</dt>
+<dd><ul class="&#xFB01;rst last simple">
+<li>Moving code to the&nbsp;server</li>
+<li>Creating a&nbsp;virtualenv</li>
+<li>Installing&nbsp;requirements</li>
+<li>Syncing the&nbsp;database</li>
+<li>Running&nbsp;migrations</li>
+<li>Starting&nbsp;gunicorn</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="&#xFB01;rst">Deploy</p>
+</li>
+</ul>
+<p>You can see how I implemented mine <a class="reference external" href="https://github.com/honza/django-chef/blob/master/fab&#xFB01;le.py">here</a>. I recommend that you use Fabric&#8217;s
+<em>roledefs</em> which will allow you to specify vagrant as the&nbsp;host:</p>
+<div class="highlight"><pre><span class="gp">$</span> fab -R vagrant bootstrap
+</pre></div>
+</div>
+<div class="section" id="the-real-thing">
+<h4>The real&nbsp;thing</h4>
+<p>Once you&#8217;ve tested your application in Vagrant so you are ready to deploy to a
+server. All that&#8217;s left to do is create a new <em>roledef</em> in the <em>fab&#xFB01;le</em> and
+run&nbsp;it!</p>
+</div>
+<div class="section" id="conclusion">
+<h4>Conclusion</h4>
+<p>I am by no means a Chef expert&#8212;I learned how to use it a few days ago. If you
+have any feedback, do let me&nbsp;know.</p>
+</div>
+</div>
+
+</div>
+
+<span class="article_buttons">
+    <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+    <a href="http://twitter.com/share" class="twitter-share-button"
+        data-url="http://honza.ca/2011/09/using-chef-with-small-django-apps"
+        data-via="_honza"
+        data-text="Using Chef with small Django apps"
+        data-count="none">Tweet</a>
+    <a href="http://honza.ca/2011/09/using-chef-with-small-django-apps"
+        class="FlattrButton"
+        rev="flattr;uid:honza;button:compact;"
+        title="Using Chef with small Django apps"
+        style="display:none"></a>
+
+</span>
+
+
+    </div>
+
+</body>
+</html>

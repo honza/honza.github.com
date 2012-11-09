@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Thoughts on web programming, open source hacking and the like. Honza Pokorny is a web developer in Halifax, Canada" >
+  <meta name="viewport" content="width=550, maximum-scale=1.0" />
+  <meta name="readability-verification" content="cXteMUVfc4F4DwUmDFS563269y9HLgfxK34fvdMC"/>
+  <title>Writing node.js modules - Honza Pokorny</title>
+  <link rel="stylesheet" href="/media/screen.css" type="text/css" />
+  <link rel="alternate" type="application/atom+xml" title="News-Feed" href="http://honza.ca/atom.xml" />
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-4330851-12']);
+        _gaq.push(['_trackPageview']);
+
+        (function(){
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>    
+
+    <script type="text/javascript">
+    /* <![CDATA[ */
+        (function() {
+            var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+            
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto'
+            
+            t.parentNode.insertBefore(s, t);
+        })();
+    /* ]]> */
+    </script>
+        
+</head>
+<body>
+
+    <div id="wrap">
+        <div id="banner" class="body">
+            <h1><a href="/">Honza Pokorny</a></h1>
+        </div>
+        <p>Thoughts on web programming and the world of technology</p>
+        
+
+<p class="article_date date">
+    January 05, 2012
+</p>
+
+<div id="content">
+    <div class="section" id="writing-node-js-modules">
+<h3>Writing Node.js&nbsp;modules</h3>
+<p>To say that node.js has enjoyed a great deal of positive publicity in the last
+few months would most certainly be an understatement. New node.js-related
+projects are popping up all over the place, and there seems to be this notion
+that if you aren&#8217;t using it you&#8217;re not cool&nbsp;enough.</p>
+<p>Over the Christmas holidays, I sat down to sort out my photo library and I
+wanted to make a web photo gallery to share the images with family and friends.
+Being a mainly Python programmer, I wrote a Python script that will go through
+all of my photos and create smaller versions and thumbnails of the images that
+are suitable for the web. I think I have around 1500 images at the moment and
+it took a good 20 minutes to convert everything using Python Imaging&nbsp;Library.</p>
+<p>I was rather frustrated with the performance. I think the reason for the
+slowness was the fact that the images were processed sequentially, one by one.
+What if I could modify my program to process more than one image at a time.
+This would certainly speed by the process. Then I thought about using threads
+in Python and I think I threw up in my mouth a&nbsp;little.</p>
+<p>Then I remembered Node.js. It&#8217;s supposed to be all asynchronous and
+non-blocking. Perfect match. So I wrote a thumbnailer in&nbsp;node.</p>
+<p>Essentially, it&#8217;s a worker queue that resizes images. You give it a source and
+destination directories and a number of workers and run it. The total time went
+from 20 minutes to 2 using about 5 workers. Much better,&nbsp;eh?</p>
+<p>I decided to open source the project because I couldn&#8217;t &#xFB01;nd any node.js
+projects that do something even remotely similar. It&#8217;s called <a class="reference external" href="https://github.com/honza/node-thumbnail">node-thumbnail</a>
+and you can &#xFB01;nd it on both Github and&nbsp;npmjs.</p>
+<p>So what does the <span class="caps">API</span> look&nbsp;like?</p>
+<div class="highlight"><pre><span class="nx">thumb</span><span class="p">({</span>
+  <span class="nx">source</span><span class="o">:</span> <span class="s1">&#39;source/path&#39;</span><span class="p">,</span>
+  <span class="nx">destination</span><span class="o">:</span> <span class="s1">&#39;dest/path&#39;</span><span class="p">,</span>
+  <span class="nx">concurrency</span><span class="o">:</span> <span class="mi">4</span>
+  <span class="p">},</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;All done!&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+
+</div>
+
+<span class="article_buttons">
+    <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+    <a href="http://twitter.com/share" class="twitter-share-button"
+        data-url="http://honza.ca/2012/01/writing-nodejs-modules"
+        data-via="_honza"
+        data-text="Writing node.js modules"
+        data-count="none">Tweet</a>
+    <a href="http://honza.ca/2012/01/writing-nodejs-modules"
+        class="FlattrButton"
+        rev="flattr;uid:honza;button:compact;"
+        title="Writing node.js modules"
+        style="display:none"></a>
+
+</span>
+
+
+    </div>
+
+</body>
+</html>

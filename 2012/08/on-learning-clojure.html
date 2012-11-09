@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Thoughts on web programming, open source hacking and the like. Honza Pokorny is a web developer in Halifax, Canada" >
+  <meta name="viewport" content="width=550, maximum-scale=1.0" />
+  <meta name="readability-verification" content="cXteMUVfc4F4DwUmDFS563269y9HLgfxK34fvdMC"/>
+  <title>On Learning Clojure - Honza Pokorny</title>
+  <link rel="stylesheet" href="/media/screen.css" type="text/css" />
+  <link rel="alternate" type="application/atom+xml" title="News-Feed" href="http://honza.ca/atom.xml" />
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-4330851-12']);
+        _gaq.push(['_trackPageview']);
+
+        (function(){
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>    
+
+    <script type="text/javascript">
+    /* <![CDATA[ */
+        (function() {
+            var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+            
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto'
+            
+            t.parentNode.insertBefore(s, t);
+        })();
+    /* ]]> */
+    </script>
+        
+</head>
+<body>
+
+    <div id="wrap">
+        <div id="banner" class="body">
+            <h1><a href="/">Honza Pokorny</a></h1>
+        </div>
+        <p>Thoughts on web programming and the world of technology</p>
+        
+
+<p class="article_date date">
+    August 26, 2012
+</p>
+
+<div id="content">
+    <div class="section" id="on-learning-clojure">
+<h3>On Learning&nbsp;Clojure</h3>
+<div class="section" id="pre&#xFB01;x-notation">
+<h4>Pre&#xFB01;x&nbsp;notation</h4>
+<p>I&#8217;m a big fan of the pre&#xFB01;x notation.  It makes everything appear the same
+(if-statements, function calls , etc).  I like how it removes the need for
+operator precedence&nbsp;rules.</p>
+</div>
+<div class="section" id="all-the-parentheses">
+<h4>All the&nbsp;parentheses</h4>
+<p>Once you get into learning Clojure and you have written a small application,
+you don&#8217;t really see the parens anymore.  Sure, sometimes you still get the
+<em>Unbalanced parens</em> error but those are easy to spot.  If you are afraid of
+learning a <span class="caps">LISP</span> because of this, don&#8217;t worry, you&#8217;ll be&nbsp;&#xFB01;ne.</p>
+</div>
+<div class="section" id="jvm">
+<h4><span class="caps">JVM</span></h4>
+<p>Let&#8217;s just say that the start-up time of the <span class="caps">JVM</span> isn&#8217;t the fastest.  This makes
+Clojure effectively useless for writing utility scripts.  However, the <span class="caps">JVM</span> is a
+robust platform that runs your code really fast.  With Clojure, you get all the
+bene&#xFB01;ts of the <span class="caps">JVM</span>: garbage collection, <span class="caps">JIT</span>, uberjars, etc.  Using Java
+libraries in Clojure is usually pretty straightforward if you know the basics
+of Java (but the code isn&#8217;t the prettiest).  This is great because some of the
+lower level stuff doesn&#8217;t have to be reimplemented (think <span class="caps">SHA1</span> digests,
+sockets,&nbsp;etc).</p>
+</div>
+<div class="section" id="documentation">
+<h4>Documentation</h4>
+<p>The language itself seems to be documented pretty well.  I haven&#8217;t had any
+issues when trying to &#xFB01;nd the signature for a built-in function.  However, the
+community isn&#8217;t exactly known for writing documentation.  Most of the time, you
+&#xFB01;nd a library on Github and you are left to read the source.  If you are
+lucky, you are told what to import and a few basic examples.  Good
+documentation is something I take for granted coming from the Python&nbsp;world.</p>
+</div>
+<div class="section" id="libraries">
+<h4>Libraries</h4>
+<p>While you can certainly &#xFB01;nd a lot of good libraries for doing common things,
+one area is still painful to develop for: the web.  Clojure still needs a
+Django-like web framework that has all the batteries included.  Right now, the
+only popular web framework is Noir and it&#8217;s more like Sinatra or Flask.
+Without a Django-like platform, you end up reinventing all the common things
+for every application: authentication, form validation, <span class="caps">ORM</span>,&nbsp;etc.</p>
+</div>
+<div class="section" id="conclusion">
+<h4>Conclusion</h4>
+<p>I really like the language.  I like the functional aspects of it and the
+immutability.  I like lazy sequences and refs.  What I don&#8217;t like is that the
+community and the ecosystem is still a bit young and immature.  I &#xFB01;nd myself
+waiting for stuff to happen before I can use this language&nbsp;more.</p>
+</div>
+</div>
+
+</div>
+
+<span class="article_buttons">
+    <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+    <a href="http://twitter.com/share" class="twitter-share-button"
+        data-url="http://honza.ca/2012/08/on-learning-clojure"
+        data-via="_honza"
+        data-text="On Learning Clojure"
+        data-count="none">Tweet</a>
+    <a href="http://honza.ca/2012/08/on-learning-clojure"
+        class="FlattrButton"
+        rev="flattr;uid:honza;button:compact;"
+        title="On Learning Clojure"
+        style="display:none"></a>
+
+</span>
+
+
+    </div>
+
+</body>
+</html>

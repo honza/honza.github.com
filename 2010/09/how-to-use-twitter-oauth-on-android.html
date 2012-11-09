@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Thoughts on web programming, open source hacking and the like. Honza Pokorny is a web developer in Halifax, Canada" >
+  <meta name="viewport" content="width=550, maximum-scale=1.0" />
+  <meta name="readability-verification" content="cXteMUVfc4F4DwUmDFS563269y9HLgfxK34fvdMC"/>
+  <title>How To Use Twitter OAuth On Android - Honza Pokorny</title>
+  <link rel="stylesheet" href="/media/screen.css" type="text/css" />
+  <link rel="alternate" type="application/atom+xml" title="News-Feed" href="http://honza.ca/atom.xml" />
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-4330851-12']);
+        _gaq.push(['_trackPageview']);
+
+        (function(){
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>    
+
+    <script type="text/javascript">
+    /* <![CDATA[ */
+        (function() {
+            var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+            
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto'
+            
+            t.parentNode.insertBefore(s, t);
+        })();
+    /* ]]> */
+    </script>
+        
+</head>
+<body>
+
+    <div id="wrap">
+        <div id="banner" class="body">
+            <h1><a href="/">Honza Pokorny</a></h1>
+        </div>
+        <p>Thoughts on web programming and the world of technology</p>
+        
+
+<p class="article_date date">
+    September 28, 2010
+</p>
+
+<div id="content">
+    <div class="section" id="how-to-use-twitter-oauth-on-android">
+<h3>How To Use Twitter OAuth On&nbsp;Android</h3>
+<p>If you are developing an application for the Android platform, and you need to
+interact with the Twitter <span class="caps">API</span>, you now have to use OAuth to authenticate the
+user. In this article, we will have a look on how you can do&nbsp;that.</p>
+<div class="section" id="what-is-oauth">
+<h4>What is&nbsp;OAuth?</h4>
+<p>OAuth is a way of accessing a user&#8217;s data (e.g. tweets) without asking for the
+user&#8217;s username and password. Your application opens the Twitter website which
+will ask the user if they want to allow you to access their data. If they do,
+they are taken back to the application and can start using it. You can &#xFB01;nd
+more about OAuth all over the&nbsp;web.</p>
+</div>
+<div class="section" id="prerequisites">
+<h4>Prerequisites</h4>
+<p>There are a couple of .jars that you will need for this to&nbsp;work.</p>
+<ul class="simple">
+<li>signpost-commonshttp4-1.2.1.1.jar</li>
+<li>signpost-core-1.2.1.1.jar</li>
+</ul>
+<p>You can download them <a class="reference external" href="https://github.com/kaeppler/signpost">here</a>.</p>
+</div>
+<div class="section" id="basic-activity">
+<h4>Basic&nbsp;Activity</h4>
+<p>Let&#8217;s say we have an activity running where the user can start the
+authentication process. There is nothing special about this activity, except
+for some text and a button. When the user clicks the button, the OAuth process
+will be started. From the button&#8217;s <tt class="docutils literal">onClickListener()</tt> we will call the
+<tt class="docutils literal">startOAuth()</tt> method of our&nbsp;activity.</p>
+<p>We will add a few attributes to our activity. Let&#8217;s call the activity&nbsp;Main.</p>
+<div class="highlight"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="kd">extends</span> <span class="n">Activity</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="n">CommonsHttpOAuthConsumer</span> <span class="n">httpOauthConsumer</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">OAuthProvider</span> <span class="n">httpOauthprovider</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kd">&#xFB01;nal</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">consumerKey</span> <span class="o">=</span> <span class="s">&quot;abc&quot;</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kd">&#xFB01;nal</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">consumerSecret</span> <span class="o">=</span> <span class="s">&quot;abc&quot;</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">&#xFB01;nal</span> <span class="n">String</span> <span class="n"><span class="caps">CALLBACKURL</span></span> <span class="o">=</span> <span class="s">&quot;app://twitter&quot;</span><span class="o">;</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+        <span class="o">...</span>
+<span class="o">}</span>
+</pre></div>
+<p><tt class="docutils literal">consumerKey</tt> and <tt class="docutils literal">consumerSecret</tt> will store your app&#8217;s unique keys that
+you will get from Twitter. <tt class="docutils literal"><span class="caps">CALLBACK</span></tt> is a little different. This is used
+when the application is authorized on the web, and the control is returned back
+to the Main activity. For the mobile browser to be able to call the application
+and tell it that the OAuth business has gone well, it needs a call back. Both
+app and twitter can be exchanged for anything&nbsp;else.</p>
+<p>Now let&#8217;s have a look at the <tt class="docutils literal">startOAuth()</tt> method.</p>
+<div class="highlight"><pre><span class="k">try</span> <span class="o">{</span>
+    <span class="n">httpOauthConsumer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CommonsHttpOAuthConsumer</span><span class="o">(</span><span class="n">consumerKey</span><span class="o">,</span> <span class="n">consumerSecret</span><span class="o">);</span>
+    <span class="n">httpOauthprovider</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DefaultOAuthProvider</span><span class="o">(</span><span class="s">&quot;http://twitter.com/oauth/request_token&quot;</span><span class="o">,</span>
+                                            <span class="s">&quot;http://twitter.com/oauth/access_token&quot;</span><span class="o">,</span>
+                                            <span class="s">&quot;http://twitter.com/oauth/authorize&quot;</span><span class="o">);</span>
+    <span class="n">String</span> <span class="n">authUrl</span> <span class="o">=</span> <span class="n">httpOauthprovider</span><span class="o">.</span><span class="na">retrieveRequestToken</span><span class="o">(</span><span class="n">httpOauthConsumer</span><span class="o">,</span> <span class="n"><span class="caps">CALLBACKURL</span></span><span class="o">);</span>
+    <span class="c1">// Open the browser</span>
+    <span class="n">startActivity</span><span class="o">(</span><span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">Intent</span><span class="o">.</span><span class="na">ACTION_VIEW</span><span class="o">,</span> <span class="n">Uri</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">authUrl</span><span class="o">)));</span>
+<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">(),</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_LONG</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+<span class="o">}</span>
+</pre></div>
+<p>Here we create the necessary OAuth objects which will in turn generate the
+unique authenticating <span class="caps">URL</span>. Once we have the <span class="caps">URL</span> we open the browser and point
+it to that <span class="caps">URL</span>. The user will be presented with a dialog asking them to allow
+or to deny your application&nbsp;access.</p>
+<p>In order for our activity to be able to receive the callback, we need to add a
+few things the Android manifest &#xFB01;le. Change the applications de&#xFB01;nition to the&nbsp;following:</p>
+<div class="highlight"><pre><span class="nt">&lt;activity</span> <span class="na">android:name=</span><span class="s">&quot;Main&quot;</span> <span class="na">android:launchMode=</span><span class="s">&quot;singleInstance&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;intent-&#xFB01;lter&gt;</span>
+         <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.action.<span class="caps">VIEW</span>&quot;</span> <span class="nt">/&gt;</span>
+         <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.category.<span class="caps">DEFAULT</span>&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.category.<span class="caps">BROWSABLE</span>&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;data</span> <span class="na">android:scheme=</span><span class="s">&quot;app&quot;</span> <span class="na">android:host=</span><span class="s">&quot;twitter&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/intent-&#xFB01;lter&gt;</span>
+<span class="nt">&lt;/activity&gt;</span>
+</pre></div>
+<p>Note that if you changed the app and twitter in the <tt class="docutils literal"><span class="caps">CALLBACK</span></tt> variable
+above, you will need to make sure that the change is re&#xFB02;ected here. This
+basically allows the activity to receive data from a foreign source - our&nbsp;browser.</p>
+<p>Now we need to catch the callback and handle it. We do that by overriding the
+<tt class="docutils literal">onNewIntent()</tt> method of our Main&nbsp;activity.</p>
+<div class="highlight"><pre><span class="nd">@Override</span>
+<span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onNewIntent</span><span class="o">(</span><span class="n">Intent</span> <span class="n">intent</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">super</span><span class="o">.</span><span class="na">onNewIntent</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
+
+    <span class="n">Uri</span> <span class="n">uri</span> <span class="o">=</span> <span class="n">intent</span><span class="o">.</span><span class="na">getData</span><span class="o">();</span>
+
+    <span class="c1">//Check if you got NewIntent event due to Twitter Call back only</span>
+
+    <span class="k">if</span> <span class="o">(</span><span class="n">uri</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">uri</span><span class="o">.</span><span class="na">toString</span><span class="o">().</span><span class="na">startsWith</span><span class="o">(</span><span class="n"><span class="caps">CALLBACKURL</span></span><span class="o">))</span> <span class="o">{</span>
+
+        <span class="n">String</span> <span class="n">veri&#xFB01;er</span> <span class="o">=</span> <span class="n">uri</span><span class="o">.</span><span class="na">getQueryParameter</span><span class="o">(</span><span class="n">oauth</span><span class="o">.</span><span class="na">signpost</span><span class="o">.</span><span class="na">OAuth</span><span class="o">.</span><span class="na">OAUTH_VERIFIER</span><span class="o">);</span>
+
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="c1">// this will populate token and token_secret in consumer</span>
+
+            <span class="n">httpOauthprovider</span><span class="o">.</span><span class="na">retrieveAccessToken</span><span class="o">(</span><span class="n">httpOauthConsumer</span><span class="o">,</span> <span class="n">veri&#xFB01;er</span><span class="o">);</span>
+            <span class="n">String</span> <span class="n">userKey</span> <span class="o">=</span> <span class="n">httpOauthConsumer</span><span class="o">.</span><span class="na">getToken</span><span class="o">();</span>
+            <span class="n">String</span> <span class="n">userSecret</span> <span class="o">=</span> <span class="n">httpOauthConsumer</span><span class="o">.</span><span class="na">getTokenSecret</span><span class="o">();</span>
+
+            <span class="c1">// Save user_key and user_secret in user preferences and return</span>
+
+            <span class="n">SharedPreferences</span> <span class="n">settings</span> <span class="o">=</span> <span class="n">getBaseContext</span><span class="o">().</span><span class="na">getSharedPreferences</span><span class="o">(</span><span class="s">&quot;your_app_prefs&quot;</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+            <span class="n">SharedPreferences</span><span class="o">.</span><span class="na">Editor</span> <span class="n">editor</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="na">edit</span><span class="o">();</span>
+            <span class="n">editor</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="s">&quot;user_key&quot;</span><span class="o">,</span> <span class="n">userKey</span><span class="o">);</span>
+            <span class="n">editor</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="s">&quot;user_secret&quot;</span><span class="o">,</span> <span class="n">userSecret</span><span class="o">);</span>
+            <span class="n">editor</span><span class="o">.</span><span class="na">commit</span><span class="o">();</span>
+
+        <span class="o">}</span> <span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">){</span>
+
+        <span class="o">}</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+        <span class="c1">// Do something if the callback comes from elsewhere</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+<p><span class="caps">OK</span>, there&#8217;s quite a bit there. We extract the data that the browser sent back
+to us. This data is used to verify that the authentication was successful and
+that we can now access the user&#8217;s data. From the data, we get the user&#8217;s key
+and their secret. We save that into the application&#8217;s shared preferences &#xFB01;le
+and&nbsp;return.</p>
+<p>Now we are good to go. We can make authenticated requests to Twitter <span class="caps">API</span> on
+behalf of the&nbsp;user.</p>
+<p>For example, to get the user&#8217;s home timeline, you would do something&nbsp;like:</p>
+<div class="highlight"><pre><span class="n">HttpGet</span> <span class="n">get</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HttpGet</span><span class="o">(</span><span class="s">&quot;http://api.twitter.com/version/statuses/home_timeline.json&quot;</span><span class="o">);</span>
+<span class="n">HttpParams</span> <span class="n">params</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BasicHttpParams</span><span class="o">();</span>
+<span class="n">HttpProtocolParams</span><span class="o">.</span><span class="na">setUseExpectContinue</span><span class="o">(</span><span class="n">params</span><span class="o">,</span> <span class="kc">false</span><span class="o">);</span>
+<span class="n">get</span><span class="o">.</span><span class="na">setParams</span><span class="o">(</span><span class="n">params</span><span class="o">);</span>
+<span class="c1">// sign the request to authenticate</span>
+<span class="n">httpOauthConsumer</span><span class="o">.</span><span class="na">sign</span><span class="o">(</span><span class="n">get</span><span class="o">);</span>
+<span class="n">String</span> <span class="n">responsex</span> <span class="o">=</span> <span class="n">mClient</span><span class="o">.</span><span class="na">execute</span><span class="o">(</span><span class="n">get</span><span class="o">,</span> <span class="k">new</span> <span class="n">BasicResponseHandler</span><span class="o">());</span>
+<span class="n">JSONArray</span> <span class="n">array</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONArray</span><span class="o">(</span><span class="n">responsex</span><span class="o">);</span>
+</pre></div>
+<p>And the array variable is a list of the latest tweets in the user&#8217;s home&nbsp;timeline.</p>
+</div>
+</div>
+
+</div>
+
+<span class="article_buttons">
+    <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+    <a href="http://twitter.com/share" class="twitter-share-button"
+        data-url="http://honza.ca/2010/09/how-to-use-twitter-oauth-on-android"
+        data-via="_honza"
+        data-text="How To Use Twitter OAuth On Android"
+        data-count="none">Tweet</a>
+    <a href="http://honza.ca/2010/09/how-to-use-twitter-oauth-on-android"
+        class="FlattrButton"
+        rev="flattr;uid:honza;button:compact;"
+        title="How To Use Twitter OAuth On Android"
+        style="display:none"></a>
+
+</span>
+
+
+    </div>
+
+</body>
+</html>

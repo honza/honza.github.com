@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+
+<p class="article_date date">
+    {{ post.date }}
+</p>
+
+<div id="content">
+    {{ post.contents|safe }}
+</div>
+
+<span class="article_buttons">
+    <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+    <a href="http://twitter.com/share" class="twitter-share-button"
+        data-url="{{ url }}/{{ post.url }}"
+        data-via="_honza"
+        data-text="{{ post.title }}"
+        data-count="none">Tweet</a>
+    <a href="{{ url }}/{{ post.url }}"
+        class="FlattrButton"
+        rev="flattr;uid:honza;button:compact;"
+        title="{{ post.title }}"
+        style="display:none"></a>
+
+</span>
+
+{% endblock %}

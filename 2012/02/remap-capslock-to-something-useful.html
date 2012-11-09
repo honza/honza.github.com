@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Thoughts on web programming, open source hacking and the like. Honza Pokorny is a web developer in Halifax, Canada" >
+  <meta name="viewport" content="width=550, maximum-scale=1.0" />
+  <meta name="readability-verification" content="cXteMUVfc4F4DwUmDFS563269y9HLgfxK34fvdMC"/>
+  <title>Remap CapsLock to something useful - Honza Pokorny</title>
+  <link rel="stylesheet" href="/media/screen.css" type="text/css" />
+  <link rel="alternate" type="application/atom+xml" title="News-Feed" href="http://honza.ca/atom.xml" />
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-4330851-12']);
+        _gaq.push(['_trackPageview']);
+
+        (function(){
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>    
+
+    <script type="text/javascript">
+    /* <![CDATA[ */
+        (function() {
+            var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+            
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto'
+            
+            t.parentNode.insertBefore(s, t);
+        })();
+    /* ]]> */
+    </script>
+        
+</head>
+<body>
+
+    <div id="wrap">
+        <div id="banner" class="body">
+            <h1><a href="/">Honza Pokorny</a></h1>
+        </div>
+        <p>Thoughts on web programming and the world of technology</p>
+        
+
+<p class="article_date date">
+    February 07, 2012
+</p>
+
+<div id="content">
+    <div class="section" id="remap-capslock-to-something-useful">
+<h3>Remap CapsLock to something&nbsp;useful</h3>
+<p>Arguably, CapsLock is <a class="reference external" href="http://capsoff.org/">the most useless key</a> on your keyboard. I honestly
+can&#8217;t remember the last time I had a real use for it. If are a programmer, you
+should remap it to something more useful. The rest of this post will describe
+how to remap your CapsLock on a Mac <span class="caps">OSX</span>&nbsp;installation.</p>
+<div class="section" id="what-we-are-going-to-do">
+<h4>What we are going to&nbsp;do</h4>
+<p>I&#8217;m a heavy vim user and reaching for the Esc key all the is a pain. We will
+remap the CapsLock to Esc. However, I want to be able to use it for something
+else if I&#8217;m not in vim. We will set it up so that when you hit CapsLock on its
+own, it will send Esc. However, if you hold CapsLock and press another key, it
+will send Ctrl. That way you can do things like Ctrl+F,&nbsp;etc.</p>
+<p>On Mac <span class="caps">OSX</span>, you will want to do use <a class="reference external" href="http://pqrs.org/macosx/keyremap4macbook/">KeyRemap4MacBook</a>. It&#8217;s an excellent
+piece of software that will allow you to take control of your&nbsp;keyboard.</p>
+</div>
+<div class="section" id="settings">
+<h4>Settings</h4>
+<p>Once you have installed KeyRemap4MacBook, go to System Preferences and select
+the Keyboard submenu. Hit the Modi&#xFB01;er Keys button and remap CapsLock to Ctrl.
+You will have to do this once for every keyboard that you&nbsp;use.</p>
+<p>Next, head over to the KeyRemap4MacBook settings. The magical setting you are
+looking for&nbsp;is</p>
+<pre class="literal-block">
+Control_L to Control_L
+    (+ When you type Control_L only, send Escape)
+</pre>
+<p>That&#8217;s&nbsp;it!</p>
+</div>
+</div>
+
+</div>
+
+<span class="article_buttons">
+    <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+    <a href="http://twitter.com/share" class="twitter-share-button"
+        data-url="http://honza.ca/2012/02/remap-capslock-to-something-useful"
+        data-via="_honza"
+        data-text="Remap CapsLock to something useful"
+        data-count="none">Tweet</a>
+    <a href="http://honza.ca/2012/02/remap-capslock-to-something-useful"
+        class="FlattrButton"
+        rev="flattr;uid:honza;button:compact;"
+        title="Remap CapsLock to something useful"
+        style="display:none"></a>
+
+</span>
+
+
+    </div>
+
+</body>
+</html>

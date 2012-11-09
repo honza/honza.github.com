@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Thoughts on web programming, open source hacking and the like. Honza Pokorny is a web developer in Halifax, Canada" >
+  <meta name="viewport" content="width=550, maximum-scale=1.0" />
+  <meta name="readability-verification" content="cXteMUVfc4F4DwUmDFS563269y9HLgfxK34fvdMC"/>
+  <title>Why you should use Heroku for your next start-up - Honza Pokorny</title>
+  <link rel="stylesheet" href="/media/screen.css" type="text/css" />
+  <link rel="alternate" type="application/atom+xml" title="News-Feed" href="http://honza.ca/atom.xml" />
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-4330851-12']);
+        _gaq.push(['_trackPageview']);
+
+        (function(){
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>    
+
+    <script type="text/javascript">
+    /* <![CDATA[ */
+        (function() {
+            var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+            
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto'
+            
+            t.parentNode.insertBefore(s, t);
+        })();
+    /* ]]> */
+    </script>
+        
+</head>
+<body>
+
+    <div id="wrap">
+        <div id="banner" class="body">
+            <h1><a href="/">Honza Pokorny</a></h1>
+        </div>
+        <p>Thoughts on web programming and the world of technology</p>
+        
+
+<p class="article_date date">
+    May 21, 2012
+</p>
+
+<div id="content">
+    <div class="section" id="why-you-should-use-heroku-for-your-next-start-up">
+<h3>Why you should use Heroku for your next&nbsp;start-up</h3>
+<p>You are a ninja-rockstar developer with a billion dollar idea.  You write Ruby
+and Javascript.  You like <span class="caps">BDD</span>, responsive design, <span class="caps">HTML5</span> and node.js.  You are
+really good at <span class="caps">UX</span> and quickly producing a prototype.  You have been working on
+your app for a few&nbsp;months.</p>
+<p>Now it&#8217;s time to deploy your&nbsp;app.</p>
+<p>Because you are a hot new start-up, you will of course use <span class="caps">AWS</span>.  You spend a
+few hours trying to &#xFB01;gure out how many of which instance type you will need.
+You decide you need a load balancer, a bunch of app servers, a database server
+and a worker server.  That should about cover you.  Next up is Chef.  You spend
+a few days learning about provisioning a new <span class="caps">VM</span> with Chef.  You are so excited
+about how you can automatically provision a new app server when your start-up
+hits the front page of TechCrunch.  You spend a week con&#xFB01;guring and testing
+your Chef scripts.  And then the big day comes.  You deploy your application.
+Everything works the &#xFB01;rst time and you are overjoyed.  First users start to
+appear and your architecture performs really well.  You hit the front page of
+HackerNews and get tens of thousands of hits on your site.  You &#xFB01;nd a small
+bug in your cache invalidation logic which you &#xFB01;x really quickly.  You deploy
+your &#xFB01;x and what do you know?  That script that installs your project&#8217;s
+dependencies when you deploy just pulled in a new version of a library that
+deploys your static &#xFB01;les to S3.  And of course that new version contains
+backwards incompatible changes and completely breaks your app.  You are
+frantically trying to &#xFB01;gure out what happened.  You think, <span class="caps">OK</span>, I will put up a
+maintenance page while I sort this out.  You try to <span class="caps">SSH</span> into your load balancer
+and try to change the routing settings.  What a mess.  What do you do when your
+database starts swapping? What happens when your Redis server runs out of
+memory and dies?  You barely understand how to install MySQL, let alone how to
+get the most out of&nbsp;it.</p>
+<p>Enter&nbsp;Heroku.</p>
+<p>Single command deployments.  Fully-managed database service.  Automatic
+load-balancing.  On-demand scaling.  No manual <span class="caps">SSH</span> to see what&#8217;s&nbsp;wrong.</p>
+<p>A request comes in, the load balancer picks it up and sends it to a suitable
+app server instance.  The app server instance talks to a highly optimized
+database instance.  Redis is sitting on a super beefy machine with lots of <span class="caps">RAM</span>
+and you never have to worry about it.  When you are ready to make a deployment,
+the load balancer bounces each app server in turn to make sure you don&#8217;t lose
+any requests.  All you need to do is <tt class="docutils literal">git push heroku master</tt>.</p>
+<p>Sure, Heroku is a bit more expensive than <span class="caps">EC2</span>.  But when you think of how many
+smart people are taking care of your app, it&#8217;s really cheap.  It&#8217;s like having
+your own sys&nbsp;admin.</p>
+<p>You need&nbsp;it.</p>
+<p><strong>Disclaimer</strong>: I&#8217;m in no way connected to Heroku.  This posts is an attempt to
+convince myself that I shouldn&#8217;t be using Chef for my
+side-project-start-up-ideas.  And I&#8217;m not a Ruby&nbsp;guy.</p>
+</div>
+
+</div>
+
+<span class="article_buttons">
+    <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+    <a href="http://twitter.com/share" class="twitter-share-button"
+        data-url="http://honza.ca/2012/05/why-you-should-use-heroku-for-your-next-start-up"
+        data-via="_honza"
+        data-text="Why you should use Heroku for your next start-up"
+        data-count="none">Tweet</a>
+    <a href="http://honza.ca/2012/05/why-you-should-use-heroku-for-your-next-start-up"
+        class="FlattrButton"
+        rev="flattr;uid:honza;button:compact;"
+        title="Why you should use Heroku for your next start-up"
+        style="display:none"></a>
+
+</span>
+
+
+    </div>
+
+</body>
+</html>

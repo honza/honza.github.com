@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Thoughts on web programming, open source hacking and the like. Honza Pokorny is a web developer in Halifax, Canada" >
+  <meta name="viewport" content="width=550, maximum-scale=1.0" />
+  <meta name="readability-verification" content="cXteMUVfc4F4DwUmDFS563269y9HLgfxK34fvdMC"/>
+  <title>DjangoCon 2011 Take-Aways - Honza Pokorny</title>
+  <link rel="stylesheet" href="/media/screen.css" type="text/css" />
+  <link rel="alternate" type="application/atom+xml" title="News-Feed" href="http://honza.ca/atom.xml" />
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-4330851-12']);
+        _gaq.push(['_trackPageview']);
+
+        (function(){
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>    
+
+    <script type="text/javascript">
+    /* <![CDATA[ */
+        (function() {
+            var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+            
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto'
+            
+            t.parentNode.insertBefore(s, t);
+        })();
+    /* ]]> */
+    </script>
+        
+</head>
+<body>
+
+    <div id="wrap">
+        <div id="banner" class="body">
+            <h1><a href="/">Honza Pokorny</a></h1>
+        </div>
+        <p>Thoughts on web programming and the world of technology</p>
+        
+
+<p class="article_date date">
+    September 10, 2011
+</p>
+
+<div id="content">
+    <div class="section" id="djangocon-2011-take-aways">
+<h3>DjangoCon 2011&nbsp;Take-Aways</h3>
+<p>My employer, <a class="reference external" href="http://www.sheepdoginc.ca/">SheepDogInc</a>, sent me and a colleague of mine to <a class="reference external" href="http://djangocon.us/">DjangoCon
+2011</a>. It was my &#xFB01;rst developer conference and I had a blast. Here a few
+quick points about what the conference has clari&#xFB01;ed for&nbsp;me.</p>
+<div class="section" id="deploying-django">
+<h4>Deploying&nbsp;Django</h4>
+<p>Despite the Django of&#xFB01;cial documentation&#8217;s recommendation to use Apache and
+mod_wsgi, most people seem to deploy Django with nginx and gunicorn. This has
+been a pleasant surprise to me because I like it but though that it was too
+simple (or less robust than&nbsp;Apache).</p>
+</div>
+<div class="section" id="provisioning-servers">
+<h4>Provisioning&nbsp;servers</h4>
+<p>It seemed that everybody was talking about <a class="reference external" href="http://www.opscode.com/chef/">Chef</a> and automatic deployments.
+Instead of manually connecting to a server via ssh, you can run one command
+which will install all the necessary packages for your application (nginx,
+postgresql, etc) and con&#xFB01;gure them. It makes the whole process less
+error-prone. Also, you&#8217;re more likely to spin up a new <span class="caps">VM</span> on your development
+machine to try things out because you don&#8217;t have to thing about setting it up.
+Especially with tools like <a class="reference external" href="http://vagrantup.com/">vagrant</a>, it&#8217;s dead&nbsp;easy.</p>
+</div>
+<div class="section" id="pronouncing-things">
+<h4>Pronouncing&nbsp;things</h4>
+<p>When you read names of technical products, you can&#8217;t always be sure how it&#8217;s
+supposed to be&nbsp;pronounced.</p>
+<ul class="simple">
+<li>PyPI:&nbsp;pie-pee-eye</li>
+<li>PyPy:&nbsp;pie-pie</li>
+<li>wsgi:&nbsp;wizz-gy</li>
+<li>nginx:&nbsp;engine-x</li>
+</ul>
+<p>Did you go to DjangoCon 2011? What are your&nbsp;thoughts?</p>
+</div>
+</div>
+
+</div>
+
+<span class="article_buttons">
+    <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+    <a href="http://twitter.com/share" class="twitter-share-button"
+        data-url="http://honza.ca/2011/09/djangocon-2011-take-aways"
+        data-via="_honza"
+        data-text="DjangoCon 2011 Take-Aways"
+        data-count="none">Tweet</a>
+    <a href="http://honza.ca/2011/09/djangocon-2011-take-aways"
+        class="FlattrButton"
+        rev="flattr;uid:honza;button:compact;"
+        title="DjangoCon 2011 Take-Aways"
+        style="display:none"></a>
+
+</span>
+
+
+    </div>
+
+</body>
+</html>

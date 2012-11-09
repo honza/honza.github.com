@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Thoughts on web programming, open source hacking and the like. Honza Pokorny is a web developer in Halifax, Canada" >
+  <meta name="viewport" content="width=550, maximum-scale=1.0" />
+  <meta name="readability-verification" content="cXteMUVfc4F4DwUmDFS563269y9HLgfxK34fvdMC"/>
+  <title>The importance of git rebase - Honza Pokorny</title>
+  <link rel="stylesheet" href="/media/screen.css" type="text/css" />
+  <link rel="alternate" type="application/atom+xml" title="News-Feed" href="http://honza.ca/atom.xml" />
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-4330851-12']);
+        _gaq.push(['_trackPageview']);
+
+        (function(){
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>    
+
+    <script type="text/javascript">
+    /* <![CDATA[ */
+        (function() {
+            var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+            
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto'
+            
+            t.parentNode.insertBefore(s, t);
+        })();
+    /* ]]> */
+    </script>
+        
+</head>
+<body>
+
+    <div id="wrap">
+        <div id="banner" class="body">
+            <h1><a href="/">Honza Pokorny</a></h1>
+        </div>
+        <p>Thoughts on web programming and the world of technology</p>
+        
+
+<p class="article_date date">
+    May 14, 2011
+</p>
+
+<div id="content">
+    <div class="section" id="the-importance-of-git-rebase">
+<h3>The importance of git&nbsp;rebase</h3>
+<p>Git isn&#8217;t just something you have to put up with when working with other
+developers. Git is a wonderful tool that allows you to manage your code, its
+evolution and help you recover from mistakes should they arise. One of the
+things that people are intimidated by is <tt class="docutils literal">git rebase</tt>.</p>
+<p>Let&#8217;s look at an example. You&#8217;re working on a team with two other developers.
+You have a blessed repository that sits on your company&#8217;s server. Everyone is
+working on the same project but on slightly different tasks. Everyone is
+working on the master branch. You write a bit of code here and there, you
+commit a bunch of times and then it&#8217;s time to share your code with the rest of
+the team by pushing it up to the shared&nbsp;repository.</p>
+<p>You run <tt class="docutils literal">git push</tt> but receive an error saying that there are changes on the
+server and your commit cannot be fast-forwarded. No big deal, right? You run
+<tt class="docutils literal">git pull</tt> to download the changes that you don&#8217;t have and automatically
+merge your changes in. Then you can <tt class="docutils literal">git push</tt> again and it will work just&nbsp;&#xFB01;ne.</p>
+<p>The problem is that it makes the history of your project&nbsp;messy.</p>
+<div class="highlight"><pre><span class="go">* 9:35 - Nancy - Merge branch &#39;master&#39;</span>
+<span class="go">|\</span>
+<span class="go">* | 9:35 - Nancy - Second commit</span>
+<span class="go">| |</span>
+<span class="go">| * 9:30 - Brad - First commit</span>
+<span class="go">|/</span>
+<span class="go">* 9:12 - Nancy - First commit</span>
+</pre></div>
+<p>As you can see, there is this strange <strong>Merge branch &#8216;master&#8217;</strong> commit that&#8217;s a
+little out of place. If everyone on your team is regularly pushing to the
+shared repository, the history gets littered with these weird commits pretty&nbsp;quickly.</p>
+<p>You may have guessed that there is a better way. We&#8217;ll replay the above
+scenario using <tt class="docutils literal">git rebase</tt>. Instead of running <cite>git pull</cite>, we will run <tt class="docutils literal">git
+pull <span class="pre">&#8211;rebase</span></tt>. What this will do is temporarily hide the commits that only you
+have, then pull the changes from the remote repository, fast-forward (no merge
+commit) and then re-apply your commits on top of the current <span class="caps">HEAD</span>. The end
+result from a code point of view is the same, but the history is much&nbsp;cleaner:</p>
+<div class="highlight"><pre><span class="go">* 9:35 - Nancy - Second commit</span>
+<span class="go">* 9:30 - Brad - First commit</span>
+<span class="go">* 9:12 - Nancy - First commit</span>
+</pre></div>
+<p>See? Isn&#8217;t this so much better? The only difference to your current work&#xFB02;ow is
+that instead of <tt class="docutils literal">git pull</tt> you will run <tt class="docutils literal">git pull <span class="pre">&#8211;rebase</span></tt>.&nbsp;Easy!</p>
+</div>
+
+</div>
+
+<span class="article_buttons">
+    <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+    <a href="http://twitter.com/share" class="twitter-share-button"
+        data-url="http://honza.ca/2011/05/the-importance-of-git-rebase"
+        data-via="_honza"
+        data-text="The importance of git rebase"
+        data-count="none">Tweet</a>
+    <a href="http://honza.ca/2011/05/the-importance-of-git-rebase"
+        class="FlattrButton"
+        rev="flattr;uid:honza;button:compact;"
+        title="The importance of git rebase"
+        style="display:none"></a>
+
+</span>
+
+
+    </div>
+
+</body>
+</html>

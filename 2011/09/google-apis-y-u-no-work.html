@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Thoughts on web programming, open source hacking and the like. Honza Pokorny is a web developer in Halifax, Canada" >
+  <meta name="viewport" content="width=550, maximum-scale=1.0" />
+  <meta name="readability-verification" content="cXteMUVfc4F4DwUmDFS563269y9HLgfxK34fvdMC"/>
+  <title>Google APIs - Y U NO WORK - Honza Pokorny</title>
+  <link rel="stylesheet" href="/media/screen.css" type="text/css" />
+  <link rel="alternate" type="application/atom+xml" title="News-Feed" href="http://honza.ca/atom.xml" />
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-4330851-12']);
+        _gaq.push(['_trackPageview']);
+
+        (function(){
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>    
+
+    <script type="text/javascript">
+    /* <![CDATA[ */
+        (function() {
+            var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+            
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto'
+            
+            t.parentNode.insertBefore(s, t);
+        })();
+    /* ]]> */
+    </script>
+        
+</head>
+<body>
+
+    <div id="wrap">
+        <div id="banner" class="body">
+            <h1><a href="/">Honza Pokorny</a></h1>
+        </div>
+        <p>Thoughts on web programming and the world of technology</p>
+        
+
+<p class="article_date date">
+    September 13, 2011
+</p>
+
+<div id="content">
+    <div class="section" id="google-apis-y-u-no-work">
+<h3>Google APIs - Y U <span class="caps">NO</span>&nbsp;<span class="caps">WORK</span></h3>
+<p>Recently, at <a class="reference external" href="http://www.sheepdoginc.ca">SheepDogInc</a>, I have been working with various Google APIs,
+especially the Calendar <span class="caps">API</span>. The state of these APIs is rather <em>unfortunate</em>.
+Google is a web giant and you&#8217;d think that their APIs would be state-of-the-art
+given the number of professionals they&nbsp;employ.</p>
+<div class="section" id="documentation">
+<h4>Documentation</h4>
+<p>Before we go anywhere, let me just talk about the documentation for a minute.
+As an open-source software author and advocate, I always encourage developers
+to write extensive and good documentation. Somehow, Google didn&#8217;t get the demo.
+Most of their documentation is sparse, incorrect and out-of-date. If you would
+like to know what data a call returns, you&#8217;re better off just making the call
+and inspecting the response. This will actually save you time because the docs
+are probably wrong&nbsp;anyway.</p>
+</div>
+<div class="section" id="reliability">
+<h4>Reliability</h4>
+<p>Google is like the master of scalability. They have an estimated one million
+servers world-wide. And yet, they cannot consistently return a 200 to an <span class="caps">API</span>
+call. I have written horrible, horrible glue code and hacky workarounds to
+account for this unpredictability. Sometimes you will get a response, sometimes
+it will timeout, sometime you will get a&nbsp;404&#8230;</p>
+</div>
+<div class="section" id="engineering">
+<h4>Engineering</h4>
+<p>With all these amazing engineers, can Google really not make a better <span class="caps">API</span>?
+Honestly, if I was in a position to hire a person who worked on the Google <span class="caps">API</span>
+team, I would think twice. Seriously &#8212; test your app, keep your docs
+up-to-date, and mainly, stop pissing me&nbsp;off!</p>
+</div>
+</div>
+
+</div>
+
+<span class="article_buttons">
+    <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+    <a href="http://twitter.com/share" class="twitter-share-button"
+        data-url="http://honza.ca/2011/09/google-apis-y-u-no-work"
+        data-via="_honza"
+        data-text="Google APIs - Y U NO WORK"
+        data-count="none">Tweet</a>
+    <a href="http://honza.ca/2011/09/google-apis-y-u-no-work"
+        class="FlattrButton"
+        rev="flattr;uid:honza;button:compact;"
+        title="Google APIs - Y U NO WORK"
+        style="display:none"></a>
+
+</span>
+
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Thoughts on web programming, open source hacking and the like. Honza Pokorny is a web developer in Halifax, Canada" >
+  <meta name="viewport" content="width=550, maximum-scale=1.0" />
+  <meta name="readability-verification" content="cXteMUVfc4F4DwUmDFS563269y9HLgfxK34fvdMC"/>
+  <title>Why I love reStructuredText - Honza Pokorny</title>
+  <link rel="stylesheet" href="/media/screen.css" type="text/css" />
+  <link rel="alternate" type="application/atom+xml" title="News-Feed" href="http://honza.ca/atom.xml" />
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-4330851-12']);
+        _gaq.push(['_trackPageview']);
+
+        (function(){
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>    
+
+    <script type="text/javascript">
+    /* <![CDATA[ */
+        (function() {
+            var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+            
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto'
+            
+            t.parentNode.insertBefore(s, t);
+        })();
+    /* ]]> */
+    </script>
+        
+</head>
+<body>
+
+    <div id="wrap">
+        <div id="banner" class="body">
+            <h1><a href="/">Honza Pokorny</a></h1>
+        </div>
+        <p>Thoughts on web programming and the world of technology</p>
+        
+
+<p class="article_date date">
+    July 19, 2011
+</p>
+
+<div id="content">
+    <div class="section" id="why-i-love-restructuredtext">
+<h3>Why I love&nbsp;reStructuredText</h3>
+<p>A lot of geeks are using Markdown as their markup generation tool today. It&#8217;s
+simple, effective and used everywhere. It allows you to focus on your content
+and not on the <span class="caps">HTML</span> code that will be used to display the content on a web
+page. I have used Markdown extensively and its simplicity is appealing to&nbsp;me.</p>
+<p><a class="reference external" href="http://docutils.sourceforge.net/">reStructuredText</a> is similar to Markdown. If you know Markdown, it&#8217;s dead
+simple to learn to use <span class="caps">RST</span>. So, why bother? There are many things it can do
+that Markdown simple wasn&#8217;t designed to&nbsp;do.</p>
+<p>Let me give you a bit of a background. As a programmer, I like to write and
+save documents in text &#xFB01;les, using the vim editor. This way I can easily keep
+track of different versions of those documents and I will always be able to
+open them. The problem is that most non-technical people, such as my family or
+perhaps your clients, are trained to use Word documents or <span class="caps">PDF</span> &#xFB01;les. Most
+computer users wouldn&#8217;t know what to do with that &#xFB01;le and wouldn&#8217;t understand
+the syntax. I was looking for a way to write my documents in text &#xFB01;les and
+still be able to share those with others via Word/<span class="caps">PDF</span>. At &#xFB01;rst, I set up
+simple LaTex templates. Then, I thought about writing a script to parse
+Markdown &#xFB01;les to <span class="caps">PDF</span> via ReportLab. All very cumbersome and not quite&nbsp;right.</p>
+<p>Then, I dicovered <span class="caps">RST</span>. It&#8217;s written in Python which means that any
+customizations won&#8217;t be impossible. When I installed it, I was surprised that
+it came with a set of command line tools to parse <span class="caps">RST</span> &#xFB01;les to other common
+formats such&nbsp;as:</p>
+<ul class="simple">
+<li><span class="caps">HTML</span></li>
+<li><span class="caps">PDF</span> via&nbsp;Latex</li>
+<li><span class="caps">ODT</span> (OpenOf&#xFB01;ce&nbsp;format)</li>
+</ul>
+<p>I played around a bit with the tools and found them useful, but not great. The
+default formatting was ugly and it seemed like it would take too much work to
+manually edit the embedded <span class="caps">CSS</span>/Latex/<span class="caps">ODT</span>&nbsp;styles.</p>
+<p>I read through the documentation more and found out that you can set up global
+or project speci&#xFB01;c con&#xFB01;guration &#xFB01;les that <span class="caps">RST</span> parsers will look for by
+default. The syntax is simple and effective. This way, you only set up your
+styles once and then all you have to do to convert those styles&nbsp;is</p>
+<div class="highlight"><pre><span class="gp">$</span> rst2html.py doc.rst &gt; doc.html
+</pre></div>
+<p><span class="caps">RST</span> is extensible and you can con&#xFB01;gure it to do almost anything you want. Once
+good example is Pygments syntax highlighting. You can add a new directive and
+automatically run your code examples through Pygments. Or, you can customize
+the LaTex writer to use a speci&#xFB01;c font, page size and lots&nbsp;more.</p>
+</div>
+
+</div>
+
+<span class="article_buttons">
+    <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+    <a href="http://twitter.com/share" class="twitter-share-button"
+        data-url="http://honza.ca/2011/07/why-i-love-restructuredtext"
+        data-via="_honza"
+        data-text="Why I love reStructuredText"
+        data-count="none">Tweet</a>
+    <a href="http://honza.ca/2011/07/why-i-love-restructuredtext"
+        class="FlattrButton"
+        rev="flattr;uid:honza;button:compact;"
+        title="Why I love reStructuredText"
+        style="display:none"></a>
+
+</span>
+
+
+    </div>
+
+</body>
+</html>

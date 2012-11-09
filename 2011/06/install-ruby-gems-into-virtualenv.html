@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Thoughts on web programming, open source hacking and the like. Honza Pokorny is a web developer in Halifax, Canada" >
+  <meta name="viewport" content="width=550, maximum-scale=1.0" />
+  <meta name="readability-verification" content="cXteMUVfc4F4DwUmDFS563269y9HLgfxK34fvdMC"/>
+  <title>Install Ruby gems into virtualenv - Honza Pokorny</title>
+  <link rel="stylesheet" href="/media/screen.css" type="text/css" />
+  <link rel="alternate" type="application/atom+xml" title="News-Feed" href="http://honza.ca/atom.xml" />
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-4330851-12']);
+        _gaq.push(['_trackPageview']);
+
+        (function(){
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>    
+
+    <script type="text/javascript">
+    /* <![CDATA[ */
+        (function() {
+            var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+            
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto'
+            
+            t.parentNode.insertBefore(s, t);
+        })();
+    /* ]]> */
+    </script>
+        
+</head>
+<body>
+
+    <div id="wrap">
+        <div id="banner" class="body">
+            <h1><a href="/">Honza Pokorny</a></h1>
+        </div>
+        <p>Thoughts on web programming and the world of technology</p>
+        
+
+<p class="article_date date">
+    June 10, 2011
+</p>
+
+<div id="content">
+    <div class="section" id="install-ruby-gems-into-virtualenv">
+<h3>Install Ruby gems into&nbsp;virtualenv</h3>
+<p>You are a Python developer and every time you have to install a Ruby gem you
+throw up in your mouth a little. Wouldn&#8217;t it be nice if you could install Ruby
+gems into your virtualenv? Yeah, it&nbsp;would.</p>
+<p>Stick this in your virtualenv&#8217;s <tt class="docutils literal">postactivate</tt> script:</p>
+<div class="highlight"><pre><span class="nb">export </span><span class="nv">GEM_HOME</span><span class="o">=</span><span class="s2">&quot;$VIRTUAL_ENV/gems&quot;</span>
+<span class="nb">export </span><span class="nv">GEM_PATH</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+<span class="nb">export </span><span class="nv"><span class="caps">PATH</span></span><span class="o">=</span><span class="nv">$<span class="caps">PATH</span></span>:<span class="s2">&quot;$GEM_HOME/bin&quot;</span>
+</pre></div>
+<p>That&#8217;s it! You&#8217;re welcome.&nbsp;:)</p>
+<div class="section" id="credit">
+<h4>Credit</h4>
+<p>Give credit where credit is due. I stole this idea from <a class="reference external" href="http://twitter.com/idangazit">Idan Gazit</a> and
+made it&nbsp;better.</p>
+</div>
+</div>
+
+</div>
+
+<span class="article_buttons">
+    <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+    <a href="http://twitter.com/share" class="twitter-share-button"
+        data-url="http://honza.ca/2011/06/install-ruby-gems-into-virtualenv"
+        data-via="_honza"
+        data-text="Install Ruby gems into virtualenv"
+        data-count="none">Tweet</a>
+    <a href="http://honza.ca/2011/06/install-ruby-gems-into-virtualenv"
+        class="FlattrButton"
+        rev="flattr;uid:honza;button:compact;"
+        title="Install Ruby gems into virtualenv"
+        style="display:none"></a>
+
+</span>
+
+
+    </div>
+
+</body>
+</html>
