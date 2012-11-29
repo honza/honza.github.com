@@ -5,8 +5,6 @@
 Resume
 ======
 
-This page is available as a `PDF </resume.pdf>`_.
-
 Honza Pokorny
 
 Location: Halifax, Nova Scotia, Canada
@@ -17,9 +15,8 @@ Skills
 ~~~~~~
 
 * Programming languages
-    * **Advanced**: Python, Javascript
-    * **Intermediate**: Java, PHP
-    * **Learning**: Haskell, C
+    * **Main**: Python, Javascript
+    * **Learning**: Haskell, Clojure
 * Frameworks and Libraries
     * Django, Express.js, Backbone.js, jQuery, Underscore.js
 * Deployment
@@ -30,7 +27,6 @@ Skills
     * WSGI applications via Gunicorn and mod_wsgi
     * Heroku
     * Celery task queues with RabbitMQ and Redis
-    * Google App Engine (Python)
 * Mobile
     * Basics of Android and iOS
     * Responsive design
@@ -60,7 +56,7 @@ Employment
     * April 2012--Present
     * Django developer on the Amara subtitles team
 * **Software Developer** at `Survey Planet <http://www.surveyplanet.com>`_
-    * April 2012--Present
+    * April 2012--June 2012
     * Javascript developer
     * Frontend and backend
 * **Software Developer** at `SheepDogInc <http://sheepdoginc.ca>`_
@@ -134,4 +130,3 @@ GeoCaching.
 **Blog** --- http://honza.ca
 
 **Twitter** --- https://twitter.com/_honza
-
