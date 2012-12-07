@@ -14,8 +14,7 @@
 #
 # And get same sane default for vim.
 
-VIMRC="
-set nocompatible
+VIMRC="set nocompatible
 set hidden
 set nowrap
 set tabstop=4
@@ -33,7 +32,6 @@ set smarttab
 set hlsearch
 set incsearch
 set textwidth=79
-set relativenumber
 set nocursorline
 set nojoinspaces
 set cpoptions+=J
