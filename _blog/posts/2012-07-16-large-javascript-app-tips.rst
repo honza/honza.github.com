@@ -1,6 +1,6 @@
 :title: Large Javascript Application Tips
 :date: 2012-07-16 08:13
-:categories: Categories
+:categories: Javascript
 
 Large Javascript Application Tips
 =================================

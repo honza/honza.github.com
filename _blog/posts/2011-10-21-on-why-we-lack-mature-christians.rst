@@ -1,6 +1,6 @@
 :title: On why we lack mature Christians
 :date: 2011-10-21 20:15
-:categories: Categories
+:categories: theology
 
 On why we lack mature Christians
 ================================
