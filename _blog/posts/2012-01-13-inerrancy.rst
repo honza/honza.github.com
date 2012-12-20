@@ -24,7 +24,7 @@ Augustine:
     If you believe what you like in the gospel, and reject what you don't like,
     it is not the gospel you believe, but yourself.
 
-D. A. Carson:
+\D. A. Carson:
 
     Those who don't have a high view of Scripture, do not feel bound to obey
     it.

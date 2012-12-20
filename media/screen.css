@@ -34,7 +34,7 @@ h4 { font-size: 20px; }
     text-decoration: none;
 }
 
-p, blockquote, ol, ul {
+p, blockquote {
     width: 33em;
 }
 
