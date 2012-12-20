@@ -8,9 +8,12 @@
 <h2>{{ category }}</h2>
 
 <ul id="post-list">
-{% for post in posts %}
-<li><a href="{{ url }}/{{ post.url }}">{{ post.title }}</a></li>
-{% endfor %}
+    {% for article in posts %}        
+        <li>
+            <a href="{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title}}">{{ article.title }}</a>
+            <abbr class="published">{{ article.date }}</abbr>
+        </li>
+    {% endfor %}
 </ul>
 
 {% endblock %}

@@ -42,6 +42,14 @@ open source.  You can also find me on <a class="reference external" href="http:/
     <li><a href="/gpg_pubkey.txt">Public GPG key</a></li>
 </ul>
 
+<h2>Categories</h2>
+
+<p>
+    {% for k in categories.keys() %}
+        <a href="/category/{{ k|lower }}/">{{ k }}</a>{% if not loop.last %},{% endif %}
+    {% endfor %}
+</p>
+
 </div><!-- /#content -->
 
 {% endblock content %}
