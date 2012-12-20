@@ -5,9 +5,9 @@
 Gender inclusive language
 =========================
 
-In a recent sermon at our church, a pastor student said to us that we are no
-longer able to say that Jesus will make his disciples *fishers of men*.
-Rather, she suggested, we should use the politically correct phrase *fishers of
+In a `recent sermon`_ at our church, a pastor student said to us that we are no
+longer able to say that Jesus will make his disciples *fishers of men*. Rather,
+she suggested, we should use the politically correct phrase *fishers of
 people*.
 
 There is always talk of gender-inclusive language when it comes to Bible
@@ -28,3 +28,5 @@ sexist in this way that don't seem to bother anyone.
     manning my table."  Was she really?  Shouldn't she have said *womanning*?
 
 A little absurd.
+
+.. _recent sermon: http://www.bedfordbaptist.ca/services/156
