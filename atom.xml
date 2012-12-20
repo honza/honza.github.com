@@ -4,9 +4,44 @@
     <title>Honza Pokorny - Thoughts on web development</title>
     <link href="http://honza.ca/atom.xml" rel="self"/>
     <link href="http://honza.ca"/>
-    <updated>2012-11-29T15:37:51Z</updated>
+    <updated>2012-12-20T00:29:51Z</updated>
     <id>http://honza.ca</id>
 
+    
+        <entry>
+            <title>Gender inclusive language</title>
+            <author><name>Honza Pokorny</name></author>
+            <link href="http://honza.ca/2012/12/gender-inclusive-language"/>
+            <updated>2012-12-19T20:21:00Z</updated>
+            <published>2012-12-19T20:21:00Z</published>
+            <id>http://honza.ca/2012/12/gender-inclusive-language</id>
+
+            <content type="html">
+                <div class="section" id="gender-inclusive-language">
+<h3>Gender inclusive&nbsp;language</h3>
+<p>In a recent sermon at our church, a pastor student said to us that we are no
+longer able to say that Jesus will make his disciples <em>&#xFB01;shers of men</em>.
+Rather, she suggested, we should use the politically correct phrase <em>&#xFB01;shers of
+people</em>.</p>
+<p>There is always talk of gender-inclusive language when it comes to Bible
+translation.  But this one seems a little too far.  Or it doesn&#8217;t feel&nbsp;right.</p>
+<p>As I have been thing of this, I came across other things we say that that are
+sexist in this way that don&#8217;t seem to bother&nbsp;anyone.</p>
+<ol class="arabic simple">
+<li>Watch any detective show and without fail, the perpetrator or killer will
+be called <em>he</em> and <em>him</em>.  Women never&nbsp;kill.</li>
+<li>Within the committees of our church, we longer say <em>chairman</em> but
+<em>chairperson</em>.  If we were to follow that same logic, we should refer to
+<em>snowmen</em> as <em>snowpeople</em>.</li>
+<li>The other day, my family visited my mother-in-law while she was selling her
+home <span class="amp">&amp;</span> gift products at an event.  At one point, she said &#8220;&#8230; I can&#8217;t I&#8217;m
+manning my table.&#8221;  Was she really?  Shouldn&#8217;t she have said <em>womanning</em>?</li>
+</ol>
+<p>A little&nbsp;absurd.</p>
+</div>
+
+            </content>
+        </entry>
     
         <entry>
             <title>Mutt sidebar labels</title>
@@ -1126,6 +1161,46 @@ database change needed at all. How cool is&nbsp;that?</p>
         </entry>
     
         <entry>
+            <title>Inerrancy</title>
+            <author><name>Honza Pokorny</name></author>
+            <link href="http://honza.ca/2012/01/inerrancy"/>
+            <updated>2012-01-13T20:13:00Z</updated>
+            <published>2012-01-13T20:13:00Z</published>
+            <id>http://honza.ca/2012/01/inerrancy</id>
+
+            <content type="html">
+                <div class="section" id="inerrancy">
+<h3>Inerrancy</h3>
+<p>As evangelical Christians, we believe in what is called the inerrancy of the
+Bible. This means that we believe that the Word of God contains no mistakes. I
+love the way pastor Mark Driscoll puts&nbsp;it:</p>
+<blockquote>
+If we see something in the Bible that we don&#8217;t agree with, it means we&#8217;re
+wrong.</blockquote>
+<p>I am continually amazed at how many people will dismiss entire passages in the
+Bible as silly or primitive. We are intelligent modern people, we don&#8217;t believe
+in fairy tales. We have democracy now. We believe in&nbsp;equality.</p>
+<p>Let me remind you that the Bible is the book that God wrote. Is God different
+today and&nbsp;yesterday?</p>
+<p>Augustine:</p>
+<blockquote>
+If you believe what you like in the gospel, and reject what you don&#8217;t like,
+it is not the gospel you believe, but yourself.</blockquote>
+<ol class="upperalpha" start="4">
+<li><ol class="&#xFB01;rst upperalpha simple">
+<li>Carson:</li>
+</ol>
+<blockquote>
+<p>Those who don&#8217;t have a high view of Scripture, do not feel bound to obey&nbsp;it.</p>
+</blockquote>
+</li>
+</ol>
+</div>
+
+            </content>
+        </entry>
+    
+        <entry>
             <title>Writing node.js modules</title>
             <author><name>Honza Pokorny</name></author>
             <link href="http://honza.ca/2012/01/writing-nodejs-modules"/>
@@ -1168,6 +1243,72 @@ and you can &#xFB01;nd it on both Github and&nbsp;npmjs.</p>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;All done!&#39;</span><span class="p">);</span>
 <span class="p">});</span>
 </pre></div>
+</div>
+
+            </content>
+        </entry>
+    
+        <entry>
+            <title>Interpretation mistakes</title>
+            <author><name>Honza Pokorny</name></author>
+            <link href="http://honza.ca/2011/12/interpretation-mistakes"/>
+            <updated>2011-12-22T20:16:00Z</updated>
+            <published>2011-12-22T20:16:00Z</published>
+            <id>http://honza.ca/2011/12/interpretation-mistakes</id>
+
+            <content type="html">
+                <div class="section" id="interpretation-mistakes">
+<h3>Interpretation&nbsp;mistakes</h3>
+<p>Many people today who claim to be and likely are sincere followers of Jesus
+Christ aren&#8217;t properly educated in the discipline of biblical exegesis and
+interpretation. Of course not everyone can or wants to go to seminary to study
+this topic. We can&#8217;t fault people to be ignorant about rather complex&nbsp;matters.</p>
+<p>However, an introduction to the art of interpretation wouldn&#8217;t hurt anyone. My
+reasoning behind this assertion is that the lack of basic understanding of
+exegesis causes <em>unnecessary</em> con&#xFB02;ict within the church. In the rest of this
+articles, I would like to show an example of this. Please bear in mind that the
+arguments presented here aren&#8217;t meant to convince anyone of any particular
+position, but rather, to show how dif&#xFB01;cult these arguments can&nbsp;be.</p>
+<p>Let&#8217;s dive right in. Many people in the church today argue over the issue of
+women&#8217;s position within the Christian society. Some argue that they are equal
+to men in all regards and some argue that God created men and women in his
+image but for different purposes. This becomes an issue in two particular
+passages: Ephesians 5 where we learn of how the husband and the wife are to
+conduct themselves in the marriage; and 1 Timothy 2 where Paul forbids women
+from entering into the of&#xFB01;ce of an&nbsp;elder.</p>
+<p>Let&#8217;s look at the Ephesians passage &#xFB01;rst. When women read that passage, the
+&#xFB01;rst thing they think is that they are by no means going submit to their
+husbands because they live in a society that doesn&#8217;t discriminated based on
+gender. They dismiss the biblical account based on how they see themselves in
+the 21st century society. The Pauline theology is deemed out-dated and
+irrelevant to the modern person. If instead they read on and paid attention to
+what the husband&#8217;s responsibilities are, they might learn that much greater
+burden is placed upon him. The husband is to love his wife with the same love
+that Christ loves the church! The same love with which the Father loves the
+Son. The sacri&#xFB01;cial love that allowed Jesus to suffer and die for undeserving
+sinners. And that&#8217;s no small&nbsp;task!</p>
+<p>The passage from Timothy is dismissed on similar grounds. A women is as able as
+a man and shouldn&#8217;t be told to refrain from entering into of&#xFB01;ce based on her
+being a woman. However, this passage says nothing of competency or
+intelligence. The passage in question in question reads as&nbsp;follows:</p>
+<blockquote>
+I do not permit a woman to teach or to exercise authority over a man;
+rather, she is to remain quiet. For Adam was formed &#xFB01;rst, then Eve; and
+Adam was not deceived, but the woman was deceived and became a
+transgressor. 1 Timothy 2:12-14</blockquote>
+<p>In this case, it&#8217;s a question of language that is being ignored. What is Paul&#8217;s
+reason for forbidding the woman from teaching? The order of creation. When God
+was &#xFB01;nished creating the world, he announced that it was very good. This was
+before the sin entered into the world. Paul <em>grounds</em> his argument in the work
+of God. He follows God&#8217;s hand in history and is consistent with it. This means
+that we cannot dismiss this instruction as having come from a particular city
+where women were causing problems and meaning that it doesn&#8217;t apply to&nbsp;us.</p>
+<p>The biggest problem in today&#8217;s layperson interpretation is that they project
+their own ideas onto the biblical text and refuse to accept those verses and
+ideas that don&#8217;t align with they own. This is a very &#xFB02;awed approach. Rather,
+we should approach the Bible with an attitude of awe, expecting the God of the
+universe to speak to use in his in&#xFB01;nite wisdom. Sadly, a great many people
+today choose to ignore their God and pursue their own egos and&nbsp;agendas.</p>
 </div>
 
             </content>
@@ -1307,6 +1448,69 @@ data is and how you should get it. In the case of <a class="reference external" 
         </entry>
     
         <entry>
+            <title>On why we lack mature Christians</title>
+            <author><name>Honza Pokorny</name></author>
+            <link href="http://honza.ca/2011/10/on-why-we-lack-mature-christians"/>
+            <updated>2011-10-21T20:15:00Z</updated>
+            <published>2011-10-21T20:15:00Z</published>
+            <id>http://honza.ca/2011/10/on-why-we-lack-mature-christians</id>
+
+            <content type="html">
+                <div class="section" id="on-why-we-lack-mature-christians">
+<h3>On why we lack mature&nbsp;Christians</h3>
+<p>The leadership in the local church is often made up of very incompetent people.
+I don&#8217;t mean incompetent in the sense that they can&#8217;t lead. I mean in their
+knowledge and understanding of theology in general and of the gospel in
+particular. The Bible says that the leaders in the church should be &#xFB01;rst and
+foremost able to teach. If you can&#8217;t teach the Bible, perform mature exegesis
+on a text or even struggle to &#xFB01;nd a book in the Bible, you shouldn&#8217;t lead.
+Yet, this happens all the time. I have a theory on how this&nbsp;happens.</p>
+<p>The local church often runs programs that are designed to attract seekers.
+People come and are lead to Christ. They pray the sinner&#8217;s prayer and are
+introduced to church life. The original group of evangelists moves on to reach
+new people and the new believer is left mostly alone in the sea of church
+goers. There is rarely any follow-up. These people are left to themselves. New
+believers tend to be very excited about their new-found faith and they read
+their Bibles whenever they get a&nbsp;chance.</p>
+<p>Time goes on and these new believers learn to walk the walk and talk the talk
+in the church. They learn some key concepts about how church life works. They
+learn stories from the gospels, they memorize a few verses from Paul&#8217;s epistles
+and they feel good about themselves. They listen to sermons, they go to prayer
+meetings and help out where they can. On the outside, it seems that they have
+it all &#xFB01;gured out and their walk with Christ has been&nbsp;fruitful.</p>
+<p>Once they have been in the church for some 30 years, they naturally gravitate
+towards leadership roles. They are nominated to serve on the deacon&#8217;s board or
+on the &#xFB01;nance committee. Their sense of self-worth rises. They begin to think
+that since they made it to their new leadership role, they must be a really
+good Christian. After all, they have been in the church for over 30 years. They
+have been coming every Sunday, participated in programs and lots&nbsp;more.</p>
+<p>However, they haven&#8217;t been under good Bible teaching. They haven&#8217;t read their
+Bibles in years because they&#8217;ve got it all &#xFB01;gured out. They know all the
+stories and parables. They know the hymns and worship songs. But they don&#8217;t
+know basic Christian doctrine. They wouldn&#8217;t be able to explain to you the
+doctrine of sancti&#xFB01;cation, justi&#xFB01;cation or redemption. They lack
+understanding of the divine&nbsp;economy.</p>
+<p>Moreover, they haven&#8217;t walked with Christ and therefore lack the practical
+knowledge of his grace. They don&#8217;t pray on a daily basis to align their hearts
+with the will of God. They are proud and feel a strong sense of entitlement and
+deservedness. They don&#8217;t re&#xFB02;ect on the depths of God and his royal
+magni&#xFB01;cence. They are obsessed with legalism and rule-keeping. They think that
+if they were able to make this far, anyone can. They value tradition. Why
+change things if they have worked for so many years? They aren&#8217;t willing to
+learn because they know it all. They won&#8217;t come to basic Christianity classes
+because it would be boring for&nbsp;them.</p>
+<p>The saddest thing about this reality is that we allow these unlearned people to
+make decisions that impact the life of the wider&nbsp;congregation.</p>
+<p>What about those who grow up in the church? They have even tougher times
+getting to the truth because of the older generation that is in power. If you
+don&#8217;t read the Bible for yourself, why would you read it for to your children?
+If you don&#8217;t understand a particular text in the Scriptures, how could your&nbsp;wife?</p>
+</div>
+
+            </content>
+        </entry>
+    
+        <entry>
             <title>Steve Jobs and Richard Stallman</title>
             <author><name>Honza Pokorny</name></author>
             <link href="http://honza.ca/2011/10/steve-jobs-and-richard-stallman"/>
@@ -1333,6 +1537,91 @@ today. He has a <a class="reference external" href="http://en.wikipedia.org/wiki
 programming genius. His work on the <span class="caps">GCC</span> compiler is&nbsp;substantial.</p>
 <p>Articles like the on <a class="reference external" href="http://www.readwriteweb.com/enterprise/2011/10/why-fsf-founder-richard-stallm.php">ReadWriteWeb</a> are very disappointing. Let&#8217;s all be
 civil and respectful of each&nbsp;other.</p>
+</div>
+
+            </content>
+        </entry>
+    
+        <entry>
+            <title>On heaven and boredom</title>
+            <author><name>Honza Pokorny</name></author>
+            <link href="http://honza.ca/2011/10/on-heaven-and-boredom"/>
+            <updated>2011-10-05T20:09:00Z</updated>
+            <published>2011-10-05T20:09:00Z</published>
+            <id>http://honza.ca/2011/10/on-heaven-and-boredom</id>
+
+            <content type="html">
+                <div class="section" id="on-heaven-and-boredom">
+<h3>On heaven and&nbsp;boredom</h3>
+<p>One of the complaints many atheists raise against becoming a Christian is the
+fact that heaven will be boring. They have in their minds this idea of us in
+heaven as chubby toddlers in diapers playing harps and &#xFB02;ying around. To me
+that would be&nbsp;hell.</p>
+<p>I would like to talk to you about why I think that heaven won&#8217;t be boring. Let
+me start by telling you a how my high school teacher explained to us the
+concept of geometric parallels. She said they were two lines that didn&#8217;t
+intersect or touch. She also made a side note that the two parallels will
+intersect at one speci&#xFB01;c point, being&nbsp;in&#xFB01;nity.</p>
+<p>It takes the two parallel lines all of in&#xFB01;nity to reach each other. Now, keep
+that in mind while we look at some&nbsp;Scripture.</p>
+<blockquote>
+Behold, the dwelling place of God is with man. He will dwell with them, and
+they will be his people, and God himself will be with them as their God. &#8211;
+Revelation 21:3, <span class="caps">ESV</span></blockquote>
+<p>The Bible says that God will live with us, among us, so we can know Him fully.
+God is omnipotent, omniscient and in&#xFB01;nite. To comprehend all of the depths of
+God, all his wisdom, love and grace, we will need a long&nbsp;time.</p>
+<p>How long? Well, it&#8217;s easy. Exactly <em>one eternity</em>.</p>
+</div>
+
+            </content>
+        </entry>
+    
+        <entry>
+            <title>Bible translations and the Christian life</title>
+            <author><name>Honza Pokorny</name></author>
+            <link href="http://honza.ca/2011/10/bible-translations-and-the-christian-life"/>
+            <updated>2011-10-01T20:16:00Z</updated>
+            <published>2011-10-01T20:16:00Z</published>
+            <id>http://honza.ca/2011/10/bible-translations-and-the-christian-life</id>
+
+            <content type="html">
+                <div class="section" id="bible-translations-and-the-christian-life">
+<h3>Bible translations and the Christian&nbsp;life</h3>
+<p>There are many English translations of the Bible. They were all made for
+different audiences. They employ different translation techniques. Each
+Christian celebrity endorses a different&nbsp;translation.</p>
+<p>The truth of the matter is that a certain Bible translation can be elevated to
+such a degree that the common believer is made to believe that the translation
+contains actual words of God. You need to realize that a translation is just
+that: a translation. No matter how many scholars with the best schools you
+commission to create this new, true translation of the Scriptures, it is bound
+to be imperfect in some way. One language cannot accurately convey the same
+meaning as an another. Each language carries with it a certain culture, sense
+of humor and ways of expressing common&nbsp;idioms.</p>
+<p>This is perhaps a little hard to understand if you only speak one language. If
+you have had to learn English and you moved to foreign country, this idea may
+be clearer to&nbsp;you.</p>
+<p>So, where do you go from here? As you may know, the Bible was written in three
+languages: Hebrew, Aramaic and Greek. As Christians, we focus most of our
+attention on the New Testament which is written in&nbsp;Greek.</p>
+<p>I am going to suggest that if you are even remotely interested in serious study
+of the Word of God that you invest a few years of your life and learn New
+Testament Greek. Now you are thinking that I&#8217;m completely crazy. Bear with me
+for a&nbsp;moment.</p>
+<p>The vocabulary of the New Testament is &#xFB01;nal. You don&#8217;t need to learn words
+like <em>airplane</em>, <em>computer</em> or <em>email</em>. If you learn only 300 Greek words, you
+will understand over 80% of the New Testament; double the amount and you will
+get up to 90%. I&#8217;m con&#xFB01;dent that after a year of casual study of Greek you can
+begin to read some of the simpler passages (like 1 John). After another year,
+you will read Paul&#8217;s writing without much&nbsp;hindrance.</p>
+<p>After 3-4 years, you will be ready to abandon reading the New Testament in
+English altogether. Let that sink&nbsp;in.</p>
+<p>There are plenty of good resource for learning New Testament Greek. Both online
+and in&nbsp;print.</p>
+<p>One last thing: if you are in your twenties or event thirties and you expect to
+be alive for another 50-60 years, wouldn&#8217;t it be a good investment to spend a
+few years learning the language Paul, Luke, John and others spoke and wrote&nbsp;in?</p>
 </div>
 
             </content>
@@ -1687,6 +1976,60 @@ the LaTex writer to use a speci&#xFB01;c font, page size and lots&nbsp;more.</p>
         </entry>
     
         <entry>
+            <title>On prayer and the closing of the eyes</title>
+            <author><name>Honza Pokorny</name></author>
+            <link href="http://honza.ca/2011/07/on-prayer-and-the-closing-of-the-eyes"/>
+            <updated>2011-07-18T20:13:00Z</updated>
+            <published>2011-07-18T20:13:00Z</published>
+            <id>http://honza.ca/2011/07/on-prayer-and-the-closing-of-the-eyes</id>
+
+            <content type="html">
+                <div class="section" id="on-prayer-and-the-closing-of-the-eyes">
+<h3>On prayer and the closing of the&nbsp;eyes</h3>
+<p>Virtually every Christian has been taught that prayer is when you talk to God
+with your eyes <em>closed</em>. We tell our children, &#8220;Close your eyes and we will
+pray&#8221;. The idea of having your eyes closed when you pray is so engrained in our
+culture that we don&#8217;t give it a second&nbsp;thought.</p>
+<p>As protestant Christians, we believe that the Bible contains actual words of
+God. We also believe in the suf&#xFB01;ciency of the Bible&#8217;s instruction. Let&#8217;s
+survey the Scriptures and see what the proper mode and posture is when we&nbsp;pray.</p>
+<p>In the English Standard Version translation of the Bible, the word <em>pray</em>
+occurs ninety times. Fifty-three times of that is in the New Testament. These
+verses describe prayer as urgent and emotional. For example, the Psalmist&nbsp;exclaims:</p>
+<blockquote>
+Give attention to the sound of my cry, my King and my God, for to you do I
+pray. (Psalm 5:2, <span class="caps">ESV</span>)</blockquote>
+<p>In the New Testament, the disciples ask Jesus to teach them how to pray. The
+apostle Paul prays for his coworkers in the gospel. Jesus often prayed in
+private, away from the crowds. However, we are not told any speci&#xFB01;cs. Jesus
+also prayed in public. For example, in the story of feeding of the &#xFB01;ve&nbsp;thousand:</p>
+<blockquote>
+Then he ordered the crowds to sit down on the grass, and taking the &#xFB01;ve
+loaves and the two &#xFB01;sh, he looked up to heaven and said a blessing.
+(Matthew 14:19, <span class="caps">ESV</span>)</blockquote>
+<p>Jesus is looking up to heaven, possibly stretching his arms and is speaking to
+his father. The lifting of hands or arms is also described in 1 Timothy where
+Paul is telling Timothy how a church service should be&nbsp;conducted:</p>
+<blockquote>
+I desire then that in every place the men should pray, lifting holy hands
+without anger or quarreling; (1 Timothy 2:8, <span class="caps">ESV</span>)</blockquote>
+<p>The Bible records many occasions where people pray to their God but in no
+instance does it describe or prescribe that the believer&#8217;s eyes be closed. Why
+do we do it then? I can think of a few different reasons. One, we don&#8217;t want to
+embarrass the one leading the prayer; two, it helps us focus on the task at
+hand; or, three, we want others around us to know that we are praying and
+shouldn&#8217;t be&nbsp;disturbed.</p>
+<p>These reasons are understandable and certainly not sinful in any way. But I do
+believe that we rob ourselves of some joy by closing our eyes. If we only ever
+pray with our eyes closed, we won&#8217;t pray very often. Prayer becomes a holy
+moment that we plan ahead. Your prayer life should be an ongoing conversation
+with your Father. Jesus prayed constantly. And so need&nbsp;we.</p>
+</div>
+
+            </content>
+        </entry>
+    
+        <entry>
             <title>What is a blog?</title>
             <author><name>Honza Pokorny</name></author>
             <link href="http://honza.ca/2011/07/what-is-a-blog"/>
@@ -1745,7 +2088,7 @@ don&#8217;t care about to some stupid thing a mutual friend posted.&#8221;
         </entry>
     
         <entry>
-            <title>Why I don&#39;t like the Ruby community</title>
+            <title>Why I don't like the Ruby community</title>
             <author><name>Honza Pokorny</name></author>
             <link href="http://honza.ca/2011/06/why-i-dont-like-the-ruby-community"/>
             <updated>2011-06-20T20:20:00Z</updated>
