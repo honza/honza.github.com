@@ -10,7 +10,7 @@
 <ul id="post-list">
     {% for article in posts %}        
         <li>
-            <a href="{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title}}">{{ article.title }}</a>
+            <a href="/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title}}">{{ article.title }}</a>
             <abbr class="published">{{ article.date }}</abbr>
         </li>
     {% endfor %}

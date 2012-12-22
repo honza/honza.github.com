@@ -13,7 +13,7 @@
         {% for article in posts %}        
             {% if not article|in_category("theology") %}
             <li>
-                <a href="{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title}}">{{ article.title }}</a>
+                <a href="/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title}}">{{ article.title }}</a>
                 <abbr class="published">{{ article.date }}</abbr>
             </li>
             {% endif %}
