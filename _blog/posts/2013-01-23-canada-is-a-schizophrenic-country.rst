@@ -15,7 +15,7 @@ Canadian spelling is stuck half way between British spelling and American
 spelling.  Canadians will say:
 
 * colour, favourite, honour (which are all British)
-* program, realize, licence (which are all American)
+* program, realize (which are all American)
 
 Measuring units
 ---------------
