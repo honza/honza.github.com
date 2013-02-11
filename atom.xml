@@ -4,7 +4,7 @@
     <title>Honza Pokorny - Thoughts on web development</title>
     <link href="http://honza.ca/atom.xml" rel="self"/>
     <link href="http://honza.ca"/>
-    <updated>2013-01-24T23:28:26Z</updated>
+    <updated>2013-02-11T14:31:58Z</updated>
     <id>http://honza.ca</id>
 
     
@@ -294,6 +294,21 @@ accomplished as a simple one-liner.  This is actually a pretty elegant&amp;nbsp;
     &lt;span class=&#34;kt&#34;&gt;X&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;putStr&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;convert&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;name&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This clocks in at 8.5 seconds.  Not bad at&amp;nbsp;all.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;span class=&#34;caps&#34;&gt;EDIT&lt;/span&gt; 5&lt;/strong&gt;: Someone pointed out that I didn&amp;#8217;t include a version of the
+one-liner that uses &lt;tt class=&#34;docutils literal&#34;&gt;ByteString&lt;/tt&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;span class=&#34;kr&#34;&gt;module&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;Main&lt;/span&gt; &lt;span class=&#34;kr&#34;&gt;where&lt;/span&gt;
+
+&lt;span class=&#34;kr&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;Data.Char&lt;/span&gt;
+&lt;span class=&#34;kr&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;quali&amp;#xFB01;ed&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;Data.ByteString.Char8&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;as&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;T&lt;/span&gt;
+
+&lt;span class=&#34;nf&#34;&gt;convert&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;::&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;ByteString&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;ByteString&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;convert&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tail&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;scanl&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;kr&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;isSpace&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;kr&#34;&gt;then&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;toUpper&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;kr&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;sc&#34;&gt;&amp;#39; &amp;#39;&lt;/span&gt;
+
+&lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kr&#34;&gt;do&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;name&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;readFile&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;&amp;#xFB01;le&amp;quot;&lt;/span&gt;
+&lt;span class=&#34;kt&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;putStr&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;convert&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;name&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This clocks in at 3.5s on my machine.  Pretty&amp;nbsp;fast!&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;section&#34; id=&#34;python&#34;&gt;
 &lt;h4&gt;Python&lt;/h4&gt;
@@ -451,6 +466,7 @@ Haskell - Text (Lazy)         27s
 Haskell - ByteString          27s
 Haskell - ByteString (Lazy)   10s
 Haskell - Text, scanl (Lazy)  8.5s
+Haskell - ByteString, scanl   3.5s
 
 Python -                      6s
 Python - One line, titl()     2s

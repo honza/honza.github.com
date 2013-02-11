@@ -167,6 +167,25 @@ solution.
 
 This clocks in at 8.5 seconds.  Not bad at all.
 
+**EDIT 5**: Someone pointed out that I didn't include a version of the
+one-liner that uses ``ByteString``.
+
+.. code-block:: haskell
+
+    module Main where
+
+    import Data.Char
+    import qualified Data.ByteString.Char8 as T
+
+    convert :: T.ByteString -> T.ByteString
+    convert = T.tail . T.scanl (\a b -> if isSpace a then toUpper b else b) ' '
+
+    main = do
+    name <- T.readFile "file"
+    T.putStr $ convert name
+
+This clocks in at 3.5s on my machine.  Pretty fast!
+
 Python
 ------
 
@@ -358,6 +377,7 @@ Recap
     Haskell - ByteString          27s
     Haskell - ByteString (Lazy)   10s
     Haskell - Text, scanl (Lazy)  8.5s
+    Haskell - ByteString, scanl   3.5s
 
     Python -                      6s
     Python - One line, titl()     2s
