@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Thoughts on web programming, open source hacking and the like. Honza Pokorny is a web developer in Halifax, Canada" >
+  <meta name="viewport" content="width=550, maximum-scale=1.0" />
+  <meta name="readability-verification" content="cXteMUVfc4F4DwUmDFS563269y9HLgfxK34fvdMC"/>
+  <title>Haskell vs Clojure syntax - Honza Pokorny</title>
+  <link rel="stylesheet" href="/media/screen.css" type="text/css" />
+  <link rel="alternate" type="application/atom+xml" title="News-Feed" href="http://honza.ca/atom.xml" />
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-4330851-12']);
+        _gaq.push(['_trackPageview']);
+
+        (function(){
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>    
+
+    <script type="text/javascript">
+    /* <![CDATA[ */
+        (function() {
+            var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+            
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto'
+            
+            t.parentNode.insertBefore(s, t);
+        })();
+    /* ]]> */
+    </script>
+        
+</head>
+<body>
+
+    <div id="wrap">
+        <div id="banner" class="body">
+            <h1><a href="/">Honza Pokorny</a></h1>
+        </div>
+        <p>Thoughts on web programming and the world of technology</p>
+        
+
+<p class="article_date date">
+    February 12, 2013
+</p>
+
+<div id="content">
+    <div class="section" id="haskell-vs-clojure-syntax">
+<h3>Haskell vs Clojure&nbsp;syntax</h3>
+<p>Clojure has virtually zero syntax.  What I mean by that is that all structures
+look the same: the &#xFB01;rst item in a list is the function and the rest are the
+arguments.  This is true for variable assignment, if statements, data
+structures and functions&nbsp;themselves.</p>
+<div class="highlight"><pre><span class="p">(</span><span class="nb">+ </span><span class="mi">1</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="p">(</span><span class="kd">defn </span><span class="nv">greet</span> <span class="p">[</span><span class="nv">name</span><span class="p">]</span>
+  <span class="p">(</span><span class="nb">str </span><span class="s">&quot;Hello &quot;</span> <span class="nv">name</span><span class="p">))</span>
+
+<span class="p">(</span><span class="k">def </span><span class="nv">user-count</span> <span class="mi">334</span><span class="p">)</span>
+</pre></div>
+<p>However, before you can do anything useful in Haskell, you must learn all kinds
+of crazy syntax: function de&#xFB01;nitions, pattern matching, do forms, functors,
+monads, typeclasses,&nbsp;&#8230;</p>
+<div class="highlight"><pre><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="o">&lt;$&gt;</span> <span class="kt">Just</span> <span class="mi">2</span> <span class="o">&lt;*&gt;</span> <span class="kt">Just</span> <span class="mi">8</span>
+
+<span class="kt">Nothing</span> <span class="o">&gt;&gt;=</span> <span class="nf">\</span><span class="n">x</span> <span class="ow">-&gt;</span> <span class="n">return</span> <span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="kr">instance</span> <span class="kt">Applicative</span> <span class="kt">Maybe</span> <span class="kr">where</span>
+    <span class="n">pure</span> <span class="ow">=</span> <span class="kt">Just</span>
+    <span class="kt">Nothing</span> <span class="o">&lt;*&gt;</span> <span class="kr">_</span> <span class="ow">=</span> <span class="kt">Nothing</span>
+    <span class="p">(</span><span class="kt">Just</span> <span class="n">f</span><span class="p">)</span> <span class="o">&lt;*&gt;</span> <span class="n">something</span> <span class="ow">=</span> <span class="n">fmap</span> <span class="n">f</span> <span class="n">something</span>
+</pre></div>
+<p>This is why I &#xFB01;nd Haskell extremely hard to learn.  It&#8217;s not because of
+monads, recursion or functional programming concepts.  It&#8217;s because of the huge
+amount of special syntax.  And you need to learn a lot of it before you can do
+something&nbsp;useful.</p>
+</div>
+
+</div>
+
+<span class="article_buttons">
+    <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+    <a href="http://twitter.com/share" class="twitter-share-button"
+        data-url="http://honza.ca/2013/02/haskell-vs-clojure-syntax"
+        data-via="_honza"
+        data-text="Haskell vs Clojure syntax"
+        data-count="none">Tweet</a>
+    <a href="http://honza.ca/2013/02/haskell-vs-clojure-syntax"
+        class="FlattrButton"
+        rev="flattr;uid:honza;button:compact;"
+        title="Haskell vs Clojure syntax"
+        style="display:none"></a>
+
+</span>
+
+
+    </div>
+
+</body>
+</html>
