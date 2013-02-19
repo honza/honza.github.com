@@ -7,7 +7,9 @@ Resume
 
 Honza Pokorny
 
-Location: Halifax, Nova Scotia, Canada
+Location: `Halifax, Nova Scotia, Canada`_
+
+.. _Halifax, Nova Scotia, Canada: https://maps.google.com/maps?q=halifax,+ns,+canada&hl=en&sll=44.741732,-63.240539&sspn=1.174435,2.469177
 
 Email: me@honza.ca
 
@@ -123,9 +125,8 @@ SheepDogInc
 Personal
 ~~~~~~~~
 
-I'm originally from the Czech republic.  I'm married to a Canadian and have a
-toddler son.  When I'm not programming, I enjoy photography, movies and
-GeoCaching.
+I'm originally from the Czech republic.  I'm married to a Canadian and have two
+kids.  When I'm not programming, I enjoy photography, movies and GeoCaching.
 
 **Blog** --- http://honza.ca
 

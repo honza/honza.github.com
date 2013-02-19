@@ -14,6 +14,7 @@ I love open source and here some of my more notable projects.
 * `Writer.vim <https://github.com/honza/writer.vim>`_
 * `140 medley <https://github.com/honza/140medley>`_
 * `django-chef <https://github.com/honza/django-chef>`_
+* `redish <https://github.com/honza/redish>`_
 
 For more open source projects, please check out my `Github account
 <https://github.com/honza>`_.
