@@ -55,7 +55,7 @@
 <p>The amazing Django <a class="reference external" href="https://docs.djangoproject.com/en/1.3/howto/deployment/modwsgi/">documentation</a> recommends that you use Apache and modwsgi
 to deploy your webapp. While this is certainly not bad advice, you may not want
 to use Apache after all. Apache is a beast that eats up a lot of memory, is
-kind of slow and can&#8217;t handle as much traf&#xFB01;c. As a fun alternative, I would
+kind of slow and can&#8217;t handle as much traffic. As a fun alternative, I would
 like to talk about deploying Django on nginx using the <a class="reference external" href="http://gunicorn.org/">gunicorn</a> web&nbsp;server.</p>
 <p>Just a quick note before we start: this isn&#8217;t an out-there deployment option. I
 spoke to one of the gunicorn developers and was told that every django hosting
@@ -88,9 +88,9 @@ ppa&nbsp;repository.</p>
 </pre></div>
 <p>Note that I&#8217;m using <tt class="docutils literal">virtualenv</tt> to deploy this&nbsp;app.</p>
 </div>
-<div class="section" id="con&#xFB01;gure-nginx-and-gunicorn">
-<h4>Con&#xFB01;gure nginx and&nbsp;gunicorn</h4>
-<p>The following two &#xFB01;les can be distributed with your&nbsp;project.</p>
+<div class="section" id="configure-nginx-and-gunicorn">
+<h4>Configure nginx and&nbsp;gunicorn</h4>
+<p>The following two files can be distributed with your&nbsp;project.</p>
 <p>nginx.conf:</p>
 <div class="highlight"><pre><span class="go">server {</span>
 <span class="go">    listen 80;</span>
@@ -111,7 +111,7 @@ ppa&nbsp;repository.</p>
 <p>Next, I symlinked <tt class="docutils literal">nginx.conf</tt> to the server&#8217;s <tt class="docutils literal"><span class="pre">sites-enabled</span></tt> directory.</p>
 <div class="highlight"><pre><span class="gp">$</span> sudo ln -s /home/webapp/app/nginx.conf /etc/nginx/sites-enable/webapp.org
 </pre></div>
-<p>This sets up nginx to directly serve the applications&#8217;s static &#xFB01;les (css, js,
+<p>This sets up nginx to directly serve the applications&#8217;s static files (css, js,
 etc.). Everything else is proxied to the gunicorn&nbsp;server.</p>
 <p>Now gunicorn is a Python <span class="caps">HTTP</span> server. It&#8217;s super simple and effective. I
 installed it into the app&#8217;s&nbsp;environment.</p>
@@ -119,20 +119,20 @@ installed it into the app&#8217;s&nbsp;environment.</p>
 </pre></div>
 <p>gunicorn.conf.py:</p>
 <div class="highlight"><pre><span class="n">bind</span> <span class="o">=</span> <span class="s">&quot;127.0.0.1:8888&quot;</span>
-<span class="n">log&#xFB01;le</span> <span class="o">=</span> <span class="s">&quot;/home/webapp/gunicorn.log&quot;</span>
+<span class="n">logfile</span> <span class="o">=</span> <span class="s">&quot;/home/webapp/gunicorn.log&quot;</span>
 <span class="n">workers</span> <span class="o">=</span> <span class="mi">3</span>
 </pre></div>
-<p>That&#8217;s it! The con&#xFB01;g &#xFB01;les are simple and easy to&nbsp;read.</p>
+<p>That&#8217;s it! The config files are simple and easy to&nbsp;read.</p>
 </div>
 <div class="section" id="running">
 <h4>Running</h4>
-<p>I then collected all the static &#xFB01;les into the <tt class="docutils literal">static</tt> directory:</p>
+<p>I then collected all the static files into the <tt class="docutils literal">static</tt> directory:</p>
 <div class="highlight"><pre><span class="gp">$</span> <span class="o">(</span>env<span class="o">)</span> python manage.py collectstatic
 </pre></div>
 <p>I restarted&nbsp;nginx:</p>
 <div class="highlight"><pre><span class="gp">$</span> sudo /etc/init.d/nginx restart
 </pre></div>
-<p>And &#xFB01;nally, I ran the <tt class="docutils literal">gunicorn</tt> server:</p>
+<p>And finally, I ran the <tt class="docutils literal">gunicorn</tt> server:</p>
 <div class="highlight"><pre><span class="gp">$</span> <span class="o">(</span>env<span class="o">)</span> <span class="nb">cd</span> /home/webapp/app
 <span class="gp">$</span> <span class="o">(</span>env<span class="o">)</span> gunicorn_django -D -c gunicorn.conf.py
 </pre></div>
@@ -143,7 +143,7 @@ installed it into the app&#8217;s&nbsp;environment.</p>
 <p>You may have to change the permissions on the <tt class="docutils literal">static</tt> directory. Also, the
 command above starts <tt class="docutils literal">gunicorn</tt> as a deamon - a better way would be to use a
 monitoring service to start it. Think <tt class="docutils literal">runit</tt> or <tt class="docutils literal">supervisord</tt>. Also, I
-didn&#8217;t include any database speci&#xFB01;c con&#xFB01;gurations since that&#8217;s indentical to
+didn&#8217;t include any database specific configurations since that&#8217;s indentical to
 an Apache&nbsp;deployment.</p>
 </div>
 </div>

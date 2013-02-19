@@ -62,25 +62,25 @@ easier to develop and&nbsp;maintain.</p>
 <p>Improperly naming your variables, functions and classes can make it nearly
 impossible to navigate large portions of existing code.  You have to follow the
 chain all the way up where that variable was created (sometimes in a different
-&#xFB01;le) to see what type of value it holds.  By looking at a variable name, you
-should be able to tell if it&#8217;s a class de&#xFB01;nition or an instance.  You should
+file) to see what type of value it holds.  By looking at a variable name, you
+should be able to tell if it&#8217;s a class definition or an instance.  You should
 be able to distinguish between a constant and a&nbsp;function.</p>
 </div>
-<div class="section" id="&#xFB01;le-dependency">
+<div class="section" id="file-dependency">
 <h4>File&nbsp;dependency</h4>
 <p>Writing large Javascript applications for the browser is tricky because your
-application needs to be split over multiple &#xFB01;les and there doesn&#8217;t seem to be
-a good way to manage dependencies.  When you open up a &#xFB01;le in your project,
+application needs to be split over multiple files and there doesn&#8217;t seem to be
+a good way to manage dependencies.  When you open up a file in your project,
 you can&#8217;t really know what Javascript code was loaded and executed before this
-&#xFB01;le.  Often times you &#xFB01;nd yourself looking at your build script or the
-<tt class="docutils literal">head</tt> of your <span class="caps">HTML</span> document to see when this &#xFB01;le is loaded in the grand
+file.  Often times you find yourself looking at your build script or the
+<tt class="docutils literal">head</tt> of your <span class="caps">HTML</span> document to see when this file is loaded in the grand
 scheme of things.  In Python, you say <tt class="docutils literal">from app import get_user</tt> to use a
-function from a different &#xFB01;le or module.  In the browser, you just don&#8217;t.  I
-&#xFB01;nd it useful to specify these kinds of dependencies at the top of each &#xFB01;le
+function from a different file or module.  In the browser, you just don&#8217;t.  I
+find it useful to specify these kinds of dependencies at the top of each file
 within a simple&nbsp;comment.</p>
 <div class="highlight"><pre><span class="c1">// maps.js</span>
 <span class="c1">//</span>
-<span class="c1">// This &#xFB01;le provides the ``Maps`` namespace.</span>
+<span class="c1">// This file provides the ``Maps`` namespace.</span>
 <span class="c1">// It depends on jQuery and jquery.cookie.js.</span>
 <span class="c1">// It depends on the ``userId`` variable from the document.</span>
 <span class="c1">//</span>
@@ -88,9 +88,9 @@ within a simple&nbsp;comment.</p>
 <span class="c1">//   ...</span>
 </pre></div>
 </div>
-<div class="section" id="class-de&#xFB01;nition-time-and-consumption-time">
-<h4>Class de&#xFB01;nition time and consumption&nbsp;time</h4>
-<p>There should be a clear distinction between when your classes are de&#xFB01;ned and
+<div class="section" id="class-definition-time-and-consumption-time">
+<h4>Class definition time and consumption&nbsp;time</h4>
+<p>There should be a clear distinction between when your classes are defined and
 when they are consumed.  I like to prepare all my classes and functions
 beforehand, and then kick off the app with a single call when the document is
 ready.  It&#8217;s nice to be able to tell that this is where the app&nbsp;starts.</p>
@@ -99,7 +99,7 @@ ready.  It&#8217;s nice to be able to tell that this is where the app&nbsp;start
 <h4>Namespaces</h4>
 <p>Your entire application should be contained within a namespace.  Putting all of
 your code under a namespace makes it easy to tell where what function or class
-de&#xFB01;nition is coming from.  It makes sure that you don&#8217;t pollute the global
+definition is coming from.  It makes sure that you don&#8217;t pollute the global
 namespace.  It also allows you to select which functions and variables are
 going to be exposed&nbsp;publicly.</p>
 </div>
@@ -109,7 +109,7 @@ going to be exposed&nbsp;publicly.</p>
 writing documentation.  Adding a few comments here and there in the code can
 help you quickly understand what is going on and where related code might live.
 This also helps a lot when on-boarding new developers.  When a new member of
-your team opens up an 800-line-of-code &#xFB01;le with zero comments, they might
+your team opens up an 800-line-of-code file with zero comments, they might
 crawl under their desk and cry (I&#8217;ve wanted to do that a few times&nbsp;before).</p>
 </div>
 <div class="section" id="frameworks">
@@ -118,7 +118,7 @@ crawl under their desk and cry (I&#8217;ve wanted to do that a few times&nbsp;be
 you use it in a sane way.  When a new member joins your team, it&#8217;s really nice
 when you can point them to the framework&#8217;s documentation and have them start
 learning.  Obviously, you will want to do some custom things and maybe even
-build extensions to the framework and that&#8217;s &#xFB01;ne as long as it&#8217;s documented
+build extensions to the framework and that&#8217;s fine as long as it&#8217;s documented
 and&nbsp;obvious.</p>
 </div>
 <div class="section" id="conclusion">

@@ -53,7 +53,7 @@
     <div class="section" id="how-to-convert-vim-colorschemes-to-pygments-themes">
 <h3>How To Convert Vim Colorschemes To Pygments&nbsp;Themes</h3>
 <p>Recently, I have grown to love <a class="reference external" href="http://pygments.org">Pygments</a>. It gives you syntax
-highlighting in the browser without heavy Javascript &#xFB01;les. It supports just
+highlighting in the browser without heavy Javascript files. It supports just
 about any programming language on the planet and it&#8217;s just plain awesome. The
 only thing that it&#8217;s lacking is good color schemes. It comes with a dozen
 themes that will certainly do the trick, but if you&#8217;re used to looking at
@@ -66,7 +66,7 @@ didn&#8217;t work perfectly out of the box so I patched it. You can download it
 it like&nbsp;so:</p>
 <div class="highlight"><pre><span class="gp">$</span> python vim2pygments.py molokai.vim &gt; molokai.py
 </pre></div>
-<p>This will produce a Python &#xFB01;le containing a simple style class that Pygments
+<p>This will produce a Python file containing a simple style class that Pygments
 can use. Next step is to download&nbsp;Pygments:</p>
 <div class="highlight"><pre><span class="gp">$</span> hg clone http://dev.pocoo.org/hg/pygments-main pygments
 </pre></div>
@@ -74,13 +74,13 @@ can use. Next step is to download&nbsp;Pygments:</p>
 <div class="highlight"><pre><span class="gp">$</span> <span class="nb">cd </span>pygments
 <span class="gp">$</span> cp ../molokai.py pygments/styles/molokai.py
 </pre></div>
-<p><span class="caps">OK</span>, now for the fun part. We will use Pygments to generate the <span class="caps">CSS</span> &#xFB01;le that
+<p><span class="caps">OK</span>, now for the fun part. We will use Pygments to generate the <span class="caps">CSS</span> file that
 you will then use on your&nbsp;website:</p>
 <div class="highlight"><pre><span class="gp">$</span> ./pygmentize -S molokai -f html -a .highlight &gt; molokai.css
 </pre></div>
 <p>If you are a TextMate user, you might be able to get your favorite theme done,
 too. A lot of popular Vim colorschemes are inspired by TextMate. Sunburst,
-mustang and idle &#xFB01;ngers come to mind. Just &#xFB01;nd a Vim version and you&#8217;re good
+mustang and idle fingers come to mind. Just find a Vim version and you&#8217;re good
 to&nbsp;go.</p>
 <p>That&#8217;s&nbsp;it!</p>
 </div>

@@ -52,11 +52,11 @@
 <div id="content">
     <div class="section" id="how-not-to-depend-on-pypi">
 <h3>How not to depend on&nbsp;PyPI</h3>
-<p>When deploying a Django application, you often use a <tt class="docutils literal">requirements.txt</tt> &#xFB01;le
+<p>When deploying a Django application, you often use a <tt class="docutils literal">requirements.txt</tt> file
 that contains a list of the application&#8217;s dependencies. During deployment, your
 provisioning system will <tt class="docutils literal">pip install</tt> all of those to make sure that your
 application runs as&nbsp;desired.</p>
-<p>The format of a typical <tt class="docutils literal">requirements.txt</tt> &#xFB01;les isn&#8217;t unlike the&nbsp;following</p>
+<p>The format of a typical <tt class="docutils literal">requirements.txt</tt> files isn&#8217;t unlike the&nbsp;following</p>
 <pre class="literal-block">
 django==1.3.1
 psycopg2==2.4.4
@@ -71,9 +71,9 @@ your deployments to be as smooth as&nbsp;possible.</p>
 <h4>What you can&nbsp;do</h4>
 <p>Instead of depending on PyPI for a production application, you can host the
 packages that your application needs yourself. It&#8217;s actually surpringly easy to
-do. Your existing deployment strategy can easily be modi&#xFB01;ed to remove the&nbsp;dependency.</p>
+do. Your existing deployment strategy can easily be modified to remove the&nbsp;dependency.</p>
 <p>First, we will create a freeze of your requirements. This will look into your
-environment and &#xFB01;gure out which version of which package you will need for the
+environment and figure out which version of which package you will need for the
 production&nbsp;environment.</p>
 <pre class="literal-block">
 $ pip freeze -r requirements.txt &gt; freeze.txt
@@ -86,13 +86,13 @@ $ pip install -d pypi -r freeze.txt
 <p>This will download all packages from <tt class="docutils literal">freeze.txt</tt> into the <tt class="docutils literal">pypi/</tt>
 directory.</p>
 <p>The next step is to upload all these packages to a publicly accessible server
-that can serve static &#xFB01;les. This can anything from S3, Cloud&#xFB01;les or even
+that can serve static files. This can anything from S3, Cloudfiles or even
 Github pages. I like to place all of these packages into a <tt class="docutils literal">packages/</tt>
-directory. You will also need a simple index &#xFB01;le to go with your packages. All
-the index &#xFB01;le needs to is provide a list of <span class="caps">HTML</span> links to those packages. The
+directory. You will also need a simple index file to go with your packages. All
+the index file needs to is provide a list of <span class="caps">HTML</span> links to those packages. The
 index will be used by <tt class="docutils literal">pip</tt> to locate the package source&nbsp;distribution.</p>
 <p>I have put together a simple Fabric task that will read the contents of the
-<tt class="docutils literal">pypi/</tt> directory and create this index &#xFB01;le for&nbsp;you.</p>
+<tt class="docutils literal">pypi/</tt> directory and create this index file for&nbsp;you.</p>
 <div class="highlight"><pre><span class="k">def</span> <span class="nf">make_index</span><span class="p">():</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">local</span><span class="p">(</span><span class="s">&#39;ls pypi&#39;</span><span class="p">,</span> <span class="n">capture</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
     <span class="n">packages</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span>
@@ -111,7 +111,7 @@ index will be used by <tt class="docutils literal">pip</tt> to locate the packag
     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">html</span> <span class="o">%</span> <span class="n">links</span><span class="p">)</span>
     <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
-<p>Upload the index &#xFB01;le to your server and you&#8217;re ready to deploy. Instead of the&nbsp;usual:</p>
+<p>Upload the index file to your server and you&#8217;re ready to deploy. Instead of the&nbsp;usual:</p>
 <pre class="literal-block">
 $ pip install -r requirements.txt
 </pre>

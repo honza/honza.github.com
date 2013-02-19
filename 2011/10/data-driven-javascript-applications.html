@@ -54,11 +54,11 @@
 <h3>Data-driven javascript&nbsp;applications</h3>
 <p>Over the last few weeks, I have been trying to think of a way to design medium
 to large client-heavy web applications. There are many projects and ideas
-&#xFB02;oating around that are meant to help you with this and I have had a look at
+floating around that are meant to help you with this and I have had a look at
 quite a few of them. I don&#8217;t mean to say that I found the best one &#8212; just one
 that I&nbsp;like.</p>
 <p>I want to talk about data-driven applications. What I mean is that everything
-you do somehow manipulates or shows speci&#xFB01;c data. Let me describe what I mean
+you do somehow manipulates or shows specific data. Let me describe what I mean
 by a way of example. I have been working on a piece of photo gallery software
 called <a class="reference external" href="https://github.com/honza/rembrant">rembrant</a>. The interface for actually organizing your images into
 albums is very&nbsp;client-heavy.</p>
@@ -107,21 +107,21 @@ events. When a new album is added to the collection, the view will
 automatically update itself. Also, the <em>events</em> hash allows us to bind event
 handlers to <span class="caps">DOM</span> elements in the&nbsp;sidebar.</p>
 <p>You may have noticed that I&#8217;m using Backbone to actually structure the
-application. I &#xFB01;nd that Backbone provides a good compromise between structure
+application. I find that Backbone provides a good compromise between structure
 and freedom to do as you please. To be honest, it took me a good while to wrap
 my head around what Backbone is trying to do for you. It may seem a little
 wordy at times but you shouldn&#8217;t expect your application to consist of little&nbsp;code.</p>
 <p>Now, suppose we wanted to add a count to each album list item which would
 indicate how many photos are currently in that album. This is easily done by
-inspecting the photos collection. Backbone provides a simple way to &#xFB01;lter your
-collection based on prede&#xFB01;ned criteria. To get all photos that belong to the
+inspecting the photos collection. Backbone provides a simple way to filter your
+collection based on predefined criteria. To get all photos that belong to the
 album with an <span class="caps">ID</span> of <tt class="docutils literal">1</tt>, we would&nbsp;do:</p>
 <div class="highlight"><pre><span class="kd">var</span> <span class="nx">PhotoCollection</span> <span class="o">=</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">Collection</span><span class="p">.</span><span class="kr">extends</span><span class="p">({</span>
   <span class="nx">model</span><span class="o">:</span> <span class="nx">Photo</span><span class="p">,</span>
   <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;/photos&#39;</span><span class="p">,</span>
 
   <span class="nx">byAlbum</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">&#xFB01;lter</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">photo</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">photo</span><span class="p">)</span> <span class="p">{</span>
      <span class="k">return</span> <span class="nx">_</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">photo</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;albums&#39;</span><span class="p">),</span> <span class="nx">id</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span>
     <span class="p">});</span>
   <span class="p">}</span>
@@ -131,12 +131,12 @@ album with an <span class="caps">ID</span> of <tt class="docutils literal">1</tt
 <span class="nx">photos</span> <span class="o">=</span> <span class="nx">collection</span><span class="p">.</span><span class="nx">byAlbum</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 </pre></div>
 <p>As you can see, this is very simple and elegant. Now, if a photo is deleted, it
-will be removed from the collection. This will be re&#xFB02;ected both in the grid
+will be removed from the collection. This will be reflected both in the grid
 and in the sidebar. It will all work automatically because all of the views are
 looking at the same date. They are subscribed to the data&#8217;s events and react&nbsp;accordingly.</p>
 <p>The nice thing is that you don&#8217;t have to worry about changing classes, binding
 data to <span class="caps">DOM</span> elements, attaching click handlers, making <span class="caps">AJAX</span> requests, none of
-this. The dif&#xFB01;cult part about this approach is deciding what your elementary
+this. The difficult part about this approach is deciding what your elementary
 data is and how you should get it. In the case of <a class="reference external" href="https://github.com/honza/rembrant">rembrant</a> it was pretty&nbsp;simple.</p>
 <div class="section" id="further-reading">
 <h4>Further&nbsp;Reading</h4>

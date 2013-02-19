@@ -9,5 +9,5 @@ append_slash: false
 url_include_day: false
 initial_header_level: 3
 punctuation: true
-ligatures: true
+ligatures: false
 deploy_dir: "../"

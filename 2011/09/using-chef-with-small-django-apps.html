@@ -77,24 +77,24 @@ virtual machines on your development&nbsp;machine.</p>
 <li>rabbitmq</li>
 <li>git</li>
 </ul>
-<p>Your development machine will need to have <a class="reference external" href="http://docs.fab&#xFB01;le.org/en/1.2.2/index.html">Fabric</a>&nbsp;installed.</p>
+<p>Your development machine will need to have <a class="reference external" href="http://docs.fabfile.org/en/1.2.2/index.html">Fabric</a>&nbsp;installed.</p>
 </div>
 <div class="section" id="how-chef-works">
 <h4>How Chef&nbsp;works</h4>
 <p>Chef is a tool that is installed on your server. You give it a bunch
-con&#xFB01;guration &#xFB01;les and tell it to provision server with the necessary packages
+configuration files and tell it to provision server with the necessary packages
 and settings. This means that our automatic deployment will have to parts: Chef
-con&#xFB01;guration &#xFB01;les for the sever, and several Fabric tasks to install Chef
+configuration files for the sever, and several Fabric tasks to install Chef
 remotely and start the provisioning&nbsp;process.</p>
-<p>So, to con&#xFB01;gure Chef, we will create a <em>deploy</em> directory inside our project&#8217;s
+<p>So, to configure Chef, we will create a <em>deploy</em> directory inside our project&#8217;s
 repository. I like to keep the following&nbsp;structure:</p>
 <div class="highlight"><pre><span class="gp">$</span> ls -a
-<span class="go">.git coolapp docs deploy <span class="caps">README</span>.md Vagrant&#xFB01;le fab&#xFB01;le.py</span>
+<span class="go">.git coolapp docs deploy <span class="caps">README</span>.md Vagrantfile fabfile.py</span>
 </pre></div>
 <p>&#8230; where <em>coolapp</em> is your Django project. We will focus on the <em>deploy</em>
-directory and the <em>fab&#xFB01;le</em>. Chef is a cook how prepares your server for
+directory and the <em>fabfile</em>. Chef is a cook how prepares your server for
 dinner. So, Chef needs some cookbooks and recipes. Each cookbook is a directory
-that contains various con&#xFB01;guration &#xFB01;les for a speci&#xFB01;c application that you
+that contains various configuration files for a specific application that you
 want installed. So for example, you will have a <em>PostgreSQL cookbook</em> and a
 <em>nginx cookbook</em>. The  deploy directory will contain a directory called
 <em>cookbooks</em> which will contain all other cookbooks. Now, the good news is that
@@ -108,28 +108,28 @@ paste the cookbooks you need for you project. We will need the&nbsp;following:</
 <li>memcached</li>
 <li>nginx</li>
 <li>postgresql</li>
-<li>python (for virtualenv and python header&nbsp;&#xFB01;les)</li>
+<li>python (for virtualenv and python header&nbsp;files)</li>
 <li>rabbitmq</li>
 </ul>
 </div>
 <div class="section" id="cookbooks">
 <h4>Cookbooks</h4>
 <p>Each cookbook contains a <em>recipes</em> directory. Each recipe tells Chef how this
-particular application is to be installed and con&#xFB01;gured. For example, it will
+particular application is to be installed and configured. For example, it will
 tell nginx to create an entry in <em>sites-available</em> and <em>sites-enabled</em>. Or, it
 will restart PostreSQL when it&#8217;s done being&nbsp;installed.</p>
-<p>There is also a <em>&#xFB01;les</em> directory and a <em>templates</em> directory. Templates are
-Ruby templates which de&#xFB01;ne a particular con&#xFB01;guration &#xFB01;le. For example, in
-order for Chef to be able to properly con&#xFB01;gure nginx with the proper server
+<p>There is also a <em>files</em> directory and a <em>templates</em> directory. Templates are
+Ruby templates which define a particular configuration file. For example, in
+order for Chef to be able to properly configure nginx with the proper server
 name, it needs to know on what domain your application will be hosted. More on
-this later, but there is a master &#xFB01;le which has all your settings in it and
-Chef reads from that and substitutes the necessary values. The <em>&#xFB01;les</em>
-directory contains &#xFB01;les that need no further modi&#xFB01;cation and can be copied
+this later, but there is a master file which has all your settings in it and
+Chef reads from that and substitutes the necessary values. The <em>files</em>
+directory contains files that need no further modification and can be copied
 over&nbsp;verbatim.</p>
 </div>
 <div class="section" id="node-json">
 <h4>node.json</h4>
-<p>The <em>node.json</em> &#xFB01;le is a per project &#xFB01;le that speci&#xFB01;es certain values for
+<p>The <em>node.json</em> file is a per project file that specifies certain values for
 Chef to use. For example, you can tell Chef what you want your PostgreSQL
 database to be called, what the name of your django project is, etc. It has a
 simple <span class="caps">JSON</span>&nbsp;syntax.</p>
@@ -167,18 +167,18 @@ recipes, restart PostgreSQL and create a new&nbsp;database.</p>
 </div>
 <div class="section" id="start-the-engines">
 <h4>Start the&nbsp;engines</h4>
-<p>At this point, you can try out your con&#xFB01;guration with Vagrant. To help you
+<p>At this point, you can try out your configuration with Vagrant. To help you
 out, I have create a <a class="reference external" href="https://github.com/honza/django-chef">template</a> project on Github that you can download and
 use out of the&nbsp;box.</p>
 <p>The next big part is writing the Fabric scripts. You will want the following&nbsp;tasks:</p>
 <ul>
-<li><p class="&#xFB01;rst">Install&nbsp;Chef</p>
+<li><p class="first">Install&nbsp;Chef</p>
 </li>
-<li><p class="&#xFB01;rst">Transfer the cookbooks directory to the&nbsp;server</p>
+<li><p class="first">Transfer the cookbooks directory to the&nbsp;server</p>
 </li>
-<li><dl class="&#xFB01;rst docutils">
+<li><dl class="first docutils">
 <dt>Bootstrap the Django&nbsp;project</dt>
-<dd><ul class="&#xFB01;rst last simple">
+<dd><ul class="first last simple">
 <li>Moving code to the&nbsp;server</li>
 <li>Creating a&nbsp;virtualenv</li>
 <li>Installing&nbsp;requirements</li>
@@ -189,10 +189,10 @@ use out of the&nbsp;box.</p>
 </dd>
 </dl>
 </li>
-<li><p class="&#xFB01;rst">Deploy</p>
+<li><p class="first">Deploy</p>
 </li>
 </ul>
-<p>You can see how I implemented mine <a class="reference external" href="https://github.com/honza/django-chef/blob/master/fab&#xFB01;le.py">here</a>. I recommend that you use Fabric&#8217;s
+<p>You can see how I implemented mine <a class="reference external" href="https://github.com/honza/django-chef/blob/master/fabfile.py">here</a>. I recommend that you use Fabric&#8217;s
 <em>roledefs</em> which will allow you to specify vagrant as the&nbsp;host:</p>
 <div class="highlight"><pre><span class="gp">$</span> fab -R vagrant bootstrap
 </pre></div>
@@ -200,7 +200,7 @@ use out of the&nbsp;box.</p>
 <div class="section" id="the-real-thing">
 <h4>The real&nbsp;thing</h4>
 <p>Once you&#8217;ve tested your application in Vagrant so you are ready to deploy to a
-server. All that&#8217;s left to do is create a new <em>roledef</em> in the <em>fab&#xFB01;le</em> and
+server. All that&#8217;s left to do is create a new <em>roledef</em> in the <em>fabfile</em> and
 run&nbsp;it!</p>
 </div>
 <div class="section" id="conclusion">

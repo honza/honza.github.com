@@ -59,15 +59,15 @@ how this Ruby tool can be useful to Django&nbsp;developers.</p>
 <h4>Why&nbsp;vagrant?</h4>
 <p>The modern web developer works on many different projects. Each project has a
 unique set of requirements, dependencies and package versions needed for that
-project to succeed. Keeping all of these libraries in check is dif&#xFB01;cult.
+project to succeed. Keeping all of these libraries in check is difficult.
 <tt class="docutils literal">virtualenv</tt> is a tool that creates isolated environments for Python
 packages. Vagrant takes this approach a step further. You can virtualize the
 entire&nbsp;server.</p>
-<p>Just as each Django project will have a <tt class="docutils literal">requirements.txt</tt> &#xFB01;le which lists
+<p>Just as each Django project will have a <tt class="docutils literal">requirements.txt</tt> file which lists
 the project&#8217;s <tt class="docutils literal">pip</tt> dependencies, your project will now have a
-<tt class="docutils literal">Vagrant&#xFB01;le</tt> and a <tt class="docutils literal">cookbooks</tt> directory. The <tt class="docutils literal">Vagrant&#xFB01;le</tt> describes
+<tt class="docutils literal">Vagrantfile</tt> and a <tt class="docutils literal">cookbooks</tt> directory. The <tt class="docutils literal">Vagrantfile</tt> describes
 how the <span class="caps">VM</span> should be created and the <tt class="docutils literal">cookbooks</tt> directory contains
-instructions on what packages to install. For example, in the <tt class="docutils literal">Vagrant&#xFB01;le</tt>
+instructions on what packages to install. For example, in the <tt class="docutils literal">Vagrantfile</tt>
 you will specify a <span class="caps">VM</span> which runs an Ubuntu server with <span class="caps">256MB</span> of <span class="caps">RAM</span> and your
 <tt class="docutils literal">cookbooks</tt> directory will tell vagrant to install apache2, git, postgresql
 and&nbsp;memcached.</p>
@@ -79,7 +79,7 @@ and&nbsp;memcached.</p>
 <div class="highlight"><pre><span class="go">gem install vagrant</span>
 </pre></div>
 <p>Next, you will download a base box that I made for you. It&#8217;s an Ubuntu 10.10
-server with minimal&nbsp;con&#xFB01;guration.</p>
+server with minimal&nbsp;configuration.</p>
 <div class="highlight"><pre><span class="go">vagrant box add vagrant-ubuntu http://honza.ca/downloads/vagrant-ubuntu.box</span>
 </pre></div>
 <p>This will take a while so you may want to get a&nbsp;beverage.</p>
@@ -90,7 +90,7 @@ for&nbsp;vagrant.</p>
 <span class="go">cd webapp</span>
 <span class="go">vagrant init vagrant-ubuntu</span>
 </pre></div>
-<p>This will create a <tt class="docutils literal">Vagrant&#xFB01;le</tt> in that&nbsp;directory.</p>
+<p>This will create a <tt class="docutils literal">Vagrantfile</tt> in that&nbsp;directory.</p>
 <p>And then&nbsp;run</p>
 <div class="highlight"><pre><span class="go">vagrant up</span>
 </pre></div>
@@ -116,34 +116,34 @@ Django packages: PostreSQL, Apache, <span class="caps">WSGI</span>, memcached an
 <span class="go">git clone git@github.com:honza/cookbooks.git</span>
 </pre></div>
 <p>This downloads all kinds of cookbooks ready for our use. We will create a
-custom cookbook inside that directory where we will de&#xFB01;ne what packages we&nbsp;want:</p>
+custom cookbook inside that directory where we will define what packages we&nbsp;want:</p>
 <div class="highlight"><pre><span class="go">cd cookbooks</span>
 <span class="go">mkdir webapp</span>
 <span class="go">cd webapp</span>
 <span class="go">mkdir recipes</span>
 <span class="go">touch recipes/default.rb</span>
 </pre></div>
-<p>Now open up the <tt class="docutils literal">default.rb</tt> &#xFB01;le and enter the&nbsp;following:</p>
+<p>Now open up the <tt class="docutils literal">default.rb</tt> file and enter the&nbsp;following:</p>
 <div class="highlight"><pre><span class="n">require_recipe</span> <span class="s2">&quot;postgresql::server&quot;</span>
 <span class="n">require_recipe</span> <span class="s2">&quot;apache2&quot;</span>
 <span class="n">include_recipe</span> <span class="s2">&quot;apache2::</span><span class="si">#{</span><span class="n">node</span><span class="o">[</span><span class="ss">:django</span><span class="o">][</span><span class="ss">:web_server</span><span class="o">]</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="n">require_recipe</span> <span class="s2">&quot;git&quot;</span>
 <span class="n">require_recipe</span> <span class="s2">&quot;memcached&quot;</span>
 </pre></div>
-<p>And modify your <tt class="docutils literal">Vagrant&#xFB01;le</tt> to use the&nbsp;cookbooks:</p>
-<div class="highlight"><pre><span class="no">Vagrant</span><span class="o">::</span><span class="no">Con&#xFB01;g</span><span class="o">.</span><span class="n">run</span> <span class="k">do</span> <span class="o">|</span><span class="n">con&#xFB01;g</span><span class="o">|</span>
-  <span class="n">con&#xFB01;g</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">box</span> <span class="o">=</span> <span class="s2">&quot;vagrant-ubuntu&quot;</span>
-    <span class="n">con&#xFB01;g</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">provision</span> <span class="ss">:chef_solo</span> <span class="k">do</span> <span class="o">|</span><span class="n">chef</span><span class="o">|</span>
+<p>And modify your <tt class="docutils literal">Vagrantfile</tt> to use the&nbsp;cookbooks:</p>
+<div class="highlight"><pre><span class="no">Vagrant</span><span class="o">::</span><span class="no">Config</span><span class="o">.</span><span class="n">run</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+  <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">box</span> <span class="o">=</span> <span class="s2">&quot;vagrant-ubuntu&quot;</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">provision</span> <span class="ss">:chef_solo</span> <span class="k">do</span> <span class="o">|</span><span class="n">chef</span><span class="o">|</span>
       <span class="n">chef</span><span class="o">.</span><span class="n">cookbooks_path</span> <span class="o">=</span> <span class="s2">&quot;cookbooks&quot;</span>
       <span class="n">chef</span><span class="o">.</span><span class="n">add_recipe</span> <span class="s2">&quot;webapp&quot;</span>
     <span class="k">end</span>
 <span class="k">end</span>
 </pre></div>
-<p>For the con&#xFB01;guration changes to take effect, you need to&nbsp;run:</p>
+<p>For the configuration changes to take effect, you need to&nbsp;run:</p>
 <div class="highlight"><pre><span class="go">vagrant reload</span>
 </pre></div>
 <p><span class="caps">OK</span>, that concludes our quick introduction to Vagrant. I hope you see how this
-can be bene&#xFB01;cial and how simple it is to get&nbsp;started.</p>
+can be beneficial and how simple it is to get&nbsp;started.</p>
 </div>
 </div>
 

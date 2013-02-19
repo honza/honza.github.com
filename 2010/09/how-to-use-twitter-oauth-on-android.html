@@ -60,7 +60,7 @@ user. In this article, we will have a look on how you can do&nbsp;that.</p>
 <p>OAuth is a way of accessing a user&#8217;s data (e.g. tweets) without asking for the
 user&#8217;s username and password. Your application opens the Twitter website which
 will ask the user if they want to allow you to access their data. If they do,
-they are taken back to the application and can start using it. You can &#xFB01;nd
+they are taken back to the application and can start using it. You can find
 more about OAuth all over the&nbsp;web.</p>
 </div>
 <div class="section" id="prerequisites">
@@ -84,9 +84,9 @@ will be started. From the button&#8217;s <tt class="docutils literal">onClickLis
 
     <span class="kd">private</span> <span class="n">CommonsHttpOAuthConsumer</span> <span class="n">httpOauthConsumer</span><span class="o">;</span>
     <span class="kd">private</span> <span class="n">OAuthProvider</span> <span class="n">httpOauthprovider</span><span class="o">;</span>
-    <span class="kd">public</span> <span class="kd">&#xFB01;nal</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">consumerKey</span> <span class="o">=</span> <span class="s">&quot;abc&quot;</span><span class="o">;</span>
-    <span class="kd">public</span> <span class="kd">&#xFB01;nal</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">consumerSecret</span> <span class="o">=</span> <span class="s">&quot;abc&quot;</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kd">&#xFB01;nal</span> <span class="n">String</span> <span class="n"><span class="caps">CALLBACKURL</span></span> <span class="o">=</span> <span class="s">&quot;app://twitter&quot;</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">consumerKey</span> <span class="o">=</span> <span class="s">&quot;abc&quot;</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">consumerSecret</span> <span class="o">=</span> <span class="s">&quot;abc&quot;</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n"><span class="caps">CALLBACKURL</span></span> <span class="o">=</span> <span class="s">&quot;app://twitter&quot;</span><span class="o">;</span>
 
     <span class="nd">@Override</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
@@ -118,18 +118,18 @@ unique authenticating <span class="caps">URL</span>. Once we have the <span clas
 it to that <span class="caps">URL</span>. The user will be presented with a dialog asking them to allow
 or to deny your application&nbsp;access.</p>
 <p>In order for our activity to be able to receive the callback, we need to add a
-few things the Android manifest &#xFB01;le. Change the applications de&#xFB01;nition to the&nbsp;following:</p>
+few things the Android manifest file. Change the applications definition to the&nbsp;following:</p>
 <div class="highlight"><pre><span class="nt">&lt;activity</span> <span class="na">android:name=</span><span class="s">&quot;Main&quot;</span> <span class="na">android:launchMode=</span><span class="s">&quot;singleInstance&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;intent-&#xFB01;lter&gt;</span>
+    <span class="nt">&lt;intent-filter&gt;</span>
          <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.action.<span class="caps">VIEW</span>&quot;</span> <span class="nt">/&gt;</span>
          <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.category.<span class="caps">DEFAULT</span>&quot;</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.category.<span class="caps">BROWSABLE</span>&quot;</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;data</span> <span class="na">android:scheme=</span><span class="s">&quot;app&quot;</span> <span class="na">android:host=</span><span class="s">&quot;twitter&quot;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;/intent-&#xFB01;lter&gt;</span>
+    <span class="nt">&lt;/intent-filter&gt;</span>
 <span class="nt">&lt;/activity&gt;</span>
 </pre></div>
 <p>Note that if you changed the app and twitter in the <tt class="docutils literal"><span class="caps">CALLBACK</span></tt> variable
-above, you will need to make sure that the change is re&#xFB02;ected here. This
+above, you will need to make sure that the change is reflected here. This
 basically allows the activity to receive data from a foreign source - our&nbsp;browser.</p>
 <p>Now we need to catch the callback and handle it. We do that by overriding the
 <tt class="docutils literal">onNewIntent()</tt> method of our Main&nbsp;activity.</p>
@@ -143,12 +143,12 @@ basically allows the activity to receive data from a foreign source - our&nbsp;b
 
     <span class="k">if</span> <span class="o">(</span><span class="n">uri</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">uri</span><span class="o">.</span><span class="na">toString</span><span class="o">().</span><span class="na">startsWith</span><span class="o">(</span><span class="n"><span class="caps">CALLBACKURL</span></span><span class="o">))</span> <span class="o">{</span>
 
-        <span class="n">String</span> <span class="n">veri&#xFB01;er</span> <span class="o">=</span> <span class="n">uri</span><span class="o">.</span><span class="na">getQueryParameter</span><span class="o">(</span><span class="n">oauth</span><span class="o">.</span><span class="na">signpost</span><span class="o">.</span><span class="na">OAuth</span><span class="o">.</span><span class="na">OAUTH_VERIFIER</span><span class="o">);</span>
+        <span class="n">String</span> <span class="n">verifier</span> <span class="o">=</span> <span class="n">uri</span><span class="o">.</span><span class="na">getQueryParameter</span><span class="o">(</span><span class="n">oauth</span><span class="o">.</span><span class="na">signpost</span><span class="o">.</span><span class="na">OAuth</span><span class="o">.</span><span class="na">OAUTH_VERIFIER</span><span class="o">);</span>
 
         <span class="k">try</span> <span class="o">{</span>
             <span class="c1">// this will populate token and token_secret in consumer</span>
 
-            <span class="n">httpOauthprovider</span><span class="o">.</span><span class="na">retrieveAccessToken</span><span class="o">(</span><span class="n">httpOauthConsumer</span><span class="o">,</span> <span class="n">veri&#xFB01;er</span><span class="o">);</span>
+            <span class="n">httpOauthprovider</span><span class="o">.</span><span class="na">retrieveAccessToken</span><span class="o">(</span><span class="n">httpOauthConsumer</span><span class="o">,</span> <span class="n">verifier</span><span class="o">);</span>
             <span class="n">String</span> <span class="n">userKey</span> <span class="o">=</span> <span class="n">httpOauthConsumer</span><span class="o">.</span><span class="na">getToken</span><span class="o">();</span>
             <span class="n">String</span> <span class="n">userSecret</span> <span class="o">=</span> <span class="n">httpOauthConsumer</span><span class="o">.</span><span class="na">getTokenSecret</span><span class="o">();</span>
 
@@ -172,7 +172,7 @@ basically allows the activity to receive data from a foreign source - our&nbsp;b
 <p><span class="caps">OK</span>, there&#8217;s quite a bit there. We extract the data that the browser sent back
 to us. This data is used to verify that the authentication was successful and
 that we can now access the user&#8217;s data. From the data, we get the user&#8217;s key
-and their secret. We save that into the application&#8217;s shared preferences &#xFB01;le
+and their secret. We save that into the application&#8217;s shared preferences file
 and&nbsp;return.</p>
 <p>Now we are good to go. We can make authenticated requests to Twitter <span class="caps">API</span> on
 behalf of the&nbsp;user.</p>

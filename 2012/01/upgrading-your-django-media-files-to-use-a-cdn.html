@@ -50,52 +50,52 @@
 </p>
 
 <div id="content">
-    <div class="section" id="upgrading-your-django-media-&#xFB01;les-to-use-a-cdn">
-<h3>Upgrading your Django media &#xFB01;les to use a&nbsp;<span class="caps">CDN</span></h3>
-<p>I was using <a class="reference external" href="http://readthedocs.org/docs/django-&#xFB01;lebrowser/en/latest/">django-&#xFB01;lebrowser</a> on a project and my Rackspace <span class="caps">VM</span> quickly ran
-out of disk space. Since the site isn&#8217;t getting much traf&#xFB01;c at all, I didn&#8217;t
+    <div class="section" id="upgrading-your-django-media-files-to-use-a-cdn">
+<h3>Upgrading your Django media files to use a&nbsp;<span class="caps">CDN</span></h3>
+<p>I was using <a class="reference external" href="http://readthedocs.org/docs/django-filebrowser/en/latest/">django-filebrowser</a> on a project and my Rackspace <span class="caps">VM</span> quickly ran
+out of disk space. Since the site isn&#8217;t getting much traffic at all, I didn&#8217;t
 want to pay extra for a bigger <span class="caps">VM</span>. Instead, I decided to move all of the user
-uploaded media to <a class="reference external" href="http://www.rackspace.com/cloud/cloud_hosting_products/&#xFB01;les/">Rackspace Cloud&#xFB01;les</a>. It&#8217;s super cheap and they have a
+uploaded media to <a class="reference external" href="http://www.rackspace.com/cloud/cloud_hosting_products/files/">Rackspace Cloudfiles</a>. It&#8217;s super cheap and they have a
 nice&nbsp;<span class="caps">API</span>.</p>
-<p>Now, the challenge was to make the transition from a &#xFB01;lebrowser-based system.
+<p>Now, the challenge was to make the transition from a filebrowser-based system.
 First of all, I knew I was going to use <a class="reference external" href="http://django-storages.readthedocs.org/en/latest/index.html">django-storages</a> as the new storage
 class for my class. I played around with it on the side and it worked like a&nbsp;charm.</p>
-<p>Next, I wrote a quick little Python script to upload all of the &#xFB01;les to
-Cloud&#xFB01;les. Since the &#xFB01;lenames didn&#8217;t change at all, I could just write a
+<p>Next, I wrote a quick little Python script to upload all of the files to
+Cloudfiles. Since the filenames didn&#8217;t change at all, I could just write a
 South migration that would strip the <tt class="docutils literal">/uploads</tt> part and be done with&nbsp;it.</p>
-<p>I had a look at the Django documentation to see what exactly a <a class="reference external" href="https://docs.djangoproject.com/en/1.3/ref/models/&#xFB01;elds/#&#xFB01;le&#xFB01;eld">FileField</a> was.
-It turns out it takes a Django <a class="reference external" href="https://docs.djangoproject.com/en/1.3/ref/&#xFB01;les/&#xFB01;le/#django.core.&#xFB01;les.File">File</a> object which in turn is a thin wrapper
-around the Python built-in &#xFB01;le object. This didn&#8217;t sound exactly easy to do. I
-would have to open a remote &#xFB01;le with Python&#8217;s <tt class="docutils literal"><span class="pre">open(&#8216;&#xFB01;le.mp3&#8217;)</span></tt> and have
-Django inspect it for size and &#xFB01;le type. This is clunky at best if you
+<p>I had a look at the Django documentation to see what exactly a <a class="reference external" href="https://docs.djangoproject.com/en/1.3/ref/models/fields/#filefield">FileField</a> was.
+It turns out it takes a Django <a class="reference external" href="https://docs.djangoproject.com/en/1.3/ref/files/file/#django.core.files.File">File</a> object which in turn is a thin wrapper
+around the Python built-in file object. This didn&#8217;t sound exactly easy to do. I
+would have to open a remote file with Python&#8217;s <tt class="docutils literal"><span class="pre">open(&#8216;file.mp3&#8217;)</span></tt> and have
+Django inspect it for size and file type. This is clunky at best if you
 remember that this will have to live in a South&nbsp;migration.</p>
-<p>Also worth noting is the fact that &#xFB01;lebrowser&#8217;s model &#xFB01;eld is a subclass of
-<tt class="docutils literal">CharField</tt> and has no special &#xFB01;le-related properties or&nbsp;methods.</p>
-<p>You can&#8217;t use the <tt class="docutils literal">DEFAULT_STORAGE_CLASS</tt> setting because &#xFB01;lebrowser will
+<p>Also worth noting is the fact that filebrowser&#8217;s model field is a subclass of
+<tt class="docutils literal">CharField</tt> and has no special file-related properties or&nbsp;methods.</p>
+<p>You can&#8217;t use the <tt class="docutils literal">DEFAULT_STORAGE_CLASS</tt> setting because filebrowser will
 start yelling at you. Instead, you specify the storage class right in the new
-model&nbsp;&#xFB01;eld.</p>
-<div class="highlight"><pre><span class="kn">from</span> <span class="nn">storages.backends.mosso</span> <span class="kn">import</span> <span class="n">cloud&#xFB01;les_upload_to</span><span class="p">,</span> <span class="n">CloudFilesStorage</span>
-<span class="n">cloud&#xFB01;les_storage</span> <span class="o">=</span> <span class="n">CloudFilesStorage</span><span class="p">()</span>
+model&nbsp;field.</p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">storages.backends.mosso</span> <span class="kn">import</span> <span class="n">cloudfiles_upload_to</span><span class="p">,</span> <span class="n">CloudFilesStorage</span>
+<span class="n">cloudfiles_storage</span> <span class="o">=</span> <span class="n">CloudFilesStorage</span><span class="p">()</span>
 
 <span class="k">class</span> <span class="nc">Item</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
-    <span class="n">old_&#xFB01;eld</span> <span class="o">=</span> <span class="n">FileBrowseField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-    <span class="n">new_&#xFB01;eld</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FileField</span><span class="p">(</span><span class="n">upload_to</span><span class="o">=</span><span class="n">cloud&#xFB01;les_upload_to</span><span class="p">,</span>
-            <span class="n">storage</span><span class="o">=</span><span class="n">cloud&#xFB01;les_storage</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+    <span class="n">old_field</span> <span class="o">=</span> <span class="n">FileBrowseField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">new_field</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FileField</span><span class="p">(</span><span class="n">upload_to</span><span class="o">=</span><span class="n">cloudfiles_upload_to</span><span class="p">,</span>
+            <span class="n">storage</span><span class="o">=</span><span class="n">cloudfiles_storage</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">)</span>
 </pre></div>
 <p>Now you can go and write your migration and Django won&#8217;t yell at you. Now we go
 back to the problem outlined above. How do you create an instance of <tt class="docutils literal">File</tt>
-to pass to <tt class="docutils literal">item.new_&#xFB01;eld</tt>.</p>
+to pass to <tt class="docutils literal">item.new_field</tt>.</p>
 <p>After hours of reading the source and debugging, I realized that you can simply
-pass in the &#xFB01;lename as a string and the storage class will do the right thing.
+pass in the filename as a string and the storage class will do the right thing.
 It&#8217;s actually really simple and painless. Your data migration might look
 something&nbsp;like:</p>
 <div class="highlight"><pre><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">orm</span><span class="o">.</span><span class="n">Item</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">():</span>
-    <span class="n">item</span><span class="o">.</span><span class="n">new_&#xFB01;eld</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">old_&#xFB01;eld</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">item</span><span class="o">.</span><span class="n">new_field</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">old_field</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
     <span class="n">item</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
 </pre></div>
 <p>So, I was already somewhat overjoyed that this would in fact be easy and then I
-discovered that the change from &#xFB01;lebrowser to django-storages doesn&#8217;t require
-a schema migration. This means that if your &#xFB01;le names are the same there is no
+discovered that the change from filebrowser to django-storages doesn&#8217;t require
+a schema migration. This means that if your file names are the same there is no
 database change needed at all. How cool is&nbsp;that?</p>
 </div>
 

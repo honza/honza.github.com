@@ -78,7 +78,7 @@ blog and have it turn it into a post and publish it to the&nbsp;blog.</p>
 </pre></div>
 <p>Very straight forward. You have your title, body, author and when the post was&nbsp;published.</p>
 <p>In order to enable incoming email, you need to add a couple of lines of code to
-your <tt class="docutils literal">app.yaml</tt> &#xFB01;le. In addition to your regular handlers, add the&nbsp;following:</p>
+your <tt class="docutils literal">app.yaml</tt> file. In addition to your regular handlers, add the&nbsp;following:</p>
 <div class="highlight"><pre><span class="l-Scalar-Plain">inbound_services</span><span class="p-Indicator">:</span>
 <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">mail</span>
 
@@ -86,17 +86,17 @@ your <tt class="docutils literal">app.yaml</tt> &#xFB01;le. In addition to your 
 <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">url</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">/_ah/mail/.+</span>
   <span class="l-Scalar-Plain">script</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">main.py</span>
 </pre></div>
-<p>The &#xFB01;rst line enables incoming email for your application. The second part is
+<p>The first line enables incoming email for your application. The second part is
 the important part. On App Engine, an incoming email message is processed as a
 <span class="caps">HTTP</span> <span class="caps">POST</span> request. Since it&#8217;s a regular <span class="caps">HTTP</span> request, we will need a handler
-for it in the <tt class="docutils literal">app.yaml</tt> &#xFB01;le. You have several options here. You can create
+for it in the <tt class="docutils literal">app.yaml</tt> file. You have several options here. You can create
 a catch-all handler for all incoming email addresses (like I&#8217;ve done above), or
 create seperate handlers for different&nbsp;addresses.</p>
 <p>The email address that we will use is in the following format:
 <a class="reference external" href="mailto:your_string&#64;appid.appspotmail.com">your_string&#64;appid.appspotmail.com</a>. You should substitute the appid with your
 app&#8217;s <span class="caps">ID</span>. The string before the &#8216;&#64;&#8217; symbol can be set to anything you&nbsp;want.</p>
 <p>With this out of the way, we are ready to write the actual email handler. This
-will go into your <tt class="docutils literal">main.py</tt> &#xFB01;le which you de&#xFB01;ned in the <tt class="docutils literal">app.yaml</tt>.</p>
+will go into your <tt class="docutils literal">main.py</tt> file which you defined in the <tt class="docutils literal">app.yaml</tt>.</p>
 <p>First, some&nbsp;imports:</p>
 <div class="highlight"><pre><span class="kn">import</span> <span class="nn">email</span>
 <span class="kn">from</span> <span class="nn">google.appengine.ext.webapp.mail_handlers</span> <span class="kn">import</span> <span class="n">InboundMailHandler</span>
@@ -111,7 +111,7 @@ the application&nbsp;class.</p>
 <p>Here EmailHandler is the request handler class that will handle the incoming
 email. The <tt class="docutils literal">mapping()</tt> method will map all of the addresses and send all of
 them to this handler class. It&#8217;s just a convenience method, no magic&nbsp;here.</p>
-<p>Now, &#xFB01;nally, onto the actual&nbsp;handler:</p>
+<p>Now, finally, onto the actual&nbsp;handler:</p>
 <div class="highlight"><pre><span class="k">class</span> <span class="nc">EmailHandler</span><span class="p">(</span><span class="n">InboundMailHandler</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">receive</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mail_message</span><span class="p">):</span>
         <span class="n">post</span> <span class="o">=</span> <span class="n">Post</span><span class="p">()</span>
@@ -131,8 +131,8 @@ actual body. Then we set the author and save the post in the&nbsp;datastore.</p>
 easily accomplished with <span class="caps">HTML</span> tags. However, <span class="caps">HTML</span> tags are a pain, so you might
 want to use something like&nbsp;Markdown.</p>
 <p>Adding markdown support is super easy. Download the Python
-<a class="reference external" href="http://code.google.com/p/python-markdown2/">Markdown library</a> and put the <tt class="docutils literal">markdown2.py</tt> &#xFB01;le in your app&#8217;s root
-directory. Then import it in your <tt class="docutils literal">main.py</tt> &#xFB01;le.</p>
+<a class="reference external" href="http://code.google.com/p/python-markdown2/">Markdown library</a> and put the <tt class="docutils literal">markdown2.py</tt> file in your app&#8217;s root
+directory. Then import it in your <tt class="docutils literal">main.py</tt> file.</p>
 <div class="highlight"><pre><span class="kn">import</span> <span class="nn">markdown2</span>
 </pre></div>
 <p>And change the following&nbsp;line:</p>

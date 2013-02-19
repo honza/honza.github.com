@@ -57,17 +57,17 @@ reasons I wanted to learn Haskell was to be able to write short,
 dynamic-language-like programs that execute fast once compiled.  Somehow
 rather, Haskell has failed to deliver on its promise of <em>bare metal</em> speed.  I
 mostly write scripts and utilities meant to run on my machine&#8212;these scripts
-mostly process text.  Read a &#xFB01;le, parse it and spit something&nbsp;out.</p>
+mostly process text.  Read a file, parse it and spit something&nbsp;out.</p>
 <div class="section" id="example">
 <h4>Example</h4>
 <p>Let&#8217;s build a simple program that will show what I&#8217;m talking&nbsp;about.</p>
 <ul class="simple">
-<li>Read a &#xFB01;le called <tt class="docutils literal">&#xFB01;le</tt> which contains&nbsp;prose</li>
+<li>Read a file called <tt class="docutils literal">file</tt> which contains&nbsp;prose</li>
 <li>Capitalize every word in that body of&nbsp;text</li>
 <li>Print the result to&nbsp;stdout</li>
 </ul>
-<p>We will be testing our programs with a &#xFB01;le with about 1.2 million lines of
-Lorem Ipsum.  This &#xFB01;le is around&nbsp;<span class="caps">75MB</span>.</p>
+<p>We will be testing our programs with a file with about 1.2 million lines of
+Lorem Ipsum.  This file is around&nbsp;<span class="caps">75MB</span>.</p>
 <p>Here is attemp number one.  This is really simple&nbsp;Haskell.</p>
 <div class="highlight"><pre><span class="c1">-- Normal.hs</span>
 
@@ -84,7 +84,7 @@ Lorem Ipsum.  This &#xFB01;le is around&nbsp;<span class="caps">75MB</span>.</p>
 <span class="nf">convertWord</span> <span class="n">s</span> <span class="ow">=</span> <span class="p">(</span><span class="n">toUpper</span> <span class="p">(</span><span class="n">head</span> <span class="n">s</span><span class="p">))</span><span class="kt">:</span><span class="p">(</span><span class="n">tail</span> <span class="n">s</span><span class="p">)</span>
 
 <span class="nf">main</span> <span class="ow">=</span> <span class="kr">do</span>
-    <span class="n">name</span> <span class="ow">&lt;-</span> <span class="n">readFile</span> <span class="s">&quot;&#xFB01;le&quot;</span>
+    <span class="n">name</span> <span class="ow">&lt;-</span> <span class="n">readFile</span> <span class="s">&quot;file&quot;</span>
     <span class="n">putStr</span> <span class="o">$</span> <span class="n">convert</span> <span class="n">name</span>
 </pre></div>
 <p>Compile and execute&nbsp;with</p>
@@ -100,8 +100,8 @@ will tell you to use <tt class="docutils literal">Data.Text</tt>.</p>
 <span class="kr">module</span> <span class="nn">Main</span> <span class="kr">where</span>
 
 <span class="kr">import</span> <span class="nn">Data.Char</span>
-<span class="kr">import</span> <span class="k">quali&#xFB01;ed</span> <span class="nn">Data.Text</span> <span class="k">as</span> <span class="n">T</span>
-<span class="kr">import</span> <span class="k">quali&#xFB01;ed</span> <span class="nn">Data.Text.<span class="caps">IO</span></span> <span class="k">as</span> <span class="n">X</span>
+<span class="kr">import</span> <span class="k">qualified</span> <span class="nn">Data.Text</span> <span class="k">as</span> <span class="n">T</span>
+<span class="kr">import</span> <span class="k">qualified</span> <span class="nn">Data.Text.<span class="caps">IO</span></span> <span class="k">as</span> <span class="n">X</span>
 
 <span class="nf">convert</span> <span class="ow">::</span> <span class="kt">T</span><span class="o">.</span><span class="kt">Text</span> <span class="ow">-&gt;</span> <span class="kt">T</span><span class="o">.</span><span class="kt">Text</span>
 <span class="nf">convert</span> <span class="ow">=</span> <span class="kt">T</span><span class="o">.</span><span class="n">unlines</span> <span class="o">.</span> <span class="p">(</span><span class="n">map</span> <span class="n">convertLine</span><span class="p">)</span> <span class="o">.</span> <span class="kt">T</span><span class="o">.</span><span class="n">lines</span>
@@ -113,7 +113,7 @@ will tell you to use <tt class="docutils literal">Data.Text</tt>.</p>
 <span class="nf">convertWord</span> <span class="n">s</span> <span class="ow">=</span> <span class="kt">T</span><span class="o">.</span><span class="n">cons</span> <span class="p">(</span><span class="n">toUpper</span> <span class="p">(</span><span class="kt">T</span><span class="o">.</span><span class="n">head</span> <span class="n">s</span><span class="p">))</span> <span class="p">(</span><span class="kt">T</span><span class="o">.</span><span class="n">tail</span> <span class="n">s</span><span class="p">)</span>
 
 <span class="nf">main</span> <span class="ow">=</span> <span class="kr">do</span>
-    <span class="n">name</span> <span class="ow">&lt;-</span> <span class="kt">X</span><span class="o">.</span><span class="n">readFile</span> <span class="s">&quot;&#xFB01;le&quot;</span>
+    <span class="n">name</span> <span class="ow">&lt;-</span> <span class="kt">X</span><span class="o">.</span><span class="n">readFile</span> <span class="s">&quot;file&quot;</span>
     <span class="kt">X</span><span class="o">.</span><span class="n">putStr</span> <span class="o">$</span> <span class="n">convert</span> <span class="n">name</span>
 </pre></div>
 <p>This is mostly the same as above.  Instead of using the <tt class="docutils literal">String</tt> type to work
@@ -124,14 +124,14 @@ time ./main &gt; /dev/null
 </pre>
 <p>How did it do?  One entire minute, that&#8217;s 5 times slower.  And it uses obscene
 amounts of memory (around <span class="caps">600MB</span> on my machine).  Let&#8217;s use lazy <span class="caps">IO</span> when reading
-the &#xFB01;le, maybe it will&nbsp;improve.</p>
+the file, maybe it will&nbsp;improve.</p>
 <div class="highlight"><pre><span class="c1">-- change this</span>
-<span class="kr">import</span> <span class="k">quali&#xFB01;ed</span> <span class="nn">Data.Text</span> <span class="k">as</span> <span class="n">T</span>
-<span class="kr">import</span> <span class="k">quali&#xFB01;ed</span> <span class="nn">Data.Text.<span class="caps">IO</span></span> <span class="k">as</span> <span class="n">X</span>
+<span class="kr">import</span> <span class="k">qualified</span> <span class="nn">Data.Text</span> <span class="k">as</span> <span class="n">T</span>
+<span class="kr">import</span> <span class="k">qualified</span> <span class="nn">Data.Text.<span class="caps">IO</span></span> <span class="k">as</span> <span class="n">X</span>
 
 <span class="c1">-- to this</span>
-<span class="kr">import</span> <span class="k">quali&#xFB01;ed</span> <span class="nn">Data.Text.Lazy</span> <span class="k">as</span> <span class="n">T</span>
-<span class="kr">import</span> <span class="k">quali&#xFB01;ed</span> <span class="nn">Data.Text.Lazy.<span class="caps">IO</span></span> <span class="k">as</span> <span class="n">X</span>
+<span class="kr">import</span> <span class="k">qualified</span> <span class="nn">Data.Text.Lazy</span> <span class="k">as</span> <span class="n">T</span>
+<span class="kr">import</span> <span class="k">qualified</span> <span class="nn">Data.Text.Lazy.<span class="caps">IO</span></span> <span class="k">as</span> <span class="n">X</span>
 </pre></div>
 <p>This clocks in at 27 seconds.  Much better than the non-lazy version.  Next
 thing to try is to ignore unicode and go for the ultimate, bare-metal speed.
@@ -139,8 +139,8 @@ Let&#8217;s use <tt class="docutils literal">ByteString</tt> instead of <tt clas
 <div class="highlight"><pre><span class="kr">module</span> <span class="nn">Byte</span> <span class="kr">where</span>
 
 <span class="kr">import</span> <span class="nn">Data.Char</span>
-<span class="kr">import</span> <span class="k">quali&#xFB01;ed</span> <span class="nn">Data.ByteString</span> <span class="k">as</span> <span class="n">B</span>
-<span class="kr">import</span> <span class="k">quali&#xFB01;ed</span> <span class="nn">Data.ByteString.Char8</span> <span class="k">as</span> <span class="n">C</span>
+<span class="kr">import</span> <span class="k">qualified</span> <span class="nn">Data.ByteString</span> <span class="k">as</span> <span class="n">B</span>
+<span class="kr">import</span> <span class="k">qualified</span> <span class="nn">Data.ByteString.Char8</span> <span class="k">as</span> <span class="n">C</span>
 
 <span class="nf">convert</span> <span class="ow">::</span> <span class="kt">B</span><span class="o">.</span><span class="kt">ByteString</span> <span class="ow">-&gt;</span> <span class="kt">B</span><span class="o">.</span><span class="kt">ByteString</span>
 <span class="nf">convert</span> <span class="ow">=</span> <span class="kt">C</span><span class="o">.</span><span class="n">unlines</span> <span class="o">.</span> <span class="p">(</span><span class="n">map</span> <span class="n">convertLine</span><span class="p">)</span> <span class="o">.</span> <span class="kt">C</span><span class="o">.</span><span class="n">lines</span>
@@ -152,19 +152,19 @@ Let&#8217;s use <tt class="docutils literal">ByteString</tt> instead of <tt clas
 <span class="nf">convertWord</span> <span class="n">s</span> <span class="ow">=</span> <span class="kt">C</span><span class="o">.</span><span class="n">cons</span> <span class="p">(</span><span class="n">toUpper</span> <span class="p">(</span><span class="kt">C</span><span class="o">.</span><span class="n">head</span> <span class="n">s</span><span class="p">))</span> <span class="p">(</span><span class="kt">C</span><span class="o">.</span><span class="n">tail</span> <span class="n">s</span><span class="p">)</span>
 
 <span class="nf">main</span> <span class="ow">=</span> <span class="kr">do</span>
-    <span class="n">name</span> <span class="ow">&lt;-</span> <span class="kt">B</span><span class="o">.</span><span class="n">readFile</span> <span class="s">&quot;&#xFB01;le&quot;</span>
+    <span class="n">name</span> <span class="ow">&lt;-</span> <span class="kt">B</span><span class="o">.</span><span class="n">readFile</span> <span class="s">&quot;file&quot;</span>
     <span class="kt">B</span><span class="o">.</span><span class="n">putStr</span> <span class="o">$</span> <span class="n">convert</span> <span class="n">name</span>
 </pre></div>
 <p>Hm, not that much better.  27 seconds.  That&#8217;s about as good as the lazy
 version when using <tt class="docutils literal">Text</tt>.  Let&#8217;s see if we can squeeze more perfomance out
 of this with a lazy <tt class="docutils literal">ByteString</tt></p>
 <div class="highlight"><pre><span class="c1">-- change this</span>
-<span class="kr">import</span> <span class="k">quali&#xFB01;ed</span> <span class="nn">Data.ByteString</span> <span class="k">as</span> <span class="n">B</span>
-<span class="kr">import</span> <span class="k">quali&#xFB01;ed</span> <span class="nn">Data.ByteString.Char8</span> <span class="k">as</span> <span class="n">C</span>
+<span class="kr">import</span> <span class="k">qualified</span> <span class="nn">Data.ByteString</span> <span class="k">as</span> <span class="n">B</span>
+<span class="kr">import</span> <span class="k">qualified</span> <span class="nn">Data.ByteString.Char8</span> <span class="k">as</span> <span class="n">C</span>
 
 <span class="c1">-- to this</span>
-<span class="kr">import</span> <span class="k">quali&#xFB01;ed</span> <span class="nn">Data.ByteString.Lazy</span> <span class="k">as</span> <span class="n">B</span>
-<span class="kr">import</span> <span class="k">quali&#xFB01;ed</span> <span class="nn">Data.ByteString.Lazy.Char8</span> <span class="k">as</span> <span class="n">C</span>
+<span class="kr">import</span> <span class="k">qualified</span> <span class="nn">Data.ByteString.Lazy</span> <span class="k">as</span> <span class="n">B</span>
+<span class="kr">import</span> <span class="k">qualified</span> <span class="nn">Data.ByteString.Lazy.Char8</span> <span class="k">as</span> <span class="n">C</span>
 </pre></div>
 <p>This takes about 10 seconds.  Awesome.  This is the best I can do with Haskell.
 10 seconds to process 1.2 million lines of text.  I guess that&#8217;s not too&nbsp;bad.</p>
@@ -173,14 +173,14 @@ accomplished as a simple one-liner.  This is actually a pretty elegant&nbsp;solu
 <div class="highlight"><pre><span class="kr">module</span> <span class="nn">Main</span> <span class="kr">where</span>
 
 <span class="kr">import</span> <span class="nn">Data.Char</span>
-<span class="kr">import</span> <span class="k">quali&#xFB01;ed</span> <span class="nn">Data.Text.Lazy</span> <span class="k">as</span> <span class="n">T</span>
-<span class="kr">import</span> <span class="k">quali&#xFB01;ed</span> <span class="nn">Data.Text.Lazy.<span class="caps">IO</span></span> <span class="k">as</span> <span class="n">X</span>
+<span class="kr">import</span> <span class="k">qualified</span> <span class="nn">Data.Text.Lazy</span> <span class="k">as</span> <span class="n">T</span>
+<span class="kr">import</span> <span class="k">qualified</span> <span class="nn">Data.Text.Lazy.<span class="caps">IO</span></span> <span class="k">as</span> <span class="n">X</span>
 
 <span class="nf">convert</span> <span class="ow">::</span> <span class="kt">T</span><span class="o">.</span><span class="kt">Text</span> <span class="ow">-&gt;</span> <span class="kt">T</span><span class="o">.</span><span class="kt">Text</span>
 <span class="nf">convert</span> <span class="ow">=</span> <span class="kt">T</span><span class="o">.</span><span class="n">tail</span> <span class="o">.</span> <span class="kt">T</span><span class="o">.</span><span class="n">scanl</span> <span class="p">(</span><span class="nf">\</span><span class="n">a</span> <span class="n">b</span> <span class="ow">-&gt;</span> <span class="kr">if</span> <span class="n">isSpace</span> <span class="n">a</span> <span class="kr">then</span> <span class="n">toUpper</span> <span class="n">b</span> <span class="kr">else</span> <span class="n">b</span><span class="p">)</span> <span class="sc">&#39; &#39;</span>
 
 <span class="nf">main</span> <span class="ow">=</span> <span class="kr">do</span>
-    <span class="n">name</span> <span class="ow">&lt;-</span> <span class="kt">X</span><span class="o">.</span><span class="n">readFile</span> <span class="s">&quot;&#xFB01;le&quot;</span>
+    <span class="n">name</span> <span class="ow">&lt;-</span> <span class="kt">X</span><span class="o">.</span><span class="n">readFile</span> <span class="s">&quot;file&quot;</span>
     <span class="kt">X</span><span class="o">.</span><span class="n">putStr</span> <span class="o">$</span> <span class="n">convert</span> <span class="n">name</span>
 </pre></div>
 <p>This clocks in at 8.5 seconds.  Not bad at&nbsp;all.</p>
@@ -189,13 +189,13 @@ one-liner that uses <tt class="docutils literal">ByteString</tt>.</p>
 <div class="highlight"><pre><span class="kr">module</span> <span class="nn">Main</span> <span class="kr">where</span>
 
 <span class="kr">import</span> <span class="nn">Data.Char</span>
-<span class="kr">import</span> <span class="k">quali&#xFB01;ed</span> <span class="nn">Data.ByteString.Char8</span> <span class="k">as</span> <span class="n">T</span>
+<span class="kr">import</span> <span class="k">qualified</span> <span class="nn">Data.ByteString.Char8</span> <span class="k">as</span> <span class="n">T</span>
 
 <span class="nf">convert</span> <span class="ow">::</span> <span class="kt">T</span><span class="o">.</span><span class="kt">ByteString</span> <span class="ow">-&gt;</span> <span class="kt">T</span><span class="o">.</span><span class="kt">ByteString</span>
 <span class="nf">convert</span> <span class="ow">=</span> <span class="kt">T</span><span class="o">.</span><span class="n">tail</span> <span class="o">.</span> <span class="kt">T</span><span class="o">.</span><span class="n">scanl</span> <span class="p">(</span><span class="nf">\</span><span class="n">a</span> <span class="n">b</span> <span class="ow">-&gt;</span> <span class="kr">if</span> <span class="n">isSpace</span> <span class="n">a</span> <span class="kr">then</span> <span class="n">toUpper</span> <span class="n">b</span> <span class="kr">else</span> <span class="n">b</span><span class="p">)</span> <span class="sc">&#39; &#39;</span>
 
 <span class="nf">main</span> <span class="ow">=</span> <span class="kr">do</span>
-<span class="nf">name</span> <span class="ow">&lt;-</span> <span class="kt">T</span><span class="o">.</span><span class="n">readFile</span> <span class="s">&quot;&#xFB01;le&quot;</span>
+<span class="nf">name</span> <span class="ow">&lt;-</span> <span class="kt">T</span><span class="o">.</span><span class="n">readFile</span> <span class="s">&quot;file&quot;</span>
 <span class="kt">T</span><span class="o">.</span><span class="n">putStr</span> <span class="o">$</span> <span class="n">convert</span> <span class="n">name</span>
 </pre></div>
 <p>This clocks in at 3.5s on my machine.  Pretty&nbsp;fast!</p>
@@ -215,7 +215,7 @@ one-liner that uses <tt class="docutils literal">ByteString</tt>.</p>
 
 
 <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;&#xFB01;le&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;file&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
     <span class="k">print</span> <span class="n">process</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
 <p>Execute&nbsp;with</p>
@@ -226,7 +226,7 @@ $ time python main.py &gt; /dev/null
 <p><strong><span class="caps">EDIT</span> 4</strong>: There has been some discussion on Reddit about being able to
 accomplish this task in only one line in Haskell.  It&#8217;s actually possible in
 Python,&nbsp;too.</p>
-<div class="highlight"><pre><span class="k">print</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;&#xFB01;le&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+<div class="highlight"><pre><span class="k">print</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;file&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
 </pre></div>
 <p>This clocks in at 2&nbsp;seconds.</p>
 </div>
@@ -250,7 +250,7 @@ Python,&nbsp;too.</p>
 <span class="p">}</span>
 
 <span class="kd">function</span> <span class="nx">run</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s1">&#39;&#xFB01;le&#39;</span><span class="p">,</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s1">&#39;file&#39;</span><span class="p">,</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">);</span>
     <span class="kd">var</span> <span class="nx">lines</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;\n&#39;</span><span class="p">);</span>
 
     <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">lines</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
@@ -281,7 +281,7 @@ shootout, le&nbsp;sigh).</p>
 <span class="p">)</span>
 
 <span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">body</span><span class="p">,</span> <span class="n">_</span> <span class="p">:=</span> <span class="n">ioutil</span><span class="p">.</span><span class="n">ReadFile</span><span class="p">(</span><span class="s">&quot;&#xFB01;le&quot;</span><span class="p">)</span>
+    <span class="n">body</span><span class="p">,</span> <span class="n">_</span> <span class="p">:=</span> <span class="n">ioutil</span><span class="p">.</span><span class="n">ReadFile</span><span class="p">(</span><span class="s">&quot;file&quot;</span><span class="p">)</span>
     <span class="n">result</span> <span class="p">:=</span> <span class="n">bytes</span><span class="p">.</span><span class="n">Title</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
     <span class="n">fmt</span><span class="p">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 <span class="p">}</span>
@@ -305,12 +305,12 @@ compared to&nbsp;C.</p>
 <span class="cp">#include &lt;string.h&gt;</span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">static</span> <span class="k">const</span> <span class="kt">char</span> <span class="n">&#xFB01;lename</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;&#xFB01;le&quot;</span><span class="p">;</span>
-    <span class="kt"><span class="caps">FILE</span></span> <span class="o">*</span><span class="n">&#xFB01;le</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="n">&#xFB01;lename</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span class="p">);</span>
+    <span class="k">static</span> <span class="k">const</span> <span class="kt">char</span> <span class="n">filename</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;file&quot;</span><span class="p">;</span>
+    <span class="kt"><span class="caps">FILE</span></span> <span class="o">*</span><span class="n">file</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span class="p">);</span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="n">&#xFB01;le</span> <span class="o">!=</span> <span class="nb"><span class="caps">NULL</span></span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">file</span> <span class="o">!=</span> <span class="nb"><span class="caps">NULL</span></span><span class="p">)</span> <span class="p">{</span>
         <span class="kt">char</span> <span class="n">line</span><span class="p">[</span><span class="mi">1024</span><span class="p">];</span>
-        <span class="k">while</span><span class="p">(</span><span class="n">fgets</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">line</span><span class="p">,</span> <span class="n">&#xFB01;le</span><span class="p">)</span> <span class="o">!=</span> <span class="nb"><span class="caps">NULL</span></span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">fgets</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">line</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span> <span class="o">!=</span> <span class="nb"><span class="caps">NULL</span></span><span class="p">)</span> <span class="p">{</span>
         <span class="n">line</span><span class="p">[</span><span class="n">strcspn</span> <span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)]</span> <span class="o">=</span> <span class="sc">&#39;\0&#39;</span><span class="p">;</span>
 
         <span class="kt">int</span> <span class="n">lengthOfLine</span> <span class="o">=</span> <span class="n">strlen</span><span class="p">(</span><span class="n">line</span><span class="p">);</span>
@@ -331,9 +331,9 @@ compared to&nbsp;C.</p>
         <span class="n">printf</span> <span class="p">(</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">line</span><span class="p">);</span>
         <span class="p">}</span>
 
-        <span class="n">fclose</span><span class="p">(</span><span class="n">&#xFB01;le</span><span class="p">);</span>
+        <span class="n">fclose</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="n">perror</span><span class="p">(</span><span class="n">&#xFB01;lename</span><span class="p">);</span>
+        <span class="n">perror</span><span class="p">(</span><span class="n">filename</span><span class="p">);</span>
     <span class="p">}</span>
 
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
