@@ -18,7 +18,7 @@ Skills
 
 * Programming languages
     * **Main**: Python, Javascript
-    * **Learning**: Haskell, Clojure
+    * **Learning**: Haskell, Clojure, Go
 * Frameworks and Libraries
     * Django, Express.js, Backbone.js, jQuery, Underscore.js
 * Deployment
@@ -81,6 +81,39 @@ Education
 References
 ~~~~~~~~~~
 
+`Craig Zheng <http://craigzheng.com/>`_, Product director at Amara
+
+    Honza is by all measures a fantastic programmer—efficient, thorough,
+    organized, knowledgable. But what stands out above all else when you work
+    with him is his curiosity and his drive. He has a thirst for learning and
+    discovery. He approaches every task with the enthusiasm of someone about to
+    learn something life-changing, and as a result you get much more than
+    careful, meticulous work. You get someone who goes above and beyond—who
+    asks incisive questions, devises creative solutions, and constantly brings
+    new knowledge and new ideas to a team. He makes the people around him
+    better, and I can't think of any quality more important than that.
+
+`Nick Sergeant <http://nicksergeant.com/>`_, front-end web developer at Amara
+
+    Honza is a great programmer with a serious attention to detail. Integrating
+    him into our team was a seamless process and he began producing
+    immediately. His curiosity shines through with his side projects and it
+    always sparks ideas and collaboration with the team. Honza + programming =
+    win!
+
+`Arthur Debert <http://www.stimuli.com.br/>`_, senior developer at Amara
+
+    I've had the pleasure of working with Honza daily for the past year. In
+    that time, I've seen Honza tackle complex problems smartly and get things
+    done. He's able to dabble in various stacks and is always learning new
+    things.
+
+`Nicholas Reville <http://pculture.org/pcf/about/>`_, executive director at
+Amara
+
+    Honza is an outstanding developer, with great attention to detail, engaging
+    team spirit and a lot of focus. He gets things done. Highly recommended!
+
 `Adam Thurlow <mailto:adam@sheepdoginc.ca>`_, software engineer at SheepDogInc
 
     I have had the pleasure of working very closely with Honza since he started
@@ -126,7 +159,8 @@ Personal
 ~~~~~~~~
 
 I'm originally from the Czech republic.  I'm married to a Canadian and have two
-kids.  When I'm not programming, I enjoy photography, movies and GeoCaching.
+pre-school children.  When I'm not programming, I enjoy photography, movies and
+GeoCaching.
 
 **Blog** --- http://honza.ca
 
