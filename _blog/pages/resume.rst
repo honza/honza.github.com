@@ -81,6 +81,13 @@ Education
 References
 ~~~~~~~~~~
 
+`Steve Losh <http://stevelosh.com/>`_, senior developer at Amara
+
+    Honza's a great programmer who can handle whatever you throw at him (even
+    the particularly hairy stuff). His ever-expanding list of programming
+    languages shows that he's always improving and trying to find better ways
+    to get things done.
+
 `Craig Zheng <http://craigzheng.com/>`_, Product director at Amara
 
     Honza is by all measures a fantastic programmer—efficient, thorough,
