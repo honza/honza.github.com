@@ -2,16 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
   <loc>http://http://honza.ca/</loc>
-  <lastmod>2013-03-26T17:59:38Z</lastmod>
+  <lastmod>2013-04-10T17:14:40Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
 <url>
   <loc>http://http://honza.ca/about</loc>
-  <lastmod>2013-03-26T17:59:38Z</lastmod>
+  <lastmod>2013-04-10T17:14:40Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
+
+<url>
+  <loc>http://http://honza.ca/2013/04/international-families</loc>
+  <lastmod>2013-04-10T14:10:00Z</lastmod>
+  <changefreq>daily</changefreq>
+</url>
 
 <url>
   <loc>http://http://honza.ca/2013/03/calvin-on-predestination</loc>
