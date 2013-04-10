@@ -68,7 +68,7 @@ complicated than with our son.
 First, she needs to apply for a proof of Czech citizenship.  Her Canadian birth
 certificate needs to be superlegalized, translated and approved.  This is
 fortunately done at the Czech embassy in Ottawa and you are allowed to
-translated the document yourself and they will verify it for you.  One of the
+translate the document yourself and they will verify it for you.  One of the
 forms that you need to send in with the application requires you to have your
 signature verified by a notary.  No big deal, right?  Well, good luck finding a
 notary in Canada who speaks Czech and is willing to notarize your signature.  I
@@ -80,7 +80,7 @@ website.
 
 I have yet to apply for this.  But when it comes back, we will have to apply
 for a Czech birth certificate and a birth number.  More forms, more fees, more
-super legalization, etc.
+superlegalization, etc.
 
 Conclusion
 ----------
