@@ -4,7 +4,7 @@
     <title>Honza Pokorny - Thoughts on web development</title>
     <link href="http://honza.ca/atom.xml" rel="self"/>
     <link href="http://honza.ca"/>
-    <updated>2013-04-10T17:14:40Z</updated>
+    <updated>2013-05-07T09:41:26Z</updated>
     <id>http://honza.ca</id>
 
     
@@ -70,7 +70,7 @@ complicated than with our&nbsp;son.</p>
 <p>First, she needs to apply for a proof of Czech citizenship.  Her Canadian birth
 certificate needs to be superlegalized, translated and approved.  This is
 fortunately done at the Czech embassy in Ottawa and you are allowed to
-translated the document yourself and they will verify it for you.  One of the
+translate the document yourself and they will verify it for you.  One of the
 forms that you need to send in with the application requires you to have your
 signature verified by a notary.  No big deal, right?  Well, good luck finding a
 notary in Canada who speaks Czech and is willing to notarize your signature.  I
@@ -80,7 +80,7 @@ can verify my identity and signature.  I&#8217;ll send this in along with the
 application.  The application process takes about 4-6 months according to their&nbsp;website.</p>
 <p>I have yet to apply for this.  But when it comes back, we will have to apply
 for a Czech birth certificate and a birth number.  More forms, more fees, more
-super legalization,&nbsp;etc.</p>
+superlegalization,&nbsp;etc.</p>
 </div>
 <div class="section" id="conclusion">
 <h4>Conclusion</h4>
@@ -620,18 +620,18 @@ $ time node main.js &gt; /dev/null
 <h4>How about&nbsp;Go?</h4>
 <p><strong><span class="caps">EDIT</span> 3</strong>: (Add this section.  Looks like this post is turning into a language
 shootout, le&nbsp;sigh).</p>
-<div class="highlight"><pre><span class="k">package</span> <span class="n">main</span>
+<div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 
-<span class="k">import</span> <span class="p">(</span>
+<span class="kn">import</span> <span class="p">(</span>
     <span class="s">&quot;fmt&quot;</span>
     <span class="s">&quot;io/ioutil&quot;</span>
     <span class="s">&quot;bytes&quot;</span>
 <span class="p">)</span>
 
-<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">body</span><span class="p">,</span> <span class="n">_</span> <span class="p">:=</span> <span class="n">ioutil</span><span class="p">.</span><span class="n">ReadFile</span><span class="p">(</span><span class="s">&quot;file&quot;</span><span class="p">)</span>
-    <span class="n">result</span> <span class="p">:=</span> <span class="n">bytes</span><span class="p">.</span><span class="n">Title</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
-    <span class="n">fmt</span><span class="p">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">body</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">ioutil</span><span class="p">.</span><span class="nx">ReadFile</span><span class="p">(</span><span class="s">&quot;file&quot;</span><span class="p">)</span>
+    <span class="nx">result</span> <span class="o">:=</span> <span class="nx">bytes</span><span class="p">.</span><span class="nx">Title</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 <p>Put this into <tt class="docutils literal">title.go</tt>, compile and run&nbsp;with</p>
@@ -2842,7 +2842,7 @@ custom cookbook inside that directory where we will define what packages we&nbsp
 <span class="n">require_recipe</span> <span class="s2">&quot;memcached&quot;</span>
 </pre></div>
 <p>And modify your <tt class="docutils literal">Vagrantfile</tt> to use the&nbsp;cookbooks:</p>
-<div class="highlight"><pre><span class="no">Vagrant</span><span class="o">::</span><span class="no">Config</span><span class="o">.</span><span class="n">run</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+<div class="highlight"><pre><span class="ss">Vagrant</span><span class="p">:</span><span class="ss">:Config</span><span class="o">.</span><span class="n">run</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
   <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">box</span> <span class="o">=</span> <span class="s2">&quot;vagrant-ubuntu&quot;</span>
     <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">provision</span> <span class="ss">:chef_solo</span> <span class="k">do</span> <span class="o">|</span><span class="n">chef</span><span class="o">|</span>
       <span class="n">chef</span><span class="o">.</span><span class="n">cookbooks_path</span> <span class="o">=</span> <span class="s2">&quot;cookbooks&quot;</span>
@@ -2905,7 +2905,7 @@ won&#8217;t compile. It&#8217;s a win-win. This is perhaps my favorite&nbsp;feat
         <span class="nx">alert</span> <span class="nx">@name</span> <span class="o">+</span> <span class="s">&quot; moved </span><span class="si">#{</span><span class="nx">meters</span><span class="si">}</span><span class="s">m.&quot;</span>
 
 <span class="k">class</span> <span class="nx">Dog</span> <span class="k">extends</span> <span class="nx">Animal</span>
-    <span class="nv">move: </span><span class="o">-&gt;</span>
+    <span class="nv">move: </span><span class="nf">-&gt;</span>
         <span class="nx">alert</span> <span class="s">&quot;Whoof...&quot;</span>
         <span class="k">super</span> <span class="mi">5</span>
 </pre></div>

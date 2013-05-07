@@ -34,10 +34,10 @@ Skills
     * Responsive design
 * Toolchain
     * Unix-like OS (Mac OSX, Linux)
-    * iTerm2 and MacVim
+    * iTerm2 and vim
     * Git and Mercurial
     * Fabric, Makefiles, Cakefiles
-    * Bash
+    * Bash, fish-shell
 * Other
     * CoffeeScript
     * npm
@@ -49,13 +49,23 @@ Skills
 Open source
 ~~~~~~~~~~~
 
-For a list, please see the `Projects </projects.html>`_ page.
+For a list, please see the `Projects </projects.html>`_ page and my `GitHub
+account <https://github.com/honza>`_.
+
+Interests
+~~~~~~~~~
+
+Programming language theory, parsers, chess engines, distributed systems,
+concurrent programs
 
 Employment
 ~~~~~~~~~~
 
+* **Software Developer** at `StrataLabs <http://stratalabs.com>`_
+    * April 2013--Present
+    * Django
 * **Software Developer** at `Participatory Culture Foundation <http://pculture.org>`_
-    * April 2012--Present
+    * April 2012--March 2013
     * Django developer on the Amara subtitles team
 * **Software Developer** at `Survey Planet <http://www.surveyplanet.com>`_
     * April 2012--June 2012
