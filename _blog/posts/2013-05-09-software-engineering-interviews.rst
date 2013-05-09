@@ -11,14 +11,14 @@ puzzles.
 
 We’ve all been there.  You come to the office for an interview, spend a few
 minutes talking about the job and you, and then the inevitable hits:
-programming puzzles and quizzes.  You are asked to solve non-sensical,
+programming puzzles and quizzes.  You are asked to solve nonsensical,
 irrelevant, theoretical problems on the spot while the interviewer waits.
 These problems in no way represent the actual work for which you’re
 interviewing.
 
-How do you detect a palindrom?  What is the worst-case performance of the
+How do you detect a palindrome?  What is the worst-case performance of the
 quicksort algorithm?  How do you find depth of a binary tree?  These are all
-utter nonsense.  If your cutting-edge application needs to detect palindroms,
+utter nonsense.  If your cutting-edge application needs to detect palindromes,
 I’m pretty sure you have bigger problems than you think.  All of these can be
 easily solved after a few minutes of research on the Internet.
 
