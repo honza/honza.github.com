@@ -1,0 +1,371 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Thoughts on web programming, open source hacking and the like. Honza Pokorny is a web developer in Halifax, Canada" >
+  <meta name="viewport" content="width=550, maximum-scale=1.0" />
+  <meta name="readability-verification" content="cXteMUVfc4F4DwUmDFS563269y9HLgfxK34fvdMC"/>
+  <title>Building a Lisp to Javascript compiler - Honza Pokorny</title>
+  <link rel="stylesheet" href="/media/screen.css" type="text/css" />
+  <link rel="alternate" type="application/atom+xml" title="News-Feed" href="http://honza.ca/atom.xml" />
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-4330851-12']);
+        _gaq.push(['_trackPageview']);
+
+        (function(){
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>    
+
+    <script type="text/javascript">
+    /* <![CDATA[ */
+        (function() {
+            var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+            
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto'
+            
+            t.parentNode.insertBefore(s, t);
+        })();
+    /* ]]> */
+    </script>
+        
+</head>
+<body>
+
+    <div id="wrap">
+        <div id="banner" class="body">
+            <h1><a href="/">Honza Pokorny</a></h1>
+        </div>
+        <p>Thoughts on web programming and the world of technology</p>
+        
+
+<p class="article_date date">
+    May 13, 2013
+</p>
+
+<div id="content">
+    <div class="section" id="building-a-lisp-to-javascript-compiler">
+<h3>Building a Lisp to Javascript&nbsp;compiler</h3>
+<p>In this post, I&#8217;m going to show you how I made a Lisp to Javascript compiler. I
+really enjoy programming in Clojure but have often thought that the <span class="caps">JVM</span> isn&#8217;t
+always the best platform for scripts due to the slow <span class="caps">JVM</span> start-up. So, I
+decided to implement a simple version of Clojure that compiles to Javascript
+and can be run on top of&nbsp;nodejs.</p>
+<p>Compilers are notoriously hard to understand and therefore make for great
+mind-bending exercises.  Exactly my idea of weekend&nbsp;fun.</p>
+<div class="section" id="what-we-are-going-to-do">
+<h4>What we are going to&nbsp;do</h4>
+<p>There are tons of Lisp to Javascript compilers out there.  What makes mine
+special?  I&#8217;m using a <span class="caps">PEG</span> grammar to parse the source code.  Once it&#8217;s parsed,
+I turn the result into a <a class="reference external" href="https://developer.mozilla.org/en-US/docs/SpiderMonkey/Parser_API">Parser <span class="caps">API</span></a> compatible <span class="caps">AST</span>.  The <span class="caps">AST</span> is then passed
+to <a class="reference external" href="https://github.com/Constellation/escodegen">escodegen</a> which turns it into well-formatted&nbsp;Javascript.</p>
+<p>This is great because I don&#8217;t have to worry about the particulars of Javascript
+syntax.  Escodegen takes care of inserting semicolons where appropriate, etc.
+and everything looks clean and consistent.  It&#8217;s nice because the parsing is
+decoupled from the source code emission.  You can completely remove the
+Javascript generation part and use some other software to do&nbsp;that.</p>
+</div>
+<div class="section" id="lisp-basics">
+<h4>Lisp&nbsp;basics</h4>
+<p>If you are familiar with Lisp, you can skip this&nbsp;section.</p>
+<p>Lisp source code is made up of s-expressions.  An s-expression is a list whose
+first element is a function and the rest are the arguments to that&nbsp;function.</p>
+<div class="highlight"><pre><span class="p">(</span><span class="nf">greet</span> <span class="s">&quot;honza&quot;</span><span class="p">)</span>
+</pre></div>
+<p>This is a list with two items.  <tt class="docutils literal">greet</tt> is the name of the function and
+<tt class="docutils literal">&#8220;honza&#8221;</tt> is the argument.  In other languages, this might be represented as
+<tt class="docutils literal"><span class="pre">greet(&#8220;honza&#8221;)</span></tt>.</p>
+<p>Lisp uses s-expressions for everything, including function definitions, if
+statements, assignments, binary expressions,&nbsp;etc.</p>
+<div class="highlight"><pre><span class="p">(</span><span class="k">def </span><span class="nb">name </span><span class="s">&quot;honza&quot;</span><span class="p">)</span> <span class="c1">;; define a variable &quot;name&quot; and assign &quot;honza&quot; to it</span>
+<span class="p">(</span><span class="nb">+ </span><span class="mi">1</span> <span class="mi">2</span><span class="p">)</span>            <span class="c1">;; add 1 and 2 and return the result</span>
+
+<span class="c1">;; If the name variable is equal to &quot;honza&quot;, print &quot;hey honza&quot;, otherwise,</span>
+<span class="c1">;; just print &quot;hey stranger&quot;.</span>
+
+<span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">= name </span><span class="s">&quot;honza&quot;</span><span class="p">)</span>
+  <span class="p">(</span><span class="nb">print </span><span class="s">&quot;hey honza&quot;</span><span class="p">)</span>
+  <span class="p">(</span><span class="nb">print </span><span class="s">&quot;hey stranger&quot;</span><span class="p">))</span>
+
+<span class="c1">;; Function definition; it takes one parameter called &quot;name&quot;.</span>
+
+<span class="p">(</span><span class="k">def </span><span class="nv">greet</span>
+  <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">name</span><span class="p">]</span>
+    <span class="p">(</span><span class="nb">println </span><span class="s">&quot;hello&quot;</span> <span class="nv">name</span><span class="p">)))</span>
+</pre></div>
+<p>In Lisp, a function body can have multiple s-expression but only the last one
+is returned.  There is no <tt class="docutils literal">return</tt> keyword in Lisp.  Binary operators and
+things like the <tt class="docutils literal">if</tt> keyword are actually functions that return&nbsp;values.</p>
+</div>
+<div class="section" id="the-mighty-peg">
+<h4>The mighty&nbsp;<span class="caps">PEG</span></h4>
+<p>Every <span class="caps">PEG</span> grammar starts with the <tt class="docutils literal">program</tt> directive.  This is where the
+parser will start&nbsp;parsing.</p>
+<pre class="literal-block">
+program
+    = s:sexp+ &quot;\n&quot;*  { return {
+        type: 'Program',
+        body: s
+    };}
+</pre>
+<p>A Lisp program consists of one or more s-expressions, optionally followed by a
+newline.  The list of one or more s-expressions is stored in the variable
+<tt class="docutils literal">s</tt>.  We then return a Javascript object with two properties: <tt class="docutils literal">type</tt> and
+<tt class="docutils literal">body</tt>.  Since we are at the top level, we return it as a type of
+<tt class="docutils literal">Program</tt>, and our body will be made up of the matched s-expressions.  The
+syntax is a little weird at first but you get used to it.  Fairly simple&nbsp;stuff.</p>
+<p>If you tried to compile this grammar into a parser, it would fail because we
+didn&#8217;t tell it what an s-expression looks&nbsp;like.</p>
+<pre class="literal-block">
+sexp
+  = _ a:atom _ { return a; }
+  / _ l:list _ { return l; }
+  / _ v:vector _ { return v; }
+  / _ o:object _ { return o; }
+</pre>
+<p><span class="caps">OK</span>, so an s-expression is either an atom, a list, a vector or an object.  Each
+of these can be preceded and followed by any amount of whitespace.  Cool,
+that&#8217;s simple enough.  Except now we have to define what all those things&nbsp;are.</p>
+<p>Let&#8217;s start with the&nbsp;atom:</p>
+<pre class="literal-block">
+atom
+  = d:[0-9]+ _ { return {type: 'Literal', value: numberify(d)}; }
+  / '&quot;' d:(!'&quot;' sourcechar)* '&quot;' _ { return {type: 'Literal', value: makeStr(d) }}
+  / s:[-+/\*_&lt;&gt;=a-zA-Z\.!]+ _ { return {type: 'Identifier', name: s.join(&quot;&quot;)};}
+</pre>
+<p>So, an atom can be a list of one or more digits, a string or a valid
+identifier.  In the digit directive, you will notice that we are assigning the
+number to the <tt class="docutils literal">d</tt> variable.  This will contain a list of all of the matched
+numbers.  We then concatenate them and parse them into an integer.  That&#8217;s what
+the <tt class="docutils literal">numberify</tt> function does.  A number or a string is a literal value so we
+return it as such.  An identifier is a variable name, so we return it as such,&nbsp;too.</p>
+<p>Next up, vectors and&nbsp;objects:</p>
+<pre class="literal-block">
+vector
+  = &quot;[]&quot; { return {type: 'ArrayExpression', elements: []}; }
+  / _ &quot;[&quot; _ a:atom+ _ &quot;]&quot; _ { return {type: 'ArrayExpression', elements: a};}
+  / _ &quot;[&quot; _ o:object+ _ &quot;]&quot; _ { return {type: 'ArrayExpression', elements: o};}
+
+object
+  = &quot;{}&quot; { return {type: 'ObjectExpression', properties: []}; }
+  / _ &quot;{&quot; _ a:atom+ _ &quot;}&quot; _ { return makeObject(a); }
+</pre>
+<p>Continuing in the same vein, a vector is either an empty array, an array with
+at least one atom in it, or an array with at least one object in&nbsp;it.</p>
+<p>The <tt class="docutils literal">makeObject</tt> function will take a pair by pair from the array and take
+the first item in the pair and turn it into an object key and set as its value
+to the second item in the pair.  If the number of elements in the array isn&#8217;t
+divisible by 2, it will yell at&nbsp;you.</p>
+<p>Next up, lists.  Now, lists are special because the first item is the name of a
+function.  This gives us the opportunity to define some built-in functions that
+would otherwise be really tricky to&nbsp;define.</p>
+<pre class="literal-block">
+list
+  = &quot;()&quot; { return []; }
+  /  _ &quot;(&quot; _ s:sexp+ _ &quot;)&quot; _ {
+    if (first(s).name === 'def') {
+      return {
+        type: 'VariableDeclaration',
+        declarations: [{
+          type: 'VariableDeclarator',
+          id: s[1],
+          init: s[2].expression? s[2].expression : s[2]
+        }],
+        kind: 'var'
+      };
+    }
+
+    if (first(s).name === 'fn') {
+      return {
+        type: 'FunctionExpression',
+        id: null,
+        params: s[1].elements ? s[1].elements : s[1],
+        body: {
+          type: 'BlockStatement',
+          body: init(rest(rest((s)))).concat(returnStatement(last(rest(s))))
+        }
+      };
+    }
+
+    if (Object.keys(builtins).indexOf(first(s).name) &gt; -1) {
+      return builtins[first(s).name](rest(s));
+    }
+
+    return processCallExpression(s);
+
+  }
+</pre>
+<p><span class="caps">OK</span>, there is quite a bit here, so let&#8217;s step through it.  A list can&nbsp;be</p>
+<ul class="simple">
+<li>an empty&nbsp;list</li>
+<li>a list of at least one&nbsp;s-expression</li>
+</ul>
+<p>If it&#8217;s an empty list, we just return an empty array.  If it&#8217;s a list of
+s-expressions, we check for other things.  We look at the first element and see
+what its name is.  It can be&nbsp;either:</p>
+<ul class="simple">
+<li><tt class="docutils literal">def</tt> - variable&nbsp;declaration</li>
+<li><tt class="docutils literal">fn</tt> - an anonymous&nbsp;function</li>
+<li>a built-in function (<tt class="docutils literal">if</tt>, <tt class="docutils literal">+</tt>, <tt class="docutils literal">list</tt>,&nbsp;etc.)</li>
+<li>other function (user&nbsp;defined)</li>
+</ul>
+<p>The only thing left is the definition of&nbsp;whitespace</p>
+<pre class="literal-block">
+_
+  = [\n, ]*
+</pre>
+<p>Zero or more of the following characters: newline, comma and&nbsp;space.</p>
+</div>
+<div class="section" id="obstacles">
+<h4>Obstacles</h4>
+<p>When converting the parsed source code to the Parser <span class="caps">API</span> tree, I hit a few
+obstacles.  It turns out that Lisp and Javascript don&#8217;t map perfectly to each
+other and therefore some post-processing is&nbsp;needed.</p>
+<div class="section" id="statement-vs-expression">
+<h5>Statement vs&nbsp;expression</h5>
+<p>In Lisp, everything is an expression.  In Javascript, there are both
+expressions and statements.  The hardest part is the fact that a function call
+can be both a statement and an expression depending on how it&#8217;s used.  So you
+can&#8217;t represent it the same way every&nbsp;time.</p>
+<p>I wrote a function that takes a list which represents an s-expression (the
+first element is a function call, the rest are the&nbsp;parameters).</p>
+<div class="highlight"><pre><span class="kd">function</span> <span class="nx">processCallExpression</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">callee</span> <span class="o">=</span> <span class="nx">first</span><span class="p">(</span><span class="nx">s</span><span class="p">),</span>
+      <span class="nx">args</span> <span class="o">=</span> <span class="nx">rest</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span>
+
+  <span class="nx">args</span> <span class="o">=</span> <span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">s</span><span class="p">.</span><span class="nx">expression</span> <span class="o">&amp;&amp;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">expression</span><span class="p">.</span><span class="nx">type</span> <span class="o">===</span> <span class="s1">&#39;CallExpression&#39;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">s</span><span class="p">.</span><span class="nx">expression</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">s</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">},</span> <span class="nx">args</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;ExpressionStatement&#39;</span><span class="p">,</span>
+    <span class="nx">expression</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;CallExpression&#39;</span><span class="p">,</span>
+      <span class="nx">callee</span><span class="o">:</span> <span class="nx">callee</span><span class="p">,</span>
+      <span class="s1">&#39;arguments&#39;</span><span class="o">:</span> <span class="nx">args</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+<p>This will check if any of the arguments passed to the function are also
+function calls.  If it&#8217;s a nested function call, it&#8217;s placed in the <span class="caps">AST</span> as a
+<tt class="docutils literal">CallExpression</tt>, otherwise it&#8217;s a <tt class="docutils literal">CallExpression</tt> inside a
+<tt class="docutils literal">ExpressionStatement</tt>.  The <span class="caps">PEG</span> parser can&#8217;t detect this because it&#8217;s context
+free - each node only knows about&nbsp;itself.</p>
+</div>
+<div class="section" id="implicit-return">
+<h5>Implicit&nbsp;return</h5>
+<p>In Lisp, the last s-expression in a function&#8217;s body is implicitly returned.
+You don&#8217;t need to denote this with a return statement, it&#8217;s built-in.  Again,
+we need to do some more processing.  If we are processing a function
+declaration, we need to check its body and wrap the last expression in a
+<tt class="docutils literal">ReturnStatement</tt>.</p>
+</div>
+<div class="section" id="if-is-an-expression-in-lisp">
+<h5>If is an expression in&nbsp;Lisp</h5>
+<p>The if statement in Lisp is an expression, just like a function call or
+anything else.  This means that the expression in any of the two branches is
+effectively returned to the caller.  This means that we need to add an extra
+wrapper around the statement and wrap each of the branch-expressions in a
+return&nbsp;statement.</p>
+<p>Like&nbsp;this:</p>
+<div class="highlight"><pre><span class="c1">// this</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="s2">&quot;it&#39;s zero&quot;</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="s2">&quot;it&#39;s more than zero&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// becomes</span>
+
+<span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s2">&quot;it&#39;s zero&quot;</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s2">&quot;it&#39;s more than zero&quot;</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">})();</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="standard-library">
+<h4>Standard&nbsp;library</h4>
+<p>A lisp would be no fun without some fun functional programming functions.  I
+have started working on a standard library for our lisp.  It lives in a file
+called <tt class="docutils literal">lib.js</tt>.  This file includes functions that are accessible from any
+program that you&nbsp;write.</p>
+<p>For&nbsp;example:</p>
+<div class="highlight"><pre><span class="kd">function</span> <span class="nx">nth</span><span class="p">(</span><span class="nx">list</span><span class="p">,</span> <span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">list</span><span class="p">.</span><span class="nx">length</span> <span class="o">&amp;&amp;</span> <span class="nx">list</span><span class="p">.</span><span class="nx">length</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nx">list</span><span class="p">[</span><span class="nx">n</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">first</span><span class="p">(</span><span class="nx">list</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">nth</span><span class="p">(</span><span class="nx">list</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<p>And much&nbsp;more.</p>
+</div>
+<div class="section" id="putting-it-all-together">
+<h4>Putting it all&nbsp;together</h4>
+<p>Here is how it all comes&nbsp;together:</p>
+<ol class="arabic simple">
+<li>Use peg.js to compile the grammar into a&nbsp;parser</li>
+<li>Take the parser and append to it the compiler&nbsp;program</li>
+</ol>
+<p>The compiler program is the command line utility that decides how your program
+should be compiled, it parsers <span class="caps">CLI</span> flags, etc.  It can return the <span class="caps">AST</span> instead
+of Javascript, it can uglify the resulting Javascript,&nbsp;etc.</p>
+<p>You can use the result like&nbsp;so</p>
+<pre class="literal-block">
+$ ./inertia sample.clj
+</pre>
+<p>And it will print the resulting Javascript to stdout.  What the compiler
+program will also do is prepend the compiled Javascript with the standard
+library.  It simply reads the standard library code from the <tt class="docutils literal">lib.js</tt> file
+and prepends&nbsp;it.</p>
+</div>
+<div class="section" id="conclusion">
+<h4>Conclusion</h4>
+<p>This has certainly been a fun exercise for me.  You can check out the finished
+product on <a class="reference external" href="https://github.com/honza/inertia">Github</a>.</p>
+</div>
+</div>
+
+</div>
+
+<span class="article_buttons">
+    <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+    <a href="http://twitter.com/share" class="twitter-share-button"
+        data-url="http://honza.ca/2013/05/building-a-lisp-to-javascript-compiler"
+        data-via="_honza"
+        data-text="Building a Lisp to Javascript compiler"
+        data-count="none">Tweet</a>
+    <a href="http://honza.ca/2013/05/building-a-lisp-to-javascript-compiler"
+        class="FlattrButton"
+        rev="flattr;uid:honza;button:compact;"
+        title="Building a Lisp to Javascript compiler"
+        style="display:none"></a>
+
+</span>
+
+
+    </div>
+
+</body>
+</html>
