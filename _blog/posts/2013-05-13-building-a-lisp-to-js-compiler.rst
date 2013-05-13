@@ -360,6 +360,6 @@ Conclusion
 ----------
 
 This has certainly been a fun exercise for me.  You can check out the finished
-product on `Github`_.
+product on `GitHub`_.
 
 .. _Github: https://github.com/honza/inertia
