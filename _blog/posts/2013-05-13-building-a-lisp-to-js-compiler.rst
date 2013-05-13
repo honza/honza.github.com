@@ -84,10 +84,10 @@ parser will start parsing.
 ::
 
     program
-        = s:sexp+ "\n"*  { return {
-            type: 'Program',
-            body: s
-        };}
+      = s:sexp+ "\n"*  { return {
+          type: 'Program',
+          body: s
+      };}
 
 A Lisp program consists of one or more s-expressions, optionally followed by a
 newline.  The list of one or more s-expressions is stored in the variable

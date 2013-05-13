@@ -109,10 +109,10 @@ things like the <tt class="docutils literal">if</tt> keyword are actually functi
 parser will start&nbsp;parsing.</p>
 <pre class="literal-block">
 program
-    = s:sexp+ &quot;\n&quot;*  { return {
-        type: 'Program',
-        body: s
-    };}
+  = s:sexp+ &quot;\n&quot;*  { return {
+      type: 'Program',
+      body: s
+  };}
 </pre>
 <p>A Lisp program consists of one or more s-expressions, optionally followed by a
 newline.  The list of one or more s-expressions is stored in the variable
