@@ -51,13 +51,13 @@
 
 <div id="content">
     <div class="section" id="how-my-website-works">
-<h3>How My Website&nbsp;Works</h3>
+<h1>How My Website&nbsp;Works</h1>
 <p>I&#8217;m sure you&#8217;ve heard of static site generators like Jekyll (Ruby) or Hyde
 (Python). The benefits are obvious - your site is hosted on a cheap shared
 hosting and it can easily survive the Digg/Slashdot/Reddit effect. There is no
 database latency - the browser requests a file on the server and gets it back&nbsp;immediately.</p>
 <div class="section" id="update-2011-02-27">
-<h4>Update&nbsp;(2011-02-27):</h4>
+<h2>Update&nbsp;(2011-02-27):</h2>
 <p>While I still use a static generator to power my site, it&#8217;s not a different
 engine. I got tired of launching a django server just to write a post. I wrote
 a new static site generator called <a class="reference external" href="https://github.com/honza/socrates">Socrates</a>. Each post is now a separate
@@ -65,14 +65,14 @@ file written in Markdown. Socrates then runs through those files and creates a
 site for me. I&#8217;m still using django templates. What follows is the original&nbsp;post.</p>
 </div>
 <div class="section" id="django">
-<h4>django</h4>
+<h2>django</h2>
 <p>The site is a simple django blog. There is nothing really of note when it comes
 to django-specific coding. I run the django server locally when I&#8217;m editing or
 adding articles. It provides a nice <span class="caps">UI</span>. It also lets me easily preview the site
 without generating&nbsp;anything.</p>
 </div>
 <div class="section" id="static-generator">
-<h4>static&nbsp;generator</h4>
+<h2>static&nbsp;generator</h2>
 <p>When I&#8217;m happy with the state of the website and want to publish it, I run the
 static generator. It&#8217;s contained in the <tt class="docutils literal">generate.py</tt> file. It runs through
 all possible urls and for each one it generates a static file. Each file is a
@@ -104,14 +104,14 @@ following <span class="caps">URL</span>&nbsp;structure:</p>
 </pre></div>
 </div>
 <div class="section" id="ftp-deploy-script">
-<h4><span class="caps">FTP</span> deploy&nbsp;script</h4>
+<h2><span class="caps">FTP</span> deploy&nbsp;script</h2>
 <p>And the final piece is the <tt class="docutils literal">deploy.py</tt> script. It looks at the deploy
 directory, and with a little help from git, it figures out what files were
 changed since the last deploy. It then takes those files and throws them up on
 the server. A normal shared&nbsp;hosting.</p>
 </div>
 <div class="section" id="conclusion">
-<h4>Conclusion</h4>
+<h2>Conclusion</h2>
 <p>You can check out the code on <a class="reference external" href="https://github.com/honza/honza.github.com">Github</a>.</p>
 </div>
 </div>

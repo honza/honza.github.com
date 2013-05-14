@@ -51,7 +51,7 @@
 
 <div id="content">
     <div class="section" id="haskell-strings">
-<h3>Haskell&nbsp;Strings</h3>
+<h1>Haskell&nbsp;Strings</h1>
 <p>It continues to amaze me how bad Haskell is at processing strings.  One of the
 reasons I wanted to learn Haskell was to be able to write short,
 dynamic-language-like programs that execute fast once compiled.  Somehow
@@ -59,7 +59,7 @@ rather, Haskell has failed to deliver on its promise of <em>bare metal</em> spee
 mostly write scripts and utilities meant to run on my machine&#8212;these scripts
 mostly process text.  Read a file, parse it and spit something&nbsp;out.</p>
 <div class="section" id="example">
-<h4>Example</h4>
+<h2>Example</h2>
 <p>Let&#8217;s build a simple program that will show what I&#8217;m talking&nbsp;about.</p>
 <ul class="simple">
 <li>Read a file called <tt class="docutils literal">file</tt> which contains&nbsp;prose</li>
@@ -201,7 +201,7 @@ one-liner that uses <tt class="docutils literal">ByteString</tt>.</p>
 <p>This clocks in at 3.5s on my machine.  Pretty&nbsp;fast!</p>
 </div>
 <div class="section" id="python">
-<h4>Python</h4>
+<h2>Python</h2>
 <p>Let&#8217;s try this in&nbsp;Python</p>
 <div class="highlight"><pre><span class="k">def</span> <span class="nf">process</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
     <span class="n">lines</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span>
@@ -231,7 +231,7 @@ Python,&nbsp;too.</p>
 <p>This clocks in at 2&nbsp;seconds.</p>
 </div>
 <div class="section" id="javascript-and-v8">
-<h4>Javascript and&nbsp;V8</h4>
+<h2>Javascript and&nbsp;V8</h2>
 <div class="highlight"><pre><span class="c1">// main.js</span>
 
 <span class="kd">var</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;fs&#39;</span><span class="p">);</span>
@@ -269,21 +269,21 @@ $ time node main.js &gt; /dev/null
 <p>Wait for it!  4.5 seconds.  I have no&nbsp;words.</p>
 </div>
 <div class="section" id="how-about-go">
-<h4>How about&nbsp;Go?</h4>
+<h2>How about&nbsp;Go?</h2>
 <p><strong><span class="caps">EDIT</span> 3</strong>: (Add this section.  Looks like this post is turning into a language
 shootout, le&nbsp;sigh).</p>
-<div class="highlight"><pre><span class="k">package</span> <span class="n">main</span>
+<div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 
-<span class="k">import</span> <span class="p">(</span>
+<span class="kn">import</span> <span class="p">(</span>
     <span class="s">&quot;fmt&quot;</span>
     <span class="s">&quot;io/ioutil&quot;</span>
     <span class="s">&quot;bytes&quot;</span>
 <span class="p">)</span>
 
-<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">body</span><span class="p">,</span> <span class="n">_</span> <span class="p">:=</span> <span class="n">ioutil</span><span class="p">.</span><span class="n">ReadFile</span><span class="p">(</span><span class="s">&quot;file&quot;</span><span class="p">)</span>
-    <span class="n">result</span> <span class="p">:=</span> <span class="n">bytes</span><span class="p">.</span><span class="n">Title</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
-    <span class="n">fmt</span><span class="p">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">body</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">ioutil</span><span class="p">.</span><span class="nx">ReadFile</span><span class="p">(</span><span class="s">&quot;file&quot;</span><span class="p">)</span>
+    <span class="nx">result</span> <span class="o">:=</span> <span class="nx">bytes</span><span class="p">.</span><span class="nx">Title</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 <p>Put this into <tt class="docutils literal">title.go</tt>, compile and run&nbsp;with</p>
@@ -295,7 +295,7 @@ $ time ./title &gt; /dev/null
 compared to&nbsp;C.</p>
 </div>
 <div class="section" id="how-about-c">
-<h4>How about&nbsp;C?</h4>
+<h2>How about&nbsp;C?</h2>
 <p><strong><span class="caps">EDIT</span> 2</strong>: (Add this&nbsp;section)</p>
 <p><a class="reference external" href="https://twitter.com/andrewstwrt">Andrew Stewart</a> has graciously written a C version of this program.  Like he
 <a class="reference external" href="https://twitter.com/andrewstwrt/status/261282584263286784">said</a>, you should do all of your scripting in&nbsp;C.</p>
@@ -348,7 +348,7 @@ $ time ./script &gt; /dev/null
 below&nbsp;1).</p>
 </div>
 <div class="section" id="recap">
-<h4>Recap</h4>
+<h2>Recap</h2>
 <pre class="literal-block">
 Haskell - String              17s
 Haskell - Text                60s

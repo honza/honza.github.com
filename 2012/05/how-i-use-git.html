@@ -51,21 +51,21 @@
 
 <div id="content">
     <div class="section" id="how-i-use-git">
-<h3>How I use&nbsp;git</h3>
+<h1>How I use&nbsp;git</h1>
 <p>Recently, I have noticed that there are quite a few wrappers around git to give
 you a nicer interface to work with.  The new commands promise to be easy to
 remember and make your life less frustrating.  I find these a little silly
 because git on its own is a great tool.  Here I&#8217;m going to describe how I use
 git to convince you (and myself) that it&#8217;s not that&nbsp;hard.</p>
 <div class="section" id="cloning">
-<h4>Cloning</h4>
+<h2>Cloning</h2>
 <p>This couldn&#8217;t be any&nbsp;simpler:</p>
 <pre class="literal-block">
 git clone git://github.com/honza/dotfiles.git
 </pre>
 </div>
 <div class="section" id="committing">
-<h4>Committing</h4>
+<h2>Committing</h2>
 <p>Once I have cloned a repo, I start to make changes.  To see what files I have
 changed, I&nbsp;run</p>
 <pre class="literal-block">
@@ -94,7 +94,7 @@ git diff --cached
 </pre>
 </div>
 <div class="section" id="stashing">
-<h4>Stashing</h4>
+<h2>Stashing</h2>
 <p>I often stash my code.  Sometimes you need to look at some code in a different
 branch, sometimes I notice something is broken and I want to see if I broke it
 or&nbsp;not.</p>
@@ -111,7 +111,7 @@ git stash list
 </pre>
 </div>
 <div class="section" id="branches">
-<h4>Branches</h4>
+<h2>Branches</h2>
 <p>Creating new branches is simple and&nbsp;cheap</p>
 <pre class="literal-block">
 git checkout -b new_branch
@@ -126,7 +126,7 @@ git push origin :branch_name
 </pre>
 </div>
 <div class="section" id="rebasing">
-<h4>Rebasing</h4>
+<h2>Rebasing</h2>
 <p>I have <a class="reference external" href="http://honza.ca/2011/05/the-importance-of-git-rebase">written</a> on
 rebasing before.  It makes your history much nicer.  Any time I pull code from
 a remote repository, I&nbsp;do</p>
@@ -139,7 +139,7 @@ git pull --rebase origin dev
 </pre>
 </div>
 <div class="section" id="bisecting">
-<h4>Bisecting</h4>
+<h2>Bisecting</h2>
 <p>I <em>love</em> the bisect commnad in git.  You can use it to determine which commit
 introduced a bug.  This is especially useful if you have a comprehensive test
 suite.  For example, the latest commit is broken and you remember that all
@@ -151,7 +151,7 @@ git bisect run python manage.py test
 <p>Git will then keep running your tests until it finds the first commit that&#8217;s&nbsp;broken.</p>
 </div>
 <div class="section" id="merging">
-<h4>Merging</h4>
+<h2>Merging</h2>
 <p>When a feature branch is finished, I merge it into master&nbsp;with</p>
 <pre class="literal-block">
 git checkout master
@@ -159,7 +159,7 @@ git merge --no-ff feature
 </pre>
 </div>
 <div class="section" id="viewing-history">
-<h4>Viewing&nbsp;history</h4>
+<h2>Viewing&nbsp;history</h2>
 <p>For viewing history, I really like the following&nbsp;command</p>
 <pre class="literal-block">
 git log --pretty=format:&quot;%h - %an, %ar : %s&quot;'
@@ -172,14 +172,14 @@ git log --oneline --graph
 </pre>
 </div>
 <div class="section" id="upgrading-all-submodules-in-a-project">
-<h4>Upgrading all submodules in a&nbsp;project</h4>
+<h2>Upgrading all submodules in a&nbsp;project</h2>
 <p>This one is great, too.  I use it to upgrade all of my vim&nbsp;plugins.</p>
 <pre class="literal-block">
 git submodule foreach git pull
 </pre>
 </div>
 <div class="section" id="pulling-and-pushing">
-<h4>Pulling and&nbsp;pushing</h4>
+<h2>Pulling and&nbsp;pushing</h2>
 <p>This is pretty straight&nbsp;forward</p>
 <pre class="literal-block">
 git pull
@@ -190,7 +190,7 @@ git push origin dev
 </pre>
 </div>
 <div class="section" id="conclusion">
-<h4>Conclusion</h4>
+<h2>Conclusion</h2>
 <p>Once you learn what git calls what, it&#8217;s pretty easy to just google the thing
 you&#8217;re trying to do.  I&#8217;m definitely not an expert but this gets me&nbsp;by.</p>
 </div>

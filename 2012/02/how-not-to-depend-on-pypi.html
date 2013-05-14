@@ -51,7 +51,7 @@
 
 <div id="content">
     <div class="section" id="how-not-to-depend-on-pypi">
-<h3>How not to depend on&nbsp;PyPI</h3>
+<h1>How not to depend on&nbsp;PyPI</h1>
 <p>When deploying a Django application, you often use a <tt class="docutils literal">requirements.txt</tt> file
 that contains a list of the application&#8217;s dependencies. During deployment, your
 provisioning system will <tt class="docutils literal">pip install</tt> all of those to make sure that your
@@ -68,7 +68,7 @@ that package&nbsp;there.</p>
 <p>Unfortunately, PyPI has been known to be down or slow at times; and you want
 your deployments to be as smooth as&nbsp;possible.</p>
 <div class="section" id="what-you-can-do">
-<h4>What you can&nbsp;do</h4>
+<h2>What you can&nbsp;do</h2>
 <p>Instead of depending on PyPI for a production application, you can host the
 packages that your application needs yourself. It&#8217;s actually surpringly easy to
 do. Your existing deployment strategy can easily be modified to remove the&nbsp;dependency.</p>

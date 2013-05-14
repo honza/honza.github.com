@@ -51,12 +51,12 @@
 
 <div id="content">
     <div class="section" id="virtual-machines-for-django-developers">
-<h3>Virtual machines for Django&nbsp;developers</h3>
+<h1>Virtual machines for Django&nbsp;developers</h1>
 <p><a class="reference external" href="http://vagrantup.com">Vagrant</a> is a tool for building and distributing virtualized
 development environments. It&#8217;s based on VirtualBox VMs. This article describes
 how this Ruby tool can be useful to Django&nbsp;developers.</p>
 <div class="section" id="why-vagrant">
-<h4>Why&nbsp;vagrant?</h4>
+<h2>Why&nbsp;vagrant?</h2>
 <p>The modern web developer works on many different projects. Each project has a
 unique set of requirements, dependencies and package versions needed for that
 project to succeed. Keeping all of these libraries in check is difficult.
@@ -74,7 +74,7 @@ and&nbsp;memcached.</p>
 <p>Getting started with vagrant is&nbsp;simple.</p>
 </div>
 <div class="section" id="getting-started">
-<h4>Getting&nbsp;started</h4>
+<h2>Getting&nbsp;started</h2>
 <p>vagrant is distributed as a Ruby gem and you can install it like&nbsp;so:</p>
 <div class="highlight"><pre><span class="go">gem install vagrant</span>
 </pre></div>
@@ -109,7 +109,7 @@ environment under <tt class="docutils literal">/vagrant</tt>. Any changes to eit
 </pre></div>
 </div>
 <div class="section" id="provisioning">
-<h4>Provisioning</h4>
+<h2>Provisioning</h2>
 <p>Next, you will install some packages into the <span class="caps">VM</span>. You will install some common
 Django packages: PostreSQL, Apache, <span class="caps">WSGI</span>, memcached and&nbsp;git.</p>
 <div class="highlight"><pre><span class="go">cd ~/Code/webapp</span>
@@ -131,7 +131,7 @@ custom cookbook inside that directory where we will define what packages we&nbsp
 <span class="n">require_recipe</span> <span class="s2">&quot;memcached&quot;</span>
 </pre></div>
 <p>And modify your <tt class="docutils literal">Vagrantfile</tt> to use the&nbsp;cookbooks:</p>
-<div class="highlight"><pre><span class="no">Vagrant</span><span class="o">::</span><span class="no">Config</span><span class="o">.</span><span class="n">run</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+<div class="highlight"><pre><span class="ss">Vagrant</span><span class="p">:</span><span class="ss">:Config</span><span class="o">.</span><span class="n">run</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
   <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">box</span> <span class="o">=</span> <span class="s2">&quot;vagrant-ubuntu&quot;</span>
     <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">provision</span> <span class="ss">:chef_solo</span> <span class="k">do</span> <span class="o">|</span><span class="n">chef</span><span class="o">|</span>
       <span class="n">chef</span><span class="o">.</span><span class="n">cookbooks_path</span> <span class="o">=</span> <span class="s2">&quot;cookbooks&quot;</span>

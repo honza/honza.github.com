@@ -51,13 +51,13 @@
 
 <div id="content">
     <div class="section" id="why-you-should-be-using-coffeescript">
-<h3>Why you should be using&nbsp;CoffeeScript</h3>
+<h1>Why you should be using&nbsp;CoffeeScript</h1>
 <p>I&#8217;m sure you&#8217;ve heard of CoffeeScript. Everyone is talking about it, it seems.
 It&#8217;s a beautiful language with a simple syntax that you use to write
 Javascript. CoffeeScript compiles to Javascript. Here is why I think you should
 be using&nbsp;it:</p>
 <div class="section" id="readability">
-<h4>Readability</h4>
+<h2>Readability</h2>
 <p>CoffeeScript is designed to be beautiful and readable. There is no unnecessary
 fluff. Less syntax boilerplate, fewer mistakes.&nbsp;Compare:</p>
 <div class="highlight"><pre><span class="c1">// regular javascript</span>
@@ -69,14 +69,14 @@ fluff. Less syntax boilerplate, fewer mistakes.&nbsp;Compare:</p>
 closures and blocks easier to&nbsp;spot.</p>
 </div>
 <div class="section" id="valid-code">
-<h4>Valid&nbsp;Code</h4>
+<h2>Valid&nbsp;Code</h2>
 <p>There are many different coding styles when it comes to writing Javascript. The
 good thing about CoffeeScript is that the Javascript it generates is valid - it
 passes <a class="reference external" href="http://www.javascriptlint.com/">Javascript Lint</a>. And if your code isn&#8217;t valid CoffeeScript, it
 won&#8217;t compile. It&#8217;s a win-win. This is perhaps my favorite&nbsp;feature.</p>
 </div>
 <div class="section" id="easy-class-inheritance">
-<h4>Easy class&nbsp;inheritance</h4>
+<h2>Easy class&nbsp;inheritance</h2>
 <p>This is just great. It reminds me of Python and&nbsp;Ruby:</p>
 <div class="highlight"><pre><span class="k">class</span> <span class="nx">Animal</span>
     <span class="nv">constructor: </span><span class="nf">(@name) -&gt;</span>
@@ -85,7 +85,7 @@ won&#8217;t compile. It&#8217;s a win-win. This is perhaps my favorite&nbsp;feat
         <span class="nx">alert</span> <span class="nx">@name</span> <span class="o">+</span> <span class="s">&quot; moved </span><span class="si">#{</span><span class="nx">meters</span><span class="si">}</span><span class="s">m.&quot;</span>
 
 <span class="k">class</span> <span class="nx">Dog</span> <span class="k">extends</span> <span class="nx">Animal</span>
-    <span class="nv">move: </span><span class="o">-&gt;</span>
+    <span class="nv">move: </span><span class="nf">-&gt;</span>
         <span class="nx">alert</span> <span class="s">&quot;Whoof...&quot;</span>
         <span class="k">super</span> <span class="mi">5</span>
 </pre></div>
@@ -128,14 +128,14 @@ version and make any changes required. In my mind, this encourages better code
 organization and&nbsp;structure.</p>
 </div>
 <div class="section" id="node-js-awesomeness">
-<h4>Node.js&nbsp;awesomeness</h4>
+<h2>Node.js&nbsp;awesomeness</h2>
 <p>CoffeeScript comes with a Node.js utility, <tt class="docutils literal">coffee</tt>. You can write your
 Node.js code in CoffeeScript and run it with <tt class="docutils literal">coffee file.js</tt>. The utility
 wraps the CoffeeScript compiler and the <tt class="docutils literal">node</tt> executable. This way, you can
 whip up a quick server in no time.&nbsp;Genius.</p>
 </div>
 <div class="section" id="easy-debugging">
-<h4>Easy&nbsp;debugging</h4>
+<h2>Easy&nbsp;debugging</h2>
 <p>With tools like <a class="reference external" href="http://code.google.com/webtoolkit/">Google Web Toolkit</a>, your code compiles to <em>minified</em>
 javascript. Non-minified code is obviously easier (possible?) to read and&nbsp;debug.</p>
 </div>

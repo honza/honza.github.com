@@ -51,7 +51,7 @@
 
 <div id="content">
     <div class="section" id="building-a-lisp-to-javascript-compiler">
-<h3>Building a Lisp to Javascript&nbsp;compiler</h3>
+<h1>Building a Lisp to Javascript&nbsp;compiler</h1>
 <p>In this post, I&#8217;m going to show you how I made a Lisp to Javascript compiler. I
 really enjoy programming in Clojure but have often thought that the <span class="caps">JVM</span> isn&#8217;t
 always the best platform for scripts due to the slow <span class="caps">JVM</span> start-up. So, I
@@ -60,7 +60,7 @@ and can be run on top of&nbsp;nodejs.</p>
 <p>Compilers are notoriously hard to understand and therefore make for great
 mind-bending exercises.  Exactly my idea of weekend&nbsp;fun.</p>
 <div class="section" id="what-we-are-going-to-do">
-<h4>What we are going to&nbsp;do</h4>
+<h2>What we are going to&nbsp;do</h2>
 <p>There are tons of Lisp to Javascript compilers out there.  What makes mine
 special?  I&#8217;m using a <span class="caps">PEG</span> grammar to parse the source code.  Once it&#8217;s parsed,
 I turn the result into a <a class="reference external" href="https://developer.mozilla.org/en-US/docs/SpiderMonkey/Parser_API">Parser <span class="caps">API</span></a> compatible <span class="caps">AST</span>.  The <span class="caps">AST</span> is then passed
@@ -72,7 +72,7 @@ decoupled from the source code emission.  You can completely remove the
 Javascript generation part and use some other software to do&nbsp;that.</p>
 </div>
 <div class="section" id="lisp-basics">
-<h4>Lisp&nbsp;basics</h4>
+<h2>Lisp&nbsp;basics</h2>
 <p>If you are familiar with Lisp, you can skip this&nbsp;section.</p>
 <p>Lisp source code is made up of s-expressions.  An s-expression is a list whose
 first element is a function and the rest are the arguments to that&nbsp;function.</p>
@@ -104,7 +104,7 @@ is returned.  There is no <tt class="docutils literal">return</tt> keyword in Li
 things like the <tt class="docutils literal">if</tt> keyword are actually functions that return&nbsp;values.</p>
 </div>
 <div class="section" id="the-mighty-peg">
-<h4>The mighty&nbsp;<span class="caps">PEG</span></h4>
+<h2>The mighty&nbsp;<span class="caps">PEG</span></h2>
 <p>Every <span class="caps">PEG</span> grammar starts with the <tt class="docutils literal">program</tt> directive.  This is where the
 parser will start&nbsp;parsing.</p>
 <pre class="literal-block">
@@ -223,12 +223,12 @@ _
 <p>Zero or more of the following characters: newline, comma and&nbsp;space.</p>
 </div>
 <div class="section" id="obstacles">
-<h4>Obstacles</h4>
+<h2>Obstacles</h2>
 <p>When converting the parsed source code to the Parser <span class="caps">API</span> tree, I hit a few
 obstacles.  It turns out that Lisp and Javascript don&#8217;t map perfectly to each
 other and therefore some post-processing is&nbsp;needed.</p>
 <div class="section" id="statement-vs-expression">
-<h5>Statement vs&nbsp;expression</h5>
+<h3>Statement vs&nbsp;expression</h3>
 <p>In Lisp, everything is an expression.  In Javascript, there are both
 expressions and statements.  The hardest part is the fact that a function call
 can be both a statement and an expression depending on how it&#8217;s used.  So you
@@ -265,7 +265,7 @@ function calls.  If it&#8217;s a nested function call, it&#8217;s placed in the 
 free - each node only knows about&nbsp;itself.</p>
 </div>
 <div class="section" id="implicit-return">
-<h5>Implicit&nbsp;return</h5>
+<h3>Implicit&nbsp;return</h3>
 <p>In Lisp, the last s-expression in a function&#8217;s body is implicitly returned.
 You don&#8217;t need to denote this with a return statement, it&#8217;s built-in.  Again,
 we need to do some more processing.  If we are processing a function
@@ -273,7 +273,7 @@ declaration, we need to check its body and wrap the last expression in a
 <tt class="docutils literal">ReturnStatement</tt>.</p>
 </div>
 <div class="section" id="if-is-an-expression-in-lisp">
-<h5>If is an expression in&nbsp;Lisp</h5>
+<h3>If is an expression in&nbsp;Lisp</h3>
 <p>The if statement in Lisp is an expression, just like a function call or
 anything else.  This means that the expression in any of the two branches is
 effectively returned to the caller.  This means that we need to add an extra
@@ -301,7 +301,7 @@ return&nbsp;statement.</p>
 </div>
 </div>
 <div class="section" id="standard-library">
-<h4>Standard&nbsp;library</h4>
+<h2>Standard&nbsp;library</h2>
 <p>A lisp would be no fun without some fun functional programming functions.  I
 have started working on a standard library for our lisp.  It lives in a file
 called <tt class="docutils literal">lib.js</tt>.  This file includes functions that are accessible from any
@@ -322,7 +322,7 @@ program that you&nbsp;write.</p>
 <p>And much&nbsp;more.</p>
 </div>
 <div class="section" id="putting-it-all-together">
-<h4>Putting it all&nbsp;together</h4>
+<h2>Putting it all&nbsp;together</h2>
 <p>Here is how it all comes&nbsp;together:</p>
 <ol class="arabic simple">
 <li>Use peg.js to compile the grammar into a&nbsp;parser</li>
@@ -341,7 +341,7 @@ library.  It simply reads the standard library code from the <tt class="docutils
 and prepends&nbsp;it.</p>
 </div>
 <div class="section" id="conclusion">
-<h4>Conclusion</h4>
+<h2>Conclusion</h2>
 <p>This has certainly been a fun exercise for me.  You can check out the finished
 product on <a class="reference external" href="https://github.com/honza/inertia">GitHub</a>.</p>
 </div>

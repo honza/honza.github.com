@@ -51,7 +51,7 @@
 
 <div id="content">
     <div class="section" id="using-chef-with-small-django-apps">
-<h3>Using Chef with small Django&nbsp;apps</h3>
+<h1>Using Chef with small Django&nbsp;apps</h1>
 <p>This year at <a class="reference external" href="http://djangocon.us">DjangoCon</a>, it seemed like everybody was talking about automatic
 deployments and namely <a class="reference external" href="http://www.opscode.com/chef/">Chef</a>. After coming home from the conference, I spent
 a considerable amount of time learning chef and thinking about how it can be
@@ -67,7 +67,7 @@ despair, you can usually tell pretty quickly what&#8217;s going on. To test your
 deployment, we will be using <a class="reference external" href="http://vagrantup.com">Vagrant</a> which is an awesome tool for running
 virtual machines on your development&nbsp;machine.</p>
 <div class="section" id="what-we-will-install">
-<h4>What we will&nbsp;install</h4>
+<h2>What we will&nbsp;install</h2>
 <p>Our Django application will be deployed using the&nbsp;following:</p>
 <ul class="simple">
 <li>nginx</li>
@@ -80,7 +80,7 @@ virtual machines on your development&nbsp;machine.</p>
 <p>Your development machine will need to have <a class="reference external" href="http://docs.fabfile.org/en/1.2.2/index.html">Fabric</a>&nbsp;installed.</p>
 </div>
 <div class="section" id="how-chef-works">
-<h4>How Chef&nbsp;works</h4>
+<h2>How Chef&nbsp;works</h2>
 <p>Chef is a tool that is installed on your server. You give it a bunch
 configuration files and tell it to provision server with the necessary packages
 and settings. This means that our automatic deployment will have to parts: Chef
@@ -113,7 +113,7 @@ paste the cookbooks you need for you project. We will need the&nbsp;following:</
 </ul>
 </div>
 <div class="section" id="cookbooks">
-<h4>Cookbooks</h4>
+<h2>Cookbooks</h2>
 <p>Each cookbook contains a <em>recipes</em> directory. Each recipe tells Chef how this
 particular application is to be installed and configured. For example, it will
 tell nginx to create an entry in <em>sites-available</em> and <em>sites-enabled</em>. Or, it
@@ -128,14 +128,14 @@ directory contains files that need no further modification and can be copied
 over&nbsp;verbatim.</p>
 </div>
 <div class="section" id="node-json">
-<h4>node.json</h4>
+<h2>node.json</h2>
 <p>The <em>node.json</em> file is a per project file that specifies certain values for
 Chef to use. For example, you can tell Chef what you want your PostgreSQL
 database to be called, what the name of your django project is, etc. It has a
 simple <span class="caps">JSON</span>&nbsp;syntax.</p>
 </div>
 <div class="section" id="your-app-s-recipe">
-<h4>Your app&#8217;s&nbsp;recipe</h4>
+<h2>Your app&#8217;s&nbsp;recipe</h2>
 <p>Your application is going to need a simple recipe. This means creating a
 cookbook bearing your project&#8217;s name and creating a <em>recipes</em> directory within
 in. The recipe should be called <em>default.rb</em> and all it needs to include is a
@@ -166,7 +166,7 @@ list of applications to install. For&nbsp;example:</p>
 recipes, restart PostgreSQL and create a new&nbsp;database.</p>
 </div>
 <div class="section" id="start-the-engines">
-<h4>Start the&nbsp;engines</h4>
+<h2>Start the&nbsp;engines</h2>
 <p>At this point, you can try out your configuration with Vagrant. To help you
 out, I have create a <a class="reference external" href="https://github.com/honza/django-chef">template</a> project on Github that you can download and
 use out of the&nbsp;box.</p>
@@ -198,13 +198,13 @@ use out of the&nbsp;box.</p>
 </pre></div>
 </div>
 <div class="section" id="the-real-thing">
-<h4>The real&nbsp;thing</h4>
+<h2>The real&nbsp;thing</h2>
 <p>Once you&#8217;ve tested your application in Vagrant so you are ready to deploy to a
 server. All that&#8217;s left to do is create a new <em>roledef</em> in the <em>fabfile</em> and
 run&nbsp;it!</p>
 </div>
 <div class="section" id="conclusion">
-<h4>Conclusion</h4>
+<h2>Conclusion</h2>
 <p>I am by no means a Chef expert&#8212;I learned how to use it a few days ago. If you
 have any feedback, do let me&nbsp;know.</p>
 </div>

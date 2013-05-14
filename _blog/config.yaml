@@ -7,7 +7,7 @@ text_processor: extension
 templates: jinja2
 append_slash: false
 url_include_day: false
-initial_header_level: 3
+initial_header_level: 1
 punctuation: true
 ligatures: false
 deploy_dir: "../"

@@ -4,7 +4,7 @@
     <title>Honza Pokorny - Thoughts on web development</title>
     <link href="http://honza.ca/atom.xml" rel="self"/>
     <link href="http://honza.ca"/>
-    <updated>2013-05-13T20:00:38Z</updated>
+    <updated>2013-05-14T00:38:20Z</updated>
     <id>http://honza.ca</id>
 
     
@@ -18,7 +18,7 @@
 
             <content type="html">
                 <div class="section" id="building-a-lisp-to-javascript-compiler">
-<h3>Building a Lisp to Javascript&nbsp;compiler</h3>
+<h1>Building a Lisp to Javascript&nbsp;compiler</h1>
 <p>In this post, I&#8217;m going to show you how I made a Lisp to Javascript compiler. I
 really enjoy programming in Clojure but have often thought that the <span class="caps">JVM</span> isn&#8217;t
 always the best platform for scripts due to the slow <span class="caps">JVM</span> start-up. So, I
@@ -27,7 +27,7 @@ and can be run on top of&nbsp;nodejs.</p>
 <p>Compilers are notoriously hard to understand and therefore make for great
 mind-bending exercises.  Exactly my idea of weekend&nbsp;fun.</p>
 <div class="section" id="what-we-are-going-to-do">
-<h4>What we are going to&nbsp;do</h4>
+<h2>What we are going to&nbsp;do</h2>
 <p>There are tons of Lisp to Javascript compilers out there.  What makes mine
 special?  I&#8217;m using a <span class="caps">PEG</span> grammar to parse the source code.  Once it&#8217;s parsed,
 I turn the result into a <a class="reference external" href="https://developer.mozilla.org/en-US/docs/SpiderMonkey/Parser_API">Parser <span class="caps">API</span></a> compatible <span class="caps">AST</span>.  The <span class="caps">AST</span> is then passed
@@ -39,7 +39,7 @@ decoupled from the source code emission.  You can completely remove the
 Javascript generation part and use some other software to do&nbsp;that.</p>
 </div>
 <div class="section" id="lisp-basics">
-<h4>Lisp&nbsp;basics</h4>
+<h2>Lisp&nbsp;basics</h2>
 <p>If you are familiar with Lisp, you can skip this&nbsp;section.</p>
 <p>Lisp source code is made up of s-expressions.  An s-expression is a list whose
 first element is a function and the rest are the arguments to that&nbsp;function.</p>
@@ -71,7 +71,7 @@ is returned.  There is no <tt class="docutils literal">return</tt> keyword in Li
 things like the <tt class="docutils literal">if</tt> keyword are actually functions that return&nbsp;values.</p>
 </div>
 <div class="section" id="the-mighty-peg">
-<h4>The mighty&nbsp;<span class="caps">PEG</span></h4>
+<h2>The mighty&nbsp;<span class="caps">PEG</span></h2>
 <p>Every <span class="caps">PEG</span> grammar starts with the <tt class="docutils literal">program</tt> directive.  This is where the
 parser will start&nbsp;parsing.</p>
 <pre class="literal-block">
@@ -190,12 +190,12 @@ _
 <p>Zero or more of the following characters: newline, comma and&nbsp;space.</p>
 </div>
 <div class="section" id="obstacles">
-<h4>Obstacles</h4>
+<h2>Obstacles</h2>
 <p>When converting the parsed source code to the Parser <span class="caps">API</span> tree, I hit a few
 obstacles.  It turns out that Lisp and Javascript don&#8217;t map perfectly to each
 other and therefore some post-processing is&nbsp;needed.</p>
 <div class="section" id="statement-vs-expression">
-<h5>Statement vs&nbsp;expression</h5>
+<h3>Statement vs&nbsp;expression</h3>
 <p>In Lisp, everything is an expression.  In Javascript, there are both
 expressions and statements.  The hardest part is the fact that a function call
 can be both a statement and an expression depending on how it&#8217;s used.  So you
@@ -232,7 +232,7 @@ function calls.  If it&#8217;s a nested function call, it&#8217;s placed in the 
 free - each node only knows about&nbsp;itself.</p>
 </div>
 <div class="section" id="implicit-return">
-<h5>Implicit&nbsp;return</h5>
+<h3>Implicit&nbsp;return</h3>
 <p>In Lisp, the last s-expression in a function&#8217;s body is implicitly returned.
 You don&#8217;t need to denote this with a return statement, it&#8217;s built-in.  Again,
 we need to do some more processing.  If we are processing a function
@@ -240,7 +240,7 @@ declaration, we need to check its body and wrap the last expression in a
 <tt class="docutils literal">ReturnStatement</tt>.</p>
 </div>
 <div class="section" id="if-is-an-expression-in-lisp">
-<h5>If is an expression in&nbsp;Lisp</h5>
+<h3>If is an expression in&nbsp;Lisp</h3>
 <p>The if statement in Lisp is an expression, just like a function call or
 anything else.  This means that the expression in any of the two branches is
 effectively returned to the caller.  This means that we need to add an extra
@@ -268,7 +268,7 @@ return&nbsp;statement.</p>
 </div>
 </div>
 <div class="section" id="standard-library">
-<h4>Standard&nbsp;library</h4>
+<h2>Standard&nbsp;library</h2>
 <p>A lisp would be no fun without some fun functional programming functions.  I
 have started working on a standard library for our lisp.  It lives in a file
 called <tt class="docutils literal">lib.js</tt>.  This file includes functions that are accessible from any
@@ -289,7 +289,7 @@ program that you&nbsp;write.</p>
 <p>And much&nbsp;more.</p>
 </div>
 <div class="section" id="putting-it-all-together">
-<h4>Putting it all&nbsp;together</h4>
+<h2>Putting it all&nbsp;together</h2>
 <p>Here is how it all comes&nbsp;together:</p>
 <ol class="arabic simple">
 <li>Use peg.js to compile the grammar into a&nbsp;parser</li>
@@ -308,7 +308,7 @@ library.  It simply reads the standard library code from the <tt class="docutils
 and prepends&nbsp;it.</p>
 </div>
 <div class="section" id="conclusion">
-<h4>Conclusion</h4>
+<h2>Conclusion</h2>
 <p>This has certainly been a fun exercise for me.  You can check out the finished
 product on <a class="reference external" href="https://github.com/honza/inertia">GitHub</a>.</p>
 </div>
@@ -327,7 +327,7 @@ product on <a class="reference external" href="https://github.com/honza/inertia"
 
             <content type="html">
                 <div class="section" id="software-engineering-interviews">
-<h3>Software Engineering&nbsp;Interviews</h3>
+<h1>Software Engineering&nbsp;Interviews</h1>
 <p>If you find yourself interviewing for a software engineering position today,
 you can be 90 percent sure that you will be asked to solve some programming&nbsp;puzzles.</p>
 <p>We’ve all been there.  You come to the office for an interview, spend a few
@@ -358,7 +358,7 @@ rather hire?  Every now and then I get this idea that I’ll go and learn a whol
 bunch of puzzles and quizzes so I can wow the next interviewer.  But then I
 inevitably start to feel dishonest and drop the whole&nbsp;thing.</p>
 <div class="section" id="how-to-interview-someone">
-<h4>How to interview&nbsp;someone</h4>
+<h2>How to interview&nbsp;someone</h2>
 <p>Find a small problem in your code base.  Give them access to your Git
 repository.  Assign the ticket to them.  Explain why it’s a problem and suggest
 a few possible solutions.  Have them work on it either alone or alongside one
@@ -385,14 +385,14 @@ hire. First one to say &#8220;fuck this&#8221; and walk out gets the job.</block
 
             <content type="html">
                 <div class="section" id="international-families">
-<h3>International&nbsp;families</h3>
+<h1>International&nbsp;families</h1>
 <p>I&#8217;m from the Czech republic.  My wife is from Canada.  We got married in
 Canada.  Our son was born in the United Kingdom.  Our daughter was born in
 Canada.  Both of our children are by birth Czech and Canadian at the same&nbsp;time.</p>
 <p>We want our children to be able to prove both of those citizenships and the
 following is the&nbsp;process.</p>
 <div class="section" id="our-son">
-<h4>Our&nbsp;son</h4>
+<h2>Our&nbsp;son</h2>
 <p>Our son Wyatt was born in the <span class="caps">UK</span>.  He has a British birth certificate but is
 not a British citizen.  In order to travel out of the <span class="caps">UK</span>, he had to get a
 passport.  Because we now live in Canada, we decided it would make more sense
@@ -428,7 +428,7 @@ which isn&#8217;t unlike a social security number except it&#8217;s derived from
 of&nbsp;birth.</p>
 </div>
 <div class="section" id="our-daughter">
-<h4>Our&nbsp;daughter</h4>
+<h2>Our&nbsp;daughter</h2>
 <p>Our daughter Eliška was born in Canada.  This means she can fortunately get a
 Canadian passport without any issues.  She is a real Canadian like most people
 and doesn&#8217;t need to have any special paperwork to prove that she is.  Piece of&nbsp;cake.</p>
@@ -450,7 +450,7 @@ for a Czech birth certificate and a birth number.  More forms, more fees, more
 superlegalization,&nbsp;etc.</p>
 </div>
 <div class="section" id="conclusion">
-<h4>Conclusion</h4>
+<h2>Conclusion</h2>
 <p>No matter what you do, do not romanticize international families.  It&#8217;s not all
 that fun all the&nbsp;time&#8230;</p>
 </div>
@@ -469,7 +469,7 @@ that fun all the&nbsp;time&#8230;</p>
 
             <content type="html">
                 <div class="section" id="calvin-on-predestination">
-<h3>Calvin on&nbsp;predestination</h3>
+<h1>Calvin on&nbsp;predestination</h1>
 <p><a class="reference external" href="http://www.ccel.org/ccel/calvin/institutes.v.xxiii.html">Book 3, chapter&nbsp;23</a></p>
 <blockquote>
 <p>When Paul declares that we were chosen in Christ before the foundation of
@@ -580,7 +580,7 @@ reminded that they are not to seek for any cause beyond his&nbsp;will.</p>
 
             <content type="html">
                 <div class="section" id="haskell-vs-clojure-syntax">
-<h3>Haskell vs Clojure&nbsp;syntax</h3>
+<h1>Haskell vs Clojure&nbsp;syntax</h1>
 <p>Clojure has virtually zero syntax.  What I mean by that is that all structures
 look the same: the first item in a list is the function and the rest are the
 arguments.  This is true for variable assignment, if statements, data
@@ -623,11 +623,11 @@ something&nbsp;useful.</p>
 
             <content type="html">
                 <div class="section" id="canada-is-a-schizophrenic-country">
-<h3>Canada is a schizophrenic&nbsp;country</h3>
+<h1>Canada is a schizophrenic&nbsp;country</h1>
 <p>I have now lived in Canada for over two years and there are some things that
 Canadians can&#8217;t seem to make up their mind&nbsp;on.</p>
 <div class="section" id="spelling">
-<h4>Spelling</h4>
+<h2>Spelling</h2>
 <p>Canadian spelling is stuck half way between British spelling and American
 spelling.  Canadians will&nbsp;say:</p>
 <ul class="simple">
@@ -636,7 +636,7 @@ spelling.  Canadians will&nbsp;say:</p>
 </ul>
 </div>
 <div class="section" id="measuring-units">
-<h4>Measuring&nbsp;units</h4>
+<h2>Measuring&nbsp;units</h2>
 <p>When you&#8217;re driving in Canada, everything is in kilometers.  Snow fall is
 measured in centimeters.  And yet, people insist on weighing and measuring
 themselves in pounds.  We just had a baby girl here in Canada and they kept
@@ -659,7 +659,7 @@ you?</em>, and I respond with 178 and receive blank&nbsp;stares.</p>
 
             <content type="html">
                 <div class="section" id="chapters">
-<h3>10&nbsp;chapters</h3>
+<h1>10&nbsp;chapters</h1>
 <ul class="simple">
 <li>You get through the less glamorous parts while still being&nbsp;nourished.</li>
 <li>It&#8217;s not a <em>read-your-bible-in-a-year</em> plan.  It&#8217;s more of a plan for reading
@@ -685,7 +685,7 @@ all gospels 4 times,&nbsp;etc.</li>
 
             <content type="html">
                 <div class="section" id="gender-inclusive-language">
-<h3>Gender inclusive&nbsp;language</h3>
+<h1>Gender inclusive&nbsp;language</h1>
 <p>In a <a class="reference external" href="http://www.bedfordbaptist.ca/services/156">recent sermon</a> at our church, a pastor student said to us that we are no
 longer able to say that Jesus will make his disciples <em>fishers of men</em>. Rather,
 she suggested, we should use the politically correct phrase <em>fishers of
@@ -720,7 +720,7 @@ manning my table.&#8221;  Was she really?  Shouldn&#8217;t she have said <em>wom
 
             <content type="html">
                 <div class="section" id="mutt-sidebar-labels">
-<h3>Mutt sidebar&nbsp;labels</h3>
+<h1>Mutt sidebar&nbsp;labels</h1>
 <p>The sidebar in Mutt is useful if you have multiple email accounts and want to
 switch between them quickly.  It shows you each inbox with a number of unread
 emails.  I have 6 Gmail accounts plugged into my Mutt and here is what I used
@@ -766,7 +766,7 @@ home (8)
 
             <content type="html">
                 <div class="section" id="haskell-strings">
-<h3>Haskell&nbsp;Strings</h3>
+<h1>Haskell&nbsp;Strings</h1>
 <p>It continues to amaze me how bad Haskell is at processing strings.  One of the
 reasons I wanted to learn Haskell was to be able to write short,
 dynamic-language-like programs that execute fast once compiled.  Somehow
@@ -774,7 +774,7 @@ rather, Haskell has failed to deliver on its promise of <em>bare metal</em> spee
 mostly write scripts and utilities meant to run on my machine&#8212;these scripts
 mostly process text.  Read a file, parse it and spit something&nbsp;out.</p>
 <div class="section" id="example">
-<h4>Example</h4>
+<h2>Example</h2>
 <p>Let&#8217;s build a simple program that will show what I&#8217;m talking&nbsp;about.</p>
 <ul class="simple">
 <li>Read a file called <tt class="docutils literal">file</tt> which contains&nbsp;prose</li>
@@ -916,7 +916,7 @@ one-liner that uses <tt class="docutils literal">ByteString</tt>.</p>
 <p>This clocks in at 3.5s on my machine.  Pretty&nbsp;fast!</p>
 </div>
 <div class="section" id="python">
-<h4>Python</h4>
+<h2>Python</h2>
 <p>Let&#8217;s try this in&nbsp;Python</p>
 <div class="highlight"><pre><span class="k">def</span> <span class="nf">process</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
     <span class="n">lines</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span>
@@ -946,7 +946,7 @@ Python,&nbsp;too.</p>
 <p>This clocks in at 2&nbsp;seconds.</p>
 </div>
 <div class="section" id="javascript-and-v8">
-<h4>Javascript and&nbsp;V8</h4>
+<h2>Javascript and&nbsp;V8</h2>
 <div class="highlight"><pre><span class="c1">// main.js</span>
 
 <span class="kd">var</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;fs&#39;</span><span class="p">);</span>
@@ -984,7 +984,7 @@ $ time node main.js &gt; /dev/null
 <p>Wait for it!  4.5 seconds.  I have no&nbsp;words.</p>
 </div>
 <div class="section" id="how-about-go">
-<h4>How about&nbsp;Go?</h4>
+<h2>How about&nbsp;Go?</h2>
 <p><strong><span class="caps">EDIT</span> 3</strong>: (Add this section.  Looks like this post is turning into a language
 shootout, le&nbsp;sigh).</p>
 <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
@@ -1010,7 +1010,7 @@ $ time ./title &gt; /dev/null
 compared to&nbsp;C.</p>
 </div>
 <div class="section" id="how-about-c">
-<h4>How about&nbsp;C?</h4>
+<h2>How about&nbsp;C?</h2>
 <p><strong><span class="caps">EDIT</span> 2</strong>: (Add this&nbsp;section)</p>
 <p><a class="reference external" href="https://twitter.com/andrewstwrt">Andrew Stewart</a> has graciously written a C version of this program.  Like he
 <a class="reference external" href="https://twitter.com/andrewstwrt/status/261282584263286784">said</a>, you should do all of your scripting in&nbsp;C.</p>
@@ -1063,7 +1063,7 @@ $ time ./script &gt; /dev/null
 below&nbsp;1).</p>
 </div>
 <div class="section" id="recap">
-<h4>Recap</h4>
+<h2>Recap</h2>
 <pre class="literal-block">
 Haskell - String              17s
 Haskell - Text                60s
@@ -1099,22 +1099,22 @@ C                             1s
 
             <content type="html">
                 <div class="section" id="on-learning-clojure">
-<h3>On Learning&nbsp;Clojure</h3>
+<h1>On Learning&nbsp;Clojure</h1>
 <div class="section" id="prefix-notation">
-<h4>Prefix&nbsp;notation</h4>
+<h2>Prefix&nbsp;notation</h2>
 <p>I&#8217;m a big fan of the prefix notation.  It makes everything appear the same
 (if-statements, function calls , etc).  I like how it removes the need for
 operator precedence&nbsp;rules.</p>
 </div>
 <div class="section" id="all-the-parentheses">
-<h4>All the&nbsp;parentheses</h4>
+<h2>All the&nbsp;parentheses</h2>
 <p>Once you get into learning Clojure and you have written a small application,
 you don&#8217;t really see the parens anymore.  Sure, sometimes you still get the
 <em>Unbalanced parens</em> error but those are easy to spot.  If you are afraid of
 learning a <span class="caps">LISP</span> because of this, don&#8217;t worry, you&#8217;ll be&nbsp;fine.</p>
 </div>
 <div class="section" id="jvm">
-<h4><span class="caps">JVM</span></h4>
+<h2><span class="caps">JVM</span></h2>
 <p>Let&#8217;s just say that the start-up time of the <span class="caps">JVM</span> isn&#8217;t the fastest.  This makes
 Clojure effectively useless for writing utility scripts.  However, the <span class="caps">JVM</span> is a
 robust platform that runs your code really fast.  With Clojure, you get all the
@@ -1125,7 +1125,7 @@ lower level stuff doesn&#8217;t have to be reimplemented (think <span class="cap
 sockets,&nbsp;etc).</p>
 </div>
 <div class="section" id="documentation">
-<h4>Documentation</h4>
+<h2>Documentation</h2>
 <p>The language itself seems to be documented pretty well.  I haven&#8217;t had any
 issues when trying to find the signature for a built-in function.  However, the
 community isn&#8217;t exactly known for writing documentation.  Most of the time, you
@@ -1134,7 +1134,7 @@ lucky, you are told what to import and a few basic examples.  Good
 documentation is something I take for granted coming from the Python&nbsp;world.</p>
 </div>
 <div class="section" id="libraries">
-<h4>Libraries</h4>
+<h2>Libraries</h2>
 <p>While you can certainly find a lot of good libraries for doing common things,
 one area is still painful to develop for: the web.  Clojure still needs a
 Django-like web framework that has all the batteries included.  Right now, the
@@ -1143,7 +1143,7 @@ Without a Django-like platform, you end up reinventing all the common things
 for every application: authentication, form validation, <span class="caps">ORM</span>,&nbsp;etc.</p>
 </div>
 <div class="section" id="conclusion">
-<h4>Conclusion</h4>
+<h2>Conclusion</h2>
 <p>I really like the language.  I like the functional aspects of it and the
 immutability.  I like lazy sequences and refs.  What I don&#8217;t like is that the
 community and the ecosystem is still a bit young and immature.  I find myself
@@ -1164,14 +1164,14 @@ waiting for stuff to happen before I can use this language&nbsp;more.</p>
 
             <content type="html">
                 <div class="section" id="large-javascript-application-tips">
-<h3>Large Javascript Application&nbsp;Tips</h3>
+<h1>Large Javascript Application&nbsp;Tips</h1>
 <p>This post isn&#8217;t going to tell you that you should use <span class="caps">MVC</span> to structure your
 application.  It isn&#8217;t going to tell you which framework to use.  It&#8217;s not
 going to tell you to use CoffeeScript or MongoDB.  But I&#8217;m going to talk about
 some small helpful things you can do to your Javascript application to make
 easier to develop and&nbsp;maintain.</p>
 <div class="section" id="naming-conventions">
-<h4>Naming&nbsp;Conventions</h4>
+<h2>Naming&nbsp;Conventions</h2>
 <p>Improperly naming your variables, functions and classes can make it nearly
 impossible to navigate large portions of existing code.  You have to follow the
 chain all the way up where that variable was created (sometimes in a different
@@ -1180,7 +1180,7 @@ should be able to tell if it&#8217;s a class definition or an instance.  You sho
 be able to distinguish between a constant and a&nbsp;function.</p>
 </div>
 <div class="section" id="file-dependency">
-<h4>File&nbsp;dependency</h4>
+<h2>File&nbsp;dependency</h2>
 <p>Writing large Javascript applications for the browser is tricky because your
 application needs to be split over multiple files and there doesn&#8217;t seem to be
 a good way to manage dependencies.  When you open up a file in your project,
@@ -1202,14 +1202,14 @@ within a simple&nbsp;comment.</p>
 </pre></div>
 </div>
 <div class="section" id="class-definition-time-and-consumption-time">
-<h4>Class definition time and consumption&nbsp;time</h4>
+<h2>Class definition time and consumption&nbsp;time</h2>
 <p>There should be a clear distinction between when your classes are defined and
 when they are consumed.  I like to prepare all my classes and functions
 beforehand, and then kick off the app with a single call when the document is
 ready.  It&#8217;s nice to be able to tell that this is where the app&nbsp;starts.</p>
 </div>
 <div class="section" id="namespaces">
-<h4>Namespaces</h4>
+<h2>Namespaces</h2>
 <p>Your entire application should be contained within a namespace.  Putting all of
 your code under a namespace makes it easy to tell where what function or class
 definition is coming from.  It makes sure that you don&#8217;t pollute the global
@@ -1217,7 +1217,7 @@ namespace.  It also allows you to select which functions and variables are
 going to be exposed&nbsp;publicly.</p>
 </div>
 <div class="section" id="documentation">
-<h4>Documentation</h4>
+<h2>Documentation</h2>
 <p>If your application isn&#8217;t going to be open-source, you might be tempted to skip
 writing documentation.  Adding a few comments here and there in the code can
 help you quickly understand what is going on and where related code might live.
@@ -1226,7 +1226,7 @@ your team opens up an 800-line-of-code file with zero comments, they might
 crawl under their desk and cry (I&#8217;ve wanted to do that a few times&nbsp;before).</p>
 </div>
 <div class="section" id="frameworks">
-<h4>Frameworks</h4>
+<h2>Frameworks</h2>
 <p>If you do decide to use a framework like Backbone.js, you should make sure that
 you use it in a sane way.  When a new member joins your team, it&#8217;s really nice
 when you can point them to the framework&#8217;s documentation and have them start
@@ -1235,7 +1235,7 @@ build extensions to the framework and that&#8217;s fine as long as it&#8217;s do
 and&nbsp;obvious.</p>
 </div>
 <div class="section" id="conclusion">
-<h4>Conclusion</h4>
+<h2>Conclusion</h2>
 <p>Thanks for&nbsp;listening</p>
 </div>
 </div>
@@ -1253,7 +1253,7 @@ and&nbsp;obvious.</p>
 
             <content type="html">
                 <div class="section" id="why-you-should-use-heroku-for-your-next-start-up">
-<h3>Why you should use Heroku for your next&nbsp;start-up</h3>
+<h1>Why you should use Heroku for your next&nbsp;start-up</h1>
 <p>You are a ninja-rockstar developer with a billion dollar idea.  You write Ruby
 and Javascript.  You like <span class="caps">BDD</span>, responsive design, <span class="caps">HTML5</span> and node.js.  You are
 really good at <span class="caps">UX</span> and quickly producing a prototype.  You have been working on
@@ -1312,21 +1312,21 @@ side-project-start-up-ideas.  And I&#8217;m not a Ruby&nbsp;guy.</p>
 
             <content type="html">
                 <div class="section" id="how-i-use-git">
-<h3>How I use&nbsp;git</h3>
+<h1>How I use&nbsp;git</h1>
 <p>Recently, I have noticed that there are quite a few wrappers around git to give
 you a nicer interface to work with.  The new commands promise to be easy to
 remember and make your life less frustrating.  I find these a little silly
 because git on its own is a great tool.  Here I&#8217;m going to describe how I use
 git to convince you (and myself) that it&#8217;s not that&nbsp;hard.</p>
 <div class="section" id="cloning">
-<h4>Cloning</h4>
+<h2>Cloning</h2>
 <p>This couldn&#8217;t be any&nbsp;simpler:</p>
 <pre class="literal-block">
 git clone git://github.com/honza/dotfiles.git
 </pre>
 </div>
 <div class="section" id="committing">
-<h4>Committing</h4>
+<h2>Committing</h2>
 <p>Once I have cloned a repo, I start to make changes.  To see what files I have
 changed, I&nbsp;run</p>
 <pre class="literal-block">
@@ -1355,7 +1355,7 @@ git diff --cached
 </pre>
 </div>
 <div class="section" id="stashing">
-<h4>Stashing</h4>
+<h2>Stashing</h2>
 <p>I often stash my code.  Sometimes you need to look at some code in a different
 branch, sometimes I notice something is broken and I want to see if I broke it
 or&nbsp;not.</p>
@@ -1372,7 +1372,7 @@ git stash list
 </pre>
 </div>
 <div class="section" id="branches">
-<h4>Branches</h4>
+<h2>Branches</h2>
 <p>Creating new branches is simple and&nbsp;cheap</p>
 <pre class="literal-block">
 git checkout -b new_branch
@@ -1387,7 +1387,7 @@ git push origin :branch_name
 </pre>
 </div>
 <div class="section" id="rebasing">
-<h4>Rebasing</h4>
+<h2>Rebasing</h2>
 <p>I have <a class="reference external" href="http://honza.ca/2011/05/the-importance-of-git-rebase">written</a> on
 rebasing before.  It makes your history much nicer.  Any time I pull code from
 a remote repository, I&nbsp;do</p>
@@ -1400,7 +1400,7 @@ git pull --rebase origin dev
 </pre>
 </div>
 <div class="section" id="bisecting">
-<h4>Bisecting</h4>
+<h2>Bisecting</h2>
 <p>I <em>love</em> the bisect commnad in git.  You can use it to determine which commit
 introduced a bug.  This is especially useful if you have a comprehensive test
 suite.  For example, the latest commit is broken and you remember that all
@@ -1412,7 +1412,7 @@ git bisect run python manage.py test
 <p>Git will then keep running your tests until it finds the first commit that&#8217;s&nbsp;broken.</p>
 </div>
 <div class="section" id="merging">
-<h4>Merging</h4>
+<h2>Merging</h2>
 <p>When a feature branch is finished, I merge it into master&nbsp;with</p>
 <pre class="literal-block">
 git checkout master
@@ -1420,7 +1420,7 @@ git merge --no-ff feature
 </pre>
 </div>
 <div class="section" id="viewing-history">
-<h4>Viewing&nbsp;history</h4>
+<h2>Viewing&nbsp;history</h2>
 <p>For viewing history, I really like the following&nbsp;command</p>
 <pre class="literal-block">
 git log --pretty=format:&quot;%h - %an, %ar : %s&quot;'
@@ -1433,14 +1433,14 @@ git log --oneline --graph
 </pre>
 </div>
 <div class="section" id="upgrading-all-submodules-in-a-project">
-<h4>Upgrading all submodules in a&nbsp;project</h4>
+<h2>Upgrading all submodules in a&nbsp;project</h2>
 <p>This one is great, too.  I use it to upgrade all of my vim&nbsp;plugins.</p>
 <pre class="literal-block">
 git submodule foreach git pull
 </pre>
 </div>
 <div class="section" id="pulling-and-pushing">
-<h4>Pulling and&nbsp;pushing</h4>
+<h2>Pulling and&nbsp;pushing</h2>
 <p>This is pretty straight&nbsp;forward</p>
 <pre class="literal-block">
 git pull
@@ -1451,7 +1451,7 @@ git push origin dev
 </pre>
 </div>
 <div class="section" id="conclusion">
-<h4>Conclusion</h4>
+<h2>Conclusion</h2>
 <p>Once you learn what git calls what, it&#8217;s pretty easy to just google the thing
 you&#8217;re trying to do.  I&#8217;m definitely not an expert but this gets me&nbsp;by.</p>
 </div>
@@ -1470,7 +1470,7 @@ you&#8217;re trying to do.  I&#8217;m definitely not an expert but this gets me&
 
             <content type="html">
                 <div class="section" id="standing-desk-first-impressions">
-<h3>Standing desk - first&nbsp;impressions</h3>
+<h1>Standing desk - first&nbsp;impressions</h1>
 <p>I have recently switched jobs and had to set up a home office.  I have heard a
 lot of good things about standing desks and thought this was the perfect
 opportunity to try one.  I had looked for one online but those things aren&#8217;t
@@ -1482,20 +1482,20 @@ special,&nbsp;really.</p>
 share a few thoughts.  If you&#8217;re wondering if you should get a standing desk,
 I&#8217;d definitely recommend&nbsp;it.</p>
 <div class="section" id="incentives">
-<h4>Incentives</h4>
+<h2>Incentives</h2>
 <p>I have set up my desk in such a way that if I want to sit down to do some work
 I have to give up the second monitor and my Das keyboard.  I use a 13&#8221; Macbook
 Pro so the number of pixels is rather limited.  I <em>love</em> my loud Das keyboard
 and want to use it as much as possible.  This works extremely&nbsp;well.</p>
 </div>
 <div class="section" id="breaks">
-<h4>Breaks</h4>
+<h2>Breaks</h2>
 <p>When I take a break to have lunch with my family (or something like that), I
 make it a point to sit down and rest my feet.  When I get back in the office, I
 don&#8217;t feel like I&#8217;m gonna&nbsp;die.</p>
 </div>
 <div class="section" id="distractions">
-<h4>Distractions</h4>
+<h2>Distractions</h2>
 <p>I have found that when I&#8217;m standing I rarely check Hacker News or read
 articles.  I think it&#8217;s because reading an article or two isn&#8217;t complex enough
 for my brain and it can do other things at the same time&#8212;like think about how
@@ -1506,20 +1506,20 @@ started I have allowed myself some slack here and there.  I don&#8217;t want to 
 too fast and <em>burn out</em>.</p>
 </div>
 <div class="section" id="dancing">
-<h4>Dancing</h4>
+<h2>Dancing</h2>
 <p>I have heard that people like to dance when they&#8217;re standing at their desk.  I
 always thought this was pretty silly until I caught myself doing it.  I listen
 to a lot of rock n roll so it&#8217;s not exactly&nbsp;surprising.</p>
 </div>
 <div class="section" id="pain">
-<h4>Pain</h4>
+<h2>Pain</h2>
 <p>Obviously, your feet will hurt.  However, it&#8217;s not nearly as bad as I thought.
 I&#8217;m 23 and fairly fit so maybe that&#8217;s a factor.  I have had some minor lower
 back pain which I think is caused by the fact that I now have good posture and
 the body isn&#8217;t used to&nbsp;it.</p>
 </div>
 <div class="section" id="conclusion">
-<h4>Conclusion</h4>
+<h2>Conclusion</h2>
 <p>Do you stand while working?  Ever thought about getting a standing&nbsp;desk?</p>
 </div>
 </div>
@@ -1537,31 +1537,31 @@ the body isn&#8217;t used to&nbsp;it.</p>
 
             <content type="html">
                 <div class="section" id="how-rackspace-deleted-my-server">
-<h3>How Rackspace deleted my&nbsp;server</h3>
+<h1>How Rackspace deleted my&nbsp;server</h1>
 <p>I have been with Rackspace for a while now and never had problems.  The server
 has been fast and responsive and their prices are great.  However, what
 happened yesterday blew my mind and totally made me change how I view server
 providers as a whole&#8212;including the likes of <span class="caps">AWS</span> and&nbsp;Heroku.</p>
 <p>Here is how it went&nbsp;down.</p>
 <div class="section" id="pm-cst">
-<h4>2:07pm&nbsp;<span class="caps">CST</span></h4>
+<h2>2:07pm&nbsp;<span class="caps">CST</span></h2>
 <p>I got an email from one of my administrators that the front end was
 unreachable.  I immediately tried to visit the web application in my browser,
 log into the machine via <span class="caps">SSH</span> and ping the server <span class="caps">IP</span> address.  All failed.  I
 went on the Rackspace Cloud Server Live Chat to raise the issue with&nbsp;them.</p>
 </div>
 <div class="section" id="id1">
-<h4>2:48pm&nbsp;<span class="caps">CST</span></h4>
+<h2>2:48pm&nbsp;<span class="caps">CST</span></h2>
 <p>I was told to open a ticket through the admin console.  So I did and I handed
 the ticket number to the operator who said they&#8217;d pass it on to&nbsp;operations.</p>
 </div>
 <div class="section" id="id2">
-<h4>5:05pm&nbsp;<span class="caps">CST</span></h4>
+<h2>5:05pm&nbsp;<span class="caps">CST</span></h2>
 <p>I got a reply on the ticket.  All it says is <em>we&#8217;re working on it</em>.  At this
 point, I&#8217;m freaking out because I have been down for over three&nbsp;hours.</p>
 </div>
 <div class="section" id="id3">
-<h4>6:00pm&nbsp;<span class="caps">CST</span></h4>
+<h2>6:00pm&nbsp;<span class="caps">CST</span></h2>
 <p>Still no word from Rackspace.  I got on the phone and explained the issue and
 that I didn&#8217;t feel it was being taken seriously.  The operator got the account
 manager on the phone who in turn got a <em>tech guy</em> on the call.  They said that
@@ -1572,13 +1572,13 @@ rebuild the server and let me keep the same <span class="caps">IP</span> and tha
 with new&nbsp;credentials.</p>
 </div>
 <div class="section" id="id4">
-<h4>6:17pm&nbsp;<span class="caps">CST</span></h4>
+<h2>6:17pm&nbsp;<span class="caps">CST</span></h2>
 <p>I received said email and started to restore the server.  Luckily, I had a
 working Chef script which made this very simple to do.  I think I was back
 online in about 30&nbsp;minutes.</p>
 </div>
 <div class="section" id="conclusion">
-<h4>Conclusion</h4>
+<h2>Conclusion</h2>
 <p>Everyone has been really nice and apologetic.  They even gave me a month&#8217;s
 credit to cover the damages.  I still think Rackspace is great but this whole
 incident made me realize that anything can fail and that you should design your
@@ -1599,13 +1599,13 @@ application for easy recovery.  And test your&nbsp;backups!</p>
 
             <content type="html">
                 <div class="section" id="remap-capslock-to-something-useful">
-<h3>Remap CapsLock to something&nbsp;useful</h3>
+<h1>Remap CapsLock to something&nbsp;useful</h1>
 <p>Arguably, CapsLock is <a class="reference external" href="http://capsoff.org/">the most useless key</a> on your keyboard. I honestly
 can&#8217;t remember the last time I had a real use for it. If are a programmer, you
 should remap it to something more useful. The rest of this post will describe
 how to remap your CapsLock on a Mac <span class="caps">OSX</span>&nbsp;installation.</p>
 <div class="section" id="what-we-are-going-to-do">
-<h4>What we are going to&nbsp;do</h4>
+<h2>What we are going to&nbsp;do</h2>
 <p>I&#8217;m a heavy vim user and reaching for the Esc key all the is a pain. We will
 remap the CapsLock to Esc. However, I want to be able to use it for something
 else if I&#8217;m not in vim. We will set it up so that when you hit CapsLock on its
@@ -1615,7 +1615,7 @@ will send Ctrl. That way you can do things like Ctrl+F,&nbsp;etc.</p>
 piece of software that will allow you to take control of your&nbsp;keyboard.</p>
 </div>
 <div class="section" id="settings">
-<h4>Settings</h4>
+<h2>Settings</h2>
 <p>Once you have installed KeyRemap4MacBook, go to System Preferences and select
 the Keyboard submenu. Hit the Modifier Keys button and remap CapsLock to Ctrl.
 You will have to do this once for every keyboard that you&nbsp;use.</p>
@@ -1642,7 +1642,7 @@ Control_L to Control_L
 
             <content type="html">
                 <div class="section" id="how-not-to-depend-on-pypi">
-<h3>How not to depend on&nbsp;PyPI</h3>
+<h1>How not to depend on&nbsp;PyPI</h1>
 <p>When deploying a Django application, you often use a <tt class="docutils literal">requirements.txt</tt> file
 that contains a list of the application&#8217;s dependencies. During deployment, your
 provisioning system will <tt class="docutils literal">pip install</tt> all of those to make sure that your
@@ -1659,7 +1659,7 @@ that package&nbsp;there.</p>
 <p>Unfortunately, PyPI has been known to be down or slow at times; and you want
 your deployments to be as smooth as&nbsp;possible.</p>
 <div class="section" id="what-you-can-do">
-<h4>What you can&nbsp;do</h4>
+<h2>What you can&nbsp;do</h2>
 <p>Instead of depending on PyPI for a production application, you can host the
 packages that your application needs yourself. It&#8217;s actually surpringly easy to
 do. Your existing deployment strategy can easily be modified to remove the&nbsp;dependency.</p>
@@ -1728,37 +1728,37 @@ packages. This way your deploys will be faster and more&nbsp;reliable.</p>
 
             <content type="html">
                 <div class="section" id="disrupt-the-multiple-gmail-space">
-<h3>Disrupt the multiple-gmail&nbsp;space</h3>
+<h1>Disrupt the multiple-gmail&nbsp;space</h1>
 <p>We all know that Gmail is the best email provider out there. It&#8217;s in the
 browser, it&#8217;s all ajaxy, you never delete anything, your emails are
 cleverly organized into conversations, you know the&nbsp;drill&#8230;</p>
 <p>But have you ever tried to use more than one account at a time? It&#8217;s horribly
 broken. Let&#8217;s have a look at your&nbsp;options&#8230;</p>
 <div class="section" id="multiple-sign-in">
-<h4>Multiple&nbsp;sign-in</h4>
+<h2>Multiple&nbsp;sign-in</h2>
 <p>Google allows you to log into more than one account at a time. They provide you
 with a menu option to switch between the two and you are all set. The problem
 is that the constant switching back and forth just isn&#8217;t worth&nbsp;it.</p>
 </div>
 <div class="section" id="use-a-desktop-client">
-<h4>Use a desktop&nbsp;client</h4>
+<h2>Use a desktop&nbsp;client</h2>
 <p>If you use a desktop client like Thunderbird or Mail.app, you can have as many
 accounts as you want. But you don&#8217;t get access to your contacts and rarely get
 the nice conversation view for your messages. In addition, the applications are
 often bloated and use a ton of&nbsp;memory.</p>
 </div>
 <div class="section" id="use-mutt-or-pino">
-<h4>Use mutt or&nbsp;pino</h4>
+<h2>Use mutt or&nbsp;pino</h2>
 <p>These light-weight applications are popular especially among programmers. They
 are a pain to setup and lack email address&nbsp;autocompletion.</p>
 </div>
 <div class="section" id="use-multiple-browsers">
-<h4>Use multiple&nbsp;browsers</h4>
+<h2>Use multiple&nbsp;browsers</h2>
 <p>If you have one or two Gmail accounts, you could probably get away with using
 two browsers - one for each account. This is silly and you shouldn&#8217;t do&nbsp;that.</p>
 </div>
 <div class="section" id="use-chrome-profiles">
-<h4>Use Chrome&nbsp;profiles</h4>
+<h2>Use Chrome&nbsp;profiles</h2>
 <p>Newer versions of Chome will allow you to be logged into different Gmail
 accounts in different windows. This means that each window is logged into a
 single Google account and can only access the services associated with that
@@ -1774,7 +1774,7 @@ still missing something. I tried to set up mutt but it wasn&#8217;t working for 
 because of the missing&nbsp;autocomplete.</p>
 </div>
 <div class="section" id="your-say">
-<h4>Your&nbsp;say</h4>
+<h2>Your&nbsp;say</h2>
 <p>What do you use? How do you deal with this&nbsp;mess?</p>
 </div>
 </div>
@@ -1792,7 +1792,7 @@ because of the missing&nbsp;autocomplete.</p>
 
             <content type="html">
                 <div class="section" id="upgrading-your-django-media-files-to-use-a-cdn">
-<h3>Upgrading your Django media files to use a&nbsp;<span class="caps">CDN</span></h3>
+<h1>Upgrading your Django media files to use a&nbsp;<span class="caps">CDN</span></h1>
 <p>I was using <a class="reference external" href="http://readthedocs.org/docs/django-filebrowser/en/latest/">django-filebrowser</a> on a project and my Rackspace <span class="caps">VM</span> quickly ran
 out of disk space. Since the site isn&#8217;t getting much traffic at all, I didn&#8217;t
 want to pay extra for a bigger <span class="caps">VM</span>. Instead, I decided to move all of the user
@@ -1853,7 +1853,7 @@ database change needed at all. How cool is&nbsp;that?</p>
 
             <content type="html">
                 <div class="section" id="inerrancy">
-<h3>Inerrancy</h3>
+<h1>Inerrancy</h1>
 <p>As evangelical Christians, we believe in what is called the inerrancy of the
 Bible. This means that we believe that the Word of God contains no mistakes. I
 love the way pastor Mark Driscoll puts&nbsp;it:</p>
@@ -1888,7 +1888,7 @@ it.</blockquote>
 
             <content type="html">
                 <div class="section" id="writing-node-js-modules">
-<h3>Writing Node.js&nbsp;modules</h3>
+<h1>Writing Node.js&nbsp;modules</h1>
 <p>To say that node.js has enjoyed a great deal of positive publicity in the last
 few months would most certainly be an understatement. New node.js-related
 projects are popping up all over the place, and there seems to be this notion
@@ -1936,7 +1936,7 @@ and you can find it on both Github and&nbsp;npmjs.</p>
 
             <content type="html">
                 <div class="section" id="interpretation-mistakes">
-<h3>Interpretation&nbsp;mistakes</h3>
+<h1>Interpretation&nbsp;mistakes</h1>
 <p>Many people today who claim to be and likely are sincere followers of Jesus
 Christ aren&#8217;t properly educated in the discipline of biblical exegesis and
 interpretation. Of course not everyone can or wants to go to seminary to study
@@ -2002,7 +2002,7 @@ today choose to ignore their God and pursue their own egos and&nbsp;agendas.</p>
 
             <content type="html">
                 <div class="section" id="programmers-and-sore-eyes">
-<h3>Programmers and sore&nbsp;eyes</h3>
+<h1>Programmers and sore&nbsp;eyes</h1>
 <p>Under normal circumstances, the human eye should blink about once every 5
 seconds. When you stare at an <span class="caps">LCD</span> screen all day long, the blink interval gets
 larger. As a result, your eyes become dry and sore. This is further worsened by
@@ -2023,7 +2023,7 @@ is what my eye doctor told me&nbsp;yesterday.</p>
 
             <content type="html">
                 <div class="section" id="data-driven-javascript-applications">
-<h3>Data-driven javascript&nbsp;applications</h3>
+<h1>Data-driven javascript&nbsp;applications</h1>
 <p>Over the last few weeks, I have been trying to think of a way to design medium
 to large client-heavy web applications. There are many projects and ideas
 floating around that are meant to help you with this and I have had a look at
@@ -2111,7 +2111,7 @@ data to <span class="caps">DOM</span> elements, attaching click handlers, making
 this. The difficult part about this approach is deciding what your elementary
 data is and how you should get it. In the case of <a class="reference external" href="https://github.com/honza/rembrant">rembrant</a> it was pretty&nbsp;simple.</p>
 <div class="section" id="further-reading">
-<h4>Further&nbsp;Reading</h4>
+<h2>Further&nbsp;Reading</h2>
 <ul class="simple">
 <li><a class="reference external" href="https://github.com/honza/rembrant">rembrant</a> for a real world&nbsp;implementation</li>
 <li><a class="reference internal" href="#backbone-js">Backbone.js</a></li>
@@ -2135,7 +2135,7 @@ data is and how you should get it. In the case of <a class="reference external" 
 
             <content type="html">
                 <div class="section" id="on-why-we-lack-mature-christians">
-<h3>On why we lack mature&nbsp;Christians</h3>
+<h1>On why we lack mature&nbsp;Christians</h1>
 <p>The leadership in the local church is often made up of very incompetent people.
 I don&#8217;t mean incompetent in the sense that they can&#8217;t lead. I mean in their
 knowledge and understanding of theology in general and of the gospel in
@@ -2198,7 +2198,7 @@ If you don&#8217;t understand a particular text in the Scriptures, how could you
 
             <content type="html">
                 <div class="section" id="steve-jobs-and-richard-stallman">
-<h3>Steve Jobs and Richard&nbsp;Stallman</h3>
+<h1>Steve Jobs and Richard&nbsp;Stallman</h1>
 <p>Today, news <a class="reference external" href="http://stallman.org/archives/2011-jul-oct.html#06_October_2011_(Steve_Jobs)">broke</a> about Richard Stallman&#8217;s comment on Steve Job&#8217;s death. The
 news of the giant&#8217;s passing has stirred up a wave of emotions ranging from
 utter sadness to feelings of empowerment to do great things. Tributes were paid
@@ -2230,7 +2230,7 @@ civil and respectful of each&nbsp;other.</p>
 
             <content type="html">
                 <div class="section" id="on-heaven-and-boredom">
-<h3>On heaven and&nbsp;boredom</h3>
+<h1>On heaven and&nbsp;boredom</h1>
 <p>One of the complaints many atheists raise against becoming a Christian is the
 fact that heaven will be boring. They have in their minds this idea of us in
 heaven as chubby toddlers in diapers playing harps and flying around. To me
@@ -2265,7 +2265,7 @@ God, all his wisdom, love and grace, we will need a long&nbsp;time.</p>
 
             <content type="html">
                 <div class="section" id="bible-translations-and-the-christian-life">
-<h3>Bible translations and the Christian&nbsp;life</h3>
+<h1>Bible translations and the Christian&nbsp;life</h1>
 <p>There are many English translations of the Bible. They were all made for
 different audiences. They employ different translation techniques. Each
 Christian celebrity endorses a different&nbsp;translation.</p>
@@ -2315,7 +2315,7 @@ few years learning the language Paul, Luke, John and others spoke and wrote&nbsp
 
             <content type="html">
                 <div class="section" id="using-chef-with-small-django-apps">
-<h3>Using Chef with small Django&nbsp;apps</h3>
+<h1>Using Chef with small Django&nbsp;apps</h1>
 <p>This year at <a class="reference external" href="http://djangocon.us">DjangoCon</a>, it seemed like everybody was talking about automatic
 deployments and namely <a class="reference external" href="http://www.opscode.com/chef/">Chef</a>. After coming home from the conference, I spent
 a considerable amount of time learning chef and thinking about how it can be
@@ -2331,7 +2331,7 @@ despair, you can usually tell pretty quickly what&#8217;s going on. To test your
 deployment, we will be using <a class="reference external" href="http://vagrantup.com">Vagrant</a> which is an awesome tool for running
 virtual machines on your development&nbsp;machine.</p>
 <div class="section" id="what-we-will-install">
-<h4>What we will&nbsp;install</h4>
+<h2>What we will&nbsp;install</h2>
 <p>Our Django application will be deployed using the&nbsp;following:</p>
 <ul class="simple">
 <li>nginx</li>
@@ -2344,7 +2344,7 @@ virtual machines on your development&nbsp;machine.</p>
 <p>Your development machine will need to have <a class="reference external" href="http://docs.fabfile.org/en/1.2.2/index.html">Fabric</a>&nbsp;installed.</p>
 </div>
 <div class="section" id="how-chef-works">
-<h4>How Chef&nbsp;works</h4>
+<h2>How Chef&nbsp;works</h2>
 <p>Chef is a tool that is installed on your server. You give it a bunch
 configuration files and tell it to provision server with the necessary packages
 and settings. This means that our automatic deployment will have to parts: Chef
@@ -2377,7 +2377,7 @@ paste the cookbooks you need for you project. We will need the&nbsp;following:</
 </ul>
 </div>
 <div class="section" id="cookbooks">
-<h4>Cookbooks</h4>
+<h2>Cookbooks</h2>
 <p>Each cookbook contains a <em>recipes</em> directory. Each recipe tells Chef how this
 particular application is to be installed and configured. For example, it will
 tell nginx to create an entry in <em>sites-available</em> and <em>sites-enabled</em>. Or, it
@@ -2392,14 +2392,14 @@ directory contains files that need no further modification and can be copied
 over&nbsp;verbatim.</p>
 </div>
 <div class="section" id="node-json">
-<h4>node.json</h4>
+<h2>node.json</h2>
 <p>The <em>node.json</em> file is a per project file that specifies certain values for
 Chef to use. For example, you can tell Chef what you want your PostgreSQL
 database to be called, what the name of your django project is, etc. It has a
 simple <span class="caps">JSON</span>&nbsp;syntax.</p>
 </div>
 <div class="section" id="your-app-s-recipe">
-<h4>Your app&#8217;s&nbsp;recipe</h4>
+<h2>Your app&#8217;s&nbsp;recipe</h2>
 <p>Your application is going to need a simple recipe. This means creating a
 cookbook bearing your project&#8217;s name and creating a <em>recipes</em> directory within
 in. The recipe should be called <em>default.rb</em> and all it needs to include is a
@@ -2430,7 +2430,7 @@ list of applications to install. For&nbsp;example:</p>
 recipes, restart PostgreSQL and create a new&nbsp;database.</p>
 </div>
 <div class="section" id="start-the-engines">
-<h4>Start the&nbsp;engines</h4>
+<h2>Start the&nbsp;engines</h2>
 <p>At this point, you can try out your configuration with Vagrant. To help you
 out, I have create a <a class="reference external" href="https://github.com/honza/django-chef">template</a> project on Github that you can download and
 use out of the&nbsp;box.</p>
@@ -2462,13 +2462,13 @@ use out of the&nbsp;box.</p>
 </pre></div>
 </div>
 <div class="section" id="the-real-thing">
-<h4>The real&nbsp;thing</h4>
+<h2>The real&nbsp;thing</h2>
 <p>Once you&#8217;ve tested your application in Vagrant so you are ready to deploy to a
 server. All that&#8217;s left to do is create a new <em>roledef</em> in the <em>fabfile</em> and
 run&nbsp;it!</p>
 </div>
 <div class="section" id="conclusion">
-<h4>Conclusion</h4>
+<h2>Conclusion</h2>
 <p>I am by no means a Chef expert&#8212;I learned how to use it a few days ago. If you
 have any feedback, do let me&nbsp;know.</p>
 </div>
@@ -2487,13 +2487,13 @@ have any feedback, do let me&nbsp;know.</p>
 
             <content type="html">
                 <div class="section" id="google-apis-y-u-no-work">
-<h3>Google APIs - Y U <span class="caps">NO</span>&nbsp;<span class="caps">WORK</span></h3>
+<h1>Google APIs - Y U <span class="caps">NO</span>&nbsp;<span class="caps">WORK</span></h1>
 <p>Recently, at <a class="reference external" href="http://www.sheepdoginc.ca">SheepDogInc</a>, I have been working with various Google APIs,
 especially the Calendar <span class="caps">API</span>. The state of these APIs is rather <em>unfortunate</em>.
 Google is a web giant and you&#8217;d think that their APIs would be state-of-the-art
 given the number of professionals they&nbsp;employ.</p>
 <div class="section" id="documentation">
-<h4>Documentation</h4>
+<h2>Documentation</h2>
 <p>Before we go anywhere, let me just talk about the documentation for a minute.
 As an open-source software author and advocate, I always encourage developers
 to write extensive and good documentation. Somehow, Google didn&#8217;t get the demo.
@@ -2503,7 +2503,7 @@ and inspecting the response. This will actually save you time because the docs
 are probably wrong&nbsp;anyway.</p>
 </div>
 <div class="section" id="reliability">
-<h4>Reliability</h4>
+<h2>Reliability</h2>
 <p>Google is like the master of scalability. They have an estimated one million
 servers world-wide. And yet, they cannot consistently return a 200 to an <span class="caps">API</span>
 call. I have written horrible, horrible glue code and hacky workarounds to
@@ -2511,7 +2511,7 @@ account for this unpredictability. Sometimes you will get a response, sometimes
 it will timeout, sometime you will get a&nbsp;404&#8230;</p>
 </div>
 <div class="section" id="engineering">
-<h4>Engineering</h4>
+<h2>Engineering</h2>
 <p>With all these amazing engineers, can Google really not make a better <span class="caps">API</span>?
 Honestly, if I was in a position to hire a person who worked on the Google <span class="caps">API</span>
 team, I would think twice. Seriously &#8212; test your app, keep your docs
@@ -2532,19 +2532,19 @@ up-to-date, and mainly, stop pissing me&nbsp;off!</p>
 
             <content type="html">
                 <div class="section" id="djangocon-2011-take-aways">
-<h3>DjangoCon 2011&nbsp;Take-Aways</h3>
+<h1>DjangoCon 2011&nbsp;Take-Aways</h1>
 <p>My employer, <a class="reference external" href="http://www.sheepdoginc.ca/">SheepDogInc</a>, sent me and a colleague of mine to <a class="reference external" href="http://djangocon.us/">DjangoCon
 2011</a>. It was my first developer conference and I had a blast. Here a few
 quick points about what the conference has clarified for&nbsp;me.</p>
 <div class="section" id="deploying-django">
-<h4>Deploying&nbsp;Django</h4>
+<h2>Deploying&nbsp;Django</h2>
 <p>Despite the Django official documentation&#8217;s recommendation to use Apache and
 mod_wsgi, most people seem to deploy Django with nginx and gunicorn. This has
 been a pleasant surprise to me because I like it but though that it was too
 simple (or less robust than&nbsp;Apache).</p>
 </div>
 <div class="section" id="provisioning-servers">
-<h4>Provisioning&nbsp;servers</h4>
+<h2>Provisioning&nbsp;servers</h2>
 <p>It seemed that everybody was talking about <a class="reference external" href="http://www.opscode.com/chef/">Chef</a> and automatic deployments.
 Instead of manually connecting to a server via ssh, you can run one command
 which will install all the necessary packages for your application (nginx,
@@ -2554,7 +2554,7 @@ machine to try things out because you don&#8217;t have to thing about setting it
 Especially with tools like <a class="reference external" href="http://vagrantup.com/">vagrant</a>, it&#8217;s dead&nbsp;easy.</p>
 </div>
 <div class="section" id="pronouncing-things">
-<h4>Pronouncing&nbsp;things</h4>
+<h2>Pronouncing&nbsp;things</h2>
 <p>When you read names of technical products, you can&#8217;t always be sure how it&#8217;s
 supposed to be&nbsp;pronounced.</p>
 <ul class="simple">
@@ -2580,7 +2580,7 @@ supposed to be&nbsp;pronounced.</p>
 
             <content type="html">
                 <div class="section" id="the-pre-gps-world">
-<h3>The pre-<span class="caps">GPS</span>&nbsp;world</h3>
+<h1>The pre-<span class="caps">GPS</span>&nbsp;world</h1>
 <p>When I was a kid, our family used to travel a lot. I grew up in central Europe
 and over the years, we visited most of continental Europe. This was in the
 early &#8216;90s. Usually, Mom would have a map on her lap and she would tell Dad
@@ -2608,7 +2608,7 @@ you&#8217;d always know where you were&nbsp;going.</p>
 
             <content type="html">
                 <div class="section" id="why-i-love-restructuredtext">
-<h3>Why I love&nbsp;reStructuredText</h3>
+<h1>Why I love&nbsp;reStructuredText</h1>
 <p>A lot of geeks are using Markdown as their markup generation tool today. It&#8217;s
 simple, effective and used everywhere. It allows you to focus on your content
 and not on the <span class="caps">HTML</span> code that will be used to display the content on a web
@@ -2663,7 +2663,7 @@ the LaTex writer to use a specific font, page size and lots&nbsp;more.</p>
 
             <content type="html">
                 <div class="section" id="on-prayer-and-the-closing-of-the-eyes">
-<h3>On prayer and the closing of the&nbsp;eyes</h3>
+<h1>On prayer and the closing of the&nbsp;eyes</h1>
 <p>Virtually every Christian has been taught that prayer is when you talk to God
 with your eyes <em>closed</em>. We tell our children, &#8220;Close your eyes and we will
 pray&#8221;. The idea of having your eyes closed when you pray is so engrained in our
@@ -2717,7 +2717,7 @@ with your Father. Jesus prayed constantly. And so need&nbsp;we.</p>
 
             <content type="html">
                 <div class="section" id="what-is-a-blog">
-<h3>What is a&nbsp;blog?</h3>
+<h1>What is a&nbsp;blog?</h1>
 <p>I have noticed that many people don&#8217;t know what a blog is, so I would like to
 talk about that&nbsp;briefly.</p>
 <blockquote>
@@ -2775,7 +2775,7 @@ don&#8217;t care about to some stupid thing a mutual friend posted.&#8221;
 
             <content type="html">
                 <div class="section" id="why-i-don-t-like-the-ruby-community">
-<h3>Why I don&#8217;t like the Ruby&nbsp;community</h3>
+<h1>Why I don&#8217;t like the Ruby&nbsp;community</h1>
 <p>I write Python and Javascript code. I use Django and jQuery. And I cringe every
 time I have to run <tt class="docutils literal">gem install x</tt>. I only have a limited understanding of
 Ruby and hardly any of Ruby on Rails. It seems disorganized to me and hard to
@@ -2808,7 +2808,7 @@ a Ruby-like language for writing css&nbsp;files.</p>
 
             <content type="html">
                 <div class="section" id="the-best-ide">
-<h3>The best&nbsp;<span class="caps">IDE</span></h3>
+<h1>The best&nbsp;<span class="caps">IDE</span></h1>
 <p>I have tried dozens of code editors, text editors and IDEs. I have carefully
 weighed the pros and cons of each. I have studied features, extensibility,
 themes, syntax highlighting options, price, and many other criteria. I have
@@ -2829,7 +2829,7 @@ reached my verdict and I&#8217;m ready to publish my&nbsp;findings.</p>
 
             <content type="html">
                 <div class="section" id="scalability-and-feet-and-asses">
-<h3>Scalability and feet and&nbsp;asses</h3>
+<h1>Scalability and feet and&nbsp;asses</h1>
 <p>I love talking about scalability. Everyone has their own opinion, their own way
 of performing benchmarks and their own conclusions. And we all know that this
 is <em>very</em> silly. I recently came across an article by <a class="reference external" href="http://twitter.com/dozba">Ted Dziuba</a> that
@@ -2858,7 +2858,7 @@ like it, claim &#8220;technology X doesn&#8217;t scale!&#8221;</blockquote>
 
             <content type="html">
                 <div class="section" id="install-ruby-gems-into-virtualenv">
-<h3>Install Ruby gems into&nbsp;virtualenv</h3>
+<h1>Install Ruby gems into&nbsp;virtualenv</h1>
 <p>You are a Python developer and every time you have to install a Ruby gem you
 throw up in your mouth a little. Wouldn&#8217;t it be nice if you could install Ruby
 gems into your virtualenv? Yeah, it&nbsp;would.</p>
@@ -2869,7 +2869,7 @@ gems into your virtualenv? Yeah, it&nbsp;would.</p>
 </pre></div>
 <p>That&#8217;s it! You&#8217;re welcome.&nbsp;:)</p>
 <div class="section" id="credit">
-<h4>Credit</h4>
+<h2>Credit</h2>
 <p>Give credit where credit is due. I stole this idea from <a class="reference external" href="http://twitter.com/idangazit">Idan Gazit</a> and
 made it&nbsp;better.</p>
 </div>
@@ -2888,7 +2888,7 @@ made it&nbsp;better.</p>
 
             <content type="html">
                 <div class="section" id="deploying-django-with-nginx-and-gunicorn">
-<h3>Deploying Django with nginx and&nbsp;gunicorn</h3>
+<h1>Deploying Django with nginx and&nbsp;gunicorn</h1>
 <p>The amazing Django <a class="reference external" href="https://docs.djangoproject.com/en/1.3/howto/deployment/modwsgi/">documentation</a> recommends that you use Apache and modwsgi
 to deploy your webapp. While this is certainly not bad advice, you may not want
 to use Apache after all. Apache is a beast that eats up a lot of memory, is
@@ -2898,13 +2898,13 @@ like to talk about deploying Django on nginx using the <a class="reference exter
 spoke to one of the gunicorn developers and was told that every django hosting
 company (think ep.io) uses this&nbsp;setup.</p>
 <div class="section" id="get-your-server-ready">
-<h4>Get your server&nbsp;ready</h4>
+<h2>Get your server&nbsp;ready</h2>
 <p>I use Rackspace for small, single server web apps. I created an Ubuntu 10.10
 instance with <span class="caps">256MB</span> of <span class="caps">RAM</span>. Then, I created a user for my app and added my ssh
 key to <tt class="docutils literal">authorized_keys</tt>. Basic&nbsp;stuff.</p>
 </div>
 <div class="section" id="install-nginx">
-<h4>Install&nbsp;nginx</h4>
+<h2>Install&nbsp;nginx</h2>
 <p>Installing nginx couldn&#8217;t be simpler. Latest stable release is provided via a
 ppa&nbsp;repository.</p>
 <div class="highlight"><pre><span class="gp">$</span> sudo apt-get install python-software-properties -y
@@ -2916,7 +2916,7 @@ ppa&nbsp;repository.</p>
 </pre></div>
 </div>
 <div class="section" id="project-structure">
-<h4>Project&nbsp;structure</h4>
+<h2>Project&nbsp;structure</h2>
 <p>The user under which the app will run is <tt class="docutils literal">webapp</tt>, so I checkout my app in
 <tt class="docutils literal">/home/webapp</tt>.</p>
 <div class="highlight"><pre><span class="go">/home/webapp/app</span>
@@ -2926,7 +2926,7 @@ ppa&nbsp;repository.</p>
 <p>Note that I&#8217;m using <tt class="docutils literal">virtualenv</tt> to deploy this&nbsp;app.</p>
 </div>
 <div class="section" id="configure-nginx-and-gunicorn">
-<h4>Configure nginx and&nbsp;gunicorn</h4>
+<h2>Configure nginx and&nbsp;gunicorn</h2>
 <p>The following two files can be distributed with your&nbsp;project.</p>
 <p>nginx.conf:</p>
 <div class="highlight"><pre><span class="go">server {</span>
@@ -2962,7 +2962,7 @@ installed it into the app&#8217;s&nbsp;environment.</p>
 <p>That&#8217;s it! The config files are simple and easy to&nbsp;read.</p>
 </div>
 <div class="section" id="running">
-<h4>Running</h4>
+<h2>Running</h2>
 <p>I then collected all the static files into the <tt class="docutils literal">static</tt> directory:</p>
 <div class="highlight"><pre><span class="gp">$</span> <span class="o">(</span>env<span class="o">)</span> python manage.py collectstatic
 </pre></div>
@@ -2976,7 +2976,7 @@ installed it into the app&#8217;s&nbsp;environment.</p>
 <p>And I was good to&nbsp;go.</p>
 </div>
 <div class="section" id="notes">
-<h4>Notes</h4>
+<h2>Notes</h2>
 <p>You may have to change the permissions on the <tt class="docutils literal">static</tt> directory. Also, the
 command above starts <tt class="docutils literal">gunicorn</tt> as a deamon - a better way would be to use a
 monitoring service to start it. Think <tt class="docutils literal">runit</tt> or <tt class="docutils literal">supervisord</tt>. Also, I
@@ -2998,7 +2998,7 @@ an Apache&nbsp;deployment.</p>
 
             <content type="html">
                 <div class="section" id="the-importance-of-git-rebase">
-<h3>The importance of git&nbsp;rebase</h3>
+<h1>The importance of git&nbsp;rebase</h1>
 <p>Git isn&#8217;t just something you have to put up with when working with other
 developers. Git is a wonderful tool that allows you to manage your code, its
 evolution and help you recover from mistakes should they arise. One of the
@@ -3052,7 +3052,7 @@ that instead of <tt class="docutils literal">git pull</tt> you will run <tt clas
 
             <content type="html">
                 <div class="section" id="the-modern-web-developer-and-open-source-licenses">
-<h3>The modern web developer and open source&nbsp;licenses</h3>
+<h1>The modern web developer and open source&nbsp;licenses</h1>
 <p>The world of open source is full of wonders. People write code for free and
 make it available for free for anyone to use. If you write a quick little
 program on the weekend, it&#8217;s usually because there is a need that has to be
@@ -3129,12 +3129,12 @@ do anything in terms of legal protection or&nbsp;warranty.</p>
 
             <content type="html">
                 <div class="section" id="virtual-machines-for-django-developers">
-<h3>Virtual machines for Django&nbsp;developers</h3>
+<h1>Virtual machines for Django&nbsp;developers</h1>
 <p><a class="reference external" href="http://vagrantup.com">Vagrant</a> is a tool for building and distributing virtualized
 development environments. It&#8217;s based on VirtualBox VMs. This article describes
 how this Ruby tool can be useful to Django&nbsp;developers.</p>
 <div class="section" id="why-vagrant">
-<h4>Why&nbsp;vagrant?</h4>
+<h2>Why&nbsp;vagrant?</h2>
 <p>The modern web developer works on many different projects. Each project has a
 unique set of requirements, dependencies and package versions needed for that
 project to succeed. Keeping all of these libraries in check is difficult.
@@ -3152,7 +3152,7 @@ and&nbsp;memcached.</p>
 <p>Getting started with vagrant is&nbsp;simple.</p>
 </div>
 <div class="section" id="getting-started">
-<h4>Getting&nbsp;started</h4>
+<h2>Getting&nbsp;started</h2>
 <p>vagrant is distributed as a Ruby gem and you can install it like&nbsp;so:</p>
 <div class="highlight"><pre><span class="go">gem install vagrant</span>
 </pre></div>
@@ -3187,7 +3187,7 @@ environment under <tt class="docutils literal">/vagrant</tt>. Any changes to eit
 </pre></div>
 </div>
 <div class="section" id="provisioning">
-<h4>Provisioning</h4>
+<h2>Provisioning</h2>
 <p>Next, you will install some packages into the <span class="caps">VM</span>. You will install some common
 Django packages: PostreSQL, Apache, <span class="caps">WSGI</span>, memcached and&nbsp;git.</p>
 <div class="highlight"><pre><span class="go">cd ~/Code/webapp</span>
@@ -3238,13 +3238,13 @@ can be beneficial and how simple it is to get&nbsp;started.</p>
 
             <content type="html">
                 <div class="section" id="why-you-should-be-using-coffeescript">
-<h3>Why you should be using&nbsp;CoffeeScript</h3>
+<h1>Why you should be using&nbsp;CoffeeScript</h1>
 <p>I&#8217;m sure you&#8217;ve heard of CoffeeScript. Everyone is talking about it, it seems.
 It&#8217;s a beautiful language with a simple syntax that you use to write
 Javascript. CoffeeScript compiles to Javascript. Here is why I think you should
 be using&nbsp;it:</p>
 <div class="section" id="readability">
-<h4>Readability</h4>
+<h2>Readability</h2>
 <p>CoffeeScript is designed to be beautiful and readable. There is no unnecessary
 fluff. Less syntax boilerplate, fewer mistakes.&nbsp;Compare:</p>
 <div class="highlight"><pre><span class="c1">// regular javascript</span>
@@ -3256,14 +3256,14 @@ fluff. Less syntax boilerplate, fewer mistakes.&nbsp;Compare:</p>
 closures and blocks easier to&nbsp;spot.</p>
 </div>
 <div class="section" id="valid-code">
-<h4>Valid&nbsp;Code</h4>
+<h2>Valid&nbsp;Code</h2>
 <p>There are many different coding styles when it comes to writing Javascript. The
 good thing about CoffeeScript is that the Javascript it generates is valid - it
 passes <a class="reference external" href="http://www.javascriptlint.com/">Javascript Lint</a>. And if your code isn&#8217;t valid CoffeeScript, it
 won&#8217;t compile. It&#8217;s a win-win. This is perhaps my favorite&nbsp;feature.</p>
 </div>
 <div class="section" id="easy-class-inheritance">
-<h4>Easy class&nbsp;inheritance</h4>
+<h2>Easy class&nbsp;inheritance</h2>
 <p>This is just great. It reminds me of Python and&nbsp;Ruby:</p>
 <div class="highlight"><pre><span class="k">class</span> <span class="nx">Animal</span>
     <span class="nv">constructor: </span><span class="nf">(@name) -&gt;</span>
@@ -3315,14 +3315,14 @@ version and make any changes required. In my mind, this encourages better code
 organization and&nbsp;structure.</p>
 </div>
 <div class="section" id="node-js-awesomeness">
-<h4>Node.js&nbsp;awesomeness</h4>
+<h2>Node.js&nbsp;awesomeness</h2>
 <p>CoffeeScript comes with a Node.js utility, <tt class="docutils literal">coffee</tt>. You can write your
 Node.js code in CoffeeScript and run it with <tt class="docutils literal">coffee file.js</tt>. The utility
 wraps the CoffeeScript compiler and the <tt class="docutils literal">node</tt> executable. This way, you can
 whip up a quick server in no time.&nbsp;Genius.</p>
 </div>
 <div class="section" id="easy-debugging">
-<h4>Easy&nbsp;debugging</h4>
+<h2>Easy&nbsp;debugging</h2>
 <p>With tools like <a class="reference external" href="http://code.google.com/webtoolkit/">Google Web Toolkit</a>, your code compiles to <em>minified</em>
 javascript. Non-minified code is obviously easier (possible?) to read and&nbsp;debug.</p>
 </div>
@@ -3341,7 +3341,7 @@ javascript. Non-minified code is obviously easier (possible?) to read and&nbsp;d
 
             <content type="html">
                 <div class="section" id="the-latest-greatest-technology">
-<h3>The latest greatest&nbsp;technology</h3>
+<h1>The latest greatest&nbsp;technology</h1>
 <p>I just found an interesting quote by <a class="reference external" href="http://mir.aculo.us/">Thomas Fuchs</a>, the creator of
 script.aculo.us and a core member of the Prototype team. The quote is from his
 <a class="reference external" href="http://thomas.fuchs.usesthis.com/">Setup</a>&nbsp;interview:</p>
@@ -3367,7 +3367,7 @@ available tools.</blockquote>
 
             <content type="html">
                 <div class="section" id="jslint-syntax-checker-for-vim">
-<h3>JSLint syntax checker for&nbsp;vim</h3>
+<h1>JSLint syntax checker for&nbsp;vim</h1>
 <p>Douglas Crockford&#8217;s <a class="reference external" href="http://www.jslint.com/">JSLint</a> script is almost a golden standard when it comes
 to checking the syntax and general sanity of your javascript files. Being lazy
 by nature, I got tired of copying and pasting my code into the web&nbsp;form.</p>
@@ -3419,7 +3419,7 @@ feedback as to the quality of your code as judged by JSLint. And remember that
 
             <content type="html">
                 <div class="section" id="the-irrationality-of-being-an-apple-fanboy">
-<h3>The Irrationality of Being an Apple&nbsp;Fanboy</h3>
+<h1>The Irrationality of Being an Apple&nbsp;Fanboy</h1>
 <p>It continues to amaze me how much people devote themselves to Apple products.
 Every time the fruit company releases a new product, people line in front of
 the store for days in hopes of being one of the first blessed people who get to
@@ -3471,39 +3471,39 @@ your wife a netbook or an iPad with the money you&nbsp;save.</p>
 
             <content type="html">
                 <div class="section" id="ways-github-has-changed-the-open-source-world">
-<h3>7 ways Github has changed the open source&nbsp;world</h3>
+<h1>7 ways Github has changed the open source&nbsp;world</h1>
 <p>As the guys at <a class="reference external" href="http://thechangelog.com">the changelog</a> say, the world of open source is changing fast
 and you have to keep up. I believe that Github has been very influential when
 it comes to making open source more accessible. How has Github changed the
 world of open&nbsp;source?</p>
 <div class="section" id="force-projects-to-include-a-good-readme">
-<h4>Force projects to include a good&nbsp;<span class="caps">README</span></h4>
+<h2>Force projects to include a good&nbsp;<span class="caps">README</span></h2>
 <p>Apart from the directory structure and files, the most prominent element on the
 page is your <span class="caps">README</span> file. If you don&#8217;t have one, the page looks kind of weird. As
 an administrator, if you don&#8217;t add a <span class="caps">README</span> file, Github will start yelling at&nbsp;you.</p>
 </div>
 <div class="section" id="unified-place-for-all-your-projects">
-<h4>Unified place for all your&nbsp;projects</h4>
+<h2>Unified place for all your&nbsp;projects</h2>
 <p>When I come across a cool project, I like to see what other stuff the author
 has been hacking on. The best example I think is <a class="reference external" href="http://github.com/tpope">tpope</a> who is a famous
 vim plugin creator. When you go to his profile page on Github, you can see all
 of the plugins he has ever written and&nbsp;published.</p>
 </div>
 <div class="section" id="code-discussions">
-<h4>Code&nbsp;discussions</h4>
+<h2>Code&nbsp;discussions</h2>
 <p>Yes, you can discuss the project on <span class="caps">IRC</span> or on mailing lists. Those aren&#8217;t
 exactly user friendly, and it&#8217;s hard to discuss code that way. Github makes it
 easy for you to submit a pull request and have others comment on your&nbsp;code.</p>
 </div>
 <div class="section" id="publish-your-hacks-with-ease">
-<h4>Publish your hacks with&nbsp;ease</h4>
+<h2>Publish your hacks with&nbsp;ease</h2>
 <p>Did you just write a patch that greatly improves an existing project? Fork it
 and publish it in minutes. If you notify the original project, you can get
 helpful feedback on your hacks. This encourages people to publish their code
 even if it&#8217;s never merged into the original&nbsp;project.</p>
 </div>
 <div class="section" id="judge-how-active-a-project-is">
-<h4>Judge how active a project&nbsp;is</h4>
+<h2>Judge how active a project&nbsp;is</h2>
 <p>Github makes it easy to quickly look through a project&#8217;s history to see how
 active it is. In no time, you can tell how many people commit to it and how
 often. Also, the number of watchers/forks in the corner gives you a pretty good
@@ -3512,14 +3512,14 @@ favorite feature. Open source developers don&#8217;t need to waste their time
 exploring libraries that aren&#8217;t&nbsp;maintained.</p>
 </div>
 <div class="section" id="discover-new-projects">
-<h4>Discover new&nbsp;projects</h4>
+<h2>Discover new&nbsp;projects</h2>
 <p>Smart people come up with clever things all the time. If they share their code
 on Github, you can find it in the Explore Github section. I can&#8217;t remember how
 many times I&#8217;ve discovered a cool project this way. My favorite example is
 <a class="reference external" href="https://github.com/jashkenas/coffee-script">CoffeeScript</a>.</p>
 </div>
 <div class="section" id="follow-the-development-of-your-favorite-projects">
-<h4>Follow the development of your favorite&nbsp;projects</h4>
+<h2>Follow the development of your favorite&nbsp;projects</h2>
 <p>When you first log in, you are presented with a list of changes that were made
 to the projects you follow. This projects has a new release, this bug was
 fixed. etc.&nbsp;Invaluable.</p>
@@ -3540,7 +3540,7 @@ fixed. etc.&nbsp;Invaluable.</p>
 
             <content type="html">
                 <div class="section" id="how-to-convert-vim-colorschemes-to-pygments-themes">
-<h3>How To Convert Vim Colorschemes To Pygments&nbsp;Themes</h3>
+<h1>How To Convert Vim Colorschemes To Pygments&nbsp;Themes</h1>
 <p>Recently, I have grown to love <a class="reference external" href="http://pygments.org">Pygments</a>. It gives you syntax
 highlighting in the browser without heavy Javascript files. It supports just
 about any programming language on the planet and it&#8217;s just plain awesome. The
@@ -3587,7 +3587,7 @@ to&nbsp;go.</p>
 
             <content type="html">
                 <div class="section" id="why-nokia-chose-windows-over-android">
-<h3>Why Nokia chose Windows over&nbsp;Android</h3>
+<h1>Why Nokia chose Windows over&nbsp;Android</h1>
 <p>Today, we have all heard about the new deal struck between Nokia and Microsoft.
 It is a major change in Nokia&#8217;s strategy which will without a doubt affect the
 smartphone&nbsp;market.</p>
@@ -3611,13 +3611,13 @@ Windows is like shitting your&nbsp;pants.</p>
 
             <content type="html">
                 <div class="section" id="how-my-website-works">
-<h3>How My Website&nbsp;Works</h3>
+<h1>How My Website&nbsp;Works</h1>
 <p>I&#8217;m sure you&#8217;ve heard of static site generators like Jekyll (Ruby) or Hyde
 (Python). The benefits are obvious - your site is hosted on a cheap shared
 hosting and it can easily survive the Digg/Slashdot/Reddit effect. There is no
 database latency - the browser requests a file on the server and gets it back&nbsp;immediately.</p>
 <div class="section" id="update-2011-02-27">
-<h4>Update&nbsp;(2011-02-27):</h4>
+<h2>Update&nbsp;(2011-02-27):</h2>
 <p>While I still use a static generator to power my site, it&#8217;s not a different
 engine. I got tired of launching a django server just to write a post. I wrote
 a new static site generator called <a class="reference external" href="https://github.com/honza/socrates">Socrates</a>. Each post is now a separate
@@ -3625,14 +3625,14 @@ file written in Markdown. Socrates then runs through those files and creates a
 site for me. I&#8217;m still using django templates. What follows is the original&nbsp;post.</p>
 </div>
 <div class="section" id="django">
-<h4>django</h4>
+<h2>django</h2>
 <p>The site is a simple django blog. There is nothing really of note when it comes
 to django-specific coding. I run the django server locally when I&#8217;m editing or
 adding articles. It provides a nice <span class="caps">UI</span>. It also lets me easily preview the site
 without generating&nbsp;anything.</p>
 </div>
 <div class="section" id="static-generator">
-<h4>static&nbsp;generator</h4>
+<h2>static&nbsp;generator</h2>
 <p>When I&#8217;m happy with the state of the website and want to publish it, I run the
 static generator. It&#8217;s contained in the <tt class="docutils literal">generate.py</tt> file. It runs through
 all possible urls and for each one it generates a static file. Each file is a
@@ -3664,14 +3664,14 @@ following <span class="caps">URL</span>&nbsp;structure:</p>
 </pre></div>
 </div>
 <div class="section" id="ftp-deploy-script">
-<h4><span class="caps">FTP</span> deploy&nbsp;script</h4>
+<h2><span class="caps">FTP</span> deploy&nbsp;script</h2>
 <p>And the final piece is the <tt class="docutils literal">deploy.py</tt> script. It looks at the deploy
 directory, and with a little help from git, it figures out what files were
 changed since the last deploy. It then takes those files and throws them up on
 the server. A normal shared&nbsp;hosting.</p>
 </div>
 <div class="section" id="conclusion">
-<h4>Conclusion</h4>
+<h2>Conclusion</h2>
 <p>You can check out the code on <a class="reference external" href="https://github.com/honza/honza.github.com">Github</a>.</p>
 </div>
 </div>
@@ -3689,7 +3689,7 @@ the server. A normal shared&nbsp;hosting.</p>
 
             <content type="html">
                 <div class="section" id="android-development-disappointments">
-<h3>Android Development&nbsp;disappointments</h3>
+<h1>Android Development&nbsp;disappointments</h1>
 <p>The Android platform is the latest buzz in the smartphone world. I have
 previously written on why I prefer Android over iPhone. In this article, we
 will talk a little bit about what it&#8217;s like to develop native applications for&nbsp;Android.</p>
@@ -3738,7 +3738,7 @@ with the&nbsp;application.</p>
 
             <content type="html">
                 <div class="section" id="apple-finally-catches-up-to-linux">
-<h3>Apple Finally Catches Up To&nbsp;Linux</h3>
+<h1>Apple Finally Catches Up To&nbsp;Linux</h1>
 <p>Apple recently unveiled their newest venture. It&#8217;s called the App Store, and
 I&#8217;m sure you&#8217;ve heard of it. It&#8217;s a place on your computer that lets you
 download and discover new applications. Just like the package manager on most
@@ -3759,7 +3759,7 @@ Linux&nbsp;distributions.</p>
 
             <content type="html">
                 <div class="section" id="how-money-is-made-online">
-<h3>How Money Is Made&nbsp;Online</h3>
+<h1>How Money Is Made&nbsp;Online</h1>
 <p>My friends of the non-geek type often ask me how companies like Facebook can
 make so much money and provide their service for free at the same time. Here is
 a quick example of how you can make money&nbsp;online.</p>
@@ -3791,19 +3791,19 @@ every month looking at your ad for just&nbsp;$5,000/month.</p>
 
             <content type="html">
                 <div class="section" id="why-i-chose-android">
-<h3>Why I Chose&nbsp;Android</h3>
+<h1>Why I Chose&nbsp;Android</h1>
 <p>Recently, we have heard that the Android operating system has the largest
 market share in the <span class="caps">US</span>, and is set to take over the whole world. Personally, I
 chose Android long before it was this popular.&nbsp;Why?</p>
 <div class="section" id="background">
-<h4>Background</h4>
+<h2>Background</h2>
 <p>I won&#8217;t bore you with my personal history, but I&#8217;d like to say a few things.
 I&#8217;m a programmer and like to tweet things. If there isn&#8217;t an application that
 does the job, I write it myself. Couple years ago, I was given the then amazing
 iPhone 3G. I was thrilled. Everyone wanted one, and I had&nbsp;it.</p>
 </div>
 <div class="section" id="motorola-droid">
-<h4>Motorola&nbsp;Droid</h4>
+<h2>Motorola&nbsp;Droid</h2>
 <p>I sold the iPhone, and bought a Motorola Droid. Why? It&#8217;s actually pretty
 simple. I don&#8217;t like closed systems. If you want to develop an application for
 the iPhone, you have to buy an Apple computer. You have to use XCode, the
@@ -3812,7 +3812,7 @@ on your phone. I don&#8217;t like the idea of spending an upwards of $1,000 to g
 underpowered machine just to be able to write an&nbsp;app.</p>
 </div>
 <div class="section" id="blackberry">
-<h4>Blackberry</h4>
+<h2>Blackberry</h2>
 <p>After deciding, I wanted to get off the iPhone train, I started looking around
 for a new smartphone. The first choice was Blackberry. A serious Canadian
 company, business-class smartphones, good prices, &#8230; What&#8217;s not to like? Well,
@@ -3821,14 +3821,14 @@ test your Blackberry application. Being an avid Linux user, I very much
 disliked the idea of going back to Windows just because of&nbsp;Blackberry.</p>
 </div>
 <div class="section" id="enter-android">
-<h4>Enter&nbsp;Android</h4>
+<h2>Enter&nbsp;Android</h2>
 <p>Android was my next choice. I browsed over to the developers&#8217; website to see if
 I can make apps for this platform. When I saw that Windows, Mac <span class="caps">OS</span> and Linux
 were supported, I almost cried for joy! I learned that Android runs on the
 Linux kernel, apps are written in Java using the open source&nbsp;<span class="caps">SDK</span>.</p>
 </div>
 <div class="section" id="google">
-<h4>Google</h4>
+<h2>Google</h2>
 <p>Yes, Google is behind this whole thing. You may not exactly care unless you use
 their services. The integration of Google services into Android is phenomenal.
 When you first turn on your device, you are asked to enter your Google account
@@ -3850,12 +3850,12 @@ calendar, Google Talk, etc. are set up automatically.&nbsp;Genius.</p>
 
             <content type="html">
                 <div class="section" id="how-to-use-twitter-oauth-on-android">
-<h3>How To Use Twitter OAuth On&nbsp;Android</h3>
+<h1>How To Use Twitter OAuth On&nbsp;Android</h1>
 <p>If you are developing an application for the Android platform, and you need to
 interact with the Twitter <span class="caps">API</span>, you now have to use OAuth to authenticate the
 user. In this article, we will have a look on how you can do&nbsp;that.</p>
 <div class="section" id="what-is-oauth">
-<h4>What is&nbsp;OAuth?</h4>
+<h2>What is&nbsp;OAuth?</h2>
 <p>OAuth is a way of accessing a user&#8217;s data (e.g. tweets) without asking for the
 user&#8217;s username and password. Your application opens the Twitter website which
 will ask the user if they want to allow you to access their data. If they do,
@@ -3863,7 +3863,7 @@ they are taken back to the application and can start using it. You can find
 more about OAuth all over the&nbsp;web.</p>
 </div>
 <div class="section" id="prerequisites">
-<h4>Prerequisites</h4>
+<h2>Prerequisites</h2>
 <p>There are a couple of .jars that you will need for this to&nbsp;work.</p>
 <ul class="simple">
 <li>signpost-commonshttp4-1.2.1.1.jar</li>
@@ -3872,7 +3872,7 @@ more about OAuth all over the&nbsp;web.</p>
 <p>You can download them <a class="reference external" href="https://github.com/kaeppler/signpost">here</a>.</p>
 </div>
 <div class="section" id="basic-activity">
-<h4>Basic&nbsp;Activity</h4>
+<h2>Basic&nbsp;Activity</h2>
 <p>Let&#8217;s say we have an activity running where the user can start the
 authentication process. There is nothing special about this activity, except
 for some text and a button. When the user clicks the button, the OAuth process
@@ -4002,7 +4002,7 @@ behalf of the&nbsp;user.</p>
 
             <content type="html">
                 <div class="section" id="posterous-style-blogging-on-app-engine">
-<h3>Posterous-style Blogging On App&nbsp;Engine</h3>
+<h1>Posterous-style Blogging On App&nbsp;Engine</h1>
 <p>Posterous has been getting a lot of attention lately. Its simplicity appeals to
 a wide range of users and more and more users are switching over from other
 well-established blogging platforms such as Blogger or WordPress. In this
@@ -4094,13 +4094,13 @@ directory. Then import it in your <tt class="docutils literal">main.py</tt> file
 </pre></div>
 <p>And that&#8217;s&nbsp;it!</p>
 <div class="section" id="conclusion">
-<h4>Conclusion</h4>
+<h2>Conclusion</h2>
 <p>This is a very simple yet effective technique and it will allow you to create
 post from anywhere. I hope you&#8217;ve enjoyed the post. Let me know if you have any
 suggestions on how to improve&nbsp;it.</p>
 </div>
 <div class="section" id="code">
-<h4>Code</h4>
+<h2>Code</h2>
 <p>The complete code for this app is available on <a class="reference external" href="https://github.com/honza/Posterous-App-Engine">Github</a>.</p>
 </div>
 </div>
@@ -4118,7 +4118,7 @@ suggestions on how to improve&nbsp;it.</p>
 
             <content type="html">
                 <div class="section" id="twitter-success-story-hurricane-bill">
-<h3>Twitter Success Story - Hurricane&nbsp;Bill</h3>
+<h1>Twitter Success Story - Hurricane&nbsp;Bill</h1>
 <p>Beginners often find Twitter very confusing and useless. I think it&#8217;s because
 they come to it with some preconceived ideas, and when Twitter doesn&#8217;t fit
 their model they get frustrated. This series is meant to show why Twitter is so

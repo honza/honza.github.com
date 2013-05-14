@@ -51,14 +51,14 @@
 
 <div id="content">
     <div class="section" id="large-javascript-application-tips">
-<h3>Large Javascript Application&nbsp;Tips</h3>
+<h1>Large Javascript Application&nbsp;Tips</h1>
 <p>This post isn&#8217;t going to tell you that you should use <span class="caps">MVC</span> to structure your
 application.  It isn&#8217;t going to tell you which framework to use.  It&#8217;s not
 going to tell you to use CoffeeScript or MongoDB.  But I&#8217;m going to talk about
 some small helpful things you can do to your Javascript application to make
 easier to develop and&nbsp;maintain.</p>
 <div class="section" id="naming-conventions">
-<h4>Naming&nbsp;Conventions</h4>
+<h2>Naming&nbsp;Conventions</h2>
 <p>Improperly naming your variables, functions and classes can make it nearly
 impossible to navigate large portions of existing code.  You have to follow the
 chain all the way up where that variable was created (sometimes in a different
@@ -67,7 +67,7 @@ should be able to tell if it&#8217;s a class definition or an instance.  You sho
 be able to distinguish between a constant and a&nbsp;function.</p>
 </div>
 <div class="section" id="file-dependency">
-<h4>File&nbsp;dependency</h4>
+<h2>File&nbsp;dependency</h2>
 <p>Writing large Javascript applications for the browser is tricky because your
 application needs to be split over multiple files and there doesn&#8217;t seem to be
 a good way to manage dependencies.  When you open up a file in your project,
@@ -89,14 +89,14 @@ within a simple&nbsp;comment.</p>
 </pre></div>
 </div>
 <div class="section" id="class-definition-time-and-consumption-time">
-<h4>Class definition time and consumption&nbsp;time</h4>
+<h2>Class definition time and consumption&nbsp;time</h2>
 <p>There should be a clear distinction between when your classes are defined and
 when they are consumed.  I like to prepare all my classes and functions
 beforehand, and then kick off the app with a single call when the document is
 ready.  It&#8217;s nice to be able to tell that this is where the app&nbsp;starts.</p>
 </div>
 <div class="section" id="namespaces">
-<h4>Namespaces</h4>
+<h2>Namespaces</h2>
 <p>Your entire application should be contained within a namespace.  Putting all of
 your code under a namespace makes it easy to tell where what function or class
 definition is coming from.  It makes sure that you don&#8217;t pollute the global
@@ -104,7 +104,7 @@ namespace.  It also allows you to select which functions and variables are
 going to be exposed&nbsp;publicly.</p>
 </div>
 <div class="section" id="documentation">
-<h4>Documentation</h4>
+<h2>Documentation</h2>
 <p>If your application isn&#8217;t going to be open-source, you might be tempted to skip
 writing documentation.  Adding a few comments here and there in the code can
 help you quickly understand what is going on and where related code might live.
@@ -113,7 +113,7 @@ your team opens up an 800-line-of-code file with zero comments, they might
 crawl under their desk and cry (I&#8217;ve wanted to do that a few times&nbsp;before).</p>
 </div>
 <div class="section" id="frameworks">
-<h4>Frameworks</h4>
+<h2>Frameworks</h2>
 <p>If you do decide to use a framework like Backbone.js, you should make sure that
 you use it in a sane way.  When a new member joins your team, it&#8217;s really nice
 when you can point them to the framework&#8217;s documentation and have them start
@@ -122,7 +122,7 @@ build extensions to the framework and that&#8217;s fine as long as it&#8217;s do
 and&nbsp;obvious.</p>
 </div>
 <div class="section" id="conclusion">
-<h4>Conclusion</h4>
+<h2>Conclusion</h2>
 <p>Thanks for&nbsp;listening</p>
 </div>
 </div>

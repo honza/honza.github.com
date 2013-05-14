@@ -41,8 +41,8 @@ p, blockquote, ul, ol {
 blockquote {
     margin-left: 0;
     padding-left: 15px;
-    font-style: italic;
-    border-left: 1px solid #333;
+    color: #888;
+    border-left: 2px solid #888;
 }
 
 #wrap {
