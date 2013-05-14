@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
   <loc>http://http://honza.ca/</loc>
-  <lastmod>2013-05-14T00:38:20Z</lastmod>
+  <lastmod>2013-05-14T09:26:21Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
 <url>
   <loc>http://http://honza.ca/about</loc>
-  <lastmod>2013-05-14T00:38:20Z</lastmod>
+  <lastmod>2013-05-14T09:26:21Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
@@ -226,12 +226,6 @@
 <url>
   <loc>http://http://honza.ca/2011/07/what-is-a-blog</loc>
   <lastmod>2011-07-04T10:00:00Z</lastmod>
-  <changefreq>daily</changefreq>
-</url>
-
-<url>
-  <loc>http://http://honza.ca/2011/06/why-i-quit-facebook</loc>
-  <lastmod>2011-06-23T19:30:00Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
