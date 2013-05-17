@@ -1,4 +1,5 @@
 all:
+	rm .post-cache.json
 	socrates -g _blog
 
 force:
