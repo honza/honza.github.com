@@ -4,9 +4,34 @@
     <title>Honza Pokorny - Thoughts on web development</title>
     <link href="http://honza.ca/atom.xml" rel="self"/>
     <link href="http://honza.ca"/>
-    <updated>2013-05-21T18:30:30Z</updated>
+    <updated>2013-05-25T00:33:06Z</updated>
     <id>http://honza.ca</id>
 
+    
+        <entry>
+            <title>Text editor UI</title>
+            <author><name>Honza Pokorny</name></author>
+            <link href="http://honza.ca/2013/05/text-editor-ui"/>
+            <updated>2013-05-24T21:30:00Z</updated>
+            <published>2013-05-24T21:30:00Z</published>
+            <id>http://honza.ca/2013/05/text-editor-ui</id>
+
+            <content type="html">
+                <div class="section" id="text-editor-ui">
+<h1>Text editor<span class="caps">UI</span></h1>
+<blockquote>
+What I don&#8217;t understand is: why should you ever care how your editor looks,
+unless you&#8217;re trying to win a screenshot competition?  The primary factor
+in looking good should be the choice of a good font at a comfortable size,
+and a syntax coloring theme that you like.  And that is not something
+specific to an editor.  Editors like Emacs and vi have almost no <span class="caps">UI</span>!  If
+Emacs is configured right, the only <span class="caps">UI</span> it has is the modeline and the
+minibuffer.</blockquote>
+<p>Vivek Haldar in <a class="reference external" href="http://blog.vivekhaldar.com/post/31970017734/new-frontiers-in-text-editing">New Frontiers In TextEditing</a></p>
+</div>
+
+            </content>
+        </entry>
     
         <entry>
             <title>Google plus adoption</title>

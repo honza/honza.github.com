@@ -2,16 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
   <loc>http://http://honza.ca/</loc>
-  <lastmod>2013-05-21T18:30:30Z</lastmod>
+  <lastmod>2013-05-25T00:33:06Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
 <url>
   <loc>http://http://honza.ca/about</loc>
-  <lastmod>2013-05-21T18:30:30Z</lastmod>
+  <lastmod>2013-05-25T00:33:06Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
+
+<url>
+  <loc>http://http://honza.ca/2013/05/text-editor-ui</loc>
+  <lastmod>2013-05-24T21:30:00Z</lastmod>
+  <changefreq>daily</changefreq>
+</url>
 
 <url>
   <loc>http://http://honza.ca/2013/05/google-plus-adoption</loc>
