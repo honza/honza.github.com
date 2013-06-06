@@ -13,8 +13,8 @@ people*.
 There is always talk of gender-inclusive language when it comes to Bible
 translation.  But this one seems a little too far.  Or it doesn't feel right.
 
-As I have been thing of this, I came across other things we say that that are
-sexist in this way that don't seem to bother anyone.
+As I have been thinking about this, I came across other things we say that that
+are sexist in this way that don't seem to bother anyone.
 
 1.  Watch any detective show and without fail, the perpetrator or killer will
     be called *he* and *him*.  Women never kill.
