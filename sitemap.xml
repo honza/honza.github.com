@@ -2,16 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
   <loc>http://http://honza.ca/</loc>
-  <lastmod>2013-06-13T14:36:49Z</lastmod>
+  <lastmod>2013-06-21T14:46:19Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
 <url>
   <loc>http://http://honza.ca/about</loc>
-  <lastmod>2013-06-13T14:36:49Z</lastmod>
+  <lastmod>2013-06-21T14:46:19Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
+
+<url>
+  <loc>http://http://honza.ca/2013/06/i-hate-your-code</loc>
+  <lastmod>2013-06-21T10:25:00Z</lastmod>
+  <changefreq>daily</changefreq>
+</url>
 
 <url>
   <loc>http://http://honza.ca/2013/06/who-are-the-weak-christians</loc>

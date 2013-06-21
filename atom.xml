@@ -4,9 +4,36 @@
     <title>Honza Pokorny - Thoughts on web development</title>
     <link href="http://honza.ca/atom.xml" rel="self"/>
     <link href="http://honza.ca"/>
-    <updated>2013-06-13T14:36:49Z</updated>
+    <updated>2013-06-21T14:46:19Z</updated>
     <id>http://honza.ca</id>
 
+    
+        <entry>
+            <title>I hate your code</title>
+            <author><name>Honza Pokorny</name></author>
+            <link href="http://honza.ca/2013/06/i-hate-your-code"/>
+            <updated>2013-06-21T10:25:00Z</updated>
+            <published>2013-06-21T10:25:00Z</published>
+            <id>http://honza.ca/2013/06/i-hate-your-code</id>
+
+            <content type="html">
+                <div class="section" id="i-hate-your-code">
+<h1>I hate yourcode</h1>
+<p>When starting to work on an existing codebase, I often find myself in a state
+of despair.  The code doesn&#8217;t make any sense, the programmers must have all
+been idiots, why <em>on earth</em> would they do it like this, &#8230;  I hate everything
+about thecode.</p>
+<p>I spend hours going through it, thinking to myself, <em>I would have done a much
+better job writing this</em> and making a list of changes that <em>must</em> be done in
+order for the project to conform to mystandards.</p>
+<p>But then, when I have spent enough time reading everything, something clicks in
+my mind.  I see what the authors were trying to do and everything makes sense.
+It&#8217;s actually kind ofclever.</p>
+<p>And I feel dumb.  Everytime.</p>
+</div>
+
+            </content>
+        </entry>
     
         <entry>
             <title>Who are the weak Christians</title>
