@@ -5,6 +5,9 @@
 Tweetable verses
 ================
 
+Tweetable here means that it fits into a 140 character tweet, including the
+reference.  The text used to create this list is the ESV translation.
+
 Total results: 17257
 
 Genesis
