@@ -7,6 +7,9 @@ Duplicate Bible verses
 
 The text of the ESV was used.
 
+Number of verses that appear more than once: 235 (i.e. the number of list items
+below).
+
 * Genesis 36:41, 1 Chronicles 1:52
 * Matthew 8:20, Luke 9:58
 * 2 Kings 19:5, Isaiah 37:5
