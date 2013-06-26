@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
   <loc>http://http://honza.ca/</loc>
-  <lastmod>2013-06-26T00:45:57Z</lastmod>
+  <lastmod>2013-06-26T00:53:42Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
 <url>
   <loc>http://http://honza.ca/about</loc>
-  <lastmod>2013-06-26T00:45:57Z</lastmod>
+  <lastmod>2013-06-26T00:53:42Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
@@ -22,6 +22,12 @@
 <url>
   <loc>http://http://honza.ca/2013/06/tweetable-verses</loc>
   <lastmod>2013-06-25T21:00:00Z</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+
+<url>
+  <loc>http://http://honza.ca/2013/06/duplicate-bible-verses</loc>
+  <lastmod>2013-06-25T21:52:00Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
