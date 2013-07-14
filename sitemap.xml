@@ -2,16 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
   <loc>http://http://honza.ca/</loc>
-  <lastmod>2013-06-26T00:53:42Z</lastmod>
+  <lastmod>2013-07-14T22:24:30Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
 <url>
   <loc>http://http://honza.ca/about</loc>
-  <lastmod>2013-06-26T00:53:42Z</lastmod>
+  <lastmod>2013-07-14T22:24:30Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
+
+<url>
+  <loc>http://http://honza.ca/2013/07/when-hn-gets-in-the-way</loc>
+  <lastmod>2013-07-13T22:06:00Z</lastmod>
+  <changefreq>daily</changefreq>
+</url>
 
 <url>
   <loc>http://http://honza.ca/2013/06/bible-verses-by-length</loc>
