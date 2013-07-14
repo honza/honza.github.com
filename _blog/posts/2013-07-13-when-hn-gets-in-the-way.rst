@@ -33,7 +33,7 @@ links things like *Learn You a Haskell for Great Good* or Steve Losh's *Learn
 Vimscript the Hardway*.  Now every time I go to HN, I see those links and am
 reminded that I wanted to spend some time learning those things...
 
-.. image:: /media/img/hn_nginx.png
+.. image:: /img/hn_nginx.png
 
 Steps
 -----
