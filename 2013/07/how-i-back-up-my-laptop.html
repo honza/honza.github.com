@@ -58,7 +58,7 @@ version of a file.  What does keep me up at night though is forever losing all
 of the pictures of our kids because my hard drive&nbsp;failed.</p>
 <p>I also don&#8217;t particularly like tools like Time Machine,  Carbon Copy Cloner or
 SuperDuper.  They are some kind of <span class="caps">GUI</span> app that does stuff, and I like my unix&nbsp;tools.</p>
-<p>Here are my&nbsp;requirements:</p>
+<p>Here are my requirements for a good backup&nbsp;solution:</p>
 <ol class="arabic simple">
 <li>Incremental - that means don&#8217;t overwrite older backups and don&#8217;t back up
 everything every&nbsp;time</li>
@@ -69,7 +69,7 @@ to back to work&nbsp;quickly</li>
 <p>When you do some research into this, you will see mostly suggesting rsync.  It
 can copy your entire drive and does smart, incremental backups.  Except it
 overwrites stuff and you only get to keep the latest&nbsp;copy.</p>
-<p>Enter <cite>bup_</cite>.  Bup is simply amazing.  It&#8217;s based on git and it gives you
+<p>Enter <a class="reference external" href="https://github.com/bup/bup">bup</a>.  Bup is simply amazing.  It&#8217;s based on git and it gives you
 automatic incremental, deduplicated, shared backups.  Free and open&nbsp;source.</p>
 <p>Backing up huge virtual machines?  It only backs up what changed, not the whole
 file.  Multiple copies of the same stuff on your hard drive?  Only needs to

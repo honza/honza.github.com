@@ -14,7 +14,7 @@ I also don't particularly like tools like Time Machine,  Carbon Copy Cloner or
 SuperDuper.  They are some kind of GUI app that does stuff, and I like my unix
 tools.
 
-Here are my requirements:
+Here are my requirements for a good backup solution:
 
 1.  Incremental - that means don't overwrite older backups and don't back up
     everything every time
@@ -29,7 +29,7 @@ When you do some research into this, you will see mostly suggesting rsync.  It
 can copy your entire drive and does smart, incremental backups.  Except it
 overwrites stuff and you only get to keep the latest copy.
 
-Enter `bup_`.  Bup is simply amazing.  It's based on git and it gives you
+Enter `bup`_.  Bup is simply amazing.  It's based on git and it gives you
 automatic incremental, deduplicated, shared backups.  Free and open source.
 
 Backing up huge virtual machines?  It only backs up what changed, not the whole
