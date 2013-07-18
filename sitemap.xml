@@ -2,16 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
   <loc>http://http://honza.ca/</loc>
-  <lastmod>2013-07-16T00:12:50Z</lastmod>
+  <lastmod>2013-07-18T13:23:31Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
 <url>
   <loc>http://http://honza.ca/about</loc>
-  <lastmod>2013-07-16T00:12:50Z</lastmod>
+  <lastmod>2013-07-18T13:23:31Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
+
+<url>
+  <loc>http://http://honza.ca/2013/07/how-to-compile-vim</loc>
+  <lastmod>2013-07-18T10:16:00Z</lastmod>
+  <changefreq>daily</changefreq>
+</url>
 
 <url>
   <loc>http://http://honza.ca/2013/07/how-i-back-up-my-laptop</loc>

@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Thoughts on web programming, open source hacking and the like. Honza Pokorny is a web developer in Halifax, Canada" >
+  <meta name="viewport" content="width=550, maximum-scale=1.0" />
+  <meta name="readability-verification" content="cXteMUVfc4F4DwUmDFS563269y9HLgfxK34fvdMC"/>
+  <title>How to compile vim - Honza Pokorny</title>
+  <link rel="stylesheet" href="/media/screen.css" type="text/css" />
+  <link rel="alternate" type="application/atom+xml" title="News-Feed" href="http://honza.ca/atom.xml" />
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-4330851-12']);
+        _gaq.push(['_trackPageview']);
+
+        (function(){
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>    
+
+    <script type="text/javascript">
+    /* <![CDATA[ */
+        (function() {
+            var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+            
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto'
+            
+            t.parentNode.insertBefore(s, t);
+        })();
+    /* ]]> */
+    </script>
+        
+</head>
+<body>
+
+    <div id="wrap">
+        <div id="banner" class="body">
+            <h1><a href="/">Honza Pokorny</a></h1>
+        </div>
+        <p>Thoughts on web programming and the world of technology</p>
+        
+
+<p class="article_date date">
+    July 18, 2013, reading time: under one minute
+</p>
+
+<div id="content">
+    <div class="section" id="how-to-compile-vim">
+<h1>How to compile&nbsp;vim</h1>
+<p>&#8230; from source when you&#8217;re using the homebrew-provided&nbsp;Python.</p>
+<p>If you have installed Python via homebrew, your vim will compile fine but when
+a plugin tries to use Python to do some its work, vim will crash like&nbsp;this:</p>
+<img alt="/img/vim-crash.png" src="/img/vim-crash.png" />
+<p>Not&nbsp;pretty.</p>
+<p>Apparently, this is because vim will use the first Python it can find which in
+our case the homebrew-provided one.  You can of course get a pre-compiled
+version and ignore this.  But I like to use the latest version of vim and with
+the 7.4 beta, I have been doing that a lot&nbsp;lately&#8230;</p>
+<p>So, what is one to do?  We have to fix the <tt class="docutils literal"><span class="caps">PATH</span></tt>.  Here is the script that I
+use to recompile vim.  This goes in the root of the vim&nbsp;project.</p>
+<pre class="literal-block">
+export PATH=/bin:/usr/sbin:/sbin:/usr/bin
+
+./configure \
+        --enable-perlinterp \
+        --enable-pythoninterp \
+        --enable-rubyinterp \
+        --enable-cscope \
+        --with-features=huge
+
+make
+</pre>
+<p>There and vim is now compiled properly with Python support that won&#8217;t make you&nbsp;cry.</p>
+<p>Thanks to Steve Losh for pointing me in the right direction on&nbsp;this.</p>
+</div>
+
+</div>
+
+<span class="article_buttons">
+    <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+    <a href="http://twitter.com/share" class="twitter-share-button"
+        data-url="http://honza.ca/2013/07/how-to-compile-vim"
+        data-via="_honza"
+        data-text="How to compile vim"
+        data-count="none">Tweet</a>
+    <a href="http://honza.ca/2013/07/how-to-compile-vim"
+        class="FlattrButton"
+        rev="flattr;uid:honza;button:compact;"
+        title="How to compile vim"
+        style="display:none"></a>
+
+</span>
+
+
+    </div>
+
+</body>
+</html>
