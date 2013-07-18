@@ -4,7 +4,7 @@
     <title>Honza Pokorny - Thoughts on web development</title>
     <link href="http://honza.ca/atom.xml" rel="self"/>
     <link href="http://honza.ca"/>
-    <updated>2013-07-18T13:23:31Z</updated>
+    <updated>2013-07-18T13:25:03Z</updated>
     <id>http://honza.ca</id>
 
     
@@ -30,18 +30,17 @@ version and ignore this.  But I like to use the latest version of vim and with
 the 7.4 beta, I have been doing that a lotlately&#8230;</p>
 <p>So, what is one to do?  We have to fix the <tt class="docutils literal"><span class="caps">PATH</span></tt>.  Here is the script that I
 use to recompile vim.  This goes in the root of the vimproject.</p>
-<pre class="literal-block">
-export PATH=/bin:/usr/sbin:/sbin:/usr/bin
+<div class="highlight"><pre><span class="nb">export </span><span class="nv"><span class="caps">PATH</span></span><span class="o">=</span>/bin:/usr/sbin:/sbin:/usr/bin
 
-./configure \
-        --enable-perlinterp \
-        --enable-pythoninterp \
-        --enable-rubyinterp \
-        --enable-cscope \
-        --with-features=huge
+./configure <span class="se">\</span>
+        --enable-perlinterp <span class="se">\</span>
+        --enable-pythoninterp <span class="se">\</span>
+        --enable-rubyinterp <span class="se">\</span>
+        --enable-cscope <span class="se">\</span>
+        --with-features<span class="o">=</span>huge
 
 make
-</pre>
+</pre></div>
 <p>There and vim is now compiled properly with Python support that won&#8217;t make youcry.</p>
 <p>Thanks to Steve Losh for pointing me in the right direction onthis.</p>
 </div>

@@ -46,7 +46,7 @@
         
 
 <p class="article_date date">
-    July 18, 2013, reading time: under one minute
+    July 18, 2013, reading time: about one minute
 </p>
 
 <div id="content">
@@ -63,18 +63,17 @@ version and ignore this.  But I like to use the latest version of vim and with
 the 7.4 beta, I have been doing that a lot&nbsp;lately&#8230;</p>
 <p>So, what is one to do?  We have to fix the <tt class="docutils literal"><span class="caps">PATH</span></tt>.  Here is the script that I
 use to recompile vim.  This goes in the root of the vim&nbsp;project.</p>
-<pre class="literal-block">
-export PATH=/bin:/usr/sbin:/sbin:/usr/bin
+<div class="highlight"><pre><span class="nb">export </span><span class="nv"><span class="caps">PATH</span></span><span class="o">=</span>/bin:/usr/sbin:/sbin:/usr/bin
 
-./configure \
-        --enable-perlinterp \
-        --enable-pythoninterp \
-        --enable-rubyinterp \
-        --enable-cscope \
-        --with-features=huge
+./configure <span class="se">\</span>
+        --enable-perlinterp <span class="se">\</span>
+        --enable-pythoninterp <span class="se">\</span>
+        --enable-rubyinterp <span class="se">\</span>
+        --enable-cscope <span class="se">\</span>
+        --with-features<span class="o">=</span>huge
 
 make
-</pre>
+</pre></div>
 <p>There and vim is now compiled properly with Python support that won&#8217;t make you&nbsp;cry.</p>
 <p>Thanks to Steve Losh for pointing me in the right direction on&nbsp;this.</p>
 </div>

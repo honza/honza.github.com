@@ -22,7 +22,7 @@ the 7.4 beta, I have been doing that a lot lately...
 So, what is one to do?  We have to fix the ``PATH``.  Here is the script that I
 use to recompile vim.  This goes in the root of the vim project.
 
-::
+.. code-block:: bash
 
     export PATH=/bin:/usr/sbin:/sbin:/usr/bin
 
