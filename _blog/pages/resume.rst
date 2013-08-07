@@ -20,13 +20,13 @@ Skills
     * **Main**: Python, Javascript
     * **Learning**: Haskell, Clojure, Go
 * Frameworks and Libraries
-    * Django, Express.js, Backbone.js, jQuery, Underscore.js
+    * Django, Express.js, Backbone.js, Underscore.js
 * Deployment
-    * Chef, Fabric
+    * Chef, Fabric, Saltstack
     * PostgreSQL, MySQL
     * Memcached, Redis
-    * Apache, nginx
-    * WSGI applications via Gunicorn and mod_wsgi
+    * nginx
+    * WSGI applications via Gunicorn
     * Heroku
     * Celery task queues with RabbitMQ and Redis
 * Mobile
@@ -45,6 +45,7 @@ Skills
     * SCSS, LESS
     * Vagrant
     * Attended DjangoCon 2011
+    * docker
 
 Open source
 ~~~~~~~~~~~
@@ -61,8 +62,11 @@ concurrent programs
 Employment
 ~~~~~~~~~~
 
+* **Lead Developer** at `Publet <https://publet.com>`_
+    * August 2013--Present
+    * Django, Angular, DevOps
 * **Software Developer** at `StrataLabs <http://stratalabs.com>`_
-    * April 2013--Present
+    * April 2013--August 2013
     * Django
 * **Software Developer** at `Participatory Culture Foundation <http://pculture.org>`_
     * April 2012--March 2013
