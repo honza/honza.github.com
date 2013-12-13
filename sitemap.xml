@@ -2,16 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
   <loc>http://http://honza.ca/</loc>
-  <lastmod>2013-12-11T14:12:27Z</lastmod>
+  <lastmod>2013-12-13T06:38:04Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
 <url>
   <loc>http://http://honza.ca/about</loc>
-  <lastmod>2013-12-11T14:12:27Z</lastmod>
+  <lastmod>2013-12-13T06:38:04Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
+
+<url>
+  <loc>http://http://honza.ca/2013/12/lisp-parentheses</loc>
+  <lastmod>2013-12-12T13:44:00Z</lastmod>
+  <changefreq>daily</changefreq>
+</url>
 
 <url>
   <loc>http://http://honza.ca/2013/12/masterless-saltstack</loc>

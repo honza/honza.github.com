@@ -4,9 +4,60 @@
     <title>Honza Pokorny - Thoughts on web development</title>
     <link href="http://honza.ca/atom.xml" rel="self"/>
     <link href="http://honza.ca"/>
-    <updated>2013-12-11T14:12:27Z</updated>
+    <updated>2013-12-13T06:38:04Z</updated>
     <id>http://honza.ca</id>
 
+    
+        <entry>
+            <title>Lisp parentheses</title>
+            <author><name>Honza Pokorny</name></author>
+            <link href="http://honza.ca/2013/12/lisp-parentheses"/>
+            <updated>2013-12-12T13:44:00Z</updated>
+            <published>2013-12-12T13:44:00Z</published>
+            <id>http://honza.ca/2013/12/lisp-parentheses</id>
+
+            <content type="html">
+                <div class="section" id="lisp-parentheses">
+<h1>Lispparentheses</h1>
+<p>Perhaps the number one reason why people are afraid to try Lisp or don&#8217;t like
+it is the huge amounts of parentheses cluttering up the code.  It&#8217;s said to be
+hard to read the code when it&#8217;s full ofparentheses.</p>
+<p>Any experienced Lisp programmer will tell you that the parentheses disappear
+fairly early on.  After a while, you hardly notice them as something annoying.
+In fact, going back to C-family languages will make you feel like you need to
+type all kinds of crazypunctuation.</p>
+<p>While Clojure technically doesn&#8217;t use significant whitespace like Python, in
+reality, careful identation is crucial to writing clearcode.</p>
+<div class="highlight"><pre><span class="p">(</span><span class="kd">defn </span><span class="nv">crop-photo</span> <span class="p">[</span><span class="nv">user</span> <span class="nv">photo</span><span class="p">]</span>
+  <span class="p">(</span><span class="nb">when </span><span class="p">(</span><span class="nf">authenticated?</span> <span class="nv">user</span><span class="p">)</span>
+    <span class="p">(</span><span class="nb">when </span><span class="p">(</span><span class="nf">admin?</span> <span class="nv">user</span><span class="p">)</span>
+      <span class="p">(</span><span class="nf">crop</span> <span class="nv">photo</span><span class="p">))))</span>
+</pre></div>
+<p>In this snippet, there are four levels of indentation, four nested expressions.
+It&#8217;s easy to quickly scan this function guess what it does.  When a user is
+authenticated and when they are an admin, crop the photo.  If any of the
+<tt class="docutils literal">when</tt> expressions return a <em>falsy</em> value, the whole function will return
+<tt class="docutils literal">nil</tt>.  All of this is possible because Clojure uses prefix notation.  This
+means that the first element in the <tt class="docutils literal"><span class="pre">(&#8230;)</span></tt> form is the name of the function.
+Therefore, you only need to scan the beginnings of lines to see what functions
+are being called.  Also, you never have to pay attention to closing parentheses
+because they are all sitting together at the end of thefunction.</p>
+<p>In Clojure, it&#8217;s also idiomatic to put function arguments on new lines and
+alignthem.</p>
+<div class="highlight"><pre><span class="p">(</span><span class="nb">or </span><span class="p">(</span><span class="nf">admin?</span> <span class="nv">user</span><span class="p">)</span>
+    <span class="p">(</span><span class="nf">staff?</span> <span class="nv">user</span><span class="p">))</span>
+</pre></div>
+<p>In this example, the <tt class="docutils literal">or</tt> macro usually takes two arguments.  We put each
+argument on its own line and align them.  This way it&#8217;s visually clear what the
+codedoes.</p>
+<p>Finally, when writing Clojure code, you rarely have to worry about matching up
+your parentheses.  This is a job for your text editor.  Inserting a new
+expression usually involves typing the <tt class="docutils literal">(</tt> key and having its friend <tt class="docutils literal">)</tt>
+inserted foryou.</p>
+</div>
+
+            </content>
+        </entry>
     
         <entry>
             <title>Masterless Saltstack</title>

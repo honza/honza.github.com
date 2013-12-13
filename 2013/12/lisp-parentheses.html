@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Thoughts on web programming, open source hacking and the like. Honza Pokorny is a web developer in Halifax, Canada" >
+  <meta name="viewport" content="width=550, maximum-scale=1.0" />
+  <meta name="readability-verification" content="cXteMUVfc4F4DwUmDFS563269y9HLgfxK34fvdMC"/>
+  <title>Lisp parentheses - Honza Pokorny</title>
+  <link rel="stylesheet" href="/media/screen.css" type="text/css" />
+  <link rel="alternate" type="application/atom+xml" title="News-Feed" href="http://honza.ca/atom.xml" />
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-4330851-12']);
+        _gaq.push(['_trackPageview']);
+
+        (function(){
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>    
+
+    <script type="text/javascript">
+    /* <![CDATA[ */
+        (function() {
+            var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+            
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto'
+            
+            t.parentNode.insertBefore(s, t);
+        })();
+    /* ]]> */
+    </script>
+        
+</head>
+<body>
+
+    <div id="wrap">
+        <div id="banner" class="body">
+            <h1><a href="/">Honza Pokorny</a></h1>
+        </div>
+        <p>Thoughts on web programming and the world of technology</p>
+        
+
+<p class="article_date date">
+    December 12, 2013, reading time: about one minute
+</p>
+
+<div id="content">
+    <div class="section" id="lisp-parentheses">
+<h1>Lisp&nbsp;parentheses</h1>
+<p>Perhaps the number one reason why people are afraid to try Lisp or don&#8217;t like
+it is the huge amounts of parentheses cluttering up the code.  It&#8217;s said to be
+hard to read the code when it&#8217;s full of&nbsp;parentheses.</p>
+<p>Any experienced Lisp programmer will tell you that the parentheses disappear
+fairly early on.  After a while, you hardly notice them as something annoying.
+In fact, going back to C-family languages will make you feel like you need to
+type all kinds of crazy&nbsp;punctuation.</p>
+<p>While Clojure technically doesn&#8217;t use significant whitespace like Python, in
+reality, careful identation is crucial to writing clear&nbsp;code.</p>
+<div class="highlight"><pre><span class="p">(</span><span class="kd">defn </span><span class="nv">crop-photo</span> <span class="p">[</span><span class="nv">user</span> <span class="nv">photo</span><span class="p">]</span>
+  <span class="p">(</span><span class="nb">when </span><span class="p">(</span><span class="nf">authenticated?</span> <span class="nv">user</span><span class="p">)</span>
+    <span class="p">(</span><span class="nb">when </span><span class="p">(</span><span class="nf">admin?</span> <span class="nv">user</span><span class="p">)</span>
+      <span class="p">(</span><span class="nf">crop</span> <span class="nv">photo</span><span class="p">))))</span>
+</pre></div>
+<p>In this snippet, there are four levels of indentation, four nested expressions.
+It&#8217;s easy to quickly scan this function guess what it does.  When a user is
+authenticated and when they are an admin, crop the photo.  If any of the
+<tt class="docutils literal">when</tt> expressions return a <em>falsy</em> value, the whole function will return
+<tt class="docutils literal">nil</tt>.  All of this is possible because Clojure uses prefix notation.  This
+means that the first element in the <tt class="docutils literal"><span class="pre">(&#8230;)</span></tt> form is the name of the function.
+Therefore, you only need to scan the beginnings of lines to see what functions
+are being called.  Also, you never have to pay attention to closing parentheses
+because they are all sitting together at the end of the&nbsp;function.</p>
+<p>In Clojure, it&#8217;s also idiomatic to put function arguments on new lines and
+align&nbsp;them.</p>
+<div class="highlight"><pre><span class="p">(</span><span class="nb">or </span><span class="p">(</span><span class="nf">admin?</span> <span class="nv">user</span><span class="p">)</span>
+    <span class="p">(</span><span class="nf">staff?</span> <span class="nv">user</span><span class="p">))</span>
+</pre></div>
+<p>In this example, the <tt class="docutils literal">or</tt> macro usually takes two arguments.  We put each
+argument on its own line and align them.  This way it&#8217;s visually clear what the
+code&nbsp;does.</p>
+<p>Finally, when writing Clojure code, you rarely have to worry about matching up
+your parentheses.  This is a job for your text editor.  Inserting a new
+expression usually involves typing the <tt class="docutils literal">(</tt> key and having its friend <tt class="docutils literal">)</tt>
+inserted for&nbsp;you.</p>
+</div>
+
+</div>
+
+<span class="article_buttons">
+    <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+    <a href="http://twitter.com/share" class="twitter-share-button"
+        data-url="http://honza.ca/2013/12/lisp-parentheses"
+        data-via="_honza"
+        data-text="Lisp parentheses"
+        data-count="none">Tweet</a>
+    <a href="http://honza.ca/2013/12/lisp-parentheses"
+        class="FlattrButton"
+        rev="flattr;uid:honza;button:compact;"
+        title="Lisp parentheses"
+        style="display:none"></a>
+
+</span>
+
+
+    </div>
+
+</body>
+</html>
