@@ -2,16 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
   <loc>http://http://honza.ca/</loc>
-  <lastmod>2014-01-23T06:07:10Z</lastmod>
+  <lastmod>2014-03-20T14:00:48Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
 <url>
   <loc>http://http://honza.ca/about</loc>
-  <lastmod>2014-01-23T06:07:10Z</lastmod>
+  <lastmod>2014-03-20T14:00:48Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
+
+<url>
+  <loc>http://http://honza.ca/2014/03/how-to-use-piggieback-in-vim-fireplace-to-hack-cljs</loc>
+  <lastmod>2014-03-20T11:45:00Z</lastmod>
+  <changefreq>daily</changefreq>
+</url>
 
 <url>
   <loc>http://http://honza.ca/2013/12/lisp-parentheses</loc>
