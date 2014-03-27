@@ -1,0 +1,64 @@
+==================================================================
+https://keybase.io/honza
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://honza.ca
+  * I am honza (https://keybase.io/honza) on keybase.
+  * I have a public key with fingerprint 70E0 3E0A A2E5 40EA A2FB  4422 67C0 AD96 97D5 AB41
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "70e03e0aa2e540eaa2fb442267c0ad9697d5ab41",
+            "host": "keybase.io",
+            "key_id": "67C0AD9697D5AB41",
+            "uid": "b0f513bbaa6e3d05215546364c766900",
+            "username": "honza"
+        },
+        "service": {
+            "hostname": "honza.ca",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1395927833,
+    "expire_in": 157680000,
+    "prev": "23c06743bfc656825a037ddabc61e1b399ce6a781f5e94bd3e2d57e02779c8e5",
+    "seqno": 5,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v1
+
+owFNkWtIFFEUx3fNTKOk/CI9oLpJkW3Lnce9s7MUuD4+ZNBDPyXENo+76/iY2Z1d
+V9dHVNLDKCiKskzLqCjDVis/ZbFIYktSGlkQQYogiwWFhPkotxkp6H453HN+//85
+h3N+5RJLktUb7bx8ZeSBy/oqOilaitnta+qAqMlh4KwD5WQxeBTVS3SfrqhB4AQc
+JJAhUBBoglhIjOgRWZamMSdBQeYxz8lIEFkK2ECpFjAVho0oBIhd0Yyc8XErspHF
+XB505Zt8PnLlLvJViwURehDFiKIgYMLIENEUQixmMCtxGPMQmmCA6KpQSQy6VFNr
+BdBgA0YqpEjEHNjs+3/ZLgmGyKdrQU3SKsxsMOhzmqJg2GdS1UR0/9W7RUWVjYUN
+QYjoAUVTgZMySCmomIYUwyOe5hwMYwOkxqfoxK2YBOKwAxrPbENChiXNSBBzLCN6
+JIywg0YCZDhZFkQJU4QSGZ6XCBY4B+VBhGdFmSG0jDgCaY7jJQdBwNzIr2rAiYwx
+Ba9hGVC8qhCs0gloaLKuT7ZYkywpS5PMk1mWp636d8jGz8sSgcjx7M4jpDcbtTcd
+7Ik0D3qmDiuo6OTRNP1TV8G1gQ1F1n1nbzSuvVTf31H962mPBX4ZfxO+cPd3QSwn
+ndHbvKut9X2u7P0/j8VimWeGK/2pMztKUrvT3aHozTLUdn/j1fy5ktcHet8n/Duj
+U7dLv4O65JzE5qGO0eGBtjuPahLXd9+z7xotfDyW9RzUz7ZyF5O3NqslE09q6d4K
+7yF+umg+t2VFedZEdJ2cVTzZND6Ebv2o6bLFo7NHNu2Jlc0MFnwsTGvZm2Kfjm87
+DUZA38MyDLZE4pkf5nsyIu8ytGGPf2zhmdp/qjvvbfO3cPzEuXj8RWvVy4W59q/O
+2B8=
+=2JdJ
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/honza
+
+==================================================================
