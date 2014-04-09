@@ -7,7 +7,8 @@ Resume
 
 Honza Pokorny
 
-Location: `Halifax, Nova Scotia, Canada`_
+Location: `Halifax, Nova Scotia, Canada`_ (temporarily in the Czech Republic on
+extended vacation)
 
 .. _Halifax, Nova Scotia, Canada: https://maps.google.com/maps?q=halifax,+ns,+canada&hl=en&sll=44.741732,-63.240539&sspn=1.174435,2.469177
 
@@ -17,10 +18,10 @@ Skills
 ~~~~~~
 
 * Programming languages
-    * **Main**: Python, Javascript
-    * **Learning**: Haskell, Clojure, Go
+    * **Main**: Python, Javascript, Clojure
+    * **Learning**: Haskell, Scala, Rust
 * Frameworks and Libraries
-    * Django, Express.js, Backbone.js, Underscore.js
+    * Django, Angular
 * Deployment
     * Chef, Fabric, Saltstack
     * PostgreSQL, MySQL
@@ -34,18 +35,15 @@ Skills
     * Responsive design
 * Toolchain
     * Unix-like OS (Mac OSX, Linux)
-    * iTerm2 and vim
+    * iTerm2, vim, irssi, mutt
     * Git and Mercurial
-    * Fabric, Makefiles, Cakefiles
+    * Fabric, Makefiles
     * Bash, fish-shell
 * Other
-    * CoffeeScript
-    * npm
-    * Socket.io
-    * SCSS, LESS
     * Vagrant
-    * Attended DjangoCon 2011
     * docker
+    * Implemented a Lisp to Javascript compiler
+    * Implemented a simple Redis clone in Haskell
 
 Open source
 ~~~~~~~~~~~
@@ -56,8 +54,8 @@ account <https://github.com/honza>`_.
 Interests
 ~~~~~~~~~
 
-Programming language theory, parsers, chess engines, distributed systems,
-concurrent programs
+Programming language theory, parsers, compilers, chess engines, distributed
+systems, concurrent programs, logic programming, machine learning
 
 Employment
 ~~~~~~~~~~
