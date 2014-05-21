@@ -4,9 +4,44 @@
     <title>Honza Pokorny - Thoughts on web development</title>
     <link href="http://honza.ca/atom.xml" rel="self"/>
     <link href="http://honza.ca"/>
-    <updated>2014-04-09T17:38:52Z</updated>
+    <updated>2014-05-21T14:11:20Z</updated>
     <id>http://honza.ca</id>
 
+    
+        <entry>
+            <title>Single vs Many Programming Languages</title>
+            <author><name>Honza Pokorny</name></author>
+            <link href="http://honza.ca/2014/05/single-vs-many-programming-languages"/>
+            <updated>2014-05-21T15:56:00Z</updated>
+            <published>2014-05-21T15:56:00Z</published>
+            <id>http://honza.ca/2014/05/single-vs-many-programming-languages</id>
+
+            <content type="html">
+                <div class="section" id="single-vs-many-programming-languages">
+<h1>Single vs Many ProgrammingLanguages</h1>
+<p>Junior programmers will often ask, &#8220;Which language should I use?&#8221;, &#8220;Which
+programming language is the best?&#8221;, and when they discover this new hip
+programming language that&#8217;s meant to solve all of their scaling problems, they
+get in your face and mock you for not using it for every single task.  They
+will write blog posts titled &#8220;X language for Y programmers&#8221; in hopes of
+converting the masses to their newfoundtoy.</p>
+<p>Smug senior programmers will laugh at the junior programmers and say that you
+should learn a great many different languages to expand your horizons.  A
+single language cannot possibly suffice in this day and age.  Each language has
+its own set of libraries, each is better suited for a particular task.
+Learning new languages will make you a better developer overall.  Plus,
+marketing yourself as an X language developer limits your choice ofemployer.</p>
+<p>Business people will have yet another approach.  Their product is obviously
+written in some language or another so they <em>need</em> developer who can speak that
+language.  Their platform is growing like crazy so they put up job posts
+screaming &#8220;X language developer needed!&#8221;.  This creates a perceived demand for
+a certain kind of developer.  Developer will start to feel the need to learn
+this newly popular technology and start by reading a &#8220;X language for Y
+programmers&#8221; post and thus completing thecircle.</p>
+</div>
+
+            </content>
+        </entry>
     
         <entry>
             <title>How to use piggieback in vim-fireplace to hack cljs</title>
