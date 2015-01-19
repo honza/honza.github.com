@@ -17,33 +17,10 @@ Email: me@honza.ca
 Skills
 ~~~~~~
 
-* Programming languages
-    * **Main**: Python, Javascript, Clojure
-    * **Learning**: Haskell, Scala, Rust
-* Frameworks and Libraries
-    * Django, Angular
-* Deployment
-    * Chef, Fabric, Saltstack
-    * PostgreSQL, MySQL
-    * Memcached, Redis
-    * nginx
-    * WSGI applications via Gunicorn
-    * Heroku
-    * Celery task queues with RabbitMQ and Redis
-* Mobile
-    * Basics of Android and iOS
-    * Responsive design
-* Toolchain
-    * Unix-like OS (Mac OSX, Linux)
-    * iTerm2, vim, irssi, mutt
-    * Git and Mercurial
-    * Fabric, Makefiles
-    * Bash, fish-shell
-* Other
-    * Vagrant
-    * docker
-    * Implemented a Lisp to Javascript compiler
-    * Implemented a simple Redis clone in Haskell
+I'm a full-stack web developer.  I mainly program in Python and Javascript
+professionally, and enjoy learning other languages in my free time.  I enjoy
+server automation and devops, and I also like the interactivity of the
+frontend. Whatever needs to be done, I like to tackle it head on.
 
 Open source
 ~~~~~~~~~~~
@@ -56,6 +33,11 @@ Interests
 
 Programming language theory, parsers, compilers, chess engines, distributed
 systems, concurrent programs, logic programming, machine learning
+
+Languages
+~~~~~~~~~
+
+Python, Javascript, Clojure, Haskell, Golang, Rust
 
 Employment
 ~~~~~~~~~~
