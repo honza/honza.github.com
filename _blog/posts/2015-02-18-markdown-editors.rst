@@ -15,7 +15,7 @@ productivity and writing bliss.
 .. image:: /img/app-store-markdown.png
 
 But, I would submit to you that all of these apps miss the point of markdown.
-From the markdown project page:
+From the `markdown project page`_:
 
     The overriding design goal for Markdown's formatting syntax is to make it
     as readable as possible. The idea is that a Markdown-formatted document
@@ -34,3 +34,4 @@ for the web.
 .. _so: http://dillinger.io/
 .. _many: https://stackedit.io/
 .. _them: http://jbt.github.io/markdown-editor/
+.. _markdown project page: http://daringfireball.net/projects/markdown/

@@ -4,7 +4,7 @@
     <title>Honza Pokorny - Thoughts on web development</title>
     <link href="http://honza.ca/atom.xml" rel="self"/>
     <link href="http://honza.ca"/>
-    <updated>2015-02-18T09:26:37Z</updated>
+    <updated>2015-02-18T09:29:12Z</updated>
     <id>http://honza.ca</id>
 
     
@@ -26,7 +26,7 @@ of <a class="reference external" href="http://jbt.github.io/markdown-editor/">th
 productivity and writingbliss.</p>
 <img alt="/img/app-store-markdown.png" src="/img/app-store-markdown.png" />
 <p>But, I would submit to you that all of these apps miss the point of markdown.
-From the markdown projectpage:</p>
+From the <a class="reference external" href="http://daringfireball.net/projects/markdown/">markdown project page</a>:</p>
 <blockquote>
 The overriding design goal for Markdown&#8217;s formatting syntax is to make it
 as readable as possible. The idea is that a Markdown-formatted document
