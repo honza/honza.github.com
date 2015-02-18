@@ -4,7 +4,7 @@
     <title>Honza Pokorny - Thoughts on web development</title>
     <link href="http://honza.ca/atom.xml" rel="self"/>
     <link href="http://honza.ca"/>
-    <updated>2015-02-18T09:29:12Z</updated>
+    <updated>2015-02-18T09:41:43Z</updated>
     <id>http://honza.ca</id>
 
     
@@ -39,6 +39,99 @@ like alink.</p>
 The reason why these apps are popular and people buy them has less to do with
 the need to preview markdown and more with the hisperized culture of writing
 for theweb.</p>
+</div>
+
+            </content>
+        </entry>
+    
+        <entry>
+            <title>Programming languages in a nutshell</title>
+            <author><name>Honza Pokorny</name></author>
+            <link href="http://honza.ca/2015/02/programming-languages-in-a-nutshell"/>
+            <updated>2015-02-18T10:34:00Z</updated>
+            <published>2015-02-18T10:34:00Z</published>
+            <id>http://honza.ca/2015/02/programming-languages-in-a-nutshell</id>
+
+            <content type="html">
+                <div class="section" id="programming-languages-in-a-nutshell">
+<h1>Programming languages in anutshell</h1>
+<div class="section" id="python-ruby">
+<h2>Python,Ruby</h2>
+<ul class="simple">
+<li>concurrencylol</li>
+<li>packaginglol</li>
+</ul>
+</div>
+<div class="section" id="golang">
+<h2>Golang</h2>
+<ul class="simple">
+<li>lol if you don&#8217;t like typing <tt class="docutils literal">err :=</tt></li>
+<li>y u nogenerics</li>
+<li>lolimports</li>
+</ul>
+</div>
+<div class="section" id="haskell">
+<h2>Haskell</h2>
+<ul class="simple">
+<li>needPhD</li>
+<li>will never bemainstream</li>
+</ul>
+</div>
+<div class="section" id="idris">
+<h2>Idris</h2>
+<ul class="simple">
+<li>only for concatinglists</li>
+</ul>
+</div>
+<div class="section" id="erlang">
+<h2>Erlang</h2>
+<ul class="simple">
+<li>lolsyntax</li>
+</ul>
+</div>
+<div class="section" id="javascript">
+<h2>Javascript</h2>
+<ul class="simple">
+<li>javascript</li>
+</ul>
+</div>
+<div class="section" id="rust">
+<h2>Rust</h2>
+<ul class="simple">
+<li>how do I do x thisweek?</li>
+</ul>
+</div>
+<div class="section" id="clojure">
+<h2>Clojure</h2>
+<ul class="simple">
+<li>let me know when the program has startedrunning</li>
+<li>lol if you want to build a secure thing on theweb</li>
+</ul>
+</div>
+<div class="section" id="scala">
+<h2>Scala</h2>
+<ul class="simple">
+<li>lol if you think this actually improvesjava</li>
+</ul>
+</div>
+<div class="section" id="php">
+<h2><span class="caps">PHP</span></h2>
+<ul class="simple">
+<li>which of these 10 fns should Iuse?</li>
+</ul>
+</div>
+<div class="section" id="ocaml">
+<h2>OCaml</h2>
+<ul class="simple">
+<li>haskell without theawesome</li>
+</ul>
+</div>
+<div class="section" id="prolog">
+<h2>Prolog</h2>
+<ul class="simple">
+<li>muchoproblemo</li>
+</ul>
+</div>
 </div>
 
             </content>
