@@ -24,7 +24,7 @@ From the `markdown project page`_:
 
 The syntax (or lack thereof) of the markdown format is so simple that there is
 no need to "preview" the result.  A heading looks like a heading.  A list looks
-like a link.
+like a list.
 
 This is a prime example of creating a solution to a problem that doesn't exist.
 The reason why these apps are popular and people buy them has less to do with
