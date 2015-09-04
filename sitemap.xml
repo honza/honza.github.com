@@ -2,16 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
   <loc>http://http://honza.ca/</loc>
-  <lastmod>2015-03-19T05:25:38Z</lastmod>
+  <lastmod>2015-09-04T12:36:58Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
 <url>
   <loc>http://http://honza.ca/about</loc>
-  <lastmod>2015-03-19T05:25:38Z</lastmod>
+  <lastmod>2015-09-04T12:36:58Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
+
+<url>
+  <loc>http://http://honza.ca/2015/09/building-a-redis-clone-in-haskell</loc>
+  <lastmod>2015-09-03T12:00:00Z</lastmod>
+  <changefreq>daily</changefreq>
+</url>
 
 <url>
   <loc>http://http://honza.ca/2015/02/markdown-editors-are-an-anti-pattern</loc>
