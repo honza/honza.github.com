@@ -244,7 +244,7 @@ multibulk.  Then, it reads as many characters from the input as the length
 indicator said.  In the case of multibulk, it recurses because it can contain
 bulk&nbsp;messages.</p>
 <p>You can now&nbsp;run:</p>
-<div class="highlight"><pre><span class="o">&gt;</span> <span class="n">parse</span> <span class="n">replyParser</span> <span class="s">&quot;*2</span><span class="se">\r\n</span><span class="s">$3get</span><span class="se">\r\n</span><span class="s">$4</span><span class="se">\r\n</span><span class="s">name</span><span class="se">\r\n</span><span class="s">&quot;</span>
+<div class="highlight"><pre><span class="o">&gt;</span> <span class="n">parse</span> <span class="n">replyParser</span> <span class="s">&quot;*2</span><span class="se">\r\n</span><span class="s">$3</span><span class="se">\r\n</span><span class="s">get</span><span class="se">\r\n</span><span class="s">$4</span><span class="se">\r\n</span><span class="s">name</span><span class="se">\r\n</span><span class="s">&quot;</span>
 <span class="o">&gt;</span> <span class="p">(</span><span class="kt">MultiBulk</span> <span class="p">(</span><span class="kt">Just</span> <span class="p">[(</span><span class="kt">Bulk</span> <span class="p">(</span><span class="kt">Just</span> <span class="s">&quot;get&quot;</span><span class="p">)),</span> <span class="p">(</span><span class="kt">Bulk</span> <span class="p">(</span><span class="kt">Just</span> <span class="s">&quot;name&quot;</span><span class="p">))]))</span>
 </pre></div>
 </div>

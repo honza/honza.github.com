@@ -259,7 +259,7 @@ You can now run:
 
 .. code-block:: haskell
 
-    > parse replyParser "*2\r\n$3get\r\n$4\r\nname\r\n"
+    > parse replyParser "*2\r\n$3\r\nget\r\n$4\r\nname\r\n"
     > (MultiBulk (Just [(Bulk (Just "get")), (Bulk (Just "name"))]))
 
 Networking
