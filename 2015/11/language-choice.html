@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Thoughts on web programming, open source hacking and the like. Honza Pokorny is a web developer in Halifax, Canada" >
+  <meta name="viewport" content="width=550, maximum-scale=1.0" />
+  <meta name="readability-verification" content="cXteMUVfc4F4DwUmDFS563269y9HLgfxK34fvdMC"/>
+  <title>Language choice - Honza Pokorny</title>
+  <link rel="stylesheet" href="/media/screen.css" type="text/css" />
+  <link rel="alternate" type="application/atom+xml" title="News-Feed" href="http://honza.ca/atom.xml" />
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-4330851-12']);
+        _gaq.push(['_trackPageview']);
+
+        (function(){
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>    
+
+    <script type="text/javascript">
+    /* <![CDATA[ */
+        (function() {
+            var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+            
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = 'https://api.flattr.com/js/0.6/load.js?mode=auto'
+            
+            t.parentNode.insertBefore(s, t);
+        })();
+    /* ]]> */
+    </script>
+        
+</head>
+<body>
+
+    <div id="wrap">
+        <div id="banner" class="body">
+            <h1><a href="/">Honza Pokorny</a></h1>
+        </div>
+        <p>Thoughts on web programming and the world of technology</p>
+        
+
+<p class="article_date date">
+    November 02, 2015, reading time: 2 minutes
+</p>
+
+<div id="content">
+    <div class="section" id="language-choice">
+<h1>Language&nbsp;choice</h1>
+<p><em>Warning: this is a&nbsp;rant</em></p>
+<p>Recently, I have made great progress in my journey towards Haskell
+enlightenment.  I finally see how many of the little pieces of the Haskell
+puzzle fit together.  At this point, I feel empowered to go forth and write
+useful programs.  I <a class="reference external" href="https://twitter.com/_honza/status/660421406698508288">read</a> through the source of <a class="reference external" href="https://github.com/scotty-web/scotty">Scotty</a> the web framework
+the other day, and I was very pleasantly surprised that I understood how it
+works.  I absolutely <em>love</em> Haskell.  I love that it makes you think.  One does
+not simply open a text editor and start banging at the keyboard to write a
+Haskell program.  I love that Haskell encourages generalizations and
+abstractions.  One of the biggest heureka moments in my journey was
+understanding the full implications of why a function of type <tt class="docutils literal">a <span class="pre">-&gt;</span> a</tt> has a
+single implementation.  I&#8217;m addicted to running my program for the first time
+(after fighting with the compiler for ages), and having it work.  I think monad
+transformers and lenses are really clever.  By many criteria, Haskell is the
+perfect programming&nbsp;language.</p>
+<p>It has taken me four years to get&nbsp;here.</p>
+<p>I used to get so discouraged that I took breaks for weeks or months at a time
+because I didn&#8217;t see the point of continuing.  But I always came back. Now I
+have finally arrived.  I would say I&#8217;m an intermediate Haskeller.  Naturally,
+I&#8217;m thinking about writing some Haskell code at work which is going to be easy
+given our service-oriented&nbsp;architecture.</p>
+<p>I have also been playing with <a class="reference external" href="http://www.purescript.org/">Purescript</a> which is a Haskell dialect that
+compiles to javascript.  In many ways, Purescript is a much better Haskell
+because it doesn&#8217;t come with the historical baggage.  In speaking with my
+colleague who doesn&#8217;t know Purescript about introducing it into our code base,
+I realized the gravity of what I was asking him to learn.  It sounds great to
+say &#8220;let&#8217;s rewrite this in purescript&#8221; and expect someone to come back from
+their weekend having learned enough to be dangerous when it took me four years
+to&nbsp;learn.</p>
+<p>Another great example is the open source community.  If you choose Haskell for
+your open source project, you might be productive, safe to refactor, write
+little code &#8212; but how many people will be willing to learn Haskell to
+contribute a fix or a new&nbsp;feature?</p>
+<p>Many of my Haskell friends like to mock the <a class="reference external" href="https://golang.org/">Go</a> programming language.  Myself
+included at times.  Mind you, the language is <em>objectively</em> poorly designed.
+The error handling, the lack of generics, the ridiculous package manager, the
+absurd type system, the <tt class="docutils literal">range</tt> thing, etc.  It&#8217;s almost exactly the opposite
+of&nbsp;Haskell.</p>
+<p>And yet, Go is a lot <a class="reference external" href="http://adambard.com/blog/top-github-languages-2014/">more popular</a> than Haskell according to GitHub.  Yet,
+there are so many amazing projects written in Go, like Docker, Influxdb, etcd,
+consul, prometheus, packer, and many more.  Unlike Haskell, if you ask your
+coworkers to learn Go over the weekend, everyone will come back with a little
+app they built.  A clearly inferior tool is used by crowds of people to build
+cool&nbsp;things.</p>
+<p>What should we conclude from this?  The choice of programming language matters.
+Programming is a social activity.  Fewer features seems to equal easier to
+learn.  Generalization and programming language innovation seem to be out of
+favor.  Creating software to solve real problems with blunt tools seems to be a
+lot more important than using a sharp axe.  We&#8217;d much rather use an inferior
+tool whose manual we don&#8217;t have to read.  We&#8217;d much rather snap a picture
+with our smartphone than to learn how to use a&nbsp;<span class="caps">DSLR</span>.</p>
+</div>
+
+</div>
+
+<span class="article_buttons">
+    <script src="https://platform.twitter.com/widgets.js" type="text/javascript"></script>
+    <a href="https://twitter.com/share" class="twitter-share-button"
+        data-url="http://honza.ca/2015/11/language-choice"
+        data-via="_honza"
+        data-text="Language choice"
+        data-count="none">Tweet</a>
+    <a href="http://honza.ca/2015/11/language-choice"
+        class="FlattrButton"
+        rev="flattr;uid:honza;button:compact;"
+        title="Language choice"
+        style="display:none"></a>
+
+</span>
+
+
+    </div>
+
+</body>
+</html>

@@ -2,16 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
   <loc>http://http://honza.ca/</loc>
-  <lastmod>2015-09-06T00:07:54Z</lastmod>
+  <lastmod>2015-11-02T18:37:59Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
 <url>
   <loc>http://http://honza.ca/about</loc>
-  <lastmod>2015-09-06T00:07:54Z</lastmod>
+  <lastmod>2015-11-02T18:37:59Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
+
+<url>
+  <loc>http://http://honza.ca/2015/11/language-choice</loc>
+  <lastmod>2015-11-02T11:25:00Z</lastmod>
+  <changefreq>daily</changefreq>
+</url>
 
 <url>
   <loc>http://http://honza.ca/2015/09/building-a-redis-clone-in-haskell</loc>

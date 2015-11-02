@@ -4,9 +4,76 @@
     <title>Honza Pokorny - Thoughts on web development</title>
     <link href="http://honza.ca/atom.xml" rel="self"/>
     <link href="http://honza.ca"/>
-    <updated>2015-09-06T00:07:54Z</updated>
+    <updated>2015-11-02T18:37:59Z</updated>
     <id>http://honza.ca</id>
 
+    
+        <entry>
+            <title>Language choice</title>
+            <author><name>Honza Pokorny</name></author>
+            <link href="http://honza.ca/2015/11/language-choice"/>
+            <updated>2015-11-02T11:25:00Z</updated>
+            <published>2015-11-02T11:25:00Z</published>
+            <id>http://honza.ca/2015/11/language-choice</id>
+
+            <content type="html">
+                <div class="section" id="language-choice">
+<h1>Languagechoice</h1>
+<p><em>Warning: this is arant</em></p>
+<p>Recently, I have made great progress in my journey towards Haskell
+enlightenment.  I finally see how many of the little pieces of the Haskell
+puzzle fit together.  At this point, I feel empowered to go forth and write
+useful programs.  I <a class="reference external" href="https://twitter.com/_honza/status/660421406698508288">read</a> through the source of <a class="reference external" href="https://github.com/scotty-web/scotty">Scotty</a> the web framework
+the other day, and I was very pleasantly surprised that I understood how it
+works.  I absolutely <em>love</em> Haskell.  I love that it makes you think.  One does
+not simply open a text editor and start banging at the keyboard to write a
+Haskell program.  I love that Haskell encourages generalizations and
+abstractions.  One of the biggest heureka moments in my journey was
+understanding the full implications of why a function of type <tt class="docutils literal">a <span class="pre">-&gt;</span> a</tt> has a
+single implementation.  I&#8217;m addicted to running my program for the first time
+(after fighting with the compiler for ages), and having it work.  I think monad
+transformers and lenses are really clever.  By many criteria, Haskell is the
+perfect programminglanguage.</p>
+<p>It has taken me four years to gethere.</p>
+<p>I used to get so discouraged that I took breaks for weeks or months at a time
+because I didn&#8217;t see the point of continuing.  But I always came back. Now I
+have finally arrived.  I would say I&#8217;m an intermediate Haskeller.  Naturally,
+I&#8217;m thinking about writing some Haskell code at work which is going to be easy
+given our service-orientedarchitecture.</p>
+<p>I have also been playing with <a class="reference external" href="http://www.purescript.org/">Purescript</a> which is a Haskell dialect that
+compiles to javascript.  In many ways, Purescript is a much better Haskell
+because it doesn&#8217;t come with the historical baggage.  In speaking with my
+colleague who doesn&#8217;t know Purescript about introducing it into our code base,
+I realized the gravity of what I was asking him to learn.  It sounds great to
+say &#8220;let&#8217;s rewrite this in purescript&#8221; and expect someone to come back from
+their weekend having learned enough to be dangerous when it took me four years
+tolearn.</p>
+<p>Another great example is the open source community.  If you choose Haskell for
+your open source project, you might be productive, safe to refactor, write
+little code &#8212; but how many people will be willing to learn Haskell to
+contribute a fix or a newfeature?</p>
+<p>Many of my Haskell friends like to mock the <a class="reference external" href="https://golang.org/">Go</a> programming language.  Myself
+included at times.  Mind you, the language is <em>objectively</em> poorly designed.
+The error handling, the lack of generics, the ridiculous package manager, the
+absurd type system, the <tt class="docutils literal">range</tt> thing, etc.  It&#8217;s almost exactly the opposite
+ofHaskell.</p>
+<p>And yet, Go is a lot <a class="reference external" href="http://adambard.com/blog/top-github-languages-2014/">more popular</a> than Haskell according to GitHub.  Yet,
+there are so many amazing projects written in Go, like Docker, Influxdb, etcd,
+consul, prometheus, packer, and many more.  Unlike Haskell, if you ask your
+coworkers to learn Go over the weekend, everyone will come back with a little
+app they built.  A clearly inferior tool is used by crowds of people to build
+coolthings.</p>
+<p>What should we conclude from this?  The choice of programming language matters.
+Programming is a social activity.  Fewer features seems to equal easier to
+learn.  Generalization and programming language innovation seem to be out of
+favor.  Creating software to solve real problems with blunt tools seems to be a
+lot more important than using a sharp axe.  We&#8217;d much rather use an inferior
+tool whose manual we don&#8217;t have to read.  We&#8217;d much rather snap a picture
+with our smartphone than to learn how to use a<span class="caps">DSLR</span>.</p>
+</div>
+
+            </content>
+        </entry>
     
         <entry>
             <title>Building a Redis clone in Haskell</title>
