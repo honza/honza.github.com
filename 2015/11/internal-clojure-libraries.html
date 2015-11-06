@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Thoughts on web programming, open source hacking and the like. Honza Pokorny is a web developer in Halifax, Canada" >
+  <meta name="viewport" content="width=550, maximum-scale=1.0" />
+  <meta name="readability-verification" content="cXteMUVfc4F4DwUmDFS563269y9HLgfxK34fvdMC"/>
+  <title>Internal Clojure libraries - Honza Pokorny</title>
+  <link rel="stylesheet" href="/media/screen.css" type="text/css" />
+  <link rel="alternate" type="application/atom+xml" title="News-Feed" href="http://honza.ca/atom.xml" />
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-4330851-12']);
+        _gaq.push(['_trackPageview']);
+
+        (function(){
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>    
+
+    <script type="text/javascript">
+    /* <![CDATA[ */
+        (function() {
+            var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+            
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = 'https://api.flattr.com/js/0.6/load.js?mode=auto'
+            
+            t.parentNode.insertBefore(s, t);
+        })();
+    /* ]]> */
+    </script>
+        
+</head>
+<body>
+
+    <div id="wrap">
+        <div id="banner" class="body">
+            <h1><a href="/">Honza Pokorny</a></h1>
+        </div>
+        <p>Thoughts on web programming and the world of technology</p>
+        
+
+<p class="article_date date">
+    November 06, 2015, reading time: about one minute
+</p>
+
+<div id="content">
+    <div class="section" id="internal-clojure-libraries">
+<h1>Internal Clojure&nbsp;libraries</h1>
+<p>At work, we have a few Clojure services in production.  Each service is its own
+leiningen project with its own dependencies.  And because setting up a local
+maven repository is hard, each project reimplements quite a bit of logic.  This
+duplicate code usually relates to the non-essential but still important parts
+of a service: logging, metrics, sentry integration,&nbsp;etc.</p>
+<p>Just the other day, I was getting really annoyed with this situation, and was
+about ready to go learn about the wonderful intricacies of Maven, when I
+discovered leiningen&#8217;s <tt class="docutils literal">install</tt> command.</p>
+<p>With <tt class="docutils literal">lein install</tt>, you can install your library as a jar and a pom to the
+local repository.  Here, local repository means a local repository, typically
+in <tt class="docutils literal"><span class="pre">~/.m2</span></tt>.  Your apps can then depend on this library via the normal
+<tt class="docutils literal">:dependencies</tt> list in the project file.  This is all completely seamless
+and works&nbsp;well.</p>
+<p>Apparently, this command has been around for a long&nbsp;time.</p>
+<p>Armed with this new information, I was able to create an internal project
+called <em>metrics</em> and remove a ton of duplication.  <tt class="docutils literal">lein install</tt> also allows
+multiple versions of the same library to be installed at once.  Simply require
+whatever version you need in your apps&#8217; <tt class="docutils literal">project.clj</tt> file.</p>
+<p>This makes developing Clojure projects without having to publish your libraries
+to Clojars a lot&nbsp;easier.</p>
+</div>
+
+</div>
+
+<span class="article_buttons">
+    <script src="https://platform.twitter.com/widgets.js" type="text/javascript"></script>
+    <a href="https://twitter.com/share" class="twitter-share-button"
+        data-url="http://honza.ca/2015/11/internal-clojure-libraries"
+        data-via="_honza"
+        data-text="Internal Clojure libraries"
+        data-count="none">Tweet</a>
+    <a href="http://honza.ca/2015/11/internal-clojure-libraries"
+        class="FlattrButton"
+        rev="flattr;uid:honza;button:compact;"
+        title="Internal Clojure libraries"
+        style="display:none"></a>
+
+</span>
+
+
+    </div>
+
+</body>
+</html>

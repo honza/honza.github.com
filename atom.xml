@@ -4,9 +4,45 @@
     <title>Honza Pokorny - Thoughts on web development</title>
     <link href="http://honza.ca/atom.xml" rel="self"/>
     <link href="http://honza.ca"/>
-    <updated>2015-11-02T18:37:59Z</updated>
+    <updated>2015-11-06T10:42:55Z</updated>
     <id>http://honza.ca</id>
 
+    
+        <entry>
+            <title>Internal Clojure libraries</title>
+            <author><name>Honza Pokorny</name></author>
+            <link href="http://honza.ca/2015/11/internal-clojure-libraries"/>
+            <updated>2015-11-06T06:32:00Z</updated>
+            <published>2015-11-06T06:32:00Z</published>
+            <id>http://honza.ca/2015/11/internal-clojure-libraries</id>
+
+            <content type="html">
+                <div class="section" id="internal-clojure-libraries">
+<h1>Internal Clojurelibraries</h1>
+<p>At work, we have a few Clojure services in production.  Each service is its own
+leiningen project with its own dependencies.  And because setting up a local
+maven repository is hard, each project reimplements quite a bit of logic.  This
+duplicate code usually relates to the non-essential but still important parts
+of a service: logging, metrics, sentry integration,etc.</p>
+<p>Just the other day, I was getting really annoyed with this situation, and was
+about ready to go learn about the wonderful intricacies of Maven, when I
+discovered leiningen&#8217;s <tt class="docutils literal">install</tt> command.</p>
+<p>With <tt class="docutils literal">lein install</tt>, you can install your library as a jar and a pom to the
+local repository.  Here, local repository means a local repository, typically
+in <tt class="docutils literal"><span class="pre">~/.m2</span></tt>.  Your apps can then depend on this library via the normal
+<tt class="docutils literal">:dependencies</tt> list in the project file.  This is all completely seamless
+and workswell.</p>
+<p>Apparently, this command has been around for a longtime.</p>
+<p>Armed with this new information, I was able to create an internal project
+called <em>metrics</em> and remove a ton of duplication.  <tt class="docutils literal">lein install</tt> also allows
+multiple versions of the same library to be installed at once.  Simply require
+whatever version you need in your apps&#8217; <tt class="docutils literal">project.clj</tt> file.</p>
+<p>This makes developing Clojure projects without having to publish your libraries
+to Clojars a loteasier.</p>
+</div>
+
+            </content>
+        </entry>
     
         <entry>
             <title>Language choice</title>
