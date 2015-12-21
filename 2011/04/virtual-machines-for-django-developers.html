@@ -3,8 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="description" content="Thoughts on web programming, open source hacking and the like. Honza Pokorny is a web developer in Halifax, Canada" >
-  <meta name="viewport" content="width=550, maximum-scale=1.0" />
-  <meta name="readability-verification" content="cXteMUVfc4F4DwUmDFS563269y9HLgfxK34fvdMC"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>Virtual machines for Django developers - Honza Pokorny</title>
   <link rel="stylesheet" href="/media/screen.css" type="text/css" />
   <link rel="alternate" type="application/atom+xml" title="News-Feed" href="http://honza.ca/atom.xml" />
@@ -131,7 +130,7 @@ custom cookbook inside that directory where we will define what packages we&nbsp
 <span class="n">require_recipe</span> <span class="s2">&quot;memcached&quot;</span>
 </pre></div>
 <p>And modify your <tt class="docutils literal">Vagrantfile</tt> to use the&nbsp;cookbooks:</p>
-<div class="highlight"><pre><span class="ss">Vagrant</span><span class="p">:</span><span class="ss">:Config</span><span class="o">.</span><span class="n">run</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+<div class="highlight"><pre><span class="no">Vagrant</span><span class="o">::</span><span class="no">Config</span><span class="o">.</span><span class="n">run</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
   <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">box</span> <span class="o">=</span> <span class="s2">&quot;vagrant-ubuntu&quot;</span>
     <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">provision</span> <span class="ss">:chef_solo</span> <span class="k">do</span> <span class="o">|</span><span class="n">chef</span><span class="o">|</span>
       <span class="n">chef</span><span class="o">.</span><span class="n">cookbooks_path</span> <span class="o">=</span> <span class="s2">&quot;cookbooks&quot;</span>

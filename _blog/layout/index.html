@@ -51,17 +51,9 @@ class="reference external" href="http://github.com/honza">Github</a>.
 <ul>
     <li><a href="mailto:me@honza.ca">me@honza.ca</a></li>
     <li><a href="https://github.com/honza">Github</a></li>
-    <li><a href="http://twitter.com/_honza">Twitter</a></li>
+    <li><a href="https://twitter.com/_honza">Twitter</a></li>
     <li><a href="https://keybase.io/honza">GPG key (keybase)</a></li>
 </ul>
-
-<h2>Categories</h2>
-
-<p>
-    {% for k in categories.keys() %}
-        <a href="/category/{{ k|lower }}/">{{ k }}</a>{% if not loop.last %},{% endif %}
-    {% endfor %}
-</p>
 
 </div><!-- /#content -->
 

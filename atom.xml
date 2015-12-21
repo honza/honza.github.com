@@ -4,7 +4,7 @@
     <title>Honza Pokorny - Thoughts on web development</title>
     <link href="http://honza.ca/atom.xml" rel="self"/>
     <link href="http://honza.ca"/>
-    <updated>2015-11-06T10:42:55Z</updated>
+    <updated>2015-12-21T13:10:42Z</updated>
     <id>http://honza.ca</id>
 
     
@@ -10398,9 +10398,9 @@ like it, claim &#8220;technology X doesn&#8217;t scale!&#8221;</blockquote>
 throw up in your mouth a little. Wouldn&#8217;t it be nice if you could install Ruby
 gems into your virtualenv? Yeah, itwould.</p>
 <p>Stick this in your virtualenv&#8217;s <tt class="docutils literal">postactivate</tt> script:</p>
-<div class="highlight"><pre><span class="nb">export </span><span class="nv">GEM_HOME</span><span class="o">=</span><span class="s2">&quot;$VIRTUAL_ENV/gems&quot;</span>
+<div class="highlight"><pre><span class="nb">export </span><span class="nv">GEM_HOME</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$VIRTUAL_ENV</span><span class="s2">/gems&quot;</span>
 <span class="nb">export </span><span class="nv">GEM_PATH</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
-<span class="nb">export </span><span class="nv"><span class="caps">PATH</span></span><span class="o">=</span><span class="nv">$<span class="caps">PATH</span></span>:<span class="s2">&quot;$GEM_HOME/bin&quot;</span>
+<span class="nb">export </span><span class="nv"><span class="caps">PATH</span></span><span class="o">=</span><span class="nv">$<span class="caps">PATH</span></span>:<span class="s2">&quot;</span><span class="nv">$GEM_HOME</span><span class="s2">/bin&quot;</span>
 </pre></div>
 <p>That&#8217;s it! You&#8217;re welcome.:)</p>
 <div class="section" id="credit">
@@ -10744,7 +10744,7 @@ custom cookbook inside that directory where we will define what packages wewant:
 <span class="n">require_recipe</span> <span class="s2">&quot;memcached&quot;</span>
 </pre></div>
 <p>And modify your <tt class="docutils literal">Vagrantfile</tt> to use thecookbooks:</p>
-<div class="highlight"><pre><span class="ss">Vagrant</span><span class="p">:</span><span class="ss">:Config</span><span class="o">.</span><span class="n">run</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+<div class="highlight"><pre><span class="no">Vagrant</span><span class="o">::</span><span class="no">Config</span><span class="o">.</span><span class="n">run</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
   <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">box</span> <span class="o">=</span> <span class="s2">&quot;vagrant-ubuntu&quot;</span>
     <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">provision</span> <span class="ss">:chef_solo</span> <span class="k">do</span> <span class="o">|</span><span class="n">chef</span><span class="o">|</span>
       <span class="n">chef</span><span class="o">.</span><span class="n">cookbooks_path</span> <span class="o">=</span> <span class="s2">&quot;cookbooks&quot;</span>

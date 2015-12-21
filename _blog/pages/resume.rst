@@ -1,5 +1,5 @@
 :title: Resume
-:date: 2012-05-17 14:40
+:date: 2015-11-12 12:00
 :categories: Categories
 
 Resume
@@ -7,8 +7,7 @@ Resume
 
 Honza Pokorny
 
-Location: `Halifax, Nova Scotia, Canada`_ (temporarily in the Czech Republic on
-extended vacation)
+Location: `Halifax, Nova Scotia, Canada`_ 
 
 .. _Halifax, Nova Scotia, Canada: https://maps.google.com/maps?q=halifax,+ns,+canada&hl=en&sll=44.741732,-63.240539&sspn=1.174435,2.469177
 
@@ -17,9 +16,9 @@ Email: me@honza.ca
 Skills
 ~~~~~~
 
-I'm a full-stack web developer.  I mainly program in Python and Javascript
-professionally, and enjoy learning other languages in my free time.  I enjoy
-server automation and devops, and I also like the interactivity of the
+I'm a full-stack web developer.  I mainly program in Python, Clojure, Go, and
+Javascript professionally, and enjoy learning other languages in my free time.
+I enjoy server automation and devops, and I also like the interactivity of the
 frontend. Whatever needs to be done, I like to tackle it head on.
 
 Open source
@@ -44,7 +43,7 @@ Employment
 
 * **Lead Developer** at `Publet <https://publet.com>`_
     * August 2013--Present
-    * Django, Angular, DevOps
+    * Clojure, Django, Angular, DevOps
 * **Software Developer** at `StrataLabs <http://stratalabs.com>`_
     * April 2013--August 2013
     * Django
@@ -159,8 +158,8 @@ SheepDogInc
 Personal
 ~~~~~~~~
 
-I'm originally from the Czech republic.  I'm married to a Canadian and have two
-pre-school children.  When I'm not programming, I enjoy photography, movies and
+I'm originally from the Czech republic.  I'm married to a Canadian and have
+three children.  When I'm not programming, I enjoy photography, movies and
 GeoCaching.
 
 **Blog** --- http://honza.ca
