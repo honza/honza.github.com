@@ -4,7 +4,7 @@
     <title>Honza Pokorny - Thoughts on web development</title>
     <link href="http://honza.ca/atom.xml" rel="self"/>
     <link href="http://honza.ca"/>
-    <updated>2015-12-21T13:10:42Z</updated>
+    <updated>2016-02-17T13:33:46Z</updated>
     <id>http://honza.ca</id>
 
     
@@ -9176,7 +9176,7 @@ remap the CapsLock to Esc. However, I want to be able to use it for something
 else if I&#8217;m not in vim. We will set it up so that when you hit CapsLock on its
 own, it will send Esc. However, if you hold CapsLock and press another key, it
 will send Ctrl. That way you can do things like Ctrl+F,etc.</p>
-<p>On Mac <span class="caps">OSX</span>, you will want to do use <a class="reference external" href="http://pqrs.org/macosx/keyremap4macbook/">KeyRemap4MacBook</a>. It&#8217;s an excellent
+<p>On Mac <span class="caps">OSX</span>, you will want to do use <a class="reference external" href="https://pqrs.org/osx/karabiner/">Karabiner</a>. It&#8217;s an excellent
 piece of software that will allow you to take control of yourkeyboard.</p>
 </div>
 <div class="section" id="settings">

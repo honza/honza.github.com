@@ -19,7 +19,7 @@ else if I'm not in vim. We will set it up so that when you hit CapsLock on its
 own, it will send Esc. However, if you hold CapsLock and press another key, it
 will send Ctrl. That way you can do things like Ctrl+F, etc.
 
-On Mac OSX, you will want to do use `KeyRemap4MacBook`_. It's an excellent
+On Mac OSX, you will want to do use `Karabiner`_. It's an excellent
 piece of software that will allow you to take control of your keyboard.
 
 Settings
@@ -41,4 +41,4 @@ That's it!
 
 
 .. _the most useless key: http://capsoff.org/
-.. _KeyRemap4MacBook: http://pqrs.org/macosx/keyremap4macbook/
+.. _Karabiner: https://pqrs.org/osx/karabiner/
