@@ -1,5 +1,5 @@
 body {
-    font-family: 'Georgia', serif;
+    font-family: 'Georgia', 'Liberation Serif', 'Bitstream Charter', serif;
     font-size: 16px;
     line-height: 24px;
     text-rendering: optimizelegibility;
@@ -8,7 +8,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     margin-top: 30px;
-    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans;
+    font-family: 'Helvetica Neue', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', 'Arial', sans;
     text-rendering: optimizelegibility;
     color: #333;
     line-height: 100%;
