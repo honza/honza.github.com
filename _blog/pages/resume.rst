@@ -74,6 +74,15 @@ Education
 References
 ~~~~~~~~~~
 
+
+`MJ Coren <https://twitter.com/mjcoren>`_, CEO at Publet (March 2016)
+
+    Honza's analytical and coding skills put him in a category of his
+    own. Functional programming, python, tweets and even javascript: he does
+    them all well. Honza has identified, assessed and solved complex problems so
+    many times without breaking a sweat, I learned my confidence was never
+    misplaced. You're in good hands.
+
 `Steve Losh <http://stevelosh.com/>`_, senior developer at Amara
 
     Honza's a great programmer who can handle whatever you throw at him (even
@@ -162,6 +171,6 @@ I'm originally from the Czech republic.  I'm married to a Canadian and have
 three children.  When I'm not programming, I enjoy photography, movies and
 GeoCaching.
 
-**Blog** --- http://honza.ca
+**Blog** --- https://honza.ca
 
 **Twitter** --- https://twitter.com/_honza
