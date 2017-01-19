@@ -7,7 +7,7 @@ Water consumption
 
 During the 2016 edition of the Super Bowl, Colgate ran an ad highlighting our
 overconsumption of water during tooth-brushing.  The ad is emotinally charged
-with images of people from proverty-ridden countries.  You can watch it below.
+with images of people from poverty-ridden countries.  You can watch it below.
 
 .. raw:: html
 
