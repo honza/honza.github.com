@@ -4,9 +4,43 @@
     <title>Honza Pokorny - Thoughts on web development</title>
     <link href="http://honza.ca/atom.xml" rel="self"/>
     <link href="http://honza.ca"/>
-    <updated>2016-09-23T17:18:34Z</updated>
+    <updated>2017-01-19T18:17:19Z</updated>
     <id>http://honza.ca</id>
 
+    
+        <entry>
+            <title>Water consumption</title>
+            <author><name>Honza Pokorny</name></author>
+            <link href="http://honza.ca/2017/01/water-consumption"/>
+            <updated>2017-01-19T12:00:00Z</updated>
+            <published>2017-01-19T12:00:00Z</published>
+            <id>http://honza.ca/2017/01/water-consumption</id>
+
+            <content type="html">
+                <div class="section" id="water-consumption">
+<h1>Waterconsumption</h1>
+<p>During the 2016 edition of the Super Bowl, Colgate ran an ad highlighting our
+overconsumption of water during tooth-brushing.  The ad is emotinally charged
+with images of people from proverty-ridden countries.  You can watch itbelow.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IS4lGnGfHTw" frameborder="0" allowfullscreen></iframe><p>Colgate claim that you waste up to 4 gallons (15L) of water if you leave the
+fauset running.  They intend to guilt you into conservingwater.</p>
+<p>On a global scale, turning the fauset off when you brush your teeth will have a
+minimal effect.  And not because you are only a single person making a change.
+Domestic consumption accounts for only about 5% of water use.  If we all made a
+change leading to a reduction of water consumption by 50%, the overall domestic
+use would drop to 2.5%.  And 50% is prettydramatic.</p>
+<p>So, who is using all the water in the world?  According to the ground-breaking
+research by the people behind the <a class="reference external" href="http://www.cowspiracy.com/">Cowspiracy</a> documentary, 55% of water
+consumption in the United States goes towards animal agriculture.  An immense
+amount of water is required to produce meat and dairyproducts.</p>
+<img alt="/img/cowspiracy.png" src="/img/cowspiracy.png" />
+<p>So instead of worrying about the running tap, we should stop eating meat and
+dairy.  Doing so will have a much more significant impact on the world.  But of
+course, that isn&#8217;t as feel-good as the tooth-brushingstory.</p>
+</div>
+
+            </content>
+        </entry>
     
         <entry>
             <title>Internal Clojure libraries</title>

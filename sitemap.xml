@@ -2,16 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
   <loc>http://http://honza.ca/</loc>
-  <lastmod>2016-09-23T17:18:34Z</lastmod>
+  <lastmod>2017-01-19T18:17:19Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
 <url>
   <loc>http://http://honza.ca/about</loc>
-  <lastmod>2016-09-23T17:18:34Z</lastmod>
+  <lastmod>2017-01-19T18:17:19Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
+
+<url>
+  <loc>http://http://honza.ca/2017/01/water-consumption</loc>
+  <lastmod>2017-01-19T12:00:00Z</lastmod>
+  <changefreq>daily</changefreq>
+</url>
 
 <url>
   <loc>http://http://honza.ca/2015/11/internal-clojure-libraries</loc>
