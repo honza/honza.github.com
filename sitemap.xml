@@ -2,16 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
   <loc>http://http://honza.ca/</loc>
-  <lastmod>2017-01-19T22:21:53Z</lastmod>
+  <lastmod>2017-01-26T12:46:14Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
 <url>
   <loc>http://http://honza.ca/about</loc>
-  <lastmod>2017-01-19T22:21:53Z</lastmod>
+  <lastmod>2017-01-26T12:46:14Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
+
+<url>
+  <loc>http://http://honza.ca/2017/01/the-marathon-obsession</loc>
+  <lastmod>2017-01-26T08:35:00Z</lastmod>
+  <changefreq>daily</changefreq>
+</url>
 
 <url>
   <loc>http://http://honza.ca/2017/01/water-consumption</loc>
