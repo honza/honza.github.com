@@ -22,9 +22,10 @@ h1, h2, h3, h4, h5, h6 {
 
 blockquote {
     margin-left: 0;
-    padding-left: 15px;
-    color: #888;
+    padding-left: 30px;
     border-left: 2px solid #888;
+    font-size: 22px;
+    line-height: 28px;
 }
 
 #wrap {
