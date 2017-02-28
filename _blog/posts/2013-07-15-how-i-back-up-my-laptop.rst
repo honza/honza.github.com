@@ -34,7 +34,7 @@ automatic incremental, deduplicated, shared backups.  Free and open source.
 
 Backing up huge virtual machines?  It only backs up what changed, not the whole
 file.  Multiple copies of the same stuff on your hard drive?  Only needs to
-store only copy.  Have a look at their documentation for more information about
+store one copy.  Have a look at their documentation for more information about
 how it works and what the benefits are.
 
 The way you use bup is by creating a tar archive stream of all your data and
