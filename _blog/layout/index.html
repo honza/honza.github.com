@@ -2,7 +2,7 @@
 
 {% block title %}Home{% endblock %}
 
-{% block content %}        
+{% block content %}
 
 <div id="content">
     {% block content_title %}
@@ -10,7 +10,7 @@
     {% endblock %}
 
     <ul id="post-list">
-        {% for article in posts %}        
+        {% for article in posts %}
             {% if not article|in_category("theology") %}
             <li>
                 <a href="/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title}}">{{ article.title }}</a>
