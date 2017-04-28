@@ -22,11 +22,13 @@ past in won't be representative of your actually habits.
 Getting down to business
 ------------------------
 
-So, how can I hack this?  I installed a `keylogger`_ on my laptop, and collected
-data for many days.  Then, I wrote a little script to analyze the data.  The
-most basic measure of how good a keyboard layout is is the percentage of
-keystrokes that are on the home row.  The idea is that if you have to move your
-fingers less, you will be faster, less tired, and experience less pain.
+So, how can I hack this?  I installed a `keylogger`_ on my laptop, and
+collected data for many days.  Then, I wrote a little script to analyze the
+data.  This is mostly because analysis websites won't let you paste in more
+than a few kilobytes of text.  The most basic measure of how good a keyboard
+layout is is the percentage of keystrokes that are on the home row.  The idea
+is that if you have to move your fingers less, you will be faster, less tired,
+and experience less pain.
 
 The script takes the output of the keylogger and gives you percentages of
 keystrokes that are on the home row for each layout.  Here is what I got:
@@ -51,7 +53,7 @@ my window manager, ...  A lot of it is running commands, tab-completing things,
 keyboard shortcuts.  Other layouts, like Colemak, are probably optimized for
 long-form writing.  In those cases, it would probably win.  But for
 programmer-centric typing, QWERTY is likely to be king because everything is
-optimzed for it.
+optimized for it.
 
 What do you think?
 
