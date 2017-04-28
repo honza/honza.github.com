@@ -48,7 +48,12 @@ I have been thinking about why I got this bizarre result.  I think it's because
 most of my regular typing isn't necessarily writing prose.  There is a lot of
 vim-style navigation (in `Spacemacs`_, in the `browser`_, etc), I use `i3`_ as
 my window manager, ...  A lot of it is running commands, tab-completing things,
-keyboard shortcuts.
+keyboard shortcuts.  Other layouts, like Colemak, are probably optimized for
+long-form writing.  In those cases, it would probably win.  But for
+programmer-centric typing, QWERTY is likely to be king because everything is
+optimzed for it.
+
+What do you think?
 
 .. _designed: http://discovermagazine.com/1997/apr/thecurseofqwerty1099
 .. _websites: http://patorjk.com/keyboard-layout-analyzer/#/main
