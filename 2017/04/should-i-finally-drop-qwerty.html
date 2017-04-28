@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Thoughts on web programming, open source hacking and the like. Honza Pokorny is a web developer in Halifax, Canada" >
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Should I finally drop QWERTY? - Honza Pokorny</title>
+  <link rel="stylesheet" href="/media/screen.css" type="text/css" />
+  <link rel="alternate" type="application/atom+xml" title="News-Feed" href="https://honza.ca/atom.xml" />
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-4330851-12']);
+        _gaq.push(['_trackPageview']);
+
+        (function(){
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+</head>
+<body>
+
+    <div id="wrap">
+        <div id="banner" class="body">
+            <h1><a href="/">Honza Pokorny</a></h1>
+        </div>
+        <p>Thoughts on web programming and the world of technology</p>
+        
+
+<p class="article_date date">
+    April 28, 2017, reading time: about one minute
+</p>
+
+<div id="content">
+    <div class="section" id="should-i-finally-drop-qwerty">
+<h1>Should I finally drop&nbsp;<span class="caps">QWERTY</span>?</h1>
+<p>For years now, I have wanted to switch my keyboard layout from <span class="caps">QWERTY</span> to
+something more ergonomic.  <span class="caps">QWERTY</span> was <a class="reference external" href="http://discovermagazine.com/1997/apr/thecurseofqwerty1099">designed</a> to prevent typewriters from
+jamming.  Modern computers don&#8217;t have this problem.  So, why are we still using&nbsp;<span class="caps">QWERTY</span>?</p>
+<p>So, for me, it&#8217;s a given that I should switch to something else.  But what?  The
+Dvorak layout is the obvious choice.  Most people who switch from <span class="caps">QWERTY</span> end up
+using Dvorak.  Then there is Programmer Dvorak, and Colemak, and Programmer
+Colemak, and hosts of&nbsp;others.</p>
+<p>There are <a class="reference external" href="http://patorjk.com/keyboard-layout-analyzer/#/main">websites</a> that allow you analyze some text, and help you determine
+which layout is best for you.  This is of limited utility because the text you
+past in won&#8217;t be representative of your actually&nbsp;habits.</p>
+<div class="section" id="getting-down-to-business">
+<h2>Getting down to&nbsp;business</h2>
+<p>So, how can I hack this?  I installed a <a class="reference external" href="https://github.com/kernc/logkeys">keylogger</a> on my laptop, and collected
+data for many days.  Then, I wrote a little script to analyze the data.  The
+most basic measure of how good a keyboard layout is is the percentage of
+keystrokes that are on the home row.  The idea is that if you have to move your
+fingers less, you will be faster, less tired, and experience less&nbsp;pain.</p>
+<p>The script takes the output of the keylogger and gives you percentages of
+keystrokes that are on the home row for each layout.  Here is what I&nbsp;got:</p>
+<pre class="literal-block">
+qwerty: 38.69149%
+colemak: 35.601215%
+dvorak-programmer: 34.441067%
+dvorak: 34.441067%
+</pre>
+<p>Wait, what?  <span class="caps">QWERTY</span> is the most optimal keyboard layout for me?  That can&#8217;t be
+right.  Surely, there must be a bug in my code somewhere.  I went over
+everything several times, tested my functions with dummy data, and so on.
+Everything seems to be correct.  You can head over to <a class="reference external" href="https://github.com/honza/keylogger">GitHub</a> and prove me&nbsp;wrong.</p>
+<p>I have been thinking about why I got this bizarre result.  I think it&#8217;s because
+most of my regular typing isn&#8217;t necessarily writing prose.  There is a lot of
+vim-style navigation (in <a class="reference external" href="https://github.com/syl20bnr/spacemacs">Spacemacs</a>, in the <a class="reference external" href="https://vimium.github.io/">browser</a>, etc), I use <a class="reference external" href="https://i3wm.org/">i3</a> as
+my window manager, &#8230;  A lot of it is running commands, tab-completing things,
+keyboard&nbsp;shortcuts.</p>
+</div>
+</div>
+
+</div>
+
+
+    </div>
+
+</body>
+</html>
