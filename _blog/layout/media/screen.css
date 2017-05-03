@@ -83,7 +83,7 @@ pre {
   white-space: -pre-wrap;
   white-space: -o-pre-wrap;
   word-wrap: break-word;
-  font-size: 15px;
+  font-size: 20px;
   padding: 10px 10px 0 10px;
 }
 
@@ -91,7 +91,7 @@ pre {
     background-color: #ececec;
     border: 1px solid #dedede;
     padding: 0 .2em;
-    font-size: 14px;
+    font-size: 20px;
 }
 
 #disqus_thread {
