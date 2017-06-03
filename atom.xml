@@ -4,9 +4,22 @@
     <title>Honza Pokorny - Thoughts on web development</title>
     <link href="https://honza.ca/atom.xml" rel="self"/>
     <link href="https://honza.ca"/>
-    <updated>2017-05-03T18:17:57Z</updated>
+    <updated>2017-06-03T15:44:02Z</updated>
     <id>https://honza.ca</id>
 
+    
+        <entry>
+            <title>Counting in your head</title>
+            <author><name>Honza Pokorny</name></author>
+            <link href="https://honza.ca/2017/06/counting-in-your-head"/>
+            <updated>2017-06-03T13:00:00Z</updated>
+            <published>2017-06-03T13:00:00Z</published>
+            <id>https://honza.ca/2017/06/counting-in-your-head</id>
+
+            <content type="html">
+              Counting in your head I was born and raised in the Czech Republic. I learned to speak English and French in school. When I was 19, I moved out of the country and have been living in English-speaking countries ever since. Gradually, I have been losing the ability to speak my native language. This is especially obvious in professional settings (work, bank, government offices, etc) since I learned to be an adult while living in the UK. At this point, when speaking to strangers I feel much more comfortable speaking English. Even though my English is far from perfect. One thing that I have found over the years is that no matter how comfortable you get with another language, you will still count things in your head in your mother tongue. Counting coins, or scoops, or sheep, or anything. I am unable to count things quickly in English. Somehow the brain isn’t able to work on keeping the count in memory while incrementing the number once a second. Sequential numbers must have been burned into my mind at an early age and thus enjoy special treatment. Are you bilingual? Do you experience this, too?
+            </content>
+        </entry>
     
         <entry>
             <title>Should I finally drop QWERTY?</title>
