@@ -19,7 +19,7 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none;
 }
 
-#post-list a {
+.post-list a {
     text-decoration: none;
 }
 
@@ -62,13 +62,13 @@ blockquote {
 @media (min-width: 1200px) {
 }
 
-#post-list {
+.post-list {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-#post-list li {
+.post-list li {
     margin: 0 0 5px 0;
 }
 

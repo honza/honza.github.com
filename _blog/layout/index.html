@@ -9,16 +9,30 @@
     <h2>All articles</h2>
     {% endblock %}
 
-    <ul id="post-list">
-        {% for article in posts %}
-            {% if not article|in_category("theology") %}
+    <div>
+      {% for year in years|sort|reverse %}
+      <h3>{{ year }}</h3>
+
+      <ul class="post-list">
+
+      {% for post in posts %}
+        {% if post.year|int == year|int %}
+            {% if not post|in_category("theology") %}
+
             <li>
-                <a href="/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title}}">{{ article.title }}</a>
-                <abbr class="published">{{ article.date }}</abbr>
+                <a href="/{{ post.url }}" rel="bookmark" title="Permalink to {{ post.title}}">{{ post.title }}</a>
+                <abbr class="published">{{ post.date }}</abbr>
             </li>
-            {% endif %}
-        {% endfor %}
-    </ul>
+
+
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+
+      </ul>
+
+      {% endfor %}
+    </div>
 
 <h2>About</h2>
 
