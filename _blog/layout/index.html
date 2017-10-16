@@ -17,15 +17,11 @@
 
       {% for post in posts %}
         {% if post.year|int == year|int %}
-            {% if not post|in_category("theology") %}
+          <li>
+            <a href="/{{ post.url }}" rel="bookmark" title="Permalink to {{ post.title}}">{{ post.title }}</a>
+              <abbr class="published">{{ post.date }}</abbr>
+          </li>
 
-            <li>
-                <a href="/{{ post.url }}" rel="bookmark" title="Permalink to {{ post.title}}">{{ post.title }}</a>
-                <abbr class="published">{{ post.date }}</abbr>
-            </li>
-
-
-          {% endif %}
         {% endif %}
       {% endfor %}
 

@@ -1,39 +1,99 @@
 body {
-    font-family: 'PT Serif', 'Georgia', 'Liberation Serif', 'Bitstream Charter', serif;
-    font-size: 22px;
+    font-family: 'PT Serif', 'Georgia', 'Liberation Serif', 'Linux Libertine O', serif;
+    font-size: 20px;
     line-height: 140%;
     text-rendering: optimizelegibility;
     color: #333;
+    padding-bottom: 100px;
+    margin: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
     margin-top: 30px;
-    font-family: 'Helvetica Neue', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', 'Arial', sans;
     text-rendering: optimizelegibility;
     color: #333;
-    line-height: 100%;
+    line-height: 130%;
+    font-family: 'PT Sans';
+
+}
+
+#banner {
+  background: #ececec;
+  padding: 20px;
+}
+
+#banner h1 {
+  font-family: 'PT Serif', 'Georgia', 'Liberation Serif', 'Linux Libertine O', serif;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
 }
 
 #banner h1 a {
     color: #333;
     text-decoration: none;
+    margin: 0;
+}
+
+#banner p {
+  font-size: 16px;
+}
+
+#menu {
+  margin-top: 30px;
+}
+
+#menu li {
+  font-family: 'PT Sans';
+  list-style: none;
+  margin: 0 10px;
+  float: left;
+}
+
+#menu li a {
+  text-decoration: none;
 }
 
 .post-list a {
     text-decoration: none;
 }
 
+.date {
+  border-top: 1px solid #888;
+  font-size: 18px;
+  line-height: 22px;
+  padding-top: 20px;
+}
+
 blockquote {
     margin-left: 0;
-    padding-left: 30px;
-    border-left: 2px solid #888;
-    font-size: 22px;
+    padding-left: 50px;
+    font-size: 20px;
     line-height: 28px;
+}
+
+a.footnote-reference {
+  font-size: 60%;
+  vertical-align: super;
+  text-decoration: none;
+  line-height: 0;
+}
+
+table.footnote:first-of-type {
+  display: block;
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid #888;
+}
+
+table.footnote {
+  font-size: 16px;
+  line-height: 20px;
 }
 
 #wrap {
     padding: 0 5px;
-    margin: 0 auto;
+    margin-left: 20px;
 }
 
 /* Larger than mobile */
