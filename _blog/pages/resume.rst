@@ -41,8 +41,11 @@ Python, Javascript, Clojure, Haskell, Golang, Rust
 Employment
 ~~~~~~~~~~
 
+* **Senior Software Engineer** at `Red Hat <https://redhat.com>`_
+    * February 2016--Present
+    * Python, Javascript, Openstack
 * **Lead Developer** at `Publet <https://publet.com>`_
-    * August 2013--Present
+    * August 2013--February 2016
     * Clojure, Django, Angular, DevOps
 * **Software Developer** at `StrataLabs <http://stratalabs.com>`_
     * April 2013--August 2013
