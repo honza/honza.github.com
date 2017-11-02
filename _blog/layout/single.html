@@ -4,6 +4,7 @@
 
 {% block og %}
   <meta property="og:title" content="{{ post.title }}" />
+  <meta property="og:url" content="{{ url }}/{{ post.url }}" />
   <meta property="twitter:title" content="{{ post.title }}" />
   <meta property="og:type" content="article" />
   {% if post.config.banner %}
