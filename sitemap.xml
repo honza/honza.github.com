@@ -2,16 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
   <loc>http://https://honza.ca/</loc>
-  <lastmod>2017-10-16T20:35:49Z</lastmod>
+  <lastmod>2017-11-02T17:06:07Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
 <url>
   <loc>http://https://honza.ca/about</loc>
-  <lastmod>2017-10-16T20:35:49Z</lastmod>
+  <lastmod>2017-11-02T17:06:07Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
+
+<url>
+  <loc>http://https://honza.ca/2017/11/my-journey-to-find-the-best-bible</loc>
+  <lastmod>2017-11-02T13:00:00Z</lastmod>
+  <changefreq>daily</changefreq>
+</url>
 
 <url>
   <loc>http://https://honza.ca/2017/10/why-the-esv-is-both-excellent-and-terrible</loc>

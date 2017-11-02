@@ -2,6 +2,18 @@
 
 {% block title %}{{ post.title }}{% endblock %}
 
+{% block og %}
+  <meta property="og:title" content="{{ post.title }}" />
+  <meta property="twitter:title" content="{{ post.title }}" />
+  <meta property="og:type" content="article" />
+  {% if post.config.banner %}
+  <meta property="og:image" content="https://honza.ca{{ post.config.banner }}" />
+  <meta property="twitter:image" content="https://honza.ca{{ post.config.banner }}" />
+  {% endif %}
+  <meta content='summary_large_image' name='twitter:card'>
+  <meta content='@_honza' name='twitter:site'>
+{% endblock %}
+
 {% block content %}
 
 <div id="content">
@@ -14,6 +26,5 @@
     and other suggestions.  Even better, write your own article as a response.
     Blogging is awesome.
 </p>
-
 
 {% endblock %}
