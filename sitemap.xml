@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
   <loc>http://https://honza.ca/</loc>
-  <lastmod>2017-11-08T13:16:32Z</lastmod>
+  <lastmod>2017-11-08T13:20:56Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
 <url>
   <loc>http://https://honza.ca/about</loc>
-  <lastmod>2017-11-08T13:16:32Z</lastmod>
+  <lastmod>2017-11-08T13:20:56Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
@@ -136,12 +136,6 @@
 <url>
   <loc>http://https://honza.ca/2013/06/bible-verses-by-length</loc>
   <lastmod>2013-06-25T21:44:00Z</lastmod>
-  <changefreq>daily</changefreq>
-</url>
-
-<url>
-  <loc>http://https://honza.ca/2013/06/tweetable-verses</loc>
-  <lastmod>2013-06-25T21:00:00Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
