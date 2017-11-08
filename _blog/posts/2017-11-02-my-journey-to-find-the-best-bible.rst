@@ -130,11 +130,29 @@ how the leather ages, and how the board covers soften as you use it.
 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/Z6ZTp7tdXpg" frameborder="0" allowfullscreen></iframe>
 
-After much thought, I decided to order it.  Another huge reason was its price.
-It costs about 150 USD and I even found a great deal on Amazon.  I opted for the
-black goatskin which to my eyes and heart looks the best.  Just as a side note,
-you can get the Clarion for about that price but with a much inferior leather
-cover.
+Once I was willing to seriously consider the double-column layout, I went back
+to the drawing board, as it were, and had another look at the available
+options.  I have yet to see a Bible from R. L. Allan that I like (sorry folks).
+But Schuyler is a different story!  Their Quentel is very intriguing,
+especially the Personal size version.
+
+.. image:: /img/quentel-1-small.jpg
+.. image:: /img/quentel-2-small.jpg
+
+(*Photos via evangelicalbible.com*)
+
+The only problem is the price.  I live in Canada, and shipping is around 50
+USD, and I'm probably going to get hit with import tax fees, etc.  The Bible
+itself is about 175 USD.  Evangelical Bible really needs to figure a better
+distribution model for their awesome Bibles.  A lot more people would buy them
+if the shipping were cheaper (e.g. partner with Amazon).
+
+After much thought, I decided to order the Pitt Minion.  Another huge reason
+was its price. It costs about 150 USD and I even found a great deal on Amazon,
+so I ended up paying about 100 USD (shipped).  Compare that to the 225+ USD for
+the Quentel.  The Pitt Minion is a steal!  I opted for the black goatskin which
+to my eyes and heart looks the best.  Just as a side note, you can get the
+Clarion for about that price but with a much inferior leather cover.
 
 .. image:: /img/pitt-minion/20171025_0001_thumb.jpg
 .. image:: /img/pitt-minion/20171025_0002_thumb.jpg
