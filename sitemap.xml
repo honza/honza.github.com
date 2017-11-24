@@ -2,16 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
   <loc>http://https://honza.ca/</loc>
-  <lastmod>2017-11-08T14:30:06Z</lastmod>
+  <lastmod>2017-11-24T18:53:31Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
 <url>
   <loc>http://https://honza.ca/about</loc>
-  <lastmod>2017-11-08T14:30:06Z</lastmod>
+  <lastmod>2017-11-24T18:53:31Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
+
+<url>
+  <loc>http://https://honza.ca/2017/11/comparing-editions-of-the-institutes</loc>
+  <lastmod>2017-11-24T13:00:00Z</lastmod>
+  <changefreq>daily</changefreq>
+</url>
 
 <url>
   <loc>http://https://honza.ca/2017/11/my-journey-to-find-the-best-bible</loc>
