@@ -1,9 +1,9 @@
 all:
-	rm .post-cache.json
+	rm -f .post-cache.json
 	socrates -g _blog
 
 force:
-	rm .post-cache.json
+	rm -f .post-cache.json
 	socrates -g _blog
 
 resume:
