@@ -2,16 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
   <loc>http://https://honza.ca/</loc>
-  <lastmod>2017-11-25T00:49:39Z</lastmod>
+  <lastmod>2017-11-26T18:45:00Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
 <url>
   <loc>http://https://honza.ca/about</loc>
-  <lastmod>2017-11-25T00:49:39Z</lastmod>
+  <lastmod>2017-11-26T18:45:00Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
+
+<url>
+  <loc>http://https://honza.ca/2017/11/red-letter-theology</loc>
+  <lastmod>2017-11-26T13:00:00Z</lastmod>
+  <changefreq>daily</changefreq>
+</url>
 
 <url>
   <loc>http://https://honza.ca/2017/11/comparing-editions-of-the-institutes</loc>
