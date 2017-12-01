@@ -21,7 +21,9 @@ Beveridge
 With *Beveridge*, you get the full text of the *Institutes*.  The language is
 somewhat archaic and a bit convoluted sometimes.  It's a lot easier to read than
 the Puritans.  This translation is in the public domain, so you can read it for
-free online, and printed editions are relatively cheap.
+`free online`_, and printed editions are relatively cheap.
+
+.. _free online: http://www.ccel.org/ccel/calvin/institutes.i.html
 
 Book 1, Chapter 1, Section 2
 
