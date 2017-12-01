@@ -11,8 +11,8 @@ Comparing editions of the Institutes
 The way I see it, you have three options when selection an edition of John
 Calvin's Institutes of the Christian Religion.
 
-1.  The final edition of 1560 translated by Henry Beveridge, published in 1867.
-2.  The final edition of 1560 translated by Ford Lewis Battles, published in 1960.
+1.  The final edition of 1559 translated by Henry Beveridge, published in 1867.
+2.  The final edition of 1559 translated by Ford Lewis Battles, published in 1960.
 3.  The French edition of 1541 translated by Robert White, published in 2014.
 
 Beveridge
