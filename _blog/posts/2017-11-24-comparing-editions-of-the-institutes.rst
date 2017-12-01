@@ -1,9 +1,12 @@
 :title: Comparing editions of the Institutes
 :date: 2017-11-24 13:00
 :categories: theology
+:banner: /img/calvin.png
 
 Comparing editions of the Institutes
 ====================================
+
+.. image:: /img/calvin.png
 
 The way I see it, you have three options when selection an edition of John
 Calvin's Institutes of the Christian Religion.
