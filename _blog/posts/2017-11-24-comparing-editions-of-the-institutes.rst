@@ -56,7 +56,7 @@ Battles
 -------
 
 With *Battles*, you get the full text in its final form.  This is the academic
-reference edition.  If you are going to write a paper or a book, and you wan to
+reference edition.  If you are going to write a paper or a book, and you want to
 quote Calvin, use this.  The language is much more modern than *Beveridge* but
 still a bit technical at times.  The biggest downside of this edition is that it
 comes in two volumes and it's very expensive.
@@ -100,9 +100,9 @@ With *White*, you get an earlier version of the *Institutes*.  It's missing some
 sections from the final, but not much (e.g. it's missing Calvin's defense of
 paedobaptism).  This is translated from the French edition which is known for
 its lively prose.  The biggest draw for this edition is its recency, only 2014.
-The language is very modern and flows nicely.  The printed edition is a bit more
-than *Beverage* but still a lot less than *Battles*.  This edition will serve
-hobbyists well.  The newness of the language will provide you with higher
+The language is very modern and flows nicely.  The printed edition costs a bit
+more than *Beverage* but still a lot less than *Battles*.  This edition will
+serve hobbyists well.  The newness of the language will provide you with higher
 likelihood of finishing.
 
 Book 1, Chapter 1, Section 2
