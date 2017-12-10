@@ -6,6 +6,8 @@
 Bible translations and the Christian life
 =========================================
 
+.. image:: /img/agape-estin.jpg
+
 There are many English translations of the Bible. They were all made for
 different audiences. They employ different translation techniques. Each
 Christian celebrity endorses a different translation. 
