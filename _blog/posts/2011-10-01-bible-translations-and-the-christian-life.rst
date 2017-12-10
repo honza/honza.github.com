@@ -1,6 +1,7 @@
 :title: Bible translations and the Christian life
 :date: 2011-10-01 20:16
 :categories: theology
+:banner: /img/agape-estin.jpg
 
 Bible translations and the Christian life
 =========================================
