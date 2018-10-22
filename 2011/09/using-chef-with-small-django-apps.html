@@ -162,12 +162,14 @@ recipes, restart PostgreSQL and create a new&nbsp;database.</p>
 out, I have create a <a class="reference external" href="https://github.com/honza/django-chef">template</a> project on Github that you can download and
 use out of the&nbsp;box.</p>
 <p>The next big part is writing the Fabric scripts. You will want the following&nbsp;tasks:</p>
-<ul class="simple">
-<li>Install&nbsp;Chef</li>
-<li>Transfer the cookbooks directory to the&nbsp;server</li>
+<ul>
+<li><p class="first">Install&nbsp;Chef</p>
+</li>
+<li><p class="first">Transfer the cookbooks directory to the&nbsp;server</p>
+</li>
 <li><dl class="first docutils">
 <dt>Bootstrap the Django&nbsp;project</dt>
-<dd><ul class="first last">
+<dd><ul class="first last simple">
 <li>Moving code to the&nbsp;server</li>
 <li>Creating a&nbsp;virtualenv</li>
 <li>Installing&nbsp;requirements</li>
@@ -178,7 +180,8 @@ use out of the&nbsp;box.</p>
 </dd>
 </dl>
 </li>
-<li>Deploy</li>
+<li><p class="first">Deploy</p>
+</li>
 </ul>
 <p>You can see how I implemented mine <a class="reference external" href="https://github.com/honza/django-chef/blob/master/fabfile.py">here</a>. I recommend that you use Fabric&#8217;s
 <em>roledefs</em> which will allow you to specify vagrant as the&nbsp;host:</p>
