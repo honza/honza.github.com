@@ -14,19 +14,15 @@
       <h3>{{ year }}</h3>
 
       <ul class="post-list">
-
-      {% for post in posts %}
-        {% if post.year|int == year|int %}
-          <li>
-            <a href="/{{ post.url }}" rel="bookmark" title="Permalink to {{ post.title}}">{{ post.title }}</a>
-              <abbr class="published">{{ post.date }}</abbr>
-          </li>
-
-        {% endif %}
-      {% endfor %}
-
+        {% for post in posts %}
+          {% if post.year|int == year|int %}
+            <li>
+              <a href="/{{ post.url }}" rel="bookmark" title="Permalink to {{ post.title}}">{{ post.title }}</a>
+                <abbr class="published">{{ post.date }}</abbr>
+            </li>
+          {% endif %}
+        {% endfor %}
       </ul>
-
       {% endfor %}
     </div>
 
