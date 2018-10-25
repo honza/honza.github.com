@@ -6,6 +6,8 @@
 How to save hundreds of dollars on theology books
 =================================================
 
+.. image:: /img/books.jpg
+
 We, as theology nerds, love our books.  Especially by authors who have long
 passed on to glory.  And who wouldn't want to save some money?
 
