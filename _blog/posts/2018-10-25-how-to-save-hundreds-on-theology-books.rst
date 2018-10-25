@@ -1,6 +1,7 @@
 :title: How to save hundreds of dollars on theology books
 :date: 2018-10-25 21:00
-:categories:
+:categories: theology
+:banner: /img/books.jpg
 
 How to save hundreds of dollars on theology books
 =================================================
