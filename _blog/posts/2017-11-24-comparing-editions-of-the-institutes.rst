@@ -101,14 +101,13 @@ Book 1, Chapter 1, Section 2
 White
 -----
 
-With *White*, you get an earlier version of the *Institutes*.  It's missing some
-sections from the final, but not much (e.g. it's missing Calvin's defense of
-paedobaptism).  This is translated from the French edition which is known for
-its lively prose.  The biggest draw for this edition is its recency, only 2014.
-The language is very modern and flows nicely.  The printed edition costs a bit
-more than *Beverage* but still a lot less than *Battles*.  This edition will
-serve hobbyists well.  The newness of the language will provide you with higher
-likelihood of finishing.
+With *White*, you get an earlier version of the *Institutes*.  It's missing
+some sections from the final, but not much.  This is translated from the French
+edition which is known for its lively prose.  The biggest draw for this edition
+is its recency, only 2014. The language is very modern and flows nicely.  The
+printed edition costs a bit more than *Beverage* but still a lot less than
+*Battles*.  This edition will serve hobbyists well.  The newness of the
+language will provide you with higher likelihood of finishing.
 
 Book 1, Chapter 1, Section 2
 
