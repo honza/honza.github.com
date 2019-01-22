@@ -2,16 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
   <loc>http://https://honza.ca/</loc>
-  <lastmod>2018-12-27T16:09:35Z</lastmod>
+  <lastmod>2019-01-22T17:26:30Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
 <url>
   <loc>http://https://honza.ca/about</loc>
-  <lastmod>2018-12-27T16:09:35Z</lastmod>
+  <lastmod>2019-01-22T17:26:30Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
+
+<url>
+  <loc>http://https://honza.ca/2019/01/he-forgave-how-much</loc>
+  <lastmod>2019-01-22T10:14:00Z</lastmod>
+  <changefreq>daily</changefreq>
+</url>
 
 <url>
   <loc>http://https://honza.ca/2018/11/law-of-christ-is-equivalent-to-the-law-of-the-ten-commandments</loc>
