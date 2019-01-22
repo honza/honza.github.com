@@ -1,9 +1,12 @@
 :title: He forgave how much?!
 :date: 2019-01-22 10:14
 :categories: theology
+:banner: /img/bills.jpg
 
 He forgave how much?!
 =====================
+
+.. image:: /img/bills.jpg
 
 In `Matthew 18:23-35`_ we find the Parable of the Unforgiving Servant.  The
 story goes like this: a king wants to settle his accounts, and calls to himself
