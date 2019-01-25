@@ -4,9 +4,22 @@
     <title>Honza Pokorny - Thoughts on web development</title>
     <link href="https://honza.ca/atom.xml" rel="self"/>
     <link href="https://honza.ca"/>
-    <updated>2019-01-22T18:05:37Z</updated>
+    <updated>2019-01-25T18:39:40Z</updated>
     <id>https://honza.ca</id>
 
+    
+        <entry>
+            <title>If novels were formatted like bibles</title>
+            <author><name>Honza Pokorny</name></author>
+            <link href="https://honza.ca/2019/01/if-novels-were-formatted-like-bibles"/>
+            <updated>2019-01-25T10:14:00Z</updated>
+            <published>2019-01-25T10:14:00Z</published>
+            <id>https://honza.ca/2019/01/if-novels-were-formatted-like-bibles</id>
+
+            <content type="html">
+              If novels were formatted like bibles Bibles are notorious for being cluttered with all kinds of content besides the actual Word of God. Here is a list of common things: Chapter numbers Verse numbers Chapter headings Translation footnotes Cross-references (in the text, and in the center column) Chain references Pilcrows The traditional setting also includes things like: Double column Verse-by-verse setting (where each verse starts on a new line) Words in italics Pronunciation marks While these tools might be helpful for study, they certain don’t help with fluency in reading. They get in the way of your flow. As a result, you might become tired more quickly. Instead, if bibles are to be read for extended periods of time, we should design them in such a way to support that goal. This usually means: Single column Larger font No references Paragraph format This is what the vast majority of novels produced today looks like. Novels are works of fiction meant for enjoyment. You should be able to read them comfortably and easily. Why shouldn’t we be free to read our bibles this way? Above, you see the first few sentences of the first chapter of Jane Austen’s Pride and Prejudice. I broke it up into verses, started each verse on a new line, added some references and footnotes, and pilcrows. You will also notice the center column for references. The proportions of the page have been inspired by R.L. Allan’s Longprimer 62. There is a PDF of the whole page for download.
+            </content>
+        </entry>
     
         <entry>
             <title>He forgave how much?!</title>

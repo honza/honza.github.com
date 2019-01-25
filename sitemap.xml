@@ -2,16 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
   <loc>http://https://honza.ca/</loc>
-  <lastmod>2019-01-22T18:05:38Z</lastmod>
+  <lastmod>2019-01-25T18:39:41Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
 <url>
   <loc>http://https://honza.ca/about</loc>
-  <lastmod>2019-01-22T18:05:38Z</lastmod>
+  <lastmod>2019-01-25T18:39:41Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
+
+<url>
+  <loc>http://https://honza.ca/2019/01/if-novels-were-formatted-like-bibles</loc>
+  <lastmod>2019-01-25T10:14:00Z</lastmod>
+  <changefreq>daily</changefreq>
+</url>
 
 <url>
   <loc>http://https://honza.ca/2019/01/he-forgave-how-much</loc>
