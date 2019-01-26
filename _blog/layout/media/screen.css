@@ -29,6 +29,10 @@ h1, h2, h3, h4, h5, h6 {
     background-position: 0% 93%, 100% 93%, 0% 93%;
 }
 
+#content img {
+  width: 100%;
+}
+
 #banner {
   background: #ececec;
   padding: 20px;
