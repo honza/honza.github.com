@@ -4,10 +4,9 @@
     <title>Honza Pokorny - Thoughts on web development</title>
     <link href="https://honza.ca/atom.xml" rel="self"/>
     <link href="https://honza.ca"/>
-    <updated>2019-04-01T11:25:10Z</updated>
+    <updated>2019-04-01T12:00:52Z</updated>
     <id>https://honza.ca</id>
 
-    
         <entry>
             <title>If novels were formatted like bibles</title>
             <author><name>Honza Pokorny</name></author>
@@ -16,7 +15,8 @@
             <published>2019-01-25T10:14:00Z</published>
             <id>https://honza.ca/2019/01/if-novels-were-formatted-like-bibles</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="if-novels-were-formatted-like-bibles">
 <h1>If novels were formatted likebibles</h1>
 <img alt="/img/austen.png" src="/img/austen.png" />
@@ -61,7 +61,8 @@ inspired by <span class="caps">R.L.</span> Allan&#8217;s <a class="reference ext
 <p>There is a <a class="reference external" href="/img/austen.pdf"><span class="caps">PDF</span></a> of the whole page fordownload.</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -72,7 +73,8 @@ inspired by <span class="caps">R.L.</span> Allan&#8217;s <a class="reference ext
             <published>2019-01-22T10:14:00Z</published>
             <id>https://honza.ca/2019/01/he-forgave-how-much</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="he-forgave-how-much">
 <h1>He forgave howmuch?!</h1>
 <img alt="/img/bills.jpg" src="/img/bills.jpg" />
@@ -111,7 +113,8 @@ than what the king forgave the first.  And so, we are to forgive others because
 their debt to us is <em>significantly</em> less than what God in Christ forgaveus.</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -122,7 +125,8 @@ their debt to us is <em>significantly</em> less than what God in Christ forgaveu
             <published>2018-11-29T10:14:00Z</published>
             <id>https://honza.ca/2018/11/law-of-christ-is-equivalent-to-the-law-of-the-ten-commandments</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="law-of-christ-is-equivalent-to-the-law-of-the-ten-commandments">
 <h1>Law of Christ is Equivalent to the Law of the TenCommandments</h1>
 <p><span class="dquo">&#8220;</span>The law of Christ is identical to the law of the ten commandments.  Christ did
@@ -135,7 +139,8 @@ murder, adultery, or theft, etc.  Thus, the law of Christ is the law of the tenc
 Rapids, <span class="caps">MI</span>: Reformation Heritage Books, 1992),58.</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -146,7 +151,8 @@ Rapids, <span class="caps">MI</span>: Reformation Heritage Books, 1992),58.</p>
             <published>2018-10-25T21:00:00Z</published>
             <id>https://honza.ca/2018/10/how-to-save-hundreds-of-dollars-on-theology-books</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="how-to-save-hundreds-of-dollars-on-theology-books">
 <h1>How to save hundreds of dollars on theologybooks</h1>
 <img alt="/img/books.jpg" src="/img/books.jpg" />
@@ -175,7 +181,8 @@ saving about$12,000.</p>
 </div>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -186,7 +193,8 @@ saving about$12,000.</p>
             <published>2018-10-22T11:00:00Z</published>
             <id>https://honza.ca/2018/10/is-prayer-a-vibration</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="is-prayer-a-vibration">
 <h1>Is prayer avibration?</h1>
 <p>Recently, I came across an item someone in my Facebook timeline shared.  The
@@ -232,7 +240,8 @@ theworld.</p>
 Lord&#8217;sday.</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -243,7 +252,8 @@ Lord&#8217;sday.</p>
             <published>2017-11-26T13:00:00Z</published>
             <id>https://honza.ca/2017/11/red-letter-theology</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="red-letter-theology">
 <h1>Red-lettertheology</h1>
 <p>Several weeks ago, I had a few friends over to our house to watch Les Lanphere&#8217;s
@@ -270,7 +280,8 @@ text ofScripture.</p>
 <p>Related: <a class="reference external" href="https://byfaithweunderstand.com/bible-typography-manifesto/">Bible TypographyManifesto</a></p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -281,7 +292,8 @@ text ofScripture.</p>
             <published>2017-11-24T13:00:00Z</published>
             <id>https://honza.ca/2017/11/comparing-editions-of-the-institutes</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="comparing-editions-of-the-institutes">
 <h1>Comparing editions of theInstitutes</h1>
 <img alt="/img/calvin.png" src="/img/calvin.png" />
@@ -406,7 +418,8 @@ congratulate ourselves, and are not far from thinking we aredemigods!</p>
 </div>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -417,7 +430,8 @@ congratulate ourselves, and are not far from thinking we aredemigods!</p>
             <published>2017-11-02T13:00:00Z</published>
             <id>https://honza.ca/2017/11/my-journey-to-find-the-best-bible</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="my-journey-to-find-the-best-bible">
 <h1>My journey to find the bestBible</h1>
 <p>&#8230; or, <em><span class="caps">ESV</span> Pitt Minion in black goatskinreview</em></p>
@@ -580,7 +594,8 @@ and I take it with me when going out.  I find it delightful, and it&#8217;s trul
 great all-aroundBible.</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -591,7 +606,8 @@ great all-aroundBible.</p>
             <published>2017-10-16T10:00:00Z</published>
             <id>https://honza.ca/2017/10/why-the-esv-is-both-excellent-and-terrible</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="why-the-esv-is-both-excellent-and-terrible">
 <h1>Why the <span class="caps">ESV</span> is both excellent andterrible</h1>
 <p>In conservative Christian circles, the English Standard Version seems to be the
@@ -801,7 +817,8 @@ Should not become the Standard English Version</em>, 18</td></tr>
 </div>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -812,7 +829,8 @@ Should not become the Standard English Version</em>, 18</td></tr>
             <published>2017-06-03T13:00:00Z</published>
             <id>https://honza.ca/2017/06/counting-in-your-head</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="counting-in-your-head">
 <h1>Counting in yourhead</h1>
 <p>I was born and raised in the Czech Republic.  I learned to speak English and
@@ -832,7 +850,8 @@ enjoy specialtreatment.</p>
 <p>Are you bilingual?  Do you experience this,too?</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -843,7 +862,8 @@ enjoy specialtreatment.</p>
             <published>2017-04-28T10:00:00Z</published>
             <id>https://honza.ca/2017/04/should-i-finally-drop-qwerty</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="should-i-finally-drop-qwerty">
 <h1>Should I finally drop<span class="caps">QWERTY</span>?</h1>
 <p>For years now, I have wanted to switch my keyboard layout from <span class="caps">QWERTY</span> to
@@ -889,7 +909,8 @@ optimized forit.</p>
 </div>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -900,7 +921,8 @@ optimized forit.</p>
             <published>2017-04-20T10:00:00Z</published>
             <id>https://honza.ca/2017/04/teaching-my-son-about-computers</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="teaching-my-son-about-computers">
 <h1>Teaching my son aboutcomputers</h1>
 <p>Just over a year ago, my son Wyatt received his first computer for his sixth
@@ -980,7 +1002,8 @@ want to work on one project for a year like his Dad, and that, please, there are
 no computers or programmers atGoogle.</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -991,7 +1014,8 @@ no computers or programmers atGoogle.</p>
             <published>2017-02-23T09:00:00Z</published>
             <id>https://honza.ca/2017/02/best-baby-advice-i-ever-got</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="best-baby-advice-i-ever-got">
 <h1>Best baby advice I evergot</h1>
 <p>When I became a father, I didn&#8217;t know much about babies.  Fatherhood is one of
@@ -1011,7 +1035,8 @@ the <em>eternity</em> of constant scream is only 10minutes.</p>
 <p>Look at theclock.</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -1022,7 +1047,8 @@ the <em>eternity</em> of constant scream is only 10minutes.</p>
             <published>2017-01-26T08:35:00Z</published>
             <id>https://honza.ca/2017/01/the-marathon-obsession</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="the-marathon-obsession">
 <h1>The Marathonobsession</h1>
 <p>This morning, I read a rather click-baity <a class="reference external" href="http://runningmagazine.ca/11-questions-runners-hate-answering/">article</a> about the kinds of
@@ -1060,7 +1086,8 @@ recently dropped back into school and was making straightAs.</p>
 </blockquote>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -1071,7 +1098,8 @@ recently dropped back into school and was making straightAs.</p>
             <published>2017-01-19T12:00:00Z</published>
             <id>https://honza.ca/2017/01/water-consumption</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="water-consumption">
 <h1>Waterconsumption</h1>
 <p>During the 2016 edition of the Super Bowl, Colgate ran an ad highlighting our
@@ -1094,7 +1122,8 @@ dairy.  Doing so will have a much more significant impact on the world.  But of
 course, that isn&#8217;t as feel-good as the tooth-brushingstory.</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -1105,7 +1134,8 @@ course, that isn&#8217;t as feel-good as the tooth-brushingstory.</p>
             <published>2015-11-06T06:32:00Z</published>
             <id>https://honza.ca/2015/11/internal-clojure-libraries</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="internal-clojure-libraries">
 <h1>Internal Clojurelibraries</h1>
 <p>At work, we have a few Clojure services in production.  Each service is its own
@@ -1130,7 +1160,8 @@ whatever version you need in your apps&#8217; <tt class="docutils literal">proje
 to Clojars a loteasier.</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -1141,7 +1172,8 @@ to Clojars a loteasier.</p>
             <published>2015-11-02T11:25:00Z</published>
             <id>https://honza.ca/2015/11/language-choice</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="language-choice">
 <h1>Languagechoice</h1>
 <p><em>Warning: this is arant</em></p>
@@ -1197,7 +1229,8 @@ tool whose manual we don&#8217;t have to read.  We&#8217;d much rather snap a pi
 with our smartphone than to learn how to use a<span class="caps">DSLR</span>.</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -1208,7 +1241,8 @@ with our smartphone than to learn how to use a<span class="caps">DSLR</span>.</p
             <published>2015-09-03T12:00:00Z</published>
             <id>https://honza.ca/2015/09/building-a-redis-clone-in-haskell</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="building-a-redis-clone-in-haskell">
 <h1>Building a Redis clone inHaskell</h1>
 <p>In this post, we will attempt to make a simplified clone of <a class="reference external" href="http://redis.io">Redis</a> in Haskell.
@@ -1524,7 +1558,8 @@ $ time redis-cli -r 10000 get name
 </div>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -1535,7 +1570,8 @@ $ time redis-cli -r 10000 get name
             <published>2015-02-18T10:08:00Z</published>
             <id>https://honza.ca/2015/02/markdown-editors-are-an-anti-pattern</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="markdown-editors-are-an-anti-pattern">
 <h1>Markdown editors are ananti-pattern</h1>
 <p>In the last year or so, there seems to have been an explosion of markdown
@@ -1560,7 +1596,8 @@ the need to preview markdown and more with the hisperized culture of writing
 for theweb.</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -1571,7 +1608,8 @@ for theweb.</p>
             <published>2015-02-18T10:34:00Z</published>
             <id>https://honza.ca/2015/02/programming-languages-in-a-nutshell</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="programming-languages-in-a-nutshell">
 <h1>Programming languages in anutshell</h1>
 <div class="section" id="python-ruby">
@@ -1653,7 +1691,8 @@ for theweb.</p>
 </div>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -1664,7 +1703,8 @@ for theweb.</p>
             <published>2014-05-21T15:56:00Z</published>
             <id>https://honza.ca/2014/05/single-vs-many-programming-languages</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="single-vs-many-programming-languages">
 <h1>Single vs Many ProgrammingLanguages</h1>
 <p>Junior programmers will often ask, &#8220;Which language should I use?&#8221;, &#8220;Which
@@ -1688,7 +1728,8 @@ this newly popular technology and start by reading a &#8220;X language for Y
 programmers&#8221; post and thus completing thecircle.</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -1699,7 +1740,8 @@ programmers&#8221; post and thus completing thecircle.</p>
             <published>2014-03-20T11:45:00Z</published>
             <id>https://honza.ca/2014/03/how-to-use-piggieback-in-vim-fireplace-to-hack-cljs</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="how-to-use-piggieback-in-vim-fireplace-to-hack-cljs">
 <h1>How to use piggieback in vim-fireplace to hackcljs</h1>
 <p>(That&#8217;s quite a title, isn&#8217;tit?)</p>
@@ -1739,7 +1781,8 @@ magic.  The first <tt class="docutils literal">cpr</tt> (reload current buffer) 
 nREPL instance and initialize the piggiebackwrapper.</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -1750,7 +1793,8 @@ nREPL instance and initialize the piggiebackwrapper.</p>
             <published>2013-12-12T13:44:00Z</published>
             <id>https://honza.ca/2013/12/lisp-parentheses</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="lisp-parentheses">
 <h1>Lispparentheses</h1>
 <p>Perhaps the number one reason why people are afraid to try Lisp or don&#8217;t like
@@ -1790,7 +1834,8 @@ expression usually involves typing the <tt class="docutils literal">(</tt> key a
 inserted foryou.</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -1801,7 +1846,8 @@ inserted foryou.</p>
             <published>2013-12-11T14:55:00Z</published>
             <id>https://honza.ca/2013/12/masterless-saltstack</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="masterless-saltstack">
 <h1>MasterlessSaltstack</h1>
 <p>This is a simple guide on how to use Saltstack, the configuration manager, in
@@ -1884,7 +1930,8 @@ $ salt-call --local state.highstate
 </div>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -1895,7 +1942,8 @@ $ salt-call --local state.highstate
             <published>2013-07-18T10:16:00Z</published>
             <id>https://honza.ca/2013/07/how-to-compile-vim</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="how-to-compile-vim">
 <h1>How to compilevim</h1>
 <p>&#8230; from source when you&#8217;re using the homebrew-providedPython.</p>
@@ -1924,7 +1972,8 @@ make
 <p>Thanks to Steve Losh for pointing me in the right direction onthis.</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -1935,7 +1984,8 @@ make
             <published>2013-07-15T15:20:00Z</published>
             <id>https://honza.ca/2013/07/how-i-back-up-my-laptop</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="how-i-back-up-my-laptop">
 <h1>How I back up mylaptop</h1>
 <p>For the longest time, I was using Time Machine to keep copies of my files.  I
@@ -2016,7 +2066,8 @@ show you the boot order menu and allow you to specify where you&#8217;d like to 
 <p>Of course, you should wrap all of this in a script and run itperiodically.</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -2027,7 +2078,8 @@ show you the boot order menu and allow you to specify where you&#8217;d like to 
             <published>2013-07-13T22:06:00Z</published>
             <id>https://honza.ca/2013/07/when-hn-gets-in-the-way</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="when-hn-gets-in-the-way">
 <h1>When <span class="caps">HN</span> gets in theway</h1>
 <p>Reading stuff online can become addictive.  So addictive, in fact, that it can
@@ -2125,7 +2177,8 @@ learn something you&#8217;ve been puttingoff.</p>
 </div>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -2136,7 +2189,8 @@ learn something you&#8217;ve been puttingoff.</p>
             <published>2013-06-25T21:44:00Z</published>
             <id>https://honza.ca/2013/06/bible-verses-by-length</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="bible-verses-by-length">
 <h1>Bible verses bylength</h1>
 <p>Text used: <span class="caps">ESV</span>.  From shortest tolongest.</p>
@@ -7994,7 +8048,8 @@ Chronicles 28:15, 1 Samuel 29:4, Joshua 8:33, Jeremiah 21:7, Ezra 3:8, Esther
 3:12, Daniel 5:23, 2 Kings 16:15, Esther8:9</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -8005,7 +8060,8 @@ Chronicles 28:15, 1 Samuel 29:4, Joshua 8:33, Jeremiah 21:7, Ezra 3:8, Esther
             <published>2013-06-25T21:52:00Z</published>
             <id>https://honza.ca/2013/06/duplicate-bible-verses</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="duplicate-bible-verses">
 <h1>Duplicate Bibleverses</h1>
 <p>The text of the <span class="caps">ESV</span> wasused.</p>
@@ -8249,7 +8305,8 @@ Chronicles 28:15, 1 Samuel 29:4, Joshua 8:33, Jeremiah 21:7, Ezra 3:8, Esther
 </ul>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -8260,7 +8317,8 @@ Chronicles 28:15, 1 Samuel 29:4, Joshua 8:33, Jeremiah 21:7, Ezra 3:8, Esther
             <published>2013-06-21T10:25:00Z</published>
             <id>https://honza.ca/2013/06/i-hate-your-code</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="i-hate-your-code">
 <h1>I hate yourcode</h1>
 <p>When starting to work on an existing codebase, I often find myself in a state
@@ -8276,7 +8334,8 @@ It&#8217;s actually kind ofclever.</p>
 <p>And I feel dumb.  Everytime.</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -8287,7 +8346,8 @@ It&#8217;s actually kind ofclever.</p>
             <published>2013-06-13T11:34:00Z</published>
             <id>https://honza.ca/2013/06/who-are-the-weak-christians</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="who-are-the-weak-christians">
 <h1>Who are the weakChristians?</h1>
 <p>When you look around you while sitting in a church service, you will generally
@@ -8325,7 +8385,8 @@ common or unclean.&#8221; (Acts 10:14, <span class="caps">ESV</span>)</blockquot
 is a great example of a weak person becoming stronger in thefaith.</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -8336,7 +8397,8 @@ is a great example of a weak person becoming stronger in thefaith.</p>
             <published>2013-05-24T21:30:00Z</published>
             <id>https://honza.ca/2013/05/text-editor-ui</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="text-editor-ui">
 <h1>Text editor<span class="caps">UI</span></h1>
 <blockquote>
@@ -8350,7 +8412,8 @@ minibuffer.</blockquote>
 <p>Vivek Haldar in <a class="reference external" href="http://blog.vivekhaldar.com/post/31970017734/new-frontiers-in-text-editing">New Frontiers In TextEditing</a></p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -8361,7 +8424,8 @@ minibuffer.</blockquote>
             <published>2013-05-21T14:20:00Z</published>
             <id>https://honza.ca/2013/05/google-plus-adoption</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="google-plus-adoption">
 <h1>Google plusadoption</h1>
 <p>Google+ has been the target of numerous jokes in the tech community.  Many
@@ -8376,7 +8440,8 @@ This interface is so simple that even the average joe can share their contentonl
 <p>The way I see it, Google is doing somethingright.</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -8387,7 +8452,8 @@ This interface is so simple that even the average joe can share their contentonl
             <published>2013-05-13T07:14:00Z</published>
             <id>https://honza.ca/2013/05/building-a-lisp-to-javascript-compiler</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="building-a-lisp-to-javascript-compiler">
 <h1>Building a Lisp to Javascriptcompiler</h1>
 <p>In this post, I&#8217;m going to show you how I made a Lisp to Javascript compiler. I
@@ -8685,7 +8751,8 @@ product on <a class="reference external" href="https://github.com/honza/inertia"
 </div>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -8696,7 +8763,8 @@ product on <a class="reference external" href="https://github.com/honza/inertia"
             <published>2013-05-09T15:35:00Z</published>
             <id>https://honza.ca/2013/05/software-engineering-interviews</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="software-engineering-interviews">
 <h1>Software EngineeringInterviews</h1>
 <p>If you find yourself interviewing for a software engineering position today,
@@ -8743,7 +8811,8 @@ hire. First one to say &#8220;fuck this&#8221; and walk out gets the job.</block
 </div>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -8754,7 +8823,8 @@ hire. First one to say &#8220;fuck this&#8221; and walk out gets the job.</block
             <published>2013-04-10T14:10:00Z</published>
             <id>https://honza.ca/2013/04/international-families</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="international-families">
 <h1>Internationalfamilies</h1>
 <p>I&#8217;m from the Czech republic.  My wife is from Canada.  We got married in
@@ -8827,7 +8897,8 @@ that fun all thetime&#8230;</p>
 </div>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -8838,7 +8909,8 @@ that fun all thetime&#8230;</p>
             <published>2013-03-01T19:50:00Z</published>
             <id>https://honza.ca/2013/03/calvin-on-predestination</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="calvin-on-predestination">
 <h1>Calvin onpredestination</h1>
 <p><a class="reference external" href="http://www.ccel.org/ccel/calvin/institutes.v.xxiii.html">Book 3, chapter23</a></p>
@@ -8938,7 +9010,8 @@ reminded that they are not to seek for any cause beyond hiswill.</p>
 </blockquote>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -8949,7 +9022,8 @@ reminded that they are not to seek for any cause beyond hiswill.</p>
             <published>2013-02-12T16:33:00Z</published>
             <id>https://honza.ca/2013/02/haskell-vs-clojure-syntax</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="haskell-vs-clojure-syntax">
 <h1>Haskell vs Clojuresyntax</h1>
 <p>Clojure has virtually zero syntax.  What I mean by that is that all structures
@@ -8981,7 +9055,8 @@ amount of special syntax.  And you need to learn a lot of it before you can do
 somethinguseful.</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -8992,7 +9067,8 @@ somethinguseful.</p>
             <published>2013-01-23T07:26:00Z</published>
             <id>https://honza.ca/2013/01/canada-is-a-schizophrenic-country</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="canada-is-a-schizophrenic-country">
 <h1>Canada is a schizophreniccountry</h1>
 <p>I have now lived in Canada for over two years and there are some things that
@@ -9017,7 +9093,8 @@ you?</em>, and I respond with 178 and receive blankstares.</p>
 </div>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -9028,7 +9105,8 @@ you?</em>, and I respond with 178 and receive blankstares.</p>
             <published>2012-12-28T15:38:00Z</published>
             <id>https://honza.ca/2012/12/10-chapters</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="chapters">
 <h1>10chapters</h1>
 <ul class="simple">
@@ -9043,7 +9121,8 @@ all gospels 4 times,etc.</li>
 </ul>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -9054,7 +9133,8 @@ all gospels 4 times,etc.</li>
             <published>2012-12-19T20:21:00Z</published>
             <id>https://honza.ca/2012/12/gender-inclusive-language</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="gender-inclusive-language">
 <h1>Gender inclusivelanguage</h1>
 <p>In a <a class="reference external" href="http://www.bedfordbaptist.ca/services/156">recent sermon</a> at our church, a pastor student said to us that we are no
@@ -9078,7 +9158,8 @@ manning my table.&#8221;  Was she really?  Shouldn&#8217;t she have said <em>wom
 <p>A littleabsurd.</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -9089,7 +9170,8 @@ manning my table.&#8221;  Was she really?  Shouldn&#8217;t she have said <em>wom
             <published>2012-10-30T06:28:00Z</published>
             <id>https://honza.ca/2012/10/mutt-sidebar-labels</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="mutt-sidebar-labels">
 <h1>Mutt sidebarlabels</h1>
 <p>The sidebar in Mutt is useful if you have multiple email accounts and want to
@@ -9124,7 +9206,8 @@ home (8)
 <p>That&#8217;s much more useful than just a list of <tt class="docutils literal"><span class="caps">INBOX</span></tt> things.</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -9135,7 +9218,8 @@ home (8)
             <published>2012-10-24T10:01:00Z</published>
             <id>https://honza.ca/2012/10/haskell-strings</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="haskell-strings">
 <h1>HaskellStrings</h1>
 <p>It continues to amaze me how bad Haskell is at processing strings.  One of the
@@ -9457,7 +9541,8 @@ C                             1s
 </div>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -9468,7 +9553,8 @@ C                             1s
             <published>2012-08-26T22:45:00Z</published>
             <id>https://honza.ca/2012/08/on-learning-clojure</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="on-learning-clojure">
 <h1>On LearningClojure</h1>
 <div class="section" id="prefix-notation">
@@ -9522,7 +9608,8 @@ waiting for stuff to happen before I can use this languagemore.</p>
 </div>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -9533,7 +9620,8 @@ waiting for stuff to happen before I can use this languagemore.</p>
             <published>2012-07-16T08:13:00Z</published>
             <id>https://honza.ca/2012/07/large-javascript-application-tips</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="large-javascript-application-tips">
 <h1>Large Javascript ApplicationTips</h1>
 <p>This post isn&#8217;t going to tell you that you should use <span class="caps">MVC</span> to structure your
@@ -9611,7 +9699,8 @@ andobvious.</p>
 </div>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -9622,7 +9711,8 @@ andobvious.</p>
             <published>2012-05-21T16:43:00Z</published>
             <id>https://honza.ca/2012/05/why-you-should-use-heroku-for-your-next-start-up</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="why-you-should-use-heroku-for-your-next-start-up">
 <h1>Why you should use Heroku for your nextstart-up</h1>
 <p>You are a ninja-rockstar developer with a billion dollar idea.  You write Ruby
@@ -9670,7 +9760,8 @@ convince myself that I shouldn&#8217;t be using Chef for my
 side-project-start-up-ideas.  And I&#8217;m not a Rubyguy.</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -9681,7 +9772,8 @@ side-project-start-up-ideas.  And I&#8217;m not a Rubyguy.</p>
             <published>2012-05-11T12:30:00Z</published>
             <id>https://honza.ca/2012/05/how-i-use-git</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="how-i-use-git">
 <h1>How I usegit</h1>
 <p>Recently, I have noticed that there are quite a few wrappers around git to give
@@ -9828,7 +9920,8 @@ you&#8217;re trying to do.  I&#8217;m definitely not an expert but this gets meb
 </div>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -9839,7 +9932,8 @@ you&#8217;re trying to do.  I&#8217;m definitely not an expert but this gets meb
             <published>2012-04-24T09:29:00Z</published>
             <id>https://honza.ca/2012/04/standing-desk-first-impressions</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="standing-desk-first-impressions">
 <h1>Standing desk - firstimpressions</h1>
 <p>I have recently switched jobs and had to set up a home office.  I have heard a
@@ -9895,7 +9989,8 @@ the body isn&#8217;t used toit.</p>
 </div>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -9906,7 +10001,8 @@ the body isn&#8217;t used toit.</p>
             <published>2012-02-15T08:00:00Z</published>
             <id>https://honza.ca/2012/02/how-rackspace-deleted-my-server</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="how-rackspace-deleted-my-server">
 <h1>How Rackspace deleted myserver</h1>
 <p>I have been with Rackspace for a while now and never had problems.  The server
@@ -9957,7 +10053,8 @@ application for easy recovery.  And test yourbackups!</p>
 </div>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -9968,7 +10065,8 @@ application for easy recovery.  And test yourbackups!</p>
             <published>2012-02-07T09:30:00Z</published>
             <id>https://honza.ca/2012/02/remap-capslock-to-something-useful</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="remap-capslock-to-something-useful">
 <h1>Remap CapsLock to somethinguseful</h1>
 <p>Arguably, CapsLock is <a class="reference external" href="http://capsoff.org/">the most useless key</a> on your keyboard. I honestly
@@ -10000,7 +10098,8 @@ Control_L to Control_L
 </div>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -10011,7 +10110,8 @@ Control_L to Control_L
             <published>2012-02-04T20:00:00Z</published>
             <id>https://honza.ca/2012/02/how-not-to-depend-on-pypi</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="how-not-to-depend-on-pypi">
 <h1>How not to depend onPyPI</h1>
 <p>When deploying a Django application, you often use a <tt class="docutils literal">requirements.txt</tt> file
@@ -10086,7 +10186,8 @@ packages. This way your deploys will be faster and morereliable.</p>
 </div>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -10097,7 +10198,8 @@ packages. This way your deploys will be faster and morereliable.</p>
             <published>2012-01-18T09:00:00Z</published>
             <id>https://honza.ca/2012/01/disrupt-the-multiple-gmail-space</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="disrupt-the-multiple-gmail-space">
 <h1>Disrupt the multiple-gmailspace</h1>
 <p>We all know that Gmail is the best email provider out there. It&#8217;s in the
@@ -10150,7 +10252,8 @@ because of the missingautocomplete.</p>
 </div>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -10161,7 +10264,8 @@ because of the missingautocomplete.</p>
             <published>2012-01-17T08:45:00Z</published>
             <id>https://honza.ca/2012/01/upgrading-your-django-media-files-to-use-a-cdn</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="upgrading-your-django-media-files-to-use-a-cdn">
 <h1>Upgrading your Django media files to use a<span class="caps">CDN</span></h1>
 <p>I was using <a class="reference external" href="http://readthedocs.org/docs/django-filebrowser/en/latest/">django-filebrowser</a> on a project and my Rackspace <span class="caps">VM</span> quickly ran
@@ -10211,7 +10315,8 @@ a schema migration. This means that if your file names are the same there is no
 database change needed at all. How cool isthat?</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -10222,7 +10327,8 @@ database change needed at all. How cool isthat?</p>
             <published>2012-01-13T20:13:00Z</published>
             <id>https://honza.ca/2012/01/inerrancy</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="inerrancy">
 <h1>Inerrancy</h1>
 <p>As evangelical Christians, we believe in what is called the inerrancy of the
@@ -10246,7 +10352,8 @@ Those who don&#8217;t have a high view of Scripture, do not feel bound to obey
 it.</blockquote>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -10257,7 +10364,8 @@ it.</blockquote>
             <published>2012-01-05T14:00:00Z</published>
             <id>https://honza.ca/2012/01/writing-nodejs-modules</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="writing-node-js-modules">
 <h1>Writing Node.jsmodules</h1>
 <p>To say that node.js has enjoyed a great deal of positive publicity in the last
@@ -10294,7 +10402,8 @@ and you can find it on both Github andnpmjs.</p>
 </pre></div>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -10305,7 +10414,8 @@ and you can find it on both Github andnpmjs.</p>
             <published>2011-12-22T20:16:00Z</published>
             <id>https://honza.ca/2011/12/interpretation-mistakes</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="interpretation-mistakes">
 <h1>Interpretationmistakes</h1>
 <p>Many people today who claim to be and likely are sincere followers of Jesus
@@ -10360,7 +10470,8 @@ universe to speak to use in his infinite wisdom. Sadly, a great many people
 today choose to ignore their God and pursue their own egos andagendas.</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -10371,7 +10482,8 @@ today choose to ignore their God and pursue their own egos andagendas.</p>
             <published>2011-12-13T13:00:00Z</published>
             <id>https://honza.ca/2011/12/programmers-and-sore-eyes</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="programmers-and-sore-eyes">
 <h1>Programmers and soreeyes</h1>
 <p>Under normal circumstances, the human eye should blink about once every 5
@@ -10381,7 +10493,8 @@ coffee. Drinking lots of water and using over-the-counter drops will help. This
 is what my eye doctor told meyesterday.</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -10392,7 +10505,8 @@ is what my eye doctor told meyesterday.</p>
             <published>2011-10-25T11:00:00Z</published>
             <id>https://honza.ca/2011/10/data-driven-javascript-applications</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="data-driven-javascript-applications">
 <h1>Data-driven javascriptapplications</h1>
 <p>Over the last few weeks, I have been trying to think of a way to design medium
@@ -10493,7 +10607,8 @@ data is and how you should get it. In the case of <a class="reference external" 
 <span class="target" id="cappuccino"><span id="google-web-toolkit"></span><span id="spine-js"></span><span id="backbone-js"></span></span></div>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -10504,7 +10619,8 @@ data is and how you should get it. In the case of <a class="reference external" 
             <published>2011-10-21T20:15:00Z</published>
             <id>https://honza.ca/2011/10/on-why-we-lack-mature-christians</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="on-why-we-lack-mature-christians">
 <h1>On why we lack matureChristians</h1>
 <p>The leadership in the local church is often made up of very incompetent people.
@@ -10556,7 +10672,8 @@ don&#8217;t read the Bible for yourself, why would you read it for to your child
 If you don&#8217;t understand a particular text in the Scriptures, how could yourwife?</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -10567,7 +10684,8 @@ If you don&#8217;t understand a particular text in the Scriptures, how could you
             <published>2011-10-07T19:00:00Z</published>
             <id>https://honza.ca/2011/10/steve-jobs-and-richard-stallman</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="steve-jobs-and-richard-stallman">
 <h1>Steve Jobs and RichardStallman</h1>
 <p>Today, news <a class="reference external" href="http://stallman.org/archives/2011-jul-oct.html#06_October_2011_(Steve_Jobs)">broke</a> about Richard Stallman&#8217;s comment on Steve Job&#8217;s death. The
@@ -10588,7 +10706,8 @@ programming genius. His work on the <span class="caps">GCC</span> compiler issub
 civil and respectful of eachother.</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -10599,7 +10718,8 @@ civil and respectful of eachother.</p>
             <published>2011-10-05T20:09:00Z</published>
             <id>https://honza.ca/2011/10/on-heaven-and-boredom</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="on-heaven-and-boredom">
 <h1>On heaven andboredom</h1>
 <p>One of the complaints many atheists raise against becoming a Christian is the
@@ -10623,7 +10743,8 @@ God, all his wisdom, love and grace, we will need a longtime.</p>
 <p>How long? Well, it&#8217;s easy. Exactly <em>one eternity</em>.</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -10634,7 +10755,8 @@ God, all his wisdom, love and grace, we will need a longtime.</p>
             <published>2011-10-01T20:16:00Z</published>
             <id>https://honza.ca/2011/10/bible-translations-and-the-christian-life</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="bible-translations-and-the-christian-life">
 <h1>Bible translations and the Christianlife</h1>
 <img alt="/img/agape-estin.jpg" src="/img/agape-estin.jpg" />
@@ -10674,7 +10796,8 @@ be alive for another 50-60 years, wouldn&#8217;t it be a good investment to spen
 few years learning the language Paul, Luke, John and others spoke and wrotein?</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -10685,7 +10808,8 @@ few years learning the language Paul, Luke, John and others spoke and wrotein?</
             <published>2011-09-20T20:00:00Z</published>
             <id>https://honza.ca/2011/09/using-chef-with-small-django-apps</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="using-chef-with-small-django-apps">
 <h1>Using Chef with small Djangoapps</h1>
 <p>This year at <a class="reference external" href="http://djangocon.us">DjangoCon</a>, it seemed like everybody was talking about automatic
@@ -10846,7 +10970,8 @@ have any feedback, do let meknow.</p>
 </div>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -10857,7 +10982,8 @@ have any feedback, do let meknow.</p>
             <published>2011-09-13T21:00:00Z</published>
             <id>https://honza.ca/2011/09/google-apis-y-u-no-work</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="google-apis-y-u-no-work">
 <h1>Google APIs - Y U <span class="caps">NO</span><span class="caps">WORK</span></h1>
 <p>Recently, at <a class="reference external" href="http://www.sheepdoginc.ca">SheepDogInc</a>, I have been working with various Google APIs,
@@ -10891,7 +11017,8 @@ up-to-date, and mainly, stop pissing meoff!</p>
 </div>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -10902,7 +11029,8 @@ up-to-date, and mainly, stop pissing meoff!</p>
             <published>2011-09-10T21:30:00Z</published>
             <id>https://honza.ca/2011/09/djangocon-2011-take-aways</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="djangocon-2011-take-aways">
 <h1>DjangoCon 2011Take-Aways</h1>
 <p>My employer, <a class="reference external" href="http://www.sheepdoginc.ca/">SheepDogInc</a>, sent me and a colleague of mine to <a class="reference external" href="http://djangocon.us/">DjangoCon
@@ -10939,7 +11067,8 @@ supposed to bepronounced.</p>
 </div>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -10950,7 +11079,8 @@ supposed to bepronounced.</p>
             <published>2011-07-28T15:00:00Z</published>
             <id>https://honza.ca/2011/07/the-pre-gps-world</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="the-pre-gps-world">
 <h1>The pre-<span class="caps">GPS</span>world</h1>
 <p>When I was a kid, our family used to travel a lot. I grew up in central Europe
@@ -10967,7 +11097,8 @@ you&#8217;d always know where you weregoing.</p>
 <p>Now, some fifteen years later, <span class="caps">GPS</span> units are very common. A dream cometrue?</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -10978,7 +11109,8 @@ you&#8217;d always know where you weregoing.</p>
             <published>2011-07-19T14:00:00Z</published>
             <id>https://honza.ca/2011/07/why-i-love-restructuredtext</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="why-i-love-restructuredtext">
 <h1>Why I lovereStructuredText</h1>
 <p>A lot of geeks are using Markdown as their markup generation tool today. It&#8217;s
@@ -11022,7 +11154,8 @@ automatically run your code examples through Pygments. Or, you can customize
 the LaTex writer to use a specific font, page size and lotsmore.</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -11033,7 +11166,8 @@ the LaTex writer to use a specific font, page size and lotsmore.</p>
             <published>2011-07-18T20:13:00Z</published>
             <id>https://honza.ca/2011/07/on-prayer-and-the-closing-of-the-eyes</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="on-prayer-and-the-closing-of-the-eyes">
 <h1>On prayer and the closing of theeyes</h1>
 <p>Virtually every Christian has been taught that prayer is when you talk to God
@@ -11076,7 +11210,8 @@ moment that we plan ahead. Your prayer life should be an ongoing conversation
 with your Father. Jesus prayed constantly. And so needwe.</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -11087,7 +11222,8 @@ with your Father. Jesus prayed constantly. And so needwe.</p>
             <published>2011-07-04T10:00:00Z</published>
             <id>https://honza.ca/2011/07/what-is-a-blog</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="what-is-a-blog">
 <h1>What is ablog?</h1>
 <p>I have noticed that many people don&#8217;t know what a blog is, so I would like to
@@ -11104,7 +11240,8 @@ blog means to start a newwebsite.</p>
 a post. That would be wrong.<span class="caps">OK</span>?</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -11115,7 +11252,8 @@ a post. That would be wrong.<span class="caps">OK</span>?</p>
             <published>2011-06-20T20:20:00Z</published>
             <id>https://honza.ca/2011/06/why-i-dont-like-the-ruby-community</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="why-i-don-t-like-the-ruby-community">
 <h1>Why I don&#8217;t like the Rubycommunity</h1>
 <p>I write Python and Javascript code. I use Django and jQuery. And I cringe every
@@ -11137,7 +11275,8 @@ a Ruby-like language for writing cssfiles.</p>
 <p>Before you know it, everything will be inRuby.</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -11148,7 +11287,8 @@ a Ruby-like language for writing cssfiles.</p>
             <published>2011-06-19T20:50:00Z</published>
             <id>https://honza.ca/2011/06/the-best-ide</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="the-best-ide">
 <h1>The best<span class="caps">IDE</span></h1>
 <p>I have tried dozens of code editors, text editors and IDEs. I have carefully
@@ -11158,7 +11298,8 @@ reached my verdict and I&#8217;m ready to publish myfindings.</p>
 <p>The best <span class="caps">IDE</span> is the one that works foryou.</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -11169,7 +11310,8 @@ reached my verdict and I&#8217;m ready to publish myfindings.</p>
             <published>2011-06-19T20:16:00Z</published>
             <id>https://honza.ca/2011/06/scalability-and-feet-and-asses</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="scalability-and-feet-and-asses">
 <h1>Scalability and feet andasses</h1>
 <p>I love talking about scalability. Everyone has their own opinion, their own way
@@ -11187,7 +11329,8 @@ like it, claim &#8220;technology X doesn&#8217;t scale!&#8221;</blockquote>
 <p>You can find the article <a class="reference external" href="http://teddziuba.com/2008/04/im-going-to-scale-my-foot-up-y.html">here</a>.</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -11198,7 +11341,8 @@ like it, claim &#8220;technology X doesn&#8217;t scale!&#8221;</blockquote>
             <published>2011-06-10T11:00:00Z</published>
             <id>https://honza.ca/2011/06/install-ruby-gems-into-virtualenv</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="install-ruby-gems-into-virtualenv">
 <h1>Install Ruby gems intovirtualenv</h1>
 <p>You are a Python developer and every time you have to install a Ruby gem you
@@ -11217,7 +11361,8 @@ made itbetter.</p>
 </div>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -11228,7 +11373,8 @@ made itbetter.</p>
             <published>2011-05-30T09:15:00Z</published>
             <id>https://honza.ca/2011/05/deploying-django-with-nginx-and-gunicorn</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="deploying-django-with-nginx-and-gunicorn">
 <h1>Deploying Django with nginx andgunicorn</h1>
 <p>The amazing Django <a class="reference external" href="https://docs.djangoproject.com/en/1.3/howto/deployment/modwsgi/">documentation</a> recommends that you use Apache and modwsgi
@@ -11327,7 +11473,8 @@ an Apachedeployment.</p>
 </div>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -11338,7 +11485,8 @@ an Apachedeployment.</p>
             <published>2011-05-14T14:00:00Z</published>
             <id>https://honza.ca/2011/05/the-importance-of-git-rebase</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="the-importance-of-git-rebase">
 <h1>The importance of gitrebase</h1>
 <p>Git isn&#8217;t just something you have to put up with when working with other
@@ -11381,7 +11529,8 @@ result from a code point of view is the same, but the history is muchcleaner:</p
 that instead of <tt class="docutils literal">git pull</tt> you will run <tt class="docutils literal">git pull <span class="pre">&#8211;rebase</span></tt>.Easy!</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -11392,7 +11541,8 @@ that instead of <tt class="docutils literal">git pull</tt> you will run <tt clas
             <published>2011-05-03T19:00:00Z</published>
             <id>https://honza.ca/2011/05/the-modern-web-developer-and-open-source-licenses</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="the-modern-web-developer-and-open-source-licenses">
 <h1>The modern web developer and open sourcelicenses</h1>
 <p>The world of open source is full of wonders. People write code for free and
@@ -11458,7 +11608,8 @@ licenses, I have learned that the <span class="caps">WTFPL</span> isn&#8217;t a 
 do anything in terms of legal protection orwarranty.</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -11469,7 +11620,8 @@ do anything in terms of legal protection orwarranty.</p>
             <published>2011-04-19T12:00:00Z</published>
             <id>https://honza.ca/2011/04/virtual-machines-for-django-developers</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="virtual-machines-for-django-developers">
 <h1>Virtual machines for Djangodevelopers</h1>
 <p><a class="reference external" href="http://vagrantup.com">Vagrant</a> is a tool for building and distributing virtualized
@@ -11567,7 +11719,8 @@ can be beneficial and how simple it is to getstarted.</p>
 </div>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -11578,7 +11731,8 @@ can be beneficial and how simple it is to getstarted.</p>
             <published>2011-04-11T16:45:00Z</published>
             <id>https://honza.ca/2011/04/why-you-should-be-using-coffeescript</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="why-you-should-be-using-coffeescript">
 <h1>Why you should be usingCoffeeScript</h1>
 <p>I&#8217;m sure you&#8217;ve heard of CoffeeScript. Everyone is talking about it, it seems.
@@ -11670,7 +11824,8 @@ javascript. Non-minified code is obviously easier (possible?) to read anddebug.<
 </div>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -11681,7 +11836,8 @@ javascript. Non-minified code is obviously easier (possible?) to read anddebug.<
             <published>2011-04-09T17:30:00Z</published>
             <id>https://honza.ca/2011/04/the-latest-greatest-technology</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="the-latest-greatest-technology">
 <h1>The latest greatesttechnology</h1>
 <p>I just found an interesting quote by <a class="reference external" href="http://mir.aculo.us/">Thomas Fuchs</a>, the creator of
@@ -11696,7 +11852,8 @@ available tools.</blockquote>
 <p>Do youagree?</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -11707,7 +11864,8 @@ available tools.</blockquote>
             <published>2011-04-05T09:00:00Z</published>
             <id>https://honza.ca/2011/04/jslint-syntax-checker-for-vim</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="jslint-syntax-checker-for-vim">
 <h1>JSLint syntax checker forvim</h1>
 <p>Douglas Crockford&#8217;s <a class="reference external" href="http://www.jslint.com/">JSLint</a> script is almost a golden standard when it comes
@@ -11748,7 +11906,8 @@ feedback as to the quality of your code as judged by JSLint. And remember that
 <em>JSLint will hurt your feelings</em>.</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -11759,7 +11918,8 @@ feedback as to the quality of your code as judged by JSLint. And remember that
             <published>2011-03-18T09:00:00Z</published>
             <id>https://honza.ca/2011/03/the-irrationality-of-being-an-apple-fanboy</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="the-irrationality-of-being-an-apple-fanboy">
 <h1>The Irrationality of Being an AppleFanboy</h1>
 <p>It continues to amaze me how much people devote themselves to Apple products.
@@ -11800,7 +11960,8 @@ your wife a netbook or an iPad with the money yousave.</p>
 <p>Let the flamingbegin.</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -11811,7 +11972,8 @@ your wife a netbook or an iPad with the money yousave.</p>
             <published>2011-03-05T21:00:00Z</published>
             <id>https://honza.ca/2011/03/7-ways-github-has-changed-the-open-source-world</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="ways-github-has-changed-the-open-source-world">
 <h1>7 ways Github has changed the open sourceworld</h1>
 <p>As the guys at <a class="reference external" href="http://thechangelog.com">the changelog</a> say, the world of open source is changing fast
@@ -11869,7 +12031,8 @@ fixed. etc.Invaluable.</p>
 </div>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -11880,7 +12043,8 @@ fixed. etc.Invaluable.</p>
             <published>2011-02-25T22:26:00Z</published>
             <id>https://honza.ca/2011/02/how-to-convert-vim-colorschemes-to-pygments-themes</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="how-to-convert-vim-colorschemes-to-pygments-themes">
 <h1>How To Convert Vim Colorschemes To PygmentsThemes</h1>
 <p>Recently, I have grown to love <a class="reference external" href="http://pygments.org">Pygments</a>. It gives you syntax
@@ -11916,7 +12080,8 @@ togo.</p>
 <p>That&#8217;sit!</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -11927,7 +12092,8 @@ togo.</p>
             <published>2011-02-11T22:24:00Z</published>
             <id>https://honza.ca/2011/02/why-nokia-chose-windows-over-android</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="why-nokia-chose-windows-over-android">
 <h1>Why Nokia chose Windows overAndroid</h1>
 <p>Today, we have all heard about the new deal struck between Nokia and Microsoft.
@@ -11940,7 +12106,8 @@ Windows is like shitting yourpants.</p>
 <p>Perhaps, Nokia liked the latterbetter.</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -11951,7 +12118,8 @@ Windows is like shitting yourpants.</p>
             <published>2011-01-22T21:18:00Z</published>
             <id>https://honza.ca/2011/01/how-my-website-works</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="how-my-website-works">
 <h1>How My WebsiteWorks</h1>
 <p>I&#8217;m sure you&#8217;ve heard of static site generators like Jekyll (Ruby) or Hyde
@@ -12018,7 +12186,8 @@ the server. A normal sharedhosting.</p>
 </div>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -12029,7 +12198,8 @@ the server. A normal sharedhosting.</p>
             <published>2011-01-18T18:23:00Z</published>
             <id>https://honza.ca/2011/01/android-development-disappointments</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="android-development-disappointments">
 <h1>Android Developmentdisappointments</h1>
 <p>The Android platform is the latest buzz in the smartphone world. I have
@@ -12067,7 +12237,8 @@ with theapplication.</p>
 <p><span class="caps">OK</span>, that&#8217;s it. If you have any comments or suggestions, do let me know in thecomments.</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -12078,7 +12249,8 @@ with theapplication.</p>
             <published>2011-01-17T21:47:00Z</published>
             <id>https://honza.ca/2011/01/apple-finally-catches-up-to-linux</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="apple-finally-catches-up-to-linux">
 <h1>Apple Finally Catches Up ToLinux</h1>
 <p>Apple recently unveiled their newest venture. It&#8217;s called the App Store, and
@@ -12088,7 +12260,8 @@ Linuxdistributions.</p>
 <p>Except Linux has had &#8216;app stores&#8217; for years. Welcome to 21st century computing,Apple.</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -12099,7 +12272,8 @@ Linuxdistributions.</p>
             <published>2010-12-14T21:00:00Z</published>
             <id>https://honza.ca/2010/12/how-money-is-made-online</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="how-money-is-made-online">
 <h1>How Money Is MadeOnline</h1>
 <p>My friends of the non-geek type often ask me how companies like Facebook can
@@ -12120,7 +12294,8 @@ every month looking at your ad for just$5,000/month.</p>
 <p>Writing interesting articles about the web is a full-time job forJohn.</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -12131,7 +12306,8 @@ every month looking at your ad for just$5,000/month.</p>
             <published>2010-11-02T22:30:00Z</published>
             <id>https://honza.ca/2010/11/why-i-chose-android</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="why-i-chose-android">
 <h1>Why I ChoseAndroid</h1>
 <p>Recently, we have heard that the Android operating system has the largest
@@ -12179,7 +12355,8 @@ calendar, Google Talk, etc. are set up automatically.Genius.</p>
 </div>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -12190,7 +12367,8 @@ calendar, Google Talk, etc. are set up automatically.Genius.</p>
             <published>2010-09-28T22:31:00Z</published>
             <id>https://honza.ca/2010/09/how-to-use-twitter-oauth-on-android</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="how-to-use-twitter-oauth-on-android">
 <h1>How To Use Twitter OAuth OnAndroid</h1>
 <p>If you are developing an application for the Android platform, and you need to
@@ -12331,7 +12509,8 @@ behalf of theuser.</p>
 </div>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -12342,7 +12521,8 @@ behalf of theuser.</p>
             <published>2010-07-07T22:00:00Z</published>
             <id>https://honza.ca/2010/07/posterous-style-blogging-on-app-engine</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="posterous-style-blogging-on-app-engine">
 <h1>Posterous-style Blogging On AppEngine</h1>
 <p>Posterous has been getting a lot of attention lately. Its simplicity appeals to
@@ -12447,7 +12627,8 @@ suggestions on how to improveit.</p>
 </div>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
         <entry>
@@ -12458,7 +12639,8 @@ suggestions on how to improveit.</p>
             <published>2010-06-02T21:00:00Z</published>
             <id>https://honza.ca/2010/06/twitter-success-story-hurricane-bill</id>
 
-            <content type="html">
+            <content:encoded>
+              <![CDATA[
               <div class="section" id="twitter-success-story-hurricane-bill">
 <h1>Twitter Success Story - HurricaneBill</h1>
 <p>Beginners often find Twitter very confusing and useless. I think it&#8217;s because
@@ -12487,7 +12669,8 @@ almost minute by minute. In the end, there wasn&#8217;t much of hurricane after 
 By the time it got to Halifax, it had reduced to a merestorm.</p>
 </div>
 
-            </content>
+              ]]>
+            </content:encoded>
         </entry>
     
 </feed>
