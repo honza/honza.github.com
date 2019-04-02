@@ -5,7 +5,7 @@
 On having a standard translation of the Scriptures
 ==================================================
 
-As I have been thinking through the arguments levelled by the advocates of the
+As I have been thinking through the arguments leveled by the advocates of the
 traditional text of Scripture, a certain irritation with modern bible
 translations has entered my mind.  Not with any translation in particular, but
 with the endless proliferation of them.  James White `echoes`_ this:
@@ -68,7 +68,7 @@ teach your children bible verses from the ESV.  You read books that quote the
 ESV.  You `read articles`_ that encourage you to write in your bible, and to
 pass it down to your children.  You spend spend thousands of hours reading your
 bible.  You know where on the page your beloved passages are.  The pages have
-scribbes everywhere, many are bent, and ruffled, and some are covered in sweat
+scribbles everywhere, many are bent, and ruffled, and some are covered in sweat
 and tears.  You spend your life with this bible.  The Lord uses its words to
 change you, to "conform you to the image of his Son".  You speak its words of
 wisdom to your grandchildren, just as their parents do.
