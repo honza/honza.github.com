@@ -66,7 +66,7 @@ to use.  You invest in nice editions for every member of your family.  Your
 church uses the ESV.  You memorize large portions of Scripture in the ESV.  You
 teach your children bible verses from the ESV.  You read books that quote the
 ESV.  You `read articles`_ that encourage you to write in your bible, and to
-pass it down to your children.  You spend spend thousands of hours reading your
+pass it down to your children.  You spend thousands of hours reading your
 bible.  You know where on the page your beloved passages are.  The pages have
 scribbles everywhere, many are bent, and ruffled, and some are covered in sweat
 and tears.  You spend your life with this bible.  The Lord uses its words to
