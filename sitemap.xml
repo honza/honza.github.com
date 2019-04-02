@@ -2,16 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
   <loc>http://https://honza.ca/</loc>
-  <lastmod>2019-04-01T11:25:10Z</lastmod>
+  <lastmod>2019-04-02T17:05:25Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
 <url>
   <loc>http://https://honza.ca/about</loc>
-  <lastmod>2019-04-01T11:25:10Z</lastmod>
+  <lastmod>2019-04-02T17:05:25Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
+
+<url>
+  <loc>http://https://honza.ca/2019/04/on-having-a-standard-translation-of-the-scriptures</loc>
+  <lastmod>2019-04-01T12:00:00Z</lastmod>
+  <changefreq>daily</changefreq>
+</url>
 
 <url>
   <loc>http://https://honza.ca/2019/01/if-novels-were-formatted-like-bibles</loc>

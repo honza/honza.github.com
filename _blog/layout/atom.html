@@ -5,7 +5,7 @@
     <link href="{{ url }}/atom.xml" rel="self"/>
     <link href="{{ url }}"/>
     <updated>{{ now }}</updated>
-    <id>{{ url }}</id>
+    <id>{{ url }}/</id>
 
     {% for post in posts %}
         <entry>
@@ -16,9 +16,11 @@
             <published>{{ post.atom_date }}</published>
             <id>{{ url }}/{{ post.url }}</id>
 
-            <content type="html">
-              {{ post.contents }}
-            </content>
+            <content type="xhtml">
+			        <div xmlns="http://www.w3.org/1999/xhtml">
+                {{ post.contents }}
+			        </div>
+		        </content>
         </entry>
     {% endfor %}
 </feed>
