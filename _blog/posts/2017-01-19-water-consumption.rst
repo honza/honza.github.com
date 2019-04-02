@@ -11,7 +11,7 @@ with images of people from poverty-ridden countries.  You can watch it below.
 
 .. raw:: html
 
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/IS4lGnGfHTw" frameborder="0" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/IS4lGnGfHTw" frameborder="0" allowfullscreen="true"></iframe>
 
 Colgate claim that you waste up to 4 gallons (15L) of water if you leave the
 fauset running.  They intend to guilt you into conserving water.

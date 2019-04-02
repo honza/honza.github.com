@@ -30,7 +30,7 @@ Bible`_.
 
 .. raw:: html
 
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/9xhvee27Rkk?rel=0" frameborder="0" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/9xhvee27Rkk?rel=0" frameborder="0" allowfullscreen="true"></iframe>
 
 This Bible is relatively cheap, and gorgeous.  It looks a lot more like a
 regular book than a dictionary or a reference book.  It features a large font,
@@ -128,7 +128,7 @@ how the leather ages, and how the board covers soften as you use it.
 
 .. raw:: html
 
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/Z6ZTp7tdXpg" frameborder="0" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Z6ZTp7tdXpg" frameborder="0" allowfullscreen="true"></iframe>
 
 Once I was willing to seriously consider the double-column layout, I went back
 to the drawing board, as it were, and had another look at the available
