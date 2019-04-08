@@ -2,16 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
   <loc>http://https://honza.ca/</loc>
-  <lastmod>2019-04-02T17:15:41Z</lastmod>
+  <lastmod>2019-04-08T12:52:46Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
 <url>
   <loc>http://https://honza.ca/about</loc>
-  <lastmod>2019-04-02T17:15:41Z</lastmod>
+  <lastmod>2019-04-08T12:52:46Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
+
+<url>
+  <loc>http://https://honza.ca/2019/01/girardeau-musical-instruments</loc>
+  <lastmod>2019-01-22T10:14:00Z</lastmod>
+  <changefreq>daily</changefreq>
+</url>
 
 <url>
   <loc>http://https://honza.ca/2019/04/on-having-a-standard-translation-of-the-scriptures</loc>
