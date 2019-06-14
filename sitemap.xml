@@ -2,16 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
   <loc>http://https://honza.ca/</loc>
-  <lastmod>2019-05-13T13:07:58Z</lastmod>
+  <lastmod>2019-06-14T11:03:07Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
 <url>
   <loc>http://https://honza.ca/about</loc>
-  <lastmod>2019-05-13T13:07:58Z</lastmod>
+  <lastmod>2019-06-14T11:03:07Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
+
+<url>
+  <loc>http://https://honza.ca/2019/06/william-ames-on-preaching</loc>
+  <lastmod>2019-06-14T10:14:00Z</lastmod>
+  <changefreq>daily</changefreq>
+</url>
 
 <url>
   <loc>http://https://honza.ca/2019/05/calvin-on-the-eighth-commandment</loc>
