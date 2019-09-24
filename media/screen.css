@@ -1,5 +1,5 @@
 body {
-    font-family: 'PT Serif', 'Georgia', 'Liberation Serif', 'Linux Libertine O', serif;
+    font-family: 'Karla', 'Georgia', 'Liberation Serif', 'Linux Libertine O', serif;
     font-size: 20px;
     line-height: 140%;
     text-rendering: optimizelegibility;
@@ -13,7 +13,7 @@ h1, h2, h3, h4, h5, h6 {
     text-rendering: optimizelegibility;
     color: #333;
     line-height: 130%;
-    font-family: 'PT Sans';
+    font-family: 'Montserrat';
 
 }
 
@@ -39,7 +39,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #banner h1 {
-  font-family: 'PT Serif', 'Georgia', 'Liberation Serif', 'Linux Libertine O', serif;
+  font-family: 'Karla', 'Georgia', 'Liberation Serif', 'Linux Libertine O', serif;
   display: inline-block;
   margin: 0;
   padding: 0;
@@ -60,7 +60,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #menu li {
-  font-family: 'PT Sans';
+  font-family: 'Montserrat';
   list-style: none;
   margin: 0 10px;
   float: left;
