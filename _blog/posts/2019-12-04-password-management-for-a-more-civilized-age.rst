@@ -92,7 +92,8 @@ Copying passwords from the terminal and pasting them into login forms in the
 browser isn't very smooth.  There is a project called `passff`_ which
 integrates ``pass`` into Firefox.  This consists of a browser extension, and a
 simple Firefox web service which handles communication with your password
-store.
+store.  When you need to log in, Firefox can look up the correct password for
+that entity, and fill in the form for you.
 
 .. _passff: https://github.com/passff/passff
 

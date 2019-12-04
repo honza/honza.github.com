@@ -4,9 +4,103 @@
     <title>Honza Pokorny - Thoughts on web development</title>
     <link href="https://honza.ca/atom.xml" rel="self"/>
     <link href="https://honza.ca"/>
-    <updated>2019-09-24T18:21:40Z</updated>
+    <updated>2019-12-04T15:03:39Z</updated>
     <id>https://honza.ca/</id>
 
+    
+        <entry>
+            <title>Password Management For a More Civilized Age</title>
+            <author><name>Honza Pokorny</name></author>
+            <link href="https://honza.ca/2019/12/password-management-for-a-more-civilized-age"/>
+            <updated>2019-12-04T10:14:00Z</updated>
+            <published>2019-12-04T10:14:00Z</published>
+            <id>https://honza.ca/2019/12/password-management-for-a-more-civilized-age</id>
+
+            <content type="xhtml">
+			        <div xmlns="http://www.w3.org/1999/xhtml">
+                <div class="section" id="password-management-for-a-more-civilized-age">
+<h1>Password Management For a More CivilizedAge</h1>
+<p>It is a universally acknowledged truth that remembering your passwords is a bad
+idea.  The modern Internet user will inevitably be required to register for
+many services, and websites, and inventing a new password for each one will
+quickly overwhelm him or her.  The burden of memorizing one&#8217;s passwords is too
+great to bear.  Unless, of course, we grant that passwords may be reused&#8212;that
+we shall never do.  Once we are satisfied that keeping all of one&#8217;s passwords
+in one&#8217;s head is a bad idea, we shall proceed to delegating this task to
+computers.  If your computer is managing your passwords, you are free to use a
+different one for every entity, and you are enabled and encouraged to create
+very long and randompasswords.</p>
+<p>Many solutions exist to address this need.  LastPass and 1Password come to
+mind.  However, most of these services store your data in the cloud, aren&#8217;t
+open source, and costmoney.</p>
+<p>Can we dobetter?</p>
+<p>Here are ourrequirements:</p>
+<ul class="simple">
+<li>Encrypted storage of passwords (which enables easybackups)</li>
+<li>A browser extension to fill in logincredentials</li>
+<li>A way for mobile devices to accesspasswords</li>
+<li>Tracking of passwordchanges</li>
+<li>Each passwordgeneration</li>
+<li>Free and open-sourcesoftware</li>
+<li>Managing the password store via Unixtools</li>
+</ul>
+<div class="section" id="step-1-gpg">
+<h2>Step 1:<span class="caps">GPG</span></h2>
+<p>We are going to use <span class="caps">GPG</span> to encrypt our passwords at rest.  This has the
+advantage of not having to remember encryption passphrases.  If you encrypt
+your passwords to your own key, only you can ever decryptit.</p>
+<p>For a modern <span class="caps">GPG</span> workflow, I recommend using a YubiKey to store your private
+keys.  YubiKeys can be used as a SmartCard, meaning that your private <span class="caps">GPG</span> key
+can be stored on the key.  Moving your private key to the YubiKey is a
+destructive process which means that the key cannot be extracted from it.  It
+also means that all operations which require your private key are performed on
+theSmartCard.</p>
+<p>There is an excellent <a class="reference external" href="https://github.com/drduh/YubiKey-Guide">guide</a> on how to set it up.  It walks you through
+generating your <span class="caps">GPG</span> keys on an air-gapped computer running a live version of
+<a class="reference external" href="https://tails.boum.org/">Tails</a> Linux.  You create a master private key which is stored offline in a
+secure place, and multiple subkeys which are used for day-to-dayoperations.</p>
+<p>Paul Stamatiou has a great <a class="reference external" href="https://paulstamatiou.com/getting-started-with-security-keys/">article</a> on getting started with security keys ingeneral.</p>
+<p>All of this means that your computer can only use your private key if your
+YubiKey is pluggedin.</p>
+</div>
+<div class="section" id="step-2-pass">
+<h2>Step 2:pass</h2>
+<p>The next piece of the puzzle is the password store itself.  For this, we will
+use <a class="reference external" href="https://www.passwordstore.org/">pass</a>.  This is a Unix command-line program which stores your passwords
+in a directory on your filesystem as <span class="caps">GPG</span>-encrypted plain text files.  By
+default, everything lives in <tt class="docutils literal"><span class="pre">$<span class="caps">HOME</span>/.password-store</span></tt>, and you can organize
+your passwords into directories.  The <tt class="docutils literal">pass</tt> program then handles encrypting
+and decrypting on thefly.</p>
+<p>It also has a nice feature which makes it easy to move your passwords to your
+phone.  Most of the time, you only need the password to set up an app, and
+after that the app maintains a session.  Pass can show you a <span class="caps">QR</span> code
+representation of your password which you can scan with your smartphone&#8217;s
+camera to place it in the phone&#8217;sclipboard.</p>
+<p>Optionally, <tt class="docutils literal">pass</tt> can initialize a git repository inside its password store
+directory, and create a git commit for each password modification or
+manipulationoperation.</p>
+<p>Pass is also free and open source(<span class="caps">GPL</span>).</p>
+</div>
+<div class="section" id="step-3-passff">
+<h2>Step 3:passff</h2>
+<p>Copying passwords from the terminal and pasting them into login forms in the
+browser isn&#8217;t very smooth.  There is a project called <a class="reference external" href="https://github.com/passff/passff">passff</a> which
+integrates <tt class="docutils literal">pass</tt> into Firefox.  This consists of a browser extension, and a
+simple Firefox web service which handles communication with your password
+store.  When you need to log in, Firefox can look up the correct password for
+that entity, and fill in the form foryou.</p>
+</div>
+<div class="section" id="step-4-backups">
+<h2>Step 4:backups</h2>
+<p>It&#8217;s trivial to back up your passwords.  Currently, I use <tt class="docutils literal">tar</tt> to create a
+bundle of my password store, and encrypt it and sign it with my private <span class="caps">GPG</span>
+key.  This encrypted file can then be safely placed in your favorite regularpipeline.</p>
+</div>
+</div>
+
+			        </div>
+		        </content>
+        </entry>
     
         <entry>
             <title>William Ames on Preaching</title>
