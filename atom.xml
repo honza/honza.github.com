@@ -4,9 +4,57 @@
     <title>Honza Pokorny - Thoughts on web development</title>
     <link href="https://honza.ca/atom.xml" rel="self"/>
     <link href="https://honza.ca"/>
-    <updated>2019-12-04T15:03:39Z</updated>
+    <updated>2020-01-09T18:12:21Z</updated>
     <id>https://honza.ca/</id>
 
+    
+        <entry>
+            <title>The Lord's prayer and the critical text</title>
+            <author><name>Honza Pokorny</name></author>
+            <link href="https://honza.ca/2020/01/the-lords-prayer-and-the-critical-text"/>
+            <updated>2020-01-09T10:00:00Z</updated>
+            <published>2020-01-09T10:00:00Z</published>
+            <id>https://honza.ca/2020/01/the-lords-prayer-and-the-critical-text</id>
+
+            <content type="xhtml">
+			        <div xmlns="http://www.w3.org/1999/xhtml">
+                <div class="section" id="the-lord-s-prayer-and-the-critical-text">
+<h1>The Lord&#8217;s prayer and the criticaltext</h1>
+<p>Proponents of modern bible translations and the critical text in general argue
+that the <span class="caps">KJV</span> should be abandoned for ecclesiastical use.  The two main
+arguments are (1) its archaic language, and (2) inferior Greektext.</p>
+<p>Firstly, biblical doctrine is complex, and if we want to reach the world, we
+should endeavor to remove as many obstacles as possible.  The lowest hanging
+fruit appears to be the translation of the bible.  We want it to be as simple
+as possible to facilitate faster understanding.  The <span class="caps">KJV</span> is too archaic, and
+hinders the modern person&#8217;s ability to meditate on the Word of God.  The <span class="caps">KJV</span>
+obscures thebible.</p>
+<p>Secondly, the <span class="caps">KJV</span> was produced at the beginning of the seventeenth century.
+Since then, more New Testament manuscripts have been discovered.  These
+manuscripts, especially the papyri, are much older than the materials the <span class="caps">KJV</span>
+translators used.  We now have a better bible.  We can remove verses that
+aren&#8217;t original; verses added by overzealous scribes either on purpose or byaccident.</p>
+<p>We could discuss the merits of those two arguments.  Instead, I&#8217;d like to draw
+your attention to the Lord&#8217;s prayer.  Meant as a template or a model for
+prayer, it&#8217;s nevertheless often recited corporately during worship as a means
+to foster unity.  In most cases, it&#8217;s recited in its traditional rendering
+which comes from the King JamesVersion.</p>
+<p><em>Our father, which art in heaven, hallowed by thyname</em></p>
+<p>This is some seriously archaic language.  What&#8217;s more, however, is that the
+prayer is concludedwith</p>
+<p><em>for thine is the kingdom, and the power, and the glory, forever.Amen</em></p>
+<p>The conclusion of the Lord&#8217;s prayer is recorded in Matthew 6:13.  This very
+verse contains a significant textual variant which removes the conclusion of
+the Lord&#8217;s prayer.  The oldest and supposedly best manuscripts omit this verse.
+So, not only are we using archaic language, we are also using a disputed text.
+I see this as an inconsistency on the part of modern translation proponents who
+dismiss the <span class="caps">KJV</span> as being archaic, mock those who prefer it, and then continue
+to use it inworship.</p>
+</div>
+
+			        </div>
+		        </content>
+        </entry>
     
         <entry>
             <title>Password Management For a More Civilized Age</title>

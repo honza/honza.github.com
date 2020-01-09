@@ -2,16 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
   <loc>http://https://honza.ca/</loc>
-  <lastmod>2019-12-04T15:03:39Z</lastmod>
+  <lastmod>2020-01-09T18:12:21Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
 <url>
   <loc>http://https://honza.ca/about</loc>
-  <lastmod>2019-12-04T15:03:39Z</lastmod>
+  <lastmod>2020-01-09T18:12:21Z</lastmod>
   <changefreq>daily</changefreq>
 </url>
 
+
+<url>
+  <loc>http://https://honza.ca/2020/01/the-lords-prayer-and-the-critical-text</loc>
+  <lastmod>2020-01-09T10:00:00Z</lastmod>
+  <changefreq>daily</changefreq>
+</url>
 
 <url>
   <loc>http://https://honza.ca/2019/12/password-management-for-a-more-civilized-age</loc>
