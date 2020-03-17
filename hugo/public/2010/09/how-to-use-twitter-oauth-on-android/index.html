@@ -1,0 +1,212 @@
+<!doctype html lang="en">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Thoughts of an open source developer with a theology degree. Honza Pokorny is a web developer and an armchair theologian in Halifax, Canada" >
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>How To Use Twitter OAuth On Android | Honza Pokorny</title>
+  <link href="https://fonts.googleapis.com/css?family=Karla:400,400i|Montserrat:700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://honza.cacss/index.css">
+  <link rel="alternate" type="application/rss+xml" href="" title="Honza Pokorny">
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-4330851-12']);
+        _gaq.push(['_trackPageview']);
+
+        (function(){
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+</head>
+<body>
+        <div id="banner" class="container">
+          <h1><a href="/">Honza Pokorny</a></h1>
+          <p><em>Thoughts of an open source developer with a theology degree</em></p>
+        </div>
+
+    <div id="wrap">
+
+<div class="single-header">
+  <h1>How To Use Twitter OAuth On Android</h1>
+
+</div>
+
+<article>
+  
+
+<p>If you are developing an application for the Android platform, and you need to
+interact with the Twitter API, you now have to use OAuth to authenticate the
+user. In this article, we will have a look on how you can do that.</p>
+
+<h2 id="what-is-oauth">What is OAuth?</h2>
+
+<p>OAuth is a way of accessing a user&rsquo;s data (e.g. tweets) without asking for the
+user&rsquo;s username and password. Your application opens the Twitter website which
+will ask the user if they want to allow you to access their data. If they do,
+they are taken back to the application and can start using it. You can find
+more about OAuth all over the web.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>There are a couple of .jars that you will need for this to work.</p>
+
+<h3 id="signpost-commonshttp4-1-dot-2-dot-1-dot-1-dot-jar">signpost-commonshttp4-1.2.1.1.jar</h3>
+
+<h3 id="signpost-core-1-dot-2-dot-1-dot-1-dot-jar">signpost-core-1.2.1.1.jar</h3>
+
+<p>You can download them <a href="https://github.com/kaeppler/signpost">here</a>.</p>
+
+<h2 id="basic-activity">Basic Activity</h2>
+
+<p>Let&rsquo;s say we have an activity running where the user can start the
+authentication process. There is nothing special about this activity, except
+for some text and a button. When the user clicks the button, the OAuth process
+will be started. From the button&rsquo;s <code>onClickListener()</code> we will call the
+<code>startOAuth()</code> method of our activity.</p>
+
+<p>We will add a few attributes to our activity. Let&rsquo;s call the activity Main.</p>
+
+<pre><code class="language-java">public class Main extends Activity {
+
+    private CommonsHttpOAuthConsumer httpOauthConsumer;
+    private OAuthProvider httpOauthprovider;
+    public final static String consumerKey = &quot;abc&quot;;
+    public final static String consumerSecret = &quot;abc&quot;;
+    private final String CALLBACKURL = &quot;app://twitter&quot;;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        ...
+}
+</code></pre>
+
+<p><code>consumerKey</code> and <code>consumerSecret</code> will store your app&rsquo;s unique keys that
+you will get from Twitter. <code>CALLBACK</code> is a little different. This is used
+when the application is authorized on the web, and the control is returned back
+to the Main activity. For the mobile browser to be able to call the application
+and tell it that the OAuth business has gone well, it needs a call back. Both
+app and twitter can be exchanged for anything else.</p>
+
+<p>Now let&rsquo;s have a look at the <code>startOAuth()</code> method.</p>
+
+<pre><code class="language-java">try {
+    httpOauthConsumer = new CommonsHttpOAuthConsumer(consumerKey, consumerSecret);
+    httpOauthprovider = new DefaultOAuthProvider(&quot;http://twitter.com/oauth/request_token&quot;,
+                                            &quot;http://twitter.com/oauth/access_token&quot;,
+                                            &quot;http://twitter.com/oauth/authorize&quot;);
+    String authUrl = httpOauthprovider.retrieveRequestToken(httpOauthConsumer, CALLBACKURL);
+    // Open the browser
+    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(authUrl)));
+} catch (Exception e) {
+    Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
+}
+</code></pre>
+
+<p>Here we create the necessary OAuth objects which will in turn generate the
+unique authenticating URL. Once we have the URL we open the browser and point
+it to that URL. The user will be presented with a dialog asking them to allow
+or to deny your application access.</p>
+
+<p>In order for our activity to be able to receive the callback, we need to add a
+few things the Android manifest file. Change the applications definition to the
+following:</p>
+
+<pre><code class="language-xml">&lt;activity android:name=&quot;Main&quot; android:launchMode=&quot;singleInstance&quot;&gt;
+    &lt;intent-filter&gt;
+         &lt;action android:name=&quot;android.intent.action.VIEW&quot; /&gt;
+         &lt;category android:name=&quot;android.intent.category.DEFAULT&quot; /&gt;
+        &lt;category android:name=&quot;android.intent.category.BROWSABLE&quot; /&gt;
+        &lt;data android:scheme=&quot;app&quot; android:host=&quot;twitter&quot; /&gt;
+    &lt;/intent-filter&gt;
+&lt;/activity&gt;
+</code></pre>
+
+<p>Note that if you changed the app and twitter in the <code>CALLBACK</code> variable
+above, you will need to make sure that the change is reflected here. This
+basically allows the activity to receive data from a foreign source - our
+browser.</p>
+
+<p>Now we need to catch the callback and handle it. We do that by overriding the
+<code>onNewIntent()</code> method of our Main activity.</p>
+
+<pre><code class="language-java">@Override
+protected void onNewIntent(Intent intent) {
+    super.onNewIntent(intent);
+
+    Uri uri = intent.getData();
+
+    //Check if you got NewIntent event due to Twitter Call back only
+
+    if (uri != null &amp;&amp; uri.toString().startsWith(CALLBACKURL)) {
+
+        String verifier = uri.getQueryParameter(oauth.signpost.OAuth.OAUTH_VERIFIER);
+
+        try {
+            // this will populate token and token_secret in consumer
+
+            httpOauthprovider.retrieveAccessToken(httpOauthConsumer, verifier);
+            String userKey = httpOauthConsumer.getToken();
+            String userSecret = httpOauthConsumer.getTokenSecret();
+
+            // Save user_key and user_secret in user preferences and return
+
+            SharedPreferences settings = getBaseContext().getSharedPreferences(&quot;your_app_prefs&quot;, 0);
+            SharedPreferences.Editor editor = settings.edit();
+            editor.putString(&quot;user_key&quot;, userKey);
+            editor.putString(&quot;user_secret&quot;, userSecret);
+            editor.commit();
+
+        } catch(Exception e){
+
+        }
+    } else {
+        // Do something if the callback comes from elsewhere
+    }
+
+}
+</code></pre>
+
+<p>OK, there&rsquo;s quite a bit there. We extract the data that the browser sent back
+to us. This data is used to verify that the authentication was successful and
+that we can now access the user&rsquo;s data. From the data, we get the user&rsquo;s key
+and their secret. We save that into the application&rsquo;s shared preferences file
+and return.</p>
+
+<p>Now we are good to go. We can make authenticated requests to Twitter API on
+behalf of the user.</p>
+
+<p>For example, to get the user&rsquo;s home timeline, you would do something like:</p>
+
+<pre><code class="language-java">HttpGet get = new HttpGet(&quot;http://api.twitter.com/version/statuses/home_timeline.json&quot;);
+HttpParams params = new BasicHttpParams();
+HttpProtocolParams.setUseExpectContinue(params, false);
+get.setParams(params);
+// sign the request to authenticate
+httpOauthConsumer.sign(get);
+String responsex = mClient.execute(get, new BasicResponseHandler());
+JSONArray array = new JSONArray(responsex);
+</code></pre>
+
+<p>And the array variable is a list of the latest tweets in the user&rsquo;s home timeline.</p>
+
+</article>
+
+<p class="article_date date">
+  This article was first published on September 28, 2010.  As you can see, there
+  are no comments.  I invite you to email me with your comments, criticisms,
+  and other suggestions.  Even better, write your own article as a response.
+  Blogging is awesome.
+</p>
+
+
+    </div>
+
+</body>
+</html>

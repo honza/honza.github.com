@@ -1,14 +1,411 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on My New Hugo Site</title>
-    <link>http://example.org/categories/</link>
-    <description>Recent content in Categories on My New Hugo Site</description>
+    <title>Categories on Honza Pokorny</title>
+    <link>https://honza.ca/categories/</link>
+    <description>Recent content in Categories on Honza Pokorny</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Fri, 11 Feb 2011 22:24:00 -0400</lastBuildDate>
     
-	<atom:link href="http://example.org/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://honza.ca/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Android</title>
+      <link>https://honza.ca/categories/android/</link>
+      <pubDate>Fri, 11 Feb 2011 22:24:00 -0400</pubDate>
+      
+      <guid>https://honza.ca/categories/android/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Backup</title>
+      <link>https://honza.ca/categories/backup/</link>
+      <pubDate>Mon, 15 Jul 2013 15:20:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/categories/backup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bibles</title>
+      <link>https://honza.ca/categories/bibles/</link>
+      <pubDate>Fri, 25 Jan 2019 10:14:00 -0400</pubDate>
+      
+      <guid>https://honza.ca/categories/bibles/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blogging</title>
+      <link>https://honza.ca/categories/blogging/</link>
+      <pubDate>Mon, 04 Jul 2011 10:00:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/categories/blogging/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Categories</title>
+      <link>https://honza.ca/categories/categories/</link>
+      <pubDate>Tue, 21 May 2013 14:20:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/categories/categories/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Chef</title>
+      <link>https://honza.ca/categories/chef/</link>
+      <pubDate>Tue, 20 Sep 2011 20:00:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/categories/chef/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Clojure</title>
+      <link>https://honza.ca/categories/clojure/</link>
+      <pubDate>Fri, 06 Nov 2015 06:32:00 -0400</pubDate>
+      
+      <guid>https://honza.ca/categories/clojure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Code</title>
+      <link>https://honza.ca/categories/code/</link>
+      <pubDate>Thu, 03 Sep 2015 12:00:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/categories/code/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Commentary</title>
+      <link>https://honza.ca/categories/commentary/</link>
+      <pubDate>Fri, 07 Oct 2011 19:00:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/categories/commentary/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Compilers</title>
+      <link>https://honza.ca/categories/compilers/</link>
+      <pubDate>Mon, 13 May 2013 07:14:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/categories/compilers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Devops</title>
+      <link>https://honza.ca/categories/devops/</link>
+      <pubDate>Wed, 11 Dec 2013 14:55:00 -0400</pubDate>
+      
+      <guid>https://honza.ca/categories/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Django</title>
+      <link>https://honza.ca/categories/django/</link>
+      <pubDate>Sat, 04 Feb 2012 20:00:00 -0400</pubDate>
+      
+      <guid>https://honza.ca/categories/django/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ebooks</title>
+      <link>https://honza.ca/categories/ebooks/</link>
+      <pubDate>Mon, 08 Apr 2019 10:14:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/categories/ebooks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Editor</title>
+      <link>https://honza.ca/categories/editor/</link>
+      <pubDate>Wed, 18 Feb 2015 10:08:00 -0400</pubDate>
+      
+      <guid>https://honza.ca/categories/editor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Emacs</title>
+      <link>https://honza.ca/categories/emacs/</link>
+      <pubDate>Fri, 24 May 2013 21:30:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/categories/emacs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Email</title>
+      <link>https://honza.ca/categories/email/</link>
+      <pubDate>Wed, 18 Jan 2012 09:00:00 -0400</pubDate>
+      
+      <guid>https://honza.ca/categories/email/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>https://honza.ca/categories/git/</link>
+      <pubDate>Fri, 11 May 2012 12:30:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/categories/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Go</title>
+      <link>https://honza.ca/categories/go/</link>
+      <pubDate>Mon, 02 Nov 2015 11:25:00 -0400</pubDate>
+      
+      <guid>https://honza.ca/categories/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Google</title>
+      <link>https://honza.ca/categories/google/</link>
+      <pubDate>Tue, 13 Sep 2011 21:00:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/categories/google/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gps</title>
+      <link>https://honza.ca/categories/gps/</link>
+      <pubDate>Thu, 28 Jul 2011 15:00:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/categories/gps/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Haskell</title>
+      <link>https://honza.ca/categories/haskell/</link>
+      <pubDate>Mon, 02 Nov 2015 11:25:00 -0400</pubDate>
+      
+      <guid>https://honza.ca/categories/haskell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Health</title>
+      <link>https://honza.ca/categories/health/</link>
+      <pubDate>Tue, 13 Dec 2011 13:00:00 -0400</pubDate>
+      
+      <guid>https://honza.ca/categories/health/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ide</title>
+      <link>https://honza.ca/categories/ide/</link>
+      <pubDate>Sun, 19 Jun 2011 20:50:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/categories/ide/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>https://honza.ca/categories/java/</link>
+      <pubDate>Tue, 18 Jan 2011 18:23:00 -0400</pubDate>
+      
+      <guid>https://honza.ca/categories/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Javascript</title>
+      <link>https://honza.ca/categories/javascript/</link>
+      <pubDate>Mon, 02 Nov 2015 11:25:00 -0400</pubDate>
+      
+      <guid>https://honza.ca/categories/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Keyboards</title>
+      <link>https://honza.ca/categories/keyboards/</link>
+      <pubDate>Fri, 28 Apr 2017 10:00:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/categories/keyboards/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://honza.ca/categories/linux/</link>
+      <pubDate>Mon, 17 Jan 2011 21:47:00 -0400</pubDate>
+      
+      <guid>https://honza.ca/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lisp</title>
+      <link>https://honza.ca/categories/lisp/</link>
+      <pubDate>Thu, 12 Dec 2013 13:44:00 -0400</pubDate>
+      
+      <guid>https://honza.ca/categories/lisp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mac</title>
+      <link>https://honza.ca/categories/mac/</link>
+      <pubDate>Fri, 18 Mar 2011 09:00:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/categories/mac/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mutt</title>
+      <link>https://honza.ca/categories/mutt/</link>
+      <pubDate>Tue, 30 Oct 2012 06:28:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/categories/mutt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Passwords</title>
+      <link>https://honza.ca/categories/passwords/</link>
+      <pubDate>Wed, 04 Dec 2019 10:14:00 -0400</pubDate>
+      
+      <guid>https://honza.ca/categories/passwords/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Programming</title>
+      <link>https://honza.ca/categories/programming/</link>
+      <pubDate>Mon, 02 Nov 2015 11:25:00 -0400</pubDate>
+      
+      <guid>https://honza.ca/categories/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://honza.ca/categories/python/</link>
+      <pubDate>Wed, 18 Feb 2015 10:34:00 -0400</pubDate>
+      
+      <guid>https://honza.ca/categories/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Random</title>
+      <link>https://honza.ca/categories/random/</link>
+      <pubDate>Mon, 04 Jul 2011 10:00:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/categories/random/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rant</title>
+      <link>https://honza.ca/categories/rant/</link>
+      <pubDate>Mon, 02 Nov 2015 11:25:00 -0400</pubDate>
+      
+      <guid>https://honza.ca/categories/rant/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rst</title>
+      <link>https://honza.ca/categories/rst/</link>
+      <pubDate>Tue, 19 Jul 2011 14:00:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/categories/rst/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ruby</title>
+      <link>https://honza.ca/categories/ruby/</link>
+      <pubDate>Mon, 20 Jun 2011 20:20:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/categories/ruby/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Scalability</title>
+      <link>https://honza.ca/categories/scalability/</link>
+      <pubDate>Sun, 19 Jun 2011 20:16:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/categories/scalability/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Technology</title>
+      <link>https://honza.ca/categories/technology/</link>
+      <pubDate>Sat, 09 Apr 2011 17:30:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/categories/technology/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Theology</title>
+      <link>https://honza.ca/categories/theology/</link>
+      <pubDate>Thu, 09 Jan 2020 10:00:00 -0400</pubDate>
+      
+      <guid>https://honza.ca/categories/theology/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Thoughts</title>
+      <link>https://honza.ca/categories/thoughts/</link>
+      <pubDate>Wed, 23 Jan 2013 07:26:00 -0400</pubDate>
+      
+      <guid>https://honza.ca/categories/thoughts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Twitter</title>
+      <link>https://honza.ca/categories/twitter/</link>
+      <pubDate>Tue, 28 Sep 2010 22:31:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/categories/twitter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vim</title>
+      <link>https://honza.ca/categories/vim/</link>
+      <pubDate>Thu, 20 Mar 2014 11:45:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/categories/vim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Virtualenv</title>
+      <link>https://honza.ca/categories/virtualenv/</link>
+      <pubDate>Fri, 10 Jun 2011 11:00:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/categories/virtualenv/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

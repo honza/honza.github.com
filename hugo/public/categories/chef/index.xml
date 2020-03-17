@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Chef on Honza Pokorny</title>
+    <link>https://honza.ca/categories/chef/</link>
+    <description>Recent content in Chef on Honza Pokorny</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 20 Sep 2011 20:00:00 -0300</lastBuildDate>
+    
+	<atom:link href="https://honza.ca/categories/chef/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Using Chef with small Django apps</title>
+      <link>https://honza.ca/2011/09/using-chef-with-small-django-apps/</link>
+      <pubDate>Tue, 20 Sep 2011 20:00:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/2011/09/using-chef-with-small-django-apps/</guid>
+      <description>This year at DjangoCon, it seemed like everybody was talking about automatic deployments and namely Chef. After coming home from the conference, I spent a considerable amount of time learning chef and thinking about how it can be best used with small to medium size Django apps. In this post, I will walk you through how Chef works and how it can help you make awesome web apps.
+When I say small apps, I mean single-server deployments.</description>
+    </item>
+    
+  </channel>
+</rss>

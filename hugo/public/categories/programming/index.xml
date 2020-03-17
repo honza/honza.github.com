@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Programming on Honza Pokorny</title>
+    <link>https://honza.ca/categories/programming/</link>
+    <description>Recent content in Programming on Honza Pokorny</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 02 Nov 2015 11:25:00 -0400</lastBuildDate>
+    
+	<atom:link href="https://honza.ca/categories/programming/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Language choice</title>
+      <link>https://honza.ca/2015/11/language-choice/</link>
+      <pubDate>Mon, 02 Nov 2015 11:25:00 -0400</pubDate>
+      
+      <guid>https://honza.ca/2015/11/language-choice/</guid>
+      <description>Warning: this is a rant
+Recently, I have made great progress in my journey towards Haskell enlightenment. I finally see how many of the little pieces of the Haskell puzzle fit together. At this point, I feel empowered to go forth and write useful programs. I read through the source of Scotty the web framework the other day, and I was very pleasantly surprised that I understood how it works. I absolutely love Haskell.</description>
+    </item>
+    
+    <item>
+      <title>Programming languages in a nutshell</title>
+      <link>https://honza.ca/2015/02/programming-languages-in-a-nutshell/</link>
+      <pubDate>Wed, 18 Feb 2015 10:34:00 -0400</pubDate>
+      
+      <guid>https://honza.ca/2015/02/programming-languages-in-a-nutshell/</guid>
+      <description>Python, Ruby concurrency lol packaging lol Golang lol if you don&amp;rsquo;t like typing err := y u no generics lol imports Haskell need PhD will never be mainstream Idris only for concating lists Erlang lol syntax Javascript javascript Rust how do I do x this week? Clojure let me know when the program has started running lol if you want to build a secure thing on the web Scala lol if you think this actually improves java PHP which of these 10 fns should I use?</description>
+    </item>
+    
+    <item>
+      <title>Single vs Many Programming Languages</title>
+      <link>https://honza.ca/2014/05/single-vs-many-programming-languages/</link>
+      <pubDate>Wed, 21 May 2014 15:56:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/2014/05/single-vs-many-programming-languages/</guid>
+      <description>Junior programmers will often ask, &amp;ldquo;Which language should I use?&amp;rdquo;, &amp;ldquo;Which programming language is the best?&amp;ldquo;, and when they discover this new hip programming language that&amp;rsquo;s meant to solve all of their scaling problems, they get in your face and mock you for not using it for every single task. They will write blog posts titled &amp;ldquo;X language for Y programmers&amp;rdquo; in hopes of converting the masses to their newfound toy.</description>
+    </item>
+    
+    <item>
+      <title>Standing desk - first impressions</title>
+      <link>https://honza.ca/2012/04/standing-desk-first-impressions/</link>
+      <pubDate>Tue, 24 Apr 2012 09:29:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/2012/04/standing-desk-first-impressions/</guid>
+      <description>I have recently switched jobs and had to set up a home office. I have heard a lot of good things about standing desks and thought this was the perfect opportunity to try one. I had looked for one online but those things aren&amp;rsquo;t cheap (~ $800).
+Instead of dropping some serious cash, I stacked up some bins and made a poorman&amp;rsquo;s standing desk. I have a laptop stand and a second monitor.</description>
+    </item>
+    
+  </channel>
+</rss>

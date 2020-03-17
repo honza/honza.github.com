@@ -1,0 +1,80 @@
+<!doctype html lang="en">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Thoughts of an open source developer with a theology degree. Honza Pokorny is a web developer and an armchair theologian in Halifax, Canada" >
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Internal Clojure libraries | Honza Pokorny</title>
+  <link href="https://fonts.googleapis.com/css?family=Karla:400,400i|Montserrat:700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://honza.cacss/index.css">
+  <link rel="alternate" type="application/rss+xml" href="" title="Honza Pokorny">
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-4330851-12']);
+        _gaq.push(['_trackPageview']);
+
+        (function(){
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+</head>
+<body>
+        <div id="banner" class="container">
+          <h1><a href="/">Honza Pokorny</a></h1>
+          <p><em>Thoughts of an open source developer with a theology degree</em></p>
+        </div>
+
+    <div id="wrap">
+
+<div class="single-header">
+  <h1>Internal Clojure libraries</h1>
+
+</div>
+
+<article>
+  <p>At work, we have a few Clojure services in production.  Each service is its own
+leiningen project with its own dependencies.  And because setting up a local
+maven repository is hard, each project reimplements quite a bit of logic.  This
+duplicate code usually relates to the non-essential but still important parts
+of a service: logging, metrics, sentry integration, etc.</p>
+
+<p>Just the other day, I was getting really annoyed with this situation, and was
+about ready to go learn about the wonderful intricacies of Maven, when I
+discovered leiningen&rsquo;s <code>install</code> command.</p>
+
+<p>With <code>lein install</code>, you can install your library as a jar and a pom to the
+local repository.  Here, local repository means a local repository, typically
+in <code>~/.m2</code>.  Your apps can then depend on this library via the normal
+<code>:dependencies</code> list in the project file.  This is all completely seamless
+and works well.</p>
+
+<p>Apparently, this command has been around for a long time.</p>
+
+<p>Armed with this new information, I was able to create an internal project
+called <em>metrics</em> and remove a ton of duplication.  <code>lein install</code> also allows
+multiple versions of the same library to be installed at once.  Simply require
+whatever version you need in your apps&rsquo; <code>project.clj</code> file.</p>
+
+<p>This makes developing Clojure projects without having to publish your libraries
+to Clojars a lot easier.</p>
+
+</article>
+
+<p class="article_date date">
+  This article was first published on November 6, 2015.  As you can see, there
+  are no comments.  I invite you to email me with your comments, criticisms,
+  and other suggestions.  Even better, write your own article as a response.
+  Blogging is awesome.
+</p>
+
+
+    </div>
+
+</body>
+</html>

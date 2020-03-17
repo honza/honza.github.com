@@ -1,0 +1,173 @@
+<!doctype html lang="en">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Thoughts of an open source developer with a theology degree. Honza Pokorny is a web developer and an armchair theologian in Halifax, Canada" >
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>When HN gets in the way | Honza Pokorny</title>
+  <link href="https://fonts.googleapis.com/css?family=Karla:400,400i|Montserrat:700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://honza.cacss/index.css">
+  <link rel="alternate" type="application/rss+xml" href="" title="Honza Pokorny">
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-4330851-12']);
+        _gaq.push(['_trackPageview']);
+
+        (function(){
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+</head>
+<body>
+        <div id="banner" class="container">
+          <h1><a href="/">Honza Pokorny</a></h1>
+          <p><em>Thoughts of an open source developer with a theology degree</em></p>
+        </div>
+
+    <div id="wrap">
+
+<div class="single-header">
+  <h1>When HN gets in the way</h1>
+
+</div>
+
+<article>
+  
+
+<p>Reading stuff online can become addictive.  So addictive, in fact, that it can
+negatively affect your productivity as a programmer.  Most of us go to Hacker
+News or Reddit to get our dose of news.  We justify it by saying that it&rsquo;s
+<em>research</em> or that we are <em>trying to stay current in the community</em>.  Whatever
+your excuse, you know you have a problem when you check Hacker News every ten
+minutes just to see if anything new and awesome has been added.</p>
+
+<blockquote>
+<p>&ldquo;Close Hacker News and open a f***ing book.&rdquo;
+&ndash; Steve Losh in this <a href="http://devslovebacon.com/conferences/bacon-2012/talks/eve-working-around-evolution">talk</a>.</p>
+</blockquote>
+
+<p>Maybe you have already gotten over the initial self-denial and you have added
+some entries to your <code>/etc/hosts</code> file to keep yourself from constantly going
+to those sites.  That&rsquo;s all well and good but I think we can do better.</p>
+
+<p>You&rsquo;ve already opened the tab and you are now staring at a blank error page.
+Why not put something more useful there?</p>
+
+<p>Me, I like to learn new things.  There are way too many things I&rsquo;d like to
+learn.  Why not show a list of things I&rsquo;d like to learn and allow me to click
+through to the website?</p>
+
+<p>I have installed nginx on my machine and set up a simple static page with a few
+links things like <em>Learn You a Haskell for Great Good</em> or Steve Losh&rsquo;s <em>Learn
+Vimscript the Hardway</em>.  Now every time I go to HN, I see those links and am
+reminded that I wanted to spend some time learning those things&hellip;</p>
+
+<p><img src="/images/hn_nginx.png" alt="" />** Steps</p>
+
+<p>Install nginx.  <code>brew install nginx</code> or <code>sudo apt-get install nginx</code> or
+whatever might apply to you.</p>
+
+<p>Stick this in your <code>nginx.conf</code>:</p>
+
+<pre><code class="language-nil">worker_processes  1;
+
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+
+    keepalive_timeout  65;
+
+    server {
+        listen       443;
+        server_name  news.ycombinator.com;
+
+        ssl                  on;
+        ssl_certificate      /usr/local/etc/nginx/server.crt;
+        ssl_certificate_key  /usr/local/etc/nginx/server.key;
+
+        location / {
+            root   html;
+            index  index.html index.htm;
+        }
+    }
+
+    server {
+        listen       80;
+        server_name  reddit.com;
+
+        location / {
+            root   html;
+            index  index.html index.htm;
+        }
+    }
+
+}
+</code></pre>
+
+<p>If any of the sites you are blocking are served over SSL, you will need to get
+a self-signed certificate.  This is a one time setup and doesn&rsquo;t really take
+that long to do.</p>
+
+<pre><code class="language-nil">$ openssl req -new -x509 -nodes -out server.crt -keyout server.key
+$ chmod 600 server.key
+</code></pre>
+
+<p>Now you just place those two files to the locations referenced in the above
+<code>nginx.conf</code> file and restart nginx.</p>
+
+<p>And here is how you can make Chrome stop complaining about your self-signed
+certificate (<a href="http://www.robpeck.com/2010/10/google-chrome-mac-os-x-and-self-signed-ssl-certificates/">source</a>).</p>
+
+<h3 id="in-the-address-bar-click-the-little-lock-with-the-x-dot-this-will-bring-up-a">In the address bar, click the little lock with the X. This will bring up a</h3>
+
+<p>small information screen. Click the button that says &ldquo;Certificate
+Information.&rdquo;</p>
+
+<h3 id="click-and-drag-the-image-to-your-desktop-dot-it-looks-like-a-little">Click and drag the image to your desktop. It looks like a little</h3>
+
+<p>certificate.</p>
+
+<h3 id="double-click-it-dot-this-will-bring-up-the-keychain-access-utility-dot-enter-your">Double-click it. This will bring up the Keychain Access utility. Enter your</h3>
+
+<p>password to unlock it.</p>
+
+<h3 id="be-sure-you-add-the-certificate-to-the-system-keychain-not-the-login">Be sure you add the certificate to the System keychain, not the login</h3>
+
+<p>keychain. Click &ldquo;Always Trust,&rdquo; even though this doesn&rsquo;t seem to do
+anything.</p>
+
+<h3 id="after-it-has-been-added-double-click-it-dot-you-may-have-to-authenticate">After it has been added, double-click it. You may have to authenticate</h3>
+
+<p>again. Expand the &ldquo;Trust&rdquo; section.</p>
+
+<h3 id="when-using-this-certificate-set-to-always-trust">&ldquo;When using this certificate,&rdquo; set to &ldquo;Always Trust&rdquo;</h3>
+
+<h3 id="that-s-it-close-keychain-access-and-restart-chrome-and-your-self-signed">That&rsquo;s it! Close Keychain Access and restart Chrome, and your self-signed</h3>
+
+<p>certificate should be recognized now by the browser.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Hopefully, this will be helpful to you and nudge you every now and then to
+learn something you&rsquo;ve been putting off.</p>
+
+</article>
+
+<p class="article_date date">
+  This article was first published on July 13, 2013.  As you can see, there
+  are no comments.  I invite you to email me with your comments, criticisms,
+  and other suggestions.  Even better, write your own article as a response.
+  Blogging is awesome.
+</p>
+
+
+    </div>
+
+</body>
+</html>

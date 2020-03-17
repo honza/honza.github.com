@@ -1,0 +1,124 @@
+<!doctype html lang="en">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Thoughts of an open source developer with a theology degree. Honza Pokorny is a web developer and an armchair theologian in Halifax, Canada" >
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>How My Website Works | Honza Pokorny</title>
+  <link href="https://fonts.googleapis.com/css?family=Karla:400,400i|Montserrat:700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://honza.cacss/index.css">
+  <link rel="alternate" type="application/rss+xml" href="" title="Honza Pokorny">
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-4330851-12']);
+        _gaq.push(['_trackPageview']);
+
+        (function(){
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+</head>
+<body>
+        <div id="banner" class="container">
+          <h1><a href="/">Honza Pokorny</a></h1>
+          <p><em>Thoughts of an open source developer with a theology degree</em></p>
+        </div>
+
+    <div id="wrap">
+
+<div class="single-header">
+  <h1>How My Website Works</h1>
+
+</div>
+
+<article>
+  
+
+<p>I&rsquo;m sure you&rsquo;ve heard of static site generators like Jekyll (Ruby) or Hyde
+(Python). The benefits are obvious - your site is hosted on a cheap shared
+hosting and it can easily survive the Digg/Slashdot/Reddit effect. There is no
+database latency - the browser requests a file on the server and gets it back
+immediately.</p>
+
+<h2 id="update--2011-02-27">Update (2011-02-27):</h2>
+
+<p>While I still use a static generator to power my site, it&rsquo;s not a different
+engine. I got tired of launching a django server just to write a post. I wrote
+a new static site generator called <a href="https://github.com/honza/socrates">Socrates</a>. Each post is now a separate
+file written in Markdown. Socrates then runs through those files and creates a
+site for me. I&rsquo;m still using django templates. What follows is the original
+post.</p>
+
+<h2 id="django">django</h2>
+
+<p>The site is a simple django blog. There is nothing really of note when it comes
+to django-specific coding. I run the django server locally when I&rsquo;m editing or
+adding articles. It provides a nice UI. It also lets me easily preview the site
+without generating anything.</p>
+
+<h2 id="static-generator">static generator</h2>
+
+<p>When I&rsquo;m happy with the state of the website and want to publish it, I run the
+static generator. It&rsquo;s contained in the <code>generate.py</code> file. It runs through
+all possible urls and for each one it generates a static file. Each file is a
+complete HTML page that the user&rsquo;s browser will download. The folder structure
+is as follows:</p>
+
+<pre><code class="language-bash">/2010/
+    /02/
+        post-one.html
+        post-two.html
+/2011/
+    ..
+        ..
+/about/
+    index.html
+index.html
+/page/
+    /2/
+        index.html
+/category/
+    /android/
+        index.html
+    /code/
+        index.html
+    ..
+</code></pre>
+
+<p>You get the idea. This way, with an <code>.htaccess</code> file we can have the
+following URL structure:</p>
+
+<pre><code class="language-bash">/2010/02/post-one/
+</code></pre>
+
+<h2 id="ftp-deploy-script">FTP deploy script</h2>
+
+<p>And the final piece is the <code>deploy.py</code> script. It looks at the deploy
+directory, and with a little help from git, it figures out what files were
+changed since the last deploy. It then takes those files and throws them up on
+the server. A normal shared hosting.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>You can check out the code on <a href="https://github.com/honza/honza.github.com">Github</a>.</p>
+
+</article>
+
+<p class="article_date date">
+  This article was first published on January 22, 2011.  As you can see, there
+  are no comments.  I invite you to email me with your comments, criticisms,
+  and other suggestions.  Even better, write your own article as a response.
+  Blogging is awesome.
+</p>
+
+
+    </div>
+
+</body>
+</html>

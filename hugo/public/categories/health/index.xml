@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Health on Honza Pokorny</title>
+    <link>https://honza.ca/categories/health/</link>
+    <description>Recent content in Health on Honza Pokorny</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 13 Dec 2011 13:00:00 -0400</lastBuildDate>
+    
+	<atom:link href="https://honza.ca/categories/health/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Programmers and sore eyes</title>
+      <link>https://honza.ca/2011/12/programmers-and-sore-eyes/</link>
+      <pubDate>Tue, 13 Dec 2011 13:00:00 -0400</pubDate>
+      
+      <guid>https://honza.ca/2011/12/programmers-and-sore-eyes/</guid>
+      <description>Under normal circumstances, the human eye should blink about once every 5 seconds. When you stare at an LCD screen all day long, the blink interval gets larger. As a result, your eyes become dry and sore. This is further worsened by coffee. Drinking lots of water and using over-the-counter drops will help. This is what my eye doctor told me yesterday.</description>
+    </item>
+    
+  </channel>
+</rss>

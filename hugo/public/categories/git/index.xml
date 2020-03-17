@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on Honza Pokorny</title>
+    <link>https://honza.ca/categories/git/</link>
+    <description>Recent content in Git on Honza Pokorny</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 May 2012 12:30:00 -0300</lastBuildDate>
+    
+	<atom:link href="https://honza.ca/categories/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How I use git</title>
+      <link>https://honza.ca/2012/05/how-i-use-git/</link>
+      <pubDate>Fri, 11 May 2012 12:30:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/2012/05/how-i-use-git/</guid>
+      <description>Recently, I have noticed that there are quite a few wrappers around git to give you a nicer interface to work with. The new commands promise to be easy to remember and make your life less frustrating. I find these a little silly because git on its own is a great tool. Here I&amp;rsquo;m going to describe how I use git to convince you (and myself) that it&amp;rsquo;s not that hard.</description>
+    </item>
+    
+    <item>
+      <title>The importance of git rebase</title>
+      <link>https://honza.ca/2011/05/the-importance-of-git-rebase/</link>
+      <pubDate>Sat, 14 May 2011 14:00:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/2011/05/the-importance-of-git-rebase/</guid>
+      <description>Git isn&amp;rsquo;t just something you have to put up with when working with other developers. Git is a wonderful tool that allows you to manage your code, its evolution and help you recover from mistakes should they arise. One of the things that people are intimidated by is git rebase.
+Let&amp;rsquo;s look at an example. You&amp;rsquo;re working on a team with two other developers. You have a blessed repository that sits on your company&amp;rsquo;s server.</description>
+    </item>
+    
+  </channel>
+</rss>

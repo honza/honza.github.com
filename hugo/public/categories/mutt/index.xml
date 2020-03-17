@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mutt on Honza Pokorny</title>
+    <link>https://honza.ca/categories/mutt/</link>
+    <description>Recent content in Mutt on Honza Pokorny</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 30 Oct 2012 06:28:00 -0300</lastBuildDate>
+    
+	<atom:link href="https://honza.ca/categories/mutt/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mutt sidebar labels</title>
+      <link>https://honza.ca/2012/10/mutt-sidebar-labels/</link>
+      <pubDate>Tue, 30 Oct 2012 06:28:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/2012/10/mutt-sidebar-labels/</guid>
+      <description>The sidebar in Mutt is useful if you have multiple email accounts and want to switch between them quickly. It shows you each inbox with a number of unread emails. I have 6 Gmail accounts plugged into my Mutt and here is what I used to see.
+INBOX (1) INBOX INBOX (2) INBOX (1) INBOX (7) INBOX  And I had to remember which one was which. Let&amp;rsquo;s say you have your mailboxes in ~/.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,76 @@
+<!doctype html lang="en">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Thoughts of an open source developer with a theology degree. Honza Pokorny is a web developer and an armchair theologian in Halifax, Canada" >
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>The importance of git rebase | Honza Pokorny</title>
+  <link href="https://fonts.googleapis.com/css?family=Karla:400,400i|Montserrat:700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://honza.cacss/index.css">
+  <link rel="alternate" type="application/rss+xml" href="" title="Honza Pokorny">
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-4330851-12']);
+        _gaq.push(['_trackPageview']);
+
+        (function(){
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+</head>
+<body>
+        <div id="banner" class="container">
+          <h1><a href="/">Honza Pokorny</a></h1>
+          <p><em>Thoughts of an open source developer with a theology degree</em></p>
+        </div>
+
+    <div id="wrap">
+
+<div class="single-header">
+  <h1>The importance of git rebase</h1>
+
+</div>
+
+<article>
+  <p>Git isn&rsquo;t just something you have to put up with when working with other
+developers. Git is a wonderful tool that allows you to manage your code, its
+evolution and help you recover from mistakes should they arise. One of the
+things that people are intimidated by is <code>git rebase</code>.</p>
+
+<p>Let&rsquo;s look at an example. You&rsquo;re working on a team with two other developers.
+You have a blessed repository that sits on your company&rsquo;s server. Everyone is
+working on the same project but on slightly different tasks. Everyone is
+working on the master branch. You write a bit of code here and there, you
+commit a bunch of times and then it&rsquo;s time to share your code with the rest of
+the team by pushing it up to the shared repository.</p>
+
+<p>You run <code>git push</code> but receive an error saying that there are changes on the
+server and your commit cannot be fast-forwarded. No big deal, right? You run
+<code>git pull</code> to download the changes that you don&rsquo;t have and automatically
+merge your changes in. Then you can <code>git push</code> again and it will work just
+fine.</p>
+
+<p>The problem is that it makes the history of your project messy.</p>
+
+<p>#+BEGIN_SRC console</p>
+
+</article>
+
+<p class="article_date date">
+  This article was first published on May 14, 2011.  As you can see, there
+  are no comments.  I invite you to email me with your comments, criticisms,
+  and other suggestions.  Even better, write your own article as a response.
+  Blogging is awesome.
+</p>
+
+
+    </div>
+
+</body>
+</html>

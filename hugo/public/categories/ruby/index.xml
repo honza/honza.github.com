@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ruby on Honza Pokorny</title>
+    <link>https://honza.ca/categories/ruby/</link>
+    <description>Recent content in Ruby on Honza Pokorny</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 20 Jun 2011 20:20:00 -0300</lastBuildDate>
+    
+	<atom:link href="https://honza.ca/categories/ruby/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Why I don&#39;t like the Ruby community</title>
+      <link>https://honza.ca/2011/06/why-i-dont-like-the-ruby-community/</link>
+      <pubDate>Mon, 20 Jun 2011 20:20:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/2011/06/why-i-dont-like-the-ruby-community/</guid>
+      <description>I write Python and Javascript code. I use Django and jQuery. And I cringe every time I have to run gem install x. I only have a limited understanding of Ruby and hardly any of Ruby on Rails. It seems disorganized to me and hard to process. All this is fine &amp;ndash; I don&amp;rsquo;t have to use any of it if I don&amp;rsquo;t like it, right?
+I always knew there was something wrong with the way Ruby works.</description>
+    </item>
+    
+  </channel>
+</rss>

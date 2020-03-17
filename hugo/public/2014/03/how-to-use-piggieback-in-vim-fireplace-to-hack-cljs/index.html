@@ -1,0 +1,97 @@
+<!doctype html lang="en">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Thoughts of an open source developer with a theology degree. Honza Pokorny is a web developer and an armchair theologian in Halifax, Canada" >
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>How to use piggieback in vim-fireplace to hack cljs | Honza Pokorny</title>
+  <link href="https://fonts.googleapis.com/css?family=Karla:400,400i|Montserrat:700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://honza.cacss/index.css">
+  <link rel="alternate" type="application/rss+xml" href="" title="Honza Pokorny">
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-4330851-12']);
+        _gaq.push(['_trackPageview']);
+
+        (function(){
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+</head>
+<body>
+        <div id="banner" class="container">
+          <h1><a href="/">Honza Pokorny</a></h1>
+          <p><em>Thoughts of an open source developer with a theology degree</em></p>
+        </div>
+
+    <div id="wrap">
+
+<div class="single-header">
+  <h1>How to use piggieback in vim-fireplace to hack cljs</h1>
+
+</div>
+
+<article>
+  <p>(That&rsquo;s quite a title, isn&rsquo;t it?)</p>
+
+<p>If you&rsquo;re using vim to write Clojure code, chances are that you&rsquo;re using Tim
+Pope&rsquo;s vim-fireplace plugin.  It&rsquo;s really great.  It stars an nREPL session in
+the background for you and lets you evaluate a form inside of vim.  It&rsquo;s super
+fast because it keeps the session around and it&rsquo;s one of my favorite things
+about writing Clojure.</p>
+
+<p>Recently, vim-fireplace received support for <a href="https://github.com/cemerick/piggieback">piggieback</a>.  Piggieback is a
+layer on top of nREPL that gives you support for ClojureScript.  This is really
+great because it gives you the ability to evaluate ClojureScript code in vim
+just like your normal Clojure code.</p>
+
+<p>Alright, here is how to set it up:</p>
+
+<p><code>project.clj</code></p>
+
+<pre><code class="language-clojure">(defproject pig &quot;0.1.0-SNAPSHOT&quot;
+  :description &quot;FIXME: write this!&quot;
+  :url &quot;http://example.com/FIXME&quot;
+
+  :dependencies [[org.clojure/clojure &quot;1.5.1&quot;]
+                 [com.cemerick/piggieback &quot;0.1.3&quot;]]
+
+  :plugins [[lein-cljsbuild &quot;1.0.2&quot;]]
+  :repl-options {:nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
+
+  :source-paths [&quot;src&quot;]
+
+  :cljsbuild {
+    :builds [{:source-paths [&quot;src&quot;]
+              :compiler {
+                :target :nodejs
+                :optimizations :simple}}]})
+</code></pre>
+
+<p>Pretty standard stuff.  We&rsquo;re using the lein-cljsbuild plugin for automatic
+compilation, we set up the source path and a nodejs compile target.</p>
+
+<p>Now you simply open a <code>.cljs</code> file and you can do your usual vim-fireplace
+magic.  The first <code>cpr</code> (reload current buffer) command will connect to an
+nREPL instance and initialize the piggieback wrapper.</p>
+
+</article>
+
+<p class="article_date date">
+  This article was first published on March 20, 2014.  As you can see, there
+  are no comments.  I invite you to email me with your comments, criticisms,
+  and other suggestions.  Even better, write your own article as a response.
+  Blogging is awesome.
+</p>
+
+
+    </div>
+
+</body>
+</html>

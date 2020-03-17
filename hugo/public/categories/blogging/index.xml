@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogging on Honza Pokorny</title>
+    <link>https://honza.ca/categories/blogging/</link>
+    <description>Recent content in Blogging on Honza Pokorny</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 04 Jul 2011 10:00:00 -0300</lastBuildDate>
+    
+	<atom:link href="https://honza.ca/categories/blogging/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>What is a blog?</title>
+      <link>https://honza.ca/2011/07/what-is-a-blog/</link>
+      <pubDate>Mon, 04 Jul 2011 10:00:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/2011/07/what-is-a-blog/</guid>
+      <description>I have noticed that many people don&amp;rsquo;t know what a blog is, so I would like to talk about that briefly.
+ A blog is a type of website or part of a website. Blogs are usually maintained by an individual with regular entries. (&amp;hellip;) Entries are commonly displayed in reverse-chronological order. Blog can also be used as a verb, meaning to maintain or add content to a blog. Source: Wikipedia</description>
+    </item>
+    
+  </channel>
+</rss>
