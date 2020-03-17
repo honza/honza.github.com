@@ -1,4 +1,4 @@
-baseURL = "https://honza.ca"
+baseURL = "https://honza.ca/"
 languageCode = "en-us"
 title = "Honza Pokorny"
 theme = "contrast-hugo"
