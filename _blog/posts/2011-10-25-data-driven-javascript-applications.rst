@@ -14,7 +14,7 @@ that I like.
 I want to talk about data-driven applications. What I mean is that everything
 you do somehow manipulates or shows specific data. Let me describe what I mean
 by a way of example. I have been working on a piece of photo gallery software
-called `rembrant`_. The interface for actually organizing your images into
+called ``rembrant``. The interface for actually organizing your images into
 albums is very client-heavy.
 
 The user interface is similar to that of iPhoto. The larger panel displays a
@@ -105,20 +105,5 @@ accordingly.
 The nice thing is that you don't have to worry about changing classes, binding
 data to DOM elements, attaching click handlers, making AJAX requests, none of
 this. The difficult part about this approach is deciding what your elementary
-data is and how you should get it. In the case of `rembrant`_ it was pretty
+data is and how you should get it. In the case of ``rembrant`` it was pretty
 simple.
-
-Further Reading
----------------
-
-* `rembrant`_ for a real world implementation
-* `Backbone.js`_
-* `Spine.js`_
-* `Google Web Toolkit`_
-* `Cappuccino`_
-
-.. _rembrant: https://github.com/honza/rembrant
-.. _Backbone.js: 
-.. _Spine.js:
-.. _Google Web Toolkit:
-.. _Cappuccino: 
