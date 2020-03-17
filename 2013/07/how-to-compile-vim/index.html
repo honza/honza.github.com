@@ -1,0 +1,86 @@
+<!doctype html lang="en">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Thoughts of an open source developer with a theology degree. Honza Pokorny is a web developer and an armchair theologian in Halifax, Canada" >
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>How to compile vim | Honza Pokorny</title>
+  <link href="https://fonts.googleapis.com/css?family=Karla:400,400i|Montserrat:700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://honza.cacss/index.css">
+  <link rel="alternate" type="application/rss+xml" href="" title="Honza Pokorny">
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-4330851-12']);
+        _gaq.push(['_trackPageview']);
+
+        (function(){
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+</head>
+<body>
+        <div id="banner" class="container">
+          <h1><a href="/">Honza Pokorny</a></h1>
+          <p><em>Thoughts of an open source developer with a theology degree</em></p>
+        </div>
+
+    <div id="wrap">
+
+<div class="single-header">
+  <h1>How to compile vim</h1>
+
+</div>
+
+<article>
+  <p>&hellip; from source when you&rsquo;re using the homebrew-provided Python.</p>
+
+<p>If you have installed Python via homebrew, your vim will compile fine but when
+a plugin tries to use Python to do some its work, vim will crash like this:</p>
+
+<p><img src="/images/vim-crash.png" alt="" />Not pretty.</p>
+
+<p>Apparently, this is because vim will use the first Python it can find which in
+our case the homebrew-provided one.  You can of course get a pre-compiled
+version and ignore this.  But I like to use the latest version of vim and with
+the 7.4 beta, I have been doing that a lot lately&hellip;</p>
+
+<p>So, what is one to do?  We have to fix the <code>PATH</code>.  Here is the script that I
+use to recompile vim.  This goes in the root of the vim project.</p>
+
+<pre><code class="language-bash">export PATH=/bin:/usr/sbin:/sbin:/usr/bin
+
+./configure \
+        --enable-perlinterp \
+        --enable-pythoninterp \
+        --enable-rubyinterp \
+        --enable-cscope \
+        --with-features=huge
+
+make
+</code></pre>
+
+<p>There and vim is now compiled properly with Python support that won&rsquo;t make you
+cry.</p>
+
+<p>Thanks to Steve Losh for pointing me in the right direction on this.</p>
+
+</article>
+
+<p class="article_date date">
+  This article was first published on July 18, 2013.  As you can see, there
+  are no comments.  I invite you to email me with your comments, criticisms,
+  and other suggestions.  Even better, write your own article as a response.
+  Blogging is awesome.
+</p>
+
+
+    </div>
+
+</body>
+</html>

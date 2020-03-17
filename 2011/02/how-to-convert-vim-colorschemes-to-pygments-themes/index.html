@@ -1,0 +1,96 @@
+<!doctype html lang="en">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Thoughts of an open source developer with a theology degree. Honza Pokorny is a web developer and an armchair theologian in Halifax, Canada" >
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>How To Convert Vim Colorschemes To Pygments Themes | Honza Pokorny</title>
+  <link href="https://fonts.googleapis.com/css?family=Karla:400,400i|Montserrat:700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://honza.cacss/index.css">
+  <link rel="alternate" type="application/rss+xml" href="" title="Honza Pokorny">
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-4330851-12']);
+        _gaq.push(['_trackPageview']);
+
+        (function(){
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+</head>
+<body>
+        <div id="banner" class="container">
+          <h1><a href="/">Honza Pokorny</a></h1>
+          <p><em>Thoughts of an open source developer with a theology degree</em></p>
+        </div>
+
+    <div id="wrap">
+
+<div class="single-header">
+  <h1>How To Convert Vim Colorschemes To Pygments Themes</h1>
+
+</div>
+
+<article>
+  <p>Recently, I have grown to love <a href="http://pygments.org">Pygments</a>. It gives you syntax
+highlighting in the browser without heavy Javascript files. It supports just
+about any programming language on the planet and it&rsquo;s just plain awesome. The
+only thing that it&rsquo;s lacking is good color schemes. It comes with a dozen
+themes that will certainly do the trick, but if you&rsquo;re used to looking at
+pretty code in your favorite editor, the code examples on your website will
+look a little dull.</p>
+
+<p>I&rsquo;m going to go out on a limb here and assume you have a favorite colorscheme.
+I found a script that will turn a vim colorscheme into a Pygments theme. It
+didn&rsquo;t work perfectly out of the box so I patched it. You can download it
+<a href="https://github.com/honza/vim2pygments">here</a>. Copy your vim colorscheme to the same directory as the script and run
+it like so:</p>
+
+<pre><code class="language-console">$ python vim2pygments.py molokai.vim &gt; molokai.py
+</code></pre>
+
+<p>This will produce a Python file containing a simple style class that Pygments
+can use. Next step is to download Pygments:</p>
+
+<pre><code class="language-console">$ hg clone http://dev.pocoo.org/hg/pygments-main pygments
+</code></pre>
+
+<p>And then you will install your new theme:</p>
+
+<pre><code class="language-console">$ cd pygments
+$ cp ../molokai.py pygments/styles/molokai.py
+</code></pre>
+
+<p>OK, now for the fun part. We will use Pygments to generate the CSS file that
+you will then use on your website:</p>
+
+<pre><code class="language-console">$ ./pygmentize -S molokai -f html -a .highlight &gt; molokai.css
+</code></pre>
+
+<p>If you are a TextMate user, you might be able to get your favorite theme done,
+too. A lot of popular Vim colorschemes are inspired by TextMate. Sunburst,
+mustang and idle fingers come to mind. Just find a Vim version and you&rsquo;re good
+to go.</p>
+
+<p>That&rsquo;s it!</p>
+
+</article>
+
+<p class="article_date date">
+  This article was first published on February 25, 2011.  As you can see, there
+  are no comments.  I invite you to email me with your comments, criticisms,
+  and other suggestions.  Even better, write your own article as a response.
+  Blogging is awesome.
+</p>
+
+
+    </div>
+
+</body>
+</html>

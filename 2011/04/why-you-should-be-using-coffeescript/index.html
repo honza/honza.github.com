@@ -1,0 +1,150 @@
+<!doctype html lang="en">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Thoughts of an open source developer with a theology degree. Honza Pokorny is a web developer and an armchair theologian in Halifax, Canada" >
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Why you should be using CoffeeScript | Honza Pokorny</title>
+  <link href="https://fonts.googleapis.com/css?family=Karla:400,400i|Montserrat:700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://honza.cacss/index.css">
+  <link rel="alternate" type="application/rss+xml" href="" title="Honza Pokorny">
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-4330851-12']);
+        _gaq.push(['_trackPageview']);
+
+        (function(){
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+</head>
+<body>
+        <div id="banner" class="container">
+          <h1><a href="/">Honza Pokorny</a></h1>
+          <p><em>Thoughts of an open source developer with a theology degree</em></p>
+        </div>
+
+    <div id="wrap">
+
+<div class="single-header">
+  <h1>Why you should be using CoffeeScript</h1>
+
+</div>
+
+<article>
+  
+
+<p>I&rsquo;m sure you&rsquo;ve heard of CoffeeScript. Everyone is talking about it, it seems.
+It&rsquo;s a beautiful language with a simple syntax that you use to write
+Javascript. CoffeeScript compiles to Javascript. Here is why I think you should
+be using it:</p>
+
+<h2 id="readability">Readability</h2>
+
+<p>CoffeeScript is designed to be beautiful and readable. There is no unnecessary
+fluff. Less syntax boilerplate, fewer mistakes. Compare:</p>
+
+<pre><code class="language-javascript">// regular javascript
+var author = &quot;William Shakespeare&quot;;
+// coffeescript
+author = &quot;William Shakespeare&quot;
+</code></pre>
+
+<p>Indentation is also important in CoffeeScript - just like in Python. This makes
+closures and blocks easier to spot.</p>
+
+<h2 id="valid-code">Valid Code</h2>
+
+<p>There are many different coding styles when it comes to writing Javascript. The
+good thing about CoffeeScript is that the Javascript it generates is valid - it
+passes <a href="http://www.javascriptlint.com/">Javascript Lint</a>. And if your code isn&rsquo;t valid CoffeeScript, it
+won&rsquo;t compile. It&rsquo;s a win-win. This is perhaps my favorite feature.</p>
+
+<h2 id="easy-class-inheritance">Easy class inheritance</h2>
+
+<p>This is just great. It reminds me of Python and Ruby:</p>
+
+<pre><code class="language-coffeescript">class Animal
+    constructor: (@name) -&gt;
+
+    move: (meters) -&gt;
+        alert @name + &quot; moved #{meters}m.&quot;
+
+class Dog extends Animal
+    move: -&gt;
+        alert &quot;Whoof...&quot;
+        super 5
+</code></pre>
+
+<p>Compiles to this in Javascript:</p>
+
+<pre><code class="language-javascript">var Animal, Dog;
+var __hasProp = Object.prototype.hasOwnProperty, __extends = function(child, parent) {
+    for (var key in parent) {
+        if (__hasProp.call(parent, key)) child[key] = parent[key];
+    }
+    function ctor() { this.constructor = child; }
+    ctor.prototype = parent.prototype;
+    child.prototype = new ctor;
+    child.__super__ = parent.prototype;
+    return child;
+};
+Animal = (function() {
+    function Animal(name) {
+        this.name = name;
+    }
+    Animal.prototype.move = function(meters) {
+        return alert(this.name + (&quot; moved &quot; + meters + &quot;m.&quot;));
+    };
+    return Animal;
+})();
+Dog = (function() {
+    function Dog() {
+        Dog.__super__.constructor.apply(this, arguments);
+    }
+    __extends(Dog, Animal);
+    Dog.prototype.move = function() {
+        alert(&quot;Whoof...&quot;);
+        return
+        Dog.__super__.move.call(this, 5);
+    };
+    return Dog;
+})();
+</code></pre>
+
+<p>Quite a difference, huh? Think how much time you&rsquo;d need to understand each
+version and make any changes required. In my mind, this encourages better code
+organization and structure.</p>
+
+<h2 id="node-dot-js-awesomeness">Node.js awesomeness</h2>
+
+<p>CoffeeScript comes with a Node.js utility, <code>coffee</code>. You can write your
+Node.js code in CoffeeScript and run it with <code>coffee file.js</code>. The utility
+wraps the CoffeeScript compiler and the <code>node</code> executable. This way, you can
+whip up a quick server in no time. Genius.</p>
+
+<h2 id="easy-debugging">Easy debugging</h2>
+
+<p>With tools like <a href="http://code.google.com/webtoolkit/">Google Web Toolkit</a>, your code compiles to <em>minified</em>
+javascript. Non-minified code is obviously easier (possible?) to read and debug.</p>
+
+</article>
+
+<p class="article_date date">
+  This article was first published on April 11, 2011.  As you can see, there
+  are no comments.  I invite you to email me with your comments, criticisms,
+  and other suggestions.  Even better, write your own article as a response.
+  Blogging is awesome.
+</p>
+
+
+    </div>
+
+</body>
+</html>

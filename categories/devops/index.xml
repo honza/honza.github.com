@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Devops on Honza Pokorny</title>
+    <link>https://honza.ca/categories/devops/</link>
+    <description>Recent content in Devops on Honza Pokorny</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Dec 2013 14:55:00 -0400</lastBuildDate>
+    
+	<atom:link href="https://honza.ca/categories/devops/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Masterless Saltstack</title>
+      <link>https://honza.ca/2013/12/masterless-saltstack/</link>
+      <pubDate>Wed, 11 Dec 2013 14:55:00 -0400</pubDate>
+      
+      <guid>https://honza.ca/2013/12/masterless-saltstack/</guid>
+      <description>This is a simple guide on how to use Saltstack, the configuration manager, in masterless mode. In most scenarios, you will use a Saltstack master to control many minions. Saltstack contains a lot of utilities to check the state of minions, gather information about them, etc.
+However, if you are working on a small, single-server application, Saltstack&amp;rsquo;s master-minion setup might be overkill. You can indeed use a single minion.</description>
+    </item>
+    
+    <item>
+      <title>Why you should use Heroku for your next start-up</title>
+      <link>https://honza.ca/2012/05/why-you-should-use-heroku-for-your-next-start-up/</link>
+      <pubDate>Mon, 21 May 2012 16:43:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/2012/05/why-you-should-use-heroku-for-your-next-start-up/</guid>
+      <description>You are a ninja-rockstar developer with a billion dollar idea. You write Ruby and Javascript. You like BDD, responsive design, HTML5 and node.js. You are really good at UX and quickly producing a prototype. You have been working on your app for a few months.
+Now it&amp;rsquo;s time to deploy your app.
+Because you are a hot new start-up, you will of course use AWS. You spend a few hours trying to figure out how many of which instance type you will need.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Django on Honza Pokorny</title>
+    <link>https://honza.ca/categories/django/</link>
+    <description>Recent content in Django on Honza Pokorny</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 04 Feb 2012 20:00:00 -0400</lastBuildDate>
+    
+	<atom:link href="https://honza.ca/categories/django/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How not to depend on PyPI</title>
+      <link>https://honza.ca/2012/02/how-not-to-depend-on-pypi/</link>
+      <pubDate>Sat, 04 Feb 2012 20:00:00 -0400</pubDate>
+      
+      <guid>https://honza.ca/2012/02/how-not-to-depend-on-pypi/</guid>
+      <description>When deploying a Django application, you often use a requirements.txt file that contains a list of the application&amp;rsquo;s dependencies. During deployment, your provisioning system will pip install all of those to make sure that your application runs as desired.
+The format of a typical requirements.txt files isn&amp;rsquo;t unlike the following
+django==1.3.1 psycopg2==2.4.4 Fabric==1.3.3 ...  By default, pip will go to the Python Package Index (PyPI) and look for that package there.</description>
+    </item>
+    
+    <item>
+      <title>Upgrading your Django media files to use a CDN</title>
+      <link>https://honza.ca/2012/01/upgrading-your-django-media-files-to-use-a-cdn/</link>
+      <pubDate>Tue, 17 Jan 2012 08:45:00 -0400</pubDate>
+      
+      <guid>https://honza.ca/2012/01/upgrading-your-django-media-files-to-use-a-cdn/</guid>
+      <description>I was using django-filebrowser on a project and my Rackspace VM quickly ran out of disk space. Since the site isn&amp;rsquo;t getting much traffic at all, I didn&amp;rsquo;t want to pay extra for a bigger VM. Instead, I decided to move all of the user uploaded media to Rackspace Cloudfiles. It&amp;rsquo;s super cheap and they have a nice API.
+Now, the challenge was to make the transition from a filebrowser-based system.</description>
+    </item>
+    
+    <item>
+      <title>Using Chef with small Django apps</title>
+      <link>https://honza.ca/2011/09/using-chef-with-small-django-apps/</link>
+      <pubDate>Tue, 20 Sep 2011 20:00:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/2011/09/using-chef-with-small-django-apps/</guid>
+      <description>This year at DjangoCon, it seemed like everybody was talking about automatic deployments and namely Chef. After coming home from the conference, I spent a considerable amount of time learning chef and thinking about how it can be best used with small to medium size Django apps. In this post, I will walk you through how Chef works and how it can help you make awesome web apps.
+When I say small apps, I mean single-server deployments.</description>
+    </item>
+    
+    <item>
+      <title>DjangoCon 2011 Take-Aways</title>
+      <link>https://honza.ca/2011/09/djangocon-2011-take-aways/</link>
+      <pubDate>Sat, 10 Sep 2011 21:30:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/2011/09/djangocon-2011-take-aways/</guid>
+      <description>My employer, SheepDogInc, sent me and a colleague of mine to DjangoCon 2011. It was my first developer conference and I had a blast. Here a few quick points about what the conference has clarified for me.
+Deploying Django Despite the Django official documentation&amp;rsquo;s recommendation to use Apache and mod_wsgi, most people seem to deploy Django with nginx and gunicorn. This has been a pleasant surprise to me because I like it but though that it was too simple (or less robust than Apache).</description>
+    </item>
+    
+    <item>
+      <title>Deploying Django with nginx and gunicorn</title>
+      <link>https://honza.ca/2011/05/deploying-django-with-nginx-and-gunicorn/</link>
+      <pubDate>Mon, 30 May 2011 09:15:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/2011/05/deploying-django-with-nginx-and-gunicorn/</guid>
+      <description>The amazing Django documentation recommends that you use Apache and modwsgi to deploy your webapp. While this is certainly not bad advice, you may not want to use Apache after all. Apache is a beast that eats up a lot of memory, is kind of slow and can&amp;rsquo;t handle as much traffic. As a fun alternative, I would like to talk about deploying Django on nginx using the gunicorn web server.</description>
+    </item>
+    
+    <item>
+      <title>Virtual machines for Django developers</title>
+      <link>https://honza.ca/2011/04/virtual-machines-for-django-developers/</link>
+      <pubDate>Tue, 19 Apr 2011 12:00:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/2011/04/virtual-machines-for-django-developers/</guid>
+      <description>Vagrant is a tool for building and distributing virtualized development environments. It&amp;rsquo;s based on VirtualBox VMs. This article describes how this Ruby tool can be useful to Django developers.
+Why vagrant? The modern web developer works on many different projects. Each project has a unique set of requirements, dependencies and package versions needed for that project to succeed. Keeping all of these libraries in check is difficult. virtualenv is a tool that creates isolated environments for Python packages.</description>
+    </item>
+    
+  </channel>
+</rss>

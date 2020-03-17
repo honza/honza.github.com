@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Virtualenv on Honza Pokorny</title>
+    <link>https://honza.ca/categories/virtualenv/</link>
+    <description>Recent content in Virtualenv on Honza Pokorny</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 10 Jun 2011 11:00:00 -0300</lastBuildDate>
+    
+	<atom:link href="https://honza.ca/categories/virtualenv/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Install Ruby gems into virtualenv</title>
+      <link>https://honza.ca/2011/06/install-ruby-gems-into-virtualenv/</link>
+      <pubDate>Fri, 10 Jun 2011 11:00:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/2011/06/install-ruby-gems-into-virtualenv/</guid>
+      <description>You are a Python developer and every time you have to install a Ruby gem you throw up in your mouth a little. Wouldn&amp;rsquo;t it be nice if you could install Ruby gems into your virtualenv? Yeah, it would.
+Stick this in your virtualenv&amp;rsquo;s postactivate script:
+export GEM_HOME=&amp;quot;$VIRTUAL_ENV/gems&amp;quot; export GEM_PATH=&amp;quot;&amp;quot; export PATH=$PATH:&amp;quot;$GEM_HOME/bin&amp;quot;  That&amp;rsquo;s it! You&amp;rsquo;re welcome. :)
+Credit Give credit where credit is due. I stole this idea from Idan Gazit and made it better.</description>
+    </item>
+    
+  </channel>
+</rss>

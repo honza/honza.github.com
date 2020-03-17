@@ -1,0 +1,98 @@
+<!doctype html lang="en">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Thoughts of an open source developer with a theology degree. Honza Pokorny is a web developer and an armchair theologian in Halifax, Canada" >
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Android Development disappointments | Honza Pokorny</title>
+  <link href="https://fonts.googleapis.com/css?family=Karla:400,400i|Montserrat:700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://honza.cacss/index.css">
+  <link rel="alternate" type="application/rss+xml" href="" title="Honza Pokorny">
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-4330851-12']);
+        _gaq.push(['_trackPageview']);
+
+        (function(){
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+</head>
+<body>
+        <div id="banner" class="container">
+          <h1><a href="/">Honza Pokorny</a></h1>
+          <p><em>Thoughts of an open source developer with a theology degree</em></p>
+        </div>
+
+    <div id="wrap">
+
+<div class="single-header">
+  <h1>Android Development disappointments</h1>
+
+</div>
+
+<article>
+  <p>The Android platform is the latest buzz in the smartphone world. I have
+previously written on why I prefer Android over iPhone. In this article, we
+will talk a little bit about what it&rsquo;s like to develop native applications for
+Android.</p>
+
+<p>Android SDK uses Java. I know Java but it&rsquo;s not my favorite. After working with
+Python and Django for months, going back to Java isn&rsquo;t exactly easy. But it&rsquo;s
+not undoable either.</p>
+
+<p>Being from the Czech republic, I thought I would try to target the Czech
+market. Android is starting to get really big over there. I decided to write a
+simple news reader application for one of the leading news portals called iDnes
+(&ldquo;eToday&rdquo;). The application downloads an RSS feed, parses it and displays a
+list of news articles to the user. The user has the option to choose their
+topic, and to manually refresh the application to get new articles.</p>
+
+<p>Not very complicated at all. It took me a few evenings to put it together. The
+development process was quite fun. The Android SDK integration into Eclipse is
+awesome. It tells you when you have to implement additional methods, or
+automatically adds your imports when it&rsquo;s needed. As part of the SDK, you get a
+simulator for all kinds of versions of Android (from 1.5 to 2.2). This way, you
+can test your application on various versions of the API.</p>
+
+<p>I read all the articles on packaging and distributing. I made sure my
+application was backwards compatible. I tried to follow their guidelines for
+app icons as much as I could (well, I suck at graphic design). I exported the
+applications, signed it, aligned it and uploaded it to the Android Market.</p>
+
+<p>I was excited. I did it. I published my first Android applications. But then
+came the disappointment.</p>
+
+<p>My app started to get a lot of bad comments in the market. People complained
+that the application didn&rsquo;t do anything, and they couldn&rsquo;t read any news, etc.
+I didn&rsquo;t come across any errors like that during testing. If the applications
+doesn&rsquo;t have internet, it will tell the user it doesn&rsquo;t have internet. If there
+is a problem, it will let them know.</p>
+
+<p>As a developer and author, I feel there is no way for me to receive helpful
+information about the errors the users are getting when they are interacting
+with the application.</p>
+
+<p>OK, that&rsquo;s it. If you have any comments or suggestions, do let me know in the
+comments.</p>
+
+</article>
+
+<p class="article_date date">
+  This article was first published on January 18, 2011.  As you can see, there
+  are no comments.  I invite you to email me with your comments, criticisms,
+  and other suggestions.  Even better, write your own article as a response.
+  Blogging is awesome.
+</p>
+
+
+    </div>
+
+</body>
+</html>

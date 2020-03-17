@@ -1,0 +1,181 @@
+<!doctype html lang="en">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Thoughts of an open source developer with a theology degree. Honza Pokorny is a web developer and an armchair theologian in Halifax, Canada" >
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Virtual machines for Django developers | Honza Pokorny</title>
+  <link href="https://fonts.googleapis.com/css?family=Karla:400,400i|Montserrat:700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://honza.cacss/index.css">
+  <link rel="alternate" type="application/rss+xml" href="" title="Honza Pokorny">
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-4330851-12']);
+        _gaq.push(['_trackPageview']);
+
+        (function(){
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+</head>
+<body>
+        <div id="banner" class="container">
+          <h1><a href="/">Honza Pokorny</a></h1>
+          <p><em>Thoughts of an open source developer with a theology degree</em></p>
+        </div>
+
+    <div id="wrap">
+
+<div class="single-header">
+  <h1>Virtual machines for Django developers</h1>
+
+</div>
+
+<article>
+  
+
+<p><a href="http://vagrantup.com">Vagrant</a> is a tool for building and distributing virtualized
+development environments. It&rsquo;s based on VirtualBox VMs. This article describes
+how this Ruby tool can be useful to Django developers.</p>
+
+<h2 id="why-vagrant">Why vagrant?</h2>
+
+<p>The modern web developer works on many different projects. Each project has a
+unique set of requirements, dependencies and package versions needed for that
+project to succeed. Keeping all of these libraries in check is difficult.
+<code>virtualenv</code> is a tool that creates isolated environments for Python
+packages. Vagrant takes this approach a step further. You can virtualize the
+entire server.</p>
+
+<p>Just as each Django project will have a <code>requirements.txt</code> file which lists
+the project&rsquo;s <code>pip</code> dependencies, your project will now have a
+<code>Vagrantfile</code> and a <code>cookbooks</code> directory. The <code>Vagrantfile</code> describes
+how the VM should be created and the <code>cookbooks</code> directory contains
+instructions on what packages to install. For example, in the <code>Vagrantfile</code>
+you will specify a VM which runs an Ubuntu server with 256MB of RAM and your
+<code>cookbooks</code> directory will tell vagrant to install apache2, git, postgresql
+and memcached.</p>
+
+<p>Getting started with vagrant is simple.</p>
+
+<h2 id="getting-started">Getting started</h2>
+
+<p>vagrant is distributed as a Ruby gem and you can install it like so:</p>
+
+<pre><code class="language-console">gem install vagrant
+</code></pre>
+
+<p>Next, you will download a base box that I made for you. It&rsquo;s an Ubuntu 10.10
+server with minimal configuration.</p>
+
+<pre><code class="language-console">vagrant box add vagrant-ubuntu http://honza.ca/downloads/vagrant-ubuntu.box
+</code></pre>
+
+<p>This will take a while so you may want to get a beverage.</p>
+
+<p>Next, you will create a directory that will hold your project and initialize it
+for vagrant.</p>
+
+<pre><code class="language-console">cd ~/Code
+mkdir webapp
+cd webapp
+vagrant init vagrant-ubuntu
+</code></pre>
+
+<p>This will create a <code>Vagrantfile</code> in that directory.</p>
+
+<p>And then run</p>
+
+<pre><code class="language-console">vagrant up
+</code></pre>
+
+<p>to actually build and boot the environment. This might take a few minutes.</p>
+
+<p>After this, your environment is running. Your environment is a headless
+virtualbox instance.  You can <code>ssh</code> into the box by running:</p>
+
+<pre><code class="language-console">vagrant ssh
+</code></pre>
+
+<p>You will notice that your project directory (<code>webapp</code>) is mounted inside the
+environment under <code>/vagrant</code>. Any changes to either directory will affect the
+other.</p>
+
+<p>You can shutdown your environment with</p>
+
+<pre><code class="language-console">vagrant halt
+</code></pre>
+
+<p>Destroy it with:</p>
+
+<pre><code class="language-console">vagrant destroy
+</code></pre>
+
+<h2 id="provisioning">Provisioning</h2>
+
+<p>Next, you will install some packages into the VM. You will install some common
+Django packages: PostreSQL, Apache, WSGI, memcached and git.</p>
+
+<pre><code class="language-console">cd ~/Code/webapp
+git clone git@github.com:honza/cookbooks.git
+</code></pre>
+
+<p>This downloads all kinds of cookbooks ready for our use. We will create a
+custom cookbook inside that directory where we will define what packages we
+want:</p>
+
+<pre><code class="language-console">cd cookbooks
+mkdir webapp
+cd webapp
+mkdir recipes
+touch recipes/default.rb
+</code></pre>
+
+<p>Now open up the <code>default.rb</code> file and enter the following:</p>
+
+<pre><code class="language-ruby">require_recipe &quot;postgresql::server&quot;
+require_recipe &quot;apache2&quot;
+include_recipe &quot;apache2::#{node[:django][:web_server]}&quot;
+require_recipe &quot;git&quot;
+require_recipe &quot;memcached&quot;
+</code></pre>
+
+<p>And modify your <code>Vagrantfile</code> to use the cookbooks:</p>
+
+<pre><code class="language-ruby">Vagrant::Config.run do |config|
+  config.vm.box = &quot;vagrant-ubuntu&quot;
+    config.vm.provision :chef_solo do |chef|
+      chef.cookbooks_path = &quot;cookbooks&quot;
+      chef.add_recipe &quot;webapp&quot;
+    end
+end
+</code></pre>
+
+<p>For the configuration changes to take effect, you need to run:</p>
+
+<pre><code class="language-console">vagrant reload
+</code></pre>
+
+<p>OK, that concludes our quick introduction to Vagrant. I hope you see how this
+can be beneficial and how simple it is to get started.</p>
+
+</article>
+
+<p class="article_date date">
+  This article was first published on April 19, 2011.  As you can see, there
+  are no comments.  I invite you to email me with your comments, criticisms,
+  and other suggestions.  Even better, write your own article as a response.
+  Blogging is awesome.
+</p>
+
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Passwords on Honza Pokorny</title>
+    <link>https://honza.ca/categories/passwords/</link>
+    <description>Recent content in Passwords on Honza Pokorny</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 04 Dec 2019 10:14:00 -0400</lastBuildDate>
+    
+	<atom:link href="https://honza.ca/categories/passwords/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Password Management For a More Civilized Age</title>
+      <link>https://honza.ca/2019/12/password-management-for-a-more-civilized-age/</link>
+      <pubDate>Wed, 04 Dec 2019 10:14:00 -0400</pubDate>
+      
+      <guid>https://honza.ca/2019/12/password-management-for-a-more-civilized-age/</guid>
+      <description>It is a universally acknowledged truth that remembering your passwords is a bad idea. The modern Internet user will inevitably be required to register for many services, and websites, and inventing a new password for each one will quickly overwhelm him or her. The burden of memorizing one&amp;rsquo;s passwords is too great to bear. Unless, of course, we grant that passwords may be reused&amp;mdash;that we shall never do. Once we are satisfied that keeping all of one&amp;rsquo;s passwords in one&amp;rsquo;s head is a bad idea, we shall proceed to delegating this task to computers.</description>
+    </item>
+    
+  </channel>
+</rss>

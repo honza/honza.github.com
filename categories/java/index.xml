@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on Honza Pokorny</title>
+    <link>https://honza.ca/categories/java/</link>
+    <description>Recent content in Java on Honza Pokorny</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 18 Jan 2011 18:23:00 -0400</lastBuildDate>
+    
+	<atom:link href="https://honza.ca/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Android Development disappointments</title>
+      <link>https://honza.ca/2011/01/android-development-disappointments/</link>
+      <pubDate>Tue, 18 Jan 2011 18:23:00 -0400</pubDate>
+      
+      <guid>https://honza.ca/2011/01/android-development-disappointments/</guid>
+      <description>The Android platform is the latest buzz in the smartphone world. I have previously written on why I prefer Android over iPhone. In this article, we will talk a little bit about what it&amp;rsquo;s like to develop native applications for Android.
+Android SDK uses Java. I know Java but it&amp;rsquo;s not my favorite. After working with Python and Django for months, going back to Java isn&amp;rsquo;t exactly easy. But it&amp;rsquo;s not undoable either.</description>
+    </item>
+    
+  </channel>
+</rss>

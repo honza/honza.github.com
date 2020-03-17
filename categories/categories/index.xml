@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Honza Pokorny</title>
+    <link>https://honza.ca/categories/categories/</link>
+    <description>Recent content in Categories on Honza Pokorny</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 21 May 2013 14:20:00 -0300</lastBuildDate>
+    
+	<atom:link href="https://honza.ca/categories/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Google plus adoption</title>
+      <link>https://honza.ca/2013/05/google-plus-adoption/</link>
+      <pubDate>Tue, 21 May 2013 14:20:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/2013/05/google-plus-adoption/</guid>
+      <description>Google+ has been the target of numerous jokes in the tech community. Many blogs claim that adoption has been minimal and that the product isn&amp;rsquo;t appealing to common users over alternatives such as Facebook.
+I have noticed quite the opposite is true. Many of my extended family in the Czech Republic have somewhat recently acquired new Android devices. One by one, they have added me to their circles on Google+. My stream is now full of pictures that my parents, aunts and uncles took with their phones.</description>
+    </item>
+    
+    <item>
+      <title>Software Engineering Interviews</title>
+      <link>https://honza.ca/2013/05/software-engineering-interviews/</link>
+      <pubDate>Thu, 09 May 2013 15:35:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/2013/05/software-engineering-interviews/</guid>
+      <description>If you find yourself interviewing for a software engineering position today, you can be 90 percent sure that you will be asked to solve some programming puzzles.
+We’ve all been there. You come to the office for an interview, spend a few minutes talking about the job and you, and then the inevitable hits: programming puzzles and quizzes. You are asked to solve nonsensical, irrelevant, theoretical problems on the spot while the interviewer waits.</description>
+    </item>
+    
+  </channel>
+</rss>
