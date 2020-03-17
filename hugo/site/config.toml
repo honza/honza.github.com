@@ -1,0 +1,6 @@
+baseURL = "https://honza.ca"
+languageCode = "en-us"
+title = "Honza Pokorny"
+theme = "contrast-hugo"
+[permalinks]
+  posts = "/:year/:month/:title"

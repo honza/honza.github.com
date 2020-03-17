@@ -1,0 +1,21 @@
+{{ define "main" }}
+
+<div id="content">
+  <h2>All articles</h2>
+  <div>
+    {{ range .Pages.GroupByDate "2006" }}
+      <h3>{{.Key}}</h3>
+      <ul class="post-list">
+        {{ range .Pages }}
+          <li>
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+            <abbr class="published">{{ .Date.Format "January 2, 2006" }}</abbr>
+          </li>
+        {{ end }}
+      </ul>
+    {{ end }}
+  </div>
+</div>
+
+{{ end }}
+

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on My New Hugo Site</title>
+    <link>http://example.org/posts/</link>
+    <description>Recent content in Posts on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 12 Jul 2017 17:05:38 -0400</lastBuildDate>
+    
+	<atom:link href="http://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Article</title>
+      <link>http://example.org/posts/twitter-success-story/</link>
+      <pubDate>Wed, 12 Jul 2017 17:05:38 -0400</pubDate>
+      
+      <guid>http://example.org/posts/twitter-success-story/</guid>
+      <description>Beginners often find Twitter very confusing and useless. I think it&amp;rsquo;s because they come to it with some preconceived ideas, and when Twitter doesn&amp;rsquo;t fit their model they get frustrated. This series is meant to show why Twitter is so useful and how it&amp;rsquo;s different from other social networks.
+My family and I live in the city of Aberdeen in Scotland. My wife is originally from Halifax, Canada where her parents still live.</description>
+    </item>
+    
+    <item>
+      <title>This is number two</title>
+      <link>http://example.org/posts/number/</link>
+      <pubDate>Sun, 12 Jan 2020 17:05:38 -0400</pubDate>
+      
+      <guid>http://example.org/posts/number/</guid>
+      <description>What up</description>
+    </item>
+    
+  </channel>
+</rss>
