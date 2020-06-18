@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>appengine on Honza Pokorny</title>
+    <link>https://honza.ca/categories/appengine/</link>
+    <description>Recent content in appengine on Honza Pokorny</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 07 Jul 2010 22:00:00 -0300</lastBuildDate>
+    
+	<atom:link href="https://honza.ca/categories/appengine/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Posterous-style Blogging On App Engine</title>
+      <link>https://honza.ca/2010/07/posterous-style-blogging-on-app-engine/</link>
+      <pubDate>Wed, 07 Jul 2010 22:00:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/2010/07/posterous-style-blogging-on-app-engine/</guid>
+      <description>&lt;p&gt;Posterous has been getting a lot of attention lately. Its simplicity appeals to
+a wide range of users and more and more users are switching over from other
+well-established blogging platforms such as Blogger or WordPress. In this
+article, we will have a look at how you can replicate the Posterous
+functionality on App Engine.&lt;/p&gt;
+&lt;p&gt;In case you don&amp;rsquo;t know what Posterous is, it&amp;rsquo;s very simple. It&amp;rsquo;s a blogging
+tool like Google&amp;rsquo;s Bloggeror Wordpress.com. What makes it different from the
+other services is its ridiculous simplicity. With Posterous, you don&amp;rsquo;t need to
+create an account. That&amp;rsquo;s because you create new posts by emailing your post to
+Posterous. It creates links for you, images sent as attachments will be
+transformed into galleries, etc.&lt;/p&gt;
+&lt;p&gt;I like Posterous, but my website has a lot of custom programming on the
+back-end so I&amp;rsquo;m very hesitant to switch over. And besides, I like to know how
+things work behind the scenes. I thought it might be fun to create a system
+similar to Posterous&amp;rsquo; for my own blog which is, of course, hosted on App
+Engine.&lt;/p&gt;
+&lt;p&gt;Here is what we are going to do. I want to be able to send an email to my own
+blog and have it turn it into a post and publish it to the blog.&lt;/p&gt;
+&lt;p&gt;OK, let&amp;rsquo;s start with the post model:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Post&lt;/span&gt;(db&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Model):
+    title &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; db&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;StringProperty()
+    body &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; db&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;TextProperty()
+    added &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; db&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;DateTimeProperty(auto_now_add&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;True)
+    author &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; db&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;StringProperty()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Very straight forward. You have your title, body, author and when the post was
+published.&lt;/p&gt;
+&lt;p&gt;In order to enable incoming email, you need to add a couple of lines of code to
+your &lt;code&gt;app.yaml&lt;/code&gt; file. In addition to your regular handlers, add the
+following:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;inbound_services&lt;/span&gt;:
+  - mail
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;handlers&lt;/span&gt;:
+  - &lt;span style=&#34;color:#66d9ef&#34;&gt;url&lt;/span&gt;: /_ah/mail/.&lt;span style=&#34;color:#e6db74&#34;&gt;+
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    script: main.py&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The first line enables incoming email for your application. The second part is
+the important part. On App Engine, an incoming email message is processed as a
+HTTP POST request. Since it&amp;rsquo;s a regular HTTP request, we will need a handler
+for it in the &lt;code&gt;app.yaml&lt;/code&gt; file. You have several options here. You can create
+a catch-all handler for all incoming email addresses (like I&amp;rsquo;ve done above), or
+create seperate handlers for different addresses.&lt;/p&gt;
+&lt;p&gt;The email address that we will use is in the following format:
+&lt;a href=&#34;mailto:your%5Fstring@appid.appspotmail.com&#34;&gt;your_string@appid.appspotmail.com&lt;/a&gt;. You should substitute the appid with your
+app&amp;rsquo;s ID. The string before the &amp;lsquo;@&amp;rsquo; symbol can be set to anything you want.&lt;/p&gt;
+&lt;p&gt;With this out of the way, we are ready to write the actual email handler. This
+will go into your &lt;code&gt;main.py&lt;/code&gt; file which you defined in the &lt;code&gt;app.yaml&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;First, some imports:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; email
+&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; google.appengine.ext.webapp.mail_handlers &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; InboundMailHandler
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then, you add the following to the list of URL mappings in the instantiation of
+the application class.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;application &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; webapp&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;WSGIApplication([
+    (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;/&amp;#39;&lt;/span&gt;, Index),
+    EmailHandler&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;mapping()
+    ], debug&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;True)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Here EmailHandler is the request handler class that will handle the incoming
+email. The &lt;code&gt;mapping()&lt;/code&gt; method will map all of the addresses and send all of
+them to this handler class. It&amp;rsquo;s just a convenience method, no magic here.&lt;/p&gt;
+&lt;p&gt;Now, finally, onto the actual handler:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;EmailHandler&lt;/span&gt;(InboundMailHandler):
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;receive&lt;/span&gt;(self, mail_message):
+        post &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Post()
+        post&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;title &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; mail_message&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;subject
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; content_type, body &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; mail_message&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;bodies():
+            post&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;body &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; body&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;decode()
+        post&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;author &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;John Smith&amp;#39;&lt;/span&gt;
+        post&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;put()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This is actually very simple. The incoming email message is saved in the
+&lt;code&gt;mail_message&lt;/code&gt; variable and you can access all of the usual email metadata as
+its properties (e.g. mail_message.sender). So, we create a new post, take the
+email&amp;rsquo;s subject and set it as the post&amp;rsquo;s title. The &lt;code&gt;bodies()&lt;/code&gt; method
+extracts the body of the email and the &lt;code&gt;decode()&lt;/code&gt; function will decode the
+actual body. Then we set the author and save the post in the datastore.&lt;/p&gt;
+&lt;p&gt;Often you will want to include a link in your post, or create a list. This is
+easily accomplished with HTML tags. However, HTML tags are a pain, so you might
+want to use something like Markdown.&lt;/p&gt;
+&lt;p&gt;Adding markdown support is super easy. Download the Python
+&lt;a href=&#34;http://code.google.com/p/python-markdown2/&#34;&gt;Markdown library&lt;/a&gt; and put the &lt;code&gt;markdown2.py&lt;/code&gt; file in your app&amp;rsquo;s root
+directory. Then import it in your &lt;code&gt;main.py&lt;/code&gt; file.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; markdown2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And change the following line:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;post&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;body &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; body&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;decode()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;to this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;post&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;body &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; markdown2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;markdown(body&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;decode())
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And that&amp;rsquo;s it!&lt;/p&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;This is a very simple yet effective technique and it will allow you to create
+post from anywhere. I hope you&amp;rsquo;ve enjoyed the post. Let me know if you have any
+suggestions on how to improve it.&lt;/p&gt;
+&lt;h2 id=&#34;code&#34;&gt;Code&lt;/h2&gt;
+&lt;p&gt;The complete code for this app is available on &lt;a href=&#34;https://github.com/honza/Posterous-App-Engine&#34;&gt;Github&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

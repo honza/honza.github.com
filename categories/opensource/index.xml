@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>opensource on Honza Pokorny</title>
+    <link>https://honza.ca/categories/opensource/</link>
+    <description>Recent content in opensource on Honza Pokorny</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 05 Apr 2011 09:00:00 -0300</lastBuildDate>
+    
+	<atom:link href="https://honza.ca/categories/opensource/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>JSLint syntax checker for vim</title>
+      <link>https://honza.ca/2011/04/jslint-syntax-checker-for-vim/</link>
+      <pubDate>Tue, 05 Apr 2011 09:00:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/2011/04/jslint-syntax-checker-for-vim/</guid>
+      <description>&lt;p&gt;Douglas Crockford&amp;rsquo;s &lt;a href=&#34;http://www.jslint.com/&#34;&gt;JSLint&lt;/a&gt; script is almost a golden standard when it comes
+to checking the syntax and general sanity of your javascript files. Being lazy
+by nature, I got tired of copying and pasting my code into the web form.&lt;/p&gt;
+&lt;p&gt;I wanted to be able to run the JSLint tool from the command line. JSLint itself
+is written in javascript. It&amp;rsquo;s a 6000-line beast. How do you run a javascript
+library as a command line utility? The answer is &lt;a href=&#34;http://nodejs.org/&#34;&gt;node.js&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I wrote a quick little script that takes a single argument (your file) and runs
+JSLint over it, printing any errors to the console. I call it &lt;code&gt;jslintnode.js&lt;/code&gt;
+and the code is on &lt;a href=&#34;https://github.com/honza/jslintnode.js&#34;&gt;Github&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Well, checking my files from the command line is certainly better than using
+the web interface. But I still have to run it over and over. As you may know,
+I&amp;rsquo;m fanatical &lt;a href=&#34;http://www.vim.org&#34;&gt;vim&lt;/a&gt; user. There is a cool plugin called &lt;a href=&#34;https://github.com/scrooloose/syntastic&#34;&gt;syntastic&lt;/a&gt; which
+runs through the file you are editing each time you save it. It puts little
+&lt;code&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/code&gt; characters next to the line you are editing which tells you that you
+screwed up and need to fix that line.&lt;/p&gt;
+&lt;p&gt;However, by default, syntastic uses the &lt;code&gt;jsl&lt;/code&gt; utility to check javascript
+files. With a little bit of work, you can modify the original script to use our
+&lt;code&gt;jslintnode.js&lt;/code&gt; utility.&lt;/p&gt;
+&lt;p&gt;Go into the &lt;code&gt;/syntax_checkers/&lt;/code&gt; directory and open up the &lt;code&gt;javascript.vim&lt;/code&gt;
+file.&lt;/p&gt;
+&lt;p&gt;Change this line:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; !&lt;span style=&#34;color:#a6e22e&#34;&gt;executable&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;jsl&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;to this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; !&lt;span style=&#34;color:#a6e22e&#34;&gt;executable&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;jslintnode.js&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And replace the body of the &lt;code&gt;SyntaxCheckers_javascript_GetLocList()&lt;/code&gt; function
+with the following:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;makeprg&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;jslintnode.js &amp;#34;&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;shellescape&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;expand&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;%&amp;#39;&lt;/span&gt;))&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;errorformat&lt;/span&gt;=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;%W%f(%l): lint warning: %m,%-Z%p^,%W%f(%l): warning: %m,%-Z%p^,%E%f(%l): SyntaxError: %m,%-Z%p^,%-G&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;SyntasticMake&lt;/span&gt;({ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;makeprg&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#a6e22e&#34;&gt;makeprg&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;errorformat&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#a6e22e&#34;&gt;errorformat&lt;/span&gt; })&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Save and restart vim.&lt;/p&gt;
+&lt;p&gt;That&amp;rsquo;s it. Now as you&amp;rsquo;re editing any javascript files you will get instant
+feedback as to the quality of your code as judged by JSLint. And remember that
+&lt;em&gt;JSLint will hurt your feelings&lt;/em&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>7 ways Github has changed the open source world</title>
+      <link>https://honza.ca/2011/03/7-ways-github-has-changed-the-open-source-world/</link>
+      <pubDate>Sat, 05 Mar 2011 21:00:00 -0400</pubDate>
+      
+      <guid>https://honza.ca/2011/03/7-ways-github-has-changed-the-open-source-world/</guid>
+      <description>&lt;p&gt;As the guys at &lt;a href=&#34;http://thechangelog.com&#34;&gt;the changelog&lt;/a&gt; say, the world of open source is changing fast
+and you have to keep up. I believe that Github has been very influential when
+it comes to making open source more accessible. How has Github changed the
+world of open source?&lt;/p&gt;
+&lt;h2 id=&#34;force-projects-to-include-a-good-readme&#34;&gt;Force projects to include a good README&lt;/h2&gt;
+&lt;p&gt;Apart from the directory structure and files, the most prominent element on the
+page is your README file. If you don&amp;rsquo;t have one, the page looks kind of weird. As
+an administrator, if you don&amp;rsquo;t add a README file, Github will start yelling at
+you.&lt;/p&gt;
+&lt;h2 id=&#34;unified-place-for-all-your-projects&#34;&gt;Unified place for all your projects&lt;/h2&gt;
+&lt;p&gt;When I come across a cool project, I like to see what other stuff the author
+has been hacking on. The best example I think is &lt;a href=&#34;http://github.com/tpope&#34;&gt;tpope&lt;/a&gt; who is a famous
+vim plugin creator. When you go to his profile page on Github, you can see all
+of the plugins he has ever written and published.&lt;/p&gt;
+&lt;h2 id=&#34;code-discussions&#34;&gt;Code discussions&lt;/h2&gt;
+&lt;p&gt;Yes, you can discuss the project on IRC or on mailing lists. Those aren&amp;rsquo;t
+exactly user friendly, and it&amp;rsquo;s hard to discuss code that way. Github makes it
+easy for you to submit a pull request and have others comment on your code.&lt;/p&gt;
+&lt;h2 id=&#34;publish-your-hacks-with-ease&#34;&gt;Publish your hacks with ease&lt;/h2&gt;
+&lt;p&gt;Did you just write a patch that greatly improves an existing project? Fork it
+and publish it in minutes. If you notify the original project, you can get
+helpful feedback on your hacks. This encourages people to publish their code
+even if it&amp;rsquo;s never merged into the original project.&lt;/p&gt;
+&lt;h2 id=&#34;judge-how-active-a-project-is&#34;&gt;Judge how active a project is&lt;/h2&gt;
+&lt;p&gt;Github makes it easy to quickly look through a project&amp;rsquo;s history to see how
+active it is. In no time, you can tell how many people commit to it and how
+often. Also, the number of watchers/forks in the corner gives you a pretty good
+idea of how many people are actually using the project. This is possibly my
+favorite feature. Open source developers don&amp;rsquo;t need to waste their time
+exploring libraries that aren&amp;rsquo;t maintained.&lt;/p&gt;
+&lt;h2 id=&#34;discover-new-projects&#34;&gt;Discover new projects&lt;/h2&gt;
+&lt;p&gt;Smart people come up with clever things all the time. If they share their code
+on Github, you can find it in the Explore Github section. I can&amp;rsquo;t remember how
+many times I&amp;rsquo;ve discovered a cool project this way. My favorite example is
+&lt;a href=&#34;https://github.com/jashkenas/coffee-script&#34;&gt;CoffeeScript&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;follow-the-development-of-your-favorite-projects&#34;&gt;Follow the development of your favorite projects&lt;/h2&gt;
+&lt;p&gt;When you first log in, you are presented with a list of changes that were made
+to the projects you follow. This projects has a new release, this bug was
+fixed. etc. Invaluable.&lt;/p&gt;
+&lt;p&gt;What are your thoughts? Any favorite features of Github?&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
