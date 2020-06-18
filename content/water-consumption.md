@@ -23,6 +23,8 @@ research by the people behind the [Cowspiracy](http://www.cowspiracy.com/) docum
 consumption in the United States goes towards animal agriculture. An immense
 amount of water is required to produce meat and dairy products.
 
-![](/images/cowspiracy.png)So instead of worrying about the running tap, we should stop eating meat and
+{{< figure src="/images/cowspiracy.png" >}}
+
+So instead of worrying about the running tap, we should stop eating meat and
 dairy. Doing so will have a much more significant impact on the world. But of
 course, that isn't as feel-good as the tooth-brushing story.

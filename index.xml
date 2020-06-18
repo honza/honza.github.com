@@ -1790,7 +1790,11 @@ use would drop to 2.5%. And 50% is pretty dramatic.&lt;/p&gt;
 research by the people behind the &lt;a href=&#34;http://www.cowspiracy.com/&#34;&gt;Cowspiracy&lt;/a&gt; documentary, 55% of water
 consumption in the United States goes towards animal agriculture. An immense
 amount of water is required to produce meat and dairy products.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://honza.ca/images/cowspiracy.png&#34; alt=&#34;&#34;&gt;So instead of worrying about the running tap, we should stop eating meat and
+&lt;figure&gt;
+    &lt;img src=&#34;https://honza.ca/images/cowspiracy.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;So instead of worrying about the running tap, we should stop eating meat and
 dairy. Doing so will have a much more significant impact on the world. But of
 course, that isn&amp;rsquo;t as feel-good as the tooth-brushing story.&lt;/p&gt;
 </description>

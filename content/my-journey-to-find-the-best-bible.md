@@ -4,6 +4,7 @@ author = ["Honza Pokorny"]
 date = 2017-11-02T13:00:00-03:00
 categories = ["bibles"]
 draft = false
+images = ["/images/pitt-minion/20171025_0003_thumb.jpg"]
 +++
 
 {{< figure src="/images/pitt-minion/20171025_0003_thumb.jpg" >}}

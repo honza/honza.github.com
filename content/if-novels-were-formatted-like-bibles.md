@@ -4,6 +4,7 @@ author = ["Honza Pokorny"]
 date = 2019-01-25T10:14:00-04:00
 categories = ["bibles"]
 draft = false
+images = ["/images/austen.png"]
 +++
 
 {{< figure src="/images/austen.png" >}}

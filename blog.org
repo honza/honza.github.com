@@ -1859,6 +1859,7 @@ have any feedback, do let me know.
 :PROPERTIES:
 :EXPORT_FILE_NAME: bible-translations-and-the-christian-life
 :EXPORT_DATE: 2011-10-01 20:16
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :images '("/images/agape-estin.jpg")
 :END:
 
 [[/images/agape-estin.jpg]]
@@ -11756,7 +11757,9 @@ research by the people behind the [[http://www.cowspiracy.com/][Cowspiracy]] doc
 consumption in the United States goes towards animal agriculture.  An immense
 amount of water is required to produce meat and dairy products.
 
-[[/images/cowspiracy.png]]So instead of worrying about the running tap, we should stop eating meat and
+[[/images/cowspiracy.png]]
+
+So instead of worrying about the running tap, we should stop eating meat and
 dairy.  Doing so will have a much more significant impact on the world.  But of
 course, that isn't as feel-good as the tooth-brushing story.
 
@@ -12250,6 +12253,7 @@ Should not become the Standard English Version/, 18
 :PROPERTIES:
 :EXPORT_FILE_NAME: my-journey-to-find-the-best-bible
 :EXPORT_DATE: 2017-11-02 13:00
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :images '("/images/pitt-minion/20171025_0003_thumb.jpg")
 :END:
 
 [[/images/pitt-minion/20171025_0003_thumb.jpg]]
@@ -12453,6 +12457,7 @@ great all-around Bible.
 :PROPERTIES:
 :EXPORT_FILE_NAME: comparing-editions-of-the-institutes
 :EXPORT_DATE: 2017-11-24 13:00
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :images '("/images/calvin.png")
 :END:
 
 [[/images/calvin.png]]
@@ -12687,6 +12692,7 @@ Lord's day.
 :PROPERTIES:
 :EXPORT_FILE_NAME: how-to-save-hundreds-of-dollars-on-theology-books
 :EXPORT_DATE: 2018-10-25 21:00
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :images '("/images/books.jpg")
 :END:
 
 [[/images/books.jpg]]
@@ -12737,6 +12743,7 @@ Rapids, MI: Reformation Heritage Books, 1992), 58.
 :PROPERTIES:
 :EXPORT_FILE_NAME: he-forgave-how-much
 :EXPORT_DATE: 2019-01-22 10:14
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :images '("/images/bills.jpg")
 :END:
 
 [[/images/bills.jpg]]
@@ -12784,6 +12791,7 @@ their debt to us is /significantly/ less than what God in Christ forgave us.
 :PROPERTIES:
 :EXPORT_FILE_NAME: if-novels-were-formatted-like-bibles
 :EXPORT_DATE: 2019-01-25 10:14
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :images '("/images/austen.png")
 :END:
 
 [[/images/austen.png]]

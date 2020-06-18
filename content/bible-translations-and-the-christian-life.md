@@ -4,6 +4,7 @@ author = ["Honza Pokorny"]
 date = 2011-10-01T20:16:00-03:00
 categories = ["theology"]
 draft = false
+images = ["/images/agape-estin.jpg"]
 +++
 
 {{< figure src="/images/agape-estin.jpg" >}}
