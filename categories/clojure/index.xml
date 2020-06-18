@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Clojure on Honza Pokorny</title>
+    <title>clojure on Honza Pokorny</title>
     <link>https://honza.ca/categories/clojure/</link>
-    <description>Recent content in Clojure on Honza Pokorny</description>
+    <description>Recent content in clojure on Honza Pokorny</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 06 Nov 2015 06:32:00 -0400</lastBuildDate>
@@ -17,8 +17,27 @@
       <pubDate>Fri, 06 Nov 2015 06:32:00 -0400</pubDate>
       
       <guid>https://honza.ca/2015/11/internal-clojure-libraries/</guid>
-      <description>At work, we have a few Clojure services in production. Each service is its own leiningen project with its own dependencies. And because setting up a local maven repository is hard, each project reimplements quite a bit of logic. This duplicate code usually relates to the non-essential but still important parts of a service: logging, metrics, sentry integration, etc.
-Just the other day, I was getting really annoyed with this situation, and was about ready to go learn about the wonderful intricacies of Maven, when I discovered leiningen&amp;rsquo;s install command.</description>
+      <description>&lt;p&gt;At work, we have a few Clojure services in production. Each service is its own
+leiningen project with its own dependencies. And because setting up a local
+maven repository is hard, each project reimplements quite a bit of logic. This
+duplicate code usually relates to the non-essential but still important parts
+of a service: logging, metrics, sentry integration, etc.&lt;/p&gt;
+&lt;p&gt;Just the other day, I was getting really annoyed with this situation, and was
+about ready to go learn about the wonderful intricacies of Maven, when I
+discovered leiningen&amp;rsquo;s &lt;code&gt;install&lt;/code&gt; command.&lt;/p&gt;
+&lt;p&gt;With &lt;code&gt;lein install&lt;/code&gt;, you can install your library as a jar and a pom to the
+local repository. Here, local repository means a local repository, typically
+in &lt;code&gt;~/.m2&lt;/code&gt;. Your apps can then depend on this library via the normal
+&lt;code&gt;:dependencies&lt;/code&gt; list in the project file. This is all completely seamless
+and works well.&lt;/p&gt;
+&lt;p&gt;Apparently, this command has been around for a long time.&lt;/p&gt;
+&lt;p&gt;Armed with this new information, I was able to create an internal project
+called &lt;em&gt;metrics&lt;/em&gt; and remove a ton of duplication. &lt;code&gt;lein install&lt;/code&gt; also allows
+multiple versions of the same library to be installed at once. Simply require
+whatever version you need in your apps&amp;rsquo; &lt;code&gt;project.clj&lt;/code&gt; file.&lt;/p&gt;
+&lt;p&gt;This makes developing Clojure projects without having to publish your libraries
+to Clojars a lot easier.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -27,7 +46,36 @@ Just the other day, I was getting really annoyed with this situation, and was ab
       <pubDate>Wed, 18 Feb 2015 10:34:00 -0400</pubDate>
       
       <guid>https://honza.ca/2015/02/programming-languages-in-a-nutshell/</guid>
-      <description>Python, Ruby concurrency lol packaging lol Golang lol if you don&amp;rsquo;t like typing err := y u no generics lol imports Haskell need PhD will never be mainstream Idris only for concating lists Erlang lol syntax Javascript javascript Rust how do I do x this week? Clojure let me know when the program has started running lol if you want to build a secure thing on the web Scala lol if you think this actually improves java PHP which of these 10 fns should I use?</description>
+      <description>&lt;h2 id=&#34;python-ruby&#34;&gt;Python, Ruby&lt;/h2&gt;
+&lt;h3 id=&#34;concurrency-lol&#34;&gt;concurrency lol&lt;/h3&gt;
+&lt;h3 id=&#34;packaging-lol&#34;&gt;packaging lol&lt;/h3&gt;
+&lt;h2 id=&#34;golang&#34;&gt;Golang&lt;/h2&gt;
+&lt;h3 id=&#34;lol-if-you-don-t-like-typing-err&#34;&gt;lol if you don&amp;rsquo;t like typing &lt;code&gt;err :=&lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;y-u-no-generics&#34;&gt;y u no generics&lt;/h3&gt;
+&lt;h3 id=&#34;lol-imports&#34;&gt;lol imports&lt;/h3&gt;
+&lt;h2 id=&#34;haskell&#34;&gt;Haskell&lt;/h2&gt;
+&lt;h3 id=&#34;need-phd&#34;&gt;need PhD&lt;/h3&gt;
+&lt;h3 id=&#34;will-never-be-mainstream&#34;&gt;will never be mainstream&lt;/h3&gt;
+&lt;h2 id=&#34;idris&#34;&gt;Idris&lt;/h2&gt;
+&lt;h3 id=&#34;only-for-concating-lists&#34;&gt;only for concating lists&lt;/h3&gt;
+&lt;h2 id=&#34;erlang&#34;&gt;Erlang&lt;/h2&gt;
+&lt;h3 id=&#34;lol-syntax&#34;&gt;lol syntax&lt;/h3&gt;
+&lt;h2 id=&#34;javascript&#34;&gt;Javascript&lt;/h2&gt;
+&lt;h3 id=&#34;javascript&#34;&gt;javascript&lt;/h3&gt;
+&lt;h2 id=&#34;rust&#34;&gt;Rust&lt;/h2&gt;
+&lt;h3 id=&#34;how-do-i-do-x-this-week&#34;&gt;how do I do x this week?&lt;/h3&gt;
+&lt;h2 id=&#34;clojure&#34;&gt;Clojure&lt;/h2&gt;
+&lt;h3 id=&#34;let-me-know-when-the-program-has-started-running&#34;&gt;let me know when the program has started running&lt;/h3&gt;
+&lt;h3 id=&#34;lol-if-you-want-to-build-a-secure-thing-on-the-web&#34;&gt;lol if you want to build a secure thing on the web&lt;/h3&gt;
+&lt;h2 id=&#34;scala&#34;&gt;Scala&lt;/h2&gt;
+&lt;h3 id=&#34;lol-if-you-think-this-actually-improves-java&#34;&gt;lol if you think this actually improves java&lt;/h3&gt;
+&lt;h2 id=&#34;php&#34;&gt;PHP&lt;/h2&gt;
+&lt;h3 id=&#34;which-of-these-10-fns-should-i-use&#34;&gt;which of these 10 fns should I use?&lt;/h3&gt;
+&lt;h2 id=&#34;ocaml&#34;&gt;OCaml&lt;/h2&gt;
+&lt;h3 id=&#34;haskell-without-the-awesome&#34;&gt;haskell without the awesome&lt;/h3&gt;
+&lt;h2 id=&#34;prolog&#34;&gt;Prolog&lt;/h2&gt;
+&lt;h3 id=&#34;mucho-problemo&#34;&gt;mucho problemo&lt;/h3&gt;
+</description>
     </item>
     
     <item>
@@ -36,9 +84,41 @@ Just the other day, I was getting really annoyed with this situation, and was ab
       <pubDate>Thu, 20 Mar 2014 11:45:00 -0300</pubDate>
       
       <guid>https://honza.ca/2014/03/how-to-use-piggieback-in-vim-fireplace-to-hack-cljs/</guid>
-      <description>(That&amp;rsquo;s quite a title, isn&amp;rsquo;t it?)
-If you&amp;rsquo;re using vim to write Clojure code, chances are that you&amp;rsquo;re using Tim Pope&amp;rsquo;s vim-fireplace plugin. It&amp;rsquo;s really great. It stars an nREPL session in the background for you and lets you evaluate a form inside of vim. It&amp;rsquo;s super fast because it keeps the session around and it&amp;rsquo;s one of my favorite things about writing Clojure.
-Recently, vim-fireplace received support for piggieback. Piggieback is a layer on top of nREPL that gives you support for ClojureScript.</description>
+      <description>&lt;p&gt;(That&amp;rsquo;s quite a title, isn&amp;rsquo;t it?)&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;re using vim to write Clojure code, chances are that you&amp;rsquo;re using Tim
+Pope&amp;rsquo;s vim-fireplace plugin. It&amp;rsquo;s really great. It stars an nREPL session in
+the background for you and lets you evaluate a form inside of vim. It&amp;rsquo;s super
+fast because it keeps the session around and it&amp;rsquo;s one of my favorite things
+about writing Clojure.&lt;/p&gt;
+&lt;p&gt;Recently, vim-fireplace received support for &lt;a href=&#34;https://github.com/cemerick/piggieback&#34;&gt;piggieback&lt;/a&gt;. Piggieback is a
+layer on top of nREPL that gives you support for ClojureScript. This is really
+great because it gives you the ability to evaluate ClojureScript code in vim
+just like your normal Clojure code.&lt;/p&gt;
+&lt;p&gt;Alright, here is how to set it up:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;project.clj&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;defproject &lt;/span&gt;pig &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;0.1.0-SNAPSHOT&amp;#34;&lt;/span&gt;
+  &lt;span style=&#34;color:#e6db74&#34;&gt;:description&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;FIXME: write this!&amp;#34;&lt;/span&gt;
+  &lt;span style=&#34;color:#e6db74&#34;&gt;:url&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://example.com/FIXME&amp;#34;&lt;/span&gt;
+
+  &lt;span style=&#34;color:#e6db74&#34;&gt;:dependencies&lt;/span&gt; [[org.clojure/clojure &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;1.5.1&amp;#34;&lt;/span&gt;]
+                 [com.cemerick/piggieback &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;0.1.3&amp;#34;&lt;/span&gt;]]
+
+  &lt;span style=&#34;color:#e6db74&#34;&gt;:plugins&lt;/span&gt; [[lein-cljsbuild &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;1.0.2&amp;#34;&lt;/span&gt;]]
+  &lt;span style=&#34;color:#e6db74&#34;&gt;:repl-options&lt;/span&gt; {&lt;span style=&#34;color:#e6db74&#34;&gt;:nrepl-middleware&lt;/span&gt; [cemerick.piggieback/wrap-cljs-repl]}
+
+  &lt;span style=&#34;color:#e6db74&#34;&gt;:source-paths&lt;/span&gt; [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;src&amp;#34;&lt;/span&gt;]
+
+  &lt;span style=&#34;color:#e6db74&#34;&gt;:cljsbuild&lt;/span&gt; {
+    &lt;span style=&#34;color:#e6db74&#34;&gt;:builds&lt;/span&gt; [{&lt;span style=&#34;color:#e6db74&#34;&gt;:source-paths&lt;/span&gt; [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;src&amp;#34;&lt;/span&gt;]
+              &lt;span style=&#34;color:#e6db74&#34;&gt;:compiler&lt;/span&gt; {
+                &lt;span style=&#34;color:#e6db74&#34;&gt;:target&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;:nodejs&lt;/span&gt;
+                &lt;span style=&#34;color:#e6db74&#34;&gt;:optimizations&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;:simple&lt;/span&gt;}}]})
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Pretty standard stuff. We&amp;rsquo;re using the lein-cljsbuild plugin for automatic
+compilation, we set up the source path and a nodejs compile target.&lt;/p&gt;
+&lt;p&gt;Now you simply open a &lt;code&gt;.cljs&lt;/code&gt; file and you can do your usual vim-fireplace
+magic. The first &lt;code&gt;cpr&lt;/code&gt; (reload current buffer) command will connect to an
+nREPL instance and initialize the piggieback wrapper.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -47,8 +127,32 @@ Recently, vim-fireplace received support for piggieback. Piggieback is a layer o
       <pubDate>Tue, 12 Feb 2013 16:33:00 -0400</pubDate>
       
       <guid>https://honza.ca/2013/02/haskell-vs-clojure-syntax/</guid>
-      <description>Clojure has virtually zero syntax. What I mean by that is that all structures look the same: the first item in a list is the function and the rest are the arguments. This is true for variable assignment, if statements, data structures and functions themselves.
-(+ 1 2) (defn greet [name] (str &amp;quot;Hello &amp;quot; name)) (def user-count 334)  However, before you can do anything useful in Haskell, you must learn all kinds of crazy syntax: function definitions, pattern matching, do forms, functors, monads, typeclasses, &amp;hellip;</description>
+      <description>&lt;p&gt;Clojure has virtually zero syntax. What I mean by that is that all structures
+look the same: the first item in a list is the function and the rest are the
+arguments. This is true for variable assignment, if statements, data
+structures and functions themselves.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;(+ &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+
+(&lt;span style=&#34;color:#66d9ef&#34;&gt;defn &lt;/span&gt;greet [name]
+  (str &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello &amp;#34;&lt;/span&gt; name))
+
+(&lt;span style=&#34;color:#66d9ef&#34;&gt;def &lt;/span&gt;user-count &lt;span style=&#34;color:#ae81ff&#34;&gt;334&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;However, before you can do anything useful in Haskell, you must learn all kinds
+of crazy syntax: function definitions, pattern matching, do forms, functors,
+monads, typeclasses, &amp;hellip;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-haskell&#34; data-lang=&#34;haskell&#34;&gt;(&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;$&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Just&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;*&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Just&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;Nothing&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;\&lt;/span&gt;x &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt; return (x&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;)
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;instance&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Applicative&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Maybe&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;where&lt;/span&gt;
+    pure &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Just&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;Nothing&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;*&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;_&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Nothing&lt;/span&gt;
+    (&lt;span style=&#34;color:#66d9ef&#34;&gt;Just&lt;/span&gt; f) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;*&amp;gt;&lt;/span&gt; something &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; fmap f something
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This is why I find Haskell extremely hard to learn. It&amp;rsquo;s not because of
+monads, recursion or functional programming concepts. It&amp;rsquo;s because of the huge
+amount of special syntax. And you need to learn a lot of it before you can do
+something useful.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

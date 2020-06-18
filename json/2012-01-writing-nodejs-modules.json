@@ -1,0 +1,22 @@
+{
+    "reading_time": "about one minute", 
+    "month": "01", 
+    "year": "2012", 
+    "date": "January 05, 2012", 
+    "slug": "writing-nodejs-modules", 
+    "contents": "<div class=\"section\" id=\"writing-node-js-modules\">\n<h1>Writing Node.js&nbsp;modules</h1>\n<p>To say that node.js has enjoyed a great deal of positive publicity in the last\nfew months would most certainly be an understatement. New node.js-related\nprojects are popping up all over the place, and there seems to be this notion\nthat if you aren&#8217;t using it you&#8217;re not cool&nbsp;enough.</p>\n<p>Over the Christmas holidays, I sat down to sort out my photo library and I\nwanted to make a web photo gallery to share the images with family and friends.\nBeing a mainly Python programmer, I wrote a Python script that will go through\nall of my photos and create smaller versions and thumbnails of the images that\nare suitable for the web. I think I have around 1500 images at the moment and\nit took a good 20 minutes to convert everything using Python Imaging&nbsp;Library.</p>\n<p>I was rather frustrated with the performance. I think the reason for the\nslowness was the fact that the images were processed sequentially, one by one.\nWhat if I could modify my program to process more than one image at a time.\nThis would certainly speed by the process. Then I thought about using threads\nin Python and I think I threw up in my mouth a&nbsp;little.</p>\n<p>Then I remembered Node.js. It&#8217;s supposed to be all asynchronous and\nnon-blocking. Perfect match. So I wrote a thumbnailer in&nbsp;node.</p>\n<p>Essentially, it&#8217;s a worker queue that resizes images. You give it a source and\ndestination directories and a number of workers and run it. The total time went\nfrom 20 minutes to 2 using about 5 workers. Much better,&nbsp;eh?</p>\n<p>I decided to open source the project because I couldn&#8217;t find any node.js\nprojects that do something even remotely similar. It&#8217;s called <a class=\"reference external\" href=\"https://github.com/honza/node-thumbnail\">node-thumbnail</a>\nand you can find it on both Github and&nbsp;npmjs.</p>\n<p>So what does the <span class=\"caps\">API</span> look&nbsp;like?</p>\n<div class=\"highlight\"><pre><span class=\"nx\">thumb</span><span class=\"p\">({</span>\n  <span class=\"nx\">source</span><span class=\"o\">:</span> <span class=\"s1\">&#39;source/path&#39;</span><span class=\"p\">,</span>\n  <span class=\"nx\">destination</span><span class=\"o\">:</span> <span class=\"s1\">&#39;dest/path&#39;</span><span class=\"p\">,</span>\n  <span class=\"nx\">concurrency</span><span class=\"o\">:</span> <span class=\"mi\">4</span>\n  <span class=\"p\">},</span> <span class=\"kd\">function</span><span class=\"p\">()</span> <span class=\"p\">{</span>\n  <span class=\"nx\">console</span><span class=\"p\">.</span><span class=\"nx\">log</span><span class=\"p\">(</span><span class=\"s1\">&#39;All done!&#39;</span><span class=\"p\">);</span>\n<span class=\"p\">});</span>\n</pre></div>\n</div>\n", 
+    "date_iso": "2012-01-05", 
+    "title": "Writing node.js modules", 
+    "url": "/2012/01/writing-nodejs-modules", 
+    "day": "05", 
+    "categories": [
+        {
+            "name": "Code", 
+            "slug": "code"
+        }, 
+        {
+            "name": "Javascript", 
+            "slug": "javascript"
+        }
+    ]
+}

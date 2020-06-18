@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Django on Honza Pokorny</title>
+    <title>django on Honza Pokorny</title>
     <link>https://honza.ca/categories/django/</link>
-    <description>Recent content in Django on Honza Pokorny</description>
+    <description>Recent content in django on Honza Pokorny</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 04 Feb 2012 20:00:00 -0400</lastBuildDate>
@@ -17,9 +17,66 @@
       <pubDate>Sat, 04 Feb 2012 20:00:00 -0400</pubDate>
       
       <guid>https://honza.ca/2012/02/how-not-to-depend-on-pypi/</guid>
-      <description>When deploying a Django application, you often use a requirements.txt file that contains a list of the application&amp;rsquo;s dependencies. During deployment, your provisioning system will pip install all of those to make sure that your application runs as desired.
-The format of a typical requirements.txt files isn&amp;rsquo;t unlike the following
-django==1.3.1 psycopg2==2.4.4 Fabric==1.3.3 ...  By default, pip will go to the Python Package Index (PyPI) and look for that package there.</description>
+      <description>&lt;p&gt;When deploying a Django application, you often use a &lt;code&gt;requirements.txt&lt;/code&gt; file
+that contains a list of the application&amp;rsquo;s dependencies. During deployment, your
+provisioning system will &lt;code&gt;pip install&lt;/code&gt; all of those to make sure that your
+application runs as desired.&lt;/p&gt;
+&lt;p&gt;The format of a typical &lt;code&gt;requirements.txt&lt;/code&gt; files isn&amp;rsquo;t unlike the following&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;django==1.3.1
+psycopg2==2.4.4
+Fabric==1.3.3
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;By default, &lt;code&gt;pip&lt;/code&gt; will go to the &lt;a href=&#34;http://pypi.python.org&#34;&gt;Python Package Index&lt;/a&gt; (PyPI) and look for
+that package there.&lt;/p&gt;
+&lt;p&gt;Unfortunately, PyPI has been known to be down or slow at times; and you want
+your deployments to be as smooth as possible.&lt;/p&gt;
+&lt;h2 id=&#34;what-you-can-do&#34;&gt;What you can do&lt;/h2&gt;
+&lt;p&gt;Instead of depending on PyPI for a production application, you can host the
+packages that your application needs yourself. It&amp;rsquo;s actually surpringly easy to
+do. Your existing deployment strategy can easily be modified to remove the
+dependency.&lt;/p&gt;
+&lt;p&gt;First, we will create a freeze of your requirements. This will look into your
+environment and figure out which version of which package you will need for the
+production environment.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;$ pip freeze -r requirements.txt &amp;gt; freeze.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Once you have the list of packages, you can tell &lt;code&gt;pip&lt;/code&gt; to download all the
+packages into a directory without installing them.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;$ pip install -d pypi -r freeze.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This will download all packages from &lt;code&gt;freeze.txt&lt;/code&gt; into the &lt;code&gt;pypi/&lt;/code&gt;
+directory.&lt;/p&gt;
+&lt;p&gt;The next step is to upload all these packages to a publicly accessible server
+that can serve static files. This can anything from S3, Cloudfiles or even
+Github pages. I like to place all of these packages into a &lt;code&gt;packages/&lt;/code&gt;
+directory. You will also need a simple index file to go with your packages. All
+the index file needs to is provide a list of HTML links to those packages. The
+index will be used by &lt;code&gt;pip&lt;/code&gt; to locate the package source distribution.&lt;/p&gt;
+&lt;p&gt;I have put together a simple Fabric task that will read the contents of the
+&lt;code&gt;pypi/&lt;/code&gt; directory and create this index file for you.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;make_index&lt;/span&gt;():
+    result &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; local(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;ls pypi&amp;#39;&lt;/span&gt;, capture&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;True)
+    packages &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; result&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;split(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;)
+
+    html &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;&amp;lt;/head&amp;gt;&amp;lt;body&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;%s&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;&amp;#34;&lt;/span&gt;
+
+    links &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; []
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; package &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; packages:
+        link &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;lt;a href=&amp;#34;packages/&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;%s&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;%s&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;lt;/a&amp;gt;&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; (package, package)
+        links&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append(link)
+
+    links &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;join(links)
+
+    f &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; open(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;index.html&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;w&amp;#39;&lt;/span&gt;)
+    f&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;write(html &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; links)
+    f&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;close()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Upload the index file to your server and you&amp;rsquo;re ready to deploy. Instead of the
+usual:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;$ pip install -r requirements.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You will run this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;$ pip install -r freeze.txt -f http://yourPypiHost.com/index.html --no-index
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This will completely ignore PyPI and only use your index when locating
+packages. This way your deploys will be faster and more reliable.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -28,8 +85,51 @@ django==1.3.1 psycopg2==2.4.4 Fabric==1.3.3 ...  By default, pip will go to the 
       <pubDate>Tue, 17 Jan 2012 08:45:00 -0400</pubDate>
       
       <guid>https://honza.ca/2012/01/upgrading-your-django-media-files-to-use-a-cdn/</guid>
-      <description>I was using django-filebrowser on a project and my Rackspace VM quickly ran out of disk space. Since the site isn&amp;rsquo;t getting much traffic at all, I didn&amp;rsquo;t want to pay extra for a bigger VM. Instead, I decided to move all of the user uploaded media to Rackspace Cloudfiles. It&amp;rsquo;s super cheap and they have a nice API.
-Now, the challenge was to make the transition from a filebrowser-based system.</description>
+      <description>&lt;p&gt;I was using &lt;a href=&#34;http://readthedocs.org/docs/django-filebrowser/en/latest/&#34;&gt;django-filebrowser&lt;/a&gt; on a project and my Rackspace VM quickly ran
+out of disk space. Since the site isn&amp;rsquo;t getting much traffic at all, I didn&amp;rsquo;t
+want to pay extra for a bigger VM. Instead, I decided to move all of the user
+uploaded media to &lt;a href=&#34;http://www.rackspace.com/cloud/cloud%5Fhosting%5Fproducts/files/&#34;&gt;Rackspace Cloudfiles&lt;/a&gt;. It&amp;rsquo;s super cheap and they have a
+nice API.&lt;/p&gt;
+&lt;p&gt;Now, the challenge was to make the transition from a filebrowser-based system.
+First of all, I knew I was going to use &lt;a href=&#34;http://django-storages.readthedocs.org/en/latest/index.html&#34;&gt;django-storages&lt;/a&gt; as the new storage
+class for my class. I played around with it on the side and it worked like a
+charm.&lt;/p&gt;
+&lt;p&gt;Next, I wrote a quick little Python script to upload all of the files to
+Cloudfiles. Since the filenames didn&amp;rsquo;t change at all, I could just write a
+South migration that would strip the &lt;code&gt;/uploads&lt;/code&gt; part and be done with it.&lt;/p&gt;
+&lt;p&gt;I had a look at the Django documentation to see what exactly a &lt;a href=&#34;https://docs.djangoproject.com/en/1.3/ref/models/fields/#filefield&#34;&gt;FileField&lt;/a&gt; was.
+It turns out it takes a Django &lt;a href=&#34;https://docs.djangoproject.com/en/1.3/ref/files/file/#django.core.files.File&#34;&gt;File&lt;/a&gt; object which in turn is a thin wrapper
+around the Python built-in file object. This didn&amp;rsquo;t sound exactly easy to do. I
+would have to open a remote file with Python&amp;rsquo;s &lt;code&gt;open(&#39;file.mp3&#39;)&lt;/code&gt; and have
+Django inspect it for size and file type. This is clunky at best if you
+remember that this will have to live in a South migration.&lt;/p&gt;
+&lt;p&gt;Also worth noting is the fact that filebrowser&amp;rsquo;s model field is a subclass of
+&lt;code&gt;CharField&lt;/code&gt; and has no special file-related properties or methods.&lt;/p&gt;
+&lt;p&gt;You can&amp;rsquo;t use the &lt;code&gt;DEFAULT_STORAGE_CLASS&lt;/code&gt; setting because filebrowser will
+start yelling at you. Instead, you specify the storage class right in the new
+model field.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; storages.backends.mosso &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; cloudfiles_upload_to, CloudFilesStorage
+cloudfiles_storage &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; CloudFilesStorage()
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Item&lt;/span&gt;(models&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Model):
+    old_field &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; FileBrowseField(max_length&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;500&lt;/span&gt;, blank&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;True)
+    new_field &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; models&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;FileField(upload_to&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;cloudfiles_upload_to,
+            storage&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;cloudfiles_storage, default&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now you can go and write your migration and Django won&amp;rsquo;t yell at you. Now we go
+back to the problem outlined above. How do you create an instance of &lt;code&gt;File&lt;/code&gt;
+to pass to &lt;code&gt;item.new_field&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;After hours of reading the source and debugging, I realized that you can simply
+pass in the filename as a string and the storage class will do the right thing.
+It&amp;rsquo;s actually really simple and painless. Your data migration might look
+something like:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; item &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; orm&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Item&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;objects&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;all():
+    item&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;new_field &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; os&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;path&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;basename(item&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;old_field&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;url)
+    item&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;save()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;So, I was already somewhat overjoyed that this would in fact be easy and then I
+discovered that the change from filebrowser to django-storages doesn&amp;rsquo;t require
+a schema migration. This means that if your file names are the same there is no
+database change needed at all. How cool is that?&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -38,8 +138,131 @@ Now, the challenge was to make the transition from a filebrowser-based system.</
       <pubDate>Tue, 20 Sep 2011 20:00:00 -0300</pubDate>
       
       <guid>https://honza.ca/2011/09/using-chef-with-small-django-apps/</guid>
-      <description>This year at DjangoCon, it seemed like everybody was talking about automatic deployments and namely Chef. After coming home from the conference, I spent a considerable amount of time learning chef and thinking about how it can be best used with small to medium size Django apps. In this post, I will walk you through how Chef works and how it can help you make awesome web apps.
-When I say small apps, I mean single-server deployments.</description>
+      <description>&lt;p&gt;This year at &lt;a href=&#34;http://djangocon.us&#34;&gt;DjangoCon&lt;/a&gt;, it seemed like everybody was talking about automatic
+deployments and namely &lt;a href=&#34;http://www.opscode.com/chef/&#34;&gt;Chef&lt;/a&gt;. After coming home from the conference, I spent
+a considerable amount of time learning chef and thinking about how it can be
+best used with small to medium size Django apps. In this post, I will walk you
+through how Chef works and how it can help you make awesome web apps.&lt;/p&gt;
+&lt;p&gt;When I say small apps, I mean single-server deployments. This means that your
+web server, your database, memcached, rabbitmq, etc is installed on a single
+Ubuntu VM. When learning Chef, I found that most of the available tutorials
+focus on multi-server setups and are too complex for ordinary apps.&lt;/p&gt;
+&lt;p&gt;Unfortunately, Chef is written in Ruby and it can be a little tricky to debug
+since all the tracebacks are meaningless to a Python developer. However, don&amp;rsquo;t
+despair, you can usually tell pretty quickly what&amp;rsquo;s going on. To test your
+deployment, we will be using &lt;a href=&#34;http://vagrantup.com&#34;&gt;Vagrant&lt;/a&gt; which is an awesome tool for running
+virtual machines on your development machine.&lt;/p&gt;
+&lt;h2 id=&#34;what-we-will-install&#34;&gt;What we will install&lt;/h2&gt;
+&lt;p&gt;Our Django application will be deployed using the following:&lt;/p&gt;
+&lt;h3 id=&#34;nginx&#34;&gt;nginx&lt;/h3&gt;
+&lt;h3 id=&#34;gunicorn&#34;&gt;gunicorn&lt;/h3&gt;
+&lt;h3 id=&#34;postgresql&#34;&gt;postgresql&lt;/h3&gt;
+&lt;h3 id=&#34;memcached&#34;&gt;memcached&lt;/h3&gt;
+&lt;h3 id=&#34;rabbitmq&#34;&gt;rabbitmq&lt;/h3&gt;
+&lt;h3 id=&#34;git&#34;&gt;git&lt;/h3&gt;
+&lt;p&gt;Your development machine will need to have &lt;a href=&#34;http://docs.fabfile.org/en/1.2.2/index.html&#34;&gt;Fabric&lt;/a&gt; installed.&lt;/p&gt;
+&lt;h2 id=&#34;how-chef-works&#34;&gt;How Chef works&lt;/h2&gt;
+&lt;p&gt;Chef is a tool that is installed on your server. You give it a bunch
+configuration files and tell it to provision server with the necessary packages
+and settings. This means that our automatic deployment will have to parts: Chef
+configuration files for the sever, and several Fabric tasks to install Chef
+remotely and start the provisioning process.&lt;/p&gt;
+&lt;p&gt;So, to configure Chef, we will create a &lt;em&gt;deploy&lt;/em&gt; directory inside our project&amp;rsquo;s
+repository. I like to keep the following structure:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;$ ls -a
+.git coolapp docs deploy README.md Vagrantfile fabfile.py
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&amp;hellip; where &lt;em&gt;coolapp&lt;/em&gt; is your Django project. We will focus on the &lt;em&gt;deploy&lt;/em&gt;
+directory and the &lt;em&gt;fabfile&lt;/em&gt;. Chef is a cook how prepares your server for
+dinner. So, Chef needs some cookbooks and recipes. Each cookbook is a directory
+that contains various configuration files for a specific application that you
+want installed. So for example, you will have a &lt;em&gt;PostgreSQL cookbook&lt;/em&gt; and a
+&lt;em&gt;nginx cookbook&lt;/em&gt;. The deploy directory will contain a directory called
+&lt;em&gt;cookbooks&lt;/em&gt; which will contain all other cookbooks. Now, the good news is that
+you don&amp;rsquo;t have to make the cookbooks yourself. &lt;a href=&#34;http://www.opscode.com&#34;&gt;Opscode&lt;/a&gt;, the company behind
+Chef, maintains a large selection of cookbooks on &lt;a href=&#34;https://github.com/opscode/cookbooks&#34;&gt;Github&lt;/a&gt;. You can copy and
+paste the cookbooks you need for you project. We will need the following:&lt;/p&gt;
+&lt;h3 id=&#34;build-essential--for-building-from-source&#34;&gt;build-essential (for building from source)&lt;/h3&gt;
+&lt;h3 id=&#34;erlang--rabbitmq-depends-on-this&#34;&gt;erlang (rabbitmq depends on this)&lt;/h3&gt;
+&lt;h3 id=&#34;git&#34;&gt;git&lt;/h3&gt;
+&lt;h3 id=&#34;memcached&#34;&gt;memcached&lt;/h3&gt;
+&lt;h3 id=&#34;nginx&#34;&gt;nginx&lt;/h3&gt;
+&lt;h3 id=&#34;postgresql&#34;&gt;postgresql&lt;/h3&gt;
+&lt;h3 id=&#34;python--for-virtualenv-and-python-header-files&#34;&gt;python (for virtualenv and python header files)&lt;/h3&gt;
+&lt;h3 id=&#34;rabbitmq&#34;&gt;rabbitmq&lt;/h3&gt;
+&lt;h2 id=&#34;cookbooks&#34;&gt;Cookbooks&lt;/h2&gt;
+&lt;p&gt;Each cookbook contains a &lt;em&gt;recipes&lt;/em&gt; directory. Each recipe tells Chef how this
+particular application is to be installed and configured. For example, it will
+tell nginx to create an entry in &lt;em&gt;sites-available&lt;/em&gt; and &lt;em&gt;sites-enabled&lt;/em&gt;. Or, it
+will restart PostreSQL when it&amp;rsquo;s done being installed.&lt;/p&gt;
+&lt;p&gt;There is also a &lt;em&gt;files&lt;/em&gt; directory and a &lt;em&gt;templates&lt;/em&gt; directory. Templates are
+Ruby templates which define a particular configuration file. For example, in
+order for Chef to be able to properly configure nginx with the proper server
+name, it needs to know on what domain your application will be hosted. More on
+this later, but there is a master file which has all your settings in it and
+Chef reads from that and substitutes the necessary values. The &lt;em&gt;files&lt;/em&gt;
+directory contains files that need no further modification and can be copied
+over verbatim.&lt;/p&gt;
+&lt;h2 id=&#34;node-dot-json&#34;&gt;node.json&lt;/h2&gt;
+&lt;p&gt;The &lt;em&gt;node.json&lt;/em&gt; file is a per project file that specifies certain values for
+Chef to use. For example, you can tell Chef what you want your PostgreSQL
+database to be called, what the name of your django project is, etc. It has a
+simple JSON syntax.&lt;/p&gt;
+&lt;h2 id=&#34;your-app-s-recipe&#34;&gt;Your app&amp;rsquo;s recipe&lt;/h2&gt;
+&lt;p&gt;Your application is going to need a simple recipe. This means creating a
+cookbook bearing your project&amp;rsquo;s name and creating a &lt;em&gt;recipes&lt;/em&gt; directory within
+in. The recipe should be called &lt;em&gt;default.rb&lt;/em&gt; and all it needs to include is a
+list of applications to install. For example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Example django app cookbook&lt;/span&gt;
+
+execute &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Update apt repos&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt;
+    command &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;apt-get update&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;end&lt;/span&gt;
+
+include_recipe &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;nginx&amp;#39;&lt;/span&gt;
+include_recipe &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;build-essential&amp;#39;&lt;/span&gt;
+include_recipe &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;python&amp;#39;&lt;/span&gt;
+include_recipe &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;postgresql::server&amp;#39;&lt;/span&gt;
+include_recipe &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;memcached&amp;#39;&lt;/span&gt;
+include_recipe &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;runit&amp;#39;&lt;/span&gt;
+include_recipe &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;git&amp;#39;&lt;/span&gt;
+
+execute &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;restart postgres&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt;
+    command &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;sudo /etc/init.d/postgresql-8.4 restart&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;end&lt;/span&gt;
+
+execute &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;create-database&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt;
+    command &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;createdb -U postgres -O postgres &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;#{&lt;/span&gt;node&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;:dbname&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can see it&amp;rsquo;s pretty simple. We update Ubuntu&amp;rsquo;s repositories, include some
+recipes, restart PostgreSQL and create a new database.&lt;/p&gt;
+&lt;h2 id=&#34;start-the-engines&#34;&gt;Start the engines&lt;/h2&gt;
+&lt;p&gt;At this point, you can try out your configuration with Vagrant. To help you
+out, I have create a &lt;a href=&#34;https://github.com/honza/django-chef&#34;&gt;template&lt;/a&gt; project on Github that you can download and
+use out of the box.&lt;/p&gt;
+&lt;p&gt;The next big part is writing the Fabric scripts. You will want the following
+tasks:&lt;/p&gt;
+&lt;h3 id=&#34;install-chef&#34;&gt;Install Chef&lt;/h3&gt;
+&lt;h3 id=&#34;transfer-the-cookbooks-directory-to-the-server&#34;&gt;Transfer the cookbooks directory to the server&lt;/h3&gt;
+&lt;h3 id=&#34;dl-class-docutils&#34;&gt;&lt;!-- raw HTML omitted --&gt;&lt;/h3&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h3 id=&#34;creating-a-virtualenv&#34;&gt;Creating a virtualenv&lt;/h3&gt;
+&lt;h3 id=&#34;installing-requirements&#34;&gt;Installing requirements&lt;/h3&gt;
+&lt;h3 id=&#34;syncing-the-database&#34;&gt;Syncing the database&lt;/h3&gt;
+&lt;h3 id=&#34;running-migrations&#34;&gt;Running migrations&lt;/h3&gt;
+&lt;h3 id=&#34;starting-gunicorn&#34;&gt;Starting gunicorn&lt;/h3&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h3 id=&#34;deploy&#34;&gt;Deploy&lt;/h3&gt;
+&lt;p&gt;You can see how I implemented mine &lt;a href=&#34;https://github.com/honza/django-chef/blob/master/fabfile.py&#34;&gt;here&lt;/a&gt;. I recommend that you use Fabric&amp;rsquo;s
+&lt;em&gt;roledefs&lt;/em&gt; which will allow you to specify vagrant as the host:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;$ fab -R vagrant bootstrap
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;the-real-thing&#34;&gt;The real thing&lt;/h2&gt;
+&lt;p&gt;Once you&amp;rsquo;ve tested your application in Vagrant so you are ready to deploy to a
+server. All that&amp;rsquo;s left to do is create a new &lt;em&gt;roledef&lt;/em&gt; in the &lt;em&gt;fabfile&lt;/em&gt; and
+run it!&lt;/p&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;I am by no means a Chef expert&amp;mdash;I learned how to use it a few days ago. If you
+have any feedback, do let me know.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -48,8 +271,31 @@ When I say small apps, I mean single-server deployments.</description>
       <pubDate>Sat, 10 Sep 2011 21:30:00 -0300</pubDate>
       
       <guid>https://honza.ca/2011/09/djangocon-2011-take-aways/</guid>
-      <description>My employer, SheepDogInc, sent me and a colleague of mine to DjangoCon 2011. It was my first developer conference and I had a blast. Here a few quick points about what the conference has clarified for me.
-Deploying Django Despite the Django official documentation&amp;rsquo;s recommendation to use Apache and mod_wsgi, most people seem to deploy Django with nginx and gunicorn. This has been a pleasant surprise to me because I like it but though that it was too simple (or less robust than Apache).</description>
+      <description>&lt;p&gt;My employer, &lt;a href=&#34;http://www.sheepdoginc.ca/&#34;&gt;SheepDogInc&lt;/a&gt;, sent me and a colleague of mine to &lt;a href=&#34;http://djangocon.us/&#34;&gt;DjangoCon
+2011&lt;/a&gt;. It was my first developer conference and I had a blast. Here a few
+quick points about what the conference has clarified for me.&lt;/p&gt;
+&lt;h2 id=&#34;deploying-django&#34;&gt;Deploying Django&lt;/h2&gt;
+&lt;p&gt;Despite the Django official documentation&amp;rsquo;s recommendation to use Apache and
+mod_wsgi, most people seem to deploy Django with nginx and gunicorn. This has
+been a pleasant surprise to me because I like it but though that it was too
+simple (or less robust than Apache).&lt;/p&gt;
+&lt;h2 id=&#34;provisioning-servers&#34;&gt;Provisioning servers&lt;/h2&gt;
+&lt;p&gt;It seemed that everybody was talking about &lt;a href=&#34;http://www.opscode.com/chef/&#34;&gt;Chef&lt;/a&gt; and automatic deployments.
+Instead of manually connecting to a server via ssh, you can run one command
+which will install all the necessary packages for your application (nginx,
+postgresql, etc) and configure them. It makes the whole process less
+error-prone. Also, you&amp;rsquo;re more likely to spin up a new VM on your development
+machine to try things out because you don&amp;rsquo;t have to thing about setting it up.
+Especially with tools like &lt;a href=&#34;http://vagrantup.com/&#34;&gt;vagrant&lt;/a&gt;, it&amp;rsquo;s dead easy.&lt;/p&gt;
+&lt;h2 id=&#34;pronouncing-things&#34;&gt;Pronouncing things&lt;/h2&gt;
+&lt;p&gt;When you read names of technical products, you can&amp;rsquo;t always be sure how it&amp;rsquo;s
+supposed to be pronounced.&lt;/p&gt;
+&lt;h3 id=&#34;pypi-pie-pee-eye&#34;&gt;PyPI: pie-pee-eye&lt;/h3&gt;
+&lt;h3 id=&#34;pypy-pie-pie&#34;&gt;PyPy: pie-pie&lt;/h3&gt;
+&lt;h3 id=&#34;wsgi-wizz-gy&#34;&gt;wsgi: wizz-gy&lt;/h3&gt;
+&lt;h3 id=&#34;nginx-engine-x&#34;&gt;nginx: engine-x&lt;/h3&gt;
+&lt;p&gt;Did you go to DjangoCon 2011? What are your thoughts?&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -58,7 +304,80 @@ Deploying Django Despite the Django official documentation&amp;rsquo;s recommend
       <pubDate>Mon, 30 May 2011 09:15:00 -0300</pubDate>
       
       <guid>https://honza.ca/2011/05/deploying-django-with-nginx-and-gunicorn/</guid>
-      <description>The amazing Django documentation recommends that you use Apache and modwsgi to deploy your webapp. While this is certainly not bad advice, you may not want to use Apache after all. Apache is a beast that eats up a lot of memory, is kind of slow and can&amp;rsquo;t handle as much traffic. As a fun alternative, I would like to talk about deploying Django on nginx using the gunicorn web server.</description>
+      <description>&lt;p&gt;The amazing Django &lt;a href=&#34;https://docs.djangoproject.com/en/1.3/howto/deployment/modwsgi/&#34;&gt;documentation&lt;/a&gt; recommends that you use Apache and modwsgi
+to deploy your webapp. While this is certainly not bad advice, you may not want
+to use Apache after all. Apache is a beast that eats up a lot of memory, is
+kind of slow and can&amp;rsquo;t handle as much traffic. As a fun alternative, I would
+like to talk about deploying Django on nginx using the &lt;a href=&#34;http://gunicorn.org/&#34;&gt;gunicorn&lt;/a&gt; web server.&lt;/p&gt;
+&lt;p&gt;Just a quick note before we start: this isn&amp;rsquo;t an out-there deployment option. I
+spoke to one of the gunicorn developers and was told that every django hosting
+company (think ep.io) uses this setup.&lt;/p&gt;
+&lt;h2 id=&#34;get-your-server-ready&#34;&gt;Get your server ready&lt;/h2&gt;
+&lt;p&gt;I use Rackspace for small, single server web apps. I created an Ubuntu 10.10
+instance with 256MB of RAM. Then, I created a user for my app and added my ssh
+key to &lt;code&gt;authorized_keys&lt;/code&gt;. Basic stuff.&lt;/p&gt;
+&lt;h2 id=&#34;install-nginx&#34;&gt;Install nginx&lt;/h2&gt;
+&lt;p&gt;Installing nginx couldn&amp;rsquo;t be simpler. Latest stable release is provided via a
+ppa repository.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;$ sudo apt-get install python-software-properties -y
+$ sudo -s
+$ apt-add-repository ppa:nginx/stable
+$ apt-get update
+$ apt-get install nginx
+$ exit
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;project-structure&#34;&gt;Project structure&lt;/h2&gt;
+&lt;p&gt;The user under which the app will run is &lt;code&gt;webapp&lt;/code&gt;, so I checkout my app in
+&lt;code&gt;/home/webapp&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;/home/webapp/app
+/home/webapp/app/static
+/home/webapp/env
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Note that I&amp;rsquo;m using &lt;code&gt;virtualenv&lt;/code&gt; to deploy this app.&lt;/p&gt;
+&lt;h2 id=&#34;configure-nginx-and-gunicorn&#34;&gt;Configure nginx and gunicorn&lt;/h2&gt;
+&lt;p&gt;The following two files can be distributed with your project.&lt;/p&gt;
+&lt;p&gt;nginx.conf:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;server {
+    listen 80;
+    server_name webapp.org;
+
+    access_log /home/webapp/access.log;
+    error_log /home/webapp/error.log;
+
+    location /static {
+        root /home/webapp/app;
+    }
+
+    location / {
+        proxy_pass http://127.0.0.1:8888;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Next, I symlinked &lt;code&gt;nginx.conf&lt;/code&gt; to the server&amp;rsquo;s &lt;code&gt;sites-enabled&lt;/code&gt; directory.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;$ sudo ln -s /home/webapp/app/nginx.conf /etc/nginx/sites-enable/webapp.org
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This sets up nginx to directly serve the applications&amp;rsquo;s static files (css, js,
+etc.). Everything else is proxied to the gunicorn server.&lt;/p&gt;
+&lt;p&gt;Now gunicorn is a Python HTTP server. It&amp;rsquo;s super simple and effective. I
+installed it into the app&amp;rsquo;s environment.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;$ (env) pip install gunicorn
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;gunicorn.conf.py:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;bind &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;127.0.0.1:8888&amp;#34;&lt;/span&gt;
+logfile &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/home/webapp/gunicorn.log&amp;#34;&lt;/span&gt;
+workers &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;That&amp;rsquo;s it! The config files are simple and easy to read.&lt;/p&gt;
+&lt;h2 id=&#34;running&#34;&gt;Running&lt;/h2&gt;
+&lt;p&gt;I then collected all the static files into the &lt;code&gt;static&lt;/code&gt; directory:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;$ (env) python manage.py collectstatic
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I restarted nginx:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;$ sudo /etc/init.d/nginx restart
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;And finally, I ran the &lt;code&gt;gunicorn&lt;/code&gt; server:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;$ (env) cd /home/webapp/app
+$ (env) gunicorn_django -D -c gunicorn.conf.py
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;And I was good to go.&lt;/p&gt;
+&lt;h2 id=&#34;notes&#34;&gt;Notes&lt;/h2&gt;
+&lt;p&gt;You may have to change the permissions on the &lt;code&gt;static&lt;/code&gt; directory. Also, the
+command above starts &lt;code&gt;gunicorn&lt;/code&gt; as a deamon - a better way would be to use a
+monitoring service to start it. Think &lt;code&gt;runit&lt;/code&gt; or &lt;code&gt;supervisord&lt;/code&gt;. Also, I
+didn&amp;rsquo;t include any database specific configurations since that&amp;rsquo;s indentical to
+an Apache deployment.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -67,8 +386,84 @@ Deploying Django Despite the Django official documentation&amp;rsquo;s recommend
       <pubDate>Tue, 19 Apr 2011 12:00:00 -0300</pubDate>
       
       <guid>https://honza.ca/2011/04/virtual-machines-for-django-developers/</guid>
-      <description>Vagrant is a tool for building and distributing virtualized development environments. It&amp;rsquo;s based on VirtualBox VMs. This article describes how this Ruby tool can be useful to Django developers.
-Why vagrant? The modern web developer works on many different projects. Each project has a unique set of requirements, dependencies and package versions needed for that project to succeed. Keeping all of these libraries in check is difficult. virtualenv is a tool that creates isolated environments for Python packages.</description>
+      <description>&lt;p&gt;&lt;a href=&#34;http://vagrantup.com&#34;&gt;Vagrant&lt;/a&gt; is a tool for building and distributing virtualized
+development environments. It&amp;rsquo;s based on VirtualBox VMs. This article describes
+how this Ruby tool can be useful to Django developers.&lt;/p&gt;
+&lt;h2 id=&#34;why-vagrant&#34;&gt;Why vagrant?&lt;/h2&gt;
+&lt;p&gt;The modern web developer works on many different projects. Each project has a
+unique set of requirements, dependencies and package versions needed for that
+project to succeed. Keeping all of these libraries in check is difficult.
+&lt;code&gt;virtualenv&lt;/code&gt; is a tool that creates isolated environments for Python
+packages. Vagrant takes this approach a step further. You can virtualize the
+entire server.&lt;/p&gt;
+&lt;p&gt;Just as each Django project will have a &lt;code&gt;requirements.txt&lt;/code&gt; file which lists
+the project&amp;rsquo;s &lt;code&gt;pip&lt;/code&gt; dependencies, your project will now have a
+&lt;code&gt;Vagrantfile&lt;/code&gt; and a &lt;code&gt;cookbooks&lt;/code&gt; directory. The &lt;code&gt;Vagrantfile&lt;/code&gt; describes
+how the VM should be created and the &lt;code&gt;cookbooks&lt;/code&gt; directory contains
+instructions on what packages to install. For example, in the &lt;code&gt;Vagrantfile&lt;/code&gt;
+you will specify a VM which runs an Ubuntu server with 256MB of RAM and your
+&lt;code&gt;cookbooks&lt;/code&gt; directory will tell vagrant to install apache2, git, postgresql
+and memcached.&lt;/p&gt;
+&lt;p&gt;Getting started with vagrant is simple.&lt;/p&gt;
+&lt;h2 id=&#34;getting-started&#34;&gt;Getting started&lt;/h2&gt;
+&lt;p&gt;vagrant is distributed as a Ruby gem and you can install it like so:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;gem install vagrant
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Next, you will download a base box that I made for you. It&amp;rsquo;s an Ubuntu 10.10
+server with minimal configuration.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;vagrant box add vagrant-ubuntu http://honza.ca/downloads/vagrant-ubuntu.box
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This will take a while so you may want to get a beverage.&lt;/p&gt;
+&lt;p&gt;Next, you will create a directory that will hold your project and initialize it
+for vagrant.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;cd ~/Code
+mkdir webapp
+cd webapp
+vagrant init vagrant-ubuntu
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This will create a &lt;code&gt;Vagrantfile&lt;/code&gt; in that directory.&lt;/p&gt;
+&lt;p&gt;And then run&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;vagrant up
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;to actually build and boot the environment. This might take a few minutes.&lt;/p&gt;
+&lt;p&gt;After this, your environment is running. Your environment is a headless
+virtualbox instance. You can &lt;code&gt;ssh&lt;/code&gt; into the box by running:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;vagrant ssh
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You will notice that your project directory (&lt;code&gt;webapp&lt;/code&gt;) is mounted inside the
+environment under &lt;code&gt;/vagrant&lt;/code&gt;. Any changes to either directory will affect the
+other.&lt;/p&gt;
+&lt;p&gt;You can shutdown your environment with&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;vagrant halt
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Destroy it with:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;vagrant destroy
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;provisioning&#34;&gt;Provisioning&lt;/h2&gt;
+&lt;p&gt;Next, you will install some packages into the VM. You will install some common
+Django packages: PostreSQL, Apache, WSGI, memcached and git.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;cd ~/Code/webapp
+git clone git@github.com:honza/cookbooks.git
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This downloads all kinds of cookbooks ready for our use. We will create a
+custom cookbook inside that directory where we will define what packages we
+want:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;cd cookbooks
+mkdir webapp
+cd webapp
+mkdir recipes
+touch recipes/default.rb
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now open up the &lt;code&gt;default.rb&lt;/code&gt; file and enter the following:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;require_recipe &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;postgresql::server&amp;#34;&lt;/span&gt;
+require_recipe &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;apache2&amp;#34;&lt;/span&gt;
+include_recipe &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;apache2::&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;#{&lt;/span&gt;node&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;:django&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;][&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;:web_server&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+require_recipe &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;git&amp;#34;&lt;/span&gt;
+require_recipe &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;memcached&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And modify your &lt;code&gt;Vagrantfile&lt;/code&gt; to use the cookbooks:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;Vagrant&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;Config&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;run &lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;config&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;
+  config&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;vm&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;box &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;vagrant-ubuntu&amp;#34;&lt;/span&gt;
+    config&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;vm&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;provision &lt;span style=&#34;color:#e6db74&#34;&gt;:chef_solo&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;chef&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;
+      chef&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;cookbooks_path &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;cookbooks&amp;#34;&lt;/span&gt;
+      chef&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;add_recipe &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;webapp&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;For the configuration changes to take effect, you need to run:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;vagrant reload
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;OK, that concludes our quick introduction to Vagrant. I hope you see how this
+can be beneficial and how simple it is to get started.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Thoughts on Honza Pokorny</title>
+    <title>thoughts on Honza Pokorny</title>
     <link>https://honza.ca/categories/thoughts/</link>
-    <description>Recent content in Thoughts on Honza Pokorny</description>
+    <description>Recent content in thoughts on Honza Pokorny</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 23 Jan 2013 07:26:00 -0400</lastBuildDate>
@@ -17,9 +17,21 @@
       <pubDate>Wed, 23 Jan 2013 07:26:00 -0400</pubDate>
       
       <guid>https://honza.ca/2013/01/canada-is-a-schizophrenic-country/</guid>
-      <description>I have now lived in Canada for over two years and there are some things that Canadians can&amp;rsquo;t seem to make up their mind on.
-Spelling Canadian spelling is stuck half way between British spelling and American spelling. Canadians will say:
-colour, favourite, honour (which are all British) program, realize (which are all American) Measuring units When you&amp;rsquo;re driving in Canada, everything is in kilometers. Snow fall is measured in centimeters.</description>
+      <description>&lt;p&gt;I have now lived in Canada for over two years and there are some things that
+Canadians can&amp;rsquo;t seem to make up their mind on.&lt;/p&gt;
+&lt;h2 id=&#34;spelling&#34;&gt;Spelling&lt;/h2&gt;
+&lt;p&gt;Canadian spelling is stuck half way between British spelling and American
+spelling. Canadians will say:&lt;/p&gt;
+&lt;h3 id=&#34;colour-favourite-honour--which-are-all-british&#34;&gt;colour, favourite, honour (which are all British)&lt;/h3&gt;
+&lt;h3 id=&#34;program-realize--which-are-all-american&#34;&gt;program, realize (which are all American)&lt;/h3&gt;
+&lt;h2 id=&#34;measuring-units&#34;&gt;Measuring units&lt;/h2&gt;
+&lt;p&gt;When you&amp;rsquo;re driving in Canada, everything is in kilometers. Snow fall is
+measured in centimeters. And yet, people insist on weighing and measuring
+themselves in pounds. We just had a baby girl here in Canada and they kept
+saying, &lt;em&gt;Look she is so big, she is probably over eight.&lt;/em&gt;. Sure, she was nice
+and big but she certainly didn&amp;rsquo;t weight 8kg! People ask me, &lt;em&gt;How tall are
+you?&lt;/em&gt;, and I respond with 178 and receive blank stares.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

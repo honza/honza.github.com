@@ -1,0 +1,22 @@
+{
+    "reading_time": "about one minute", 
+    "month": "05", 
+    "year": "2011", 
+    "date": "May 14, 2011", 
+    "slug": "the-importance-of-git-rebase", 
+    "contents": "<div class=\"section\" id=\"the-importance-of-git-rebase\">\n<h1>The importance of git&nbsp;rebase</h1>\n<p>Git isn&#8217;t just something you have to put up with when working with other\ndevelopers. Git is a wonderful tool that allows you to manage your code, its\nevolution and help you recover from mistakes should they arise. One of the\nthings that people are intimidated by is <tt class=\"docutils literal\">git rebase</tt>.</p>\n<p>Let&#8217;s look at an example. You&#8217;re working on a team with two other developers.\nYou have a blessed repository that sits on your company&#8217;s server. Everyone is\nworking on the same project but on slightly different tasks. Everyone is\nworking on the master branch. You write a bit of code here and there, you\ncommit a bunch of times and then it&#8217;s time to share your code with the rest of\nthe team by pushing it up to the shared&nbsp;repository.</p>\n<p>You run <tt class=\"docutils literal\">git push</tt> but receive an error saying that there are changes on the\nserver and your commit cannot be fast-forwarded. No big deal, right? You run\n<tt class=\"docutils literal\">git pull</tt> to download the changes that you don&#8217;t have and automatically\nmerge your changes in. Then you can <tt class=\"docutils literal\">git push</tt> again and it will work just&nbsp;fine.</p>\n<p>The problem is that it makes the history of your project&nbsp;messy.</p>\n<div class=\"highlight\"><pre><span class=\"go\">* 9:35 - Nancy - Merge branch &#39;master&#39;</span>\n<span class=\"go\">|\\</span>\n<span class=\"go\">* | 9:35 - Nancy - Second commit</span>\n<span class=\"go\">| |</span>\n<span class=\"go\">| * 9:30 - Brad - First commit</span>\n<span class=\"go\">|/</span>\n<span class=\"go\">* 9:12 - Nancy - First commit</span>\n</pre></div>\n<p>As you can see, there is this strange <strong>Merge branch &#8216;master&#8217;</strong> commit that&#8217;s a\nlittle out of place. If everyone on your team is regularly pushing to the\nshared repository, the history gets littered with these weird commits pretty&nbsp;quickly.</p>\n<p>You may have guessed that there is a better way. We&#8217;ll replay the above\nscenario using <tt class=\"docutils literal\">git rebase</tt>. Instead of running <cite>git pull</cite>, we will run <tt class=\"docutils literal\">git\npull <span class=\"pre\">&#8211;rebase</span></tt>. What this will do is temporarily hide the commits that only you\nhave, then pull the changes from the remote repository, fast-forward (no merge\ncommit) and then re-apply your commits on top of the current <span class=\"caps\">HEAD</span>. The end\nresult from a code point of view is the same, but the history is much&nbsp;cleaner:</p>\n<div class=\"highlight\"><pre><span class=\"go\">* 9:35 - Nancy - Second commit</span>\n<span class=\"go\">* 9:30 - Brad - First commit</span>\n<span class=\"go\">* 9:12 - Nancy - First commit</span>\n</pre></div>\n<p>See? Isn&#8217;t this so much better? The only difference to your current workflow is\nthat instead of <tt class=\"docutils literal\">git pull</tt> you will run <tt class=\"docutils literal\">git pull <span class=\"pre\">&#8211;rebase</span></tt>.&nbsp;Easy!</p>\n</div>\n", 
+    "date_iso": "2011-05-14", 
+    "title": "The importance of git rebase", 
+    "url": "/2011/05/the-importance-of-git-rebase", 
+    "day": "14", 
+    "categories": [
+        {
+            "name": "Code", 
+            "slug": "code"
+        }, 
+        {
+            "name": "Git", 
+            "slug": "git"
+        }
+    ]
+}

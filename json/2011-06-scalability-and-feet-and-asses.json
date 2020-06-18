@@ -1,0 +1,18 @@
+{
+    "reading_time": "under one minute", 
+    "month": "06", 
+    "year": "2011", 
+    "date": "June 19, 2011", 
+    "slug": "scalability-and-feet-and-asses", 
+    "contents": "<div class=\"section\" id=\"scalability-and-feet-and-asses\">\n<h1>Scalability and feet and&nbsp;asses</h1>\n<p>I love talking about scalability. Everyone has their own opinion, their own way\nof performing benchmarks and their own conclusions. And we all know that this\nis <em>very</em> silly. I recently came across an article by <a class=\"reference external\" href=\"http://twitter.com/dozba\">Ted Dziuba</a> that\nsummarizes it very nicely for&nbsp;you:</p>\n<blockquote>\nShut up about scalability, no one is using your app anyway.</blockquote>\n<p>I love how the author explains the use of the word <em>scalability</em> in this day\nand&nbsp;age:</p>\n<blockquote>\nThe most common butthurt about scalability is this: choose a technology. If\nyou like the technology, claim &#8220;technology X scales better!&#8221; If you don&#8217;t\nlike it, claim &#8220;technology X doesn&#8217;t scale!&#8221;</blockquote>\n<p>You can find the article <a class=\"reference external\" href=\"http://teddziuba.com/2008/04/im-going-to-scale-my-foot-up-y.html\">here</a>.</p>\n</div>\n", 
+    "date_iso": "2011-06-19", 
+    "title": "Scalability and feet and asses", 
+    "url": "/2011/06/scalability-and-feet-and-asses", 
+    "day": "19", 
+    "categories": [
+        {
+            "name": "scalability", 
+            "slug": "scalability"
+        }
+    ]
+}

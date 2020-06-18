@@ -5,4 +5,4 @@ theme = "contrast-hugo"
 publishDir = ".."
 disableHugoGeneratorInject = true
 [permalinks]
-  posts = "/:year/:month/:title"
+    "/" = "/:year/:month/:title"

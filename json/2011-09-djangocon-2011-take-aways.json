@@ -1,0 +1,22 @@
+{
+    "reading_time": "under one minute", 
+    "month": "09", 
+    "year": "2011", 
+    "date": "September 10, 2011", 
+    "slug": "djangocon-2011-take-aways", 
+    "contents": "<div class=\"section\" id=\"djangocon-2011-take-aways\">\n<h1>DjangoCon 2011&nbsp;Take-Aways</h1>\n<p>My employer, <a class=\"reference external\" href=\"http://www.sheepdoginc.ca/\">SheepDogInc</a>, sent me and a colleague of mine to <a class=\"reference external\" href=\"http://djangocon.us/\">DjangoCon\n2011</a>. It was my first developer conference and I had a blast. Here a few\nquick points about what the conference has clarified for&nbsp;me.</p>\n<div class=\"section\" id=\"deploying-django\">\n<h2>Deploying&nbsp;Django</h2>\n<p>Despite the Django official documentation&#8217;s recommendation to use Apache and\nmod_wsgi, most people seem to deploy Django with nginx and gunicorn. This has\nbeen a pleasant surprise to me because I like it but though that it was too\nsimple (or less robust than&nbsp;Apache).</p>\n</div>\n<div class=\"section\" id=\"provisioning-servers\">\n<h2>Provisioning&nbsp;servers</h2>\n<p>It seemed that everybody was talking about <a class=\"reference external\" href=\"http://www.opscode.com/chef/\">Chef</a> and automatic deployments.\nInstead of manually connecting to a server via ssh, you can run one command\nwhich will install all the necessary packages for your application (nginx,\npostgresql, etc) and configure them. It makes the whole process less\nerror-prone. Also, you&#8217;re more likely to spin up a new <span class=\"caps\">VM</span> on your development\nmachine to try things out because you don&#8217;t have to thing about setting it up.\nEspecially with tools like <a class=\"reference external\" href=\"http://vagrantup.com/\">vagrant</a>, it&#8217;s dead&nbsp;easy.</p>\n</div>\n<div class=\"section\" id=\"pronouncing-things\">\n<h2>Pronouncing&nbsp;things</h2>\n<p>When you read names of technical products, you can&#8217;t always be sure how it&#8217;s\nsupposed to be&nbsp;pronounced.</p>\n<ul class=\"simple\">\n<li>PyPI:&nbsp;pie-pee-eye</li>\n<li>PyPy:&nbsp;pie-pie</li>\n<li>wsgi:&nbsp;wizz-gy</li>\n<li>nginx:&nbsp;engine-x</li>\n</ul>\n<p>Did you go to DjangoCon 2011? What are your&nbsp;thoughts?</p>\n</div>\n</div>\n", 
+    "date_iso": "2011-09-10", 
+    "title": "DjangoCon 2011 Take-Aways", 
+    "url": "/2011/09/djangocon-2011-take-aways", 
+    "day": "10", 
+    "categories": [
+        {
+            "name": "code", 
+            "slug": "code"
+        }, 
+        {
+            "name": "django", 
+            "slug": "django"
+        }
+    ]
+}

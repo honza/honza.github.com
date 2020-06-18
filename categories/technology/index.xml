@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Technology on Honza Pokorny</title>
+    <title>technology on Honza Pokorny</title>
     <link>https://honza.ca/categories/technology/</link>
-    <description>Recent content in Technology on Honza Pokorny</description>
+    <description>Recent content in technology on Honza Pokorny</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 09 Apr 2011 17:30:00 -0300</lastBuildDate>
@@ -17,8 +17,18 @@
       <pubDate>Sat, 09 Apr 2011 17:30:00 -0300</pubDate>
       
       <guid>https://honza.ca/2011/04/the-latest-greatest-technology/</guid>
-      <description>I just found an interesting quote by Thomas Fuchs, the creator of script.aculo.us and a core member of the Prototype team. The quote is from his Setup interview:
- For computer programmers, especially if you&amp;rsquo;re self-employed, there&amp;rsquo;s no excuse whatsoever not to get the latest and greatest. You don&amp;rsquo;t really have other expenses anyway, it&amp;rsquo;s tax-deductible and, most importantly, it will make you happy and more productive if you know that you&amp;rsquo;re using the best available tools.</description>
+      <description>&lt;p&gt;I just found an interesting quote by &lt;a href=&#34;http://mir.aculo.us/&#34;&gt;Thomas Fuchs&lt;/a&gt;, the creator of
+script.aculo.us and a core member of the Prototype team. The quote is from his
+&lt;a href=&#34;http://thomas.fuchs.usesthis.com/&#34;&gt;Setup&lt;/a&gt; interview:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;For computer programmers, especially if you&amp;rsquo;re self-employed, there&amp;rsquo;s no
+excuse whatsoever not to get the latest and greatest. You don&amp;rsquo;t really have
+other expenses anyway, it&amp;rsquo;s tax-deductible and, most importantly, it will
+make you happy and more productive if you know that you&amp;rsquo;re using the best
+available tools.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Do you agree?&lt;/p&gt;
+</description>
     </item>
     
   </channel>

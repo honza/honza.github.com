@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Devops on Honza Pokorny</title>
+    <title>devops on Honza Pokorny</title>
     <link>https://honza.ca/categories/devops/</link>
-    <description>Recent content in Devops on Honza Pokorny</description>
+    <description>Recent content in devops on Honza Pokorny</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 11 Dec 2013 14:55:00 -0400</lastBuildDate>
@@ -17,8 +17,64 @@
       <pubDate>Wed, 11 Dec 2013 14:55:00 -0400</pubDate>
       
       <guid>https://honza.ca/2013/12/masterless-saltstack/</guid>
-      <description>This is a simple guide on how to use Saltstack, the configuration manager, in masterless mode. In most scenarios, you will use a Saltstack master to control many minions. Saltstack contains a lot of utilities to check the state of minions, gather information about them, etc.
-However, if you are working on a small, single-server application, Saltstack&amp;rsquo;s master-minion setup might be overkill. You can indeed use a single minion.</description>
+      <description>&lt;p&gt;This is a simple guide on how to use Saltstack, the configuration manager, in
+masterless mode. In most scenarios, you will use a Saltstack master to
+control many minions. Saltstack contains a lot of utilities to check the state
+of minions, gather information about them, etc.&lt;/p&gt;
+&lt;p&gt;However, if you are working on a small, single-server application, Saltstack&amp;rsquo;s
+master-minion setup might be overkill. You can indeed use a single minion.&lt;/p&gt;
+&lt;h2 id=&#34;a-bit-of-setup-first&#34;&gt;A bit of setup first&lt;/h2&gt;
+&lt;p&gt;Your project will need two directories for Saltstack&amp;rsquo;s files.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;pillar/
+salt/
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The &lt;code&gt;salt&lt;/code&gt; directory will contain the scripts that are responsible for
+setting up a particular part of your server, e.g. nginx, postgresql, etc.
+&lt;code&gt;pillar&lt;/code&gt; on the other hand will contain the configuration value for each
+environment that your app will run in. So, you might have a &lt;em&gt;staging&lt;/em&gt; and a
+&lt;em&gt;production&lt;/em&gt; environment set up there.&lt;/p&gt;
+&lt;p&gt;Each of these directories needs a &lt;code&gt;top.sls&lt;/code&gt; file which is what&amp;rsquo;s loaded
+first. For fun, let&amp;rsquo;s just install &lt;code&gt;vim&lt;/code&gt; into a production environment.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;pillar/
+    top.sls
+    production.sls
+salt/
+    top.sls
+    vim.sls
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;salt&#34;&gt;Salt&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;salt/top.sls&lt;/code&gt; file will have a case-expression-like structure, matching
+on hostnames of your app.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;base&lt;/span&gt;:
+  &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;production&amp;#34;&lt;/span&gt;:
+    - vim
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Note that &lt;code&gt;sls&lt;/code&gt; files use YAML syntax.&lt;/p&gt;
+&lt;p&gt;Here we are installing vim in the production hostname.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;salt/vim.sls&lt;/code&gt; file will look something like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;vim&lt;/span&gt;:
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;pkg&lt;/span&gt;:
+    - installed
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This simply says that we want the vim package installed. Saltstack will
+automatically detect your package manager (i.e. apt-get, yum, etc).&lt;/p&gt;
+&lt;h2 id=&#34;pillar&#34;&gt;Pillar&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;pillar/top.sls&lt;/code&gt; file has the same structure as the main file from the
+salt directory.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;base&lt;/span&gt;:
+  &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;production&amp;#34;&lt;/span&gt;:
+    - production
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;When the &lt;code&gt;production&lt;/code&gt; hostname is detected, use the &lt;code&gt;production.sls&lt;/code&gt; file
+for configuration. You can put just about anything you want to the
+&lt;code&gt;production.sls&lt;/code&gt; file, be it the servers IP address or the SMTP settings.&lt;/p&gt;
+&lt;h2 id=&#34;where-to-put-things&#34;&gt;Where to put things&lt;/h2&gt;
+&lt;p&gt;After you&amp;rsquo;ve installed Saltstack on your server, you should copy or symlink the
+&lt;code&gt;salt/&lt;/code&gt; and &lt;code&gt;pillar/&lt;/code&gt; directories to the &lt;code&gt;/srv&lt;/code&gt; directory&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;/srv/salt
+/srv/pillar
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;running-it&#34;&gt;Running it&lt;/h2&gt;
+&lt;p&gt;Once the configuration files are in place, you can run the minion&amp;rsquo;s
+provisioning command to get everything configured and installed.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;$ salt-call --local state.highstate
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Don&amp;rsquo;t ask me why it&amp;rsquo;s like this. Makes no sense.&lt;/p&gt;
+&lt;p&gt;Saltstack will run everything and then report what happened during the run.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -27,9 +83,50 @@ However, if you are working on a small, single-server application, Saltstack&amp
       <pubDate>Mon, 21 May 2012 16:43:00 -0300</pubDate>
       
       <guid>https://honza.ca/2012/05/why-you-should-use-heroku-for-your-next-start-up/</guid>
-      <description>You are a ninja-rockstar developer with a billion dollar idea. You write Ruby and Javascript. You like BDD, responsive design, HTML5 and node.js. You are really good at UX and quickly producing a prototype. You have been working on your app for a few months.
-Now it&amp;rsquo;s time to deploy your app.
-Because you are a hot new start-up, you will of course use AWS. You spend a few hours trying to figure out how many of which instance type you will need.</description>
+      <description>&lt;p&gt;You are a ninja-rockstar developer with a billion dollar idea. You write Ruby
+and Javascript. You like BDD, responsive design, HTML5 and node.js. You are
+really good at UX and quickly producing a prototype. You have been working on
+your app for a few months.&lt;/p&gt;
+&lt;p&gt;Now it&amp;rsquo;s time to deploy your app.&lt;/p&gt;
+&lt;p&gt;Because you are a hot new start-up, you will of course use AWS. You spend a
+few hours trying to figure out how many of which instance type you will need.
+You decide you need a load balancer, a bunch of app servers, a database server
+and a worker server. That should about cover you. Next up is Chef. You spend
+a few days learning about provisioning a new VM with Chef. You are so excited
+about how you can automatically provision a new app server when your start-up
+hits the front page of TechCrunch. You spend a week configuring and testing
+your Chef scripts. And then the big day comes. You deploy your application.
+Everything works the first time and you are overjoyed. First users start to
+appear and your architecture performs really well. You hit the front page of
+HackerNews and get tens of thousands of hits on your site. You find a small
+bug in your cache invalidation logic which you fix really quickly. You deploy
+your fix and what do you know? That script that installs your project&amp;rsquo;s
+dependencies when you deploy just pulled in a new version of a library that
+deploys your static files to S3. And of course that new version contains
+backwards incompatible changes and completely breaks your app. You are
+frantically trying to figure out what happened. You think, OK, I will put up a
+maintenance page while I sort this out. You try to SSH into your load balancer
+and try to change the routing settings. What a mess. What do you do when your
+database starts swapping? What happens when your Redis server runs out of
+memory and dies? You barely understand how to install MySQL, let alone how to
+get the most out of it.&lt;/p&gt;
+&lt;p&gt;Enter Heroku.&lt;/p&gt;
+&lt;p&gt;Single command deployments. Fully-managed database service. Automatic
+load-balancing. On-demand scaling. No manual SSH to see what&amp;rsquo;s wrong.&lt;/p&gt;
+&lt;p&gt;A request comes in, the load balancer picks it up and sends it to a suitable
+app server instance. The app server instance talks to a highly optimized
+database instance. Redis is sitting on a super beefy machine with lots of RAM
+and you never have to worry about it. When you are ready to make a deployment,
+the load balancer bounces each app server in turn to make sure you don&amp;rsquo;t lose
+any requests. All you need to do is &lt;code&gt;git push heroku master&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Sure, Heroku is a bit more expensive than EC2. But when you think of how many
+smart people are taking care of your app, it&amp;rsquo;s really cheap. It&amp;rsquo;s like having
+your own sys admin.&lt;/p&gt;
+&lt;p&gt;You need it.&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;Disclaimer&lt;!-- raw HTML omitted --&gt;: I&amp;rsquo;m in no way connected to Heroku. This posts is an attempt to
+convince myself that I shouldn&amp;rsquo;t be using Chef for my
+side-project-start-up-ideas. And I&amp;rsquo;m not a Ruby guy.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

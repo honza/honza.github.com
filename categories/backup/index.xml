@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Backup on Honza Pokorny</title>
+    <title>backup on Honza Pokorny</title>
     <link>https://honza.ca/categories/backup/</link>
-    <description>Recent content in Backup on Honza Pokorny</description>
+    <description>Recent content in backup on Honza Pokorny</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 15 Jul 2013 15:20:00 -0300</lastBuildDate>
@@ -17,8 +17,75 @@
       <pubDate>Mon, 15 Jul 2013 15:20:00 -0300</pubDate>
       
       <guid>https://honza.ca/2013/07/how-i-back-up-my-laptop/</guid>
-      <description>For the longest time, I was using Time Machine to keep copies of my files. I don&amp;rsquo;t remember ever wishing I could go back in time and retrieve an older version of a file. What does keep me up at night though is forever losing all of the pictures of our kids because my hard drive failed.
-I also don&amp;rsquo;t particularly like tools like Time Machine, Carbon Copy Cloner or SuperDuper.</description>
+      <description>&lt;p&gt;For the longest time, I was using Time Machine to keep copies of my files. I
+don&amp;rsquo;t remember ever wishing I could go back in time and retrieve an older
+version of a file. What does keep me up at night though is forever losing all
+of the pictures of our kids because my hard drive failed.&lt;/p&gt;
+&lt;p&gt;I also don&amp;rsquo;t particularly like tools like Time Machine, Carbon Copy Cloner or
+SuperDuper. They are some kind of GUI app that does stuff, and I like my unix
+tools.&lt;/p&gt;
+&lt;p&gt;Here are my requirements for a good backup solution:&lt;/p&gt;
+&lt;h2 id=&#34;incremental-that-means-don-t-overwrite-older-backups-and-don-t-back-up&#34;&gt;Incremental - that means don&amp;rsquo;t overwrite older backups and don&amp;rsquo;t back up&lt;/h2&gt;
+&lt;p&gt;everything every time&lt;/p&gt;
+&lt;h2 id=&#34;efficient-storage-i-shouldn-t-need-10-tb-to-keep-a-few-backups-of-my-hard&#34;&gt;Efficient storage - I shouldn&amp;rsquo;t need 10 TB to keep a few backups of my hard&lt;/h2&gt;
+&lt;p&gt;drive&lt;/p&gt;
+&lt;h2 id=&#34;bootable-if-my-hard-drive-fails-or-laptop-gets-stolen-i-want-to-be-able&#34;&gt;Bootable - if my hard drive fails or laptop gets stolen, I want to be able&lt;/h2&gt;
+&lt;p&gt;to back to work quickly&lt;/p&gt;
+&lt;p&gt;When you do some research into this, you will see mostly suggesting rsync. It
+can copy your entire drive and does smart, incremental backups. Except it
+overwrites stuff and you only get to keep the latest copy.&lt;/p&gt;
+&lt;p&gt;Enter &lt;a href=&#34;https://github.com/bup/bup&#34;&gt;bup&lt;/a&gt;. Bup is simply amazing. It&amp;rsquo;s based on git and it gives you
+automatic incremental, deduplicated, shared backups. Free and open source.&lt;/p&gt;
+&lt;p&gt;Backing up huge virtual machines? It only backs up what changed, not the whole
+file. Multiple copies of the same stuff on your hard drive? Only needs to
+store one copy. Have a look at their documentation for more information about
+how it works and what the benefits are.&lt;/p&gt;
+&lt;p&gt;The way you use bup is by creating a tar archive stream of all your data and
+sending it to bup on stdin. Bup takes it, chunks, deduplicates it and stores
+in a git repo.&lt;/p&gt;
+&lt;p&gt;The canonical example goes like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;tar -cvf - /etc | bup split -n local-etc
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The &lt;code&gt;-n&lt;/code&gt; flag just allows you to name your backup.&lt;/p&gt;
+&lt;p&gt;Next, we have to figure out how to tar up our entire drive. This can be a
+little tricky because there are some special files which we don&amp;rsquo;t want to copy
+over. After much trial, error and googling, I came up with the following list
+of exclusions. Note that this only applies to OS X.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;.Spotlight-*/
+.Trashes
+/afs/*
+/automount/*
+/cores/*
+/dev/*
+/Network/*
+/private/tmp/*
+/private/var/run/*
+/private/var/spool/postfix/*
+/private/var/vm/*
+/Previous Systems.localized
+/tmp/*
+/Volumes/*
+*/.Trash
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Save this to &lt;code&gt;excludes.txt&lt;/code&gt; and then use this tar command:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;$ tar -cvf - / -X excludes.txt | bup split -n backup
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This takes about 1-2h on my system (128GB SSD, 500GB 5400rpm external).
+Subsequent backups take a lot less time. As far as actual backup goes, we&amp;rsquo;re
+done.&lt;/p&gt;
+&lt;p&gt;How do you restore?&lt;/p&gt;
+&lt;p&gt;The nice thing about bup is that it stores your backups in a git repository.
+This means that you can go back in history and decide from which point in time
+you&amp;rsquo;d like to restore. Bup allows you to spit out a tar file like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;$ bup join backup -o backup.tar
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This will again take some time and use quite a bit of resources (git will eat
+your RAM and CPU - a 6GB git process anyone?). Once that is done, you can
+extract the tar to a drive that can be booted into. This can be the internal
+drive on a new computer or a GUID-partitioned external drive.&lt;/p&gt;
+&lt;p&gt;Once extracted, you just have to &lt;em&gt;bless&lt;/em&gt; the data to make it bootable:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;$ sudo bless -folder /System/Library/CoreServices
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Then, you should reboot your Mac while holding down the Option key. This will
+show you the boot order menu and allow you to specify where you&amp;rsquo;d like to boot
+from.&lt;/p&gt;
+&lt;p&gt;Of course, you should wrap all of this in a script and run it periodically.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

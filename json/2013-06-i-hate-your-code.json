@@ -1,0 +1,18 @@
+{
+    "reading_time": "under one minute", 
+    "month": "06", 
+    "year": "2013", 
+    "date": "June 21, 2013", 
+    "slug": "i-hate-your-code", 
+    "contents": "<div class=\"section\" id=\"i-hate-your-code\">\n<h1>I hate your&nbsp;code</h1>\n<p>When starting to work on an existing codebase, I often find myself in a state\nof despair.  The code doesn&#8217;t make any sense, the programmers must have all\nbeen idiots, why <em>on earth</em> would they do it like this, &#8230;  I hate everything\nabout the&nbsp;code.</p>\n<p>I spend hours going through it, thinking to myself, <em>I would have done a much\nbetter job writing this</em> and making a list of changes that <em>must</em> be done in\norder for the project to conform to my&nbsp;standards.</p>\n<p>But then, when I have spent enough time reading everything, something clicks in\nmy mind.  I see what the authors were trying to do and everything makes sense.\nIt&#8217;s actually kind of&nbsp;clever.</p>\n<p>And I feel dumb.  Every&nbsp;time.</p>\n</div>\n", 
+    "date_iso": "2013-06-21", 
+    "title": "I hate your code", 
+    "url": "/2013/06/i-hate-your-code", 
+    "day": "21", 
+    "categories": [
+        {
+            "name": "code", 
+            "slug": "code"
+        }
+    ]
+}

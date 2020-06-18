@@ -38,23 +38,15 @@
 </div>
 
 <article>
-  
-
-<p>You are a Python developer and every time you have to install a Ruby gem you
+  <p>You are a Python developer and every time you have to install a Ruby gem you
 throw up in your mouth a little. Wouldn&rsquo;t it be nice if you could install Ruby
 gems into your virtualenv? Yeah, it would.</p>
-
 <p>Stick this in your virtualenv&rsquo;s <code>postactivate</code> script:</p>
-
-<pre><code class="language-bash">export GEM_HOME=&quot;$VIRTUAL_ENV/gems&quot;
-export GEM_PATH=&quot;&quot;
-export PATH=$PATH:&quot;$GEM_HOME/bin&quot;
-</code></pre>
-
-<p>That&rsquo;s it! You&rsquo;re welcome. :)</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export GEM_HOME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$VIRTUAL_ENV<span style="color:#e6db74">/gems&#34;</span>
+export GEM_PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>
+export PATH<span style="color:#f92672">=</span>$PATH:<span style="color:#e6db74">&#34;</span>$GEM_HOME<span style="color:#e6db74">/bin&#34;</span>
+</code></pre></div><p>That&rsquo;s it! You&rsquo;re welcome. :)</p>
 <h2 id="credit">Credit</h2>
-
 <p>Give credit where credit is due. I stole this idea from <a href="http://twitter.com/idangazit">Idan Gazit</a> and
 made it better.</p>
 

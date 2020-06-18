@@ -1,0 +1,22 @@
+{
+    "reading_time": "2 minutes", 
+    "month": "07", 
+    "year": "2011", 
+    "date": "July 19, 2011", 
+    "slug": "why-i-love-restructuredtext", 
+    "contents": "<div class=\"section\" id=\"why-i-love-restructuredtext\">\n<h1>Why I love&nbsp;reStructuredText</h1>\n<p>A lot of geeks are using Markdown as their markup generation tool today. It&#8217;s\nsimple, effective and used everywhere. It allows you to focus on your content\nand not on the <span class=\"caps\">HTML</span> code that will be used to display the content on a web\npage. I have used Markdown extensively and its simplicity is appealing to&nbsp;me.</p>\n<p><a class=\"reference external\" href=\"http://docutils.sourceforge.net/\">reStructuredText</a> is similar to Markdown. If you know Markdown, it&#8217;s dead\nsimple to learn to use <span class=\"caps\">RST</span>. So, why bother? There are many things it can do\nthat Markdown simple wasn&#8217;t designed to&nbsp;do.</p>\n<p>Let me give you a bit of a background. As a programmer, I like to write and\nsave documents in text files, using the vim editor. This way I can easily keep\ntrack of different versions of those documents and I will always be able to\nopen them. The problem is that most non-technical people, such as my family or\nperhaps your clients, are trained to use Word documents or <span class=\"caps\">PDF</span> files. Most\ncomputer users wouldn&#8217;t know what to do with that file and wouldn&#8217;t understand\nthe syntax. I was looking for a way to write my documents in text files and\nstill be able to share those with others via Word/<span class=\"caps\">PDF</span>. At first, I set up\nsimple LaTex templates. Then, I thought about writing a script to parse\nMarkdown files to <span class=\"caps\">PDF</span> via ReportLab. All very cumbersome and not quite&nbsp;right.</p>\n<p>Then, I dicovered <span class=\"caps\">RST</span>. It&#8217;s written in Python which means that any\ncustomizations won&#8217;t be impossible. When I installed it, I was surprised that\nit came with a set of command line tools to parse <span class=\"caps\">RST</span> files to other common\nformats such&nbsp;as:</p>\n<ul class=\"simple\">\n<li><span class=\"caps\">HTML</span></li>\n<li><span class=\"caps\">PDF</span> via&nbsp;Latex</li>\n<li><span class=\"caps\">ODT</span> (OpenOffice&nbsp;format)</li>\n</ul>\n<p>I played around a bit with the tools and found them useful, but not great. The\ndefault formatting was ugly and it seemed like it would take too much work to\nmanually edit the embedded <span class=\"caps\">CSS</span>/Latex/<span class=\"caps\">ODT</span>&nbsp;styles.</p>\n<p>I read through the documentation more and found out that you can set up global\nor project specific configuration files that <span class=\"caps\">RST</span> parsers will look for by\ndefault. The syntax is simple and effective. This way, you only set up your\nstyles once and then all you have to do to convert those styles&nbsp;is</p>\n<div class=\"highlight\"><pre><span class=\"gp\">$</span> rst2html.py doc.rst &gt; doc.html\n</pre></div>\n<p><span class=\"caps\">RST</span> is extensible and you can configure it to do almost anything you want. Once\ngood example is Pygments syntax highlighting. You can add a new directive and\nautomatically run your code examples through Pygments. Or, you can customize\nthe LaTex writer to use a specific font, page size and lots&nbsp;more.</p>\n</div>\n", 
+    "date_iso": "2011-07-19", 
+    "title": "Why I love reStructuredText", 
+    "url": "/2011/07/why-i-love-restructuredtext", 
+    "day": "19", 
+    "categories": [
+        {
+            "name": "Code", 
+            "slug": "code"
+        }, 
+        {
+            "name": "RST", 
+            "slug": "rst"
+        }
+    ]
+}

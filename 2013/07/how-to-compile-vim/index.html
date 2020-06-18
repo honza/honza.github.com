@@ -39,35 +39,27 @@
 
 <article>
   <p>&hellip; from source when you&rsquo;re using the homebrew-provided Python.</p>
-
 <p>If you have installed Python via homebrew, your vim will compile fine but when
 a plugin tries to use Python to do some its work, vim will crash like this:</p>
-
-<p><img src="/images/vim-crash.png" alt="" />Not pretty.</p>
-
+<p><img src="/images/vim-crash.png" alt="">Not pretty.</p>
 <p>Apparently, this is because vim will use the first Python it can find which in
-our case the homebrew-provided one.  You can of course get a pre-compiled
-version and ignore this.  But I like to use the latest version of vim and with
+our case the homebrew-provided one. You can of course get a pre-compiled
+version and ignore this. But I like to use the latest version of vim and with
 the 7.4 beta, I have been doing that a lot lately&hellip;</p>
+<p>So, what is one to do? We have to fix the <code>PATH</code>. Here is the script that I
+use to recompile vim. This goes in the root of the vim project.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export PATH<span style="color:#f92672">=</span>/bin:/usr/sbin:/sbin:/usr/bin
 
-<p>So, what is one to do?  We have to fix the <code>PATH</code>.  Here is the script that I
-use to recompile vim.  This goes in the root of the vim project.</p>
-
-<pre><code class="language-bash">export PATH=/bin:/usr/sbin:/sbin:/usr/bin
-
-./configure \
-        --enable-perlinterp \
-        --enable-pythoninterp \
-        --enable-rubyinterp \
-        --enable-cscope \
-        --with-features=huge
+./configure <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        --enable-perlinterp <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        --enable-pythoninterp <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        --enable-rubyinterp <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        --enable-cscope <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        --with-features<span style="color:#f92672">=</span>huge
 
 make
-</code></pre>
-
-<p>There and vim is now compiled properly with Python support that won&rsquo;t make you
+</code></pre></div><p>There and vim is now compiled properly with Python support that won&rsquo;t make you
 cry.</p>
-
 <p>Thanks to Steve Losh for pointing me in the right direction on this.</p>
 
 </article>

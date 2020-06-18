@@ -39,46 +39,38 @@
 
 <article>
   <p>(That&rsquo;s quite a title, isn&rsquo;t it?)</p>
-
 <p>If you&rsquo;re using vim to write Clojure code, chances are that you&rsquo;re using Tim
-Pope&rsquo;s vim-fireplace plugin.  It&rsquo;s really great.  It stars an nREPL session in
-the background for you and lets you evaluate a form inside of vim.  It&rsquo;s super
+Pope&rsquo;s vim-fireplace plugin. It&rsquo;s really great. It stars an nREPL session in
+the background for you and lets you evaluate a form inside of vim. It&rsquo;s super
 fast because it keeps the session around and it&rsquo;s one of my favorite things
 about writing Clojure.</p>
-
-<p>Recently, vim-fireplace received support for <a href="https://github.com/cemerick/piggieback">piggieback</a>.  Piggieback is a
-layer on top of nREPL that gives you support for ClojureScript.  This is really
+<p>Recently, vim-fireplace received support for <a href="https://github.com/cemerick/piggieback">piggieback</a>. Piggieback is a
+layer on top of nREPL that gives you support for ClojureScript. This is really
 great because it gives you the ability to evaluate ClojureScript code in vim
 just like your normal Clojure code.</p>
-
 <p>Alright, here is how to set it up:</p>
-
 <p><code>project.clj</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defproject </span>pig <span style="color:#e6db74">&#34;0.1.0-SNAPSHOT&#34;</span>
+  <span style="color:#e6db74">:description</span> <span style="color:#e6db74">&#34;FIXME: write this!&#34;</span>
+  <span style="color:#e6db74">:url</span> <span style="color:#e6db74">&#34;http://example.com/FIXME&#34;</span>
 
-<pre><code class="language-clojure">(defproject pig &quot;0.1.0-SNAPSHOT&quot;
-  :description &quot;FIXME: write this!&quot;
-  :url &quot;http://example.com/FIXME&quot;
+  <span style="color:#e6db74">:dependencies</span> [[org.clojure/clojure <span style="color:#e6db74">&#34;1.5.1&#34;</span>]
+                 [com.cemerick/piggieback <span style="color:#e6db74">&#34;0.1.3&#34;</span>]]
 
-  :dependencies [[org.clojure/clojure &quot;1.5.1&quot;]
-                 [com.cemerick/piggieback &quot;0.1.3&quot;]]
+  <span style="color:#e6db74">:plugins</span> [[lein-cljsbuild <span style="color:#e6db74">&#34;1.0.2&#34;</span>]]
+  <span style="color:#e6db74">:repl-options</span> {<span style="color:#e6db74">:nrepl-middleware</span> [cemerick.piggieback/wrap-cljs-repl]}
 
-  :plugins [[lein-cljsbuild &quot;1.0.2&quot;]]
-  :repl-options {:nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
+  <span style="color:#e6db74">:source-paths</span> [<span style="color:#e6db74">&#34;src&#34;</span>]
 
-  :source-paths [&quot;src&quot;]
-
-  :cljsbuild {
-    :builds [{:source-paths [&quot;src&quot;]
-              :compiler {
-                :target :nodejs
-                :optimizations :simple}}]})
-</code></pre>
-
-<p>Pretty standard stuff.  We&rsquo;re using the lein-cljsbuild plugin for automatic
+  <span style="color:#e6db74">:cljsbuild</span> {
+    <span style="color:#e6db74">:builds</span> [{<span style="color:#e6db74">:source-paths</span> [<span style="color:#e6db74">&#34;src&#34;</span>]
+              <span style="color:#e6db74">:compiler</span> {
+                <span style="color:#e6db74">:target</span> <span style="color:#e6db74">:nodejs</span>
+                <span style="color:#e6db74">:optimizations</span> <span style="color:#e6db74">:simple</span>}}]})
+</code></pre></div><p>Pretty standard stuff. We&rsquo;re using the lein-cljsbuild plugin for automatic
 compilation, we set up the source path and a nodejs compile target.</p>
-
 <p>Now you simply open a <code>.cljs</code> file and you can do your usual vim-fireplace
-magic.  The first <code>cpr</code> (reload current buffer) command will connect to an
+magic. The first <code>cpr</code> (reload current buffer) command will connect to an
 nREPL instance and initialize the piggieback wrapper.</p>
 
 </article>

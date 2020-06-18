@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Chef on Honza Pokorny</title>
+    <title>chef on Honza Pokorny</title>
     <link>https://honza.ca/categories/chef/</link>
-    <description>Recent content in Chef on Honza Pokorny</description>
+    <description>Recent content in chef on Honza Pokorny</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 20 Sep 2011 20:00:00 -0300</lastBuildDate>
@@ -17,8 +17,131 @@
       <pubDate>Tue, 20 Sep 2011 20:00:00 -0300</pubDate>
       
       <guid>https://honza.ca/2011/09/using-chef-with-small-django-apps/</guid>
-      <description>This year at DjangoCon, it seemed like everybody was talking about automatic deployments and namely Chef. After coming home from the conference, I spent a considerable amount of time learning chef and thinking about how it can be best used with small to medium size Django apps. In this post, I will walk you through how Chef works and how it can help you make awesome web apps.
-When I say small apps, I mean single-server deployments.</description>
+      <description>&lt;p&gt;This year at &lt;a href=&#34;http://djangocon.us&#34;&gt;DjangoCon&lt;/a&gt;, it seemed like everybody was talking about automatic
+deployments and namely &lt;a href=&#34;http://www.opscode.com/chef/&#34;&gt;Chef&lt;/a&gt;. After coming home from the conference, I spent
+a considerable amount of time learning chef and thinking about how it can be
+best used with small to medium size Django apps. In this post, I will walk you
+through how Chef works and how it can help you make awesome web apps.&lt;/p&gt;
+&lt;p&gt;When I say small apps, I mean single-server deployments. This means that your
+web server, your database, memcached, rabbitmq, etc is installed on a single
+Ubuntu VM. When learning Chef, I found that most of the available tutorials
+focus on multi-server setups and are too complex for ordinary apps.&lt;/p&gt;
+&lt;p&gt;Unfortunately, Chef is written in Ruby and it can be a little tricky to debug
+since all the tracebacks are meaningless to a Python developer. However, don&amp;rsquo;t
+despair, you can usually tell pretty quickly what&amp;rsquo;s going on. To test your
+deployment, we will be using &lt;a href=&#34;http://vagrantup.com&#34;&gt;Vagrant&lt;/a&gt; which is an awesome tool for running
+virtual machines on your development machine.&lt;/p&gt;
+&lt;h2 id=&#34;what-we-will-install&#34;&gt;What we will install&lt;/h2&gt;
+&lt;p&gt;Our Django application will be deployed using the following:&lt;/p&gt;
+&lt;h3 id=&#34;nginx&#34;&gt;nginx&lt;/h3&gt;
+&lt;h3 id=&#34;gunicorn&#34;&gt;gunicorn&lt;/h3&gt;
+&lt;h3 id=&#34;postgresql&#34;&gt;postgresql&lt;/h3&gt;
+&lt;h3 id=&#34;memcached&#34;&gt;memcached&lt;/h3&gt;
+&lt;h3 id=&#34;rabbitmq&#34;&gt;rabbitmq&lt;/h3&gt;
+&lt;h3 id=&#34;git&#34;&gt;git&lt;/h3&gt;
+&lt;p&gt;Your development machine will need to have &lt;a href=&#34;http://docs.fabfile.org/en/1.2.2/index.html&#34;&gt;Fabric&lt;/a&gt; installed.&lt;/p&gt;
+&lt;h2 id=&#34;how-chef-works&#34;&gt;How Chef works&lt;/h2&gt;
+&lt;p&gt;Chef is a tool that is installed on your server. You give it a bunch
+configuration files and tell it to provision server with the necessary packages
+and settings. This means that our automatic deployment will have to parts: Chef
+configuration files for the sever, and several Fabric tasks to install Chef
+remotely and start the provisioning process.&lt;/p&gt;
+&lt;p&gt;So, to configure Chef, we will create a &lt;em&gt;deploy&lt;/em&gt; directory inside our project&amp;rsquo;s
+repository. I like to keep the following structure:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;$ ls -a
+.git coolapp docs deploy README.md Vagrantfile fabfile.py
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&amp;hellip; where &lt;em&gt;coolapp&lt;/em&gt; is your Django project. We will focus on the &lt;em&gt;deploy&lt;/em&gt;
+directory and the &lt;em&gt;fabfile&lt;/em&gt;. Chef is a cook how prepares your server for
+dinner. So, Chef needs some cookbooks and recipes. Each cookbook is a directory
+that contains various configuration files for a specific application that you
+want installed. So for example, you will have a &lt;em&gt;PostgreSQL cookbook&lt;/em&gt; and a
+&lt;em&gt;nginx cookbook&lt;/em&gt;. The deploy directory will contain a directory called
+&lt;em&gt;cookbooks&lt;/em&gt; which will contain all other cookbooks. Now, the good news is that
+you don&amp;rsquo;t have to make the cookbooks yourself. &lt;a href=&#34;http://www.opscode.com&#34;&gt;Opscode&lt;/a&gt;, the company behind
+Chef, maintains a large selection of cookbooks on &lt;a href=&#34;https://github.com/opscode/cookbooks&#34;&gt;Github&lt;/a&gt;. You can copy and
+paste the cookbooks you need for you project. We will need the following:&lt;/p&gt;
+&lt;h3 id=&#34;build-essential--for-building-from-source&#34;&gt;build-essential (for building from source)&lt;/h3&gt;
+&lt;h3 id=&#34;erlang--rabbitmq-depends-on-this&#34;&gt;erlang (rabbitmq depends on this)&lt;/h3&gt;
+&lt;h3 id=&#34;git&#34;&gt;git&lt;/h3&gt;
+&lt;h3 id=&#34;memcached&#34;&gt;memcached&lt;/h3&gt;
+&lt;h3 id=&#34;nginx&#34;&gt;nginx&lt;/h3&gt;
+&lt;h3 id=&#34;postgresql&#34;&gt;postgresql&lt;/h3&gt;
+&lt;h3 id=&#34;python--for-virtualenv-and-python-header-files&#34;&gt;python (for virtualenv and python header files)&lt;/h3&gt;
+&lt;h3 id=&#34;rabbitmq&#34;&gt;rabbitmq&lt;/h3&gt;
+&lt;h2 id=&#34;cookbooks&#34;&gt;Cookbooks&lt;/h2&gt;
+&lt;p&gt;Each cookbook contains a &lt;em&gt;recipes&lt;/em&gt; directory. Each recipe tells Chef how this
+particular application is to be installed and configured. For example, it will
+tell nginx to create an entry in &lt;em&gt;sites-available&lt;/em&gt; and &lt;em&gt;sites-enabled&lt;/em&gt;. Or, it
+will restart PostreSQL when it&amp;rsquo;s done being installed.&lt;/p&gt;
+&lt;p&gt;There is also a &lt;em&gt;files&lt;/em&gt; directory and a &lt;em&gt;templates&lt;/em&gt; directory. Templates are
+Ruby templates which define a particular configuration file. For example, in
+order for Chef to be able to properly configure nginx with the proper server
+name, it needs to know on what domain your application will be hosted. More on
+this later, but there is a master file which has all your settings in it and
+Chef reads from that and substitutes the necessary values. The &lt;em&gt;files&lt;/em&gt;
+directory contains files that need no further modification and can be copied
+over verbatim.&lt;/p&gt;
+&lt;h2 id=&#34;node-dot-json&#34;&gt;node.json&lt;/h2&gt;
+&lt;p&gt;The &lt;em&gt;node.json&lt;/em&gt; file is a per project file that specifies certain values for
+Chef to use. For example, you can tell Chef what you want your PostgreSQL
+database to be called, what the name of your django project is, etc. It has a
+simple JSON syntax.&lt;/p&gt;
+&lt;h2 id=&#34;your-app-s-recipe&#34;&gt;Your app&amp;rsquo;s recipe&lt;/h2&gt;
+&lt;p&gt;Your application is going to need a simple recipe. This means creating a
+cookbook bearing your project&amp;rsquo;s name and creating a &lt;em&gt;recipes&lt;/em&gt; directory within
+in. The recipe should be called &lt;em&gt;default.rb&lt;/em&gt; and all it needs to include is a
+list of applications to install. For example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Example django app cookbook&lt;/span&gt;
+
+execute &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Update apt repos&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt;
+    command &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;apt-get update&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;end&lt;/span&gt;
+
+include_recipe &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;nginx&amp;#39;&lt;/span&gt;
+include_recipe &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;build-essential&amp;#39;&lt;/span&gt;
+include_recipe &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;python&amp;#39;&lt;/span&gt;
+include_recipe &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;postgresql::server&amp;#39;&lt;/span&gt;
+include_recipe &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;memcached&amp;#39;&lt;/span&gt;
+include_recipe &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;runit&amp;#39;&lt;/span&gt;
+include_recipe &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;git&amp;#39;&lt;/span&gt;
+
+execute &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;restart postgres&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt;
+    command &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;sudo /etc/init.d/postgresql-8.4 restart&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;end&lt;/span&gt;
+
+execute &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;create-database&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt;
+    command &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;createdb -U postgres -O postgres &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;#{&lt;/span&gt;node&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;:dbname&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can see it&amp;rsquo;s pretty simple. We update Ubuntu&amp;rsquo;s repositories, include some
+recipes, restart PostgreSQL and create a new database.&lt;/p&gt;
+&lt;h2 id=&#34;start-the-engines&#34;&gt;Start the engines&lt;/h2&gt;
+&lt;p&gt;At this point, you can try out your configuration with Vagrant. To help you
+out, I have create a &lt;a href=&#34;https://github.com/honza/django-chef&#34;&gt;template&lt;/a&gt; project on Github that you can download and
+use out of the box.&lt;/p&gt;
+&lt;p&gt;The next big part is writing the Fabric scripts. You will want the following
+tasks:&lt;/p&gt;
+&lt;h3 id=&#34;install-chef&#34;&gt;Install Chef&lt;/h3&gt;
+&lt;h3 id=&#34;transfer-the-cookbooks-directory-to-the-server&#34;&gt;Transfer the cookbooks directory to the server&lt;/h3&gt;
+&lt;h3 id=&#34;dl-class-docutils&#34;&gt;&lt;!-- raw HTML omitted --&gt;&lt;/h3&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h3 id=&#34;creating-a-virtualenv&#34;&gt;Creating a virtualenv&lt;/h3&gt;
+&lt;h3 id=&#34;installing-requirements&#34;&gt;Installing requirements&lt;/h3&gt;
+&lt;h3 id=&#34;syncing-the-database&#34;&gt;Syncing the database&lt;/h3&gt;
+&lt;h3 id=&#34;running-migrations&#34;&gt;Running migrations&lt;/h3&gt;
+&lt;h3 id=&#34;starting-gunicorn&#34;&gt;Starting gunicorn&lt;/h3&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h3 id=&#34;deploy&#34;&gt;Deploy&lt;/h3&gt;
+&lt;p&gt;You can see how I implemented mine &lt;a href=&#34;https://github.com/honza/django-chef/blob/master/fabfile.py&#34;&gt;here&lt;/a&gt;. I recommend that you use Fabric&amp;rsquo;s
+&lt;em&gt;roledefs&lt;/em&gt; which will allow you to specify vagrant as the host:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;$ fab -R vagrant bootstrap
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;the-real-thing&#34;&gt;The real thing&lt;/h2&gt;
+&lt;p&gt;Once you&amp;rsquo;ve tested your application in Vagrant so you are ready to deploy to a
+server. All that&amp;rsquo;s left to do is create a new &lt;em&gt;roledef&lt;/em&gt; in the &lt;em&gt;fabfile&lt;/em&gt; and
+run it!&lt;/p&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;I am by no means a Chef expert&amp;mdash;I learned how to use it a few days ago. If you
+have any feedback, do let me know.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

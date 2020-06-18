@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Commentary on Honza Pokorny</title>
+    <title>commentary on Honza Pokorny</title>
     <link>https://honza.ca/categories/commentary/</link>
-    <description>Recent content in Commentary on Honza Pokorny</description>
+    <description>Recent content in commentary on Honza Pokorny</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 07 Oct 2011 19:00:00 -0300</lastBuildDate>
@@ -17,9 +17,24 @@
       <pubDate>Fri, 07 Oct 2011 19:00:00 -0300</pubDate>
       
       <guid>https://honza.ca/2011/10/steve-jobs-and-richard-stallman/</guid>
-      <description>Today, news broke about Richard Stallman&amp;rsquo;s comment on Steve Job&amp;rsquo;s death. The news of the giant&amp;rsquo;s passing has stirred up a wave of emotions ranging from utter sadness to feelings of empowerment to do great things. Tributes were paid to Steve Jobs all over the internet. His life is described as one of a genius. Technology celebrities have publicly commented on his death.
-Richard Stallman said the following:
- I&amp;rsquo;m not glad he&amp;rsquo;s dead, but I&amp;rsquo;m glad he&amp;rsquo;s gone.</description>
+      <description>&lt;p&gt;Today, news &lt;a href=&#34;http://stallman.org/archives/2011-jul-oct.html#06%5FOctober%5F2011%5F(Steve%5FJobs)&#34;&gt;broke&lt;/a&gt; about Richard Stallman&amp;rsquo;s comment on Steve Job&amp;rsquo;s death. The
+news of the giant&amp;rsquo;s passing has stirred up a wave of emotions ranging from
+utter sadness to feelings of empowerment to do great things. Tributes were paid
+to Steve Jobs all over the internet. His life is described as one of a genius.
+Technology celebrities have publicly commented on his death.&lt;/p&gt;
+&lt;p&gt;Richard Stallman said the following:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I&amp;rsquo;m not glad he&amp;rsquo;s dead, but I&amp;rsquo;m glad he&amp;rsquo;s gone.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;While this could have been said better, I&amp;rsquo;m absolutely shocked by the harsh
+comments the community has made towards Dr Stallman. I&amp;rsquo;m not trying to defend
+him. He is a caricature like no other. The man possesses no social skills. But
+he is a respected computer engineer that has changed the way software works
+today. He has a &lt;a href=&#34;http://en.wikipedia.org/wiki/Richard%5FStallman#Recognition&#34;&gt;number&lt;/a&gt; of doctorates. Like Steve Jobs, Dr Stallman is a
+programming genius. His work on the GCC compiler is substantial.&lt;/p&gt;
+&lt;p&gt;Articles like the on &lt;a href=&#34;http://www.readwriteweb.com/enterprise/2011/10/why-fsf-founder-richard-stallm.php&#34;&gt;ReadWriteWeb&lt;/a&gt; are very disappointing. Let&amp;rsquo;s all be
+civil and respectful of each other.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

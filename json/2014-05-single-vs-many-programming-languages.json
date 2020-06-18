@@ -1,0 +1,18 @@
+{
+    "reading_time": "about one minute", 
+    "month": "05", 
+    "year": "2014", 
+    "date": "May 21, 2014", 
+    "slug": "single-vs-many-programming-languages", 
+    "contents": "<div class=\"section\" id=\"single-vs-many-programming-languages\">\n<h1>Single vs Many Programming&nbsp;Languages</h1>\n<p>Junior programmers will often ask, &#8220;Which language should I use?&#8221;, &#8220;Which\nprogramming language is the best?&#8221;, and when they discover this new hip\nprogramming language that&#8217;s meant to solve all of their scaling problems, they\nget in your face and mock you for not using it for every single task.  They\nwill write blog posts titled &#8220;X language for Y programmers&#8221; in hopes of\nconverting the masses to their newfound&nbsp;toy.</p>\n<p>Smug senior programmers will laugh at the junior programmers and say that you\nshould learn a great many different languages to expand your horizons.  A\nsingle language cannot possibly suffice in this day and age.  Each language has\nits own set of libraries, each is better suited for a particular task.\nLearning new languages will make you a better developer overall.  Plus,\nmarketing yourself as an X language developer limits your choice of&nbsp;employer.</p>\n<p>Business people will have yet another approach.  Their product is obviously\nwritten in some language or another so they <em>need</em> developer who can speak that\nlanguage.  Their platform is growing like crazy so they put up job posts\nscreaming &#8220;X language developer needed!&#8221;.  This creates a perceived demand for\na certain kind of developer.  Developer will start to feel the need to learn\nthis newly popular technology and start by reading a &#8220;X language for Y\nprogrammers&#8221; post and thus completing the&nbsp;circle.</p>\n</div>\n", 
+    "date_iso": "2014-05-21", 
+    "title": "Single vs Many Programming Languages", 
+    "url": "/2014/05/single-vs-many-programming-languages", 
+    "day": "21", 
+    "categories": [
+        {
+            "name": "programming", 
+            "slug": "programming"
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "reading_time": "about one minute", 
+    "month": "02", 
+    "year": "2013", 
+    "date": "February 12, 2013", 
+    "slug": "haskell-vs-clojure-syntax", 
+    "contents": "<div class=\"section\" id=\"haskell-vs-clojure-syntax\">\n<h1>Haskell vs Clojure&nbsp;syntax</h1>\n<p>Clojure has virtually zero syntax.  What I mean by that is that all structures\nlook the same: the first item in a list is the function and the rest are the\narguments.  This is true for variable assignment, if statements, data\nstructures and functions&nbsp;themselves.</p>\n<div class=\"highlight\"><pre><span class=\"p\">(</span><span class=\"nb\">+ </span><span class=\"mi\">1</span> <span class=\"mi\">2</span><span class=\"p\">)</span>\n\n<span class=\"p\">(</span><span class=\"kd\">defn </span><span class=\"nv\">greet</span> <span class=\"p\">[</span><span class=\"nv\">name</span><span class=\"p\">]</span>\n  <span class=\"p\">(</span><span class=\"nb\">str </span><span class=\"s\">&quot;Hello &quot;</span> <span class=\"nv\">name</span><span class=\"p\">))</span>\n\n<span class=\"p\">(</span><span class=\"k\">def </span><span class=\"nv\">user-count</span> <span class=\"mi\">334</span><span class=\"p\">)</span>\n</pre></div>\n<p>However, before you can do anything useful in Haskell, you must learn all kinds\nof crazy syntax: function definitions, pattern matching, do forms, functors,\nmonads, typeclasses,&nbsp;&#8230;</p>\n<div class=\"highlight\"><pre><span class=\"p\">(</span><span class=\"o\">*</span><span class=\"p\">)</span> <span class=\"o\">&lt;$&gt;</span> <span class=\"kt\">Just</span> <span class=\"mi\">2</span> <span class=\"o\">&lt;*&gt;</span> <span class=\"kt\">Just</span> <span class=\"mi\">8</span>\n\n<span class=\"kt\">Nothing</span> <span class=\"o\">&gt;&gt;=</span> <span class=\"nf\">\\</span><span class=\"n\">x</span> <span class=\"ow\">-&gt;</span> <span class=\"n\">return</span> <span class=\"p\">(</span><span class=\"n\">x</span><span class=\"o\">*</span><span class=\"mi\">10</span><span class=\"p\">)</span>\n\n<span class=\"kr\">instance</span> <span class=\"kt\">Applicative</span> <span class=\"kt\">Maybe</span> <span class=\"kr\">where</span>\n    <span class=\"n\">pure</span> <span class=\"ow\">=</span> <span class=\"kt\">Just</span>\n    <span class=\"kt\">Nothing</span> <span class=\"o\">&lt;*&gt;</span> <span class=\"kr\">_</span> <span class=\"ow\">=</span> <span class=\"kt\">Nothing</span>\n    <span class=\"p\">(</span><span class=\"kt\">Just</span> <span class=\"n\">f</span><span class=\"p\">)</span> <span class=\"o\">&lt;*&gt;</span> <span class=\"n\">something</span> <span class=\"ow\">=</span> <span class=\"n\">fmap</span> <span class=\"n\">f</span> <span class=\"n\">something</span>\n</pre></div>\n<p>This is why I find Haskell extremely hard to learn.  It&#8217;s not because of\nmonads, recursion or functional programming concepts.  It&#8217;s because of the huge\namount of special syntax.  And you need to learn a lot of it before you can do\nsomething&nbsp;useful.</p>\n</div>\n", 
+    "date_iso": "2013-02-12", 
+    "title": "Haskell vs Clojure syntax", 
+    "url": "/2013/02/haskell-vs-clojure-syntax", 
+    "day": "12", 
+    "categories": [
+        {
+            "name": "code", 
+            "slug": "code"
+        }, 
+        {
+            "name": "haskell", 
+            "slug": "haskell"
+        }, 
+        {
+            "name": "clojure", 
+            "slug": "clojure"
+        }, 
+        {
+            "name": "lisp", 
+            "slug": "lisp"
+        }
+    ]
+}

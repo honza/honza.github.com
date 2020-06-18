@@ -1,0 +1,26 @@
+{
+    "reading_time": "about one minute", 
+    "month": "02", 
+    "year": "2011", 
+    "date": "February 25, 2011", 
+    "slug": "how-to-convert-vim-colorschemes-to-pygments-themes", 
+    "contents": "<div class=\"section\" id=\"how-to-convert-vim-colorschemes-to-pygments-themes\">\n<h1>How To Convert Vim Colorschemes To Pygments&nbsp;Themes</h1>\n<p>Recently, I have grown to love <a class=\"reference external\" href=\"http://pygments.org\">Pygments</a>. It gives you syntax\nhighlighting in the browser without heavy Javascript files. It supports just\nabout any programming language on the planet and it&#8217;s just plain awesome. The\nonly thing that it&#8217;s lacking is good color schemes. It comes with a dozen\nthemes that will certainly do the trick, but if you&#8217;re used to looking at\npretty code in your favorite editor, the code examples on your website will\nlook a little&nbsp;dull.</p>\n<p>I&#8217;m going to go out on a limb here and assume you have a favorite colorscheme.\nI found a script that will turn a vim colorscheme into a Pygments theme. It\ndidn&#8217;t work perfectly out of the box so I patched it. You can download it\n<a class=\"reference external\" href=\"https://github.com/honza/vim2pygments\">here</a>. Copy your vim colorscheme to the same directory as the script and run\nit like&nbsp;so:</p>\n<div class=\"highlight\"><pre><span class=\"gp\">$</span> python vim2pygments.py molokai.vim &gt; molokai.py\n</pre></div>\n<p>This will produce a Python file containing a simple style class that Pygments\ncan use. Next step is to download&nbsp;Pygments:</p>\n<div class=\"highlight\"><pre><span class=\"gp\">$</span> hg clone http://dev.pocoo.org/hg/pygments-main pygments\n</pre></div>\n<p>And then you will install your new&nbsp;theme:</p>\n<div class=\"highlight\"><pre><span class=\"gp\">$</span> <span class=\"nb\">cd </span>pygments\n<span class=\"gp\">$</span> cp ../molokai.py pygments/styles/molokai.py\n</pre></div>\n<p><span class=\"caps\">OK</span>, now for the fun part. We will use Pygments to generate the <span class=\"caps\">CSS</span> file that\nyou will then use on your&nbsp;website:</p>\n<div class=\"highlight\"><pre><span class=\"gp\">$</span> ./pygmentize -S molokai -f html -a .highlight &gt; molokai.css\n</pre></div>\n<p>If you are a TextMate user, you might be able to get your favorite theme done,\ntoo. A lot of popular Vim colorschemes are inspired by TextMate. Sunburst,\nmustang and idle fingers come to mind. Just find a Vim version and you&#8217;re good\nto&nbsp;go.</p>\n<p>That&#8217;s&nbsp;it!</p>\n</div>\n", 
+    "date_iso": "2011-02-25", 
+    "title": "How To Convert Vim Colorschemes To Pygments Themes", 
+    "url": "/2011/02/how-to-convert-vim-colorschemes-to-pygments-themes", 
+    "day": "25", 
+    "categories": [
+        {
+            "name": "Code", 
+            "slug": "code"
+        }, 
+        {
+            "name": "Python", 
+            "slug": "python"
+        }, 
+        {
+            "name": "Vim", 
+            "slug": "vim"
+        }
+    ]
+}

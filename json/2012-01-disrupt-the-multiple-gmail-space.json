@@ -1,0 +1,18 @@
+{
+    "reading_time": "about one minute", 
+    "month": "01", 
+    "year": "2012", 
+    "date": "January 18, 2012", 
+    "slug": "disrupt-the-multiple-gmail-space", 
+    "contents": "<div class=\"section\" id=\"disrupt-the-multiple-gmail-space\">\n<h1>Disrupt the multiple-gmail&nbsp;space</h1>\n<p>We all know that Gmail is the best email provider out there. It&#8217;s in the\nbrowser, it&#8217;s all ajaxy, you never delete anything, your emails are\ncleverly organized into conversations, you know the&nbsp;drill&#8230;</p>\n<p>But have you ever tried to use more than one account at a time? It&#8217;s horribly\nbroken. Let&#8217;s have a look at your&nbsp;options&#8230;</p>\n<div class=\"section\" id=\"multiple-sign-in\">\n<h2>Multiple&nbsp;sign-in</h2>\n<p>Google allows you to log into more than one account at a time. They provide you\nwith a menu option to switch between the two and you are all set. The problem\nis that the constant switching back and forth just isn&#8217;t worth&nbsp;it.</p>\n</div>\n<div class=\"section\" id=\"use-a-desktop-client\">\n<h2>Use a desktop&nbsp;client</h2>\n<p>If you use a desktop client like Thunderbird or Mail.app, you can have as many\naccounts as you want. But you don&#8217;t get access to your contacts and rarely get\nthe nice conversation view for your messages. In addition, the applications are\noften bloated and use a ton of&nbsp;memory.</p>\n</div>\n<div class=\"section\" id=\"use-mutt-or-pino\">\n<h2>Use mutt or&nbsp;pino</h2>\n<p>These light-weight applications are popular especially among programmers. They\nare a pain to setup and lack email address&nbsp;autocompletion.</p>\n</div>\n<div class=\"section\" id=\"use-multiple-browsers\">\n<h2>Use multiple&nbsp;browsers</h2>\n<p>If you have one or two Gmail accounts, you could probably get away with using\ntwo browsers - one for each account. This is silly and you shouldn&#8217;t do&nbsp;that.</p>\n</div>\n<div class=\"section\" id=\"use-chrome-profiles\">\n<h2>Use Chrome&nbsp;profiles</h2>\n<p>Newer versions of Chome will allow you to be logged into different Gmail\naccounts in different windows. This means that each window is logged into a\nsingle Google account and can only access the services associated with that\naccount. This is fine for two accounts, but if you have 4+ it can get\nridiculous pretty&nbsp;fast.</p>\n<p>None of these options give you a good solution for a unified inbox. They all\nhave their&nbsp;shortcomings.</p>\n<p>There is a huge opportunity to disrupt this space as they are a lot of us who\nhave to use a lot of different Gmail&nbsp;accounts.</p>\n<p>I have been using Mozilla Thunderbird with two add-ons: Google contacts and\nGoogle Conversations. They are rather close to doing the right thing but it&#8217;s\nstill missing something. I tried to set up mutt but it wasn&#8217;t working for me\nbecause of the missing&nbsp;autocomplete.</p>\n</div>\n<div class=\"section\" id=\"your-say\">\n<h2>Your&nbsp;say</h2>\n<p>What do you use? How do you deal with this&nbsp;mess?</p>\n</div>\n</div>\n", 
+    "date_iso": "2012-01-18", 
+    "title": "Disrupt the multiple-gmail space", 
+    "url": "/2012/01/disrupt-the-multiple-gmail-space", 
+    "day": "18", 
+    "categories": [
+        {
+            "name": "Email", 
+            "slug": "email"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "reading_time": "about one minute", 
+    "month": "11", 
+    "year": "2010", 
+    "date": "November 02, 2010", 
+    "slug": "why-i-chose-android", 
+    "contents": "<div class=\"section\" id=\"why-i-chose-android\">\n<h1>Why I Chose&nbsp;Android</h1>\n<p>Recently, we have heard that the Android operating system has the largest\nmarket share in the <span class=\"caps\">US</span>, and is set to take over the whole world. Personally, I\nchose Android long before it was this popular.&nbsp;Why?</p>\n<div class=\"section\" id=\"background\">\n<h2>Background</h2>\n<p>I won&#8217;t bore you with my personal history, but I&#8217;d like to say a few things.\nI&#8217;m a programmer and like to tweet things. If there isn&#8217;t an application that\ndoes the job, I write it myself. Couple years ago, I was given the then amazing\niPhone 3G. I was thrilled. Everyone wanted one, and I had&nbsp;it.</p>\n</div>\n<div class=\"section\" id=\"motorola-droid\">\n<h2>Motorola&nbsp;Droid</h2>\n<p>I sold the iPhone, and bought a Motorola Droid. Why? It&#8217;s actually pretty\nsimple. I don&#8217;t like closed systems. If you want to develop an application for\nthe iPhone, you have to buy an Apple computer. You have to use XCode, the\nobjective-C <span class=\"caps\">IDE</span>. And only after your application gets approved, you can use it\non your phone. I don&#8217;t like the idea of spending an upwards of $1,000 to get an\nunderpowered machine just to be able to write an&nbsp;app.</p>\n</div>\n<div class=\"section\" id=\"blackberry\">\n<h2>Blackberry</h2>\n<p>After deciding, I wanted to get off the iPhone train, I started looking around\nfor a new smartphone. The first choice was Blackberry. A serious Canadian\ncompany, business-class smartphones, good prices, &#8230; What&#8217;s not to like? Well,\nit turns out that you need Microsoft Windows in order to properly develop and\ntest your Blackberry application. Being an avid Linux user, I very much\ndisliked the idea of going back to Windows just because of&nbsp;Blackberry.</p>\n</div>\n<div class=\"section\" id=\"enter-android\">\n<h2>Enter&nbsp;Android</h2>\n<p>Android was my next choice. I browsed over to the developers&#8217; website to see if\nI can make apps for this platform. When I saw that Windows, Mac <span class=\"caps\">OS</span> and Linux\nwere supported, I almost cried for joy! I learned that Android runs on the\nLinux kernel, apps are written in Java using the open source&nbsp;<span class=\"caps\">SDK</span>.</p>\n</div>\n<div class=\"section\" id=\"google\">\n<h2>Google</h2>\n<p>Yes, Google is behind this whole thing. You may not exactly care unless you use\ntheir services. The integration of Google services into Android is phenomenal.\nWhen you first turn on your device, you are asked to enter your Google account\ninformation, and the device takes care of the rest. Your email, contacts,\ncalendar, Google Talk, etc. are set up automatically.&nbsp;Genius.</p>\n</div>\n</div>\n", 
+    "date_iso": "2010-11-02", 
+    "title": "Why I Chose Android", 
+    "url": "/2010/11/why-i-chose-android", 
+    "day": "02", 
+    "categories": [
+        {
+            "name": "Android", 
+            "slug": "android"
+        }
+    ]
+}

@@ -38,39 +38,30 @@
 </div>
 
 <article>
-  
-
-<p>I&rsquo;m sure you&rsquo;ve heard of static site generators like Jekyll (Ruby) or Hyde
+  <p>I&rsquo;m sure you&rsquo;ve heard of static site generators like Jekyll (Ruby) or Hyde
 (Python). The benefits are obvious - your site is hosted on a cheap shared
 hosting and it can easily survive the Digg/Slashdot/Reddit effect. There is no
 database latency - the browser requests a file on the server and gets it back
 immediately.</p>
-
 <h2 id="update--2011-02-27">Update (2011-02-27):</h2>
-
 <p>While I still use a static generator to power my site, it&rsquo;s not a different
 engine. I got tired of launching a django server just to write a post. I wrote
 a new static site generator called <a href="https://github.com/honza/socrates">Socrates</a>. Each post is now a separate
 file written in Markdown. Socrates then runs through those files and creates a
 site for me. I&rsquo;m still using django templates. What follows is the original
 post.</p>
-
 <h2 id="django">django</h2>
-
 <p>The site is a simple django blog. There is nothing really of note when it comes
 to django-specific coding. I run the django server locally when I&rsquo;m editing or
 adding articles. It provides a nice UI. It also lets me easily preview the site
 without generating anything.</p>
-
 <h2 id="static-generator">static generator</h2>
-
 <p>When I&rsquo;m happy with the state of the website and want to publish it, I run the
 static generator. It&rsquo;s contained in the <code>generate.py</code> file. It runs through
 all possible urls and for each one it generates a static file. Each file is a
 complete HTML page that the user&rsquo;s browser will download. The folder structure
 is as follows:</p>
-
-<pre><code class="language-bash">/2010/
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/2010/
     /02/
         post-one.html
         post-two.html
@@ -89,23 +80,15 @@ index.html
     /code/
         index.html
     ..
-</code></pre>
-
-<p>You get the idea. This way, with an <code>.htaccess</code> file we can have the
+</code></pre></div><p>You get the idea. This way, with an <code>.htaccess</code> file we can have the
 following URL structure:</p>
-
-<pre><code class="language-bash">/2010/02/post-one/
-</code></pre>
-
-<h2 id="ftp-deploy-script">FTP deploy script</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/2010/02/post-one/
+</code></pre></div><h2 id="ftp-deploy-script">FTP deploy script</h2>
 <p>And the final piece is the <code>deploy.py</code> script. It looks at the deploy
 directory, and with a little help from git, it figures out what files were
 changed since the last deploy. It then takes those files and throws them up on
 the server. A normal shared hosting.</p>
-
 <h2 id="conclusion">Conclusion</h2>
-
 <p>You can check out the code on <a href="https://github.com/honza/honza.github.com">Github</a>.</p>
 
 </article>

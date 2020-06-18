@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Twitter on Honza Pokorny</title>
+    <title>twitter on Honza Pokorny</title>
     <link>https://honza.ca/categories/twitter/</link>
-    <description>Recent content in Twitter on Honza Pokorny</description>
+    <description>Recent content in twitter on Honza Pokorny</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 28 Sep 2010 22:31:00 -0300</lastBuildDate>
@@ -17,8 +17,132 @@
       <pubDate>Tue, 28 Sep 2010 22:31:00 -0300</pubDate>
       
       <guid>https://honza.ca/2010/09/how-to-use-twitter-oauth-on-android/</guid>
-      <description>If you are developing an application for the Android platform, and you need to interact with the Twitter API, you now have to use OAuth to authenticate the user. In this article, we will have a look on how you can do that.
-What is OAuth? OAuth is a way of accessing a user&amp;rsquo;s data (e.g. tweets) without asking for the user&amp;rsquo;s username and password. Your application opens the Twitter website which will ask the user if they want to allow you to access their data.</description>
+      <description>&lt;p&gt;If you are developing an application for the Android platform, and you need to
+interact with the Twitter API, you now have to use OAuth to authenticate the
+user. In this article, we will have a look on how you can do that.&lt;/p&gt;
+&lt;h2 id=&#34;what-is-oauth&#34;&gt;What is OAuth?&lt;/h2&gt;
+&lt;p&gt;OAuth is a way of accessing a user&amp;rsquo;s data (e.g. tweets) without asking for the
+user&amp;rsquo;s username and password. Your application opens the Twitter website which
+will ask the user if they want to allow you to access their data. If they do,
+they are taken back to the application and can start using it. You can find
+more about OAuth all over the web.&lt;/p&gt;
+&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
+&lt;p&gt;There are a couple of .jars that you will need for this to work.&lt;/p&gt;
+&lt;h3 id=&#34;signpost-commonshttp4-1-dot-2-dot-1-dot-1-dot-jar&#34;&gt;signpost-commonshttp4-1.2.1.1.jar&lt;/h3&gt;
+&lt;h3 id=&#34;signpost-core-1-dot-2-dot-1-dot-1-dot-jar&#34;&gt;signpost-core-1.2.1.1.jar&lt;/h3&gt;
+&lt;p&gt;You can download them &lt;a href=&#34;https://github.com/kaeppler/signpost&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;basic-activity&#34;&gt;Basic Activity&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s say we have an activity running where the user can start the
+authentication process. There is nothing special about this activity, except
+for some text and a button. When the user clicks the button, the OAuth process
+will be started. From the button&amp;rsquo;s &lt;code&gt;onClickListener()&lt;/code&gt; we will call the
+&lt;code&gt;startOAuth()&lt;/code&gt; method of our activity.&lt;/p&gt;
+&lt;p&gt;We will add a few attributes to our activity. Let&amp;rsquo;s call the activity Main.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Main&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;extends&lt;/span&gt; Activity &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; CommonsHttpOAuthConsumer httpOauthConsumer&lt;span style=&#34;color:#f92672&#34;&gt;;&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; OAuthProvider httpOauthprovider&lt;span style=&#34;color:#f92672&#34;&gt;;&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; String consumerKey &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;abc&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;;&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; String consumerSecret &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;abc&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;;&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;final&lt;/span&gt; String CALLBACKURL &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;app://twitter&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;;&lt;/span&gt;
+
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;@Override&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;onCreate&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;Bundle savedInstanceState&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;super&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;onCreate&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;savedInstanceState&lt;span style=&#34;color:#f92672&#34;&gt;);&lt;/span&gt;
+        &lt;span style=&#34;color:#f92672&#34;&gt;...&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;consumerKey&lt;/code&gt; and &lt;code&gt;consumerSecret&lt;/code&gt; will store your app&amp;rsquo;s unique keys that
+you will get from Twitter. &lt;code&gt;CALLBACK&lt;/code&gt; is a little different. This is used
+when the application is authorized on the web, and the control is returned back
+to the Main activity. For the mobile browser to be able to call the application
+and tell it that the OAuth business has gone well, it needs a call back. Both
+app and twitter can be exchanged for anything else.&lt;/p&gt;
+&lt;p&gt;Now let&amp;rsquo;s have a look at the &lt;code&gt;startOAuth()&lt;/code&gt; method.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+    httpOauthConsumer &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; CommonsHttpOAuthConsumer&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;consumerKey&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt; consumerSecret&lt;span style=&#34;color:#f92672&#34;&gt;);&lt;/span&gt;
+    httpOauthprovider &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; DefaultOAuthProvider&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://twitter.com/oauth/request_token&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt;
+                                            &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://twitter.com/oauth/access_token&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt;
+                                            &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://twitter.com/oauth/authorize&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;);&lt;/span&gt;
+    String authUrl &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; httpOauthprovider&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;retrieveRequestToken&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;httpOauthConsumer&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt; CALLBACKURL&lt;span style=&#34;color:#f92672&#34;&gt;);&lt;/span&gt;
+    &lt;span style=&#34;color:#75715e&#34;&gt;// Open the browser
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    startActivity&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Intent&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;Intent&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;ACTION_VIEW&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt; Uri&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;parse&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;authUrl&lt;span style=&#34;color:#f92672&#34;&gt;)));&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;catch&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;Exception e&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+    Toast&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;makeText&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt; e&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;getMessage&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(),&lt;/span&gt; Toast&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;LENGTH_LONG&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;show&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;();&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Here we create the necessary OAuth objects which will in turn generate the
+unique authenticating URL. Once we have the URL we open the browser and point
+it to that URL. The user will be presented with a dialog asking them to allow
+or to deny your application access.&lt;/p&gt;
+&lt;p&gt;In order for our activity to be able to receive the callback, we need to add a
+few things the Android manifest file. Change the applications definition to the
+following:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;activity&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;android:name=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Main&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;android:launchMode=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;singleInstance&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;intent-filter&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;action&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;android:name=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;android.intent.action.VIEW&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;category&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;android:name=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;android.intent.category.DEFAULT&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
+        &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;category&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;android:name=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;android.intent.category.BROWSABLE&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
+        &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;data&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;android:scheme=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;app&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;android:host=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;twitter&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/intent-filter&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/activity&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Note that if you changed the app and twitter in the &lt;code&gt;CALLBACK&lt;/code&gt; variable
+above, you will need to make sure that the change is reflected here. This
+basically allows the activity to receive data from a foreign source - our
+browser.&lt;/p&gt;
+&lt;p&gt;Now we need to catch the callback and handle it. We do that by overriding the
+&lt;code&gt;onNewIntent()&lt;/code&gt; method of our Main activity.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;@Override&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;protected&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;onNewIntent&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;Intent intent&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;super&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;onNewIntent&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;intent&lt;span style=&#34;color:#f92672&#34;&gt;);&lt;/span&gt;
+
+    Uri uri &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; intent&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;getData&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;();&lt;/span&gt;
+
+    &lt;span style=&#34;color:#75715e&#34;&gt;//Check if you got NewIntent event due to Twitter Call back only
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;uri &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;null&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; uri&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;toString&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;().&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;startsWith&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;CALLBACKURL&lt;span style=&#34;color:#f92672&#34;&gt;))&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+
+        String verifier &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; uri&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;getQueryParameter&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;oauth&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;signpost&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;OAuth&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;OAUTH_VERIFIER&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;);&lt;/span&gt;
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+            &lt;span style=&#34;color:#75715e&#34;&gt;// this will populate token and token_secret in consumer
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+            httpOauthprovider&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;retrieveAccessToken&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;httpOauthConsumer&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt; verifier&lt;span style=&#34;color:#f92672&#34;&gt;);&lt;/span&gt;
+            String userKey &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; httpOauthConsumer&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;getToken&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;();&lt;/span&gt;
+            String userSecret &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; httpOauthConsumer&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;getTokenSecret&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;();&lt;/span&gt;
+
+            &lt;span style=&#34;color:#75715e&#34;&gt;// Save user_key and user_secret in user preferences and return
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+            SharedPreferences settings &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; getBaseContext&lt;span style=&#34;color:#f92672&#34;&gt;().&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;getSharedPreferences&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;your_app_prefs&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt; 0&lt;span style=&#34;color:#f92672&#34;&gt;);&lt;/span&gt;
+            SharedPreferences&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Editor&lt;/span&gt; editor &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; settings&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;edit&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;();&lt;/span&gt;
+            editor&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;putString&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;user_key&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt; userKey&lt;span style=&#34;color:#f92672&#34;&gt;);&lt;/span&gt;
+            editor&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;putString&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;user_secret&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt; userSecret&lt;span style=&#34;color:#f92672&#34;&gt;);&lt;/span&gt;
+            editor&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;commit&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;();&lt;/span&gt;
+
+        &lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;catch&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;Exception e&lt;span style=&#34;color:#f92672&#34;&gt;){&lt;/span&gt;
+
+        &lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;color:#75715e&#34;&gt;// Do something if the callback comes from elsewhere
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;OK, there&amp;rsquo;s quite a bit there. We extract the data that the browser sent back
+to us. This data is used to verify that the authentication was successful and
+that we can now access the user&amp;rsquo;s data. From the data, we get the user&amp;rsquo;s key
+and their secret. We save that into the application&amp;rsquo;s shared preferences file
+and return.&lt;/p&gt;
+&lt;p&gt;Now we are good to go. We can make authenticated requests to Twitter API on
+behalf of the user.&lt;/p&gt;
+&lt;p&gt;For example, to get the user&amp;rsquo;s home timeline, you would do something like:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;HttpGet get &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; HttpGet&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://api.twitter.com/version/statuses/home_timeline.json&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;);&lt;/span&gt;
+HttpParams params &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; BasicHttpParams&lt;span style=&#34;color:#f92672&#34;&gt;();&lt;/span&gt;
+HttpProtocolParams&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;setUseExpectContinue&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;params&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;);&lt;/span&gt;
+get&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;setParams&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;params&lt;span style=&#34;color:#f92672&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;// sign the request to authenticate
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;httpOauthConsumer&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;sign&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;get&lt;span style=&#34;color:#f92672&#34;&gt;);&lt;/span&gt;
+String responsex &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; mClient&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;execute&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;get&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; BasicResponseHandler&lt;span style=&#34;color:#f92672&#34;&gt;());&lt;/span&gt;
+JSONArray array &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; JSONArray&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;responsex&lt;span style=&#34;color:#f92672&#34;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And the array variable is a list of the latest tweets in the user&amp;rsquo;s home timeline.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -27,8 +151,32 @@ What is OAuth? OAuth is a way of accessing a user&amp;rsquo;s data (e.g. tweets)
       <pubDate>Wed, 02 Jun 2010 21:00:00 -0300</pubDate>
       
       <guid>https://honza.ca/2010/06/twitter-success-story-hurricane-bill/</guid>
-      <description>Beginners often find Twitter very confusing and useless. I think it&amp;rsquo;s because they come to it with some preconceived ideas, and when Twitter doesn&amp;rsquo;t fit their model they get frustrated. This series is meant to show why Twitter is so useful and how it&amp;rsquo;s different from other social networks.
-My family and I live in the city of Aberdeen in Scotland. My wife is originally from Halifax, Canada where her parents still live.</description>
+      <description>&lt;p&gt;Beginners often find Twitter very confusing and useless. I think it&amp;rsquo;s because
+they come to it with some preconceived ideas, and when Twitter doesn&amp;rsquo;t fit
+their model they get frustrated. This series is meant to show why Twitter is so
+useful and how it&amp;rsquo;s different from other social networks.&lt;/p&gt;
+&lt;p&gt;My family and I live in the city of Aberdeen in Scotland. My wife is originally
+from Halifax, Canada where her parents still live. In August of last year,
+there was a hurricane threat to the Halifax area. The hurricane was slowly
+making its way up the coast towards Halifax, and was to strike the city around
+8:00AM on a Sunday morning. Naturally, we were in touch with my in-laws and
+kept checking news sites for updates.&lt;/p&gt;
+&lt;p&gt;However, as you might expect the news companies were closed (or at least on
+limited staff) on that Sunday morning. We googled and googled and couldn&amp;rsquo;t find
+any updates on the hurricane. Did it hit the city? Is it serious? Has
+electricity been cut off?&lt;/p&gt;
+&lt;p&gt;Twitter is a source of real-time information. With the right query, you can get
+updates and news just about anything. So, I searched for &amp;ldquo;hurricane bill
+halifax&amp;rdquo; and just watched the tweets come in. At first, there wasn&amp;rsquo;t much. But
+as time went by, people started talking about the hurricane. Some were saying
+that the sky is a bit darker, some were seeing a little rain, etc. I even found
+one user who actually went to the Halifax harbour to watch the hurricane come
+in. He was posting images from his cell phone to show us what the weather was
+like.&lt;/p&gt;
+&lt;p&gt;Thanks to Twitter we were able to follow the development of the hurricane
+almost minute by minute. In the end, there wasn&amp;rsquo;t much of hurricane after all.
+By the time it got to Halifax, it had reduced to a mere storm.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

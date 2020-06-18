@@ -1,0 +1,18 @@
+{
+    "reading_time": "about one minute", 
+    "month": "02", 
+    "year": "2012", 
+    "date": "February 15, 2012", 
+    "slug": "how-rackspace-deleted-my-server", 
+    "contents": "<div class=\"section\" id=\"how-rackspace-deleted-my-server\">\n<h1>How Rackspace deleted my&nbsp;server</h1>\n<p>I have been with Rackspace for a while now and never had problems.  The server\nhas been fast and responsive and their prices are great.  However, what\nhappened yesterday blew my mind and totally made me change how I view server\nproviders as a whole&#8212;including the likes of <span class=\"caps\">AWS</span> and&nbsp;Heroku.</p>\n<p>Here is how it went&nbsp;down.</p>\n<div class=\"section\" id=\"pm-cst\">\n<h2>2:07pm&nbsp;<span class=\"caps\">CST</span></h2>\n<p>I got an email from one of my administrators that the front end was\nunreachable.  I immediately tried to visit the web application in my browser,\nlog into the machine via <span class=\"caps\">SSH</span> and ping the server <span class=\"caps\">IP</span> address.  All failed.  I\nwent on the Rackspace Cloud Server Live Chat to raise the issue with&nbsp;them.</p>\n</div>\n<div class=\"section\" id=\"id1\">\n<h2>2:48pm&nbsp;<span class=\"caps\">CST</span></h2>\n<p>I was told to open a ticket through the admin console.  So I did and I handed\nthe ticket number to the operator who said they&#8217;d pass it on to&nbsp;operations.</p>\n</div>\n<div class=\"section\" id=\"id2\">\n<h2>5:05pm&nbsp;<span class=\"caps\">CST</span></h2>\n<p>I got a reply on the ticket.  All it says is <em>we&#8217;re working on it</em>.  At this\npoint, I&#8217;m freaking out because I have been down for over three&nbsp;hours.</p>\n</div>\n<div class=\"section\" id=\"id3\">\n<h2>6:00pm&nbsp;<span class=\"caps\">CST</span></h2>\n<p>Still no word from Rackspace.  I got on the phone and explained the issue and\nthat I didn&#8217;t feel it was being taken seriously.  The operator got the account\nmanager on the phone who in turn got a <em>tech guy</em> on the call.  They said that\nthe <span class=\"caps\">VM</span> wasn&#8217;t built properly when I first created it like 6 months ago and that\nat that time it was queued up to be deleted and rebuilt.  It took this long to\nfinally come down the queue and actually get deleted.  They said they would\nrebuild the server and let me keep the same <span class=\"caps\">IP</span> and that I would get an email\nwith new&nbsp;credentials.</p>\n</div>\n<div class=\"section\" id=\"id4\">\n<h2>6:17pm&nbsp;<span class=\"caps\">CST</span></h2>\n<p>I received said email and started to restore the server.  Luckily, I had a\nworking Chef script which made this very simple to do.  I think I was back\nonline in about 30&nbsp;minutes.</p>\n</div>\n<div class=\"section\" id=\"conclusion\">\n<h2>Conclusion</h2>\n<p>Everyone has been really nice and apologetic.  They even gave me a month&#8217;s\ncredit to cover the damages.  I still think Rackspace is great but this whole\nincident made me realize that anything can fail and that you should design your\napplication for easy recovery.  And test your&nbsp;backups!</p>\n</div>\n</div>\n", 
+    "date_iso": "2012-02-15", 
+    "title": "How Rackspace deleted my server", 
+    "url": "/2012/02/how-rackspace-deleted-my-server", 
+    "day": "15", 
+    "categories": [
+        {
+            "name": "Code", 
+            "slug": "code"
+        }
+    ]
+}

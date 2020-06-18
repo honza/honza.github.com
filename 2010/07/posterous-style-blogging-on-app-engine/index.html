@@ -1,0 +1,146 @@
+<!doctype html lang="en">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Thoughts of an open source developer with a theology degree. Honza Pokorny is a web developer and an armchair theologian in Halifax, Canada" >
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Posterous-style Blogging On App Engine | Honza Pokorny</title>
+  <link href="https://fonts.googleapis.com/css?family=Karla:400,400i|Montserrat:700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://honza.ca/css/index.css">
+  <link rel="alternate" type="application/rss+xml" href="" title="Honza Pokorny">
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-4330851-12']);
+        _gaq.push(['_trackPageview']);
+
+        (function(){
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+</head>
+<body>
+        <div id="banner" class="container">
+          <h1><a href="/">Honza Pokorny</a></h1>
+          <p><em>Thoughts of an open source developer with a theology degree</em></p>
+        </div>
+
+    <div id="wrap">
+
+<div class="single-header">
+  <h1>Posterous-style Blogging On App Engine</h1>
+
+</div>
+
+<article>
+  <p>Posterous has been getting a lot of attention lately. Its simplicity appeals to
+a wide range of users and more and more users are switching over from other
+well-established blogging platforms such as Blogger or WordPress. In this
+article, we will have a look at how you can replicate the Posterous
+functionality on App Engine.</p>
+<p>In case you don&rsquo;t know what Posterous is, it&rsquo;s very simple. It&rsquo;s a blogging
+tool like Google&rsquo;s Bloggeror Wordpress.com. What makes it different from the
+other services is its ridiculous simplicity. With Posterous, you don&rsquo;t need to
+create an account. That&rsquo;s because you create new posts by emailing your post to
+Posterous. It creates links for you, images sent as attachments will be
+transformed into galleries, etc.</p>
+<p>I like Posterous, but my website has a lot of custom programming on the
+back-end so I&rsquo;m very hesitant to switch over. And besides, I like to know how
+things work behind the scenes. I thought it might be fun to create a system
+similar to Posterous&rsquo; for my own blog which is, of course, hosted on App
+Engine.</p>
+<p>Here is what we are going to do. I want to be able to send an email to my own
+blog and have it turn it into a post and publish it to the blog.</p>
+<p>OK, let&rsquo;s start with the post model:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Post</span>(db<span style="color:#f92672">.</span>Model):
+    title <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>StringProperty()
+    body <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>TextProperty()
+    added <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>DateTimeProperty(auto_now_add<span style="color:#f92672">=</span>True)
+    author <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>StringProperty()
+</code></pre></div><p>Very straight forward. You have your title, body, author and when the post was
+published.</p>
+<p>In order to enable incoming email, you need to add a couple of lines of code to
+your <code>app.yaml</code> file. In addition to your regular handlers, add the
+following:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">inbound_services</span>:
+  - mail
+
+<span style="color:#66d9ef">handlers</span>:
+  - <span style="color:#66d9ef">url</span>: /_ah/mail/.<span style="color:#e6db74">+
+</span><span style="color:#e6db74">    script: main.py</span>
+</code></pre></div><p>The first line enables incoming email for your application. The second part is
+the important part. On App Engine, an incoming email message is processed as a
+HTTP POST request. Since it&rsquo;s a regular HTTP request, we will need a handler
+for it in the <code>app.yaml</code> file. You have several options here. You can create
+a catch-all handler for all incoming email addresses (like I&rsquo;ve done above), or
+create seperate handlers for different addresses.</p>
+<p>The email address that we will use is in the following format:
+<a href="mailto:your%5Fstring@appid.appspotmail.com">your_string@appid.appspotmail.com</a>. You should substitute the appid with your
+app&rsquo;s ID. The string before the &lsquo;@&rsquo; symbol can be set to anything you want.</p>
+<p>With this out of the way, we are ready to write the actual email handler. This
+will go into your <code>main.py</code> file which you defined in the <code>app.yaml</code>.</p>
+<p>First, some imports:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> email
+<span style="color:#f92672">from</span> google.appengine.ext.webapp.mail_handlers <span style="color:#f92672">import</span> InboundMailHandler
+</code></pre></div><p>Then, you add the following to the list of URL mappings in the instantiation of
+the application class.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">application <span style="color:#f92672">=</span> webapp<span style="color:#f92672">.</span>WSGIApplication([
+    (<span style="color:#e6db74">&#39;/&#39;</span>, Index),
+    EmailHandler<span style="color:#f92672">.</span>mapping()
+    ], debug<span style="color:#f92672">=</span>True)
+</code></pre></div><p>Here EmailHandler is the request handler class that will handle the incoming
+email. The <code>mapping()</code> method will map all of the addresses and send all of
+them to this handler class. It&rsquo;s just a convenience method, no magic here.</p>
+<p>Now, finally, onto the actual handler:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EmailHandler</span>(InboundMailHandler):
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">receive</span>(self, mail_message):
+        post <span style="color:#f92672">=</span> Post()
+        post<span style="color:#f92672">.</span>title <span style="color:#f92672">=</span> mail_message<span style="color:#f92672">.</span>subject
+        <span style="color:#66d9ef">for</span> content_type, body <span style="color:#f92672">in</span> mail_message<span style="color:#f92672">.</span>bodies():
+            post<span style="color:#f92672">.</span>body <span style="color:#f92672">=</span> body<span style="color:#f92672">.</span>decode()
+        post<span style="color:#f92672">.</span>author <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;John Smith&#39;</span>
+        post<span style="color:#f92672">.</span>put()
+</code></pre></div><p>This is actually very simple. The incoming email message is saved in the
+<code>mail_message</code> variable and you can access all of the usual email metadata as
+its properties (e.g. mail_message.sender). So, we create a new post, take the
+email&rsquo;s subject and set it as the post&rsquo;s title. The <code>bodies()</code> method
+extracts the body of the email and the <code>decode()</code> function will decode the
+actual body. Then we set the author and save the post in the datastore.</p>
+<p>Often you will want to include a link in your post, or create a list. This is
+easily accomplished with HTML tags. However, HTML tags are a pain, so you might
+want to use something like Markdown.</p>
+<p>Adding markdown support is super easy. Download the Python
+<a href="http://code.google.com/p/python-markdown2/">Markdown library</a> and put the <code>markdown2.py</code> file in your app&rsquo;s root
+directory. Then import it in your <code>main.py</code> file.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> markdown2
+</code></pre></div><p>And change the following line:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">post<span style="color:#f92672">.</span>body <span style="color:#f92672">=</span> body<span style="color:#f92672">.</span>decode()
+</code></pre></div><p>to this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">post<span style="color:#f92672">.</span>body <span style="color:#f92672">=</span> markdown2<span style="color:#f92672">.</span>markdown(body<span style="color:#f92672">.</span>decode())
+</code></pre></div><p>And that&rsquo;s it!</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>This is a very simple yet effective technique and it will allow you to create
+post from anywhere. I hope you&rsquo;ve enjoyed the post. Let me know if you have any
+suggestions on how to improve it.</p>
+<h2 id="code">Code</h2>
+<p>The complete code for this app is available on <a href="https://github.com/honza/Posterous-App-Engine">Github</a>.</p>
+
+</article>
+
+<p class="article_date date">
+  This article was first published on July 7, 2010.  As you can see, there
+  are no comments.  I invite you to email me with your comments, criticisms,
+  and other suggestions.  Even better, write your own article as a response.
+  Blogging is awesome.
+</p>
+
+
+    </div>
+
+</body>
+</html>

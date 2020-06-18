@@ -38,81 +38,63 @@
 </div>
 
 <article>
-  
-
-<p>This post isn&rsquo;t going to tell you that you should use MVC to structure your
-application.  It isn&rsquo;t going to tell you which framework to use.  It&rsquo;s not
-going to tell you to use CoffeeScript or MongoDB.  But I&rsquo;m going to talk about
+  <p>This post isn&rsquo;t going to tell you that you should use MVC to structure your
+application. It isn&rsquo;t going to tell you which framework to use. It&rsquo;s not
+going to tell you to use CoffeeScript or MongoDB. But I&rsquo;m going to talk about
 some small helpful things you can do to your Javascript application to make
 easier to develop and maintain.</p>
-
 <h2 id="naming-conventions">Naming Conventions</h2>
-
 <p>Improperly naming your variables, functions and classes can make it nearly
-impossible to navigate large portions of existing code.  You have to follow the
+impossible to navigate large portions of existing code. You have to follow the
 chain all the way up where that variable was created (sometimes in a different
-file) to see what type of value it holds.  By looking at a variable name, you
-should be able to tell if it&rsquo;s a class definition or an instance.  You should
+file) to see what type of value it holds. By looking at a variable name, you
+should be able to tell if it&rsquo;s a class definition or an instance. You should
 be able to distinguish between a constant and a function.</p>
-
 <h2 id="file-dependency">File dependency</h2>
-
 <p>Writing large Javascript applications for the browser is tricky because your
 application needs to be split over multiple files and there doesn&rsquo;t seem to be
-a good way to manage dependencies.  When you open up a file in your project,
+a good way to manage dependencies. When you open up a file in your project,
 you can&rsquo;t really know what Javascript code was loaded and executed before this
-file.  Often times you find yourself looking at your build script or the
+file. Often times you find yourself looking at your build script or the
 <code>head</code> of your HTML document to see when this file is loaded in the grand
-scheme of things.  In Python, you say <code>from app import get_user</code> to use a
-function from a different file or module.  In the browser, you just don&rsquo;t.  I
+scheme of things. In Python, you say <code>from app import get_user</code> to use a
+function from a different file or module. In the browser, you just don&rsquo;t. I
 find it useful to specify these kinds of dependencies at the top of each file
 within a simple comment.</p>
-
-<pre><code class="language-javascript">// maps.js
-//
-// This file provides the ``Maps`` namespace.
-// It depends on jQuery and jquery.cookie.js.
-// It depends on the ``userId`` variable from the document.
-//
-// (function($) {
-//   ...
-</code></pre>
-
-<h2 id="class-definition-time-and-consumption-time">Class definition time and consumption time</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// maps.js
+</span><span style="color:#75715e">//
+</span><span style="color:#75715e">// This file provides the ``Maps`` namespace.
+</span><span style="color:#75715e">// It depends on jQuery and jquery.cookie.js.
+</span><span style="color:#75715e">// It depends on the ``userId`` variable from the document.
+</span><span style="color:#75715e">//
+</span><span style="color:#75715e">// (function($) {
+</span><span style="color:#75715e">//   ...
+</span></code></pre></div><h2 id="class-definition-time-and-consumption-time">Class definition time and consumption time</h2>
 <p>There should be a clear distinction between when your classes are defined and
-when they are consumed.  I like to prepare all my classes and functions
+when they are consumed. I like to prepare all my classes and functions
 beforehand, and then kick off the app with a single call when the document is
-ready.  It&rsquo;s nice to be able to tell that this is where the app starts.</p>
-
+ready. It&rsquo;s nice to be able to tell that this is where the app starts.</p>
 <h2 id="namespaces">Namespaces</h2>
-
-<p>Your entire application should be contained within a namespace.  Putting all of
+<p>Your entire application should be contained within a namespace. Putting all of
 your code under a namespace makes it easy to tell where what function or class
-definition is coming from.  It makes sure that you don&rsquo;t pollute the global
-namespace.  It also allows you to select which functions and variables are
+definition is coming from. It makes sure that you don&rsquo;t pollute the global
+namespace. It also allows you to select which functions and variables are
 going to be exposed publicly.</p>
-
 <h2 id="documentation">Documentation</h2>
-
 <p>If your application isn&rsquo;t going to be open-source, you might be tempted to skip
-writing documentation.  Adding a few comments here and there in the code can
+writing documentation. Adding a few comments here and there in the code can
 help you quickly understand what is going on and where related code might live.
-This also helps a lot when on-boarding new developers.  When a new member of
+This also helps a lot when on-boarding new developers. When a new member of
 your team opens up an 800-line-of-code file with zero comments, they might
 crawl under their desk and cry (I&rsquo;ve wanted to do that a few times before).</p>
-
 <h2 id="frameworks">Frameworks</h2>
-
 <p>If you do decide to use a framework like Backbone.js, you should make sure that
-you use it in a sane way.  When a new member joins your team, it&rsquo;s really nice
+you use it in a sane way. When a new member joins your team, it&rsquo;s really nice
 when you can point them to the framework&rsquo;s documentation and have them start
-learning.  Obviously, you will want to do some custom things and maybe even
+learning. Obviously, you will want to do some custom things and maybe even
 build extensions to the framework and that&rsquo;s fine as long as it&rsquo;s documented
 and obvious.</p>
-
 <h2 id="conclusion">Conclusion</h2>
-
 <p>Thanks for listening</p>
 
 </article>

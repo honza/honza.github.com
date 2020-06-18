@@ -1,0 +1,22 @@
+{
+    "reading_time": "under one minute", 
+    "month": "05", 
+    "year": "2013", 
+    "date": "May 24, 2013", 
+    "slug": "text-editor-ui", 
+    "contents": "<div class=\"section\" id=\"text-editor-ui\">\n<h1>Text editor&nbsp;<span class=\"caps\">UI</span></h1>\n<blockquote>\nWhat I don&#8217;t understand is: why should you ever care how your editor looks,\nunless you&#8217;re trying to win a screenshot competition?  The primary factor\nin looking good should be the choice of a good font at a comfortable size,\nand a syntax coloring theme that you like.  And that is not something\nspecific to an editor.  Editors like Emacs and vi have almost no <span class=\"caps\">UI</span>!  If\nEmacs is configured right, the only <span class=\"caps\">UI</span> it has is the modeline and the\nminibuffer.</blockquote>\n<p>Vivek Haldar in <a class=\"reference external\" href=\"http://blog.vivekhaldar.com/post/31970017734/new-frontiers-in-text-editing\">New Frontiers In Text&nbsp;Editing</a></p>\n</div>\n", 
+    "date_iso": "2013-05-24", 
+    "title": "Text editor UI", 
+    "url": "/2013/05/text-editor-ui", 
+    "day": "24", 
+    "categories": [
+        {
+            "name": "vim", 
+            "slug": "vim"
+        }, 
+        {
+            "name": "emacs", 
+            "slug": "emacs"
+        }
+    ]
+}

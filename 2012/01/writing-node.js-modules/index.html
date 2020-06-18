@@ -42,42 +42,37 @@
 few months would most certainly be an understatement. New node.js-related
 projects are popping up all over the place, and there seems to be this notion
 that if you aren&rsquo;t using it you&rsquo;re not cool enough.</p>
-
 <p>Over the Christmas holidays, I sat down to sort out my photo library and I
 wanted to make a web photo gallery to share the images with family and friends.
 Being a mainly Python programmer, I wrote a Python script that will go through
 all of my photos and create smaller versions and thumbnails of the images that
 are suitable for the web. I think I have around 1500 images at the moment and
 it took a good 20 minutes to convert everything using Python Imaging Library.</p>
-
 <p>I was rather frustrated with the performance. I think the reason for the
 slowness was the fact that the images were processed sequentially, one by one.
 What if I could modify my program to process more than one image at a time.
 This would certainly speed by the process. Then I thought about using threads
 in Python and I think I threw up in my mouth a little.</p>
-
 <p>Then I remembered Node.js. It&rsquo;s supposed to be all asynchronous and
 non-blocking. Perfect match. So I wrote a thumbnailer in node.</p>
-
 <p>Essentially, it&rsquo;s a worker queue that resizes images. You give it a source and
 destination directories and a number of workers and run it. The total time went
 from 20 minutes to 2 using about 5 workers. Much better, eh?</p>
-
 <p>I decided to open source the project because I couldn&rsquo;t find any node.js
 projects that do something even remotely similar. It&rsquo;s called <a href="https://github.com/honza/node-thumbnail">node-thumbnail</a>
 and you can find it on both Github and npmjs.</p>
-
 <p>So what does the API look like?</p>
-
-<pre><code class="language-javascript">thumb({
-  source: 'source/path',
-  destination: 'dest/path',
-  concurrency: 4
-  }, function() {
-  console.log('All done!');
-});
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">thumb</span>(
+  {
+    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;source/path&#34;</span>,
+    <span style="color:#a6e22e">destination</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;dest/path&#34;</span>,
+    <span style="color:#a6e22e">concurrency</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">4</span>
+  },
+  <span style="color:#66d9ef">function</span>() {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;All done!&#34;</span>);
+  }
+);
+</code></pre></div>
 </article>
 
 <p class="article_date date">

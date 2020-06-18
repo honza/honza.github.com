@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Email on Honza Pokorny</title>
+    <title>email on Honza Pokorny</title>
     <link>https://honza.ca/categories/email/</link>
-    <description>Recent content in Email on Honza Pokorny</description>
+    <description>Recent content in email on Honza Pokorny</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 18 Jan 2012 09:00:00 -0400</lastBuildDate>
@@ -17,9 +17,43 @@
       <pubDate>Wed, 18 Jan 2012 09:00:00 -0400</pubDate>
       
       <guid>https://honza.ca/2012/01/disrupt-the-multiple-gmail-space/</guid>
-      <description>We all know that Gmail is the best email provider out there. It&amp;rsquo;s in the browser, it&amp;rsquo;s all ajaxy, you never delete anything, your emails are cleverly organized into conversations, you know the drill&amp;hellip;
-But have you ever tried to use more than one account at a time? It&amp;rsquo;s horribly broken. Let&amp;rsquo;s have a look at your options&amp;hellip;
-Multiple sign-in Google allows you to log into more than one account at a time.</description>
+      <description>&lt;p&gt;We all know that Gmail is the best email provider out there. It&amp;rsquo;s in the
+browser, it&amp;rsquo;s all ajaxy, you never delete anything, your emails are
+cleverly organized into conversations, you know the drill&amp;hellip;&lt;/p&gt;
+&lt;p&gt;But have you ever tried to use more than one account at a time? It&amp;rsquo;s horribly
+broken. Let&amp;rsquo;s have a look at your options&amp;hellip;&lt;/p&gt;
+&lt;h2 id=&#34;multiple-sign-in&#34;&gt;Multiple sign-in&lt;/h2&gt;
+&lt;p&gt;Google allows you to log into more than one account at a time. They provide you
+with a menu option to switch between the two and you are all set. The problem
+is that the constant switching back and forth just isn&amp;rsquo;t worth it.&lt;/p&gt;
+&lt;h2 id=&#34;use-a-desktop-client&#34;&gt;Use a desktop client&lt;/h2&gt;
+&lt;p&gt;If you use a desktop client like Thunderbird or Mail.app, you can have as many
+accounts as you want. But you don&amp;rsquo;t get access to your contacts and rarely get
+the nice conversation view for your messages. In addition, the applications are
+often bloated and use a ton of memory.&lt;/p&gt;
+&lt;h2 id=&#34;use-mutt-or-pino&#34;&gt;Use mutt or pino&lt;/h2&gt;
+&lt;p&gt;These light-weight applications are popular especially among programmers. They
+are a pain to setup and lack email address autocompletion.&lt;/p&gt;
+&lt;h2 id=&#34;use-multiple-browsers&#34;&gt;Use multiple browsers&lt;/h2&gt;
+&lt;p&gt;If you have one or two Gmail accounts, you could probably get away with using
+two browsers - one for each account. This is silly and you shouldn&amp;rsquo;t do that.&lt;/p&gt;
+&lt;h2 id=&#34;use-chrome-profiles&#34;&gt;Use Chrome profiles&lt;/h2&gt;
+&lt;p&gt;Newer versions of Chome will allow you to be logged into different Gmail
+accounts in different windows. This means that each window is logged into a
+single Google account and can only access the services associated with that
+account. This is fine for two accounts, but if you have 4+ it can get
+ridiculous pretty fast.&lt;/p&gt;
+&lt;p&gt;None of these options give you a good solution for a unified inbox. They all
+have their shortcomings.&lt;/p&gt;
+&lt;p&gt;There is a huge opportunity to disrupt this space as they are a lot of us who
+have to use a lot of different Gmail accounts.&lt;/p&gt;
+&lt;p&gt;I have been using Mozilla Thunderbird with two add-ons: Google contacts and
+Google Conversations. They are rather close to doing the right thing but it&amp;rsquo;s
+still missing something. I tried to set up mutt but it wasn&amp;rsquo;t working for me
+because of the missing autocomplete.&lt;/p&gt;
+&lt;h2 id=&#34;your-say&#34;&gt;Your say&lt;/h2&gt;
+&lt;p&gt;What do you use? How do you deal with this mess?&lt;/p&gt;
+</description>
     </item>
     
   </channel>

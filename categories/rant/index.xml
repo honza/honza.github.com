@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Rant on Honza Pokorny</title>
+    <title>rant on Honza Pokorny</title>
     <link>https://honza.ca/categories/rant/</link>
-    <description>Recent content in Rant on Honza Pokorny</description>
+    <description>Recent content in rant on Honza Pokorny</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 02 Nov 2015 11:25:00 -0400</lastBuildDate>
@@ -17,8 +17,58 @@
       <pubDate>Mon, 02 Nov 2015 11:25:00 -0400</pubDate>
       
       <guid>https://honza.ca/2015/11/language-choice/</guid>
-      <description>Warning: this is a rant
-Recently, I have made great progress in my journey towards Haskell enlightenment. I finally see how many of the little pieces of the Haskell puzzle fit together. At this point, I feel empowered to go forth and write useful programs. I read through the source of Scotty the web framework the other day, and I was very pleasantly surprised that I understood how it works. I absolutely love Haskell.</description>
+      <description>&lt;p&gt;&lt;em&gt;Warning: this is a rant&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Recently, I have made great progress in my journey towards Haskell
+enlightenment. I finally see how many of the little pieces of the Haskell
+puzzle fit together. At this point, I feel empowered to go forth and write
+useful programs. I &lt;a href=&#34;https://twitter.com/%5Fhonza/status/660421406698508288&#34;&gt;read&lt;/a&gt; through the source of &lt;a href=&#34;https://github.com/scotty-web/scotty&#34;&gt;Scotty&lt;/a&gt; the web framework
+the other day, and I was very pleasantly surprised that I understood how it
+works. I absolutely &lt;em&gt;love&lt;/em&gt; Haskell. I love that it makes you think. One does
+not simply open a text editor and start banging at the keyboard to write a
+Haskell program. I love that Haskell encourages generalizations and
+abstractions. One of the biggest heureka moments in my journey was
+understanding the full implications of why a function of type &lt;code&gt;a -&amp;gt; a&lt;/code&gt; has a
+single implementation. I&amp;rsquo;m addicted to running my program for the first time
+(after fighting with the compiler for ages), and having it work. I think monad
+transformers and lenses are really clever. By many criteria, Haskell is the
+perfect programming language.&lt;/p&gt;
+&lt;p&gt;It has taken me four years to get here.&lt;/p&gt;
+&lt;p&gt;I used to get so discouraged that I took breaks for weeks or months at a time
+because I didn&amp;rsquo;t see the point of continuing. But I always came back. Now I
+have finally arrived. I would say I&amp;rsquo;m an intermediate Haskeller. Naturally,
+I&amp;rsquo;m thinking about writing some Haskell code at work which is going to be easy
+given our service-oriented architecture.&lt;/p&gt;
+&lt;p&gt;I have also been playing with &lt;a href=&#34;http://www.purescript.org/&#34;&gt;Purescript&lt;/a&gt; which is a Haskell dialect that
+compiles to javascript. In many ways, Purescript is a much better Haskell
+because it doesn&amp;rsquo;t come with the historical baggage. In speaking with my
+colleague who doesn&amp;rsquo;t know Purescript about introducing it into our code base,
+I realized the gravity of what I was asking him to learn. It sounds great to
+say &amp;ldquo;let&amp;rsquo;s rewrite this in purescript&amp;rdquo; and expect someone to come back from
+their weekend having learned enough to be dangerous when it took me four years
+to learn.&lt;/p&gt;
+&lt;p&gt;Another great example is the open source community. If you choose Haskell for
+your open source project, you might be productive, safe to refactor, write
+little code &amp;mdash; but how many people will be willing to learn Haskell to
+contribute a fix or a new feature?&lt;/p&gt;
+&lt;p&gt;Many of my Haskell friends like to mock the &lt;a href=&#34;https://golang.org/&#34;&gt;Go&lt;/a&gt; programming language. Myself
+included at times. Mind you, the language is &lt;em&gt;objectively&lt;/em&gt; poorly designed.
+The error handling, the lack of generics, the ridiculous package manager, the
+absurd type system, the &lt;code&gt;range&lt;/code&gt; thing, etc. It&amp;rsquo;s almost exactly the opposite
+of Haskell.&lt;/p&gt;
+&lt;p&gt;And yet, Go is a lot &lt;a href=&#34;http://adambard.com/blog/top-github-languages-2014/&#34;&gt;more popular&lt;/a&gt; than Haskell according to GitHub. Yet,
+there are so many amazing projects written in Go, like Docker, Influxdb, etcd,
+consul, prometheus, packer, and many more. Unlike Haskell, if you ask your
+coworkers to learn Go over the weekend, everyone will come back with a little
+app they built. A clearly inferior tool is used by crowds of people to build
+cool things.&lt;/p&gt;
+&lt;p&gt;What should we conclude from this? The choice of programming language matters.
+Programming is a social activity. Fewer features seems to equal easier to
+learn. Generalization and programming language innovation seem to be out of
+favor. Creating software to solve real problems with blunt tools seems to be a
+lot more important than using a sharp axe. We&amp;rsquo;d much rather use an inferior
+tool whose manual we don&amp;rsquo;t have to read. We&amp;rsquo;d much rather snap a picture
+with our smartphone than to learn how to use a DSLR.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -27,9 +77,71 @@ Recently, I have made great progress in my journey towards Haskell enlightenment
       <pubDate>Wed, 10 Apr 2013 14:10:00 -0300</pubDate>
       
       <guid>https://honza.ca/2013/04/international-families/</guid>
-      <description>I&amp;rsquo;m from the Czech republic. My wife is from Canada. We got married in Canada. Our son was born in the United Kingdom. Our daughter was born in Canada. Both of our children are by birth Czech and Canadian at the same time.
-We want our children to be able to prove both of those citizenships and the following is the process.
-Our son Our son Wyatt was born in the UK.</description>
+      <description>&lt;p&gt;I&amp;rsquo;m from the Czech republic. My wife is from Canada. We got married in
+Canada. Our son was born in the United Kingdom. Our daughter was born in
+Canada. Both of our children are by birth Czech and Canadian at the same time.&lt;/p&gt;
+&lt;p&gt;We want our children to be able to prove both of those citizenships and the
+following is the process.&lt;/p&gt;
+&lt;h2 id=&#34;our-son&#34;&gt;Our son&lt;/h2&gt;
+&lt;p&gt;Our son Wyatt was born in the UK. He has a British birth certificate but is
+not a British citizen. In order to travel out of the UK, he had to get a
+passport. Because we now live in Canada, we decided it would make more sense
+to get the Canadian one done first.&lt;/p&gt;
+&lt;p&gt;In order for someone without a Canadian birth certificate to get a Canadian
+passport, you need to get a proof of citizenship. This is a piece of paper
+that Wyatt will have to use for the rest of his life to prove his Canadian
+citizenship instead of a birth certificate like all normal Canadians.&lt;/p&gt;
+&lt;p&gt;So, to get a passport, you first need a proof of citizenship. Wyatt is a
+Canadian citizen because his mother is Canadian. In order to get the proof of
+citizenship, you need to send a superlegalized British birth certificate to the
+Canadian government and include the mother&amp;rsquo;s birth certificate to prove the she
+is Canadian. Super what? Superlegalization is a process whereby Canada and
+the UK agree to authorize the use of each other&amp;rsquo;s legal documents. Wyatt&amp;rsquo;s
+British birth certificate must be stamped by a Canadian embassy in the UK to
+say that this is in fact a legal document issued by the United Kingdom. Also,
+along with his application we had to send in our marriage certificate.&lt;/p&gt;
+&lt;p&gt;Once he&amp;rsquo;s obtained the proof of citizenship, we can apply for a passport.
+Fortunately, the Canadian government is nice enough to allow you to apply for
+the proof of citizenship and the passport on one application. We had his
+passport in a few weeks.&lt;/p&gt;
+&lt;p&gt;Now we are living in Canada and want to get him all the papers he needs to be a
+true Czech citizen. This means that we need to have his British birth
+certificate legalized by the UK, then translated into Czech by a
+government-approved translator, then approved by the Ministry of Interior of
+the Czech republic and then we can apply for a Czech birth certificate. Of
+course, the application requires us to send in our marriage certificate. Since
+we got married in Canada, we have a Canadian marriage certificate. This means
+that we need to have to superlegalized, translated into Czech and approved by
+the Ministry. More fees and translators aren&amp;rsquo;t cheap.&lt;/p&gt;
+&lt;p&gt;Once he has a Czech birth certificate, he needs to apply for a birth number
+which isn&amp;rsquo;t unlike a social security number except it&amp;rsquo;s derived from your date
+of birth.&lt;/p&gt;
+&lt;h2 id=&#34;our-daughter&#34;&gt;Our daughter&lt;/h2&gt;
+&lt;p&gt;Our daughter Eliška was born in Canada. This means she can fortunately get a
+Canadian passport without any issues. She is a real Canadian like most people
+and doesn&amp;rsquo;t need to have any special paperwork to prove that she is. Piece of
+cake.&lt;/p&gt;
+&lt;p&gt;When it comes to the Czech side of things, it&amp;rsquo;s seems it&amp;rsquo;s much more
+complicated than with our son.&lt;/p&gt;
+&lt;p&gt;First, she needs to apply for a proof of Czech citizenship. Her Canadian birth
+certificate needs to be superlegalized, translated and approved. This is
+fortunately done at the Czech embassy in Ottawa and you are allowed to
+translate the document yourself and they will verify it for you. One of the
+forms that you need to send in with the application requires you to have your
+signature verified by a notary. No big deal, right? Well, good luck finding a
+notary in Canada who speaks Czech and is willing to notarize your signature. I
+was emailing back and forth with the embassy that they allowed me to photocopy
+my ID and take that to the notary instead. I&amp;rsquo;ll sign it in front of him and he
+can verify my identity and signature. I&amp;rsquo;ll send this in along with the
+application. The application process takes about 4-6 months according to their
+website.&lt;/p&gt;
+&lt;p&gt;I have yet to apply for this. But when it comes back, we will have to apply
+for a Czech birth certificate and a birth number. More forms, more fees, more
+superlegalization, etc.&lt;/p&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;No matter what you do, do not romanticize international families. It&amp;rsquo;s not all
+that fun all the time&amp;hellip;&lt;/p&gt;
+</description>
     </item>
     
   </channel>

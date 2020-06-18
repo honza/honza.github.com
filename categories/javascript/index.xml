@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Javascript on Honza Pokorny</title>
+    <title>javascript on Honza Pokorny</title>
     <link>https://honza.ca/categories/javascript/</link>
-    <description>Recent content in Javascript on Honza Pokorny</description>
+    <description>Recent content in javascript on Honza Pokorny</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 02 Nov 2015 11:25:00 -0400</lastBuildDate>
@@ -17,8 +17,58 @@
       <pubDate>Mon, 02 Nov 2015 11:25:00 -0400</pubDate>
       
       <guid>https://honza.ca/2015/11/language-choice/</guid>
-      <description>Warning: this is a rant
-Recently, I have made great progress in my journey towards Haskell enlightenment. I finally see how many of the little pieces of the Haskell puzzle fit together. At this point, I feel empowered to go forth and write useful programs. I read through the source of Scotty the web framework the other day, and I was very pleasantly surprised that I understood how it works. I absolutely love Haskell.</description>
+      <description>&lt;p&gt;&lt;em&gt;Warning: this is a rant&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Recently, I have made great progress in my journey towards Haskell
+enlightenment. I finally see how many of the little pieces of the Haskell
+puzzle fit together. At this point, I feel empowered to go forth and write
+useful programs. I &lt;a href=&#34;https://twitter.com/%5Fhonza/status/660421406698508288&#34;&gt;read&lt;/a&gt; through the source of &lt;a href=&#34;https://github.com/scotty-web/scotty&#34;&gt;Scotty&lt;/a&gt; the web framework
+the other day, and I was very pleasantly surprised that I understood how it
+works. I absolutely &lt;em&gt;love&lt;/em&gt; Haskell. I love that it makes you think. One does
+not simply open a text editor and start banging at the keyboard to write a
+Haskell program. I love that Haskell encourages generalizations and
+abstractions. One of the biggest heureka moments in my journey was
+understanding the full implications of why a function of type &lt;code&gt;a -&amp;gt; a&lt;/code&gt; has a
+single implementation. I&amp;rsquo;m addicted to running my program for the first time
+(after fighting with the compiler for ages), and having it work. I think monad
+transformers and lenses are really clever. By many criteria, Haskell is the
+perfect programming language.&lt;/p&gt;
+&lt;p&gt;It has taken me four years to get here.&lt;/p&gt;
+&lt;p&gt;I used to get so discouraged that I took breaks for weeks or months at a time
+because I didn&amp;rsquo;t see the point of continuing. But I always came back. Now I
+have finally arrived. I would say I&amp;rsquo;m an intermediate Haskeller. Naturally,
+I&amp;rsquo;m thinking about writing some Haskell code at work which is going to be easy
+given our service-oriented architecture.&lt;/p&gt;
+&lt;p&gt;I have also been playing with &lt;a href=&#34;http://www.purescript.org/&#34;&gt;Purescript&lt;/a&gt; which is a Haskell dialect that
+compiles to javascript. In many ways, Purescript is a much better Haskell
+because it doesn&amp;rsquo;t come with the historical baggage. In speaking with my
+colleague who doesn&amp;rsquo;t know Purescript about introducing it into our code base,
+I realized the gravity of what I was asking him to learn. It sounds great to
+say &amp;ldquo;let&amp;rsquo;s rewrite this in purescript&amp;rdquo; and expect someone to come back from
+their weekend having learned enough to be dangerous when it took me four years
+to learn.&lt;/p&gt;
+&lt;p&gt;Another great example is the open source community. If you choose Haskell for
+your open source project, you might be productive, safe to refactor, write
+little code &amp;mdash; but how many people will be willing to learn Haskell to
+contribute a fix or a new feature?&lt;/p&gt;
+&lt;p&gt;Many of my Haskell friends like to mock the &lt;a href=&#34;https://golang.org/&#34;&gt;Go&lt;/a&gt; programming language. Myself
+included at times. Mind you, the language is &lt;em&gt;objectively&lt;/em&gt; poorly designed.
+The error handling, the lack of generics, the ridiculous package manager, the
+absurd type system, the &lt;code&gt;range&lt;/code&gt; thing, etc. It&amp;rsquo;s almost exactly the opposite
+of Haskell.&lt;/p&gt;
+&lt;p&gt;And yet, Go is a lot &lt;a href=&#34;http://adambard.com/blog/top-github-languages-2014/&#34;&gt;more popular&lt;/a&gt; than Haskell according to GitHub. Yet,
+there are so many amazing projects written in Go, like Docker, Influxdb, etcd,
+consul, prometheus, packer, and many more. Unlike Haskell, if you ask your
+coworkers to learn Go over the weekend, everyone will come back with a little
+app they built. A clearly inferior tool is used by crowds of people to build
+cool things.&lt;/p&gt;
+&lt;p&gt;What should we conclude from this? The choice of programming language matters.
+Programming is a social activity. Fewer features seems to equal easier to
+learn. Generalization and programming language innovation seem to be out of
+favor. Creating software to solve real problems with blunt tools seems to be a
+lot more important than using a sharp axe. We&amp;rsquo;d much rather use an inferior
+tool whose manual we don&amp;rsquo;t have to read. We&amp;rsquo;d much rather snap a picture
+with our smartphone than to learn how to use a DSLR.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -27,7 +77,36 @@ Recently, I have made great progress in my journey towards Haskell enlightenment
       <pubDate>Wed, 18 Feb 2015 10:34:00 -0400</pubDate>
       
       <guid>https://honza.ca/2015/02/programming-languages-in-a-nutshell/</guid>
-      <description>Python, Ruby concurrency lol packaging lol Golang lol if you don&amp;rsquo;t like typing err := y u no generics lol imports Haskell need PhD will never be mainstream Idris only for concating lists Erlang lol syntax Javascript javascript Rust how do I do x this week? Clojure let me know when the program has started running lol if you want to build a secure thing on the web Scala lol if you think this actually improves java PHP which of these 10 fns should I use?</description>
+      <description>&lt;h2 id=&#34;python-ruby&#34;&gt;Python, Ruby&lt;/h2&gt;
+&lt;h3 id=&#34;concurrency-lol&#34;&gt;concurrency lol&lt;/h3&gt;
+&lt;h3 id=&#34;packaging-lol&#34;&gt;packaging lol&lt;/h3&gt;
+&lt;h2 id=&#34;golang&#34;&gt;Golang&lt;/h2&gt;
+&lt;h3 id=&#34;lol-if-you-don-t-like-typing-err&#34;&gt;lol if you don&amp;rsquo;t like typing &lt;code&gt;err :=&lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;y-u-no-generics&#34;&gt;y u no generics&lt;/h3&gt;
+&lt;h3 id=&#34;lol-imports&#34;&gt;lol imports&lt;/h3&gt;
+&lt;h2 id=&#34;haskell&#34;&gt;Haskell&lt;/h2&gt;
+&lt;h3 id=&#34;need-phd&#34;&gt;need PhD&lt;/h3&gt;
+&lt;h3 id=&#34;will-never-be-mainstream&#34;&gt;will never be mainstream&lt;/h3&gt;
+&lt;h2 id=&#34;idris&#34;&gt;Idris&lt;/h2&gt;
+&lt;h3 id=&#34;only-for-concating-lists&#34;&gt;only for concating lists&lt;/h3&gt;
+&lt;h2 id=&#34;erlang&#34;&gt;Erlang&lt;/h2&gt;
+&lt;h3 id=&#34;lol-syntax&#34;&gt;lol syntax&lt;/h3&gt;
+&lt;h2 id=&#34;javascript&#34;&gt;Javascript&lt;/h2&gt;
+&lt;h3 id=&#34;javascript&#34;&gt;javascript&lt;/h3&gt;
+&lt;h2 id=&#34;rust&#34;&gt;Rust&lt;/h2&gt;
+&lt;h3 id=&#34;how-do-i-do-x-this-week&#34;&gt;how do I do x this week?&lt;/h3&gt;
+&lt;h2 id=&#34;clojure&#34;&gt;Clojure&lt;/h2&gt;
+&lt;h3 id=&#34;let-me-know-when-the-program-has-started-running&#34;&gt;let me know when the program has started running&lt;/h3&gt;
+&lt;h3 id=&#34;lol-if-you-want-to-build-a-secure-thing-on-the-web&#34;&gt;lol if you want to build a secure thing on the web&lt;/h3&gt;
+&lt;h2 id=&#34;scala&#34;&gt;Scala&lt;/h2&gt;
+&lt;h3 id=&#34;lol-if-you-think-this-actually-improves-java&#34;&gt;lol if you think this actually improves java&lt;/h3&gt;
+&lt;h2 id=&#34;php&#34;&gt;PHP&lt;/h2&gt;
+&lt;h3 id=&#34;which-of-these-10-fns-should-i-use&#34;&gt;which of these 10 fns should I use?&lt;/h3&gt;
+&lt;h2 id=&#34;ocaml&#34;&gt;OCaml&lt;/h2&gt;
+&lt;h3 id=&#34;haskell-without-the-awesome&#34;&gt;haskell without the awesome&lt;/h3&gt;
+&lt;h2 id=&#34;prolog&#34;&gt;Prolog&lt;/h2&gt;
+&lt;h3 id=&#34;mucho-problemo&#34;&gt;mucho problemo&lt;/h3&gt;
+</description>
     </item>
     
     <item>
@@ -36,8 +115,255 @@ Recently, I have made great progress in my journey towards Haskell enlightenment
       <pubDate>Mon, 13 May 2013 07:14:00 -0300</pubDate>
       
       <guid>https://honza.ca/2013/05/building-a-lisp-to-javascript-compiler/</guid>
-      <description>In this post, I&amp;rsquo;m going to show you how I made a Lisp to Javascript compiler. I really enjoy programming in Clojure but have often thought that the JVM isn&amp;rsquo;t always the best platform for scripts due to the slow JVM start-up. So, I decided to implement a simple version of Clojure that compiles to Javascript and can be run on top of nodejs.
-Compilers are notoriously hard to understand and therefore make for great mind-bending exercises.</description>
+      <description>&lt;p&gt;In this post, I&amp;rsquo;m going to show you how I made a Lisp to Javascript compiler. I
+really enjoy programming in Clojure but have often thought that the JVM isn&amp;rsquo;t
+always the best platform for scripts due to the slow JVM start-up. So, I
+decided to implement a simple version of Clojure that compiles to Javascript
+and can be run on top of nodejs.&lt;/p&gt;
+&lt;p&gt;Compilers are notoriously hard to understand and therefore make for great
+mind-bending exercises. Exactly my idea of weekend fun.&lt;/p&gt;
+&lt;h2 id=&#34;what-we-are-going-to-do&#34;&gt;What we are going to do&lt;/h2&gt;
+&lt;p&gt;There are tons of Lisp to Javascript compilers out there. What makes mine
+special? I&amp;rsquo;m using a PEG grammar to parse the source code. Once it&amp;rsquo;s parsed,
+I turn the result into a &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/SpiderMonkey/Parser%5FAPI&#34;&gt;Parser API&lt;/a&gt; compatible AST. The AST is then passed
+to &lt;a href=&#34;https://github.com/Constellation/escodegen&#34;&gt;escodegen&lt;/a&gt; which turns it into well-formatted Javascript.&lt;/p&gt;
+&lt;p&gt;This is great because I don&amp;rsquo;t have to worry about the particulars of Javascript
+syntax. Escodegen takes care of inserting semicolons where appropriate, etc.
+and everything looks clean and consistent. It&amp;rsquo;s nice because the parsing is
+decoupled from the source code emission. You can completely remove the
+Javascript generation part and use some other software to do that.&lt;/p&gt;
+&lt;h2 id=&#34;lisp-basics&#34;&gt;Lisp basics&lt;/h2&gt;
+&lt;p&gt;If you are familiar with Lisp, you can skip this section.&lt;/p&gt;
+&lt;p&gt;Lisp source code is made up of s-expressions. An s-expression is a list whose
+first element is a function and the rest are the arguments to that function.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;greet&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;honza&amp;#34;&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This is a list with two items. &lt;code&gt;greet&lt;/code&gt; is the name of the function and
+&lt;code&gt;&amp;quot;honza&amp;quot;&lt;/code&gt; is the argument. In other languages, this might be represented as
+&lt;code&gt;greet(&amp;quot;honza&amp;quot;)&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Lisp uses s-expressions for everything, including function definitions, if
+statements, assignments, binary expressions, etc.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;def &lt;/span&gt;name &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;honza&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#75715e&#34;&gt;;; define a variable &amp;#34;name&amp;#34; and assign &amp;#34;honza&amp;#34; to it&lt;/span&gt;
+(+ &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)            &lt;span style=&#34;color:#75715e&#34;&gt;;; add 1 and 2 and return the result&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;;; If the name variable is equal to &amp;#34;honza&amp;#34;, print &amp;#34;hey honza&amp;#34;, otherwise,&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;;; just print &amp;#34;hey stranger&amp;#34;.&lt;/span&gt;
+
+(&lt;span style=&#34;color:#66d9ef&#34;&gt;if &lt;/span&gt;(= name &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;honza&amp;#34;&lt;/span&gt;)
+  (print &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;hey honza&amp;#34;&lt;/span&gt;)
+  (print &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;hey stranger&amp;#34;&lt;/span&gt;))
+
+&lt;span style=&#34;color:#75715e&#34;&gt;;; Function definition; it takes one parameter called &amp;#34;name&amp;#34;.&lt;/span&gt;
+
+(&lt;span style=&#34;color:#66d9ef&#34;&gt;def &lt;/span&gt;greet
+  (&lt;span style=&#34;color:#66d9ef&#34;&gt;fn &lt;/span&gt;[name]
+    (println &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;hello&amp;#34;&lt;/span&gt; name)))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In Lisp, a function body can have multiple s-expression but only the last one
+is returned. There is no &lt;code&gt;return&lt;/code&gt; keyword in Lisp. Binary operators and
+things like the &lt;code&gt;if&lt;/code&gt; keyword are actually functions that return values.&lt;/p&gt;
+&lt;h2 id=&#34;the-mighty-peg&#34;&gt;The mighty PEG&lt;/h2&gt;
+&lt;p&gt;Every PEG grammar starts with the &lt;code&gt;program&lt;/code&gt; directive. This is where the
+parser will start parsing.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;program
+  = s:sexp+ &amp;quot;\n&amp;quot;*  { return {
+      type: &#39;Program&#39;,
+      body: s
+  };}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;A Lisp program consists of one or more s-expressions, optionally followed by a
+newline. The list of one or more s-expressions is stored in the variable
+&lt;code&gt;s&lt;/code&gt;. We then return a Javascript object with two properties: &lt;code&gt;type&lt;/code&gt; and
+&lt;code&gt;body&lt;/code&gt;. Since we are at the top level, we return it as a type of
+&lt;code&gt;Program&lt;/code&gt;, and our body will be made up of the matched s-expressions. The
+syntax is a little weird at first but you get used to it. Fairly simple stuff.&lt;/p&gt;
+&lt;p&gt;If you tried to compile this grammar into a parser, it would fail because we
+didn&amp;rsquo;t tell it what an s-expression looks like.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;sexp
+  = _ a:atom _ { return a; }
+  / _ l:list _ { return l; }
+  / _ v:vector _ { return v; }
+  / _ o:object _ { return o; }
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;OK, so an s-expression is either an atom, a list, a vector or an object. Each
+of these can be preceded and followed by any amount of whitespace. Cool,
+that&amp;rsquo;s simple enough. Except now we have to define what all those things are.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s start with the atom:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;atom
+  = d:[0-9]+ _ { return {type: &#39;Literal&#39;, value: numberify(d)}; }
+  / &#39;&amp;quot;&#39; d:(!&#39;&amp;quot;&#39; sourcechar)* &#39;&amp;quot;&#39; _ { return {type: &#39;Literal&#39;, value: makeStr(d) }}
+  / s:[-+/\*_&amp;lt;&amp;gt;=a-zA-Z\.!]+ _ { return {type: &#39;Identifier&#39;, name: s.join(&amp;quot;&amp;quot;)};}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;So, an atom can be a list of one or more digits, a string or a valid
+identifier. In the digit directive, you will notice that we are assigning the
+number to the &lt;code&gt;d&lt;/code&gt; variable. This will contain a list of all of the matched
+numbers. We then concatenate them and parse them into an integer. That&amp;rsquo;s what
+the &lt;code&gt;numberify&lt;/code&gt; function does. A number or a string is a literal value so we
+return it as such. An identifier is a variable name, so we return it as such,
+too.&lt;/p&gt;
+&lt;p&gt;Next up, vectors and objects:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;vector
+  = &amp;quot;[]&amp;quot; { return {type: &#39;ArrayExpression&#39;, elements: []}; }
+  / _ &amp;quot;[&amp;quot; _ a:atom+ _ &amp;quot;]&amp;quot; _ { return {type: &#39;ArrayExpression&#39;, elements: a};}
+  / _ &amp;quot;[&amp;quot; _ o:object+ _ &amp;quot;]&amp;quot; _ { return {type: &#39;ArrayExpression&#39;, elements: o};}
+
+object
+  = &amp;quot;{}&amp;quot; { return {type: &#39;ObjectExpression&#39;, properties: []}; }
+  / _ &amp;quot;{&amp;quot; _ a:atom+ _ &amp;quot;}&amp;quot; _ { return makeObject(a); }
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Continuing in the same vein, a vector is either an empty array, an array with
+at least one atom in it, or an array with at least one object in it.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;makeObject&lt;/code&gt; function will take a pair by pair from the array and take
+the first item in the pair and turn it into an object key and set as its value
+to the second item in the pair. If the number of elements in the array isn&amp;rsquo;t
+divisible by 2, it will yell at you.&lt;/p&gt;
+&lt;p&gt;Next up, lists. Now, lists are special because the first item is the name of a
+function. This gives us the opportunity to define some built-in functions that
+would otherwise be really tricky to define.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;list
+  = &amp;quot;()&amp;quot; { return []; }
+  /  _ &amp;quot;(&amp;quot; _ s:sexp+ _ &amp;quot;)&amp;quot; _ {
+    if (first(s).name === &#39;def&#39;) {
+      return {
+        type: &#39;VariableDeclaration&#39;,
+        declarations: [{
+          type: &#39;VariableDeclarator&#39;,
+          id: s[1],
+          init: s[2].expression? s[2].expression : s[2]
+        }],
+        kind: &#39;var&#39;
+      };
+    }
+
+    if (first(s).name === &#39;fn&#39;) {
+      return {
+        type: &#39;FunctionExpression&#39;,
+        id: null,
+        params: s[1].elements ? s[1].elements : s[1],
+        body: {
+          type: &#39;BlockStatement&#39;,
+          body: init(rest(rest((s)))).concat(returnStatement(last(rest(s))))
+        }
+      };
+    }
+
+    if (Object.keys(builtins).indexOf(first(s).name) &amp;gt; -1) {
+      return builtins[first(s).name](rest(s));
+    }
+
+    return processCallExpression(s);
+
+  }
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;OK, there is quite a bit here, so let&amp;rsquo;s step through it. A list can be&lt;/p&gt;
+&lt;h3 id=&#34;an-empty-list&#34;&gt;an empty list&lt;/h3&gt;
+&lt;h3 id=&#34;a-list-of-at-least-one-s-expression&#34;&gt;a list of at least one s-expression&lt;/h3&gt;
+&lt;p&gt;If it&amp;rsquo;s an empty list, we just return an empty array. If it&amp;rsquo;s a list of
+s-expressions, we check for other things. We look at the first element and see
+what its name is. It can be either:&lt;/p&gt;
+&lt;h3 id=&#34;def-variable-declaration&#34;&gt;&lt;code&gt;def&lt;/code&gt; - variable declaration&lt;/h3&gt;
+&lt;h3 id=&#34;fn-an-anonymous-function&#34;&gt;&lt;code&gt;fn&lt;/code&gt; - an anonymous function&lt;/h3&gt;
+&lt;h3 id=&#34;a-built-in-function--if-plus-list-etc-dot&#34;&gt;a built-in function (&lt;code&gt;if&lt;/code&gt;, &lt;code&gt;+&lt;/code&gt;, &lt;code&gt;list&lt;/code&gt;, etc.)&lt;/h3&gt;
+&lt;h3 id=&#34;other-function--user-defined&#34;&gt;other function (user defined)&lt;/h3&gt;
+&lt;p&gt;The only thing left is the definition of whitespace&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;_
+  = [\n, ]*
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Zero or more of the following characters: newline, comma and space.&lt;/p&gt;
+&lt;h2 id=&#34;obstacles&#34;&gt;Obstacles&lt;/h2&gt;
+&lt;p&gt;When converting the parsed source code to the Parser API tree, I hit a few
+obstacles. It turns out that Lisp and Javascript don&amp;rsquo;t map perfectly to each
+other and therefore some post-processing is needed.&lt;/p&gt;
+&lt;h3 id=&#34;statement-vs-expression&#34;&gt;Statement vs expression&lt;/h3&gt;
+&lt;p&gt;In Lisp, everything is an expression. In Javascript, there are both
+expressions and statements. The hardest part is the fact that a function call
+can be both a statement and an expression depending on how it&amp;rsquo;s used. So you
+can&amp;rsquo;t represent it the same way every time.&lt;/p&gt;
+&lt;p&gt;I wrote a function that takes a list which represents an s-expression (the
+first element is a function call, the rest are the parameters).&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;processCallExpression&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;) {
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;callee&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;first&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;),
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;args&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;rest&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;);
+
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;args&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;map&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;) {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;expression&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;expression&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;CallExpression&amp;#34;&lt;/span&gt;) {
+      &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;expression&lt;/span&gt;;
+    } &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; {
+      &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;;
+    }
+  }, &lt;span style=&#34;color:#a6e22e&#34;&gt;args&lt;/span&gt;);
+
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; {
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ExpressionStatement&amp;#34;&lt;/span&gt;,
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;expression&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+      &lt;span style=&#34;color:#a6e22e&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;CallExpression&amp;#34;&lt;/span&gt;,
+      &lt;span style=&#34;color:#a6e22e&#34;&gt;callee&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;callee&lt;/span&gt;,
+      &lt;span style=&#34;color:#a6e22e&#34;&gt;arguments&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;args&lt;/span&gt;
+    }
+  };
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This will check if any of the arguments passed to the function are also
+function calls. If it&amp;rsquo;s a nested function call, it&amp;rsquo;s placed in the AST as a
+&lt;code&gt;CallExpression&lt;/code&gt;, otherwise it&amp;rsquo;s a &lt;code&gt;CallExpression&lt;/code&gt; inside a
+&lt;code&gt;ExpressionStatement&lt;/code&gt;. The PEG parser can&amp;rsquo;t detect this because it&amp;rsquo;s context
+free - each node only knows about itself.&lt;/p&gt;
+&lt;h3 id=&#34;implicit-return&#34;&gt;Implicit return&lt;/h3&gt;
+&lt;p&gt;In Lisp, the last s-expression in a function&amp;rsquo;s body is implicitly returned.
+You don&amp;rsquo;t need to denote this with a return statement, it&amp;rsquo;s built-in. Again,
+we need to do some more processing. If we are processing a function
+declaration, we need to check its body and wrap the last expression in a
+&lt;code&gt;ReturnStatement&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;if-is-an-expression-in-lisp&#34;&gt;If is an expression in Lisp&lt;/h3&gt;
+&lt;p&gt;The if statement in Lisp is an expression, just like a function call or
+anything else. This means that the expression in any of the two branches is
+effectively returned to the caller. This means that we need to add an extra
+wrapper around the statement and wrap each of the branch-expressions in a
+return statement.&lt;/p&gt;
+&lt;p&gt;Like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// this
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;) {
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;it&amp;#39;s zero&amp;#34;&lt;/span&gt;;
+} &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; {
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;it&amp;#39;s more than zero&amp;#34;&lt;/span&gt;;
+}
+
+&lt;span style=&#34;color:#75715e&#34;&gt;// becomes
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+(&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt;() {
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;) {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;it&amp;#39;s zero&amp;#34;&lt;/span&gt;;
+  } &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;it&amp;#39;s more than zero&amp;#34;&lt;/span&gt;;
+  }
+})();
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;standard-library&#34;&gt;Standard library&lt;/h2&gt;
+&lt;p&gt;A lisp would be no fun without some fun functional programming functions. I
+have started working on a standard library for our lisp. It lives in a file
+called &lt;code&gt;lib.js&lt;/code&gt;. This file includes functions that are accessible from any
+program that you write.&lt;/p&gt;
+&lt;p&gt;For example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;nth&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;list&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;) {
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;list&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;length&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;list&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;length&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;) {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;null&lt;/span&gt;;
+  }
+
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;list&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;];
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;first&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;list&lt;/span&gt;) {
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;nth&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;list&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And much more.&lt;/p&gt;
+&lt;h2 id=&#34;putting-it-all-together&#34;&gt;Putting it all together&lt;/h2&gt;
+&lt;p&gt;Here is how it all comes together:&lt;/p&gt;
+&lt;h3 id=&#34;use-peg-dot-js-to-compile-the-grammar-into-a-parser&#34;&gt;Use peg.js to compile the grammar into a parser&lt;/h3&gt;
+&lt;h3 id=&#34;take-the-parser-and-append-to-it-the-compiler-program&#34;&gt;Take the parser and append to it the compiler program&lt;/h3&gt;
+&lt;p&gt;The compiler program is the command line utility that decides how your program
+should be compiled, it parsers CLI flags, etc. It can return the AST instead
+of Javascript, it can uglify the resulting Javascript, etc.&lt;/p&gt;
+&lt;p&gt;You can use the result like so&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;$ ./inertia sample.clj
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;And it will print the resulting Javascript to stdout. What the compiler
+program will also do is prepend the compiled Javascript with the standard
+library. It simply reads the standard library code from the &lt;code&gt;lib.js&lt;/code&gt; file
+and prepends it.&lt;/p&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;This has certainly been a fun exercise for me. You can check out the finished
+product on &lt;a href=&#34;https://github.com/honza/inertia&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -46,8 +372,65 @@ Compilers are notoriously hard to understand and therefore make for great mind-b
       <pubDate>Mon, 16 Jul 2012 08:13:00 -0300</pubDate>
       
       <guid>https://honza.ca/2012/07/large-javascript-application-tips/</guid>
-      <description>This post isn&amp;rsquo;t going to tell you that you should use MVC to structure your application. It isn&amp;rsquo;t going to tell you which framework to use. It&amp;rsquo;s not going to tell you to use CoffeeScript or MongoDB. But I&amp;rsquo;m going to talk about some small helpful things you can do to your Javascript application to make easier to develop and maintain.
-Naming Conventions Improperly naming your variables, functions and classes can make it nearly impossible to navigate large portions of existing code.</description>
+      <description>&lt;p&gt;This post isn&amp;rsquo;t going to tell you that you should use MVC to structure your
+application. It isn&amp;rsquo;t going to tell you which framework to use. It&amp;rsquo;s not
+going to tell you to use CoffeeScript or MongoDB. But I&amp;rsquo;m going to talk about
+some small helpful things you can do to your Javascript application to make
+easier to develop and maintain.&lt;/p&gt;
+&lt;h2 id=&#34;naming-conventions&#34;&gt;Naming Conventions&lt;/h2&gt;
+&lt;p&gt;Improperly naming your variables, functions and classes can make it nearly
+impossible to navigate large portions of existing code. You have to follow the
+chain all the way up where that variable was created (sometimes in a different
+file) to see what type of value it holds. By looking at a variable name, you
+should be able to tell if it&amp;rsquo;s a class definition or an instance. You should
+be able to distinguish between a constant and a function.&lt;/p&gt;
+&lt;h2 id=&#34;file-dependency&#34;&gt;File dependency&lt;/h2&gt;
+&lt;p&gt;Writing large Javascript applications for the browser is tricky because your
+application needs to be split over multiple files and there doesn&amp;rsquo;t seem to be
+a good way to manage dependencies. When you open up a file in your project,
+you can&amp;rsquo;t really know what Javascript code was loaded and executed before this
+file. Often times you find yourself looking at your build script or the
+&lt;code&gt;head&lt;/code&gt; of your HTML document to see when this file is loaded in the grand
+scheme of things. In Python, you say &lt;code&gt;from app import get_user&lt;/code&gt; to use a
+function from a different file or module. In the browser, you just don&amp;rsquo;t. I
+find it useful to specify these kinds of dependencies at the top of each file
+within a simple comment.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// maps.js
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;//
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// This file provides the ``Maps`` namespace.
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// It depends on jQuery and jquery.cookie.js.
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// It depends on the ``userId`` variable from the document.
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;//
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// (function($) {
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;//   ...
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;class-definition-time-and-consumption-time&#34;&gt;Class definition time and consumption time&lt;/h2&gt;
+&lt;p&gt;There should be a clear distinction between when your classes are defined and
+when they are consumed. I like to prepare all my classes and functions
+beforehand, and then kick off the app with a single call when the document is
+ready. It&amp;rsquo;s nice to be able to tell that this is where the app starts.&lt;/p&gt;
+&lt;h2 id=&#34;namespaces&#34;&gt;Namespaces&lt;/h2&gt;
+&lt;p&gt;Your entire application should be contained within a namespace. Putting all of
+your code under a namespace makes it easy to tell where what function or class
+definition is coming from. It makes sure that you don&amp;rsquo;t pollute the global
+namespace. It also allows you to select which functions and variables are
+going to be exposed publicly.&lt;/p&gt;
+&lt;h2 id=&#34;documentation&#34;&gt;Documentation&lt;/h2&gt;
+&lt;p&gt;If your application isn&amp;rsquo;t going to be open-source, you might be tempted to skip
+writing documentation. Adding a few comments here and there in the code can
+help you quickly understand what is going on and where related code might live.
+This also helps a lot when on-boarding new developers. When a new member of
+your team opens up an 800-line-of-code file with zero comments, they might
+crawl under their desk and cry (I&amp;rsquo;ve wanted to do that a few times before).&lt;/p&gt;
+&lt;h2 id=&#34;frameworks&#34;&gt;Frameworks&lt;/h2&gt;
+&lt;p&gt;If you do decide to use a framework like Backbone.js, you should make sure that
+you use it in a sane way. When a new member joins your team, it&amp;rsquo;s really nice
+when you can point them to the framework&amp;rsquo;s documentation and have them start
+learning. Obviously, you will want to do some custom things and maybe even
+build extensions to the framework and that&amp;rsquo;s fine as long as it&amp;rsquo;s documented
+and obvious.&lt;/p&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;Thanks for listening&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -56,8 +439,41 @@ Naming Conventions Improperly naming your variables, functions and classes can m
       <pubDate>Thu, 05 Jan 2012 14:00:00 -0400</pubDate>
       
       <guid>https://honza.ca/2012/01/writing-node.js-modules/</guid>
-      <description>To say that node.js has enjoyed a great deal of positive publicity in the last few months would most certainly be an understatement. New node.js-related projects are popping up all over the place, and there seems to be this notion that if you aren&amp;rsquo;t using it you&amp;rsquo;re not cool enough.
-Over the Christmas holidays, I sat down to sort out my photo library and I wanted to make a web photo gallery to share the images with family and friends.</description>
+      <description>&lt;p&gt;To say that node.js has enjoyed a great deal of positive publicity in the last
+few months would most certainly be an understatement. New node.js-related
+projects are popping up all over the place, and there seems to be this notion
+that if you aren&amp;rsquo;t using it you&amp;rsquo;re not cool enough.&lt;/p&gt;
+&lt;p&gt;Over the Christmas holidays, I sat down to sort out my photo library and I
+wanted to make a web photo gallery to share the images with family and friends.
+Being a mainly Python programmer, I wrote a Python script that will go through
+all of my photos and create smaller versions and thumbnails of the images that
+are suitable for the web. I think I have around 1500 images at the moment and
+it took a good 20 minutes to convert everything using Python Imaging Library.&lt;/p&gt;
+&lt;p&gt;I was rather frustrated with the performance. I think the reason for the
+slowness was the fact that the images were processed sequentially, one by one.
+What if I could modify my program to process more than one image at a time.
+This would certainly speed by the process. Then I thought about using threads
+in Python and I think I threw up in my mouth a little.&lt;/p&gt;
+&lt;p&gt;Then I remembered Node.js. It&amp;rsquo;s supposed to be all asynchronous and
+non-blocking. Perfect match. So I wrote a thumbnailer in node.&lt;/p&gt;
+&lt;p&gt;Essentially, it&amp;rsquo;s a worker queue that resizes images. You give it a source and
+destination directories and a number of workers and run it. The total time went
+from 20 minutes to 2 using about 5 workers. Much better, eh?&lt;/p&gt;
+&lt;p&gt;I decided to open source the project because I couldn&amp;rsquo;t find any node.js
+projects that do something even remotely similar. It&amp;rsquo;s called &lt;a href=&#34;https://github.com/honza/node-thumbnail&#34;&gt;node-thumbnail&lt;/a&gt;
+and you can find it on both Github and npmjs.&lt;/p&gt;
+&lt;p&gt;So what does the API look like?&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;thumb&lt;/span&gt;(
+  {
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;source&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;source/path&amp;#34;&lt;/span&gt;,
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;destination&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;dest/path&amp;#34;&lt;/span&gt;,
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;concurrency&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;
+  },
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt;() {
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;All done!&amp;#34;&lt;/span&gt;);
+  }
+);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -66,8 +482,94 @@ Over the Christmas holidays, I sat down to sort out my photo library and I wante
       <pubDate>Tue, 25 Oct 2011 11:00:00 -0300</pubDate>
       
       <guid>https://honza.ca/2011/10/data-driven-javascript-applications/</guid>
-      <description>Over the last few weeks, I have been trying to think of a way to design medium to large client-heavy web applications. There are many projects and ideas floating around that are meant to help you with this and I have had a look at quite a few of them. I don&amp;rsquo;t mean to say that I found the best one &amp;mdash; just one that I like.
-I want to talk about data-driven applications.</description>
+      <description>&lt;p&gt;Over the last few weeks, I have been trying to think of a way to design medium
+to large client-heavy web applications. There are many projects and ideas
+floating around that are meant to help you with this and I have had a look at
+quite a few of them. I don&amp;rsquo;t mean to say that I found the best one &amp;mdash; just one
+that I like.&lt;/p&gt;
+&lt;p&gt;I want to talk about data-driven applications. What I mean is that everything
+you do somehow manipulates or shows specific data. Let me describe what I mean
+by a way of example. I have been working on a piece of photo gallery software
+called &lt;code&gt;rembrant&lt;/code&gt;. The interface for actually organizing your images into
+albums is very client-heavy.&lt;/p&gt;
+&lt;p&gt;The user interface is similar to that of iPhoto. The larger panel displays a
+grid of small thumbnails. The sidebar shows a list of albums and a count of
+selected images.&lt;/p&gt;
+&lt;p&gt;When the application loads, it makes two calls to the server: one to get a list
+of all images (image models, including metadata), and a second to get album
+information. Everything else in the UI is based on these two lists. The list of
+albums and the image grid are pretty self-explanatory.&lt;/p&gt;
+&lt;p&gt;Once the browser has this data, we can start building out the &lt;em&gt;views&lt;/em&gt;. A view
+is a little windows, or a perspective upon a piece of data. It&amp;rsquo;s meant to
+display the data in a meaningful way to the user. For example, in our
+application, there is a list of albums in the sidebar. These are represented as
+list items with anchor tags:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;SidebarView&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Backbone&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;View&lt;/span&gt;.&lt;span style=&#34;color:#66d9ef&#34;&gt;extends&lt;/span&gt;({
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;el&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;$&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;#sidebar&amp;#34;&lt;/span&gt;),
+
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;events&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;click #new-album-link&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;newAlbum&amp;#34;&lt;/span&gt;
+  },
+
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;initialize&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt;() {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;collection&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;bind&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;reset&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;render&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;);
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;collection&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;bind&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;add&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;add&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;);
+  },
+
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;add&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;album&lt;/span&gt;) {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;albumView&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;SidebarAlbumView&lt;/span&gt;({
+      &lt;span style=&#34;color:#a6e22e&#34;&gt;model&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;album&lt;/span&gt;
+    });
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;el&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;append&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;albumView&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;el&lt;/span&gt;);
+  },
+
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;render&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt;() {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;collection&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;models&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;length&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;) {
+      &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;add&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;collection&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;models&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;]);
+    }
+  }
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Here you can see we are binding the view to an existing DOM element with an ID
+of &lt;em&gt;sidebar&lt;/em&gt;. The &lt;code&gt;@collection&lt;/code&gt; variable is the collection of albums we spoke
+about earlier. The view subscribes to the collection&amp;rsquo;s &lt;em&gt;reset&lt;/em&gt; and &lt;em&gt;add&lt;/em&gt;
+events. When a new album is added to the collection, the view will
+automatically update itself. Also, the &lt;em&gt;events&lt;/em&gt; hash allows us to bind event
+handlers to DOM elements in the sidebar.&lt;/p&gt;
+&lt;p&gt;You may have noticed that I&amp;rsquo;m using Backbone to actually structure the
+application. I find that Backbone provides a good compromise between structure
+and freedom to do as you please. To be honest, it took me a good while to wrap
+my head around what Backbone is trying to do for you. It may seem a little
+wordy at times but you shouldn&amp;rsquo;t expect your application to consist of little
+code.&lt;/p&gt;
+&lt;p&gt;Now, suppose we wanted to add a count to each album list item which would
+indicate how many photos are currently in that album. This is easily done by
+inspecting the photos collection. Backbone provides a simple way to filter your
+collection based on predefined criteria. To get all photos that belong to the
+album with an ID of &lt;code&gt;1&lt;/code&gt;, we would do:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;PhotoCollection&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Backbone&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Collection&lt;/span&gt;.&lt;span style=&#34;color:#66d9ef&#34;&gt;extends&lt;/span&gt;({
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;model&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Photo&lt;/span&gt;,
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;url&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/photos&amp;#34;&lt;/span&gt;,
+
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;byAlbum&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;id&lt;/span&gt;) {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;filter&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;photo&lt;/span&gt;) {
+      &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;indexOf&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;photo&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;get&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;albums&amp;#34;&lt;/span&gt;), &lt;span style=&#34;color:#a6e22e&#34;&gt;id&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+    });
+  }
+});
+
+&lt;span style=&#34;color:#75715e&#34;&gt;// collection is an instance of PhotoCollection
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;photos&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;collection&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;byAlbum&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;As you can see, this is very simple and elegant. Now, if a photo is deleted, it
+will be removed from the collection. This will be reflected both in the grid
+and in the sidebar. It will all work automatically because all of the views are
+looking at the same date. They are subscribed to the data&amp;rsquo;s events and react
+accordingly.&lt;/p&gt;
+&lt;p&gt;The nice thing is that you don&amp;rsquo;t have to worry about changing classes, binding
+data to DOM elements, attaching click handlers, making AJAX requests, none of
+this. The difficult part about this approach is deciding what your elementary
+data is and how you should get it. In the case of &lt;code&gt;rembrant&lt;/code&gt; it was pretty
+simple.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -76,9 +578,84 @@ I want to talk about data-driven applications.</description>
       <pubDate>Mon, 11 Apr 2011 16:45:00 -0300</pubDate>
       
       <guid>https://honza.ca/2011/04/why-you-should-be-using-coffeescript/</guid>
-      <description>I&amp;rsquo;m sure you&amp;rsquo;ve heard of CoffeeScript. Everyone is talking about it, it seems. It&amp;rsquo;s a beautiful language with a simple syntax that you use to write Javascript. CoffeeScript compiles to Javascript. Here is why I think you should be using it:
-Readability CoffeeScript is designed to be beautiful and readable. There is no unnecessary fluff. Less syntax boilerplate, fewer mistakes. Compare:
-// regular javascript var author = &amp;quot;William Shakespeare&amp;quot;; // coffeescript author = &amp;quot;William Shakespeare&amp;quot;  Indentation is also important in CoffeeScript - just like in Python.</description>
+      <description>&lt;p&gt;I&amp;rsquo;m sure you&amp;rsquo;ve heard of CoffeeScript. Everyone is talking about it, it seems.
+It&amp;rsquo;s a beautiful language with a simple syntax that you use to write
+Javascript. CoffeeScript compiles to Javascript. Here is why I think you should
+be using it:&lt;/p&gt;
+&lt;h2 id=&#34;readability&#34;&gt;Readability&lt;/h2&gt;
+&lt;p&gt;CoffeeScript is designed to be beautiful and readable. There is no unnecessary
+fluff. Less syntax boilerplate, fewer mistakes. Compare:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// regular javascript
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;author&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;William Shakespeare&amp;#34;&lt;/span&gt;;
+&lt;span style=&#34;color:#75715e&#34;&gt;// coffeescript
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;author&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;William Shakespeare&amp;#34;&lt;/span&gt;;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Indentation is also important in CoffeeScript - just like in Python. This makes
+closures and blocks easier to spot.&lt;/p&gt;
+&lt;h2 id=&#34;valid-code&#34;&gt;Valid Code&lt;/h2&gt;
+&lt;p&gt;There are many different coding styles when it comes to writing Javascript. The
+good thing about CoffeeScript is that the Javascript it generates is valid - it
+passes &lt;a href=&#34;http://www.javascriptlint.com/&#34;&gt;Javascript Lint&lt;/a&gt;. And if your code isn&amp;rsquo;t valid CoffeeScript, it
+won&amp;rsquo;t compile. It&amp;rsquo;s a win-win. This is perhaps my favorite feature.&lt;/p&gt;
+&lt;h2 id=&#34;easy-class-inheritance&#34;&gt;Easy class inheritance&lt;/h2&gt;
+&lt;p&gt;This is just great. It reminds me of Python and Ruby:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-coffeescript&#34; data-lang=&#34;coffeescript&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Animal&lt;/span&gt;
+    constructor: &lt;span style=&#34;color:#a6e22e&#34;&gt;(@name) -&amp;gt;&lt;/span&gt;
+
+    move: &lt;span style=&#34;color:#a6e22e&#34;&gt;(meters) -&amp;gt;&lt;/span&gt;
+        &lt;span style=&#34;color:#a6e22e&#34;&gt;alert&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;@name&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; moved &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;#{&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;meters&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;m.&amp;#34;&lt;/span&gt;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Dog&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;extends&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Animal&lt;/span&gt;
+    move: &lt;span style=&#34;color:#a6e22e&#34;&gt;-&amp;gt;&lt;/span&gt;
+        &lt;span style=&#34;color:#a6e22e&#34;&gt;alert&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Whoof...&amp;#34;&lt;/span&gt;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;super&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Compiles to this in Javascript:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Animal&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;Dog&lt;/span&gt;;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;__hasProp&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Object.&lt;span style=&#34;color:#a6e22e&#34;&gt;prototype&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;hasOwnProperty&lt;/span&gt;,
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;__extends&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;child&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;parent&lt;/span&gt;) {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;key&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;parent&lt;/span&gt;) {
+      &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;__hasProp&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;call&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;parent&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;key&lt;/span&gt;)) &lt;span style=&#34;color:#a6e22e&#34;&gt;child&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;key&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;parent&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;key&lt;/span&gt;];
+    }
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ctor&lt;/span&gt;() {
+      &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;constructor&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;child&lt;/span&gt;;
+    }
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;ctor&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;prototype&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;parent&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;prototype&lt;/span&gt;;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;child&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;prototype&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ctor&lt;/span&gt;();
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;child&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;__super__&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;parent&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;prototype&lt;/span&gt;;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;child&lt;/span&gt;;
+  };
+&lt;span style=&#34;color:#a6e22e&#34;&gt;Animal&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt;() {
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Animal&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt;) {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt;;
+  }
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;Animal&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;prototype&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;move&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;meters&lt;/span&gt;) {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;alert&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; moved &amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;meters&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;m.&amp;#34;&lt;/span&gt;));
+  };
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Animal&lt;/span&gt;;
+})();
+&lt;span style=&#34;color:#a6e22e&#34;&gt;Dog&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt;() {
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Dog&lt;/span&gt;() {
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;Dog&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;__super__&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;constructor&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;apply&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;arguments&lt;/span&gt;);
+  }
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;__extends&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;Dog&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;Animal&lt;/span&gt;);
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;Dog&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;prototype&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;move&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt;() {
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;alert&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Whoof...&amp;#34;&lt;/span&gt;);
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt;;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;Dog&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;__super__&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;move&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;call&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;);
+  };
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Dog&lt;/span&gt;;
+})();
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Quite a difference, huh? Think how much time you&amp;rsquo;d need to understand each
+version and make any changes required. In my mind, this encourages better code
+organization and structure.&lt;/p&gt;
+&lt;h2 id=&#34;node-dot-js-awesomeness&#34;&gt;Node.js awesomeness&lt;/h2&gt;
+&lt;p&gt;CoffeeScript comes with a Node.js utility, &lt;code&gt;coffee&lt;/code&gt;. You can write your
+Node.js code in CoffeeScript and run it with &lt;code&gt;coffee file.js&lt;/code&gt;. The utility
+wraps the CoffeeScript compiler and the &lt;code&gt;node&lt;/code&gt; executable. This way, you can
+whip up a quick server in no time. Genius.&lt;/p&gt;
+&lt;h2 id=&#34;easy-debugging&#34;&gt;Easy debugging&lt;/h2&gt;
+&lt;p&gt;With tools like &lt;a href=&#34;http://code.google.com/webtoolkit/&#34;&gt;Google Web Toolkit&lt;/a&gt;, your code compiles to &lt;em&gt;minified&lt;/em&gt;
+javascript. Non-minified code is obviously easier (possible?) to read and debug.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

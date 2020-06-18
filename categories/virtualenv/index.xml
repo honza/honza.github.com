@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Virtualenv on Honza Pokorny</title>
+    <title>virtualenv on Honza Pokorny</title>
     <link>https://honza.ca/categories/virtualenv/</link>
-    <description>Recent content in Virtualenv on Honza Pokorny</description>
+    <description>Recent content in virtualenv on Honza Pokorny</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 10 Jun 2011 11:00:00 -0300</lastBuildDate>
@@ -17,10 +17,18 @@
       <pubDate>Fri, 10 Jun 2011 11:00:00 -0300</pubDate>
       
       <guid>https://honza.ca/2011/06/install-ruby-gems-into-virtualenv/</guid>
-      <description>You are a Python developer and every time you have to install a Ruby gem you throw up in your mouth a little. Wouldn&amp;rsquo;t it be nice if you could install Ruby gems into your virtualenv? Yeah, it would.
-Stick this in your virtualenv&amp;rsquo;s postactivate script:
-export GEM_HOME=&amp;quot;$VIRTUAL_ENV/gems&amp;quot; export GEM_PATH=&amp;quot;&amp;quot; export PATH=$PATH:&amp;quot;$GEM_HOME/bin&amp;quot;  That&amp;rsquo;s it! You&amp;rsquo;re welcome. :)
-Credit Give credit where credit is due. I stole this idea from Idan Gazit and made it better.</description>
+      <description>&lt;p&gt;You are a Python developer and every time you have to install a Ruby gem you
+throw up in your mouth a little. Wouldn&amp;rsquo;t it be nice if you could install Ruby
+gems into your virtualenv? Yeah, it would.&lt;/p&gt;
+&lt;p&gt;Stick this in your virtualenv&amp;rsquo;s &lt;code&gt;postactivate&lt;/code&gt; script:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;export GEM_HOME&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$VIRTUAL_ENV&lt;span style=&#34;color:#e6db74&#34;&gt;/gems&amp;#34;&lt;/span&gt;
+export GEM_PATH&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+export PATH&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;$PATH:&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$GEM_HOME&lt;span style=&#34;color:#e6db74&#34;&gt;/bin&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;That&amp;rsquo;s it! You&amp;rsquo;re welcome. :)&lt;/p&gt;
+&lt;h2 id=&#34;credit&#34;&gt;Credit&lt;/h2&gt;
+&lt;p&gt;Give credit where credit is due. I stole this idea from &lt;a href=&#34;http://twitter.com/idangazit&#34;&gt;Idan Gazit&lt;/a&gt; and
+made it better.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

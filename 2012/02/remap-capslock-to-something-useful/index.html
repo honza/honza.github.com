@@ -38,38 +38,27 @@
 </div>
 
 <article>
-  
-
-<p>Arguably, CapsLock is <a href="http://capsoff.org/">the most useless key</a> on your keyboard. I honestly
+  <p>Arguably, CapsLock is <a href="http://capsoff.org/">the most useless key</a> on your keyboard. I honestly
 can&rsquo;t remember the last time I had a real use for it. If are a programmer, you
 should remap it to something more useful. The rest of this post will describe
 how to remap your CapsLock on a Mac OSX installation.</p>
-
 <h2 id="what-we-are-going-to-do">What we are going to do</h2>
-
 <p>I&rsquo;m a heavy vim user and reaching for the Esc key all the is a pain. We will
 remap the CapsLock to Esc. However, I want to be able to use it for something
 else if I&rsquo;m not in vim. We will set it up so that when you hit CapsLock on its
 own, it will send Esc. However, if you hold CapsLock and press another key, it
 will send Ctrl. That way you can do things like Ctrl+F, etc.</p>
-
 <p>On Mac OSX, you will want to do use <a href="https://pqrs.org/osx/karabiner/">Karabiner</a>. It&rsquo;s an excellent
 piece of software that will allow you to take control of your keyboard.</p>
-
 <h2 id="settings">Settings</h2>
-
 <p>Once you have installed KeyRemap4MacBook, go to System Preferences and select
 the Keyboard submenu. Hit the Modifier Keys button and remap CapsLock to Ctrl.
 You will have to do this once for every keyboard that you use.</p>
-
 <p>Next, head over to the KeyRemap4MacBook settings. The magical setting you are
 looking for is</p>
-
-<pre><code class="language-nil">Control_L to Control_L
+<pre><code class="language-nil" data-lang="nil">Control_L to Control_L
     (+ When you type Control_L only, send Escape)
-</code></pre>
-
-<p>That&rsquo;s it!</p>
+</code></pre><p>That&rsquo;s it!</p>
 
 </article>
 

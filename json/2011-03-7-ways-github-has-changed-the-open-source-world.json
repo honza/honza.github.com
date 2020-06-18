@@ -1,0 +1,26 @@
+{
+    "reading_time": "2 minutes", 
+    "month": "03", 
+    "year": "2011", 
+    "date": "March 05, 2011", 
+    "slug": "7-ways-github-has-changed-the-open-source-world", 
+    "contents": "<div class=\"section\" id=\"ways-github-has-changed-the-open-source-world\">\n<h1>7 ways Github has changed the open source&nbsp;world</h1>\n<p>As the guys at <a class=\"reference external\" href=\"http://thechangelog.com\">the changelog</a> say, the world of open source is changing fast\nand you have to keep up. I believe that Github has been very influential when\nit comes to making open source more accessible. How has Github changed the\nworld of open&nbsp;source?</p>\n<div class=\"section\" id=\"force-projects-to-include-a-good-readme\">\n<h2>Force projects to include a good&nbsp;<span class=\"caps\">README</span></h2>\n<p>Apart from the directory structure and files, the most prominent element on the\npage is your <span class=\"caps\">README</span> file. If you don&#8217;t have one, the page looks kind of weird. As\nan administrator, if you don&#8217;t add a <span class=\"caps\">README</span> file, Github will start yelling at&nbsp;you.</p>\n</div>\n<div class=\"section\" id=\"unified-place-for-all-your-projects\">\n<h2>Unified place for all your&nbsp;projects</h2>\n<p>When I come across a cool project, I like to see what other stuff the author\nhas been hacking on. The best example I think is <a class=\"reference external\" href=\"http://github.com/tpope\">tpope</a> who is a famous\nvim plugin creator. When you go to his profile page on Github, you can see all\nof the plugins he has ever written and&nbsp;published.</p>\n</div>\n<div class=\"section\" id=\"code-discussions\">\n<h2>Code&nbsp;discussions</h2>\n<p>Yes, you can discuss the project on <span class=\"caps\">IRC</span> or on mailing lists. Those aren&#8217;t\nexactly user friendly, and it&#8217;s hard to discuss code that way. Github makes it\neasy for you to submit a pull request and have others comment on your&nbsp;code.</p>\n</div>\n<div class=\"section\" id=\"publish-your-hacks-with-ease\">\n<h2>Publish your hacks with&nbsp;ease</h2>\n<p>Did you just write a patch that greatly improves an existing project? Fork it\nand publish it in minutes. If you notify the original project, you can get\nhelpful feedback on your hacks. This encourages people to publish their code\neven if it&#8217;s never merged into the original&nbsp;project.</p>\n</div>\n<div class=\"section\" id=\"judge-how-active-a-project-is\">\n<h2>Judge how active a project&nbsp;is</h2>\n<p>Github makes it easy to quickly look through a project&#8217;s history to see how\nactive it is. In no time, you can tell how many people commit to it and how\noften. Also, the number of watchers/forks in the corner gives you a pretty good\nidea of how many people are actually using the project. This is possibly my\nfavorite feature. Open source developers don&#8217;t need to waste their time\nexploring libraries that aren&#8217;t&nbsp;maintained.</p>\n</div>\n<div class=\"section\" id=\"discover-new-projects\">\n<h2>Discover new&nbsp;projects</h2>\n<p>Smart people come up with clever things all the time. If they share their code\non Github, you can find it in the Explore Github section. I can&#8217;t remember how\nmany times I&#8217;ve discovered a cool project this way. My favorite example is\n<a class=\"reference external\" href=\"https://github.com/jashkenas/coffee-script\">CoffeeScript</a>.</p>\n</div>\n<div class=\"section\" id=\"follow-the-development-of-your-favorite-projects\">\n<h2>Follow the development of your favorite&nbsp;projects</h2>\n<p>When you first log in, you are presented with a list of changes that were made\nto the projects you follow. This projects has a new release, this bug was\nfixed. etc.&nbsp;Invaluable.</p>\n<p>What are your thoughts? Any favorite features of&nbsp;Github?</p>\n</div>\n</div>\n", 
+    "date_iso": "2011-03-05", 
+    "title": "7 ways Github has changed the open source world", 
+    "url": "/2011/03/7-ways-github-has-changed-the-open-source-world", 
+    "day": "05", 
+    "categories": [
+        {
+            "name": "Git", 
+            "slug": "git"
+        }, 
+        {
+            "name": "Code", 
+            "slug": "code"
+        }, 
+        {
+            "name": "Open Source", 
+            "slug": "open-source"
+        }
+    ]
+}

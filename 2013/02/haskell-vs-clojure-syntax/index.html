@@ -38,36 +38,30 @@
 </div>
 
 <article>
-  <p>Clojure has virtually zero syntax.  What I mean by that is that all structures
+  <p>Clojure has virtually zero syntax. What I mean by that is that all structures
 look the same: the first item in a list is the function and the rest are the
-arguments.  This is true for variable assignment, if statements, data
+arguments. This is true for variable assignment, if statements, data
 structures and functions themselves.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(+ <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span>)
 
-<pre><code class="language-clojure">(+ 1 2)
+(<span style="color:#66d9ef">defn </span>greet [name]
+  (str <span style="color:#e6db74">&#34;Hello &#34;</span> name))
 
-(defn greet [name]
-  (str &quot;Hello &quot; name))
-
-(def user-count 334)
-</code></pre>
-
-<p>However, before you can do anything useful in Haskell, you must learn all kinds
+(<span style="color:#66d9ef">def </span>user-count <span style="color:#ae81ff">334</span>)
+</code></pre></div><p>However, before you can do anything useful in Haskell, you must learn all kinds
 of crazy syntax: function definitions, pattern matching, do forms, functors,
 monads, typeclasses, &hellip;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell">(<span style="color:#f92672">*</span>) <span style="color:#f92672">&lt;$&gt;</span> <span style="color:#66d9ef">Just</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">&lt;*&gt;</span> <span style="color:#66d9ef">Just</span> <span style="color:#ae81ff">8</span>
 
-<pre><code class="language-haskell">(*) &lt;$&gt; Just 2 &lt;*&gt; Just 8
+<span style="color:#66d9ef">Nothing</span> <span style="color:#f92672">&gt;&gt;=</span> <span style="color:#a6e22e">\</span>x <span style="color:#f92672">-&gt;</span> return (x<span style="color:#f92672">*</span><span style="color:#ae81ff">10</span>)
 
-Nothing &gt;&gt;= \x -&gt; return (x*10)
-
-instance Applicative Maybe where
-    pure = Just
-    Nothing &lt;*&gt; _ = Nothing
-    (Just f) &lt;*&gt; something = fmap f something
-</code></pre>
-
-<p>This is why I find Haskell extremely hard to learn.  It&rsquo;s not because of
-monads, recursion or functional programming concepts.  It&rsquo;s because of the huge
-amount of special syntax.  And you need to learn a lot of it before you can do
+<span style="color:#66d9ef">instance</span> <span style="color:#66d9ef">Applicative</span> <span style="color:#66d9ef">Maybe</span> <span style="color:#66d9ef">where</span>
+    pure <span style="color:#f92672">=</span> <span style="color:#66d9ef">Just</span>
+    <span style="color:#66d9ef">Nothing</span> <span style="color:#f92672">&lt;*&gt;</span> <span style="color:#66d9ef">_</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">Nothing</span>
+    (<span style="color:#66d9ef">Just</span> f) <span style="color:#f92672">&lt;*&gt;</span> something <span style="color:#f92672">=</span> fmap f something
+</code></pre></div><p>This is why I find Haskell extremely hard to learn. It&rsquo;s not because of
+monads, recursion or functional programming concepts. It&rsquo;s because of the huge
+amount of special syntax. And you need to learn a lot of it before you can do
 something useful.</p>
 
 </article>

@@ -38,99 +38,81 @@
 </div>
 
 <article>
-  
-
-<p>I&rsquo;m sure you&rsquo;ve heard of CoffeeScript. Everyone is talking about it, it seems.
+  <p>I&rsquo;m sure you&rsquo;ve heard of CoffeeScript. Everyone is talking about it, it seems.
 It&rsquo;s a beautiful language with a simple syntax that you use to write
 Javascript. CoffeeScript compiles to Javascript. Here is why I think you should
 be using it:</p>
-
 <h2 id="readability">Readability</h2>
-
 <p>CoffeeScript is designed to be beautiful and readable. There is no unnecessary
 fluff. Less syntax boilerplate, fewer mistakes. Compare:</p>
-
-<pre><code class="language-javascript">// regular javascript
-var author = &quot;William Shakespeare&quot;;
-// coffeescript
-author = &quot;William Shakespeare&quot;
-</code></pre>
-
-<p>Indentation is also important in CoffeeScript - just like in Python. This makes
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// regular javascript
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">author</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;William Shakespeare&#34;</span>;
+<span style="color:#75715e">// coffeescript
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">author</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;William Shakespeare&#34;</span>;
+</code></pre></div><p>Indentation is also important in CoffeeScript - just like in Python. This makes
 closures and blocks easier to spot.</p>
-
 <h2 id="valid-code">Valid Code</h2>
-
 <p>There are many different coding styles when it comes to writing Javascript. The
 good thing about CoffeeScript is that the Javascript it generates is valid - it
 passes <a href="http://www.javascriptlint.com/">Javascript Lint</a>. And if your code isn&rsquo;t valid CoffeeScript, it
 won&rsquo;t compile. It&rsquo;s a win-win. This is perhaps my favorite feature.</p>
-
 <h2 id="easy-class-inheritance">Easy class inheritance</h2>
-
 <p>This is just great. It reminds me of Python and Ruby:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-coffeescript" data-lang="coffeescript"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Animal</span>
+    constructor: <span style="color:#a6e22e">(@name) -&gt;</span>
 
-<pre><code class="language-coffeescript">class Animal
-    constructor: (@name) -&gt;
+    move: <span style="color:#a6e22e">(meters) -&gt;</span>
+        <span style="color:#a6e22e">alert</span> <span style="color:#a6e22e">@name</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; moved </span><span style="color:#e6db74">#{</span><span style="color:#a6e22e">meters</span><span style="color:#e6db74">}</span><span style="color:#e6db74">m.&#34;</span>
 
-    move: (meters) -&gt;
-        alert @name + &quot; moved #{meters}m.&quot;
-
-class Dog extends Animal
-    move: -&gt;
-        alert &quot;Whoof...&quot;
-        super 5
-</code></pre>
-
-<p>Compiles to this in Javascript:</p>
-
-<pre><code class="language-javascript">var Animal, Dog;
-var __hasProp = Object.prototype.hasOwnProperty, __extends = function(child, parent) {
-    for (var key in parent) {
-        if (__hasProp.call(parent, key)) child[key] = parent[key];
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Dog</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Animal</span>
+    move: <span style="color:#a6e22e">-&gt;</span>
+        <span style="color:#a6e22e">alert</span> <span style="color:#e6db74">&#34;Whoof...&#34;</span>
+        <span style="color:#66d9ef">super</span> <span style="color:#ae81ff">5</span>
+</code></pre></div><p>Compiles to this in Javascript:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">Animal</span>, <span style="color:#a6e22e">Dog</span>;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">__hasProp</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">hasOwnProperty</span>,
+  <span style="color:#a6e22e">__extends</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">child</span>, <span style="color:#a6e22e">parent</span>) {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">key</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">parent</span>) {
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">__hasProp</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">parent</span>, <span style="color:#a6e22e">key</span>)) <span style="color:#a6e22e">child</span>[<span style="color:#a6e22e">key</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">parent</span>[<span style="color:#a6e22e">key</span>];
     }
-    function ctor() { this.constructor = child; }
-    ctor.prototype = parent.prototype;
-    child.prototype = new ctor;
-    child.__super__ = parent.prototype;
-    return child;
-};
-Animal = (function() {
-    function Animal(name) {
-        this.name = name;
+    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">ctor</span>() {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">constructor</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">child</span>;
     }
-    Animal.prototype.move = function(meters) {
-        return alert(this.name + (&quot; moved &quot; + meters + &quot;m.&quot;));
-    };
-    return Animal;
+    <span style="color:#a6e22e">ctor</span>.<span style="color:#a6e22e">prototype</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">parent</span>.<span style="color:#a6e22e">prototype</span>;
+    <span style="color:#a6e22e">child</span>.<span style="color:#a6e22e">prototype</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ctor</span>();
+    <span style="color:#a6e22e">child</span>.<span style="color:#a6e22e">__super__</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">parent</span>.<span style="color:#a6e22e">prototype</span>;
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">child</span>;
+  };
+<span style="color:#a6e22e">Animal</span> <span style="color:#f92672">=</span> (<span style="color:#66d9ef">function</span>() {
+  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Animal</span>(<span style="color:#a6e22e">name</span>) {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">name</span>;
+  }
+  <span style="color:#a6e22e">Animal</span>.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">move</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">meters</span>) {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">alert</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">+</span> (<span style="color:#e6db74">&#34; moved &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">meters</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;m.&#34;</span>));
+  };
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">Animal</span>;
 })();
-Dog = (function() {
-    function Dog() {
-        Dog.__super__.constructor.apply(this, arguments);
-    }
-    __extends(Dog, Animal);
-    Dog.prototype.move = function() {
-        alert(&quot;Whoof...&quot;);
-        return
-        Dog.__super__.move.call(this, 5);
-    };
-    return Dog;
+<span style="color:#a6e22e">Dog</span> <span style="color:#f92672">=</span> (<span style="color:#66d9ef">function</span>() {
+  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Dog</span>() {
+    <span style="color:#a6e22e">Dog</span>.<span style="color:#a6e22e">__super__</span>.<span style="color:#a6e22e">constructor</span>.<span style="color:#a6e22e">apply</span>(<span style="color:#66d9ef">this</span>, <span style="color:#a6e22e">arguments</span>);
+  }
+  <span style="color:#a6e22e">__extends</span>(<span style="color:#a6e22e">Dog</span>, <span style="color:#a6e22e">Animal</span>);
+  <span style="color:#a6e22e">Dog</span>.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">move</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+    <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;Whoof...&#34;</span>);
+    <span style="color:#66d9ef">return</span>;
+    <span style="color:#a6e22e">Dog</span>.<span style="color:#a6e22e">__super__</span>.<span style="color:#a6e22e">move</span>.<span style="color:#a6e22e">call</span>(<span style="color:#66d9ef">this</span>, <span style="color:#ae81ff">5</span>);
+  };
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">Dog</span>;
 })();
-</code></pre>
-
-<p>Quite a difference, huh? Think how much time you&rsquo;d need to understand each
+</code></pre></div><p>Quite a difference, huh? Think how much time you&rsquo;d need to understand each
 version and make any changes required. In my mind, this encourages better code
 organization and structure.</p>
-
 <h2 id="node-dot-js-awesomeness">Node.js awesomeness</h2>
-
 <p>CoffeeScript comes with a Node.js utility, <code>coffee</code>. You can write your
 Node.js code in CoffeeScript and run it with <code>coffee file.js</code>. The utility
 wraps the CoffeeScript compiler and the <code>node</code> executable. This way, you can
 whip up a quick server in no time. Genius.</p>
-
 <h2 id="easy-debugging">Easy debugging</h2>
-
 <p>With tools like <a href="http://code.google.com/webtoolkit/">Google Web Toolkit</a>, your code compiles to <em>minified</em>
 javascript. Non-minified code is obviously easier (possible?) to read and debug.</p>
 

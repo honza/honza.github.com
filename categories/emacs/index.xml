@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Emacs on Honza Pokorny</title>
+    <title>emacs on Honza Pokorny</title>
     <link>https://honza.ca/categories/emacs/</link>
-    <description>Recent content in Emacs on Honza Pokorny</description>
+    <description>Recent content in emacs on Honza Pokorny</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 24 May 2013 21:30:00 -0300</lastBuildDate>
@@ -17,7 +17,17 @@
       <pubDate>Fri, 24 May 2013 21:30:00 -0300</pubDate>
       
       <guid>https://honza.ca/2013/05/text-editor-ui/</guid>
-      <description>What I don&amp;rsquo;t understand is: why should you ever care how your editor looks, unless you&amp;rsquo;re trying to win a screenshot competition? The primary factor in looking good should be the choice of a good font at a comfortable size, and a syntax coloring theme that you like. And that is not something specific to an editor. Editors like Emacs and vi have almost no UI! If Emacs is configured right, the only UI it has is the modeline and the minibuffer.</description>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;What I don&amp;rsquo;t understand is: why should you ever care how your editor looks,
+unless you&amp;rsquo;re trying to win a screenshot competition? The primary factor
+in looking good should be the choice of a good font at a comfortable size,
+and a syntax coloring theme that you like. And that is not something
+specific to an editor. Editors like Emacs and vi have almost no UI! If
+Emacs is configured right, the only UI it has is the modeline and the
+minibuffer.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Vivek Haldar in &lt;a href=&#34;http://blog.vivekhaldar.com/post/31970017734/new-frontiers-in-text-editing&#34;&gt;New Frontiers In Text Editing&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
   </channel>

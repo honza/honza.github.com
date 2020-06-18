@@ -38,163 +38,131 @@
 </div>
 
 <article>
-  
-
-<p>If you are developing an application for the Android platform, and you need to
+  <p>If you are developing an application for the Android platform, and you need to
 interact with the Twitter API, you now have to use OAuth to authenticate the
 user. In this article, we will have a look on how you can do that.</p>
-
 <h2 id="what-is-oauth">What is OAuth?</h2>
-
 <p>OAuth is a way of accessing a user&rsquo;s data (e.g. tweets) without asking for the
 user&rsquo;s username and password. Your application opens the Twitter website which
 will ask the user if they want to allow you to access their data. If they do,
 they are taken back to the application and can start using it. You can find
 more about OAuth all over the web.</p>
-
 <h2 id="prerequisites">Prerequisites</h2>
-
 <p>There are a couple of .jars that you will need for this to work.</p>
-
 <h3 id="signpost-commonshttp4-1-dot-2-dot-1-dot-1-dot-jar">signpost-commonshttp4-1.2.1.1.jar</h3>
-
 <h3 id="signpost-core-1-dot-2-dot-1-dot-1-dot-jar">signpost-core-1.2.1.1.jar</h3>
-
 <p>You can download them <a href="https://github.com/kaeppler/signpost">here</a>.</p>
-
 <h2 id="basic-activity">Basic Activity</h2>
-
 <p>Let&rsquo;s say we have an activity running where the user can start the
 authentication process. There is nothing special about this activity, except
 for some text and a button. When the user clicks the button, the OAuth process
 will be started. From the button&rsquo;s <code>onClickListener()</code> we will call the
 <code>startOAuth()</code> method of our activity.</p>
-
 <p>We will add a few attributes to our activity. Let&rsquo;s call the activity Main.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Main</span> <span style="color:#66d9ef">extends</span> Activity <span style="color:#f92672">{</span>
 
-<pre><code class="language-java">public class Main extends Activity {
+    <span style="color:#66d9ef">private</span> CommonsHttpOAuthConsumer httpOauthConsumer<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> OAuthProvider httpOauthprovider<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">static</span> String consumerKey <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;abc&#34;</span><span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">static</span> String consumerSecret <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;abc&#34;</span><span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> String CALLBACKURL <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;app://twitter&#34;</span><span style="color:#f92672">;</span>
 
-    private CommonsHttpOAuthConsumer httpOauthConsumer;
-    private OAuthProvider httpOauthprovider;
-    public final static String consumerKey = &quot;abc&quot;;
-    public final static String consumerSecret = &quot;abc&quot;;
-    private final String CALLBACKURL = &quot;app://twitter&quot;;
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        ...
-}
-</code></pre>
-
-<p><code>consumerKey</code> and <code>consumerSecret</code> will store your app&rsquo;s unique keys that
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onCreate</span><span style="color:#f92672">(</span>Bundle savedInstanceState<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">super</span><span style="color:#f92672">.</span><span style="color:#a6e22e">onCreate</span><span style="color:#f92672">(</span>savedInstanceState<span style="color:#f92672">);</span>
+        <span style="color:#f92672">...</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p><code>consumerKey</code> and <code>consumerSecret</code> will store your app&rsquo;s unique keys that
 you will get from Twitter. <code>CALLBACK</code> is a little different. This is used
 when the application is authorized on the web, and the control is returned back
 to the Main activity. For the mobile browser to be able to call the application
 and tell it that the OAuth business has gone well, it needs a call back. Both
 app and twitter can be exchanged for anything else.</p>
-
 <p>Now let&rsquo;s have a look at the <code>startOAuth()</code> method.</p>
-
-<pre><code class="language-java">try {
-    httpOauthConsumer = new CommonsHttpOAuthConsumer(consumerKey, consumerSecret);
-    httpOauthprovider = new DefaultOAuthProvider(&quot;http://twitter.com/oauth/request_token&quot;,
-                                            &quot;http://twitter.com/oauth/access_token&quot;,
-                                            &quot;http://twitter.com/oauth/authorize&quot;);
-    String authUrl = httpOauthprovider.retrieveRequestToken(httpOauthConsumer, CALLBACKURL);
-    // Open the browser
-    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(authUrl)));
-} catch (Exception e) {
-    Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
-}
-</code></pre>
-
-<p>Here we create the necessary OAuth objects which will in turn generate the
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+    httpOauthConsumer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> CommonsHttpOAuthConsumer<span style="color:#f92672">(</span>consumerKey<span style="color:#f92672">,</span> consumerSecret<span style="color:#f92672">);</span>
+    httpOauthprovider <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> DefaultOAuthProvider<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;http://twitter.com/oauth/request_token&#34;</span><span style="color:#f92672">,</span>
+                                            <span style="color:#e6db74">&#34;http://twitter.com/oauth/access_token&#34;</span><span style="color:#f92672">,</span>
+                                            <span style="color:#e6db74">&#34;http://twitter.com/oauth/authorize&#34;</span><span style="color:#f92672">);</span>
+    String authUrl <span style="color:#f92672">=</span> httpOauthprovider<span style="color:#f92672">.</span><span style="color:#a6e22e">retrieveRequestToken</span><span style="color:#f92672">(</span>httpOauthConsumer<span style="color:#f92672">,</span> CALLBACKURL<span style="color:#f92672">);</span>
+    <span style="color:#75715e">// Open the browser
+</span><span style="color:#75715e"></span>    startActivity<span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Intent<span style="color:#f92672">(</span>Intent<span style="color:#f92672">.</span><span style="color:#a6e22e">ACTION_VIEW</span><span style="color:#f92672">,</span> Uri<span style="color:#f92672">.</span><span style="color:#a6e22e">parse</span><span style="color:#f92672">(</span>authUrl<span style="color:#f92672">)));</span>
+<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>Exception e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    Toast<span style="color:#f92672">.</span><span style="color:#a6e22e">makeText</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">,</span> e<span style="color:#f92672">.</span><span style="color:#a6e22e">getMessage</span><span style="color:#f92672">(),</span> Toast<span style="color:#f92672">.</span><span style="color:#a6e22e">LENGTH_LONG</span><span style="color:#f92672">).</span><span style="color:#a6e22e">show</span><span style="color:#f92672">();</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Here we create the necessary OAuth objects which will in turn generate the
 unique authenticating URL. Once we have the URL we open the browser and point
 it to that URL. The user will be presented with a dialog asking them to allow
 or to deny your application access.</p>
-
 <p>In order for our activity to be able to receive the callback, we need to add a
 few things the Android manifest file. Change the applications definition to the
 following:</p>
-
-<pre><code class="language-xml">&lt;activity android:name=&quot;Main&quot; android:launchMode=&quot;singleInstance&quot;&gt;
-    &lt;intent-filter&gt;
-         &lt;action android:name=&quot;android.intent.action.VIEW&quot; /&gt;
-         &lt;category android:name=&quot;android.intent.category.DEFAULT&quot; /&gt;
-        &lt;category android:name=&quot;android.intent.category.BROWSABLE&quot; /&gt;
-        &lt;data android:scheme=&quot;app&quot; android:host=&quot;twitter&quot; /&gt;
-    &lt;/intent-filter&gt;
-&lt;/activity&gt;
-</code></pre>
-
-<p>Note that if you changed the app and twitter in the <code>CALLBACK</code> variable
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;activity</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;Main&#34;</span> <span style="color:#a6e22e">android:launchMode=</span><span style="color:#e6db74">&#34;singleInstance&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;intent-filter&gt;</span>
+         <span style="color:#f92672">&lt;action</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.intent.action.VIEW&#34;</span> <span style="color:#f92672">/&gt;</span>
+         <span style="color:#f92672">&lt;category</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.intent.category.DEFAULT&#34;</span> <span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;category</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.intent.category.BROWSABLE&#34;</span> <span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;data</span> <span style="color:#a6e22e">android:scheme=</span><span style="color:#e6db74">&#34;app&#34;</span> <span style="color:#a6e22e">android:host=</span><span style="color:#e6db74">&#34;twitter&#34;</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;/intent-filter&gt;</span>
+<span style="color:#f92672">&lt;/activity&gt;</span>
+</code></pre></div><p>Note that if you changed the app and twitter in the <code>CALLBACK</code> variable
 above, you will need to make sure that the change is reflected here. This
 basically allows the activity to receive data from a foreign source - our
 browser.</p>
-
 <p>Now we need to catch the callback and handle it. We do that by overriding the
 <code>onNewIntent()</code> method of our Main activity.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Override</span>
+<span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onNewIntent</span><span style="color:#f92672">(</span>Intent intent<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">super</span><span style="color:#f92672">.</span><span style="color:#a6e22e">onNewIntent</span><span style="color:#f92672">(</span>intent<span style="color:#f92672">);</span>
 
-<pre><code class="language-java">@Override
-protected void onNewIntent(Intent intent) {
-    super.onNewIntent(intent);
+    Uri uri <span style="color:#f92672">=</span> intent<span style="color:#f92672">.</span><span style="color:#a6e22e">getData</span><span style="color:#f92672">();</span>
 
-    Uri uri = intent.getData();
+    <span style="color:#75715e">//Check if you got NewIntent event due to Twitter Call back only
+</span><span style="color:#75715e"></span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>uri <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> uri<span style="color:#f92672">.</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">().</span><span style="color:#a6e22e">startsWith</span><span style="color:#f92672">(</span>CALLBACKURL<span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
 
-    //Check if you got NewIntent event due to Twitter Call back only
+        String verifier <span style="color:#f92672">=</span> uri<span style="color:#f92672">.</span><span style="color:#a6e22e">getQueryParameter</span><span style="color:#f92672">(</span>oauth<span style="color:#f92672">.</span><span style="color:#a6e22e">signpost</span><span style="color:#f92672">.</span><span style="color:#a6e22e">OAuth</span><span style="color:#f92672">.</span><span style="color:#a6e22e">OAUTH_VERIFIER</span><span style="color:#f92672">);</span>
 
-    if (uri != null &amp;&amp; uri.toString().startsWith(CALLBACKURL)) {
+        <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+            <span style="color:#75715e">// this will populate token and token_secret in consumer
+</span><span style="color:#75715e"></span>
+            httpOauthprovider<span style="color:#f92672">.</span><span style="color:#a6e22e">retrieveAccessToken</span><span style="color:#f92672">(</span>httpOauthConsumer<span style="color:#f92672">,</span> verifier<span style="color:#f92672">);</span>
+            String userKey <span style="color:#f92672">=</span> httpOauthConsumer<span style="color:#f92672">.</span><span style="color:#a6e22e">getToken</span><span style="color:#f92672">();</span>
+            String userSecret <span style="color:#f92672">=</span> httpOauthConsumer<span style="color:#f92672">.</span><span style="color:#a6e22e">getTokenSecret</span><span style="color:#f92672">();</span>
 
-        String verifier = uri.getQueryParameter(oauth.signpost.OAuth.OAUTH_VERIFIER);
+            <span style="color:#75715e">// Save user_key and user_secret in user preferences and return
+</span><span style="color:#75715e"></span>
+            SharedPreferences settings <span style="color:#f92672">=</span> getBaseContext<span style="color:#f92672">().</span><span style="color:#a6e22e">getSharedPreferences</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;your_app_prefs&#34;</span><span style="color:#f92672">,</span> 0<span style="color:#f92672">);</span>
+            SharedPreferences<span style="color:#f92672">.</span><span style="color:#a6e22e">Editor</span> editor <span style="color:#f92672">=</span> settings<span style="color:#f92672">.</span><span style="color:#a6e22e">edit</span><span style="color:#f92672">();</span>
+            editor<span style="color:#f92672">.</span><span style="color:#a6e22e">putString</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;user_key&#34;</span><span style="color:#f92672">,</span> userKey<span style="color:#f92672">);</span>
+            editor<span style="color:#f92672">.</span><span style="color:#a6e22e">putString</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;user_secret&#34;</span><span style="color:#f92672">,</span> userSecret<span style="color:#f92672">);</span>
+            editor<span style="color:#f92672">.</span><span style="color:#a6e22e">commit</span><span style="color:#f92672">();</span>
 
-        try {
-            // this will populate token and token_secret in consumer
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span><span style="color:#f92672">(</span>Exception e<span style="color:#f92672">){</span>
 
-            httpOauthprovider.retrieveAccessToken(httpOauthConsumer, verifier);
-            String userKey = httpOauthConsumer.getToken();
-            String userSecret = httpOauthConsumer.getTokenSecret();
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+        <span style="color:#75715e">// Do something if the callback comes from elsewhere
+</span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>
 
-            // Save user_key and user_secret in user preferences and return
-
-            SharedPreferences settings = getBaseContext().getSharedPreferences(&quot;your_app_prefs&quot;, 0);
-            SharedPreferences.Editor editor = settings.edit();
-            editor.putString(&quot;user_key&quot;, userKey);
-            editor.putString(&quot;user_secret&quot;, userSecret);
-            editor.commit();
-
-        } catch(Exception e){
-
-        }
-    } else {
-        // Do something if the callback comes from elsewhere
-    }
-
-}
-</code></pre>
-
-<p>OK, there&rsquo;s quite a bit there. We extract the data that the browser sent back
+<span style="color:#f92672">}</span>
+</code></pre></div><p>OK, there&rsquo;s quite a bit there. We extract the data that the browser sent back
 to us. This data is used to verify that the authentication was successful and
 that we can now access the user&rsquo;s data. From the data, we get the user&rsquo;s key
 and their secret. We save that into the application&rsquo;s shared preferences file
 and return.</p>
-
 <p>Now we are good to go. We can make authenticated requests to Twitter API on
 behalf of the user.</p>
-
 <p>For example, to get the user&rsquo;s home timeline, you would do something like:</p>
-
-<pre><code class="language-java">HttpGet get = new HttpGet(&quot;http://api.twitter.com/version/statuses/home_timeline.json&quot;);
-HttpParams params = new BasicHttpParams();
-HttpProtocolParams.setUseExpectContinue(params, false);
-get.setParams(params);
-// sign the request to authenticate
-httpOauthConsumer.sign(get);
-String responsex = mClient.execute(get, new BasicResponseHandler());
-JSONArray array = new JSONArray(responsex);
-</code></pre>
-
-<p>And the array variable is a list of the latest tweets in the user&rsquo;s home timeline.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">HttpGet get <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HttpGet<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;http://api.twitter.com/version/statuses/home_timeline.json&#34;</span><span style="color:#f92672">);</span>
+HttpParams params <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BasicHttpParams<span style="color:#f92672">();</span>
+HttpProtocolParams<span style="color:#f92672">.</span><span style="color:#a6e22e">setUseExpectContinue</span><span style="color:#f92672">(</span>params<span style="color:#f92672">,</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
+get<span style="color:#f92672">.</span><span style="color:#a6e22e">setParams</span><span style="color:#f92672">(</span>params<span style="color:#f92672">);</span>
+<span style="color:#75715e">// sign the request to authenticate
+</span><span style="color:#75715e"></span>httpOauthConsumer<span style="color:#f92672">.</span><span style="color:#a6e22e">sign</span><span style="color:#f92672">(</span>get<span style="color:#f92672">);</span>
+String responsex <span style="color:#f92672">=</span> mClient<span style="color:#f92672">.</span><span style="color:#a6e22e">execute</span><span style="color:#f92672">(</span>get<span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> BasicResponseHandler<span style="color:#f92672">());</span>
+JSONArray array <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> JSONArray<span style="color:#f92672">(</span>responsex<span style="color:#f92672">);</span>
+</code></pre></div><p>And the array variable is a list of the latest tweets in the user&rsquo;s home timeline.</p>
 
 </article>
 

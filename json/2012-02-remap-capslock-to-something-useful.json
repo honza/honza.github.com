@@ -1,0 +1,18 @@
+{
+    "reading_time": "about one minute", 
+    "month": "02", 
+    "year": "2012", 
+    "date": "February 07, 2012", 
+    "slug": "remap-capslock-to-something-useful", 
+    "contents": "<div class=\"section\" id=\"remap-capslock-to-something-useful\">\n<h1>Remap CapsLock to something&nbsp;useful</h1>\n<p>Arguably, CapsLock is <a class=\"reference external\" href=\"http://capsoff.org/\">the most useless key</a> on your keyboard. I honestly\ncan&#8217;t remember the last time I had a real use for it. If are a programmer, you\nshould remap it to something more useful. The rest of this post will describe\nhow to remap your CapsLock on a Mac <span class=\"caps\">OSX</span>&nbsp;installation.</p>\n<div class=\"section\" id=\"what-we-are-going-to-do\">\n<h2>What we are going to&nbsp;do</h2>\n<p>I&#8217;m a heavy vim user and reaching for the Esc key all the is a pain. We will\nremap the CapsLock to Esc. However, I want to be able to use it for something\nelse if I&#8217;m not in vim. We will set it up so that when you hit CapsLock on its\nown, it will send Esc. However, if you hold CapsLock and press another key, it\nwill send Ctrl. That way you can do things like Ctrl+F,&nbsp;etc.</p>\n<p>On Mac <span class=\"caps\">OSX</span>, you will want to do use <a class=\"reference external\" href=\"https://pqrs.org/osx/karabiner/\">Karabiner</a>. It&#8217;s an excellent\npiece of software that will allow you to take control of your&nbsp;keyboard.</p>\n</div>\n<div class=\"section\" id=\"settings\">\n<h2>Settings</h2>\n<p>Once you have installed KeyRemap4MacBook, go to System Preferences and select\nthe Keyboard submenu. Hit the Modifier Keys button and remap CapsLock to Ctrl.\nYou will have to do this once for every keyboard that you&nbsp;use.</p>\n<p>Next, head over to the KeyRemap4MacBook settings. The magical setting you are\nlooking for&nbsp;is</p>\n<pre class=\"literal-block\">\nControl_L to Control_L\n    (+ When you type Control_L only, send Escape)\n</pre>\n<p>That&#8217;s&nbsp;it!</p>\n</div>\n</div>\n", 
+    "date_iso": "2012-02-07", 
+    "title": "Remap CapsLock to something useful", 
+    "url": "/2012/02/remap-capslock-to-something-useful", 
+    "day": "07", 
+    "categories": [
+        {
+            "name": "Code", 
+            "slug": "code"
+        }
+    ]
+}

@@ -39,46 +39,36 @@
 
 <article>
   <p>Perhaps the number one reason why people are afraid to try Lisp or don&rsquo;t like
-it is the huge amounts of parentheses cluttering up the code.  It&rsquo;s said to be
+it is the huge amounts of parentheses cluttering up the code. It&rsquo;s said to be
 hard to read the code when it&rsquo;s full of parentheses.</p>
-
 <p>Any experienced Lisp programmer will tell you that the parentheses disappear
-fairly early on.  After a while, you hardly notice them as something annoying.
+fairly early on. After a while, you hardly notice them as something annoying.
 In fact, going back to C-family languages will make you feel like you need to
 type all kinds of crazy punctuation.</p>
-
 <p>While Clojure technically doesn&rsquo;t use significant whitespace like Python, in
 reality, careful identation is crucial to writing clear code.</p>
-
-<pre><code class="language-clojure">(defn crop-photo [user photo]
-  (when (authenticated? user)
-    (when (admin? user)
-      (crop photo))))
-</code></pre>
-
-<p>In this snippet, there are four levels of indentation, four nested expressions.
-It&rsquo;s easy to quickly scan this function guess what it does.  When a user is
-authenticated and when they are an admin, crop the photo.  If any of the
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defn </span>crop-photo [user photo]
+  (when (<span style="color:#a6e22e">authenticated?</span> user)
+    (when (<span style="color:#a6e22e">admin?</span> user)
+      (<span style="color:#a6e22e">crop</span> photo))))
+</code></pre></div><p>In this snippet, there are four levels of indentation, four nested expressions.
+It&rsquo;s easy to quickly scan this function guess what it does. When a user is
+authenticated and when they are an admin, crop the photo. If any of the
 <code>when</code> expressions return a <em>falsy</em> value, the whole function will return
-<code>nil</code>.  All of this is possible because Clojure uses prefix notation.  This
+<code>nil</code>. All of this is possible because Clojure uses prefix notation. This
 means that the first element in the <code>(...)</code> form is the name of the function.
 Therefore, you only need to scan the beginnings of lines to see what functions
-are being called.  Also, you never have to pay attention to closing parentheses
+are being called. Also, you never have to pay attention to closing parentheses
 because they are all sitting together at the end of the function.</p>
-
 <p>In Clojure, it&rsquo;s also idiomatic to put function arguments on new lines and
 align them.</p>
-
-<pre><code class="language-clojure">(or (admin? user)
-    (staff? user))
-</code></pre>
-
-<p>In this example, the <code>or</code> macro usually takes two arguments.  We put each
-argument on its own line and align them.  This way it&rsquo;s visually clear what the
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(or (<span style="color:#a6e22e">admin?</span> user)
+    (<span style="color:#a6e22e">staff?</span> user))
+</code></pre></div><p>In this example, the <code>or</code> macro usually takes two arguments. We put each
+argument on its own line and align them. This way it&rsquo;s visually clear what the
 code does.</p>
-
 <p>Finally, when writing Clojure code, you rarely have to worry about matching up
-your parentheses.  This is a job for your text editor.  Inserting a new
+your parentheses. This is a job for your text editor. Inserting a new
 expression usually involves typing the <code>(</code> key and having its friend <code>)</code>
 inserted for you.</p>
 

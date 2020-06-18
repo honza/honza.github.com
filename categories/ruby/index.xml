@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ruby on Honza Pokorny</title>
+    <title>ruby on Honza Pokorny</title>
     <link>https://honza.ca/categories/ruby/</link>
-    <description>Recent content in Ruby on Honza Pokorny</description>
+    <description>Recent content in ruby on Honza Pokorny</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 20 Jun 2011 20:20:00 -0300</lastBuildDate>
@@ -17,8 +17,26 @@
       <pubDate>Mon, 20 Jun 2011 20:20:00 -0300</pubDate>
       
       <guid>https://honza.ca/2011/06/why-i-dont-like-the-ruby-community/</guid>
-      <description>I write Python and Javascript code. I use Django and jQuery. And I cringe every time I have to run gem install x. I only have a limited understanding of Ruby and hardly any of Ruby on Rails. It seems disorganized to me and hard to process. All this is fine &amp;ndash; I don&amp;rsquo;t have to use any of it if I don&amp;rsquo;t like it, right?
-I always knew there was something wrong with the way Ruby works.</description>
+      <description>&lt;p&gt;I write Python and Javascript code. I use Django and jQuery. And I cringe every
+time I have to run &lt;code&gt;gem install x&lt;/code&gt;. I only have a limited understanding of
+Ruby and hardly any of Ruby on Rails. It seems disorganized to me and hard to
+process. All this is fine &amp;ndash; I don&amp;rsquo;t have to use any of it if I don&amp;rsquo;t like it,
+right?&lt;/p&gt;
+&lt;p&gt;I always knew there was something wrong with the way Ruby works. I don&amp;rsquo;t mean
+wrong like murdering children, I just mean wrong like I don&amp;rsquo;t know why things
+are the way they are. There are a lot of talented Ruby programmers and I don&amp;rsquo;t
+mean to dismiss that.&lt;/p&gt;
+&lt;p&gt;Recently, though, I came across a tweet that I made me realize what it was that
+I didn&amp;rsquo;t like about Ruby. It was like a small revelation.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Markup is markup, not Ruby. JavaScript is JavaScript, not Ruby. CSS is CSS,
+not Ruby. Get that in your head before I slap you. - &lt;a href=&#34;https://twitter.com/#!/ara%5Fp/status/81425173965832193&#34;&gt;@ara_p&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Do you get it? &lt;a href=&#34;http://ruby-doc.org/stdlib/libdoc/erb/rdoc/classes/ERB.html&#34;&gt;ERB&lt;/a&gt; is Ruby with some html-like fragments mixed in.
+&lt;a href=&#34;http://jashkenas.github.com/coffee-script/&#34;&gt;CoffeeScript&lt;/a&gt; is a Ruby-like language that compiles to Javascript. &lt;a href=&#34;http://sass-lang.com/&#34;&gt;Sass&lt;/a&gt; is
+a Ruby-like language for writing css files.&lt;/p&gt;
+&lt;p&gt;Before you know it, everything will be in Ruby.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

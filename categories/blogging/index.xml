@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blogging on Honza Pokorny</title>
+    <title>blogging on Honza Pokorny</title>
     <link>https://honza.ca/categories/blogging/</link>
-    <description>Recent content in Blogging on Honza Pokorny</description>
+    <description>Recent content in blogging on Honza Pokorny</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 04 Jul 2011 10:00:00 -0300</lastBuildDate>
@@ -17,8 +17,20 @@
       <pubDate>Mon, 04 Jul 2011 10:00:00 -0300</pubDate>
       
       <guid>https://honza.ca/2011/07/what-is-a-blog/</guid>
-      <description>I have noticed that many people don&amp;rsquo;t know what a blog is, so I would like to talk about that briefly.
- A blog is a type of website or part of a website. Blogs are usually maintained by an individual with regular entries. (&amp;hellip;) Entries are commonly displayed in reverse-chronological order. Blog can also be used as a verb, meaning to maintain or add content to a blog. Source: Wikipedia</description>
+      <description>&lt;p&gt;I have noticed that many people don&amp;rsquo;t know what a blog is, so I would like to
+talk about that briefly.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A blog is a type of website or part of a website. Blogs are usually
+maintained by an individual with regular entries. (&amp;hellip;) Entries are
+commonly displayed in reverse-chronological order. Blog can also be used as
+a verb, meaning to maintain or add content to a blog. Source: &lt;a href=&#34;http://en.wikipedia.org/wiki/Blog&#34;&gt;Wikipedia&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;A blog is a website. A blog has many &lt;em&gt;entries&lt;/em&gt; or &lt;em&gt;posts&lt;/em&gt;. To write a post
+means to update your existing blog with a new article. To create or write a new
+blog means to start a new website.&lt;/p&gt;
+&lt;p&gt;Please, don&amp;rsquo;t say that you are going write a blog when you mean you will write
+a post. That would be wrong. OK?&lt;/p&gt;
+</description>
     </item>
     
   </channel>

@@ -1,0 +1,26 @@
+{
+    "reading_time": "about one minute", 
+    "month": "01", 
+    "year": "2011", 
+    "date": "January 18, 2011", 
+    "slug": "android-development-disappointments", 
+    "contents": "<div class=\"section\" id=\"android-development-disappointments\">\n<h1>Android Development&nbsp;disappointments</h1>\n<p>The Android platform is the latest buzz in the smartphone world. I have\npreviously written on why I prefer Android over iPhone. In this article, we\nwill talk a little bit about what it&#8217;s like to develop native applications for&nbsp;Android.</p>\n<p>Android <span class=\"caps\">SDK</span> uses Java. I know Java but it&#8217;s not my favorite. After working with\nPython and Django for months, going back to Java isn&#8217;t exactly easy. But it&#8217;s\nnot undoable&nbsp;either.</p>\n<p>Being from the Czech republic, I thought I would try to target the Czech\nmarket. Android is starting to get really big over there. I decided to write a\nsimple news reader application for one of the leading news portals called iDnes\n(&#8220;eToday&#8221;). The application downloads an <span class=\"caps\">RSS</span> feed, parses it and displays a\nlist of news articles to the user. The user has the option to choose their\ntopic, and to manually refresh the application to get new&nbsp;articles.</p>\n<p>Not very complicated at all. It took me a few evenings to put it together. The\ndevelopment process was quite fun. The Android <span class=\"caps\">SDK</span> integration into Eclipse is\nawesome. It tells you when you have to implement additional methods, or\nautomatically adds your imports when it&#8217;s needed. As part of the <span class=\"caps\">SDK</span>, you get a\nsimulator for all kinds of versions of Android (from 1.5 to 2.2). This way, you\ncan test your application on various versions of the&nbsp;<span class=\"caps\">API</span>.</p>\n<p>I read all the articles on packaging and distributing. I made sure my\napplication was backwards compatible. I tried to follow their guidelines for\napp icons as much as I could (well, I suck at graphic design). I exported the\napplications, signed it, aligned it and uploaded it to the Android&nbsp;Market.</p>\n<p>I was excited. I did it. I published my first Android applications. But then\ncame the&nbsp;disappointment.</p>\n<p>My app started to get a lot of bad comments in the market. People complained\nthat the application didn&#8217;t do anything, and they couldn&#8217;t read any news, etc.\nI didn&#8217;t come across any errors like that during testing. If the applications\ndoesn&#8217;t have internet, it will tell the user it doesn&#8217;t have internet. If there\nis a problem, it will let them&nbsp;know.</p>\n<p>As a developer and author, I feel there is no way for me to receive helpful\ninformation about the errors the users are getting when they are interacting\nwith the&nbsp;application.</p>\n<p><span class=\"caps\">OK</span>, that&#8217;s it. If you have any comments or suggestions, do let me know in the&nbsp;comments.</p>\n</div>\n", 
+    "date_iso": "2011-01-18", 
+    "title": "Android Development disappointments", 
+    "url": "/2011/01/android-development-disappointments", 
+    "day": "18", 
+    "categories": [
+        {
+            "name": "Code", 
+            "slug": "code"
+        }, 
+        {
+            "name": "Java", 
+            "slug": "java"
+        }, 
+        {
+            "name": "Python", 
+            "slug": "python"
+        }
+    ]
+}

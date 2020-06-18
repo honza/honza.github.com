@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Mac on Honza Pokorny</title>
+    <title>mac on Honza Pokorny</title>
     <link>https://honza.ca/categories/mac/</link>
-    <description>Recent content in Mac on Honza Pokorny</description>
+    <description>Recent content in mac on Honza Pokorny</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 18 Mar 2011 09:00:00 -0300</lastBuildDate>
@@ -17,7 +17,39 @@
       <pubDate>Fri, 18 Mar 2011 09:00:00 -0300</pubDate>
       
       <guid>https://honza.ca/2011/03/the-irrationality-of-being-an-apple-fanboy/</guid>
-      <description>It continues to amaze me how much people devote themselves to Apple products. Every time the fruit company releases a new product, people line in front of the store for days in hopes of being one of the first blessed people who get to touch the shiny new toy. The Oatmeal has an awesome comic about this. Being all crazy and sleeping on the sidewalk aside, let&amp;rsquo;s look at more of a down-to-earth example.</description>
+      <description>&lt;p&gt;It continues to amaze me how much people devote themselves to Apple products.
+Every time the fruit company releases a new product, people line in front of
+the store for days in hopes of being one of the first blessed people who get to
+touch the shiny new toy. The Oatmeal has an awesome &lt;a href=&#34;http://theoatmeal.com/comics/apple&#34;&gt;comic&lt;/a&gt; about
+this. Being all crazy and sleeping on the sidewalk aside, let&amp;rsquo;s look at more of
+a down-to-earth example.&lt;/p&gt;
+&lt;p&gt;Being a geek and all, I get asked rather often if I would recommend someone
+buys a Mac laptop. While I wholeheartadly agree that the Unix-like qualities of
+Mac OSX are infinitely superior to the (non) qualities of the Windows kernel, I
+cannot recommend to my friends that they buy a laptop with an apple on it.&lt;/p&gt;
+&lt;p&gt;Here is why.&lt;/p&gt;
+&lt;p&gt;I went on the &lt;!-- raw HTML omitted --&gt;FutureShop&lt;!-- raw HTML omitted --&gt; website to see what brand new laptops cost these
+days and how powerful they are.&lt;/p&gt;
+&lt;p&gt;First, I looked up the cheapest 15&amp;rsquo; &lt;a href=&#34;http://www.futureshop.ca/en-CA/product/apple-apple-macbook-pro-15-4-intel-core-i5-2-53ghz-laptop-english-mc372ll-a/10144050.aspx?path=d60135943742891f1c13c3119725be53en02&#34;&gt;Macbook Pro&lt;/a&gt;. Here are the specs:&lt;/p&gt;
+&lt;h2 id=&#34;intel-core-i5-2-dot-53ghz&#34;&gt;Intel Core i5 2.53GHz&lt;/h2&gt;
+&lt;h2 id=&#34;4gb-ram&#34;&gt;4GB RAM&lt;/h2&gt;
+&lt;h2 id=&#34;500gb-hdd&#34;&gt;500GB HDD&lt;/h2&gt;
+&lt;h2 id=&#34;intel-hd-graphics-card&#34;&gt;Intel HD Graphics Card&lt;/h2&gt;
+&lt;h2 id=&#34;price-1-699-dot-95&#34;&gt;Price: $1,699.95&lt;/h2&gt;
+&lt;p&gt;Then, I looked for a solid laptop that could compete with the Macbook Pro. I
+didn&amp;rsquo;t want to compare it to laptops of questionable quality like those made by
+Acer or HP. I went for a &lt;a href=&#34;http://www.futureshop.ca/en-CA/product/sony-sony-vaio-15-5-intel-core-i5-460m-laptop-vpceb37fdw-white-vpceb37fdw/10156213.aspx?path=b3cc400131894855a015719f00cd1728en02&#34;&gt;Sony Vaio&lt;/a&gt;:&lt;/p&gt;
+&lt;h2 id=&#34;intel-core-i5-2-dot-53ghz&#34;&gt;Intel Core i5 2.53GHz&lt;/h2&gt;
+&lt;h2 id=&#34;4gb-ram&#34;&gt;4GB RAM&lt;/h2&gt;
+&lt;h2 id=&#34;500gb-hdd&#34;&gt;500GB HDD&lt;/h2&gt;
+&lt;h2 id=&#34;intel-hd-graphics-card&#34;&gt;Intel HD Graphics Card&lt;/h2&gt;
+&lt;h2 id=&#34;price-899&#34;&gt;Price: $899&lt;/h2&gt;
+&lt;p&gt;I&amp;rsquo;m sure you will have noticed that the two computers have the exact same specs.
+However, the Macbook is almost &lt;em&gt;double&lt;/em&gt; the price. I say, buy the Vaio and
+install Ubuntu on it. Rock solid laptop with a rock solid OS. You can also buy
+your wife a netbook or an iPad with the money you save.&lt;/p&gt;
+&lt;p&gt;Let the flaming begin.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

@@ -1,0 +1,22 @@
+{
+    "reading_time": "about one minute", 
+    "month": "09", 
+    "year": "2011", 
+    "date": "September 13, 2011", 
+    "slug": "google-apis-y-u-no-work", 
+    "contents": "<div class=\"section\" id=\"google-apis-y-u-no-work\">\n<h1>Google APIs - Y U <span class=\"caps\">NO</span>&nbsp;<span class=\"caps\">WORK</span></h1>\n<p>Recently, at <a class=\"reference external\" href=\"http://www.sheepdoginc.ca\">SheepDogInc</a>, I have been working with various Google APIs,\nespecially the Calendar <span class=\"caps\">API</span>. The state of these APIs is rather <em>unfortunate</em>.\nGoogle is a web giant and you&#8217;d think that their APIs would be state-of-the-art\ngiven the number of professionals they&nbsp;employ.</p>\n<div class=\"section\" id=\"documentation\">\n<h2>Documentation</h2>\n<p>Before we go anywhere, let me just talk about the documentation for a minute.\nAs an open-source software author and advocate, I always encourage developers\nto write extensive and good documentation. Somehow, Google didn&#8217;t get the demo.\nMost of their documentation is sparse, incorrect and out-of-date. If you would\nlike to know what data a call returns, you&#8217;re better off just making the call\nand inspecting the response. This will actually save you time because the docs\nare probably wrong&nbsp;anyway.</p>\n</div>\n<div class=\"section\" id=\"reliability\">\n<h2>Reliability</h2>\n<p>Google is like the master of scalability. They have an estimated one million\nservers world-wide. And yet, they cannot consistently return a 200 to an <span class=\"caps\">API</span>\ncall. I have written horrible, horrible glue code and hacky workarounds to\naccount for this unpredictability. Sometimes you will get a response, sometimes\nit will timeout, sometime you will get a&nbsp;404&#8230;</p>\n</div>\n<div class=\"section\" id=\"engineering\">\n<h2>Engineering</h2>\n<p>With all these amazing engineers, can Google really not make a better <span class=\"caps\">API</span>?\nHonestly, if I was in a position to hire a person who worked on the Google <span class=\"caps\">API</span>\nteam, I would think twice. Seriously &#8212; test your app, keep your docs\nup-to-date, and mainly, stop pissing me&nbsp;off!</p>\n</div>\n</div>\n", 
+    "date_iso": "2011-09-13", 
+    "title": "Google APIs - Y U NO WORK", 
+    "url": "/2011/09/google-apis-y-u-no-work", 
+    "day": "13", 
+    "categories": [
+        {
+            "name": "code", 
+            "slug": "code"
+        }, 
+        {
+            "name": "google", 
+            "slug": "google"
+        }
+    ]
+}

@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Python on Honza Pokorny</title>
+    <title>python on Honza Pokorny</title>
     <link>https://honza.ca/categories/python/</link>
-    <description>Recent content in Python on Honza Pokorny</description>
+    <description>Recent content in python on Honza Pokorny</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 18 Feb 2015 10:34:00 -0400</lastBuildDate>
@@ -17,7 +17,36 @@
       <pubDate>Wed, 18 Feb 2015 10:34:00 -0400</pubDate>
       
       <guid>https://honza.ca/2015/02/programming-languages-in-a-nutshell/</guid>
-      <description>Python, Ruby concurrency lol packaging lol Golang lol if you don&amp;rsquo;t like typing err := y u no generics lol imports Haskell need PhD will never be mainstream Idris only for concating lists Erlang lol syntax Javascript javascript Rust how do I do x this week? Clojure let me know when the program has started running lol if you want to build a secure thing on the web Scala lol if you think this actually improves java PHP which of these 10 fns should I use?</description>
+      <description>&lt;h2 id=&#34;python-ruby&#34;&gt;Python, Ruby&lt;/h2&gt;
+&lt;h3 id=&#34;concurrency-lol&#34;&gt;concurrency lol&lt;/h3&gt;
+&lt;h3 id=&#34;packaging-lol&#34;&gt;packaging lol&lt;/h3&gt;
+&lt;h2 id=&#34;golang&#34;&gt;Golang&lt;/h2&gt;
+&lt;h3 id=&#34;lol-if-you-don-t-like-typing-err&#34;&gt;lol if you don&amp;rsquo;t like typing &lt;code&gt;err :=&lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;y-u-no-generics&#34;&gt;y u no generics&lt;/h3&gt;
+&lt;h3 id=&#34;lol-imports&#34;&gt;lol imports&lt;/h3&gt;
+&lt;h2 id=&#34;haskell&#34;&gt;Haskell&lt;/h2&gt;
+&lt;h3 id=&#34;need-phd&#34;&gt;need PhD&lt;/h3&gt;
+&lt;h3 id=&#34;will-never-be-mainstream&#34;&gt;will never be mainstream&lt;/h3&gt;
+&lt;h2 id=&#34;idris&#34;&gt;Idris&lt;/h2&gt;
+&lt;h3 id=&#34;only-for-concating-lists&#34;&gt;only for concating lists&lt;/h3&gt;
+&lt;h2 id=&#34;erlang&#34;&gt;Erlang&lt;/h2&gt;
+&lt;h3 id=&#34;lol-syntax&#34;&gt;lol syntax&lt;/h3&gt;
+&lt;h2 id=&#34;javascript&#34;&gt;Javascript&lt;/h2&gt;
+&lt;h3 id=&#34;javascript&#34;&gt;javascript&lt;/h3&gt;
+&lt;h2 id=&#34;rust&#34;&gt;Rust&lt;/h2&gt;
+&lt;h3 id=&#34;how-do-i-do-x-this-week&#34;&gt;how do I do x this week?&lt;/h3&gt;
+&lt;h2 id=&#34;clojure&#34;&gt;Clojure&lt;/h2&gt;
+&lt;h3 id=&#34;let-me-know-when-the-program-has-started-running&#34;&gt;let me know when the program has started running&lt;/h3&gt;
+&lt;h3 id=&#34;lol-if-you-want-to-build-a-secure-thing-on-the-web&#34;&gt;lol if you want to build a secure thing on the web&lt;/h3&gt;
+&lt;h2 id=&#34;scala&#34;&gt;Scala&lt;/h2&gt;
+&lt;h3 id=&#34;lol-if-you-think-this-actually-improves-java&#34;&gt;lol if you think this actually improves java&lt;/h3&gt;
+&lt;h2 id=&#34;php&#34;&gt;PHP&lt;/h2&gt;
+&lt;h3 id=&#34;which-of-these-10-fns-should-i-use&#34;&gt;which of these 10 fns should I use?&lt;/h3&gt;
+&lt;h2 id=&#34;ocaml&#34;&gt;OCaml&lt;/h2&gt;
+&lt;h3 id=&#34;haskell-without-the-awesome&#34;&gt;haskell without the awesome&lt;/h3&gt;
+&lt;h2 id=&#34;prolog&#34;&gt;Prolog&lt;/h2&gt;
+&lt;h3 id=&#34;mucho-problemo&#34;&gt;mucho problemo&lt;/h3&gt;
+</description>
     </item>
     
     <item>
@@ -26,9 +55,66 @@
       <pubDate>Sat, 04 Feb 2012 20:00:00 -0400</pubDate>
       
       <guid>https://honza.ca/2012/02/how-not-to-depend-on-pypi/</guid>
-      <description>When deploying a Django application, you often use a requirements.txt file that contains a list of the application&amp;rsquo;s dependencies. During deployment, your provisioning system will pip install all of those to make sure that your application runs as desired.
-The format of a typical requirements.txt files isn&amp;rsquo;t unlike the following
-django==1.3.1 psycopg2==2.4.4 Fabric==1.3.3 ...  By default, pip will go to the Python Package Index (PyPI) and look for that package there.</description>
+      <description>&lt;p&gt;When deploying a Django application, you often use a &lt;code&gt;requirements.txt&lt;/code&gt; file
+that contains a list of the application&amp;rsquo;s dependencies. During deployment, your
+provisioning system will &lt;code&gt;pip install&lt;/code&gt; all of those to make sure that your
+application runs as desired.&lt;/p&gt;
+&lt;p&gt;The format of a typical &lt;code&gt;requirements.txt&lt;/code&gt; files isn&amp;rsquo;t unlike the following&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;django==1.3.1
+psycopg2==2.4.4
+Fabric==1.3.3
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;By default, &lt;code&gt;pip&lt;/code&gt; will go to the &lt;a href=&#34;http://pypi.python.org&#34;&gt;Python Package Index&lt;/a&gt; (PyPI) and look for
+that package there.&lt;/p&gt;
+&lt;p&gt;Unfortunately, PyPI has been known to be down or slow at times; and you want
+your deployments to be as smooth as possible.&lt;/p&gt;
+&lt;h2 id=&#34;what-you-can-do&#34;&gt;What you can do&lt;/h2&gt;
+&lt;p&gt;Instead of depending on PyPI for a production application, you can host the
+packages that your application needs yourself. It&amp;rsquo;s actually surpringly easy to
+do. Your existing deployment strategy can easily be modified to remove the
+dependency.&lt;/p&gt;
+&lt;p&gt;First, we will create a freeze of your requirements. This will look into your
+environment and figure out which version of which package you will need for the
+production environment.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;$ pip freeze -r requirements.txt &amp;gt; freeze.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Once you have the list of packages, you can tell &lt;code&gt;pip&lt;/code&gt; to download all the
+packages into a directory without installing them.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;$ pip install -d pypi -r freeze.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This will download all packages from &lt;code&gt;freeze.txt&lt;/code&gt; into the &lt;code&gt;pypi/&lt;/code&gt;
+directory.&lt;/p&gt;
+&lt;p&gt;The next step is to upload all these packages to a publicly accessible server
+that can serve static files. This can anything from S3, Cloudfiles or even
+Github pages. I like to place all of these packages into a &lt;code&gt;packages/&lt;/code&gt;
+directory. You will also need a simple index file to go with your packages. All
+the index file needs to is provide a list of HTML links to those packages. The
+index will be used by &lt;code&gt;pip&lt;/code&gt; to locate the package source distribution.&lt;/p&gt;
+&lt;p&gt;I have put together a simple Fabric task that will read the contents of the
+&lt;code&gt;pypi/&lt;/code&gt; directory and create this index file for you.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;make_index&lt;/span&gt;():
+    result &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; local(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;ls pypi&amp;#39;&lt;/span&gt;, capture&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;True)
+    packages &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; result&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;split(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;)
+
+    html &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;&amp;lt;/head&amp;gt;&amp;lt;body&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;%s&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;&amp;#34;&lt;/span&gt;
+
+    links &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; []
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; package &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; packages:
+        link &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;lt;a href=&amp;#34;packages/&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;%s&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;%s&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;lt;/a&amp;gt;&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; (package, package)
+        links&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append(link)
+
+    links &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;join(links)
+
+    f &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; open(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;index.html&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;w&amp;#39;&lt;/span&gt;)
+    f&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;write(html &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; links)
+    f&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;close()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Upload the index file to your server and you&amp;rsquo;re ready to deploy. Instead of the
+usual:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;$ pip install -r requirements.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You will run this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;$ pip install -r freeze.txt -f http://yourPypiHost.com/index.html --no-index
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This will completely ignore PyPI and only use your index when locating
+packages. This way your deploys will be faster and more reliable.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -37,8 +123,51 @@ django==1.3.1 psycopg2==2.4.4 Fabric==1.3.3 ...  By default, pip will go to the 
       <pubDate>Tue, 17 Jan 2012 08:45:00 -0400</pubDate>
       
       <guid>https://honza.ca/2012/01/upgrading-your-django-media-files-to-use-a-cdn/</guid>
-      <description>I was using django-filebrowser on a project and my Rackspace VM quickly ran out of disk space. Since the site isn&amp;rsquo;t getting much traffic at all, I didn&amp;rsquo;t want to pay extra for a bigger VM. Instead, I decided to move all of the user uploaded media to Rackspace Cloudfiles. It&amp;rsquo;s super cheap and they have a nice API.
-Now, the challenge was to make the transition from a filebrowser-based system.</description>
+      <description>&lt;p&gt;I was using &lt;a href=&#34;http://readthedocs.org/docs/django-filebrowser/en/latest/&#34;&gt;django-filebrowser&lt;/a&gt; on a project and my Rackspace VM quickly ran
+out of disk space. Since the site isn&amp;rsquo;t getting much traffic at all, I didn&amp;rsquo;t
+want to pay extra for a bigger VM. Instead, I decided to move all of the user
+uploaded media to &lt;a href=&#34;http://www.rackspace.com/cloud/cloud%5Fhosting%5Fproducts/files/&#34;&gt;Rackspace Cloudfiles&lt;/a&gt;. It&amp;rsquo;s super cheap and they have a
+nice API.&lt;/p&gt;
+&lt;p&gt;Now, the challenge was to make the transition from a filebrowser-based system.
+First of all, I knew I was going to use &lt;a href=&#34;http://django-storages.readthedocs.org/en/latest/index.html&#34;&gt;django-storages&lt;/a&gt; as the new storage
+class for my class. I played around with it on the side and it worked like a
+charm.&lt;/p&gt;
+&lt;p&gt;Next, I wrote a quick little Python script to upload all of the files to
+Cloudfiles. Since the filenames didn&amp;rsquo;t change at all, I could just write a
+South migration that would strip the &lt;code&gt;/uploads&lt;/code&gt; part and be done with it.&lt;/p&gt;
+&lt;p&gt;I had a look at the Django documentation to see what exactly a &lt;a href=&#34;https://docs.djangoproject.com/en/1.3/ref/models/fields/#filefield&#34;&gt;FileField&lt;/a&gt; was.
+It turns out it takes a Django &lt;a href=&#34;https://docs.djangoproject.com/en/1.3/ref/files/file/#django.core.files.File&#34;&gt;File&lt;/a&gt; object which in turn is a thin wrapper
+around the Python built-in file object. This didn&amp;rsquo;t sound exactly easy to do. I
+would have to open a remote file with Python&amp;rsquo;s &lt;code&gt;open(&#39;file.mp3&#39;)&lt;/code&gt; and have
+Django inspect it for size and file type. This is clunky at best if you
+remember that this will have to live in a South migration.&lt;/p&gt;
+&lt;p&gt;Also worth noting is the fact that filebrowser&amp;rsquo;s model field is a subclass of
+&lt;code&gt;CharField&lt;/code&gt; and has no special file-related properties or methods.&lt;/p&gt;
+&lt;p&gt;You can&amp;rsquo;t use the &lt;code&gt;DEFAULT_STORAGE_CLASS&lt;/code&gt; setting because filebrowser will
+start yelling at you. Instead, you specify the storage class right in the new
+model field.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; storages.backends.mosso &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; cloudfiles_upload_to, CloudFilesStorage
+cloudfiles_storage &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; CloudFilesStorage()
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Item&lt;/span&gt;(models&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Model):
+    old_field &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; FileBrowseField(max_length&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;500&lt;/span&gt;, blank&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;True)
+    new_field &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; models&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;FileField(upload_to&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;cloudfiles_upload_to,
+            storage&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;cloudfiles_storage, default&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now you can go and write your migration and Django won&amp;rsquo;t yell at you. Now we go
+back to the problem outlined above. How do you create an instance of &lt;code&gt;File&lt;/code&gt;
+to pass to &lt;code&gt;item.new_field&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;After hours of reading the source and debugging, I realized that you can simply
+pass in the filename as a string and the storage class will do the right thing.
+It&amp;rsquo;s actually really simple and painless. Your data migration might look
+something like:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; item &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; orm&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Item&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;objects&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;all():
+    item&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;new_field &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; os&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;path&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;basename(item&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;old_field&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;url)
+    item&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;save()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;So, I was already somewhat overjoyed that this would in fact be easy and then I
+discovered that the change from filebrowser to django-storages doesn&amp;rsquo;t require
+a schema migration. This means that if your file names are the same there is no
+database change needed at all. How cool is that?&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -47,8 +176,131 @@ Now, the challenge was to make the transition from a filebrowser-based system.</
       <pubDate>Tue, 20 Sep 2011 20:00:00 -0300</pubDate>
       
       <guid>https://honza.ca/2011/09/using-chef-with-small-django-apps/</guid>
-      <description>This year at DjangoCon, it seemed like everybody was talking about automatic deployments and namely Chef. After coming home from the conference, I spent a considerable amount of time learning chef and thinking about how it can be best used with small to medium size Django apps. In this post, I will walk you through how Chef works and how it can help you make awesome web apps.
-When I say small apps, I mean single-server deployments.</description>
+      <description>&lt;p&gt;This year at &lt;a href=&#34;http://djangocon.us&#34;&gt;DjangoCon&lt;/a&gt;, it seemed like everybody was talking about automatic
+deployments and namely &lt;a href=&#34;http://www.opscode.com/chef/&#34;&gt;Chef&lt;/a&gt;. After coming home from the conference, I spent
+a considerable amount of time learning chef and thinking about how it can be
+best used with small to medium size Django apps. In this post, I will walk you
+through how Chef works and how it can help you make awesome web apps.&lt;/p&gt;
+&lt;p&gt;When I say small apps, I mean single-server deployments. This means that your
+web server, your database, memcached, rabbitmq, etc is installed on a single
+Ubuntu VM. When learning Chef, I found that most of the available tutorials
+focus on multi-server setups and are too complex for ordinary apps.&lt;/p&gt;
+&lt;p&gt;Unfortunately, Chef is written in Ruby and it can be a little tricky to debug
+since all the tracebacks are meaningless to a Python developer. However, don&amp;rsquo;t
+despair, you can usually tell pretty quickly what&amp;rsquo;s going on. To test your
+deployment, we will be using &lt;a href=&#34;http://vagrantup.com&#34;&gt;Vagrant&lt;/a&gt; which is an awesome tool for running
+virtual machines on your development machine.&lt;/p&gt;
+&lt;h2 id=&#34;what-we-will-install&#34;&gt;What we will install&lt;/h2&gt;
+&lt;p&gt;Our Django application will be deployed using the following:&lt;/p&gt;
+&lt;h3 id=&#34;nginx&#34;&gt;nginx&lt;/h3&gt;
+&lt;h3 id=&#34;gunicorn&#34;&gt;gunicorn&lt;/h3&gt;
+&lt;h3 id=&#34;postgresql&#34;&gt;postgresql&lt;/h3&gt;
+&lt;h3 id=&#34;memcached&#34;&gt;memcached&lt;/h3&gt;
+&lt;h3 id=&#34;rabbitmq&#34;&gt;rabbitmq&lt;/h3&gt;
+&lt;h3 id=&#34;git&#34;&gt;git&lt;/h3&gt;
+&lt;p&gt;Your development machine will need to have &lt;a href=&#34;http://docs.fabfile.org/en/1.2.2/index.html&#34;&gt;Fabric&lt;/a&gt; installed.&lt;/p&gt;
+&lt;h2 id=&#34;how-chef-works&#34;&gt;How Chef works&lt;/h2&gt;
+&lt;p&gt;Chef is a tool that is installed on your server. You give it a bunch
+configuration files and tell it to provision server with the necessary packages
+and settings. This means that our automatic deployment will have to parts: Chef
+configuration files for the sever, and several Fabric tasks to install Chef
+remotely and start the provisioning process.&lt;/p&gt;
+&lt;p&gt;So, to configure Chef, we will create a &lt;em&gt;deploy&lt;/em&gt; directory inside our project&amp;rsquo;s
+repository. I like to keep the following structure:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;$ ls -a
+.git coolapp docs deploy README.md Vagrantfile fabfile.py
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&amp;hellip; where &lt;em&gt;coolapp&lt;/em&gt; is your Django project. We will focus on the &lt;em&gt;deploy&lt;/em&gt;
+directory and the &lt;em&gt;fabfile&lt;/em&gt;. Chef is a cook how prepares your server for
+dinner. So, Chef needs some cookbooks and recipes. Each cookbook is a directory
+that contains various configuration files for a specific application that you
+want installed. So for example, you will have a &lt;em&gt;PostgreSQL cookbook&lt;/em&gt; and a
+&lt;em&gt;nginx cookbook&lt;/em&gt;. The deploy directory will contain a directory called
+&lt;em&gt;cookbooks&lt;/em&gt; which will contain all other cookbooks. Now, the good news is that
+you don&amp;rsquo;t have to make the cookbooks yourself. &lt;a href=&#34;http://www.opscode.com&#34;&gt;Opscode&lt;/a&gt;, the company behind
+Chef, maintains a large selection of cookbooks on &lt;a href=&#34;https://github.com/opscode/cookbooks&#34;&gt;Github&lt;/a&gt;. You can copy and
+paste the cookbooks you need for you project. We will need the following:&lt;/p&gt;
+&lt;h3 id=&#34;build-essential--for-building-from-source&#34;&gt;build-essential (for building from source)&lt;/h3&gt;
+&lt;h3 id=&#34;erlang--rabbitmq-depends-on-this&#34;&gt;erlang (rabbitmq depends on this)&lt;/h3&gt;
+&lt;h3 id=&#34;git&#34;&gt;git&lt;/h3&gt;
+&lt;h3 id=&#34;memcached&#34;&gt;memcached&lt;/h3&gt;
+&lt;h3 id=&#34;nginx&#34;&gt;nginx&lt;/h3&gt;
+&lt;h3 id=&#34;postgresql&#34;&gt;postgresql&lt;/h3&gt;
+&lt;h3 id=&#34;python--for-virtualenv-and-python-header-files&#34;&gt;python (for virtualenv and python header files)&lt;/h3&gt;
+&lt;h3 id=&#34;rabbitmq&#34;&gt;rabbitmq&lt;/h3&gt;
+&lt;h2 id=&#34;cookbooks&#34;&gt;Cookbooks&lt;/h2&gt;
+&lt;p&gt;Each cookbook contains a &lt;em&gt;recipes&lt;/em&gt; directory. Each recipe tells Chef how this
+particular application is to be installed and configured. For example, it will
+tell nginx to create an entry in &lt;em&gt;sites-available&lt;/em&gt; and &lt;em&gt;sites-enabled&lt;/em&gt;. Or, it
+will restart PostreSQL when it&amp;rsquo;s done being installed.&lt;/p&gt;
+&lt;p&gt;There is also a &lt;em&gt;files&lt;/em&gt; directory and a &lt;em&gt;templates&lt;/em&gt; directory. Templates are
+Ruby templates which define a particular configuration file. For example, in
+order for Chef to be able to properly configure nginx with the proper server
+name, it needs to know on what domain your application will be hosted. More on
+this later, but there is a master file which has all your settings in it and
+Chef reads from that and substitutes the necessary values. The &lt;em&gt;files&lt;/em&gt;
+directory contains files that need no further modification and can be copied
+over verbatim.&lt;/p&gt;
+&lt;h2 id=&#34;node-dot-json&#34;&gt;node.json&lt;/h2&gt;
+&lt;p&gt;The &lt;em&gt;node.json&lt;/em&gt; file is a per project file that specifies certain values for
+Chef to use. For example, you can tell Chef what you want your PostgreSQL
+database to be called, what the name of your django project is, etc. It has a
+simple JSON syntax.&lt;/p&gt;
+&lt;h2 id=&#34;your-app-s-recipe&#34;&gt;Your app&amp;rsquo;s recipe&lt;/h2&gt;
+&lt;p&gt;Your application is going to need a simple recipe. This means creating a
+cookbook bearing your project&amp;rsquo;s name and creating a &lt;em&gt;recipes&lt;/em&gt; directory within
+in. The recipe should be called &lt;em&gt;default.rb&lt;/em&gt; and all it needs to include is a
+list of applications to install. For example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Example django app cookbook&lt;/span&gt;
+
+execute &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Update apt repos&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt;
+    command &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;apt-get update&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;end&lt;/span&gt;
+
+include_recipe &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;nginx&amp;#39;&lt;/span&gt;
+include_recipe &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;build-essential&amp;#39;&lt;/span&gt;
+include_recipe &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;python&amp;#39;&lt;/span&gt;
+include_recipe &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;postgresql::server&amp;#39;&lt;/span&gt;
+include_recipe &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;memcached&amp;#39;&lt;/span&gt;
+include_recipe &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;runit&amp;#39;&lt;/span&gt;
+include_recipe &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;git&amp;#39;&lt;/span&gt;
+
+execute &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;restart postgres&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt;
+    command &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;sudo /etc/init.d/postgresql-8.4 restart&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;end&lt;/span&gt;
+
+execute &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;create-database&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt;
+    command &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;createdb -U postgres -O postgres &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;#{&lt;/span&gt;node&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;:dbname&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can see it&amp;rsquo;s pretty simple. We update Ubuntu&amp;rsquo;s repositories, include some
+recipes, restart PostgreSQL and create a new database.&lt;/p&gt;
+&lt;h2 id=&#34;start-the-engines&#34;&gt;Start the engines&lt;/h2&gt;
+&lt;p&gt;At this point, you can try out your configuration with Vagrant. To help you
+out, I have create a &lt;a href=&#34;https://github.com/honza/django-chef&#34;&gt;template&lt;/a&gt; project on Github that you can download and
+use out of the box.&lt;/p&gt;
+&lt;p&gt;The next big part is writing the Fabric scripts. You will want the following
+tasks:&lt;/p&gt;
+&lt;h3 id=&#34;install-chef&#34;&gt;Install Chef&lt;/h3&gt;
+&lt;h3 id=&#34;transfer-the-cookbooks-directory-to-the-server&#34;&gt;Transfer the cookbooks directory to the server&lt;/h3&gt;
+&lt;h3 id=&#34;dl-class-docutils&#34;&gt;&lt;!-- raw HTML omitted --&gt;&lt;/h3&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h3 id=&#34;creating-a-virtualenv&#34;&gt;Creating a virtualenv&lt;/h3&gt;
+&lt;h3 id=&#34;installing-requirements&#34;&gt;Installing requirements&lt;/h3&gt;
+&lt;h3 id=&#34;syncing-the-database&#34;&gt;Syncing the database&lt;/h3&gt;
+&lt;h3 id=&#34;running-migrations&#34;&gt;Running migrations&lt;/h3&gt;
+&lt;h3 id=&#34;starting-gunicorn&#34;&gt;Starting gunicorn&lt;/h3&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h3 id=&#34;deploy&#34;&gt;Deploy&lt;/h3&gt;
+&lt;p&gt;You can see how I implemented mine &lt;a href=&#34;https://github.com/honza/django-chef/blob/master/fabfile.py&#34;&gt;here&lt;/a&gt;. I recommend that you use Fabric&amp;rsquo;s
+&lt;em&gt;roledefs&lt;/em&gt; which will allow you to specify vagrant as the host:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;$ fab -R vagrant bootstrap
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;the-real-thing&#34;&gt;The real thing&lt;/h2&gt;
+&lt;p&gt;Once you&amp;rsquo;ve tested your application in Vagrant so you are ready to deploy to a
+server. All that&amp;rsquo;s left to do is create a new &lt;em&gt;roledef&lt;/em&gt; in the &lt;em&gt;fabfile&lt;/em&gt; and
+run it!&lt;/p&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;I am by no means a Chef expert&amp;mdash;I learned how to use it a few days ago. If you
+have any feedback, do let me know.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -57,10 +309,18 @@ When I say small apps, I mean single-server deployments.</description>
       <pubDate>Fri, 10 Jun 2011 11:00:00 -0300</pubDate>
       
       <guid>https://honza.ca/2011/06/install-ruby-gems-into-virtualenv/</guid>
-      <description>You are a Python developer and every time you have to install a Ruby gem you throw up in your mouth a little. Wouldn&amp;rsquo;t it be nice if you could install Ruby gems into your virtualenv? Yeah, it would.
-Stick this in your virtualenv&amp;rsquo;s postactivate script:
-export GEM_HOME=&amp;quot;$VIRTUAL_ENV/gems&amp;quot; export GEM_PATH=&amp;quot;&amp;quot; export PATH=$PATH:&amp;quot;$GEM_HOME/bin&amp;quot;  That&amp;rsquo;s it! You&amp;rsquo;re welcome. :)
-Credit Give credit where credit is due. I stole this idea from Idan Gazit and made it better.</description>
+      <description>&lt;p&gt;You are a Python developer and every time you have to install a Ruby gem you
+throw up in your mouth a little. Wouldn&amp;rsquo;t it be nice if you could install Ruby
+gems into your virtualenv? Yeah, it would.&lt;/p&gt;
+&lt;p&gt;Stick this in your virtualenv&amp;rsquo;s &lt;code&gt;postactivate&lt;/code&gt; script:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;export GEM_HOME&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$VIRTUAL_ENV&lt;span style=&#34;color:#e6db74&#34;&gt;/gems&amp;#34;&lt;/span&gt;
+export GEM_PATH&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+export PATH&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;$PATH:&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$GEM_HOME&lt;span style=&#34;color:#e6db74&#34;&gt;/bin&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;That&amp;rsquo;s it! You&amp;rsquo;re welcome. :)&lt;/p&gt;
+&lt;h2 id=&#34;credit&#34;&gt;Credit&lt;/h2&gt;
+&lt;p&gt;Give credit where credit is due. I stole this idea from &lt;a href=&#34;http://twitter.com/idangazit&#34;&gt;Idan Gazit&lt;/a&gt; and
+made it better.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -69,7 +329,80 @@ Credit Give credit where credit is due. I stole this idea from Idan Gazit and ma
       <pubDate>Mon, 30 May 2011 09:15:00 -0300</pubDate>
       
       <guid>https://honza.ca/2011/05/deploying-django-with-nginx-and-gunicorn/</guid>
-      <description>The amazing Django documentation recommends that you use Apache and modwsgi to deploy your webapp. While this is certainly not bad advice, you may not want to use Apache after all. Apache is a beast that eats up a lot of memory, is kind of slow and can&amp;rsquo;t handle as much traffic. As a fun alternative, I would like to talk about deploying Django on nginx using the gunicorn web server.</description>
+      <description>&lt;p&gt;The amazing Django &lt;a href=&#34;https://docs.djangoproject.com/en/1.3/howto/deployment/modwsgi/&#34;&gt;documentation&lt;/a&gt; recommends that you use Apache and modwsgi
+to deploy your webapp. While this is certainly not bad advice, you may not want
+to use Apache after all. Apache is a beast that eats up a lot of memory, is
+kind of slow and can&amp;rsquo;t handle as much traffic. As a fun alternative, I would
+like to talk about deploying Django on nginx using the &lt;a href=&#34;http://gunicorn.org/&#34;&gt;gunicorn&lt;/a&gt; web server.&lt;/p&gt;
+&lt;p&gt;Just a quick note before we start: this isn&amp;rsquo;t an out-there deployment option. I
+spoke to one of the gunicorn developers and was told that every django hosting
+company (think ep.io) uses this setup.&lt;/p&gt;
+&lt;h2 id=&#34;get-your-server-ready&#34;&gt;Get your server ready&lt;/h2&gt;
+&lt;p&gt;I use Rackspace for small, single server web apps. I created an Ubuntu 10.10
+instance with 256MB of RAM. Then, I created a user for my app and added my ssh
+key to &lt;code&gt;authorized_keys&lt;/code&gt;. Basic stuff.&lt;/p&gt;
+&lt;h2 id=&#34;install-nginx&#34;&gt;Install nginx&lt;/h2&gt;
+&lt;p&gt;Installing nginx couldn&amp;rsquo;t be simpler. Latest stable release is provided via a
+ppa repository.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;$ sudo apt-get install python-software-properties -y
+$ sudo -s
+$ apt-add-repository ppa:nginx/stable
+$ apt-get update
+$ apt-get install nginx
+$ exit
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;project-structure&#34;&gt;Project structure&lt;/h2&gt;
+&lt;p&gt;The user under which the app will run is &lt;code&gt;webapp&lt;/code&gt;, so I checkout my app in
+&lt;code&gt;/home/webapp&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;/home/webapp/app
+/home/webapp/app/static
+/home/webapp/env
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Note that I&amp;rsquo;m using &lt;code&gt;virtualenv&lt;/code&gt; to deploy this app.&lt;/p&gt;
+&lt;h2 id=&#34;configure-nginx-and-gunicorn&#34;&gt;Configure nginx and gunicorn&lt;/h2&gt;
+&lt;p&gt;The following two files can be distributed with your project.&lt;/p&gt;
+&lt;p&gt;nginx.conf:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;server {
+    listen 80;
+    server_name webapp.org;
+
+    access_log /home/webapp/access.log;
+    error_log /home/webapp/error.log;
+
+    location /static {
+        root /home/webapp/app;
+    }
+
+    location / {
+        proxy_pass http://127.0.0.1:8888;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Next, I symlinked &lt;code&gt;nginx.conf&lt;/code&gt; to the server&amp;rsquo;s &lt;code&gt;sites-enabled&lt;/code&gt; directory.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;$ sudo ln -s /home/webapp/app/nginx.conf /etc/nginx/sites-enable/webapp.org
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This sets up nginx to directly serve the applications&amp;rsquo;s static files (css, js,
+etc.). Everything else is proxied to the gunicorn server.&lt;/p&gt;
+&lt;p&gt;Now gunicorn is a Python HTTP server. It&amp;rsquo;s super simple and effective. I
+installed it into the app&amp;rsquo;s environment.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;$ (env) pip install gunicorn
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;gunicorn.conf.py:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;bind &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;127.0.0.1:8888&amp;#34;&lt;/span&gt;
+logfile &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/home/webapp/gunicorn.log&amp;#34;&lt;/span&gt;
+workers &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;That&amp;rsquo;s it! The config files are simple and easy to read.&lt;/p&gt;
+&lt;h2 id=&#34;running&#34;&gt;Running&lt;/h2&gt;
+&lt;p&gt;I then collected all the static files into the &lt;code&gt;static&lt;/code&gt; directory:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;$ (env) python manage.py collectstatic
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I restarted nginx:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;$ sudo /etc/init.d/nginx restart
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;And finally, I ran the &lt;code&gt;gunicorn&lt;/code&gt; server:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;$ (env) cd /home/webapp/app
+$ (env) gunicorn_django -D -c gunicorn.conf.py
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;And I was good to go.&lt;/p&gt;
+&lt;h2 id=&#34;notes&#34;&gt;Notes&lt;/h2&gt;
+&lt;p&gt;You may have to change the permissions on the &lt;code&gt;static&lt;/code&gt; directory. Also, the
+command above starts &lt;code&gt;gunicorn&lt;/code&gt; as a deamon - a better way would be to use a
+monitoring service to start it. Think &lt;code&gt;runit&lt;/code&gt; or &lt;code&gt;supervisord&lt;/code&gt;. Also, I
+didn&amp;rsquo;t include any database specific configurations since that&amp;rsquo;s indentical to
+an Apache deployment.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -78,7 +411,34 @@ Credit Give credit where credit is due. I stole this idea from Idan Gazit and ma
       <pubDate>Fri, 25 Feb 2011 22:26:00 -0400</pubDate>
       
       <guid>https://honza.ca/2011/02/how-to-convert-vim-colorschemes-to-pygments-themes/</guid>
-      <description>Recently, I have grown to love Pygments. It gives you syntax highlighting in the browser without heavy Javascript files. It supports just about any programming language on the planet and it&amp;rsquo;s just plain awesome. The only thing that it&amp;rsquo;s lacking is good color schemes. It comes with a dozen themes that will certainly do the trick, but if you&amp;rsquo;re used to looking at pretty code in your favorite editor, the code examples on your website will look a little dull.</description>
+      <description>&lt;p&gt;Recently, I have grown to love &lt;a href=&#34;http://pygments.org&#34;&gt;Pygments&lt;/a&gt;. It gives you syntax
+highlighting in the browser without heavy Javascript files. It supports just
+about any programming language on the planet and it&amp;rsquo;s just plain awesome. The
+only thing that it&amp;rsquo;s lacking is good color schemes. It comes with a dozen
+themes that will certainly do the trick, but if you&amp;rsquo;re used to looking at
+pretty code in your favorite editor, the code examples on your website will
+look a little dull.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m going to go out on a limb here and assume you have a favorite colorscheme.
+I found a script that will turn a vim colorscheme into a Pygments theme. It
+didn&amp;rsquo;t work perfectly out of the box so I patched it. You can download it
+&lt;a href=&#34;https://github.com/honza/vim2pygments&#34;&gt;here&lt;/a&gt;. Copy your vim colorscheme to the same directory as the script and run
+it like so:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;$ python vim2pygments.py molokai.vim &amp;gt; molokai.py
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This will produce a Python file containing a simple style class that Pygments
+can use. Next step is to download Pygments:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;$ hg clone http://dev.pocoo.org/hg/pygments-main pygments
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;And then you will install your new theme:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;$ cd pygments
+$ cp ../molokai.py pygments/styles/molokai.py
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;OK, now for the fun part. We will use Pygments to generate the CSS file that
+you will then use on your website:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;$ ./pygmentize -S molokai -f html -a .highlight &amp;gt; molokai.css
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;If you are a TextMate user, you might be able to get your favorite theme done,
+too. A lot of popular Vim colorschemes are inspired by TextMate. Sunburst,
+mustang and idle fingers come to mind. Just find a Vim version and you&amp;rsquo;re good
+to go.&lt;/p&gt;
+&lt;p&gt;That&amp;rsquo;s it!&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -87,8 +447,59 @@ Credit Give credit where credit is due. I stole this idea from Idan Gazit and ma
       <pubDate>Sat, 22 Jan 2011 21:18:00 -0400</pubDate>
       
       <guid>https://honza.ca/2011/01/how-my-website-works/</guid>
-      <description>I&amp;rsquo;m sure you&amp;rsquo;ve heard of static site generators like Jekyll (Ruby) or Hyde (Python). The benefits are obvious - your site is hosted on a cheap shared hosting and it can easily survive the Digg/Slashdot/Reddit effect. There is no database latency - the browser requests a file on the server and gets it back immediately.
-Update (2011-02-27): While I still use a static generator to power my site, it&amp;rsquo;s not a different engine.</description>
+      <description>&lt;p&gt;I&amp;rsquo;m sure you&amp;rsquo;ve heard of static site generators like Jekyll (Ruby) or Hyde
+(Python). The benefits are obvious - your site is hosted on a cheap shared
+hosting and it can easily survive the Digg/Slashdot/Reddit effect. There is no
+database latency - the browser requests a file on the server and gets it back
+immediately.&lt;/p&gt;
+&lt;h2 id=&#34;update--2011-02-27&#34;&gt;Update (2011-02-27):&lt;/h2&gt;
+&lt;p&gt;While I still use a static generator to power my site, it&amp;rsquo;s not a different
+engine. I got tired of launching a django server just to write a post. I wrote
+a new static site generator called &lt;a href=&#34;https://github.com/honza/socrates&#34;&gt;Socrates&lt;/a&gt;. Each post is now a separate
+file written in Markdown. Socrates then runs through those files and creates a
+site for me. I&amp;rsquo;m still using django templates. What follows is the original
+post.&lt;/p&gt;
+&lt;h2 id=&#34;django&#34;&gt;django&lt;/h2&gt;
+&lt;p&gt;The site is a simple django blog. There is nothing really of note when it comes
+to django-specific coding. I run the django server locally when I&amp;rsquo;m editing or
+adding articles. It provides a nice UI. It also lets me easily preview the site
+without generating anything.&lt;/p&gt;
+&lt;h2 id=&#34;static-generator&#34;&gt;static generator&lt;/h2&gt;
+&lt;p&gt;When I&amp;rsquo;m happy with the state of the website and want to publish it, I run the
+static generator. It&amp;rsquo;s contained in the &lt;code&gt;generate.py&lt;/code&gt; file. It runs through
+all possible urls and for each one it generates a static file. Each file is a
+complete HTML page that the user&amp;rsquo;s browser will download. The folder structure
+is as follows:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;/2010/
+    /02/
+        post-one.html
+        post-two.html
+/2011/
+    ..
+        ..
+/about/
+    index.html
+index.html
+/page/
+    /2/
+        index.html
+/category/
+    /android/
+        index.html
+    /code/
+        index.html
+    ..
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You get the idea. This way, with an &lt;code&gt;.htaccess&lt;/code&gt; file we can have the
+following URL structure:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;/2010/02/post-one/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;ftp-deploy-script&#34;&gt;FTP deploy script&lt;/h2&gt;
+&lt;p&gt;And the final piece is the &lt;code&gt;deploy.py&lt;/code&gt; script. It looks at the deploy
+directory, and with a little help from git, it figures out what files were
+changed since the last deploy. It then takes those files and throws them up on
+the server. A normal shared hosting.&lt;/p&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;You can check out the code on &lt;a href=&#34;https://github.com/honza/honza.github.com&#34;&gt;Github&lt;/a&gt;.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -97,8 +508,142 @@ Update (2011-02-27): While I still use a static generator to power my site, it&a
       <pubDate>Tue, 18 Jan 2011 18:23:00 -0400</pubDate>
       
       <guid>https://honza.ca/2011/01/android-development-disappointments/</guid>
-      <description>The Android platform is the latest buzz in the smartphone world. I have previously written on why I prefer Android over iPhone. In this article, we will talk a little bit about what it&amp;rsquo;s like to develop native applications for Android.
-Android SDK uses Java. I know Java but it&amp;rsquo;s not my favorite. After working with Python and Django for months, going back to Java isn&amp;rsquo;t exactly easy. But it&amp;rsquo;s not undoable either.</description>
+      <description>&lt;p&gt;The Android platform is the latest buzz in the smartphone world. I have
+previously written on why I prefer Android over iPhone. In this article, we
+will talk a little bit about what it&amp;rsquo;s like to develop native applications for
+Android.&lt;/p&gt;
+&lt;p&gt;Android SDK uses Java. I know Java but it&amp;rsquo;s not my favorite. After working with
+Python and Django for months, going back to Java isn&amp;rsquo;t exactly easy. But it&amp;rsquo;s
+not undoable either.&lt;/p&gt;
+&lt;p&gt;Being from the Czech republic, I thought I would try to target the Czech
+market. Android is starting to get really big over there. I decided to write a
+simple news reader application for one of the leading news portals called iDnes
+(&amp;ldquo;eToday&amp;rdquo;). The application downloads an RSS feed, parses it and displays a
+list of news articles to the user. The user has the option to choose their
+topic, and to manually refresh the application to get new articles.&lt;/p&gt;
+&lt;p&gt;Not very complicated at all. It took me a few evenings to put it together. The
+development process was quite fun. The Android SDK integration into Eclipse is
+awesome. It tells you when you have to implement additional methods, or
+automatically adds your imports when it&amp;rsquo;s needed. As part of the SDK, you get a
+simulator for all kinds of versions of Android (from 1.5 to 2.2). This way, you
+can test your application on various versions of the API.&lt;/p&gt;
+&lt;p&gt;I read all the articles on packaging and distributing. I made sure my
+application was backwards compatible. I tried to follow their guidelines for
+app icons as much as I could (well, I suck at graphic design). I exported the
+applications, signed it, aligned it and uploaded it to the Android Market.&lt;/p&gt;
+&lt;p&gt;I was excited. I did it. I published my first Android applications. But then
+came the disappointment.&lt;/p&gt;
+&lt;p&gt;My app started to get a lot of bad comments in the market. People complained
+that the application didn&amp;rsquo;t do anything, and they couldn&amp;rsquo;t read any news, etc.
+I didn&amp;rsquo;t come across any errors like that during testing. If the applications
+doesn&amp;rsquo;t have internet, it will tell the user it doesn&amp;rsquo;t have internet. If there
+is a problem, it will let them know.&lt;/p&gt;
+&lt;p&gt;As a developer and author, I feel there is no way for me to receive helpful
+information about the errors the users are getting when they are interacting
+with the application.&lt;/p&gt;
+&lt;p&gt;OK, that&amp;rsquo;s it. If you have any comments or suggestions, do let me know in the
+comments.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Posterous-style Blogging On App Engine</title>
+      <link>https://honza.ca/2010/07/posterous-style-blogging-on-app-engine/</link>
+      <pubDate>Wed, 07 Jul 2010 22:00:00 -0300</pubDate>
+      
+      <guid>https://honza.ca/2010/07/posterous-style-blogging-on-app-engine/</guid>
+      <description>&lt;p&gt;Posterous has been getting a lot of attention lately. Its simplicity appeals to
+a wide range of users and more and more users are switching over from other
+well-established blogging platforms such as Blogger or WordPress. In this
+article, we will have a look at how you can replicate the Posterous
+functionality on App Engine.&lt;/p&gt;
+&lt;p&gt;In case you don&amp;rsquo;t know what Posterous is, it&amp;rsquo;s very simple. It&amp;rsquo;s a blogging
+tool like Google&amp;rsquo;s Bloggeror Wordpress.com. What makes it different from the
+other services is its ridiculous simplicity. With Posterous, you don&amp;rsquo;t need to
+create an account. That&amp;rsquo;s because you create new posts by emailing your post to
+Posterous. It creates links for you, images sent as attachments will be
+transformed into galleries, etc.&lt;/p&gt;
+&lt;p&gt;I like Posterous, but my website has a lot of custom programming on the
+back-end so I&amp;rsquo;m very hesitant to switch over. And besides, I like to know how
+things work behind the scenes. I thought it might be fun to create a system
+similar to Posterous&amp;rsquo; for my own blog which is, of course, hosted on App
+Engine.&lt;/p&gt;
+&lt;p&gt;Here is what we are going to do. I want to be able to send an email to my own
+blog and have it turn it into a post and publish it to the blog.&lt;/p&gt;
+&lt;p&gt;OK, let&amp;rsquo;s start with the post model:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Post&lt;/span&gt;(db&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Model):
+    title &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; db&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;StringProperty()
+    body &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; db&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;TextProperty()
+    added &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; db&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;DateTimeProperty(auto_now_add&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;True)
+    author &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; db&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;StringProperty()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Very straight forward. You have your title, body, author and when the post was
+published.&lt;/p&gt;
+&lt;p&gt;In order to enable incoming email, you need to add a couple of lines of code to
+your &lt;code&gt;app.yaml&lt;/code&gt; file. In addition to your regular handlers, add the
+following:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;inbound_services&lt;/span&gt;:
+  - mail
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;handlers&lt;/span&gt;:
+  - &lt;span style=&#34;color:#66d9ef&#34;&gt;url&lt;/span&gt;: /_ah/mail/.&lt;span style=&#34;color:#e6db74&#34;&gt;+
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    script: main.py&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The first line enables incoming email for your application. The second part is
+the important part. On App Engine, an incoming email message is processed as a
+HTTP POST request. Since it&amp;rsquo;s a regular HTTP request, we will need a handler
+for it in the &lt;code&gt;app.yaml&lt;/code&gt; file. You have several options here. You can create
+a catch-all handler for all incoming email addresses (like I&amp;rsquo;ve done above), or
+create seperate handlers for different addresses.&lt;/p&gt;
+&lt;p&gt;The email address that we will use is in the following format:
+&lt;a href=&#34;mailto:your%5Fstring@appid.appspotmail.com&#34;&gt;your_string@appid.appspotmail.com&lt;/a&gt;. You should substitute the appid with your
+app&amp;rsquo;s ID. The string before the &amp;lsquo;@&amp;rsquo; symbol can be set to anything you want.&lt;/p&gt;
+&lt;p&gt;With this out of the way, we are ready to write the actual email handler. This
+will go into your &lt;code&gt;main.py&lt;/code&gt; file which you defined in the &lt;code&gt;app.yaml&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;First, some imports:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; email
+&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; google.appengine.ext.webapp.mail_handlers &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; InboundMailHandler
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then, you add the following to the list of URL mappings in the instantiation of
+the application class.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;application &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; webapp&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;WSGIApplication([
+    (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;/&amp;#39;&lt;/span&gt;, Index),
+    EmailHandler&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;mapping()
+    ], debug&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;True)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Here EmailHandler is the request handler class that will handle the incoming
+email. The &lt;code&gt;mapping()&lt;/code&gt; method will map all of the addresses and send all of
+them to this handler class. It&amp;rsquo;s just a convenience method, no magic here.&lt;/p&gt;
+&lt;p&gt;Now, finally, onto the actual handler:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;EmailHandler&lt;/span&gt;(InboundMailHandler):
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;receive&lt;/span&gt;(self, mail_message):
+        post &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Post()
+        post&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;title &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; mail_message&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;subject
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; content_type, body &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; mail_message&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;bodies():
+            post&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;body &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; body&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;decode()
+        post&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;author &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;John Smith&amp;#39;&lt;/span&gt;
+        post&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;put()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This is actually very simple. The incoming email message is saved in the
+&lt;code&gt;mail_message&lt;/code&gt; variable and you can access all of the usual email metadata as
+its properties (e.g. mail_message.sender). So, we create a new post, take the
+email&amp;rsquo;s subject and set it as the post&amp;rsquo;s title. The &lt;code&gt;bodies()&lt;/code&gt; method
+extracts the body of the email and the &lt;code&gt;decode()&lt;/code&gt; function will decode the
+actual body. Then we set the author and save the post in the datastore.&lt;/p&gt;
+&lt;p&gt;Often you will want to include a link in your post, or create a list. This is
+easily accomplished with HTML tags. However, HTML tags are a pain, so you might
+want to use something like Markdown.&lt;/p&gt;
+&lt;p&gt;Adding markdown support is super easy. Download the Python
+&lt;a href=&#34;http://code.google.com/p/python-markdown2/&#34;&gt;Markdown library&lt;/a&gt; and put the &lt;code&gt;markdown2.py&lt;/code&gt; file in your app&amp;rsquo;s root
+directory. Then import it in your &lt;code&gt;main.py&lt;/code&gt; file.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; markdown2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And change the following line:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;post&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;body &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; body&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;decode()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;to this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;post&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;body &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; markdown2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;markdown(body&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;decode())
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And that&amp;rsquo;s it!&lt;/p&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;This is a very simple yet effective technique and it will allow you to create
+post from anywhere. I hope you&amp;rsquo;ve enjoyed the post. Let me know if you have any
+suggestions on how to improve it.&lt;/p&gt;
+&lt;h2 id=&#34;code&#34;&gt;Code&lt;/h2&gt;
+&lt;p&gt;The complete code for this app is available on &lt;a href=&#34;https://github.com/honza/Posterous-App-Engine&#34;&gt;Github&lt;/a&gt;.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

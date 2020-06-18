@@ -45,39 +45,25 @@ only thing that it&rsquo;s lacking is good color schemes. It comes with a dozen
 themes that will certainly do the trick, but if you&rsquo;re used to looking at
 pretty code in your favorite editor, the code examples on your website will
 look a little dull.</p>
-
 <p>I&rsquo;m going to go out on a limb here and assume you have a favorite colorscheme.
 I found a script that will turn a vim colorscheme into a Pygments theme. It
 didn&rsquo;t work perfectly out of the box so I patched it. You can download it
 <a href="https://github.com/honza/vim2pygments">here</a>. Copy your vim colorscheme to the same directory as the script and run
 it like so:</p>
-
-<pre><code class="language-console">$ python vim2pygments.py molokai.vim &gt; molokai.py
-</code></pre>
-
-<p>This will produce a Python file containing a simple style class that Pygments
+<pre><code class="language-console" data-lang="console">$ python vim2pygments.py molokai.vim &gt; molokai.py
+</code></pre><p>This will produce a Python file containing a simple style class that Pygments
 can use. Next step is to download Pygments:</p>
-
-<pre><code class="language-console">$ hg clone http://dev.pocoo.org/hg/pygments-main pygments
-</code></pre>
-
-<p>And then you will install your new theme:</p>
-
-<pre><code class="language-console">$ cd pygments
+<pre><code class="language-console" data-lang="console">$ hg clone http://dev.pocoo.org/hg/pygments-main pygments
+</code></pre><p>And then you will install your new theme:</p>
+<pre><code class="language-console" data-lang="console">$ cd pygments
 $ cp ../molokai.py pygments/styles/molokai.py
-</code></pre>
-
-<p>OK, now for the fun part. We will use Pygments to generate the CSS file that
+</code></pre><p>OK, now for the fun part. We will use Pygments to generate the CSS file that
 you will then use on your website:</p>
-
-<pre><code class="language-console">$ ./pygmentize -S molokai -f html -a .highlight &gt; molokai.css
-</code></pre>
-
-<p>If you are a TextMate user, you might be able to get your favorite theme done,
+<pre><code class="language-console" data-lang="console">$ ./pygmentize -S molokai -f html -a .highlight &gt; molokai.css
+</code></pre><p>If you are a TextMate user, you might be able to get your favorite theme done,
 too. A lot of popular Vim colorschemes are inspired by TextMate. Sunburst,
 mustang and idle fingers come to mind. Just find a Vim version and you&rsquo;re good
 to go.</p>
-
 <p>That&rsquo;s it!</p>
 
 </article>

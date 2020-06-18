@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ebooks on Honza Pokorny</title>
+    <title>ebooks on Honza Pokorny</title>
     <link>https://honza.ca/categories/ebooks/</link>
-    <description>Recent content in Ebooks on Honza Pokorny</description>
+    <description>Recent content in ebooks on Honza Pokorny</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 08 Apr 2019 10:14:00 -0300</lastBuildDate>
@@ -17,7 +17,12 @@
       <pubDate>Mon, 08 Apr 2019 10:14:00 -0300</pubDate>
       
       <guid>https://honza.ca/2019/04/john-girardeau-musical-instruments-in-the-public-worship-of-the-church/</guid>
-      <description> epub mobi -  </description>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://honza.ca/files/girardeau.musical.instruments.epub&#34;&gt;epub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://honza.ca/files/girardeau.musical.instruments.mobi&#34;&gt;mobi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
   </channel>

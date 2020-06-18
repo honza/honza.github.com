@@ -42,22 +42,18 @@
 developers. Git is a wonderful tool that allows you to manage your code, its
 evolution and help you recover from mistakes should they arise. One of the
 things that people are intimidated by is <code>git rebase</code>.</p>
-
 <p>Let&rsquo;s look at an example. You&rsquo;re working on a team with two other developers.
 You have a blessed repository that sits on your company&rsquo;s server. Everyone is
 working on the same project but on slightly different tasks. Everyone is
 working on the master branch. You write a bit of code here and there, you
 commit a bunch of times and then it&rsquo;s time to share your code with the rest of
 the team by pushing it up to the shared repository.</p>
-
 <p>You run <code>git push</code> but receive an error saying that there are changes on the
 server and your commit cannot be fast-forwarded. No big deal, right? You run
 <code>git pull</code> to download the changes that you don&rsquo;t have and automatically
 merge your changes in. Then you can <code>git push</code> again and it will work just
 fine.</p>
-
 <p>The problem is that it makes the history of your project messy.</p>
-
 <p>#+BEGIN_SRC console</p>
 
 </article>

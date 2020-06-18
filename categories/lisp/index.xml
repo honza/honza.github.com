@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Lisp on Honza Pokorny</title>
+    <title>lisp on Honza Pokorny</title>
     <link>https://honza.ca/categories/lisp/</link>
-    <description>Recent content in Lisp on Honza Pokorny</description>
+    <description>Recent content in lisp on Honza Pokorny</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 12 Dec 2013 13:44:00 -0400</lastBuildDate>
@@ -17,8 +17,40 @@
       <pubDate>Thu, 12 Dec 2013 13:44:00 -0400</pubDate>
       
       <guid>https://honza.ca/2013/12/lisp-parentheses/</guid>
-      <description>Perhaps the number one reason why people are afraid to try Lisp or don&amp;rsquo;t like it is the huge amounts of parentheses cluttering up the code. It&amp;rsquo;s said to be hard to read the code when it&amp;rsquo;s full of parentheses.
-Any experienced Lisp programmer will tell you that the parentheses disappear fairly early on. After a while, you hardly notice them as something annoying. In fact, going back to C-family languages will make you feel like you need to type all kinds of crazy punctuation.</description>
+      <description>&lt;p&gt;Perhaps the number one reason why people are afraid to try Lisp or don&amp;rsquo;t like
+it is the huge amounts of parentheses cluttering up the code. It&amp;rsquo;s said to be
+hard to read the code when it&amp;rsquo;s full of parentheses.&lt;/p&gt;
+&lt;p&gt;Any experienced Lisp programmer will tell you that the parentheses disappear
+fairly early on. After a while, you hardly notice them as something annoying.
+In fact, going back to C-family languages will make you feel like you need to
+type all kinds of crazy punctuation.&lt;/p&gt;
+&lt;p&gt;While Clojure technically doesn&amp;rsquo;t use significant whitespace like Python, in
+reality, careful identation is crucial to writing clear code.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;defn &lt;/span&gt;crop-photo [user photo]
+  (when (&lt;span style=&#34;color:#a6e22e&#34;&gt;authenticated?&lt;/span&gt; user)
+    (when (&lt;span style=&#34;color:#a6e22e&#34;&gt;admin?&lt;/span&gt; user)
+      (&lt;span style=&#34;color:#a6e22e&#34;&gt;crop&lt;/span&gt; photo))))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In this snippet, there are four levels of indentation, four nested expressions.
+It&amp;rsquo;s easy to quickly scan this function guess what it does. When a user is
+authenticated and when they are an admin, crop the photo. If any of the
+&lt;code&gt;when&lt;/code&gt; expressions return a &lt;em&gt;falsy&lt;/em&gt; value, the whole function will return
+&lt;code&gt;nil&lt;/code&gt;. All of this is possible because Clojure uses prefix notation. This
+means that the first element in the &lt;code&gt;(...)&lt;/code&gt; form is the name of the function.
+Therefore, you only need to scan the beginnings of lines to see what functions
+are being called. Also, you never have to pay attention to closing parentheses
+because they are all sitting together at the end of the function.&lt;/p&gt;
+&lt;p&gt;In Clojure, it&amp;rsquo;s also idiomatic to put function arguments on new lines and
+align them.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;(or (&lt;span style=&#34;color:#a6e22e&#34;&gt;admin?&lt;/span&gt; user)
+    (&lt;span style=&#34;color:#a6e22e&#34;&gt;staff?&lt;/span&gt; user))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In this example, the &lt;code&gt;or&lt;/code&gt; macro usually takes two arguments. We put each
+argument on its own line and align them. This way it&amp;rsquo;s visually clear what the
+code does.&lt;/p&gt;
+&lt;p&gt;Finally, when writing Clojure code, you rarely have to worry about matching up
+your parentheses. This is a job for your text editor. Inserting a new
+expression usually involves typing the &lt;code&gt;(&lt;/code&gt; key and having its friend &lt;code&gt;)&lt;/code&gt;
+inserted for you.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -27,8 +59,255 @@ Any experienced Lisp programmer will tell you that the parentheses disappear fai
       <pubDate>Mon, 13 May 2013 07:14:00 -0300</pubDate>
       
       <guid>https://honza.ca/2013/05/building-a-lisp-to-javascript-compiler/</guid>
-      <description>In this post, I&amp;rsquo;m going to show you how I made a Lisp to Javascript compiler. I really enjoy programming in Clojure but have often thought that the JVM isn&amp;rsquo;t always the best platform for scripts due to the slow JVM start-up. So, I decided to implement a simple version of Clojure that compiles to Javascript and can be run on top of nodejs.
-Compilers are notoriously hard to understand and therefore make for great mind-bending exercises.</description>
+      <description>&lt;p&gt;In this post, I&amp;rsquo;m going to show you how I made a Lisp to Javascript compiler. I
+really enjoy programming in Clojure but have often thought that the JVM isn&amp;rsquo;t
+always the best platform for scripts due to the slow JVM start-up. So, I
+decided to implement a simple version of Clojure that compiles to Javascript
+and can be run on top of nodejs.&lt;/p&gt;
+&lt;p&gt;Compilers are notoriously hard to understand and therefore make for great
+mind-bending exercises. Exactly my idea of weekend fun.&lt;/p&gt;
+&lt;h2 id=&#34;what-we-are-going-to-do&#34;&gt;What we are going to do&lt;/h2&gt;
+&lt;p&gt;There are tons of Lisp to Javascript compilers out there. What makes mine
+special? I&amp;rsquo;m using a PEG grammar to parse the source code. Once it&amp;rsquo;s parsed,
+I turn the result into a &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/SpiderMonkey/Parser%5FAPI&#34;&gt;Parser API&lt;/a&gt; compatible AST. The AST is then passed
+to &lt;a href=&#34;https://github.com/Constellation/escodegen&#34;&gt;escodegen&lt;/a&gt; which turns it into well-formatted Javascript.&lt;/p&gt;
+&lt;p&gt;This is great because I don&amp;rsquo;t have to worry about the particulars of Javascript
+syntax. Escodegen takes care of inserting semicolons where appropriate, etc.
+and everything looks clean and consistent. It&amp;rsquo;s nice because the parsing is
+decoupled from the source code emission. You can completely remove the
+Javascript generation part and use some other software to do that.&lt;/p&gt;
+&lt;h2 id=&#34;lisp-basics&#34;&gt;Lisp basics&lt;/h2&gt;
+&lt;p&gt;If you are familiar with Lisp, you can skip this section.&lt;/p&gt;
+&lt;p&gt;Lisp source code is made up of s-expressions. An s-expression is a list whose
+first element is a function and the rest are the arguments to that function.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;greet&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;honza&amp;#34;&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This is a list with two items. &lt;code&gt;greet&lt;/code&gt; is the name of the function and
+&lt;code&gt;&amp;quot;honza&amp;quot;&lt;/code&gt; is the argument. In other languages, this might be represented as
+&lt;code&gt;greet(&amp;quot;honza&amp;quot;)&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Lisp uses s-expressions for everything, including function definitions, if
+statements, assignments, binary expressions, etc.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;def &lt;/span&gt;name &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;honza&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#75715e&#34;&gt;;; define a variable &amp;#34;name&amp;#34; and assign &amp;#34;honza&amp;#34; to it&lt;/span&gt;
+(+ &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)            &lt;span style=&#34;color:#75715e&#34;&gt;;; add 1 and 2 and return the result&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;;; If the name variable is equal to &amp;#34;honza&amp;#34;, print &amp;#34;hey honza&amp;#34;, otherwise,&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;;; just print &amp;#34;hey stranger&amp;#34;.&lt;/span&gt;
+
+(&lt;span style=&#34;color:#66d9ef&#34;&gt;if &lt;/span&gt;(= name &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;honza&amp;#34;&lt;/span&gt;)
+  (print &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;hey honza&amp;#34;&lt;/span&gt;)
+  (print &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;hey stranger&amp;#34;&lt;/span&gt;))
+
+&lt;span style=&#34;color:#75715e&#34;&gt;;; Function definition; it takes one parameter called &amp;#34;name&amp;#34;.&lt;/span&gt;
+
+(&lt;span style=&#34;color:#66d9ef&#34;&gt;def &lt;/span&gt;greet
+  (&lt;span style=&#34;color:#66d9ef&#34;&gt;fn &lt;/span&gt;[name]
+    (println &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;hello&amp;#34;&lt;/span&gt; name)))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In Lisp, a function body can have multiple s-expression but only the last one
+is returned. There is no &lt;code&gt;return&lt;/code&gt; keyword in Lisp. Binary operators and
+things like the &lt;code&gt;if&lt;/code&gt; keyword are actually functions that return values.&lt;/p&gt;
+&lt;h2 id=&#34;the-mighty-peg&#34;&gt;The mighty PEG&lt;/h2&gt;
+&lt;p&gt;Every PEG grammar starts with the &lt;code&gt;program&lt;/code&gt; directive. This is where the
+parser will start parsing.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;program
+  = s:sexp+ &amp;quot;\n&amp;quot;*  { return {
+      type: &#39;Program&#39;,
+      body: s
+  };}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;A Lisp program consists of one or more s-expressions, optionally followed by a
+newline. The list of one or more s-expressions is stored in the variable
+&lt;code&gt;s&lt;/code&gt;. We then return a Javascript object with two properties: &lt;code&gt;type&lt;/code&gt; and
+&lt;code&gt;body&lt;/code&gt;. Since we are at the top level, we return it as a type of
+&lt;code&gt;Program&lt;/code&gt;, and our body will be made up of the matched s-expressions. The
+syntax is a little weird at first but you get used to it. Fairly simple stuff.&lt;/p&gt;
+&lt;p&gt;If you tried to compile this grammar into a parser, it would fail because we
+didn&amp;rsquo;t tell it what an s-expression looks like.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;sexp
+  = _ a:atom _ { return a; }
+  / _ l:list _ { return l; }
+  / _ v:vector _ { return v; }
+  / _ o:object _ { return o; }
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;OK, so an s-expression is either an atom, a list, a vector or an object. Each
+of these can be preceded and followed by any amount of whitespace. Cool,
+that&amp;rsquo;s simple enough. Except now we have to define what all those things are.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s start with the atom:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;atom
+  = d:[0-9]+ _ { return {type: &#39;Literal&#39;, value: numberify(d)}; }
+  / &#39;&amp;quot;&#39; d:(!&#39;&amp;quot;&#39; sourcechar)* &#39;&amp;quot;&#39; _ { return {type: &#39;Literal&#39;, value: makeStr(d) }}
+  / s:[-+/\*_&amp;lt;&amp;gt;=a-zA-Z\.!]+ _ { return {type: &#39;Identifier&#39;, name: s.join(&amp;quot;&amp;quot;)};}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;So, an atom can be a list of one or more digits, a string or a valid
+identifier. In the digit directive, you will notice that we are assigning the
+number to the &lt;code&gt;d&lt;/code&gt; variable. This will contain a list of all of the matched
+numbers. We then concatenate them and parse them into an integer. That&amp;rsquo;s what
+the &lt;code&gt;numberify&lt;/code&gt; function does. A number or a string is a literal value so we
+return it as such. An identifier is a variable name, so we return it as such,
+too.&lt;/p&gt;
+&lt;p&gt;Next up, vectors and objects:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;vector
+  = &amp;quot;[]&amp;quot; { return {type: &#39;ArrayExpression&#39;, elements: []}; }
+  / _ &amp;quot;[&amp;quot; _ a:atom+ _ &amp;quot;]&amp;quot; _ { return {type: &#39;ArrayExpression&#39;, elements: a};}
+  / _ &amp;quot;[&amp;quot; _ o:object+ _ &amp;quot;]&amp;quot; _ { return {type: &#39;ArrayExpression&#39;, elements: o};}
+
+object
+  = &amp;quot;{}&amp;quot; { return {type: &#39;ObjectExpression&#39;, properties: []}; }
+  / _ &amp;quot;{&amp;quot; _ a:atom+ _ &amp;quot;}&amp;quot; _ { return makeObject(a); }
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Continuing in the same vein, a vector is either an empty array, an array with
+at least one atom in it, or an array with at least one object in it.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;makeObject&lt;/code&gt; function will take a pair by pair from the array and take
+the first item in the pair and turn it into an object key and set as its value
+to the second item in the pair. If the number of elements in the array isn&amp;rsquo;t
+divisible by 2, it will yell at you.&lt;/p&gt;
+&lt;p&gt;Next up, lists. Now, lists are special because the first item is the name of a
+function. This gives us the opportunity to define some built-in functions that
+would otherwise be really tricky to define.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;list
+  = &amp;quot;()&amp;quot; { return []; }
+  /  _ &amp;quot;(&amp;quot; _ s:sexp+ _ &amp;quot;)&amp;quot; _ {
+    if (first(s).name === &#39;def&#39;) {
+      return {
+        type: &#39;VariableDeclaration&#39;,
+        declarations: [{
+          type: &#39;VariableDeclarator&#39;,
+          id: s[1],
+          init: s[2].expression? s[2].expression : s[2]
+        }],
+        kind: &#39;var&#39;
+      };
+    }
+
+    if (first(s).name === &#39;fn&#39;) {
+      return {
+        type: &#39;FunctionExpression&#39;,
+        id: null,
+        params: s[1].elements ? s[1].elements : s[1],
+        body: {
+          type: &#39;BlockStatement&#39;,
+          body: init(rest(rest((s)))).concat(returnStatement(last(rest(s))))
+        }
+      };
+    }
+
+    if (Object.keys(builtins).indexOf(first(s).name) &amp;gt; -1) {
+      return builtins[first(s).name](rest(s));
+    }
+
+    return processCallExpression(s);
+
+  }
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;OK, there is quite a bit here, so let&amp;rsquo;s step through it. A list can be&lt;/p&gt;
+&lt;h3 id=&#34;an-empty-list&#34;&gt;an empty list&lt;/h3&gt;
+&lt;h3 id=&#34;a-list-of-at-least-one-s-expression&#34;&gt;a list of at least one s-expression&lt;/h3&gt;
+&lt;p&gt;If it&amp;rsquo;s an empty list, we just return an empty array. If it&amp;rsquo;s a list of
+s-expressions, we check for other things. We look at the first element and see
+what its name is. It can be either:&lt;/p&gt;
+&lt;h3 id=&#34;def-variable-declaration&#34;&gt;&lt;code&gt;def&lt;/code&gt; - variable declaration&lt;/h3&gt;
+&lt;h3 id=&#34;fn-an-anonymous-function&#34;&gt;&lt;code&gt;fn&lt;/code&gt; - an anonymous function&lt;/h3&gt;
+&lt;h3 id=&#34;a-built-in-function--if-plus-list-etc-dot&#34;&gt;a built-in function (&lt;code&gt;if&lt;/code&gt;, &lt;code&gt;+&lt;/code&gt;, &lt;code&gt;list&lt;/code&gt;, etc.)&lt;/h3&gt;
+&lt;h3 id=&#34;other-function--user-defined&#34;&gt;other function (user defined)&lt;/h3&gt;
+&lt;p&gt;The only thing left is the definition of whitespace&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;_
+  = [\n, ]*
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Zero or more of the following characters: newline, comma and space.&lt;/p&gt;
+&lt;h2 id=&#34;obstacles&#34;&gt;Obstacles&lt;/h2&gt;
+&lt;p&gt;When converting the parsed source code to the Parser API tree, I hit a few
+obstacles. It turns out that Lisp and Javascript don&amp;rsquo;t map perfectly to each
+other and therefore some post-processing is needed.&lt;/p&gt;
+&lt;h3 id=&#34;statement-vs-expression&#34;&gt;Statement vs expression&lt;/h3&gt;
+&lt;p&gt;In Lisp, everything is an expression. In Javascript, there are both
+expressions and statements. The hardest part is the fact that a function call
+can be both a statement and an expression depending on how it&amp;rsquo;s used. So you
+can&amp;rsquo;t represent it the same way every time.&lt;/p&gt;
+&lt;p&gt;I wrote a function that takes a list which represents an s-expression (the
+first element is a function call, the rest are the parameters).&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;processCallExpression&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;) {
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;callee&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;first&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;),
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;args&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;rest&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;);
+
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;args&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;map&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;) {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;expression&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;expression&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;CallExpression&amp;#34;&lt;/span&gt;) {
+      &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;expression&lt;/span&gt;;
+    } &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; {
+      &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;;
+    }
+  }, &lt;span style=&#34;color:#a6e22e&#34;&gt;args&lt;/span&gt;);
+
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; {
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ExpressionStatement&amp;#34;&lt;/span&gt;,
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;expression&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+      &lt;span style=&#34;color:#a6e22e&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;CallExpression&amp;#34;&lt;/span&gt;,
+      &lt;span style=&#34;color:#a6e22e&#34;&gt;callee&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;callee&lt;/span&gt;,
+      &lt;span style=&#34;color:#a6e22e&#34;&gt;arguments&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;args&lt;/span&gt;
+    }
+  };
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This will check if any of the arguments passed to the function are also
+function calls. If it&amp;rsquo;s a nested function call, it&amp;rsquo;s placed in the AST as a
+&lt;code&gt;CallExpression&lt;/code&gt;, otherwise it&amp;rsquo;s a &lt;code&gt;CallExpression&lt;/code&gt; inside a
+&lt;code&gt;ExpressionStatement&lt;/code&gt;. The PEG parser can&amp;rsquo;t detect this because it&amp;rsquo;s context
+free - each node only knows about itself.&lt;/p&gt;
+&lt;h3 id=&#34;implicit-return&#34;&gt;Implicit return&lt;/h3&gt;
+&lt;p&gt;In Lisp, the last s-expression in a function&amp;rsquo;s body is implicitly returned.
+You don&amp;rsquo;t need to denote this with a return statement, it&amp;rsquo;s built-in. Again,
+we need to do some more processing. If we are processing a function
+declaration, we need to check its body and wrap the last expression in a
+&lt;code&gt;ReturnStatement&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;if-is-an-expression-in-lisp&#34;&gt;If is an expression in Lisp&lt;/h3&gt;
+&lt;p&gt;The if statement in Lisp is an expression, just like a function call or
+anything else. This means that the expression in any of the two branches is
+effectively returned to the caller. This means that we need to add an extra
+wrapper around the statement and wrap each of the branch-expressions in a
+return statement.&lt;/p&gt;
+&lt;p&gt;Like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// this
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;) {
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;it&amp;#39;s zero&amp;#34;&lt;/span&gt;;
+} &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; {
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;it&amp;#39;s more than zero&amp;#34;&lt;/span&gt;;
+}
+
+&lt;span style=&#34;color:#75715e&#34;&gt;// becomes
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+(&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt;() {
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;) {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;it&amp;#39;s zero&amp;#34;&lt;/span&gt;;
+  } &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;it&amp;#39;s more than zero&amp;#34;&lt;/span&gt;;
+  }
+})();
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;standard-library&#34;&gt;Standard library&lt;/h2&gt;
+&lt;p&gt;A lisp would be no fun without some fun functional programming functions. I
+have started working on a standard library for our lisp. It lives in a file
+called &lt;code&gt;lib.js&lt;/code&gt;. This file includes functions that are accessible from any
+program that you write.&lt;/p&gt;
+&lt;p&gt;For example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;nth&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;list&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;) {
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;list&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;length&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;list&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;length&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;) {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;null&lt;/span&gt;;
+  }
+
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;list&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;];
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;first&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;list&lt;/span&gt;) {
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;nth&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;list&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And much more.&lt;/p&gt;
+&lt;h2 id=&#34;putting-it-all-together&#34;&gt;Putting it all together&lt;/h2&gt;
+&lt;p&gt;Here is how it all comes together:&lt;/p&gt;
+&lt;h3 id=&#34;use-peg-dot-js-to-compile-the-grammar-into-a-parser&#34;&gt;Use peg.js to compile the grammar into a parser&lt;/h3&gt;
+&lt;h3 id=&#34;take-the-parser-and-append-to-it-the-compiler-program&#34;&gt;Take the parser and append to it the compiler program&lt;/h3&gt;
+&lt;p&gt;The compiler program is the command line utility that decides how your program
+should be compiled, it parsers CLI flags, etc. It can return the AST instead
+of Javascript, it can uglify the resulting Javascript, etc.&lt;/p&gt;
+&lt;p&gt;You can use the result like so&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;$ ./inertia sample.clj
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;And it will print the resulting Javascript to stdout. What the compiler
+program will also do is prepend the compiled Javascript with the standard
+library. It simply reads the standard library code from the &lt;code&gt;lib.js&lt;/code&gt; file
+and prepends it.&lt;/p&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;This has certainly been a fun exercise for me. You can check out the finished
+product on &lt;a href=&#34;https://github.com/honza/inertia&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -37,8 +316,32 @@ Compilers are notoriously hard to understand and therefore make for great mind-b
       <pubDate>Tue, 12 Feb 2013 16:33:00 -0400</pubDate>
       
       <guid>https://honza.ca/2013/02/haskell-vs-clojure-syntax/</guid>
-      <description>Clojure has virtually zero syntax. What I mean by that is that all structures look the same: the first item in a list is the function and the rest are the arguments. This is true for variable assignment, if statements, data structures and functions themselves.
-(+ 1 2) (defn greet [name] (str &amp;quot;Hello &amp;quot; name)) (def user-count 334)  However, before you can do anything useful in Haskell, you must learn all kinds of crazy syntax: function definitions, pattern matching, do forms, functors, monads, typeclasses, &amp;hellip;</description>
+      <description>&lt;p&gt;Clojure has virtually zero syntax. What I mean by that is that all structures
+look the same: the first item in a list is the function and the rest are the
+arguments. This is true for variable assignment, if statements, data
+structures and functions themselves.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;(+ &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+
+(&lt;span style=&#34;color:#66d9ef&#34;&gt;defn &lt;/span&gt;greet [name]
+  (str &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello &amp;#34;&lt;/span&gt; name))
+
+(&lt;span style=&#34;color:#66d9ef&#34;&gt;def &lt;/span&gt;user-count &lt;span style=&#34;color:#ae81ff&#34;&gt;334&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;However, before you can do anything useful in Haskell, you must learn all kinds
+of crazy syntax: function definitions, pattern matching, do forms, functors,
+monads, typeclasses, &amp;hellip;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-haskell&#34; data-lang=&#34;haskell&#34;&gt;(&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;$&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Just&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;*&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Just&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;Nothing&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;\&lt;/span&gt;x &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt; return (x&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;)
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;instance&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Applicative&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Maybe&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;where&lt;/span&gt;
+    pure &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Just&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;Nothing&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;*&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;_&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Nothing&lt;/span&gt;
+    (&lt;span style=&#34;color:#66d9ef&#34;&gt;Just&lt;/span&gt; f) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;*&amp;gt;&lt;/span&gt; something &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; fmap f something
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This is why I find Haskell extremely hard to learn. It&amp;rsquo;s not because of
+monads, recursion or functional programming concepts. It&amp;rsquo;s because of the huge
+amount of special syntax. And you need to learn a lot of it before you can do
+something useful.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

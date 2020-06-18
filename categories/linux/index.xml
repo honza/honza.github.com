@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Linux on Honza Pokorny</title>
+    <title>linux on Honza Pokorny</title>
     <link>https://honza.ca/categories/linux/</link>
-    <description>Recent content in Linux on Honza Pokorny</description>
+    <description>Recent content in linux on Honza Pokorny</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 17 Jan 2011 21:47:00 -0400</lastBuildDate>
@@ -17,8 +17,13 @@
       <pubDate>Mon, 17 Jan 2011 21:47:00 -0400</pubDate>
       
       <guid>https://honza.ca/2011/01/apple-finally-catches-up-to-linux/</guid>
-      <description>Apple recently unveiled their newest venture. It&amp;rsquo;s called the App Store, and I&amp;rsquo;m sure you&amp;rsquo;ve heard of it. It&amp;rsquo;s a place on your computer that lets you download and discover new applications. Just like the package manager on most Linux distributions.
-Except Linux has had &amp;lsquo;app stores&amp;rsquo; for years. Welcome to 21st century computing, Apple.</description>
+      <description>&lt;p&gt;Apple recently unveiled their newest venture. It&amp;rsquo;s called the App Store, and
+I&amp;rsquo;m sure you&amp;rsquo;ve heard of it. It&amp;rsquo;s a place on your computer that lets you
+download and discover new applications. Just like the package manager on most
+Linux distributions.&lt;/p&gt;
+&lt;p&gt;Except Linux has had &amp;lsquo;app stores&amp;rsquo; for years. Welcome to 21st century computing,
+Apple.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

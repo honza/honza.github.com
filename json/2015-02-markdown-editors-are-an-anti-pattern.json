@@ -1,0 +1,18 @@
+{
+    "reading_time": "under one minute", 
+    "month": "02", 
+    "year": "2015", 
+    "date": "February 18, 2015", 
+    "slug": "markdown-editors-are-an-anti-pattern", 
+    "contents": "<div class=\"section\" id=\"markdown-editors-are-an-anti-pattern\">\n<h1>Markdown editors are an&nbsp;anti-pattern</h1>\n<p>In the last year or so, there seems to have been an explosion of markdown\neditors and markdown previewers.  A quick Google search reveals <a class=\"reference external\" href=\"http://dillinger.io/\">so</a>, <a class=\"reference external\" href=\"https://stackedit.io/\">many</a>\nof <a class=\"reference external\" href=\"http://jbt.github.io/markdown-editor/\">them</a>.</p>\n<p>The App Store is also full of these kinds of apps, promising you unrivaled\nproductivity and writing&nbsp;bliss.</p>\n<img alt=\"/img/app-store-markdown.png\" src=\"/img/app-store-markdown.png\" />\n<p>But, I would submit to you that all of these apps miss the point of markdown.\nFrom the <a class=\"reference external\" href=\"http://daringfireball.net/projects/markdown/\">markdown project page</a>:</p>\n<blockquote>\nThe overriding design goal for Markdown&#8217;s formatting syntax is to make it\nas readable as possible. The idea is that a Markdown-formatted document\nshould be publishable as-is, as plain text, without looking like it&#8217;s been\nmarked up with tags or formatting instructions.</blockquote>\n<p>The syntax (or lack thereof) of the markdown format is so simple that there is\nno need to &#8220;preview&#8221; the result.  A heading looks like a heading.  A list looks\nlike a&nbsp;list.</p>\n<p>This is a prime example of creating a solution to a problem that doesn&#8217;t exist.\nThe reason why these apps are popular and people buy them has less to do with\nthe need to preview markdown and more with the hisperized culture of writing\nfor the&nbsp;web.</p>\n</div>\n", 
+    "date_iso": "2015-02-18", 
+    "title": "Markdown editors are an anti-pattern", 
+    "url": "/2015/02/markdown-editors-are-an-anti-pattern", 
+    "day": "18", 
+    "categories": [
+        {
+            "name": "editor", 
+            "slug": "editor"
+        }
+    ]
+}

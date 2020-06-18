@@ -43,96 +43,83 @@ to large client-heavy web applications. There are many projects and ideas
 floating around that are meant to help you with this and I have had a look at
 quite a few of them. I don&rsquo;t mean to say that I found the best one &mdash; just one
 that I like.</p>
-
 <p>I want to talk about data-driven applications. What I mean is that everything
 you do somehow manipulates or shows specific data. Let me describe what I mean
 by a way of example. I have been working on a piece of photo gallery software
 called <code>rembrant</code>. The interface for actually organizing your images into
 albums is very client-heavy.</p>
-
 <p>The user interface is similar to that of iPhoto. The larger panel displays a
 grid of small thumbnails. The sidebar shows a list of albums and a count of
 selected images.</p>
-
 <p>When the application loads, it makes two calls to the server: one to get a list
 of all images (image models, including metadata), and a second to get album
 information. Everything else in the UI is based on these two lists. The list of
 albums and the image grid are pretty self-explanatory.</p>
-
 <p>Once the browser has this data, we can start building out the <em>views</em>. A view
 is a little windows, or a perspective upon a piece of data. It&rsquo;s meant to
 display the data in a meaningful way to the user. For example, in our
 application, there is a list of albums in the sidebar. These are represented as
 list items with anchor tags:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">SidebarView</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Backbone</span>.<span style="color:#a6e22e">View</span>.<span style="color:#66d9ef">extends</span>({
+  <span style="color:#a6e22e">el</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#sidebar&#34;</span>),
 
-<pre><code class="language-javascript">var SidebarView = Backbone.View.extends({
-  el: $('#sidebar'),
-
-  events: {
-    'click #new-album-link': 'newAlbum'
+  <span style="color:#a6e22e">events</span><span style="color:#f92672">:</span> {
+    <span style="color:#e6db74">&#34;click #new-album-link&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;newAlbum&#34;</span>
   },
 
-  initialize: function() {
-    this.collection.bind('reset', this.render, this);
-    this.collection.bind('add', this.add, this);
+  <span style="color:#a6e22e">initialize</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">collection</span>.<span style="color:#a6e22e">bind</span>(<span style="color:#e6db74">&#34;reset&#34;</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">render</span>, <span style="color:#66d9ef">this</span>);
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">collection</span>.<span style="color:#a6e22e">bind</span>(<span style="color:#e6db74">&#34;add&#34;</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">add</span>, <span style="color:#66d9ef">this</span>);
   },
 
-  add: function(album) {
-    var albumView = new SidebarAlbumView({
-      model: album
+  <span style="color:#a6e22e">add</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">album</span>) {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">albumView</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SidebarAlbumView</span>({
+      <span style="color:#a6e22e">model</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">album</span>
     });
-    this.el.append(albumView.el);
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">append</span>(<span style="color:#a6e22e">albumView</span>.<span style="color:#a6e22e">el</span>);
   },
 
-  render: function() {
-    for (var i=0; i &lt; this.collection.models.length; i++) {
-      this.add(this.collection.models[i]);
+  <span style="color:#a6e22e">render</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">collection</span>.<span style="color:#a6e22e">models</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">collection</span>.<span style="color:#a6e22e">models</span>[<span style="color:#a6e22e">i</span>]);
     }
   }
 });
-</code></pre>
-
-<p>Here you can see we are binding the view to an existing DOM element with an ID
+</code></pre></div><p>Here you can see we are binding the view to an existing DOM element with an ID
 of <em>sidebar</em>. The <code>@collection</code> variable is the collection of albums we spoke
 about earlier. The view subscribes to the collection&rsquo;s <em>reset</em> and <em>add</em>
 events. When a new album is added to the collection, the view will
 automatically update itself. Also, the <em>events</em> hash allows us to bind event
 handlers to DOM elements in the sidebar.</p>
-
 <p>You may have noticed that I&rsquo;m using Backbone to actually structure the
 application. I find that Backbone provides a good compromise between structure
 and freedom to do as you please. To be honest, it took me a good while to wrap
 my head around what Backbone is trying to do for you. It may seem a little
 wordy at times but you shouldn&rsquo;t expect your application to consist of little
 code.</p>
-
 <p>Now, suppose we wanted to add a count to each album list item which would
 indicate how many photos are currently in that album. This is easily done by
 inspecting the photos collection. Backbone provides a simple way to filter your
 collection based on predefined criteria. To get all photos that belong to the
 album with an ID of <code>1</code>, we would do:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">PhotoCollection</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Backbone</span>.<span style="color:#a6e22e">Collection</span>.<span style="color:#66d9ef">extends</span>({
+  <span style="color:#a6e22e">model</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Photo</span>,
+  <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;/photos&#34;</span>,
 
-<pre><code class="language-javascript">var PhotoCollection = Backbone.Collection.extends({
-  model: Photo,
-  url: '/photos',
-
-  byAlbum: function(id) {
-    this.filter(function(photo) {
-     return _.indexOf(photo.get('albums'), id) &gt;= 0;
+  <span style="color:#a6e22e">byAlbum</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">id</span>) {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">photo</span>) {
+      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">_</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#a6e22e">photo</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;albums&#34;</span>), <span style="color:#a6e22e">id</span>) <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>;
     });
   }
 });
 
-// collection is an instance of PhotoCollection
-photos = collection.byAlbum(1);
-</code></pre>
-
-<p>As you can see, this is very simple and elegant. Now, if a photo is deleted, it
+<span style="color:#75715e">// collection is an instance of PhotoCollection
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">photos</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">collection</span>.<span style="color:#a6e22e">byAlbum</span>(<span style="color:#ae81ff">1</span>);
+</code></pre></div><p>As you can see, this is very simple and elegant. Now, if a photo is deleted, it
 will be removed from the collection. This will be reflected both in the grid
 and in the sidebar. It will all work automatically because all of the views are
 looking at the same date. They are subscribed to the data&rsquo;s events and react
 accordingly.</p>
-
 <p>The nice thing is that you don&rsquo;t have to worry about changing classes, binding
 data to DOM elements, attaching click handlers, making AJAX requests, none of
 this. The difficult part about this approach is deciding what your elementary

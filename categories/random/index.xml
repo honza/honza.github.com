@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Random on Honza Pokorny</title>
+    <title>random on Honza Pokorny</title>
     <link>https://honza.ca/categories/random/</link>
-    <description>Recent content in Random on Honza Pokorny</description>
+    <description>Recent content in random on Honza Pokorny</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 04 Jul 2011 10:00:00 -0300</lastBuildDate>
@@ -17,8 +17,20 @@
       <pubDate>Mon, 04 Jul 2011 10:00:00 -0300</pubDate>
       
       <guid>https://honza.ca/2011/07/what-is-a-blog/</guid>
-      <description>I have noticed that many people don&amp;rsquo;t know what a blog is, so I would like to talk about that briefly.
- A blog is a type of website or part of a website. Blogs are usually maintained by an individual with regular entries. (&amp;hellip;) Entries are commonly displayed in reverse-chronological order. Blog can also be used as a verb, meaning to maintain or add content to a blog. Source: Wikipedia</description>
+      <description>&lt;p&gt;I have noticed that many people don&amp;rsquo;t know what a blog is, so I would like to
+talk about that briefly.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A blog is a type of website or part of a website. Blogs are usually
+maintained by an individual with regular entries. (&amp;hellip;) Entries are
+commonly displayed in reverse-chronological order. Blog can also be used as
+a verb, meaning to maintain or add content to a blog. Source: &lt;a href=&#34;http://en.wikipedia.org/wiki/Blog&#34;&gt;Wikipedia&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;A blog is a website. A blog has many &lt;em&gt;entries&lt;/em&gt; or &lt;em&gt;posts&lt;/em&gt;. To write a post
+means to update your existing blog with a new article. To create or write a new
+blog means to start a new website.&lt;/p&gt;
+&lt;p&gt;Please, don&amp;rsquo;t say that you are going write a blog when you mean you will write
+a post. That would be wrong. OK?&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -27,9 +39,23 @@
       <pubDate>Tue, 14 Dec 2010 21:00:00 -0400</pubDate>
       
       <guid>https://honza.ca/2010/12/how-money-is-made-online/</guid>
-      <description>My friends of the non-geek type often ask me how companies like Facebook can make so much money and provide their service for free at the same time. Here is a quick example of how you can make money online.
-Warning: this is a not a get rich quick scheme. I&amp;rsquo;m not going teach you how to make millions working for Google from home.
-I recently started following John Gruber&amp;rsquo;s blog Darring Fireball.</description>
+      <description>&lt;p&gt;My friends of the non-geek type often ask me how companies like Facebook can
+make so much money and provide their service for free at the same time. Here is
+a quick example of how you can make money online.&lt;/p&gt;
+&lt;p&gt;Warning: this is a not a get rich quick scheme. I&amp;rsquo;m not going teach you how to
+make millions working for Google from home.&lt;/p&gt;
+&lt;p&gt;I recently started following John Gruber&amp;rsquo;s blog &lt;a href=&#34;http://daringfireball.net/&#34;&gt;Darring Fireball&lt;/a&gt;. This
+gentleman seems to be rather influential in the hacker community. On the
+website, he says that there are more than 400,000 subscribers that frequently
+read his blog. In the world of Internet publishing, this is a great deal of
+exposure. Not very many people get this much attention.&lt;/p&gt;
+&lt;p&gt;If you browse through the site, you will soon notice that you can sponsor John
+to write more articles. You can pay him $5,000/month - in return, a small
+banner with your company&amp;rsquo;s advertising graphics will be displayed in a
+prominent place on John&amp;rsquo;s blog for that month. You will get millions of people
+every month looking at your ad for just $5,000/month.&lt;/p&gt;
+&lt;p&gt;Writing interesting articles about the web is a full-time job for John.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

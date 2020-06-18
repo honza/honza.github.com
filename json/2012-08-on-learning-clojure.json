@@ -1,0 +1,18 @@
+{
+    "reading_time": "about one minute", 
+    "month": "08", 
+    "year": "2012", 
+    "date": "August 26, 2012", 
+    "slug": "on-learning-clojure", 
+    "contents": "<div class=\"section\" id=\"on-learning-clojure\">\n<h1>On Learning&nbsp;Clojure</h1>\n<div class=\"section\" id=\"prefix-notation\">\n<h2>Prefix&nbsp;notation</h2>\n<p>I&#8217;m a big fan of the prefix notation.  It makes everything appear the same\n(if-statements, function calls , etc).  I like how it removes the need for\noperator precedence&nbsp;rules.</p>\n</div>\n<div class=\"section\" id=\"all-the-parentheses\">\n<h2>All the&nbsp;parentheses</h2>\n<p>Once you get into learning Clojure and you have written a small application,\nyou don&#8217;t really see the parens anymore.  Sure, sometimes you still get the\n<em>Unbalanced parens</em> error but those are easy to spot.  If you are afraid of\nlearning a <span class=\"caps\">LISP</span> because of this, don&#8217;t worry, you&#8217;ll be&nbsp;fine.</p>\n</div>\n<div class=\"section\" id=\"jvm\">\n<h2><span class=\"caps\">JVM</span></h2>\n<p>Let&#8217;s just say that the start-up time of the <span class=\"caps\">JVM</span> isn&#8217;t the fastest.  This makes\nClojure effectively useless for writing utility scripts.  However, the <span class=\"caps\">JVM</span> is a\nrobust platform that runs your code really fast.  With Clojure, you get all the\nbenefits of the <span class=\"caps\">JVM</span>: garbage collection, <span class=\"caps\">JIT</span>, uberjars, etc.  Using Java\nlibraries in Clojure is usually pretty straightforward if you know the basics\nof Java (but the code isn&#8217;t the prettiest).  This is great because some of the\nlower level stuff doesn&#8217;t have to be reimplemented (think <span class=\"caps\">SHA1</span> digests,\nsockets,&nbsp;etc).</p>\n</div>\n<div class=\"section\" id=\"documentation\">\n<h2>Documentation</h2>\n<p>The language itself seems to be documented pretty well.  I haven&#8217;t had any\nissues when trying to find the signature for a built-in function.  However, the\ncommunity isn&#8217;t exactly known for writing documentation.  Most of the time, you\nfind a library on Github and you are left to read the source.  If you are\nlucky, you are told what to import and a few basic examples.  Good\ndocumentation is something I take for granted coming from the Python&nbsp;world.</p>\n</div>\n<div class=\"section\" id=\"libraries\">\n<h2>Libraries</h2>\n<p>While you can certainly find a lot of good libraries for doing common things,\none area is still painful to develop for: the web.  Clojure still needs a\nDjango-like web framework that has all the batteries included.  Right now, the\nonly popular web framework is Noir and it&#8217;s more like Sinatra or Flask.\nWithout a Django-like platform, you end up reinventing all the common things\nfor every application: authentication, form validation, <span class=\"caps\">ORM</span>,&nbsp;etc.</p>\n</div>\n<div class=\"section\" id=\"conclusion\">\n<h2>Conclusion</h2>\n<p>I really like the language.  I like the functional aspects of it and the\nimmutability.  I like lazy sequences and refs.  What I don&#8217;t like is that the\ncommunity and the ecosystem is still a bit young and immature.  I find myself\nwaiting for stuff to happen before I can use this language&nbsp;more.</p>\n</div>\n</div>\n", 
+    "date_iso": "2012-08-26", 
+    "title": "On Learning Clojure", 
+    "url": "/2012/08/on-learning-clojure", 
+    "day": "26", 
+    "categories": [
+        {
+            "name": "code", 
+            "slug": "code"
+        }
+    ]
+}

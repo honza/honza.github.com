@@ -38,91 +38,64 @@
 </div>
 
 <article>
-  
-
-<p>When deploying a Django application, you often use a <code>requirements.txt</code> file
+  <p>When deploying a Django application, you often use a <code>requirements.txt</code> file
 that contains a list of the application&rsquo;s dependencies. During deployment, your
 provisioning system will <code>pip install</code> all of those to make sure that your
 application runs as desired.</p>
-
 <p>The format of a typical <code>requirements.txt</code> files isn&rsquo;t unlike the following</p>
-
-<pre><code class="language-nil">django==1.3.1
+<pre><code class="language-nil" data-lang="nil">django==1.3.1
 psycopg2==2.4.4
 Fabric==1.3.3
 ...
-</code></pre>
-
-<p>By default, <code>pip</code> will go to the <a href="http://pypi.python.org">Python Package Index</a> (PyPI) and look for
+</code></pre><p>By default, <code>pip</code> will go to the <a href="http://pypi.python.org">Python Package Index</a> (PyPI) and look for
 that package there.</p>
-
 <p>Unfortunately, PyPI has been known to be down or slow at times; and you want
 your deployments to be as smooth as possible.</p>
-
 <h2 id="what-you-can-do">What you can do</h2>
-
 <p>Instead of depending on PyPI for a production application, you can host the
 packages that your application needs yourself. It&rsquo;s actually surpringly easy to
 do. Your existing deployment strategy can easily be modified to remove the
 dependency.</p>
-
 <p>First, we will create a freeze of your requirements. This will look into your
 environment and figure out which version of which package you will need for the
 production environment.</p>
-
-<pre><code class="language-nil">$ pip freeze -r requirements.txt &gt; freeze.txt
-</code></pre>
-
-<p>Once you have the list of packages, you can tell <code>pip</code> to download all the
+<pre><code class="language-nil" data-lang="nil">$ pip freeze -r requirements.txt &gt; freeze.txt
+</code></pre><p>Once you have the list of packages, you can tell <code>pip</code> to download all the
 packages into a directory without installing them.</p>
-
-<pre><code class="language-nil">$ pip install -d pypi -r freeze.txt
-</code></pre>
-
-<p>This will download all packages from <code>freeze.txt</code> into the <code>pypi/</code>
+<pre><code class="language-nil" data-lang="nil">$ pip install -d pypi -r freeze.txt
+</code></pre><p>This will download all packages from <code>freeze.txt</code> into the <code>pypi/</code>
 directory.</p>
-
 <p>The next step is to upload all these packages to a publicly accessible server
 that can serve static files. This can anything from S3, Cloudfiles or even
 Github pages. I like to place all of these packages into a <code>packages/</code>
 directory. You will also need a simple index file to go with your packages. All
 the index file needs to is provide a list of HTML links to those packages. The
 index will be used by <code>pip</code> to locate the package source distribution.</p>
-
 <p>I have put together a simple Fabric task that will read the contents of the
 <code>pypi/</code> directory and create this index file for you.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">make_index</span>():
+    result <span style="color:#f92672">=</span> local(<span style="color:#e6db74">&#39;ls pypi&#39;</span>, capture<span style="color:#f92672">=</span>True)
+    packages <span style="color:#f92672">=</span> result<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>)
 
-<pre><code class="language-python">def make_index():
-    result = local('ls pypi', capture=True)
-    packages = result.split('\n')
+    html <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&lt;/body&gt;&lt;/html&gt;&#34;</span>
 
-    html = &quot;&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;%s&lt;/body&gt;&lt;/html&gt;&quot;
+    links <span style="color:#f92672">=</span> []
 
-    links = []
+    <span style="color:#66d9ef">for</span> package <span style="color:#f92672">in</span> packages:
+        link <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;a href=&#34;packages/</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;&gt;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&lt;/a&gt;&#39;</span> <span style="color:#f92672">%</span> (package, package)
+        links<span style="color:#f92672">.</span>append(link)
 
-    for package in packages:
-        link = '&lt;a href=&quot;packages/%s&quot;&gt;%s&lt;/a&gt;' % (package, package)
-        links.append(link)
+    links <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>join(links)
 
-    links = '\n'.join(links)
-
-    f = open('index.html', 'w')
-    f.write(html % links)
-    f.close()
-</code></pre>
-
-<p>Upload the index file to your server and you&rsquo;re ready to deploy. Instead of the
+    f <span style="color:#f92672">=</span> open(<span style="color:#e6db74">&#39;index.html&#39;</span>, <span style="color:#e6db74">&#39;w&#39;</span>)
+    f<span style="color:#f92672">.</span>write(html <span style="color:#f92672">%</span> links)
+    f<span style="color:#f92672">.</span>close()
+</code></pre></div><p>Upload the index file to your server and you&rsquo;re ready to deploy. Instead of the
 usual:</p>
-
-<pre><code class="language-nil">$ pip install -r requirements.txt
-</code></pre>
-
-<p>You will run this:</p>
-
-<pre><code class="language-nil">$ pip install -r freeze.txt -f http://yourPypiHost.com/index.html --no-index
-</code></pre>
-
-<p>This will completely ignore PyPI and only use your index when locating
+<pre><code class="language-nil" data-lang="nil">$ pip install -r requirements.txt
+</code></pre><p>You will run this:</p>
+<pre><code class="language-nil" data-lang="nil">$ pip install -r freeze.txt -f http://yourPypiHost.com/index.html --no-index
+</code></pre><p>This will completely ignore PyPI and only use your index when locating
 packages. This way your deploys will be faster and more reliable.</p>
 
 </article>

@@ -1,0 +1,38 @@
+{
+    "reading_time": "under one minute", 
+    "month": "02", 
+    "year": "2015", 
+    "date": "February 18, 2015", 
+    "slug": "programming-languages-in-a-nutshell", 
+    "contents": "<div class=\"section\" id=\"programming-languages-in-a-nutshell\">\n<h1>Programming languages in a&nbsp;nutshell</h1>\n<div class=\"section\" id=\"python-ruby\">\n<h2>Python,&nbsp;Ruby</h2>\n<ul class=\"simple\">\n<li>concurrency&nbsp;lol</li>\n<li>packaging&nbsp;lol</li>\n</ul>\n</div>\n<div class=\"section\" id=\"golang\">\n<h2>Golang</h2>\n<ul class=\"simple\">\n<li>lol if you don&#8217;t like typing <tt class=\"docutils literal\">err :=</tt></li>\n<li>y u no&nbsp;generics</li>\n<li>lol&nbsp;imports</li>\n</ul>\n</div>\n<div class=\"section\" id=\"haskell\">\n<h2>Haskell</h2>\n<ul class=\"simple\">\n<li>need&nbsp;PhD</li>\n<li>will never be&nbsp;mainstream</li>\n</ul>\n</div>\n<div class=\"section\" id=\"idris\">\n<h2>Idris</h2>\n<ul class=\"simple\">\n<li>only for concating&nbsp;lists</li>\n</ul>\n</div>\n<div class=\"section\" id=\"erlang\">\n<h2>Erlang</h2>\n<ul class=\"simple\">\n<li>lol&nbsp;syntax</li>\n</ul>\n</div>\n<div class=\"section\" id=\"javascript\">\n<h2>Javascript</h2>\n<ul class=\"simple\">\n<li>javascript</li>\n</ul>\n</div>\n<div class=\"section\" id=\"rust\">\n<h2>Rust</h2>\n<ul class=\"simple\">\n<li>how do I do x this&nbsp;week?</li>\n</ul>\n</div>\n<div class=\"section\" id=\"clojure\">\n<h2>Clojure</h2>\n<ul class=\"simple\">\n<li>let me know when the program has started&nbsp;running</li>\n<li>lol if you want to build a secure thing on the&nbsp;web</li>\n</ul>\n</div>\n<div class=\"section\" id=\"scala\">\n<h2>Scala</h2>\n<ul class=\"simple\">\n<li>lol if you think this actually improves&nbsp;java</li>\n</ul>\n</div>\n<div class=\"section\" id=\"php\">\n<h2><span class=\"caps\">PHP</span></h2>\n<ul class=\"simple\">\n<li>which of these 10 fns should I&nbsp;use?</li>\n</ul>\n</div>\n<div class=\"section\" id=\"ocaml\">\n<h2>OCaml</h2>\n<ul class=\"simple\">\n<li>haskell without the&nbsp;awesome</li>\n</ul>\n</div>\n<div class=\"section\" id=\"prolog\">\n<h2>Prolog</h2>\n<ul class=\"simple\">\n<li>mucho&nbsp;problemo</li>\n</ul>\n</div>\n</div>\n", 
+    "date_iso": "2015-02-18", 
+    "title": "Programming languages in a nutshell", 
+    "url": "/2015/02/programming-languages-in-a-nutshell", 
+    "day": "18", 
+    "categories": [
+        {
+            "name": "programming", 
+            "slug": "programming"
+        }, 
+        {
+            "name": "haskell", 
+            "slug": "haskell"
+        }, 
+        {
+            "name": "clojure", 
+            "slug": "clojure"
+        }, 
+        {
+            "name": "code", 
+            "slug": "code"
+        }, 
+        {
+            "name": "python", 
+            "slug": "python"
+        }, 
+        {
+            "name": "javascript", 
+            "slug": "javascript"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "reading_time": "under one minute", 
+    "month": "10", 
+    "year": "2012", 
+    "date": "October 30, 2012", 
+    "slug": "mutt-sidebar-labels", 
+    "contents": "<div class=\"section\" id=\"mutt-sidebar-labels\">\n<h1>Mutt sidebar&nbsp;labels</h1>\n<p>The sidebar in Mutt is useful if you have multiple email accounts and want to\nswitch between them quickly.  It shows you each inbox with a number of unread\nemails.  I have 6 Gmail accounts plugged into my Mutt and here is what I used\nto&nbsp;see.</p>\n<pre class=\"literal-block\">\nINBOX (1)\nINBOX\nINBOX (2)\nINBOX (1)\nINBOX (7)\nINBOX\n</pre>\n<p>And I had to remember which one was which.  Let&#8217;s say you have your mailboxes\nin <tt class=\"docutils literal\"><span class=\"pre\">~/.mail</span></tt>.</p>\n<pre class=\"literal-block\">\n$ ls ~/.mail\nwork home\n</pre>\n<p>Create a directory called <tt class=\"docutils literal\">aliases</tt> and symlink the inboxes to that&nbsp;directory:</p>\n<pre class=\"literal-block\">\n$ ln -s ~/.mail/work/INBOX ~/.mail/alias/work\n$ ln -s ~/.mail/home/INBOX ~/.mail/alias/home\n</pre>\n<p>Then, point your Mutt sidebar config at those.  When you open Mutt the next\ntime, it should look like&nbsp;this</p>\n<pre class=\"literal-block\">\nwork (1)\nhome (8)\n</pre>\n<p>That&#8217;s much more useful than just a list of <tt class=\"docutils literal\"><span class=\"caps\">INBOX</span></tt> things.</p>\n</div>\n", 
+    "date_iso": "2012-10-30", 
+    "title": "Mutt sidebar labels", 
+    "url": "/2012/10/mutt-sidebar-labels", 
+    "day": "30", 
+    "categories": [
+        {
+            "name": "mutt", 
+            "slug": "mutt"
+        }
+    ]
+}

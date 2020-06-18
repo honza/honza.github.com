@@ -38,92 +38,62 @@
 </div>
 
 <article>
-  
-
-<p>This year at <a href="http://djangocon.us">DjangoCon</a>, it seemed like everybody was talking about automatic
+  <p>This year at <a href="http://djangocon.us">DjangoCon</a>, it seemed like everybody was talking about automatic
 deployments and namely <a href="http://www.opscode.com/chef/">Chef</a>. After coming home from the conference, I spent
 a considerable amount of time learning chef and thinking about how it can be
 best used with small to medium size Django apps. In this post, I will walk you
 through how Chef works and how it can help you make awesome web apps.</p>
-
 <p>When I say small apps, I mean single-server deployments. This means that your
 web server, your database, memcached, rabbitmq, etc is installed on a single
 Ubuntu VM. When learning Chef, I found that most of the available tutorials
 focus on multi-server setups and are too complex for ordinary apps.</p>
-
 <p>Unfortunately, Chef is written in Ruby and it can be a little tricky to debug
 since all the tracebacks are meaningless to a Python developer. However, don&rsquo;t
 despair, you can usually tell pretty quickly what&rsquo;s going on. To test your
 deployment, we will be using <a href="http://vagrantup.com">Vagrant</a> which is an awesome tool for running
 virtual machines on your development machine.</p>
-
 <h2 id="what-we-will-install">What we will install</h2>
-
 <p>Our Django application will be deployed using the following:</p>
-
 <h3 id="nginx">nginx</h3>
-
 <h3 id="gunicorn">gunicorn</h3>
-
 <h3 id="postgresql">postgresql</h3>
-
 <h3 id="memcached">memcached</h3>
-
 <h3 id="rabbitmq">rabbitmq</h3>
-
 <h3 id="git">git</h3>
-
 <p>Your development machine will need to have <a href="http://docs.fabfile.org/en/1.2.2/index.html">Fabric</a> installed.</p>
-
 <h2 id="how-chef-works">How Chef works</h2>
-
 <p>Chef is a tool that is installed on your server. You give it a bunch
 configuration files and tell it to provision server with the necessary packages
 and settings. This means that our automatic deployment will have to parts: Chef
 configuration files for the sever, and several Fabric tasks to install Chef
 remotely and start the provisioning process.</p>
-
 <p>So, to configure Chef, we will create a <em>deploy</em> directory inside our project&rsquo;s
 repository. I like to keep the following structure:</p>
-
-<pre><code class="language-console">$ ls -a
+<pre><code class="language-console" data-lang="console">$ ls -a
 .git coolapp docs deploy README.md Vagrantfile fabfile.py
-</code></pre>
-
-<p>&hellip; where <em>coolapp</em> is your Django project. We will focus on the <em>deploy</em>
+</code></pre><p>&hellip; where <em>coolapp</em> is your Django project. We will focus on the <em>deploy</em>
 directory and the <em>fabfile</em>. Chef is a cook how prepares your server for
 dinner. So, Chef needs some cookbooks and recipes. Each cookbook is a directory
 that contains various configuration files for a specific application that you
 want installed. So for example, you will have a <em>PostgreSQL cookbook</em> and a
-<em>nginx cookbook</em>. The  deploy directory will contain a directory called
+<em>nginx cookbook</em>. The deploy directory will contain a directory called
 <em>cookbooks</em> which will contain all other cookbooks. Now, the good news is that
 you don&rsquo;t have to make the cookbooks yourself. <a href="http://www.opscode.com">Opscode</a>, the company behind
 Chef, maintains a large selection of cookbooks on <a href="https://github.com/opscode/cookbooks">Github</a>. You can copy and
 paste the cookbooks you need for you project. We will need the following:</p>
-
 <h3 id="build-essential--for-building-from-source">build-essential (for building from source)</h3>
-
 <h3 id="erlang--rabbitmq-depends-on-this">erlang (rabbitmq depends on this)</h3>
-
-<h3 id="git-1">git</h3>
-
-<h3 id="memcached-1">memcached</h3>
-
-<h3 id="nginx-1">nginx</h3>
-
-<h3 id="postgresql-1">postgresql</h3>
-
+<h3 id="git">git</h3>
+<h3 id="memcached">memcached</h3>
+<h3 id="nginx">nginx</h3>
+<h3 id="postgresql">postgresql</h3>
 <h3 id="python--for-virtualenv-and-python-header-files">python (for virtualenv and python header files)</h3>
-
-<h3 id="rabbitmq-1">rabbitmq</h3>
-
+<h3 id="rabbitmq">rabbitmq</h3>
 <h2 id="cookbooks">Cookbooks</h2>
-
 <p>Each cookbook contains a <em>recipes</em> directory. Each recipe tells Chef how this
 particular application is to be installed and configured. For example, it will
 tell nginx to create an entry in <em>sites-available</em> and <em>sites-enabled</em>. Or, it
 will restart PostreSQL when it&rsquo;s done being installed.</p>
-
 <p>There is also a <em>files</em> directory and a <em>templates</em> directory. Templates are
 Ruby templates which define a particular configuration file. For example, in
 order for Chef to be able to properly configure nginx with the proper server
@@ -132,94 +102,64 @@ this later, but there is a master file which has all your settings in it and
 Chef reads from that and substitutes the necessary values. The <em>files</em>
 directory contains files that need no further modification and can be copied
 over verbatim.</p>
-
 <h2 id="node-dot-json">node.json</h2>
-
 <p>The <em>node.json</em> file is a per project file that specifies certain values for
 Chef to use. For example, you can tell Chef what you want your PostgreSQL
 database to be called, what the name of your django project is, etc. It has a
 simple JSON syntax.</p>
-
 <h2 id="your-app-s-recipe">Your app&rsquo;s recipe</h2>
-
 <p>Your application is going to need a simple recipe. This means creating a
 cookbook bearing your project&rsquo;s name and creating a <em>recipes</em> directory within
 in. The recipe should be called <em>default.rb</em> and all it needs to include is a
 list of applications to install. For example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e"># Example django app cookbook</span>
 
-<pre><code class="language-ruby"># Example django app cookbook
+execute <span style="color:#e6db74">&#34;Update apt repos&#34;</span> <span style="color:#66d9ef">do</span>
+    command <span style="color:#e6db74">&#34;apt-get update&#34;</span>
+<span style="color:#66d9ef">end</span>
 
-execute &quot;Update apt repos&quot; do
-    command &quot;apt-get update&quot;
-end
+include_recipe <span style="color:#e6db74">&#39;nginx&#39;</span>
+include_recipe <span style="color:#e6db74">&#39;build-essential&#39;</span>
+include_recipe <span style="color:#e6db74">&#39;python&#39;</span>
+include_recipe <span style="color:#e6db74">&#39;postgresql::server&#39;</span>
+include_recipe <span style="color:#e6db74">&#39;memcached&#39;</span>
+include_recipe <span style="color:#e6db74">&#39;runit&#39;</span>
+include_recipe <span style="color:#e6db74">&#39;git&#39;</span>
 
-include_recipe 'nginx'
-include_recipe 'build-essential'
-include_recipe 'python'
-include_recipe 'postgresql::server'
-include_recipe 'memcached'
-include_recipe 'runit'
-include_recipe 'git'
+execute <span style="color:#e6db74">&#34;restart postgres&#34;</span> <span style="color:#66d9ef">do</span>
+    command <span style="color:#e6db74">&#34;sudo /etc/init.d/postgresql-8.4 restart&#34;</span>
+<span style="color:#66d9ef">end</span>
 
-execute &quot;restart postgres&quot; do
-    command &quot;sudo /etc/init.d/postgresql-8.4 restart&quot;
-end
-
-execute &quot;create-database&quot; do
-    command &quot;createdb -U postgres -O postgres #{node[:dbname]}&quot;
-end
-</code></pre>
-
-<p>You can see it&rsquo;s pretty simple. We update Ubuntu&rsquo;s repositories, include some
+execute <span style="color:#e6db74">&#34;create-database&#34;</span> <span style="color:#66d9ef">do</span>
+    command <span style="color:#e6db74">&#34;createdb -U postgres -O postgres </span><span style="color:#e6db74">#{</span>node<span style="color:#f92672">[</span><span style="color:#e6db74">:dbname</span><span style="color:#f92672">]</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></div><p>You can see it&rsquo;s pretty simple. We update Ubuntu&rsquo;s repositories, include some
 recipes, restart PostgreSQL and create a new database.</p>
-
 <h2 id="start-the-engines">Start the engines</h2>
-
 <p>At this point, you can try out your configuration with Vagrant. To help you
 out, I have create a <a href="https://github.com/honza/django-chef">template</a> project on Github that you can download and
 use out of the box.</p>
-
 <p>The next big part is writing the Fabric scripts. You will want the following
 tasks:</p>
-
 <h3 id="install-chef">Install Chef</h3>
-
 <h3 id="transfer-the-cookbooks-directory-to-the-server">Transfer the cookbooks directory to the server</h3>
-
-<h3 id="dl-class-docutils"><dl class="docutils"></h3>
-
-<p><dt>Bootstrap the Django project</dt>
-<dd>*** Moving code to the server</p>
-
+<h3 id="dl-class-docutils"><!-- raw HTML omitted --></h3>
+<!-- raw HTML omitted -->
 <h3 id="creating-a-virtualenv">Creating a virtualenv</h3>
-
 <h3 id="installing-requirements">Installing requirements</h3>
-
 <h3 id="syncing-the-database">Syncing the database</h3>
-
 <h3 id="running-migrations">Running migrations</h3>
-
 <h3 id="starting-gunicorn">Starting gunicorn</h3>
-
-<p></dd>
-</dl></p>
-
+<!-- raw HTML omitted -->
 <h3 id="deploy">Deploy</h3>
-
 <p>You can see how I implemented mine <a href="https://github.com/honza/django-chef/blob/master/fabfile.py">here</a>. I recommend that you use Fabric&rsquo;s
 <em>roledefs</em> which will allow you to specify vagrant as the host:</p>
-
-<pre><code class="language-console">$ fab -R vagrant bootstrap
-</code></pre>
-
-<h2 id="the-real-thing">The real thing</h2>
-
+<pre><code class="language-console" data-lang="console">$ fab -R vagrant bootstrap
+</code></pre><h2 id="the-real-thing">The real thing</h2>
 <p>Once you&rsquo;ve tested your application in Vagrant so you are ready to deploy to a
 server. All that&rsquo;s left to do is create a new <em>roledef</em> in the <em>fabfile</em> and
 run it!</p>
-
 <h2 id="conclusion">Conclusion</h2>
-
 <p>I am by no means a Chef expert&mdash;I learned how to use it a few days ago. If you
 have any feedback, do let me know.</p>
 

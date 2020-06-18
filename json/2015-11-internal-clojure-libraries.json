@@ -1,0 +1,18 @@
+{
+    "reading_time": "about one minute", 
+    "month": "11", 
+    "year": "2015", 
+    "date": "November 06, 2015", 
+    "slug": "internal-clojure-libraries", 
+    "contents": "<div class=\"section\" id=\"internal-clojure-libraries\">\n<h1>Internal Clojure&nbsp;libraries</h1>\n<p>At work, we have a few Clojure services in production.  Each service is its own\nleiningen project with its own dependencies.  And because setting up a local\nmaven repository is hard, each project reimplements quite a bit of logic.  This\nduplicate code usually relates to the non-essential but still important parts\nof a service: logging, metrics, sentry integration,&nbsp;etc.</p>\n<p>Just the other day, I was getting really annoyed with this situation, and was\nabout ready to go learn about the wonderful intricacies of Maven, when I\ndiscovered leiningen&#8217;s <tt class=\"docutils literal\">install</tt> command.</p>\n<p>With <tt class=\"docutils literal\">lein install</tt>, you can install your library as a jar and a pom to the\nlocal repository.  Here, local repository means a local repository, typically\nin <tt class=\"docutils literal\"><span class=\"pre\">~/.m2</span></tt>.  Your apps can then depend on this library via the normal\n<tt class=\"docutils literal\">:dependencies</tt> list in the project file.  This is all completely seamless\nand works&nbsp;well.</p>\n<p>Apparently, this command has been around for a long&nbsp;time.</p>\n<p>Armed with this new information, I was able to create an internal project\ncalled <em>metrics</em> and remove a ton of duplication.  <tt class=\"docutils literal\">lein install</tt> also allows\nmultiple versions of the same library to be installed at once.  Simply require\nwhatever version you need in your apps&#8217; <tt class=\"docutils literal\">project.clj</tt> file.</p>\n<p>This makes developing Clojure projects without having to publish your libraries\nto Clojars a lot&nbsp;easier.</p>\n</div>\n", 
+    "date_iso": "2015-11-06", 
+    "title": "Internal Clojure libraries", 
+    "url": "/2015/11/internal-clojure-libraries", 
+    "day": "06", 
+    "categories": [
+        {
+            "name": "clojure", 
+            "slug": "clojure"
+        }
+    ]
+}

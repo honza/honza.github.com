@@ -38,56 +38,38 @@
 </div>
 
 <article>
-  
-
-<p>The amazing Django <a href="https://docs.djangoproject.com/en/1.3/howto/deployment/modwsgi/">documentation</a> recommends that you use Apache and modwsgi
+  <p>The amazing Django <a href="https://docs.djangoproject.com/en/1.3/howto/deployment/modwsgi/">documentation</a> recommends that you use Apache and modwsgi
 to deploy your webapp. While this is certainly not bad advice, you may not want
 to use Apache after all. Apache is a beast that eats up a lot of memory, is
 kind of slow and can&rsquo;t handle as much traffic. As a fun alternative, I would
 like to talk about deploying Django on nginx using the <a href="http://gunicorn.org/">gunicorn</a> web server.</p>
-
 <p>Just a quick note before we start: this isn&rsquo;t an out-there deployment option. I
 spoke to one of the gunicorn developers and was told that every django hosting
 company (think ep.io) uses this setup.</p>
-
 <h2 id="get-your-server-ready">Get your server ready</h2>
-
 <p>I use Rackspace for small, single server web apps. I created an Ubuntu 10.10
 instance with 256MB of RAM. Then, I created a user for my app and added my ssh
 key to <code>authorized_keys</code>. Basic stuff.</p>
-
 <h2 id="install-nginx">Install nginx</h2>
-
 <p>Installing nginx couldn&rsquo;t be simpler. Latest stable release is provided via a
 ppa repository.</p>
-
-<pre><code class="language-console">$ sudo apt-get install python-software-properties -y
+<pre><code class="language-console" data-lang="console">$ sudo apt-get install python-software-properties -y
 $ sudo -s
 $ apt-add-repository ppa:nginx/stable
 $ apt-get update
 $ apt-get install nginx
 $ exit
-</code></pre>
-
-<h2 id="project-structure">Project structure</h2>
-
+</code></pre><h2 id="project-structure">Project structure</h2>
 <p>The user under which the app will run is <code>webapp</code>, so I checkout my app in
 <code>/home/webapp</code>.</p>
-
-<pre><code class="language-console">/home/webapp/app
+<pre><code class="language-console" data-lang="console">/home/webapp/app
 /home/webapp/app/static
 /home/webapp/env
-</code></pre>
-
-<p>Note that I&rsquo;m using <code>virtualenv</code> to deploy this app.</p>
-
+</code></pre><p>Note that I&rsquo;m using <code>virtualenv</code> to deploy this app.</p>
 <h2 id="configure-nginx-and-gunicorn">Configure nginx and gunicorn</h2>
-
 <p>The following two files can be distributed with your project.</p>
-
 <p>nginx.conf:</p>
-
-<pre><code class="language-console">server {
+<pre><code class="language-console" data-lang="console">server {
     listen 80;
     server_name webapp.org;
 
@@ -102,53 +84,28 @@ $ exit
         proxy_pass http://127.0.0.1:8888;
     }
 }
-</code></pre>
-
-<p>Next, I symlinked <code>nginx.conf</code> to the server&rsquo;s <code>sites-enabled</code> directory.</p>
-
-<pre><code class="language-console">$ sudo ln -s /home/webapp/app/nginx.conf /etc/nginx/sites-enable/webapp.org
-</code></pre>
-
-<p>This sets up nginx to directly serve the applications&rsquo;s static files (css, js,
+</code></pre><p>Next, I symlinked <code>nginx.conf</code> to the server&rsquo;s <code>sites-enabled</code> directory.</p>
+<pre><code class="language-console" data-lang="console">$ sudo ln -s /home/webapp/app/nginx.conf /etc/nginx/sites-enable/webapp.org
+</code></pre><p>This sets up nginx to directly serve the applications&rsquo;s static files (css, js,
 etc.). Everything else is proxied to the gunicorn server.</p>
-
 <p>Now gunicorn is a Python HTTP server. It&rsquo;s super simple and effective. I
 installed it into the app&rsquo;s environment.</p>
-
-<pre><code class="language-console">$ (env) pip install gunicorn
-</code></pre>
-
-<p>gunicorn.conf.py:</p>
-
-<pre><code class="language-python">bind = &quot;127.0.0.1:8888&quot;
-logfile = &quot;/home/webapp/gunicorn.log&quot;
-workers = 3
-</code></pre>
-
-<p>That&rsquo;s it! The config files are simple and easy to read.</p>
-
+<pre><code class="language-console" data-lang="console">$ (env) pip install gunicorn
+</code></pre><p>gunicorn.conf.py:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">bind <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;127.0.0.1:8888&#34;</span>
+logfile <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/home/webapp/gunicorn.log&#34;</span>
+workers <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+</code></pre></div><p>That&rsquo;s it! The config files are simple and easy to read.</p>
 <h2 id="running">Running</h2>
-
 <p>I then collected all the static files into the <code>static</code> directory:</p>
-
-<pre><code class="language-console">$ (env) python manage.py collectstatic
-</code></pre>
-
-<p>I restarted  nginx:</p>
-
-<pre><code class="language-console">$ sudo /etc/init.d/nginx restart
-</code></pre>
-
-<p>And finally, I ran the <code>gunicorn</code> server:</p>
-
-<pre><code class="language-console">$ (env) cd /home/webapp/app
+<pre><code class="language-console" data-lang="console">$ (env) python manage.py collectstatic
+</code></pre><p>I restarted nginx:</p>
+<pre><code class="language-console" data-lang="console">$ sudo /etc/init.d/nginx restart
+</code></pre><p>And finally, I ran the <code>gunicorn</code> server:</p>
+<pre><code class="language-console" data-lang="console">$ (env) cd /home/webapp/app
 $ (env) gunicorn_django -D -c gunicorn.conf.py
-</code></pre>
-
-<p>And I was good to go.</p>
-
+</code></pre><p>And I was good to go.</p>
 <h2 id="notes">Notes</h2>
-
 <p>You may have to change the permissions on the <code>static</code> directory. Also, the
 command above starts <code>gunicorn</code> as a deamon - a better way would be to use a
 monitoring service to start it. Think <code>runit</code> or <code>supervisord</code>. Also, I

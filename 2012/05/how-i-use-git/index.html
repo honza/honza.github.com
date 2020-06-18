@@ -38,164 +38,88 @@
 </div>
 
 <article>
-  
-
-<p>Recently, I have noticed that there are quite a few wrappers around git to give
-you a nicer interface to work with.  The new commands promise to be easy to
-remember and make your life less frustrating.  I find these a little silly
-because git on its own is a great tool.  Here I&rsquo;m going to describe how I use
+  <p>Recently, I have noticed that there are quite a few wrappers around git to give
+you a nicer interface to work with. The new commands promise to be easy to
+remember and make your life less frustrating. I find these a little silly
+because git on its own is a great tool. Here I&rsquo;m going to describe how I use
 git to convince you (and myself) that it&rsquo;s not that hard.</p>
-
 <h2 id="cloning">Cloning</h2>
-
 <p>This couldn&rsquo;t be any simpler:</p>
-
-<pre><code class="language-nil">git clone git://github.com/honza/dotfiles.git
-</code></pre>
-
-<h2 id="committing">Committing</h2>
-
-<p>Once I have cloned a repo, I start to make changes.  To see what files I have
+<pre><code class="language-nil" data-lang="nil">git clone git://github.com/honza/dotfiles.git
+</code></pre><h2 id="committing">Committing</h2>
+<p>Once I have cloned a repo, I start to make changes. To see what files I have
 changed, I run</p>
-
-<pre><code class="language-nil">git status
-</code></pre>
-
-<p>Or to see what actual changes I made</p>
-
-<pre><code class="language-nil">git diff
-</code></pre>
-
-<p>Then, when I&rsquo;m ready to commit, I stage the files.  The index is one of my
-favorite features of git.  It lets me decide what changes I want to commit.
-Maybe I correct something as I work on something else.  Those things aren&rsquo;t
-related so they shouldn&rsquo;t go into the same commit.  I grew up on Mercurial and
+<pre><code class="language-nil" data-lang="nil">git status
+</code></pre><p>Or to see what actual changes I made</p>
+<pre><code class="language-nil" data-lang="nil">git diff
+</code></pre><p>Then, when I&rsquo;m ready to commit, I stage the files. The index is one of my
+favorite features of git. It lets me decide what changes I want to commit.
+Maybe I correct something as I work on something else. Those things aren&rsquo;t
+related so they shouldn&rsquo;t go into the same commit. I grew up on Mercurial and
 not having the index in Mercurial now really bothers me.</p>
-
 <p>To stage all changed files, I do</p>
-
-<pre><code class="language-nil">git add -u
-</code></pre>
-
-<p>If I decide that the changes I made are stupid and I want to get rid of them, I
+<pre><code class="language-nil" data-lang="nil">git add -u
+</code></pre><p>If I decide that the changes I made are stupid and I want to get rid of them, I
 do</p>
-
-<pre><code class="language-nil">git checkout .
-</code></pre>
-
-<p>To make sure all staged changes are the right ones</p>
-
-<pre><code class="language-nil">git diff --cached
-</code></pre>
-
-<h2 id="stashing">Stashing</h2>
-
-<p>I often stash my code.  Sometimes you need to look at some code in a different
+<pre><code class="language-nil" data-lang="nil">git checkout .
+</code></pre><p>To make sure all staged changes are the right ones</p>
+<pre><code class="language-nil" data-lang="nil">git diff --cached
+</code></pre><h2 id="stashing">Stashing</h2>
+<p>I often stash my code. Sometimes you need to look at some code in a different
 branch, sometimes I notice something is broken and I want to see if I broke it
 or not.</p>
-
-<pre><code class="language-nil">git stash
-</code></pre>
-
-<p>will stash your changes.  To get it back I do</p>
-
-<pre><code class="language-nil">git stash pop
-</code></pre>
-
-<p>And also, often I will see what I had stashed</p>
-
-<pre><code class="language-nil">git stash list
-</code></pre>
-
-<h2 id="branches">Branches</h2>
-
+<pre><code class="language-nil" data-lang="nil">git stash
+</code></pre><p>will stash your changes. To get it back I do</p>
+<pre><code class="language-nil" data-lang="nil">git stash pop
+</code></pre><p>And also, often I will see what I had stashed</p>
+<pre><code class="language-nil" data-lang="nil">git stash list
+</code></pre><h2 id="branches">Branches</h2>
 <p>Creating new branches is simple and cheap</p>
-
-<pre><code class="language-nil">git checkout -b new_branch
-</code></pre>
-
-<p>Delete a branch</p>
-
-<pre><code class="language-nil">git branch -d branch_name
-</code></pre>
-
-<p>Or delete a branch on a remote server</p>
-
-<pre><code class="language-nil">git push origin :branch_name
-</code></pre>
-
-<h2 id="rebasing">Rebasing</h2>
-
+<pre><code class="language-nil" data-lang="nil">git checkout -b new_branch
+</code></pre><p>Delete a branch</p>
+<pre><code class="language-nil" data-lang="nil">git branch -d branch_name
+</code></pre><p>Or delete a branch on a remote server</p>
+<pre><code class="language-nil" data-lang="nil">git push origin :branch_name
+</code></pre><h2 id="rebasing">Rebasing</h2>
 <p>I have <a href="http://honza.ca/2011/05/the-importance-of-git-rebase">written</a> on
-rebasing before.  It makes your history much nicer.  Any time I pull code from
+rebasing before. It makes your history much nicer. Any time I pull code from
 a remote repository, I do</p>
-
-<pre><code class="language-nil">git pull --rebase
-</code></pre>
-
-<p>Or, if it&rsquo;s a specific branch</p>
-
-<pre><code class="language-nil">git pull --rebase origin dev
-</code></pre>
-
-<h2 id="bisecting">Bisecting</h2>
-
-<p>I <em>love</em> the bisect commnad in git.  You can use it to determine which commit
-introduced a bug.  This is especially useful if you have a comprehensive test
-suite.  For example, the latest commit is broken and you remember that all
-tests where passing in version 1.2.  This example uses Django.</p>
-
-<pre><code class="language-nil">git bisect start HEAD v1.2 --      # HEAD is bad, v1.2 is good
+<pre><code class="language-nil" data-lang="nil">git pull --rebase
+</code></pre><p>Or, if it&rsquo;s a specific branch</p>
+<pre><code class="language-nil" data-lang="nil">git pull --rebase origin dev
+</code></pre><h2 id="bisecting">Bisecting</h2>
+<p>I <em>love</em> the bisect commnad in git. You can use it to determine which commit
+introduced a bug. This is especially useful if you have a comprehensive test
+suite. For example, the latest commit is broken and you remember that all
+tests where passing in version 1.2. This example uses Django.</p>
+<pre><code class="language-nil" data-lang="nil">git bisect start HEAD v1.2 --      # HEAD is bad, v1.2 is good
 git bisect run python manage.py test
-</code></pre>
-
-<p>Git will then keep running your tests until it finds the first commit that&rsquo;s
+</code></pre><p>Git will then keep running your tests until it finds the first commit that&rsquo;s
 broken.</p>
-
 <h2 id="merging">Merging</h2>
-
 <p>When a feature branch is finished, I merge it into master with</p>
-
-<pre><code class="language-nil">git checkout master
+<pre><code class="language-nil" data-lang="nil">git checkout master
 git merge --no-ff feature
-</code></pre>
-
-<h2 id="viewing-history">Viewing history</h2>
-
+</code></pre><h2 id="viewing-history">Viewing history</h2>
 <p>For viewing history, I really like the following command</p>
-
-<pre><code class="language-nil">git log --pretty=format:&quot;%h - %an, %ar : %s&quot;'
-</code></pre>
-
-<p>This gives you the commit SHA, then the author&rsquo;s name, how long ago it was made
-and a brief, one-line summary of the changes.  I have it aliased as <code>gitl</code>.
+<pre><code class="language-nil" data-lang="nil">git log --pretty=format:&quot;%h - %an, %ar : %s&quot;'
+</code></pre><p>This gives you the commit SHA, then the author&rsquo;s name, how long ago it was made
+and a brief, one-line summary of the changes. I have it aliased as <code>gitl</code>.
 I also use a simple graph to see the relationships between branches</p>
-
-<pre><code class="language-nil">git log --oneline --graph
-</code></pre>
-
-<h2 id="upgrading-all-submodules-in-a-project">Upgrading all submodules in a project</h2>
-
-<p>This one is great, too.  I use it to upgrade all of my vim plugins.</p>
-
-<pre><code class="language-nil">git submodule foreach git pull
-</code></pre>
-
-<h2 id="pulling-and-pushing">Pulling and pushing</h2>
-
+<pre><code class="language-nil" data-lang="nil">git log --oneline --graph
+</code></pre><h2 id="upgrading-all-submodules-in-a-project">Upgrading all submodules in a project</h2>
+<p>This one is great, too. I use it to upgrade all of my vim plugins.</p>
+<pre><code class="language-nil" data-lang="nil">git submodule foreach git pull
+</code></pre><h2 id="pulling-and-pushing">Pulling and pushing</h2>
 <p>This is pretty straight forward</p>
-
-<pre><code class="language-nil">git pull
+<pre><code class="language-nil" data-lang="nil">git pull
 git pull origin dev
 
 git push
 git push origin dev
-</code></pre>
-
-<h2 id="conclusion">Conclusion</h2>
-
+</code></pre><h2 id="conclusion">Conclusion</h2>
 <p>Once you learn what git calls what, it&rsquo;s pretty easy to just google the thing
-you&rsquo;re trying to do.  I&rsquo;m definitely not an expert but this gets me by.</p>
+you&rsquo;re trying to do. I&rsquo;m definitely not an expert but this gets me by.</p>
 
 </article>
 

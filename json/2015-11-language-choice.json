@@ -1,0 +1,34 @@
+{
+    "reading_time": "2 minutes", 
+    "month": "11", 
+    "year": "2015", 
+    "date": "November 02, 2015", 
+    "slug": "language-choice", 
+    "contents": "<div class=\"section\" id=\"language-choice\">\n<h1>Language&nbsp;choice</h1>\n<p><em>Warning: this is a&nbsp;rant</em></p>\n<p>Recently, I have made great progress in my journey towards Haskell\nenlightenment.  I finally see how many of the little pieces of the Haskell\npuzzle fit together.  At this point, I feel empowered to go forth and write\nuseful programs.  I <a class=\"reference external\" href=\"https://twitter.com/_honza/status/660421406698508288\">read</a> through the source of <a class=\"reference external\" href=\"https://github.com/scotty-web/scotty\">Scotty</a> the web framework\nthe other day, and I was very pleasantly surprised that I understood how it\nworks.  I absolutely <em>love</em> Haskell.  I love that it makes you think.  One does\nnot simply open a text editor and start banging at the keyboard to write a\nHaskell program.  I love that Haskell encourages generalizations and\nabstractions.  One of the biggest heureka moments in my journey was\nunderstanding the full implications of why a function of type <tt class=\"docutils literal\">a <span class=\"pre\">-&gt;</span> a</tt> has a\nsingle implementation.  I&#8217;m addicted to running my program for the first time\n(after fighting with the compiler for ages), and having it work.  I think monad\ntransformers and lenses are really clever.  By many criteria, Haskell is the\nperfect programming&nbsp;language.</p>\n<p>It has taken me four years to get&nbsp;here.</p>\n<p>I used to get so discouraged that I took breaks for weeks or months at a time\nbecause I didn&#8217;t see the point of continuing.  But I always came back. Now I\nhave finally arrived.  I would say I&#8217;m an intermediate Haskeller.  Naturally,\nI&#8217;m thinking about writing some Haskell code at work which is going to be easy\ngiven our service-oriented&nbsp;architecture.</p>\n<p>I have also been playing with <a class=\"reference external\" href=\"http://www.purescript.org/\">Purescript</a> which is a Haskell dialect that\ncompiles to javascript.  In many ways, Purescript is a much better Haskell\nbecause it doesn&#8217;t come with the historical baggage.  In speaking with my\ncolleague who doesn&#8217;t know Purescript about introducing it into our code base,\nI realized the gravity of what I was asking him to learn.  It sounds great to\nsay &#8220;let&#8217;s rewrite this in purescript&#8221; and expect someone to come back from\ntheir weekend having learned enough to be dangerous when it took me four years\nto&nbsp;learn.</p>\n<p>Another great example is the open source community.  If you choose Haskell for\nyour open source project, you might be productive, safe to refactor, write\nlittle code &#8212; but how many people will be willing to learn Haskell to\ncontribute a fix or a new&nbsp;feature?</p>\n<p>Many of my Haskell friends like to mock the <a class=\"reference external\" href=\"https://golang.org/\">Go</a> programming language.  Myself\nincluded at times.  Mind you, the language is <em>objectively</em> poorly designed.\nThe error handling, the lack of generics, the ridiculous package manager, the\nabsurd type system, the <tt class=\"docutils literal\">range</tt> thing, etc.  It&#8217;s almost exactly the opposite\nof&nbsp;Haskell.</p>\n<p>And yet, Go is a lot <a class=\"reference external\" href=\"http://adambard.com/blog/top-github-languages-2014/\">more popular</a> than Haskell according to GitHub.  Yet,\nthere are so many amazing projects written in Go, like Docker, Influxdb, etcd,\nconsul, prometheus, packer, and many more.  Unlike Haskell, if you ask your\ncoworkers to learn Go over the weekend, everyone will come back with a little\napp they built.  A clearly inferior tool is used by crowds of people to build\ncool&nbsp;things.</p>\n<p>What should we conclude from this?  The choice of programming language matters.\nProgramming is a social activity.  Fewer features seems to equal easier to\nlearn.  Generalization and programming language innovation seem to be out of\nfavor.  Creating software to solve real problems with blunt tools seems to be a\nlot more important than using a sharp axe.  We&#8217;d much rather use an inferior\ntool whose manual we don&#8217;t have to read.  We&#8217;d much rather snap a picture\nwith our smartphone than to learn how to use a&nbsp;<span class=\"caps\">DSLR</span>.</p>\n</div>\n", 
+    "date_iso": "2015-11-02", 
+    "title": "Language choice", 
+    "url": "/2015/11/language-choice", 
+    "day": "02", 
+    "categories": [
+        {
+            "name": "programming", 
+            "slug": "programming"
+        }, 
+        {
+            "name": "rant", 
+            "slug": "rant"
+        }, 
+        {
+            "name": "haskell", 
+            "slug": "haskell"
+        }, 
+        {
+            "name": "go", 
+            "slug": "go"
+        }, 
+        {
+            "name": "javascript", 
+            "slug": "javascript"
+        }
+    ]
+}
