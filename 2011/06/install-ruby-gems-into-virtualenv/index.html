@@ -8,6 +8,24 @@
   <title>Install Ruby gems into virtualenv | Honza Pokorny</title>
   <link href="https://fonts.googleapis.com/css?family=Karla:400,400i|Montserrat:700&display=swap" rel="stylesheet">
 
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Install Ruby gems into virtualenv"/>
+<meta name="twitter:description" content="You are a Python developer and every time you have to install a Ruby gem you throw up in your mouth a little. Wouldn&rsquo;t it be nice if you could install Ruby gems into your virtualenv? Yeah, it would.
+Stick this in your virtualenv&rsquo;s postactivate script:
+export GEM_HOME=&#34;$VIRTUAL_ENV/gems&#34; export GEM_PATH=&#34;&#34; export PATH=$PATH:&#34;$GEM_HOME/bin&#34; That&rsquo;s it! You&rsquo;re welcome. :)
+Credit Give credit where credit is due. I stole this idea from Idan Gazit and made it better."/>
+
+  <meta property="og:title" content="Install Ruby gems into virtualenv" />
+<meta property="og:description" content="You are a Python developer and every time you have to install a Ruby gem you throw up in your mouth a little. Wouldn&rsquo;t it be nice if you could install Ruby gems into your virtualenv? Yeah, it would.
+Stick this in your virtualenv&rsquo;s postactivate script:
+export GEM_HOME=&#34;$VIRTUAL_ENV/gems&#34; export GEM_PATH=&#34;&#34; export PATH=$PATH:&#34;$GEM_HOME/bin&#34; That&rsquo;s it! You&rsquo;re welcome. :)
+Credit Give credit where credit is due. I stole this idea from Idan Gazit and made it better." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://honza.ca/2011/06/install-ruby-gems-into-virtualenv/" />
+<meta property="article:published_time" content="2011-06-10T11:00:00-03:00" />
+<meta property="article:modified_time" content="2011-06-10T11:00:00-03:00" />
+
+
   <link rel="stylesheet" href="https://honza.ca/css/index.css">
   <link rel="alternate" type="application/rss+xml" href="" title="Honza Pokorny">
     <script type="text/javascript">

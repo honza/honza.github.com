@@ -8,6 +8,22 @@
   <title>How not to depend on PyPI | Honza Pokorny</title>
   <link href="https://fonts.googleapis.com/css?family=Karla:400,400i|Montserrat:700&display=swap" rel="stylesheet">
 
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How not to depend on PyPI"/>
+<meta name="twitter:description" content="When deploying a Django application, you often use a requirements.txt file that contains a list of the application&rsquo;s dependencies. During deployment, your provisioning system will pip install all of those to make sure that your application runs as desired.
+The format of a typical requirements.txt files isn&rsquo;t unlike the following
+django==1.3.1 psycopg2==2.4.4 Fabric==1.3.3 ... By default, pip will go to the Python Package Index (PyPI) and look for that package there."/>
+
+  <meta property="og:title" content="How not to depend on PyPI" />
+<meta property="og:description" content="When deploying a Django application, you often use a requirements.txt file that contains a list of the application&rsquo;s dependencies. During deployment, your provisioning system will pip install all of those to make sure that your application runs as desired.
+The format of a typical requirements.txt files isn&rsquo;t unlike the following
+django==1.3.1 psycopg2==2.4.4 Fabric==1.3.3 ... By default, pip will go to the Python Package Index (PyPI) and look for that package there." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://honza.ca/2012/02/how-not-to-depend-on-pypi/" />
+<meta property="article:published_time" content="2012-02-04T20:00:00-04:00" />
+<meta property="article:modified_time" content="2012-02-04T20:00:00-04:00" />
+
+
   <link rel="stylesheet" href="https://honza.ca/css/index.css">
   <link rel="alternate" type="application/rss+xml" href="" title="Honza Pokorny">
     <script type="text/javascript">

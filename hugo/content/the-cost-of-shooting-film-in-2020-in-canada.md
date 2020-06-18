@@ -3,6 +3,7 @@ title = "The cost of shooting film in 2020 in Canada"
 author = ["Honza Pokorny"]
 date = 2020-06-17T10:00:00-03:00
 categories = ["photography"]
+images = ["/images/ilfordhp5.jpg"]
 draft = false
 +++
 

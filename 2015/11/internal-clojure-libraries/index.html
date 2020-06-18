@@ -8,6 +8,20 @@
   <title>Internal Clojure libraries | Honza Pokorny</title>
   <link href="https://fonts.googleapis.com/css?family=Karla:400,400i|Montserrat:700&display=swap" rel="stylesheet">
 
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Internal Clojure libraries"/>
+<meta name="twitter:description" content="At work, we have a few Clojure services in production. Each service is its own leiningen project with its own dependencies. And because setting up a local maven repository is hard, each project reimplements quite a bit of logic. This duplicate code usually relates to the non-essential but still important parts of a service: logging, metrics, sentry integration, etc.
+Just the other day, I was getting really annoyed with this situation, and was about ready to go learn about the wonderful intricacies of Maven, when I discovered leiningen&rsquo;s install command."/>
+
+  <meta property="og:title" content="Internal Clojure libraries" />
+<meta property="og:description" content="At work, we have a few Clojure services in production. Each service is its own leiningen project with its own dependencies. And because setting up a local maven repository is hard, each project reimplements quite a bit of logic. This duplicate code usually relates to the non-essential but still important parts of a service: logging, metrics, sentry integration, etc.
+Just the other day, I was getting really annoyed with this situation, and was about ready to go learn about the wonderful intricacies of Maven, when I discovered leiningen&rsquo;s install command." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://honza.ca/2015/11/internal-clojure-libraries/" />
+<meta property="article:published_time" content="2015-11-06T06:32:00-04:00" />
+<meta property="article:modified_time" content="2015-11-06T06:32:00-04:00" />
+
+
   <link rel="stylesheet" href="https://honza.ca/css/index.css">
   <link rel="alternate" type="application/rss+xml" href="" title="Honza Pokorny">
     <script type="text/javascript">
