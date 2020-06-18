@@ -30,13 +30,13 @@ We will talk about two types of film:
 We will compare using a lab to develop your negatives versus doing it yourself.
 
 We will have two types of photographers in mind: the documentary photographer,
-and the obssessed photographer.
+and the obsessed photographer.
 
 The documentary photographer photographs their family, special occassions, and
 vacations. This photographer shoots one roll of film per month on average. (12
 rolls per year, i.e. 432 frames of 35mm, or 144 frames of 120 film)
 
-The obssessed photographer loves photography. They shoot almost every day.
+The obsessed photographer loves photography. They shoot almost every day.
 Their bookshelf is full of photo books done by the masters. They have binders
 full of negatives. This photographer shoots three rolls of film per month on
 average. (36 rolls per year, i.e. 1296 frames of 35mm, or 432 frames of 120
@@ -79,7 +79,7 @@ loading equipment, but as you can see, the break-even point is very close to the
 
 If they shoot 120 film: $92.04 per year or $0.64 per frame.
 
-**Obssessed photographer**: bulk loading is certainly the way to go here. They
+**Obsessed photographer**: bulk loading is certainly the way to go here. They
 will save about $200 every year by loading their own film.  Film cost per year:
 $221.02.
 
@@ -96,7 +96,7 @@ processing, you can get a roll of 35mm developed, scanned, and edited for $25;
 - 35mm: 12 \* $30 = $360 per year (\$0.83 per frame)
 - 120: 12 \* $27 = $324 per year (\$2.25 per frame)
 
-### Obssessed photographer {#obssessed-photographer}
+### Obsessed photographer {#obsessed-photographer}
 
 - 35mm: 36 \* $30 = $1,080 per year (\$0.83 per frame)
 - 120: 36 \* $27 = $972 per year (\$2.25 per frame)
@@ -160,7 +160,7 @@ batches.
 - 35mm: one bottle should last at least two years; cost per year: \$6.55
 - 120: one bottle should last at least one year; cost per year: \$13.10
 
-**Obssessed photographer**:
+**Obsessed photographer**:
 
 - 35mm: one and a half bottles: \$19.65
 - 120: three bottles: \$39.30
@@ -179,7 +179,7 @@ bottle should yield 20 batches.
 - 35mm: one bottle should last at least three years; cost per year: \$3.80
 - 120: one bottle should last at least one year; cost per year: \$11.40
 
-**Obssessed photographer**:
+**Obsessed photographer**:
 
 - 35mm: one bottle: \$11.40
 - 120: one bottle: \$11.40
@@ -203,7 +203,7 @@ Compared to the other items, the cost of fixer is negligible.
 - 35mm: \$10.35 per year
 - 120: \$24.50 per year
 
-**Obssessed photographer**:
+**Obsessed photographer**:
 
 - 35mm: \$31.05 per year
 - 120: \$50.70 per year
