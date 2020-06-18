@@ -13437,6 +13437,7 @@ to use it in worship.
 :PROPERTIES:
 :EXPORT_FILE_NAME: the-cost-of-shooting-film-in-2020-in-canada
 :EXPORT_DATE: 2020-06-17 10:00
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :images '("/images/ilfordhp5.jpg")
 :END:
 
 [[/images/ilfordhp5.jpg]]
