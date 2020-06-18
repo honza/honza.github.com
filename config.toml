@@ -2,7 +2,7 @@ baseURL = "https://honza.ca/"
 languageCode = "en-us"
 title = "Honza Pokorny"
 theme = "contrast-hugo"
-publishDir = ".."
+publishDir = "."
 disableHugoGeneratorInject = true
 [permalinks]
     "/" = "/:year/:month/:title"
