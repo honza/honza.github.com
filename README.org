@@ -1,0 +1,7 @@
+#+TITLE: Blog
+
+[[https://honza.ca]]
+
+This is the source code and the compiled HTML to my blog http://honza.ca
+
+The source code is processed via [[https://gohugo.io/][Hugo]] from org-mode.
