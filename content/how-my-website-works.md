@@ -12,6 +12,7 @@ hosting and it can easily survive the Digg/Slashdot/Reddit effect. There is no
 database latency - the browser requests a file on the server and gets it back
 immediately.
 
+
 ## Update (2011-02-27): {#update--2011-02-27}
 
 While I still use a static generator to power my site, it's not a different
@@ -21,12 +22,14 @@ file written in Markdown. Socrates then runs through those files and creates a
 site for me. I'm still using django templates. What follows is the original
 post.
 
+
 ## django {#django}
 
 The site is a simple django blog. There is nothing really of note when it comes
 to django-specific coding. I run the django server locally when I'm editing or
 adding articles. It provides a nice UI. It also lets me easily preview the site
 without generating anything.
+
 
 ## static generator {#static-generator}
 
@@ -65,12 +68,14 @@ following URL structure:
 /2010/02/post-one/
 ```
 
+
 ## FTP deploy script {#ftp-deploy-script}
 
 And the final piece is the `deploy.py` script. It looks at the deploy
 directory, and with a little help from git, it figures out what files were
 changed since the last deploy. It then takes those files and throws them up on
 the server. A normal shared hosting.
+
 
 ## Conclusion {#conclusion}
 

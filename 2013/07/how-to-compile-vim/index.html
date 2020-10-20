@@ -43,12 +43,12 @@ Apparently, this is because vim will use the first Python it can find which in o
 
 </head>
 <body>
-        <div id="banner" class="container">
-          <h1><a href="/">Honza Pokorny</a></h1>
-          <p><em>Thoughts of an open source developer with a theology degree</em></p>
-        </div>
+  <div id="banner" class="container">
+    <h1><a href="/">Honza Pokorny</a></h1>
+    <p><em>Thoughts of an open source developer with a theology degree</em></p>
+  </div>
 
-    <div id="wrap">
+  <div class="wrap">
 
 <div class="single-header">
   <h1>How to compile vim</h1>
@@ -61,11 +61,11 @@ Apparently, this is because vim will use the first Python it can find which in o
 a plugin tries to use Python to do some its work, vim will crash like this:</p>
 <p><img src="/images/vim-crash.png" alt="">Not pretty.</p>
 <p>Apparently, this is because vim will use the first Python it can find which in
-our case the homebrew-provided one. You can of course get a pre-compiled
-version and ignore this. But I like to use the latest version of vim and with
+our case the homebrew-provided one.  You can of course get a pre-compiled
+version and ignore this.  But I like to use the latest version of vim and with
 the 7.4 beta, I have been doing that a lot lately&hellip;</p>
-<p>So, what is one to do? We have to fix the <code>PATH</code>. Here is the script that I
-use to recompile vim. This goes in the root of the vim project.</p>
+<p>So, what is one to do?  We have to fix the <code>PATH</code>.  Here is the script that I
+use to recompile vim.  This goes in the root of the vim project.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export PATH<span style="color:#f92672">=</span>/bin:/usr/sbin:/sbin:/usr/bin
 
 ./configure <span style="color:#ae81ff">\
@@ -80,17 +80,17 @@ make
 cry.</p>
 <p>Thanks to Steve Losh for pointing me in the right direction on this.</p>
 
+
+  <p class="date">
+    This article was first published on July 18, 2013.  As you can see, there
+    are no comments.  I invite you to email me with your comments, criticisms,
+    and other suggestions.  Even better, write your own article as a response.
+    Blogging is awesome.
+  </p>
 </article>
 
-<p class="article_date date">
-  This article was first published on July 18, 2013.  As you can see, there
-  are no comments.  I invite you to email me with your comments, criticisms,
-  and other suggestions.  Even better, write your own article as a response.
-  Blogging is awesome.
-</p>
 
-
-    </div>
+  </div>
 
 </body>
 </html>

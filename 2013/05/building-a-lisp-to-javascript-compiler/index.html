@@ -39,12 +39,12 @@ Compilers are notoriously hard to understand and therefore make for great mind-b
 
 </head>
 <body>
-        <div id="banner" class="container">
-          <h1><a href="/">Honza Pokorny</a></h1>
-          <p><em>Thoughts of an open source developer with a theology degree</em></p>
-        </div>
+  <div id="banner" class="container">
+    <h1><a href="/">Honza Pokorny</a></h1>
+    <p><em>Thoughts of an open source developer with a theology degree</em></p>
+  </div>
 
-    <div id="wrap">
+  <div class="wrap">
 
 <div class="single-header">
   <h1>Building a Lisp to Javascript compiler</h1>
@@ -58,24 +58,24 @@ always the best platform for scripts due to the slow JVM start-up. So, I
 decided to implement a simple version of Clojure that compiles to Javascript
 and can be run on top of nodejs.</p>
 <p>Compilers are notoriously hard to understand and therefore make for great
-mind-bending exercises. Exactly my idea of weekend fun.</p>
+mind-bending exercises.  Exactly my idea of weekend fun.</p>
 <h2 id="what-we-are-going-to-do">What we are going to do</h2>
-<p>There are tons of Lisp to Javascript compilers out there. What makes mine
-special? I&rsquo;m using a PEG grammar to parse the source code. Once it&rsquo;s parsed,
-I turn the result into a <a href="https://developer.mozilla.org/en-US/docs/SpiderMonkey/Parser%5FAPI">Parser API</a> compatible AST. The AST is then passed
+<p>There are tons of Lisp to Javascript compilers out there.  What makes mine
+special?  I&rsquo;m using a PEG grammar to parse the source code.  Once it&rsquo;s parsed,
+I turn the result into a <a href="https://developer.mozilla.org/en-US/docs/SpiderMonkey/Parser%5FAPI">Parser API</a> compatible AST.  The AST is then passed
 to <a href="https://github.com/Constellation/escodegen">escodegen</a> which turns it into well-formatted Javascript.</p>
 <p>This is great because I don&rsquo;t have to worry about the particulars of Javascript
-syntax. Escodegen takes care of inserting semicolons where appropriate, etc.
-and everything looks clean and consistent. It&rsquo;s nice because the parsing is
-decoupled from the source code emission. You can completely remove the
+syntax.  Escodegen takes care of inserting semicolons where appropriate, etc.
+and everything looks clean and consistent.  It&rsquo;s nice because the parsing is
+decoupled from the source code emission.  You can completely remove the
 Javascript generation part and use some other software to do that.</p>
 <h2 id="lisp-basics">Lisp basics</h2>
 <p>If you are familiar with Lisp, you can skip this section.</p>
-<p>Lisp source code is made up of s-expressions. An s-expression is a list whose
+<p>Lisp source code is made up of s-expressions.  An s-expression is a list whose
 first element is a function and the rest are the arguments to that function.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#a6e22e">greet</span> <span style="color:#e6db74">&#34;honza&#34;</span>)
-</code></pre></div><p>This is a list with two items. <code>greet</code> is the name of the function and
-<code>&quot;honza&quot;</code> is the argument. In other languages, this might be represented as
+</code></pre></div><p>This is a list with two items.  <code>greet</code> is the name of the function and
+<code>&quot;honza&quot;</code> is the argument.  In other languages, this might be represented as
 <code>greet(&quot;honza&quot;)</code>.</p>
 <p>Lisp uses s-expressions for everything, including function definitions, if
 statements, assignments, binary expressions, etc.</p>
@@ -95,10 +95,10 @@ statements, assignments, binary expressions, etc.</p>
   (<span style="color:#66d9ef">fn </span>[name]
     (println <span style="color:#e6db74">&#34;hello&#34;</span> name)))
 </code></pre></div><p>In Lisp, a function body can have multiple s-expression but only the last one
-is returned. There is no <code>return</code> keyword in Lisp. Binary operators and
+is returned.  There is no <code>return</code> keyword in Lisp.  Binary operators and
 things like the <code>if</code> keyword are actually functions that return values.</p>
 <h2 id="the-mighty-peg">The mighty PEG</h2>
-<p>Every PEG grammar starts with the <code>program</code> directive. This is where the
+<p>Every PEG grammar starts with the <code>program</code> directive.  This is where the
 parser will start parsing.</p>
 <pre><code class="language-nil" data-lang="nil">program
   = s:sexp+ &quot;\n&quot;*  { return {
@@ -106,11 +106,11 @@ parser will start parsing.</p>
       body: s
   };}
 </code></pre><p>A Lisp program consists of one or more s-expressions, optionally followed by a
-newline. The list of one or more s-expressions is stored in the variable
-<code>s</code>. We then return a Javascript object with two properties: <code>type</code> and
-<code>body</code>. Since we are at the top level, we return it as a type of
-<code>Program</code>, and our body will be made up of the matched s-expressions. The
-syntax is a little weird at first but you get used to it. Fairly simple stuff.</p>
+newline.  The list of one or more s-expressions is stored in the variable
+<code>s</code>.  We then return a Javascript object with two properties: <code>type</code> and
+<code>body</code>.  Since we are at the top level, we return it as a type of
+<code>Program</code>, and our body will be made up of the matched s-expressions.  The
+syntax is a little weird at first but you get used to it.  Fairly simple stuff.</p>
 <p>If you tried to compile this grammar into a parser, it would fail because we
 didn&rsquo;t tell it what an s-expression looks like.</p>
 <pre><code class="language-nil" data-lang="nil">sexp
@@ -118,20 +118,20 @@ didn&rsquo;t tell it what an s-expression looks like.</p>
   / _ l:list _ { return l; }
   / _ v:vector _ { return v; }
   / _ o:object _ { return o; }
-</code></pre><p>OK, so an s-expression is either an atom, a list, a vector or an object. Each
-of these can be preceded and followed by any amount of whitespace. Cool,
-that&rsquo;s simple enough. Except now we have to define what all those things are.</p>
+</code></pre><p>OK, so an s-expression is either an atom, a list, a vector or an object.  Each
+of these can be preceded and followed by any amount of whitespace.  Cool,
+that&rsquo;s simple enough.  Except now we have to define what all those things are.</p>
 <p>Let&rsquo;s start with the atom:</p>
 <pre><code class="language-nil" data-lang="nil">atom
   = d:[0-9]+ _ { return {type: 'Literal', value: numberify(d)}; }
   / '&quot;' d:(!'&quot;' sourcechar)* '&quot;' _ { return {type: 'Literal', value: makeStr(d) }}
   / s:[-+/\*_&lt;&gt;=a-zA-Z\.!]+ _ { return {type: 'Identifier', name: s.join(&quot;&quot;)};}
 </code></pre><p>So, an atom can be a list of one or more digits, a string or a valid
-identifier. In the digit directive, you will notice that we are assigning the
-number to the <code>d</code> variable. This will contain a list of all of the matched
-numbers. We then concatenate them and parse them into an integer. That&rsquo;s what
-the <code>numberify</code> function does. A number or a string is a literal value so we
-return it as such. An identifier is a variable name, so we return it as such,
+identifier.  In the digit directive, you will notice that we are assigning the
+number to the <code>d</code> variable.  This will contain a list of all of the matched
+numbers.  We then concatenate them and parse them into an integer.  That&rsquo;s what
+the <code>numberify</code> function does.  A number or a string is a literal value so we
+return it as such.  An identifier is a variable name, so we return it as such,
 too.</p>
 <p>Next up, vectors and objects:</p>
 <pre><code class="language-nil" data-lang="nil">vector
@@ -146,10 +146,10 @@ object
 at least one atom in it, or an array with at least one object in it.</p>
 <p>The <code>makeObject</code> function will take a pair by pair from the array and take
 the first item in the pair and turn it into an object key and set as its value
-to the second item in the pair. If the number of elements in the array isn&rsquo;t
+to the second item in the pair.  If the number of elements in the array isn&rsquo;t
 divisible by 2, it will yell at you.</p>
-<p>Next up, lists. Now, lists are special because the first item is the name of a
-function. This gives us the opportunity to define some built-in functions that
+<p>Next up, lists.  Now, lists are special because the first item is the name of a
+function.  This gives us the opportunity to define some built-in functions that
 would otherwise be really tricky to define.</p>
 <pre><code class="language-nil" data-lang="nil">list
   = &quot;()&quot; { return []; }
@@ -185,12 +185,12 @@ would otherwise be really tricky to define.</p>
     return processCallExpression(s);
 
   }
-</code></pre><p>OK, there is quite a bit here, so let&rsquo;s step through it. A list can be</p>
+</code></pre><p>OK, there is quite a bit here, so let&rsquo;s step through it.  A list can be</p>
 <h3 id="an-empty-list">an empty list</h3>
 <h3 id="a-list-of-at-least-one-s-expression">a list of at least one s-expression</h3>
-<p>If it&rsquo;s an empty list, we just return an empty array. If it&rsquo;s a list of
-s-expressions, we check for other things. We look at the first element and see
-what its name is. It can be either:</p>
+<p>If it&rsquo;s an empty list, we just return an empty array.  If it&rsquo;s a list of
+s-expressions, we check for other things.  We look at the first element and see
+what its name is.  It can be either:</p>
 <h3 id="def-variable-declaration"><code>def</code> - variable declaration</h3>
 <h3 id="fn-an-anonymous-function"><code>fn</code> - an anonymous function</h3>
 <h3 id="a-built-in-function--if-plus-list-etc-dot">a built-in function (<code>if</code>, <code>+</code>, <code>list</code>, etc.)</h3>
@@ -201,21 +201,21 @@ what its name is. It can be either:</p>
 </code></pre><p>Zero or more of the following characters: newline, comma and space.</p>
 <h2 id="obstacles">Obstacles</h2>
 <p>When converting the parsed source code to the Parser API tree, I hit a few
-obstacles. It turns out that Lisp and Javascript don&rsquo;t map perfectly to each
+obstacles.  It turns out that Lisp and Javascript don&rsquo;t map perfectly to each
 other and therefore some post-processing is needed.</p>
 <h3 id="statement-vs-expression">Statement vs expression</h3>
-<p>In Lisp, everything is an expression. In Javascript, there are both
-expressions and statements. The hardest part is the fact that a function call
-can be both a statement and an expression depending on how it&rsquo;s used. So you
+<p>In Lisp, everything is an expression.  In Javascript, there are both
+expressions and statements.  The hardest part is the fact that a function call
+can be both a statement and an expression depending on how it&rsquo;s used.  So you
 can&rsquo;t represent it the same way every time.</p>
 <p>I wrote a function that takes a list which represents an s-expression (the
 first element is a function call, the rest are the parameters).</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">processCallExpression</span>(<span style="color:#a6e22e">s</span>) {
   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">callee</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">first</span>(<span style="color:#a6e22e">s</span>),
-    <span style="color:#a6e22e">args</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">rest</span>(<span style="color:#a6e22e">s</span>);
+      <span style="color:#a6e22e">args</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">rest</span>(<span style="color:#a6e22e">s</span>)
 
   <span style="color:#a6e22e">args</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">map</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">s</span>) {
-    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">expression</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">expression</span>.<span style="color:#a6e22e">type</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;CallExpression&#34;</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">expression</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">expression</span>.<span style="color:#a6e22e">type</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;CallExpression&#39;</span>) {
       <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">expression</span>;
     } <span style="color:#66d9ef">else</span> {
       <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">s</span>;
@@ -223,29 +223,30 @@ first element is a function call, the rest are the parameters).</p>
   }, <span style="color:#a6e22e">args</span>);
 
   <span style="color:#66d9ef">return</span> {
-    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;ExpressionStatement&#34;</span>,
+    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;ExpressionStatement&#39;</span>,
     <span style="color:#a6e22e">expression</span><span style="color:#f92672">:</span> {
-      <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;CallExpression&#34;</span>,
+      <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;CallExpression&#39;</span>,
       <span style="color:#a6e22e">callee</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">callee</span>,
-      <span style="color:#a6e22e">arguments</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">args</span>
+      <span style="color:#e6db74">&#39;arguments&#39;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">args</span>
     }
-  };
+  }
+
 }
 </code></pre></div><p>This will check if any of the arguments passed to the function are also
-function calls. If it&rsquo;s a nested function call, it&rsquo;s placed in the AST as a
+function calls.  If it&rsquo;s a nested function call, it&rsquo;s placed in the AST as a
 <code>CallExpression</code>, otherwise it&rsquo;s a <code>CallExpression</code> inside a
-<code>ExpressionStatement</code>. The PEG parser can&rsquo;t detect this because it&rsquo;s context
+<code>ExpressionStatement</code>.  The PEG parser can&rsquo;t detect this because it&rsquo;s context
 free - each node only knows about itself.</p>
 <h3 id="implicit-return">Implicit return</h3>
 <p>In Lisp, the last s-expression in a function&rsquo;s body is implicitly returned.
-You don&rsquo;t need to denote this with a return statement, it&rsquo;s built-in. Again,
-we need to do some more processing. If we are processing a function
+You don&rsquo;t need to denote this with a return statement, it&rsquo;s built-in.  Again,
+we need to do some more processing.  If we are processing a function
 declaration, we need to check its body and wrap the last expression in a
 <code>ReturnStatement</code>.</p>
 <h3 id="if-is-an-expression-in-lisp">If is an expression in Lisp</h3>
 <p>The if statement in Lisp is an expression, just like a function call or
-anything else. This means that the expression in any of the two branches is
-effectively returned to the caller. This means that we need to add an extra
+anything else.  This means that the expression in any of the two branches is
+effectively returned to the caller.  This means that we need to add an extra
 wrapper around the statement and wrap each of the branch-expressions in a
 return statement.</p>
 <p>Like this:</p>
@@ -267,21 +268,21 @@ return statement.</p>
   }
 })();
 </code></pre></div><h2 id="standard-library">Standard library</h2>
-<p>A lisp would be no fun without some fun functional programming functions. I
-have started working on a standard library for our lisp. It lives in a file
-called <code>lib.js</code>. This file includes functions that are accessible from any
+<p>A lisp would be no fun without some fun functional programming functions.  I
+have started working on a standard library for our lisp.  It lives in a file
+called <code>lib.js</code>.  This file includes functions that are accessible from any
 program that you write.</p>
 <p>For example:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">nth</span>(<span style="color:#a6e22e">list</span>, <span style="color:#a6e22e">n</span>) {
-  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">n</span>) {
-    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
-  }
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">n</span>) {
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
+    }
 
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">list</span>[<span style="color:#a6e22e">n</span>];
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">list</span>[<span style="color:#a6e22e">n</span>];
 }
 
 <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">first</span>(<span style="color:#a6e22e">list</span>) {
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">nth</span>(<span style="color:#a6e22e">list</span>, <span style="color:#ae81ff">0</span>);
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">nth</span>(<span style="color:#a6e22e">list</span>, <span style="color:#ae81ff">0</span>);
 }
 </code></pre></div><p>And much more.</p>
 <h2 id="putting-it-all-together">Putting it all together</h2>
@@ -289,29 +290,29 @@ program that you write.</p>
 <h3 id="use-peg-dot-js-to-compile-the-grammar-into-a-parser">Use peg.js to compile the grammar into a parser</h3>
 <h3 id="take-the-parser-and-append-to-it-the-compiler-program">Take the parser and append to it the compiler program</h3>
 <p>The compiler program is the command line utility that decides how your program
-should be compiled, it parsers CLI flags, etc. It can return the AST instead
+should be compiled, it parsers CLI flags, etc.  It can return the AST instead
 of Javascript, it can uglify the resulting Javascript, etc.</p>
 <p>You can use the result like so</p>
 <pre><code class="language-nil" data-lang="nil">$ ./inertia sample.clj
-</code></pre><p>And it will print the resulting Javascript to stdout. What the compiler
+</code></pre><p>And it will print the resulting Javascript to stdout.  What the compiler
 program will also do is prepend the compiled Javascript with the standard
-library. It simply reads the standard library code from the <code>lib.js</code> file
+library.  It simply reads the standard library code from the <code>lib.js</code> file
 and prepends it.</p>
 <h2 id="conclusion">Conclusion</h2>
-<p>This has certainly been a fun exercise for me. You can check out the finished
+<p>This has certainly been a fun exercise for me.  You can check out the finished
 product on <a href="https://github.com/honza/inertia">GitHub</a>.</p>
 
+
+  <p class="date">
+    This article was first published on May 13, 2013.  As you can see, there
+    are no comments.  I invite you to email me with your comments, criticisms,
+    and other suggestions.  Even better, write your own article as a response.
+    Blogging is awesome.
+  </p>
 </article>
 
-<p class="article_date date">
-  This article was first published on May 13, 2013.  As you can see, there
-  are no comments.  I invite you to email me with your comments, criticisms,
-  and other suggestions.  Even better, write your own article as a response.
-  Blogging is awesome.
-</p>
 
-
-    </div>
+  </div>
 
 </body>
 </html>

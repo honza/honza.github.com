@@ -6,27 +6,31 @@ categories = ["haskell", "code"]
 draft = false
 +++
 
-It continues to amaze me how bad Haskell is at processing strings. One of the
+It continues to amaze me how bad Haskell is at processing strings.  One of the
 reasons I wanted to learn Haskell was to be able to write short,
-dynamic-language-like programs that execute fast once compiled. Somehow
-rather, Haskell has failed to deliver on its promise of _bare metal_ speed. I
+dynamic-language-like programs that execute fast once compiled.  Somehow
+rather, Haskell has failed to deliver on its promise of _bare metal_ speed.  I
 mostly write scripts and utilities meant to run on my machine---these scripts
-mostly process text. Read a file, parse it and spit something out.
+mostly process text.  Read a file, parse it and spit something out.
+
 
 ## Example {#example}
 
 Let's build a simple program that will show what I'm talking about.
 
+
 ### Read a file called `file` which contains prose {#read-a-file-called-file-which-contains-prose}
 
+
 ### Capitalize every word in that body of text {#capitalize-every-word-in-that-body-of-text}
+
 
 ### Print the result to stdout {#print-the-result-to-stdout}
 
 We will be testing our programs with a file with about 1.2 million lines of
-Lorem Ipsum. This file is around 75MB.
+Lorem Ipsum.  This file is around 75MB.
 
-Here is attemp number one. This is really simple Haskell.
+Here is attemp number one.  This is really simple Haskell.
 
 ```haskell
 -- Normal.hs
@@ -55,7 +59,7 @@ ghc -O2 -o normal Normal.hs
 time ./normal > /dev/null
 ```
 
-This takes about 17 seconds. Let's see if we can do any better. When you
+This takes about 17 seconds.  Let's see if we can do any better.  When you
 complain about Strings in Haskell being slow on some neckbeard forum, people
 will tell you to use `Data.Text`.
 
@@ -82,7 +86,7 @@ main = do
     X.putStr $ convert name
 ```
 
-This is mostly the same as above. Instead of using the `String` type to work
+This is mostly the same as above.  Instead of using the `String` type to work
 with text, we use the `Data.Text.Text` type.
 
 ```nil
@@ -90,8 +94,8 @@ ghc -O2 -o main Main.hs
 time ./main > /dev/null
 ```
 
-How did it do? One entire minute, that's 5 times slower. And it uses obscene
-amounts of memory (around 600MB on my machine). Let's use lazy IO when reading
+How did it do?  One entire minute, that's 5 times slower.  And it uses obscene
+amounts of memory (around 600MB on my machine).  Let's use lazy IO when reading
 the file, maybe it will improve.
 
 ```haskell
@@ -104,7 +108,7 @@ import qualified Data.Text.Lazy as T
 import qualified Data.Text.Lazy.IO as X
 ```
 
-This clocks in at 27 seconds. Much better than the non-lazy version. Next
+This clocks in at 27 seconds.  Much better than the non-lazy version.  Next
 thing to try is to ignore unicode and go for the ultimate, bare-metal speed.
 Let's use `ByteString` instead of `Text`.
 
@@ -129,8 +133,8 @@ main = do
     B.putStr $ convert name
 ```
 
-Hm, not that much better. 27 seconds. That's about as good as the lazy
-version when using `Text`. Let's see if we can squeeze more perfomance out
+Hm, not that much better.  27 seconds.  That's about as good as the lazy
+version when using `Text`.  Let's see if we can squeeze more perfomance out
 of this with a lazy `ByteString`
 
 ```haskell
@@ -143,11 +147,11 @@ import qualified Data.ByteString.Lazy as B
 import qualified Data.ByteString.Lazy.Char8 as C
 ```
 
-This takes about 10 seconds. Awesome. This is the best I can do with Haskell.
-10 seconds to process 1.2 million lines of text. I guess that's not too bad.
+This takes about 10 seconds.  Awesome.  This is the best I can do with Haskell.
+10 seconds to process 1.2 million lines of text.  I guess that's not too bad.
 
 <strong>EDIT</strong>: Someone [pointed out on Reddit](http://www.reddit.com/r/haskell/comments/120h6i/why%5Fis%5Fthis%5Fsimple%5Ftext%5Fprocessing%5Fprogram%5Fso/c6r6rm1) that this whole thing can be
-accomplished as a simple one-liner. This is actually a pretty elegant
+accomplished as a simple one-liner.  This is actually a pretty elegant
 solution.
 
 ```haskell
@@ -165,7 +169,7 @@ main = do
     X.putStr $ convert name
 ```
 
-This clocks in at 8.5 seconds. Not bad at all.
+This clocks in at 8.5 seconds.  Not bad at all.
 
 <strong>EDIT 5</strong>: Someone pointed out that I didn't include a version of the
 one-liner that uses `ByteString`.
@@ -184,7 +188,8 @@ name <- T.readFile "file"
 T.putStr $ convert name
 ```
 
-This clocks in at 3.5s on my machine. Pretty fast!
+This clocks in at 3.5s on my machine.  Pretty fast!
+
 
 ## Python {#python}
 
@@ -213,11 +218,11 @@ Execute with
 $ time python main.py > /dev/null
 ```
 
-Six seconds! Six! How can a dynamic language be so much faster than compiled
+Six seconds!  Six!  How can a dynamic language be so much faster than compiled
 Haskell?
 
 <strong>EDIT 4</strong>: There has been some discussion on Reddit about being able to
-accomplish this task in only one line in Haskell. It's actually possible in
+accomplish this task in only one line in Haskell.  It's actually possible in
 Python, too.
 
 ```python
@@ -226,35 +231,36 @@ print open('file').read().title()
 
 This clocks in at 2 seconds.
 
+
 ## Javascript and V8 {#javascript-and-v8}
 
 ```javascript
 // main.js
 
-var fs = require("fs");
+var fs = require('fs');
 
 function capitalize(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 function processLine(line) {
-  var words = line.split(" ");
-  for (var i = 0; i < words.length; i++) {
-    words[i] = capitalize(words[i]);
-  }
+    var words = line.split(' ');
+    for (var i=0; i < words.length; i++) {
+        words[i] = capitalize(words[i]);
+    }
 
-  return words.join(" ");
+    return words.join(' ');
 }
 
 function run() {
-  var data = fs.readFileSync("file", "utf-8");
-  var lines = data.split("\n");
+    var data = fs.readFileSync('file', 'utf-8');
+    var lines = data.split('\n');
 
-  for (var i = 0; i < lines.length; i++) {
-    lines[i] = processLine(lines[i]);
-  }
+    for (var i=0; i < lines.length; i++) {
+        lines[i] = processLine(lines[i]);
+    }
 
-  return lines.join("\n");
+    return lines.join("\n");
 }
 
 console.log(run());
@@ -266,11 +272,12 @@ Execute it with:
 $ time node main.js > /dev/null
 ```
 
-Wait for it! 4.5 seconds. I have no words.
+Wait for it!  4.5 seconds.  I have no words.
+
 
 ## How about Go? {#how-about-go}
 
-<strong>EDIT 3</strong>: (Add this section. Looks like this post is turning into a language
+<strong>EDIT 3</strong>: (Add this section.  Looks like this post is turning into a language
 shootout, le sigh).
 
 ```go
@@ -296,14 +303,15 @@ $ go build title.go
 $ time ./title > /dev/null
 ```
 
-This is around 2 seconds. Pretty crazy performance. Only twice the time
+This is around 2 seconds.  Pretty crazy performance.  Only twice the time
 compared to C.
+
 
 ## How about C? {#how-about-c}
 
 <strong>EDIT 2</strong>: (Add this section)
 
-[Andrew Stewart](https://twitter.com/andrewstwrt) has graciously written a C version of this program. Like he
+[Andrew Stewart](https://twitter.com/andrewstwrt) has graciously written a C version of this program.  Like he
 [said](https://twitter.com/andrewstwrt/status/261282584263286784), you should do all of your scripting in C.
 
 ```c
@@ -355,8 +363,9 @@ $ gcc -o script script.c
 $ time ./script > /dev/null
 ```
 
-Of course, this is ripping fast. It takes about 1 second (1.05-1.15, never
+Of course, this is ripping fast.  It takes about 1 second (1.05-1.15, never
 below 1).
+
 
 ## Recap {#recap}
 

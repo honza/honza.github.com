@@ -9,22 +9,25 @@ images = ["/images/books.jpg"]
 
 {{< figure src="/images/books.jpg" >}}
 
-We, as theology nerds, love our books. Especially by authors who have long
-passed on to glory. And who wouldn't want to save some money?
+We, as theology nerds, love our books.  Especially by authors who have long
+passed on to glory.  And who wouldn't want to save some money?
 
 Here is what you do:
 
+
 ## Step 1: Buy an Amazon Kindle {#step-1-buy-an-amazon-kindle}
 
-The base model is \$79. You can find it on sale during the usual sale events.
+The base model is $79.  You can find it on sale during the usual sale events.
 Or, for a more comfortable reading experience, you can go for the Paperwhite,
-which is about twice as much. Both are excellent options. The advantage of the
+which is about twice as much.  Both are excellent options.  The advantage of the
 Paperwhite is the backlight, and the higher screen resolution.
+
 
 ## Step 2: Acquire books {#step-2-acquire-books}
 
-Head over to Monergism's [huge list](https://www.monergism.com/400-free-ebooks-listed-alphabetically-author) of free theology ebooks. Scroll through
+Head over to Monergism's [huge list](https://www.monergism.com/400-free-ebooks-listed-alphabetically-author) of free theology ebooks.  Scroll through
 the list, find something you like, download it to your Kindle.
+
 
 ## Step 3: Profit {#step-3-profit}
 

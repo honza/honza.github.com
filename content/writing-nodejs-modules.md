@@ -38,14 +38,11 @@ and you can find it on both Github and npmjs.
 So what does the API look like?
 
 ```javascript
-thumb(
-  {
-    source: "source/path",
-    destination: "dest/path",
-    concurrency: 4
-  },
-  function() {
-    console.log("All done!");
-  }
-);
+thumb({
+  source: 'source/path',
+  destination: 'dest/path',
+  concurrency: 4
+  }, function() {
+  console.log('All done!');
+});
 ```

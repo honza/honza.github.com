@@ -10,6 +10,7 @@ draft = false
 development environments. It's based on VirtualBox VMs. This article describes
 how this Ruby tool can be useful to Django developers.
 
+
 ## Why vagrant? {#why-vagrant}
 
 The modern web developer works on many different projects. Each project has a
@@ -29,6 +30,7 @@ you will specify a VM which runs an Ubuntu server with 256MB of RAM and your
 and memcached.
 
 Getting started with vagrant is simple.
+
 
 ## Getting started {#getting-started}
 
@@ -68,7 +70,7 @@ vagrant up
 to actually build and boot the environment. This might take a few minutes.
 
 After this, your environment is running. Your environment is a headless
-virtualbox instance. You can `ssh` into the box by running:
+virtualbox instance.  You can `ssh` into the box by running:
 
 ```console
 vagrant ssh
@@ -89,6 +91,7 @@ Destroy it with:
 ```console
 vagrant destroy
 ```
+
 
 ## Provisioning {#provisioning}
 

@@ -6,18 +6,18 @@ draft = false
 +++
 
 This morning, I read a rather click-baity [article](http://runningmagazine.ca/11-questions-runners-hate-answering/) about the kinds of
-questions that runners hate answering. Honestly, I don't know why I clicked it
---- blame it on lack of coffee in my blood stream. A common theme in the
-article is the obsession with the marathon. When are you running your first
-marathon? Are you training for Boston? The writer then goes on to say that
+questions that runners hate answering.  Honestly, I don't know why I clicked it
+--- blame it on lack of coffee in my blood stream.  A common theme in the
+article is the obsession with the marathon.  When are you running your first
+marathon?  Are you training for Boston?  The writer then goes on to say that
 she is perfectly happy with her 5ks and 10ks.
 
-I'm also tired of the marathon obsession, but from the other end of the
-spectrum. The marathon distance isn't the pinnacle of a runner's career. You
-can run further. Your legs don't magically stop working after 42.2km.
+I'm also tired of the marathon obsession,  but from the other end of the
+spectrum.  The marathon distance isn't the pinnacle of a runner's career.  You
+can run further.  Your legs don't magically stop working after 42.2km.
 
 The following quote from Christopher McDougall's _Born to run_ gives us a nice
-glimpse into the mindset of an ultra runner. This tiny section is one of my
+glimpse into the mindset of an ultra runner.  This tiny section is one of my
 favorite parts in the book.
 
 > "So why not marathons?" I asked Jenn when I called to interview her about

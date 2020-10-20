@@ -214,7 +214,7 @@ directory and the &lt;em&gt;fabfile&lt;/em&gt;. Chef is a cook how prepares your
 dinner. So, Chef needs some cookbooks and recipes. Each cookbook is a directory
 that contains various configuration files for a specific application that you
 want installed. So for example, you will have a &lt;em&gt;PostgreSQL cookbook&lt;/em&gt; and a
-&lt;em&gt;nginx cookbook&lt;/em&gt;. The deploy directory will contain a directory called
+&lt;em&gt;nginx cookbook&lt;/em&gt;. The  deploy directory will contain a directory called
 &lt;em&gt;cookbooks&lt;/em&gt; which will contain all other cookbooks. Now, the good news is that
 you don&amp;rsquo;t have to make the cookbooks yourself. &lt;a href=&#34;http://www.opscode.com&#34;&gt;Opscode&lt;/a&gt;, the company behind
 Chef, maintains a large selection of cookbooks on &lt;a href=&#34;https://github.com/opscode/cookbooks&#34;&gt;Github&lt;/a&gt;. You can copy and
@@ -390,7 +390,7 @@ workers &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=
 &lt;h2 id=&#34;running&#34;&gt;Running&lt;/h2&gt;
 &lt;p&gt;I then collected all the static files into the &lt;code&gt;static&lt;/code&gt; directory:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;$ (env) python manage.py collectstatic
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I restarted nginx:&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I restarted  nginx:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;$ sudo /etc/init.d/nginx restart
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;And finally, I ran the &lt;code&gt;gunicorn&lt;/code&gt; server:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;$ (env) cd /home/webapp/app
@@ -582,11 +582,11 @@ published.&lt;/p&gt;
 your &lt;code&gt;app.yaml&lt;/code&gt; file. In addition to your regular handlers, add the
 following:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;inbound_services&lt;/span&gt;:
-  - mail
+- mail
 
 &lt;span style=&#34;color:#66d9ef&#34;&gt;handlers&lt;/span&gt;:
-  - &lt;span style=&#34;color:#66d9ef&#34;&gt;url&lt;/span&gt;: /_ah/mail/.&lt;span style=&#34;color:#e6db74&#34;&gt;+
-&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    script: main.py&lt;/span&gt;
+- &lt;span style=&#34;color:#66d9ef&#34;&gt;url&lt;/span&gt;: /_ah/mail/.&lt;span style=&#34;color:#e6db74&#34;&gt;+
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;  script: main.py&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The first line enables incoming email for your application. The second part is
 the important part. On App Engine, an incoming email message is processed as a
 HTTP POST request. Since it&amp;rsquo;s a regular HTTP request, we will need a handler

@@ -16,6 +16,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #333;
     line-height: 130%;
     font-family: 'Montserrat';
+    text-align: center;
 
 }
 
@@ -38,10 +39,10 @@ h1, h2, h3, h4, h5, h6 {
 #banner {
   background: #ececec;
   padding: 20px;
+  text-align: center;
 }
 
 #banner h1 {
-  font-family: 'Karla', 'Georgia', 'Liberation Serif', 'Linux Libertine O', serif;
   display: inline-block;
   margin: 0;
   padding: 0;
@@ -109,35 +110,32 @@ table.footnote {
   line-height: 20px;
 }
 
-#wrap {
-    padding: 0 5px;
-    margin-left: 20px;
+article, #content {
+  display: grid;
+  grid-template-columns: 1fr min(65ch, 100%) 1fr;
 }
 
-/* Larger than mobile */
-@media (min-width: 400px) {
+article > *, #content > * {
+  grid-column: 2;
 }
 
-/* Larger than phablet (also point when grid becomes active) */
-@media (min-width: 550px) {
-    #wrap {
-        width: 33em;
-    }
+.single-header {
+  width: 100%;
+  grid-column: 1/4;
 }
 
-/* Larger than tablet */
-@media (min-width: 750px) {
-    #wrap {
-        width: 33em;
-    }
+figure {
+  width: 100%;
+  grid-column: 1/4;
+  padding: 0;
+  margin: 0;
 }
 
-/* Larger than desktop */
-@media (min-width: 1000px) {
-}
-
-/* Larger than Desktop HD */
-@media (min-width: 1200px) {
+figure img {
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 .post-list {

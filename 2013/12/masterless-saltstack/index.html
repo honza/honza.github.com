@@ -41,12 +41,12 @@ A bit of setup first Your project will need two directories for Saltstack&rsquo;
 
 </head>
 <body>
-        <div id="banner" class="container">
-          <h1><a href="/">Honza Pokorny</a></h1>
-          <p><em>Thoughts of an open source developer with a theology degree</em></p>
-        </div>
+  <div id="banner" class="container">
+    <h1><a href="/">Honza Pokorny</a></h1>
+    <p><em>Thoughts of an open source developer with a theology degree</em></p>
+  </div>
 
-    <div id="wrap">
+  <div class="wrap">
 
 <div class="single-header">
   <h1>Masterless Saltstack</h1>
@@ -55,11 +55,11 @@ A bit of setup first Your project will need two directories for Saltstack&rsquo;
 
 <article>
   <p>This is a simple guide on how to use Saltstack, the configuration manager, in
-masterless mode. In most scenarios, you will use a Saltstack master to
-control many minions. Saltstack contains a lot of utilities to check the state
+masterless mode.  In most scenarios, you will use a Saltstack master to
+control many minions.  Saltstack contains a lot of utilities to check the state
 of minions, gather information about them, etc.</p>
 <p>However, if you are working on a small, single-server application, Saltstack&rsquo;s
-master-minion setup might be overkill. You can indeed use a single minion.</p>
+master-minion setup might be overkill.  You can indeed use a single minion.</p>
 <h2 id="a-bit-of-setup-first">A bit of setup first</h2>
 <p>Your project will need two directories for Saltstack&rsquo;s files.</p>
 <pre><code class="language-nil" data-lang="nil">pillar/
@@ -67,10 +67,10 @@ salt/
 </code></pre><p>The <code>salt</code> directory will contain the scripts that are responsible for
 setting up a particular part of your server, e.g. nginx, postgresql, etc.
 <code>pillar</code> on the other hand will contain the configuration value for each
-environment that your app will run in. So, you might have a <em>staging</em> and a
+environment that your app will run in.  So, you might have a <em>staging</em> and a
 <em>production</em> environment set up there.</p>
 <p>Each of these directories needs a <code>top.sls</code> file which is what&rsquo;s loaded
-first. For fun, let&rsquo;s just install <code>vim</code> into a production environment.</p>
+first.  For fun, let&rsquo;s just install <code>vim</code> into a production environment.</p>
 <pre><code class="language-nil" data-lang="nil">pillar/
     top.sls
     production.sls
@@ -81,24 +81,24 @@ salt/
 <p>The <code>salt/top.sls</code> file will have a case-expression-like structure, matching
 on hostnames of your app.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">base</span>:
-  <span style="color:#e6db74">&#34;production&#34;</span>:
-    - vim
+    <span style="color:#66d9ef">&#39;production&#39;</span>:
+        - vim
 </code></pre></div><p>Note that <code>sls</code> files use YAML syntax.</p>
 <p>Here we are installing vim in the production hostname.</p>
 <p>The <code>salt/vim.sls</code> file will look something like this:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">vim</span>:
-  <span style="color:#66d9ef">pkg</span>:
-    - installed
-</code></pre></div><p>This simply says that we want the vim package installed. Saltstack will
+    <span style="color:#66d9ef">pkg</span>:
+        - installed
+</code></pre></div><p>This simply says that we want the vim package installed.  Saltstack will
 automatically detect your package manager (i.e. apt-get, yum, etc).</p>
 <h2 id="pillar">Pillar</h2>
 <p>The <code>pillar/top.sls</code> file has the same structure as the main file from the
 salt directory.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">base</span>:
-  <span style="color:#e6db74">&#34;production&#34;</span>:
-    - production
+    <span style="color:#66d9ef">&#39;production&#39;</span>:
+        - production
 </code></pre></div><p>When the <code>production</code> hostname is detected, use the <code>production.sls</code> file
-for configuration. You can put just about anything you want to the
+for configuration.  You can put just about anything you want to the
 <code>production.sls</code> file, be it the servers IP address or the SMTP settings.</p>
 <h2 id="where-to-put-things">Where to put things</h2>
 <p>After you&rsquo;ve installed Saltstack on your server, you should copy or symlink the
@@ -109,20 +109,20 @@ for configuration. You can put just about anything you want to the
 <p>Once the configuration files are in place, you can run the minion&rsquo;s
 provisioning command to get everything configured and installed.</p>
 <pre><code class="language-nil" data-lang="nil">$ salt-call --local state.highstate
-</code></pre><p>Don&rsquo;t ask me why it&rsquo;s like this. Makes no sense.</p>
+</code></pre><p>Don&rsquo;t ask me why it&rsquo;s like this.  Makes no sense.</p>
 <p>Saltstack will run everything and then report what happened during the run.</p>
 
+
+  <p class="date">
+    This article was first published on December 11, 2013.  As you can see, there
+    are no comments.  I invite you to email me with your comments, criticisms,
+    and other suggestions.  Even better, write your own article as a response.
+    Blogging is awesome.
+  </p>
 </article>
 
-<p class="article_date date">
-  This article was first published on December 11, 2013.  As you can see, there
-  are no comments.  I invite you to email me with your comments, criticisms,
-  and other suggestions.  Even better, write your own article as a response.
-  Blogging is awesome.
-</p>
 
-
-    </div>
+  </div>
 
 </body>
 </html>

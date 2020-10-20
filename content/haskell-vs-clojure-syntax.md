@@ -6,9 +6,9 @@ categories = ["code", "haskell", "clojure", "lisp"]
 draft = false
 +++
 
-Clojure has virtually zero syntax. What I mean by that is that all structures
+Clojure has virtually zero syntax.  What I mean by that is that all structures
 look the same: the first item in a list is the function and the rest are the
-arguments. This is true for variable assignment, if statements, data
+arguments.  This is true for variable assignment, if statements, data
 structures and functions themselves.
 
 ```clojure
@@ -35,7 +35,7 @@ instance Applicative Maybe where
     (Just f) <*> something = fmap f something
 ```
 
-This is why I find Haskell extremely hard to learn. It's not because of
-monads, recursion or functional programming concepts. It's because of the huge
-amount of special syntax. And you need to learn a lot of it before you can do
+This is why I find Haskell extremely hard to learn.  It's not because of
+monads, recursion or functional programming concepts.  It's because of the huge
+amount of special syntax.  And you need to learn a lot of it before you can do
 something useful.

@@ -6,7 +6,7 @@ categories = ["theology"]
 draft = false
 +++
 
-Text used: ESV. From shortest to longest.
+Text used: ESV.  From shortest to longest.
 
 John 11:35, Job 3:2, Numbers 31:33, Numbers 31:44, Luke 20:30, Numbers 31:34, 1
 Thessalonians 5:16, 1 Chronicles 1:25, Joshua 15:29, 1 Chronicles 1:1, Numbers

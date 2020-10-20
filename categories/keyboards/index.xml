@@ -18,41 +18,41 @@
       
       <guid>https://honza.ca/2017/04/should-i-finally-drop-qwerty/</guid>
       <description>&lt;p&gt;For years now, I have wanted to switch my keyboard layout from QWERTY to
-something more ergonomic. QWERTY was &lt;a href=&#34;http://discovermagazine.com/1997/apr/thecurseofqwerty1099&#34;&gt;designed&lt;/a&gt; to prevent typewriters from
-jamming. Modern computers don&amp;rsquo;t have this problem. So, why are we still using
+something more ergonomic.  QWERTY was &lt;a href=&#34;http://discovermagazine.com/1997/apr/thecurseofqwerty1099&#34;&gt;designed&lt;/a&gt; to prevent typewriters from
+jamming.  Modern computers don&amp;rsquo;t have this problem.  So, why are we still using
 QWERTY?&lt;/p&gt;
-&lt;p&gt;So, for me, it&amp;rsquo;s a given that I should switch to something else. But what? The
-Dvorak layout is the obvious choice. Most people who switch from QWERTY end up
-using Dvorak. Then there is Programmer Dvorak, and Colemak, and Programmer
+&lt;p&gt;So, for me, it&amp;rsquo;s a given that I should switch to something else.  But what?  The
+Dvorak layout is the obvious choice.  Most people who switch from QWERTY end up
+using Dvorak.  Then there is Programmer Dvorak, and Colemak, and Programmer
 Colemak, and hosts of others.&lt;/p&gt;
 &lt;p&gt;There are &lt;a href=&#34;http://patorjk.com/keyboard-layout-analyzer/#/main&#34;&gt;websites&lt;/a&gt; that allow you analyze some text, and help you determine
-which layout is best for you. This is of limited utility because the text you
+which layout is best for you.  This is of limited utility because the text you
 past in won&amp;rsquo;t be representative of your actually habits.&lt;/p&gt;
 &lt;h2 id=&#34;getting-down-to-business&#34;&gt;Getting down to business&lt;/h2&gt;
-&lt;p&gt;So, how can I hack this? I installed a &lt;a href=&#34;https://github.com/kernc/logkeys&#34;&gt;keylogger&lt;/a&gt; on my laptop, and
-collected data for many days. Then, I wrote a little script to analyze the
-data. This is mostly because analysis websites won&amp;rsquo;t let you paste in more
-than a few kilobytes of text. The most basic measure of how good a keyboard
-layout is is the percentage of keystrokes that are on the home row. The idea
+&lt;p&gt;So, how can I hack this?  I installed a &lt;a href=&#34;https://github.com/kernc/logkeys&#34;&gt;keylogger&lt;/a&gt; on my laptop, and
+collected data for many days.  Then, I wrote a little script to analyze the
+data.  This is mostly because analysis websites won&amp;rsquo;t let you paste in more
+than a few kilobytes of text.  The most basic measure of how good a keyboard
+layout is is the percentage of keystrokes that are on the home row.  The idea
 is that if you have to move your fingers less, you will be faster, less tired,
 and experience less pain.&lt;/p&gt;
 &lt;p&gt;The script takes the output of the keylogger and gives you percentages of
-keystrokes that are on the home row for each layout. Here is what I got:&lt;/p&gt;
+keystrokes that are on the home row for each layout.  Here is what I got:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;qwerty: 38.69149%
 colemak: 35.601215%
 dvorak-programmer: 34.441067%
 dvorak: 34.441067%
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Wait, what? QWERTY is the most optimal keyboard layout for me? That can&amp;rsquo;t be
-right. Surely, there must be a bug in my code somewhere. I went over
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Wait, what?  QWERTY is the most optimal keyboard layout for me?  That can&amp;rsquo;t be
+right.  Surely, there must be a bug in my code somewhere.  I went over
 everything several times, tested my functions with dummy data, and so on.
-Everything seems to be correct. You can head over to &lt;a href=&#34;https://github.com/honza/keylogger&#34;&gt;GitHub&lt;/a&gt; and prove me
+Everything seems to be correct.  You can head over to &lt;a href=&#34;https://github.com/honza/keylogger&#34;&gt;GitHub&lt;/a&gt; and prove me
 wrong.&lt;/p&gt;
-&lt;p&gt;I have been thinking about why I got this bizarre result. I think it&amp;rsquo;s because
-most of my regular typing isn&amp;rsquo;t necessarily writing prose. There is a lot of
+&lt;p&gt;I have been thinking about why I got this bizarre result.  I think it&amp;rsquo;s because
+most of my regular typing isn&amp;rsquo;t necessarily writing prose.  There is a lot of
 vim-style navigation (in &lt;a href=&#34;https://github.com/syl20bnr/spacemacs&#34;&gt;Spacemacs&lt;/a&gt;, in the &lt;a href=&#34;https://vimium.github.io/&#34;&gt;browser&lt;/a&gt;, etc), I use &lt;a href=&#34;https://i3wm.org/&#34;&gt;i3&lt;/a&gt; as
-my window manager, &amp;hellip; A lot of it is running commands, tab-completing things,
-keyboard shortcuts. Other layouts, like Colemak, are probably optimized for
-long-form writing. In those cases, it would probably win. But for
+my window manager, &amp;hellip;  A lot of it is running commands, tab-completing things,
+keyboard shortcuts.  Other layouts, like Colemak, are probably optimized for
+long-form writing.  In those cases, it would probably win.  But for
 programmer-centric typing, QWERTY is likely to be king because everything is
 optimized for it.&lt;/p&gt;
 &lt;p&gt;What do you think?&lt;/p&gt;

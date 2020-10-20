@@ -55,7 +55,7 @@ directory and the &lt;em&gt;fabfile&lt;/em&gt;. Chef is a cook how prepares your
 dinner. So, Chef needs some cookbooks and recipes. Each cookbook is a directory
 that contains various configuration files for a specific application that you
 want installed. So for example, you will have a &lt;em&gt;PostgreSQL cookbook&lt;/em&gt; and a
-&lt;em&gt;nginx cookbook&lt;/em&gt;. The deploy directory will contain a directory called
+&lt;em&gt;nginx cookbook&lt;/em&gt;. The  deploy directory will contain a directory called
 &lt;em&gt;cookbooks&lt;/em&gt; which will contain all other cookbooks. Now, the good news is that
 you don&amp;rsquo;t have to make the cookbooks yourself. &lt;a href=&#34;http://www.opscode.com&#34;&gt;Opscode&lt;/a&gt;, the company behind
 Chef, maintains a large selection of cookbooks on &lt;a href=&#34;https://github.com/opscode/cookbooks&#34;&gt;Github&lt;/a&gt;. You can copy and

@@ -6,6 +6,6 @@ categories = ["ebooks"]
 draft = false
 +++
 
-- [epub](/files/girardeau.musical.instruments.epub)
-- [mobi](/files/girardeau.musical.instruments.mobi)
+-   [epub](/files/girardeau.musical.instruments.epub)
+-   [mobi](/files/girardeau.musical.instruments.mobi)
 -

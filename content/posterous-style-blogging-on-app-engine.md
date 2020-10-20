@@ -47,11 +47,11 @@ following:
 
 ```yaml
 inbound_services:
-  - mail
+- mail
 
 handlers:
-  - url: /_ah/mail/.+
-    script: main.py
+- url: /_ah/mail/.+
+  script: main.py
 ```
 
 The first line enables incoming email for your application. The second part is
@@ -62,7 +62,7 @@ a catch-all handler for all incoming email addresses (like I've done above), or
 create seperate handlers for different addresses.
 
 The email address that we will use is in the following format:
-[your_string@appid.appspotmail.com](mailto:your%5Fstring@appid.appspotmail.com). You should substitute the appid with your
+[your\_string@appid.appspotmail.com](mailto:your%5Fstring@appid.appspotmail.com). You should substitute the appid with your
 app's ID. The string before the '@' symbol can be set to anything you want.
 
 With this out of the way, we are ready to write the actual email handler. This
@@ -104,7 +104,7 @@ class EmailHandler(InboundMailHandler):
 
 This is actually very simple. The incoming email message is saved in the
 `mail_message` variable and you can access all of the usual email metadata as
-its properties (e.g. mail_message.sender). So, we create a new post, take the
+its properties (e.g. mail\_message.sender). So, we create a new post, take the
 email's subject and set it as the post's title. The `bodies()` method
 extracts the body of the email and the `decode()` function will decode the
 actual body. Then we set the author and save the post in the datastore.
@@ -135,11 +135,13 @@ post.body = markdown2.markdown(body.decode())
 
 And that's it!
 
+
 ## Conclusion {#conclusion}
 
 This is a very simple yet effective technique and it will allow you to create
 post from anywhere. I hope you've enjoyed the post. Let me know if you have any
 suggestions on how to improve it.
+
 
 ## Code {#code}
 

@@ -18,8 +18,8 @@
       
       <guid>https://honza.ca/2012/10/mutt-sidebar-labels/</guid>
       <description>&lt;p&gt;The sidebar in Mutt is useful if you have multiple email accounts and want to
-switch between them quickly. It shows you each inbox with a number of unread
-emails. I have 6 Gmail accounts plugged into my Mutt and here is what I used
+switch between them quickly.  It shows you each inbox with a number of unread
+emails.  I have 6 Gmail accounts plugged into my Mutt and here is what I used
 to see.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;INBOX (1)
 INBOX
@@ -27,7 +27,7 @@ INBOX (2)
 INBOX (1)
 INBOX (7)
 INBOX
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;And I had to remember which one was which. Let&amp;rsquo;s say you have your mailboxes
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;And I had to remember which one was which.  Let&amp;rsquo;s say you have your mailboxes
 in &lt;code&gt;~/.mail&lt;/code&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;$ ls ~/.mail
 work home
@@ -35,7 +35,7 @@ work home
 directory:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;$ ln -s ~/.mail/work/INBOX ~/.mail/alias/work
 $ ln -s ~/.mail/home/INBOX ~/.mail/alias/home
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Then, point your Mutt sidebar config at those. When you open Mutt the next
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Then, point your Mutt sidebar config at those.  When you open Mutt the next
 time, it should look like this&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;work (1)
 home (8)

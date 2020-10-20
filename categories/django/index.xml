@@ -176,7 +176,7 @@ directory and the &lt;em&gt;fabfile&lt;/em&gt;. Chef is a cook how prepares your
 dinner. So, Chef needs some cookbooks and recipes. Each cookbook is a directory
 that contains various configuration files for a specific application that you
 want installed. So for example, you will have a &lt;em&gt;PostgreSQL cookbook&lt;/em&gt; and a
-&lt;em&gt;nginx cookbook&lt;/em&gt;. The deploy directory will contain a directory called
+&lt;em&gt;nginx cookbook&lt;/em&gt;. The  deploy directory will contain a directory called
 &lt;em&gt;cookbooks&lt;/em&gt; which will contain all other cookbooks. Now, the good news is that
 you don&amp;rsquo;t have to make the cookbooks yourself. &lt;a href=&#34;http://www.opscode.com&#34;&gt;Opscode&lt;/a&gt;, the company behind
 Chef, maintains a large selection of cookbooks on &lt;a href=&#34;https://github.com/opscode/cookbooks&#34;&gt;Github&lt;/a&gt;. You can copy and
@@ -365,7 +365,7 @@ workers &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=
 &lt;h2 id=&#34;running&#34;&gt;Running&lt;/h2&gt;
 &lt;p&gt;I then collected all the static files into the &lt;code&gt;static&lt;/code&gt; directory:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;$ (env) python manage.py collectstatic
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I restarted nginx:&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I restarted  nginx:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;$ sudo /etc/init.d/nginx restart
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;And finally, I ran the &lt;code&gt;gunicorn&lt;/code&gt; server:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;$ (env) cd /home/webapp/app
@@ -423,7 +423,7 @@ vagrant init vagrant-ubuntu
 &lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;vagrant up
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;to actually build and boot the environment. This might take a few minutes.&lt;/p&gt;
 &lt;p&gt;After this, your environment is running. Your environment is a headless
-virtualbox instance. You can &lt;code&gt;ssh&lt;/code&gt; into the box by running:&lt;/p&gt;
+virtualbox instance.  You can &lt;code&gt;ssh&lt;/code&gt; into the box by running:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;vagrant ssh
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You will notice that your project directory (&lt;code&gt;webapp&lt;/code&gt;) is mounted inside the
 environment under &lt;code&gt;/vagrant&lt;/code&gt;. Any changes to either directory will affect the

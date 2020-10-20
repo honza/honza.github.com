@@ -18,23 +18,23 @@
       
       <guid>https://honza.ca/2012/05/how-i-use-git/</guid>
       <description>&lt;p&gt;Recently, I have noticed that there are quite a few wrappers around git to give
-you a nicer interface to work with. The new commands promise to be easy to
-remember and make your life less frustrating. I find these a little silly
-because git on its own is a great tool. Here I&amp;rsquo;m going to describe how I use
+you a nicer interface to work with.  The new commands promise to be easy to
+remember and make your life less frustrating.  I find these a little silly
+because git on its own is a great tool.  Here I&amp;rsquo;m going to describe how I use
 git to convince you (and myself) that it&amp;rsquo;s not that hard.&lt;/p&gt;
 &lt;h2 id=&#34;cloning&#34;&gt;Cloning&lt;/h2&gt;
 &lt;p&gt;This couldn&amp;rsquo;t be any simpler:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;git clone git://github.com/honza/dotfiles.git
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;committing&#34;&gt;Committing&lt;/h2&gt;
-&lt;p&gt;Once I have cloned a repo, I start to make changes. To see what files I have
+&lt;p&gt;Once I have cloned a repo, I start to make changes.  To see what files I have
 changed, I run&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;git status
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Or to see what actual changes I made&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;git diff
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Then, when I&amp;rsquo;m ready to commit, I stage the files. The index is one of my
-favorite features of git. It lets me decide what changes I want to commit.
-Maybe I correct something as I work on something else. Those things aren&amp;rsquo;t
-related so they shouldn&amp;rsquo;t go into the same commit. I grew up on Mercurial and
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Then, when I&amp;rsquo;m ready to commit, I stage the files.  The index is one of my
+favorite features of git.  It lets me decide what changes I want to commit.
+Maybe I correct something as I work on something else.  Those things aren&amp;rsquo;t
+related so they shouldn&amp;rsquo;t go into the same commit.  I grew up on Mercurial and
 not having the index in Mercurial now really bothers me.&lt;/p&gt;
 &lt;p&gt;To stage all changed files, I do&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;git add -u
@@ -44,11 +44,11 @@ do&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To make sure all staged changes are the right ones&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;git diff --cached
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;stashing&#34;&gt;Stashing&lt;/h2&gt;
-&lt;p&gt;I often stash my code. Sometimes you need to look at some code in a different
+&lt;p&gt;I often stash my code.  Sometimes you need to look at some code in a different
 branch, sometimes I notice something is broken and I want to see if I broke it
 or not.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;git stash
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;will stash your changes. To get it back I do&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;will stash your changes.  To get it back I do&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;git stash pop
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;And also, often I will see what I had stashed&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;git stash list
@@ -61,16 +61,16 @@ or not.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;git push origin :branch_name
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;rebasing&#34;&gt;Rebasing&lt;/h2&gt;
 &lt;p&gt;I have &lt;a href=&#34;http://honza.ca/2011/05/the-importance-of-git-rebase&#34;&gt;written&lt;/a&gt; on
-rebasing before. It makes your history much nicer. Any time I pull code from
+rebasing before.  It makes your history much nicer.  Any time I pull code from
 a remote repository, I do&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;git pull --rebase
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Or, if it&amp;rsquo;s a specific branch&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;git pull --rebase origin dev
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;bisecting&#34;&gt;Bisecting&lt;/h2&gt;
-&lt;p&gt;I &lt;em&gt;love&lt;/em&gt; the bisect commnad in git. You can use it to determine which commit
-introduced a bug. This is especially useful if you have a comprehensive test
-suite. For example, the latest commit is broken and you remember that all
-tests where passing in version 1.2. This example uses Django.&lt;/p&gt;
+&lt;p&gt;I &lt;em&gt;love&lt;/em&gt; the bisect commnad in git.  You can use it to determine which commit
+introduced a bug.  This is especially useful if you have a comprehensive test
+suite.  For example, the latest commit is broken and you remember that all
+tests where passing in version 1.2.  This example uses Django.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;git bisect start HEAD v1.2 --      # HEAD is bad, v1.2 is good
 git bisect run python manage.py test
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Git will then keep running your tests until it finds the first commit that&amp;rsquo;s
@@ -83,11 +83,11 @@ git merge --no-ff feature
 &lt;p&gt;For viewing history, I really like the following command&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;git log --pretty=format:&amp;quot;%h - %an, %ar : %s&amp;quot;&#39;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This gives you the commit SHA, then the author&amp;rsquo;s name, how long ago it was made
-and a brief, one-line summary of the changes. I have it aliased as &lt;code&gt;gitl&lt;/code&gt;.
+and a brief, one-line summary of the changes.  I have it aliased as &lt;code&gt;gitl&lt;/code&gt;.
 I also use a simple graph to see the relationships between branches&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;git log --oneline --graph
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;upgrading-all-submodules-in-a-project&#34;&gt;Upgrading all submodules in a project&lt;/h2&gt;
-&lt;p&gt;This one is great, too. I use it to upgrade all of my vim plugins.&lt;/p&gt;
+&lt;p&gt;This one is great, too.  I use it to upgrade all of my vim plugins.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;git submodule foreach git pull
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;pulling-and-pushing&#34;&gt;Pulling and pushing&lt;/h2&gt;
 &lt;p&gt;This is pretty straight forward&lt;/p&gt;
@@ -98,7 +98,7 @@ git push
 git push origin dev
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;Once you learn what git calls what, it&amp;rsquo;s pretty easy to just google the thing
-you&amp;rsquo;re trying to do. I&amp;rsquo;m definitely not an expert but this gets me by.&lt;/p&gt;
+you&amp;rsquo;re trying to do.  I&amp;rsquo;m definitely not an expert but this gets me by.&lt;/p&gt;
 </description>
     </item>
     

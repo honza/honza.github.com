@@ -20,6 +20,7 @@ export PATH=$PATH:"$GEM_HOME/bin"
 
 That's it! You're welcome. :)
 
+
 ## Credit {#credit}
 
 Give credit where credit is due. I stole this idea from [Idan Gazit](http://twitter.com/idangazit) and

@@ -26,4 +26,4 @@ fine.
 
 The problem is that it makes the history of your project messy.
 
-\#+BEGIN_SRC console
+\#+BEGIN\_SRC console

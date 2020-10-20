@@ -9,13 +9,13 @@ draft = false
 (That's quite a title, isn't it?)
 
 If you're using vim to write Clojure code, chances are that you're using Tim
-Pope's vim-fireplace plugin. It's really great. It stars an nREPL session in
-the background for you and lets you evaluate a form inside of vim. It's super
+Pope's vim-fireplace plugin.  It's really great.  It stars an nREPL session in
+the background for you and lets you evaluate a form inside of vim.  It's super
 fast because it keeps the session around and it's one of my favorite things
 about writing Clojure.
 
-Recently, vim-fireplace received support for [piggieback](https://github.com/cemerick/piggieback). Piggieback is a
-layer on top of nREPL that gives you support for ClojureScript. This is really
+Recently, vim-fireplace received support for [piggieback](https://github.com/cemerick/piggieback).  Piggieback is a
+layer on top of nREPL that gives you support for ClojureScript.  This is really
 great because it gives you the ability to evaluate ClojureScript code in vim
 just like your normal Clojure code.
 
@@ -43,9 +43,9 @@ Alright, here is how to set it up:
                 :optimizations :simple}}]})
 ```
 
-Pretty standard stuff. We're using the lein-cljsbuild plugin for automatic
+Pretty standard stuff.  We're using the lein-cljsbuild plugin for automatic
 compilation, we set up the source path and a nodejs compile target.
 
 Now you simply open a `.cljs` file and you can do your usual vim-fireplace
-magic. The first `cpr` (reload current buffer) command will connect to an
+magic.  The first `cpr` (reload current buffer) command will connect to an
 nREPL instance and initialize the piggieback wrapper.

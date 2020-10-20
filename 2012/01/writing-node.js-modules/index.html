@@ -39,12 +39,12 @@ Over the Christmas holidays, I sat down to sort out my photo library and I wante
 
 </head>
 <body>
-        <div id="banner" class="container">
-          <h1><a href="/">Honza Pokorny</a></h1>
-          <p><em>Thoughts of an open source developer with a theology degree</em></p>
-        </div>
+  <div id="banner" class="container">
+    <h1><a href="/">Honza Pokorny</a></h1>
+    <p><em>Thoughts of an open source developer with a theology degree</em></p>
+  </div>
 
-    <div id="wrap">
+  <div class="wrap">
 
 <div class="single-header">
   <h1>Writing Node.js modules</h1>
@@ -76,28 +76,25 @@ from 20 minutes to 2 using about 5 workers. Much better, eh?</p>
 projects that do something even remotely similar. It&rsquo;s called <a href="https://github.com/honza/node-thumbnail">node-thumbnail</a>
 and you can find it on both Github and npmjs.</p>
 <p>So what does the API look like?</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">thumb</span>(
-  {
-    <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;source/path&#34;</span>,
-    <span style="color:#a6e22e">destination</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;dest/path&#34;</span>,
-    <span style="color:#a6e22e">concurrency</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">4</span>
-  },
-  <span style="color:#66d9ef">function</span>() {
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;All done!&#34;</span>);
-  }
-);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">thumb</span>({
+  <span style="color:#a6e22e">source</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;source/path&#39;</span>,
+  <span style="color:#a6e22e">destination</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;dest/path&#39;</span>,
+  <span style="color:#a6e22e">concurrency</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">4</span>
+  }, <span style="color:#66d9ef">function</span>() {
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;All done!&#39;</span>);
+});
 </code></pre></div>
+
+  <p class="date">
+    This article was first published on January 5, 2012.  As you can see, there
+    are no comments.  I invite you to email me with your comments, criticisms,
+    and other suggestions.  Even better, write your own article as a response.
+    Blogging is awesome.
+  </p>
 </article>
 
-<p class="article_date date">
-  This article was first published on January 5, 2012.  As you can see, there
-  are no comments.  I invite you to email me with your comments, criticisms,
-  and other suggestions.  Even better, write your own article as a response.
-  Blogging is awesome.
-</p>
 
-
-    </div>
+  </div>
 
 </body>
 </html>

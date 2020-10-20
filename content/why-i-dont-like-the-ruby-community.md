@@ -21,7 +21,7 @@ Recently, though, I came across a tweet that I made me realize what it was that
 I didn't like about Ruby. It was like a small revelation.
 
 > Markup is markup, not Ruby. JavaScript is JavaScript, not Ruby. CSS is CSS,
-> not Ruby. Get that in your head before I slap you. - [@ara_p](https://twitter.com/#!/ara%5Fp/status/81425173965832193)
+> not Ruby. Get that in your head before I slap you. - [@ara\_p](https://twitter.com/#!/ara%5Fp/status/81425173965832193)
 
 Do you get it? [ERB](http://ruby-doc.org/stdlib/libdoc/erb/rdoc/classes/ERB.html) is Ruby with some html-like fragments mixed in.
 [CoffeeScript](http://jashkenas.github.com/coffee-script/) is a Ruby-like language that compiles to Javascript. [Sass](http://sass-lang.com/) is

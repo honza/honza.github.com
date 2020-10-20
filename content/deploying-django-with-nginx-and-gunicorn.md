@@ -16,11 +16,13 @@ Just a quick note before we start: this isn't an out-there deployment option. I
 spoke to one of the gunicorn developers and was told that every django hosting
 company (think ep.io) uses this setup.
 
+
 ## Get your server ready {#get-your-server-ready}
 
 I use Rackspace for small, single server web apps. I created an Ubuntu 10.10
 instance with 256MB of RAM. Then, I created a user for my app and added my ssh
 key to `authorized_keys`. Basic stuff.
+
 
 ## Install nginx {#install-nginx}
 
@@ -36,6 +38,7 @@ $ apt-get install nginx
 $ exit
 ```
 
+
 ## Project structure {#project-structure}
 
 The user under which the app will run is `webapp`, so I checkout my app in
@@ -48,6 +51,7 @@ The user under which the app will run is `webapp`, so I checkout my app in
 ```
 
 Note that I'm using `virtualenv` to deploy this app.
+
 
 ## Configure nginx and gunicorn {#configure-nginx-and-gunicorn}
 
@@ -99,6 +103,7 @@ workers = 3
 
 That's it! The config files are simple and easy to read.
 
+
 ## Running {#running}
 
 I then collected all the static files into the `static` directory:
@@ -107,7 +112,7 @@ I then collected all the static files into the `static` directory:
 $ (env) python manage.py collectstatic
 ```
 
-I restarted nginx:
+I restarted  nginx:
 
 ```console
 $ sudo /etc/init.d/nginx restart
@@ -121,6 +126,7 @@ $ (env) gunicorn_django -D -c gunicorn.conf.py
 ```
 
 And I was good to go.
+
 
 ## Notes {#notes}
 

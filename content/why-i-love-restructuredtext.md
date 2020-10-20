@@ -31,9 +31,12 @@ customizations won't be impossible. When I installed it, I was surprised that
 it came with a set of command line tools to parse RST files to other common
 formats such as:
 
+
 ## HTML {#html}
 
+
 ## PDF via Latex {#pdf-via-latex}
+
 
 ## ODT (OpenOffice format) {#odt--openoffice-format}
 

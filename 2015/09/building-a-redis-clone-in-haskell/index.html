@@ -41,12 +41,12 @@ We are going to omit many features that Redis has. For example, there will be no
 
 </head>
 <body>
-        <div id="banner" class="container">
-          <h1><a href="/">Honza Pokorny</a></h1>
-          <p><em>Thoughts of an open source developer with a theology degree</em></p>
-        </div>
+  <div id="banner" class="container">
+    <h1><a href="/">Honza Pokorny</a></h1>
+    <p><em>Thoughts of an open source developer with a theology degree</em></p>
+  </div>
 
-    <div id="wrap">
+  <div class="wrap">
 
 <div class="single-header">
   <h1>Building a Redis clone in Haskell</h1>
@@ -62,13 +62,13 @@ Here is a set of requirements that we will aim to fullfill:</p>
 <h3 id="redis-compatible--implement-the-redis-protocol">Redis compatible (implement the Redis protocol)</h3>
 <p>We should be able to use the <code>redis-cli</code> tool to connect to our server and
 issue commands to it.</p>
-<p>We are going to omit many features that Redis has. For example, there will be
-no disk persistence. We will accomplish this with about 100 lines of Haskell.</p>
+<p>We are going to omit many features that Redis has.  For example, there will be
+no disk persistence.  We will accomplish this with about 100 lines of Haskell.</p>
 <h2 id="getting-started-stack">Getting started: stack</h2>
-<p>We are going to use <a href="https://github.com/commercialhaskell/stack">stack</a> to build our project. Stack is a new build tool for
-Haskell projects. We can also use it to create all the necessary files that
-make up a Haskell project. You can find the installation <a href="https://github.com/commercialhaskell/stack/wiki/Downloads">instructions</a> here.</p>
-<p>Let&rsquo;s create our project. We will call our server <em>Redish</em>.</p>
+<p>We are going to use <a href="https://github.com/commercialhaskell/stack">stack</a> to build our project.  Stack is a new build tool for
+Haskell projects.  We can also use it to create all the necessary files that
+make up a Haskell project.  You can find the installation <a href="https://github.com/commercialhaskell/stack/wiki/Downloads">instructions</a> here.</p>
+<p>Let&rsquo;s create our project.  We will call our server <em>Redish</em>.</p>
 <pre><code class="language-nil" data-lang="nil">$ stack new Redish simple
 </code></pre><p>This will create a directory <code>Redish/</code> with a few files in it.</p>
 <pre><code class="language-nil" data-lang="nil">Redish/
@@ -93,65 +93,65 @@ Installing executable(s) in
 $ stack exec Redish
 hello world
 </code></pre><h2 id="types">Types</h2>
-<p>Let&rsquo;s start by defining our types. Redish is an in-memory database so we will
-need a representation of our database. For a simple key-value store, all that
-we need is a simple map. Let&rsquo;s create a few aliases.</p>
+<p>Let&rsquo;s start by defining our types.  Redish is an in-memory database so we will
+need a representation of our database.  For a simple key-value store, all that
+we need is a simple map.  Let&rsquo;s create a few aliases.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#66d9ef">type</span> <span style="color:#66d9ef">Value</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">ByteString</span>
 <span style="color:#66d9ef">type</span> <span style="color:#66d9ef">Key</span>   <span style="color:#f92672">=</span> <span style="color:#66d9ef">ByteString</span>
 <span style="color:#66d9ef">type</span> <span style="color:#66d9ef">DB</span>    <span style="color:#f92672">=</span> <span style="color:#66d9ef">Map</span> <span style="color:#66d9ef">Key</span> <span style="color:#66d9ef">Value</span>
 </code></pre></div><p>Next, we will need to represent the commands that our server knows how to
-handle. The command data structure can be a <code>get</code>, a <code>set</code> or unknown.</p>
+handle.  The command data structure can be a <code>get</code>, a <code>set</code> or unknown.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#66d9ef">data</span> <span style="color:#66d9ef">Command</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">Get</span> <span style="color:#66d9ef">Key</span>
              <span style="color:#f92672">|</span> <span style="color:#66d9ef">Set</span> <span style="color:#66d9ef">Key</span> <span style="color:#66d9ef">Value</span>
              <span style="color:#f92672">|</span> <span style="color:#66d9ef">Unknown</span>
              <span style="color:#66d9ef">deriving</span> (<span style="color:#66d9ef">Eq</span>, <span style="color:#66d9ef">Show</span>)
 </code></pre></div><h2 id="software-transactional-memory">Software transactional memory</h2>
 <p>Now that we have our types in places, we need to write a few functions to
-operate on them. We need a way to insert data and to query our database.</p>
-<p>First things first though. Since by default everything in Haskell is immutable,
-how can we change the value of our in-memory database? We can&rsquo;t simply
-overwrite the old value with the new one. The compiler won&rsquo;t let us. The
+operate on them.  We need a way to insert data and to query our database.</p>
+<p>First things first though.  Since by default everything in Haskell is immutable,
+how can we change the value of our in-memory database?  We can&rsquo;t simply
+overwrite the old value with the new one.  The compiler won&rsquo;t let us.  The
 answer is software transactional memory, or STM for short.</p>
-<p>STM allows us to atomically change a value in our program. The atomic part is
-important. Many parts of the code can update this value and we have no way of
-knowing when and how often they might do so. STM allows us to perform atomic
-updates. This way any updates to our database will be run sequence even when
-coming from different threads. The only cost is that we have to perform any
+<p>STM allows us to atomically change a value in our program.  The atomic part is
+important.  Many parts of the code can update this value and we have no way of
+knowing when and how often they might do so.  STM allows us to perform atomic
+updates.  This way any updates to our database will be run sequence even when
+coming from different threads.  The only cost is that we have to perform any
 updates within the context of <code>IO</code>.</p>
-<p>Our <code>DB</code> type will be become <code>TVar DB</code>. The <code>TVar</code> type represents the
-mutable reference. Next, let&rsquo;s create the initial value in the <code>main</code>
+<p>Our <code>DB</code> type will be become <code>TVar DB</code>.  The <code>TVar</code> type represents the
+mutable reference.  Next, let&rsquo;s create the initial value in the <code>main</code>
 function:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#a6e22e">main</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">IO</span> ()
 <span style="color:#a6e22e">main</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">do</span>
     database <span style="color:#f92672">&lt;-</span> atomically <span style="color:#f92672">$</span> newTVar <span style="color:#f92672">$</span> fromList [(<span style="color:#e6db74">&#34;__version__&#34;</span>, <span style="color:#e6db74">&#34;0.1.0&#34;</span>)]
 </code></pre></div><p>This will create a <code>Map</code> with a key of <code>__version__</code> which has the value
-<code>0.1.0</code>. Then, it wraps that <code>Map</code> in a <code>TVar</code> and atomically assigns it
-to the <code>database</code> variable. Each time we want to write or read the
-<code>database</code> value, we have to use <code>IO</code>. Let&rsquo;s create a helper for atomically
+<code>0.1.0</code>.  Then, it wraps that <code>Map</code> in a <code>TVar</code> and atomically assigns it
+to the <code>database</code> variable.  Each time we want to write or read the
+<code>database</code> value, we have to use <code>IO</code>.  Let&rsquo;s create a helper for atomically
 reading this value:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#a6e22e">atomRead</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">TVar</span> a <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">IO</span> a
 <span style="color:#a6e22e">atomRead</span> <span style="color:#f92672">=</span> atomically <span style="color:#f92672">.</span> readTVar
-</code></pre></div><p>And let&rsquo;s make a function to update a value in the database. This takes a
+</code></pre></div><p>And let&rsquo;s make a function to update a value in the database.  This takes a
 function that does the updating and runs it through the STM machinery.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#a6e22e">updateValue</span> <span style="color:#f92672">::</span> (<span style="color:#66d9ef">DB</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">DB</span>) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">TVar</span> <span style="color:#66d9ef">DB</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">IO</span> ()
 <span style="color:#a6e22e">updateValue</span> fn x <span style="color:#f92672">=</span> atomically <span style="color:#f92672">$</span> modifyTVar x fn
 </code></pre></div><h2 id="reply-parsing">Reply parsing</h2>
-<p>Next, let&rsquo;s talk about the Redis protocol. It&rsquo;s a simple TCP scheme that looks
+<p>Next, let&rsquo;s talk about the Redis protocol.  It&rsquo;s a simple TCP scheme that looks
 like this:</p>
 <pre><code class="language-nil" data-lang="nil">*2\r\n$3\r\nget\r\n$4\r\nname
-</code></pre><p>It&rsquo;s a bunch of keywords and arguments separated by newlines. If we clean it up
+</code></pre><p>It&rsquo;s a bunch of keywords and arguments separated by newlines.  If we clean it up
 and break each thing to its own line, we get:</p>
 <pre><code class="language-nil" data-lang="nil">*2
 $3
 get
 $4
 name
-</code></pre><p>Let&rsquo;s look at each line. <code>*2</code> says to expect a command that has two
-arguments. <code>$3</code> says that the first argument is three characters long.
-<code>get</code> is the three-character argument from above. <code>$4</code> is the length of the
-second argument, and <code>name</code> is the value of the second argument. If you&rsquo;re in
+</code></pre><p>Let&rsquo;s look at each line.  <code>*2</code> says to expect a command that has two
+arguments.  <code>$3</code> says that the first argument is three characters long.
+<code>get</code> is the three-character argument from above.  <code>$4</code> is the length of the
+second argument, and <code>name</code> is the value of the second argument.  If you&rsquo;re in
 the REPL provided by <code>redis-cli</code>, and you type <code>get name</code>, Redis will
-translate those two words into the above representation. A <code>set</code> command
+translate those two words into the above representation.  A <code>set</code> command
 would look like this:</p>
 <pre><code class="language-nil" data-lang="nil">*3
 $3
@@ -165,26 +165,26 @@ honza
 There are two other data types that Redis uses that will interest us: the OK and
 the error.</p>
 <p>When Redis needs to tell you that it accepted request and everything went
-smoothly, it simply responds with <code>+OK</code>. When Redis needs to indicate an
+smoothly, it simply responds with <code>+OK</code>.  When Redis needs to indicate an
 error, it replies with <code>-ERR something went wrong</code> (where &ldquo;something went
 wrong&rdquo; is the message).</p>
-<p>This format is very simple and actually very effective. When we listen on a
-socket for incoming messages, we have a look at the very first character. <code>+</code>
+<p>This format is very simple and actually very effective.  When we listen on a
+socket for incoming messages, we have a look at the very first character.  <code>+</code>
 tells us that it&rsquo;s OK, <code>-</code> signals and error, and <code>*</code> tells us to keep
-reading for commands. We incrementally read from the socket only as much data
+reading for commands.  We incrementally read from the socket only as much data
 as the protocol tells us.</p>
-<p>In this section, we will write a parser for multibulk messages. We will use the
+<p>In this section, we will write a parser for multibulk messages.  We will use the
 amazing attoparsec library for this.</p>
 <blockquote>
-<p>The following code is heavily influenced by the <a href="https://github.com/informatikr/hedis">Hedis</a> library. Credit goes
-to Falko Peters. Thanks!</p>
+<p>The following code is heavily influenced by the <a href="https://github.com/informatikr/hedis">Hedis</a> library.  Credit goes
+to Falko Peters.  Thanks!</p>
 </blockquote>
-<p>A multibulk message is called a <em>reply</em> in Redis lingo. Let&rsquo;s make a type for it.</p>
+<p>A multibulk message is called a <em>reply</em> in Redis lingo.  Let&rsquo;s make a type for it.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#66d9ef">data</span> <span style="color:#66d9ef">Reply</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">Bulk</span> (<span style="color:#66d9ef">Maybe</span> <span style="color:#66d9ef">ByteString</span>)
            <span style="color:#f92672">|</span> <span style="color:#66d9ef">MultiBulk</span> (<span style="color:#66d9ef">Maybe</span> [<span style="color:#66d9ef">Reply</span>])
            <span style="color:#66d9ef">deriving</span> (<span style="color:#66d9ef">Eq</span>, <span style="color:#66d9ef">Show</span>)
 </code></pre></div><p>A <code>Bulk</code> reply is a simple string like <code>get</code> or <code>name</code> above.
-<code>MultiBulk</code> is the whole message. Let&rsquo;s also write a function that attempts
+<code>MultiBulk</code> is the whole message.  Let&rsquo;s also write a function that attempts
 to convert a <code>Reply</code> to a <code>Command</code>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#a6e22e">parseReply</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">Reply</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">Maybe</span> <span style="color:#66d9ef">Command</span>
 <span style="color:#a6e22e">parseReply</span> (<span style="color:#66d9ef">MultiBulk</span> (<span style="color:#66d9ef">Just</span> xs)) <span style="color:#f92672">=</span>
@@ -212,16 +212,16 @@ Let&rsquo;s implement those:</p>
         <span style="color:#66d9ef">then</span> return <span style="color:#66d9ef">Nothing</span>
         <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">Just</span> <span style="color:#f92672">&lt;$&gt;</span> count len replyParser
 </code></pre></div><p>First, the parsers look at the first character to see what kind of message it
-is. If it starts with a <code>$</code>, it&rsquo;s a bulk. If it starts with a <code>*</code>, it&rsquo;s
-multibulk. Then, it reads as many characters from the input as the length
-indicator said. In the case of multibulk, it recurses because it can contain
+is.  If it starts with a <code>$</code>, it&rsquo;s a bulk.  If it starts with a <code>*</code>, it&rsquo;s
+multibulk.  Then, it reads as many characters from the input as the length
+indicator said.  In the case of multibulk, it recurses because it can contain
 bulk messages.</p>
 <p>You can now run:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#f92672">&gt;</span> parse replyParser <span style="color:#e6db74">&#34;*2</span><span style="color:#ae81ff">\r\n</span><span style="color:#e6db74">$3</span><span style="color:#ae81ff">\r\n</span><span style="color:#e6db74">get</span><span style="color:#ae81ff">\r\n</span><span style="color:#e6db74">$4</span><span style="color:#ae81ff">\r\n</span><span style="color:#e6db74">name</span><span style="color:#ae81ff">\r\n</span><span style="color:#e6db74">&#34;</span>
 <span style="color:#f92672">&gt;</span> (<span style="color:#66d9ef">MultiBulk</span> (<span style="color:#66d9ef">Just</span> [(<span style="color:#66d9ef">Bulk</span> (<span style="color:#66d9ef">Just</span> <span style="color:#e6db74">&#34;get&#34;</span>)), (<span style="color:#66d9ef">Bulk</span> (<span style="color:#66d9ef">Just</span> <span style="color:#e6db74">&#34;name&#34;</span>))]))
 </code></pre></div><h2 id="networking">Networking</h2>
 <p>At this point, we have our data structures ready and we know how to parse
-incoming requests into them. Now we need to work on the networking part. Let&rsquo;s
+incoming requests into them.  Now we need to work on the networking part.  Let&rsquo;s
 teach our program how to listen on a socket and parse incoming text into
 something useful.</p>
 <p>Let&rsquo;s change our <code>main</code> function to this:</p>
@@ -231,8 +231,8 @@ something useful.</p>
     sock <span style="color:#f92672">&lt;-</span> listenOn <span style="color:#f92672">$</span> <span style="color:#66d9ef">PortNumber</span> <span style="color:#ae81ff">7777</span>
     putStrLn <span style="color:#e6db74">&#34;Listening on localhost 7777&#34;</span>
     sockHandler sock database
-</code></pre></div><p>This is pretty straight-forward. Ask for a socket and then listen on it. When
-something happens on the socket, run the function <code>socketHandler</code>. Let&rsquo;s
+</code></pre></div><p>This is pretty straight-forward.  Ask for a socket and then listen on it.  When
+something happens on the socket, run the function <code>socketHandler</code>.  Let&rsquo;s
 implement that next:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#a6e22e">sockHandler</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">Socket</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">TVar</span> <span style="color:#66d9ef">DB</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">IO</span> ()
 <span style="color:#a6e22e">sockHandler</span> sock db <span style="color:#f92672">=</span> <span style="color:#66d9ef">do</span>
@@ -242,9 +242,9 @@ implement that next:</p>
     <span style="color:#66d9ef">_</span> <span style="color:#f92672">&lt;-</span> forkIO <span style="color:#f92672">$</span> commandProcessor handle db
     sockHandler sock db
 </code></pre></div><p>Given a socket and a reference to a mutable database, we can get a handle and
-start processing requests. For each new connection, run <code>forkIO</code> which will
-do all this work of parsing and responding on a new lightweight thread. At the
-end, we simply recurse to accept new work. The <code>commandProcessor</code> function
+start processing requests.  For each new connection, run <code>forkIO</code> which will
+do all this work of parsing and responding on a new lightweight thread.  At the
+end, we simply recurse to accept new work.  The <code>commandProcessor</code> function
 does the heavy lifting here, so let&rsquo;s write that next.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#a6e22e">commandProcessor</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">Handle</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">TVar</span> <span style="color:#66d9ef">DB</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">IO</span> ()
 <span style="color:#a6e22e">commandProcessor</span> handle db <span style="color:#f92672">=</span> <span style="color:#66d9ef">do</span>
@@ -252,9 +252,9 @@ does the heavy lifting here, so let&rsquo;s write that next.</p>
     <span style="color:#66d9ef">let</span> command <span style="color:#f92672">=</span> parseReply reply
     runCommand handle command db
     commandProcessor handle db
-</code></pre></div><p>This function runs the <code>replyParser</code> we wrote earlier. It uses a very clever
-function called <code>hGetReplies</code> which we will look at in a minute. It will read
-as much data as necessary from the handle to get an instance of <code>Reply</code>. We
+</code></pre></div><p>This function runs the <code>replyParser</code> we wrote earlier.  It uses a very clever
+function called <code>hGetReplies</code> which we will look at in a minute.  It will read
+as much data as necessary from the handle to get an instance of <code>Reply</code>.  We
 then convert that reply to a command and run it.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#a6e22e">hGetReplies</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">Handle</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">Parser</span> a <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">IO</span> a
 <span style="color:#a6e22e">hGetReplies</span> h parser <span style="color:#f92672">=</span> go <span style="color:#66d9ef">S</span><span style="color:#f92672">.</span>empty
@@ -267,9 +267,9 @@ then convert that reply to a command and run it.</p>
             <span style="color:#66d9ef">Done</span> <span style="color:#66d9ef">_</span> r     <span style="color:#f92672">-&gt;</span> return r
 
     readMore <span style="color:#f92672">=</span> <span style="color:#66d9ef">S</span><span style="color:#f92672">.</span>hGetSome h (<span style="color:#ae81ff">4</span><span style="color:#f92672">*</span><span style="color:#ae81ff">1024</span>)
-</code></pre></div><p>The <code>parseWith</code> function does partial matching. When it can&rsquo;t parse anything,
-it will use the <code>readMore</code> function to get more data and try again. The
-<code>readMore</code> function uses the handle to read more data. Once the parser can
+</code></pre></div><p>The <code>parseWith</code> function does partial matching.  When it can&rsquo;t parse anything,
+it will use the <code>readMore</code> function to get more data and try again.  The
+<code>readMore</code> function uses the handle to read more data.  Once the parser can
 match something, we are done.</p>
 <h2 id="running-commands">Running commands</h2>
 <p>Once we have a command, we can run it!</p>
@@ -287,14 +287,14 @@ match something, we are done.</p>
 <span style="color:#a6e22e">runCommand</span> handle (<span style="color:#66d9ef">Just</span> <span style="color:#66d9ef">Unknown</span>) <span style="color:#66d9ef">_</span> <span style="color:#f92672">=</span>
     <span style="color:#66d9ef">S</span><span style="color:#f92672">.</span>hPutStr handle <span style="color:#f92672">$</span> <span style="color:#66d9ef">S</span><span style="color:#f92672">.</span>concat [<span style="color:#e6db74">&#34;-ERR &#34;</span>, <span style="color:#e6db74">&#34;unknown command&#34;</span>, crlf]
 <span style="color:#a6e22e">runCommand</span> <span style="color:#66d9ef">_</span> <span style="color:#66d9ef">Nothing</span> <span style="color:#66d9ef">_</span> <span style="color:#f92672">=</span> return ()
-</code></pre></div><p>When the command is a <code>get</code>, we read the <code>DB</code> atom. Then we construct a
-bulk reply and write it to the handle. The bulk reply is in the same format as
-our messages above: <code>$5\r\nhonza\r\n</code>. The <code>getValue</code> function is a lookup
+</code></pre></div><p>When the command is a <code>get</code>, we read the <code>DB</code> atom.  Then we construct a
+bulk reply and write it to the handle.  The bulk reply is in the same format as
+our messages above: <code>$5\r\nhonza\r\n</code>.  The <code>getValue</code> function is a lookup
 function that returns &ldquo;null&rdquo; if a value can&rsquo;t be found.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#a6e22e">getValue</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">DB</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">Key</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">Value</span>
 <span style="color:#a6e22e">getValue</span> db k <span style="color:#f92672">=</span> findWithDefault <span style="color:#e6db74">&#34;null&#34;</span> k db
 </code></pre></div><p>When the command is a <code>set</code>, we use our <code>updateValue</code> function from above
-and write the <code>ok</code> to the handle. The <code>ok</code> variable is just <code>+OK\r\n</code>.</p>
+and write the <code>ok</code> to the handle.  The <code>ok</code> variable is just <code>+OK\r\n</code>.</p>
 <p>When the command is unknown, we write an error to the handle.</p>
 <h2 id="compiling-and-running">Compiling and running</h2>
 <p>You can now build your program with</p>
@@ -311,20 +311,20 @@ OK
 </code></pre><p>You can test the performance with something silly, like:</p>
 <pre><code class="language-nil" data-lang="nil">$ time redis-cli -r 10000 get name
 </code></pre><h2 id="conclusion">Conclusion</h2>
-<p>You can see the finished product on <a href="https://github.com/honza/redish">GitHub</a>. Feedback is welcome, so are
+<p>You can see the finished product on <a href="https://github.com/honza/redish">GitHub</a>.  Feedback is welcome, so are
 questions.</p>
 
+
+  <p class="date">
+    This article was first published on September 3, 2015.  As you can see, there
+    are no comments.  I invite you to email me with your comments, criticisms,
+    and other suggestions.  Even better, write your own article as a response.
+    Blogging is awesome.
+  </p>
 </article>
 
-<p class="article_date date">
-  This article was first published on September 3, 2015.  As you can see, there
-  are no comments.  I invite you to email me with your comments, criticisms,
-  and other suggestions.  Even better, write your own article as a response.
-  Blogging is awesome.
-</p>
 
-
-    </div>
+  </div>
 
 </body>
 </html>

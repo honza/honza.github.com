@@ -26,6 +26,7 @@ that package there.
 Unfortunately, PyPI has been known to be down or slow at times; and you want
 your deployments to be as smooth as possible.
 
+
 ## What you can do {#what-you-can-do}
 
 Instead of depending on PyPI for a production application, you can host the

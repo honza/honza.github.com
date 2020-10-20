@@ -19,54 +19,54 @@
       <guid>https://honza.ca/2015/11/language-choice/</guid>
       <description>&lt;p&gt;&lt;em&gt;Warning: this is a rant&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Recently, I have made great progress in my journey towards Haskell
-enlightenment. I finally see how many of the little pieces of the Haskell
-puzzle fit together. At this point, I feel empowered to go forth and write
-useful programs. I &lt;a href=&#34;https://twitter.com/%5Fhonza/status/660421406698508288&#34;&gt;read&lt;/a&gt; through the source of &lt;a href=&#34;https://github.com/scotty-web/scotty&#34;&gt;Scotty&lt;/a&gt; the web framework
+enlightenment.  I finally see how many of the little pieces of the Haskell
+puzzle fit together.  At this point, I feel empowered to go forth and write
+useful programs.  I &lt;a href=&#34;https://twitter.com/%5Fhonza/status/660421406698508288&#34;&gt;read&lt;/a&gt; through the source of &lt;a href=&#34;https://github.com/scotty-web/scotty&#34;&gt;Scotty&lt;/a&gt; the web framework
 the other day, and I was very pleasantly surprised that I understood how it
-works. I absolutely &lt;em&gt;love&lt;/em&gt; Haskell. I love that it makes you think. One does
+works.  I absolutely &lt;em&gt;love&lt;/em&gt; Haskell.  I love that it makes you think.  One does
 not simply open a text editor and start banging at the keyboard to write a
-Haskell program. I love that Haskell encourages generalizations and
-abstractions. One of the biggest heureka moments in my journey was
+Haskell program.  I love that Haskell encourages generalizations and
+abstractions.  One of the biggest heureka moments in my journey was
 understanding the full implications of why a function of type &lt;code&gt;a -&amp;gt; a&lt;/code&gt; has a
-single implementation. I&amp;rsquo;m addicted to running my program for the first time
-(after fighting with the compiler for ages), and having it work. I think monad
-transformers and lenses are really clever. By many criteria, Haskell is the
+single implementation.  I&amp;rsquo;m addicted to running my program for the first time
+(after fighting with the compiler for ages), and having it work.  I think monad
+transformers and lenses are really clever.  By many criteria, Haskell is the
 perfect programming language.&lt;/p&gt;
 &lt;p&gt;It has taken me four years to get here.&lt;/p&gt;
 &lt;p&gt;I used to get so discouraged that I took breaks for weeks or months at a time
-because I didn&amp;rsquo;t see the point of continuing. But I always came back. Now I
-have finally arrived. I would say I&amp;rsquo;m an intermediate Haskeller. Naturally,
+because I didn&amp;rsquo;t see the point of continuing.  But I always came back. Now I
+have finally arrived.  I would say I&amp;rsquo;m an intermediate Haskeller.  Naturally,
 I&amp;rsquo;m thinking about writing some Haskell code at work which is going to be easy
 given our service-oriented architecture.&lt;/p&gt;
 &lt;p&gt;I have also been playing with &lt;a href=&#34;http://www.purescript.org/&#34;&gt;Purescript&lt;/a&gt; which is a Haskell dialect that
-compiles to javascript. In many ways, Purescript is a much better Haskell
-because it doesn&amp;rsquo;t come with the historical baggage. In speaking with my
+compiles to javascript.  In many ways, Purescript is a much better Haskell
+because it doesn&amp;rsquo;t come with the historical baggage.  In speaking with my
 colleague who doesn&amp;rsquo;t know Purescript about introducing it into our code base,
-I realized the gravity of what I was asking him to learn. It sounds great to
+I realized the gravity of what I was asking him to learn.  It sounds great to
 say &amp;ldquo;let&amp;rsquo;s rewrite this in purescript&amp;rdquo; and expect someone to come back from
 their weekend having learned enough to be dangerous when it took me four years
 to learn.&lt;/p&gt;
-&lt;p&gt;Another great example is the open source community. If you choose Haskell for
+&lt;p&gt;Another great example is the open source community.  If you choose Haskell for
 your open source project, you might be productive, safe to refactor, write
 little code &amp;mdash; but how many people will be willing to learn Haskell to
 contribute a fix or a new feature?&lt;/p&gt;
-&lt;p&gt;Many of my Haskell friends like to mock the &lt;a href=&#34;https://golang.org/&#34;&gt;Go&lt;/a&gt; programming language. Myself
-included at times. Mind you, the language is &lt;em&gt;objectively&lt;/em&gt; poorly designed.
+&lt;p&gt;Many of my Haskell friends like to mock the &lt;a href=&#34;https://golang.org/&#34;&gt;Go&lt;/a&gt; programming language.  Myself
+included at times.  Mind you, the language is &lt;em&gt;objectively&lt;/em&gt; poorly designed.
 The error handling, the lack of generics, the ridiculous package manager, the
-absurd type system, the &lt;code&gt;range&lt;/code&gt; thing, etc. It&amp;rsquo;s almost exactly the opposite
+absurd type system, the &lt;code&gt;range&lt;/code&gt; thing, etc.  It&amp;rsquo;s almost exactly the opposite
 of Haskell.&lt;/p&gt;
-&lt;p&gt;And yet, Go is a lot &lt;a href=&#34;http://adambard.com/blog/top-github-languages-2014/&#34;&gt;more popular&lt;/a&gt; than Haskell according to GitHub. Yet,
+&lt;p&gt;And yet, Go is a lot &lt;a href=&#34;http://adambard.com/blog/top-github-languages-2014/&#34;&gt;more popular&lt;/a&gt; than Haskell according to GitHub.  Yet,
 there are so many amazing projects written in Go, like Docker, Influxdb, etcd,
-consul, prometheus, packer, and many more. Unlike Haskell, if you ask your
+consul, prometheus, packer, and many more.  Unlike Haskell, if you ask your
 coworkers to learn Go over the weekend, everyone will come back with a little
-app they built. A clearly inferior tool is used by crowds of people to build
+app they built.  A clearly inferior tool is used by crowds of people to build
 cool things.&lt;/p&gt;
-&lt;p&gt;What should we conclude from this? The choice of programming language matters.
-Programming is a social activity. Fewer features seems to equal easier to
-learn. Generalization and programming language innovation seem to be out of
-favor. Creating software to solve real problems with blunt tools seems to be a
-lot more important than using a sharp axe. We&amp;rsquo;d much rather use an inferior
-tool whose manual we don&amp;rsquo;t have to read. We&amp;rsquo;d much rather snap a picture
+&lt;p&gt;What should we conclude from this?  The choice of programming language matters.
+Programming is a social activity.  Fewer features seems to equal easier to
+learn.  Generalization and programming language innovation seem to be out of
+favor.  Creating software to solve real problems with blunt tools seems to be a
+lot more important than using a sharp axe.  We&amp;rsquo;d much rather use an inferior
+tool whose manual we don&amp;rsquo;t have to read.  We&amp;rsquo;d much rather snap a picture
 with our smartphone than to learn how to use a DSLR.&lt;/p&gt;
 </description>
     </item>
@@ -85,13 +85,13 @@ Here is a set of requirements that we will aim to fullfill:&lt;/p&gt;
 &lt;h3 id=&#34;redis-compatible--implement-the-redis-protocol&#34;&gt;Redis compatible (implement the Redis protocol)&lt;/h3&gt;
 &lt;p&gt;We should be able to use the &lt;code&gt;redis-cli&lt;/code&gt; tool to connect to our server and
 issue commands to it.&lt;/p&gt;
-&lt;p&gt;We are going to omit many features that Redis has. For example, there will be
-no disk persistence. We will accomplish this with about 100 lines of Haskell.&lt;/p&gt;
+&lt;p&gt;We are going to omit many features that Redis has.  For example, there will be
+no disk persistence.  We will accomplish this with about 100 lines of Haskell.&lt;/p&gt;
 &lt;h2 id=&#34;getting-started-stack&#34;&gt;Getting started: stack&lt;/h2&gt;
-&lt;p&gt;We are going to use &lt;a href=&#34;https://github.com/commercialhaskell/stack&#34;&gt;stack&lt;/a&gt; to build our project. Stack is a new build tool for
-Haskell projects. We can also use it to create all the necessary files that
-make up a Haskell project. You can find the installation &lt;a href=&#34;https://github.com/commercialhaskell/stack/wiki/Downloads&#34;&gt;instructions&lt;/a&gt; here.&lt;/p&gt;
-&lt;p&gt;Let&amp;rsquo;s create our project. We will call our server &lt;em&gt;Redish&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;We are going to use &lt;a href=&#34;https://github.com/commercialhaskell/stack&#34;&gt;stack&lt;/a&gt; to build our project.  Stack is a new build tool for
+Haskell projects.  We can also use it to create all the necessary files that
+make up a Haskell project.  You can find the installation &lt;a href=&#34;https://github.com/commercialhaskell/stack/wiki/Downloads&#34;&gt;instructions&lt;/a&gt; here.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s create our project.  We will call our server &lt;em&gt;Redish&lt;/em&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;$ stack new Redish simple
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This will create a directory &lt;code&gt;Redish/&lt;/code&gt; with a few files in it.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;Redish/
@@ -116,65 +116,65 @@ Installing executable(s) in
 $ stack exec Redish
 hello world
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;types&#34;&gt;Types&lt;/h2&gt;
-&lt;p&gt;Let&amp;rsquo;s start by defining our types. Redish is an in-memory database so we will
-need a representation of our database. For a simple key-value store, all that
-we need is a simple map. Let&amp;rsquo;s create a few aliases.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s start by defining our types.  Redish is an in-memory database so we will
+need a representation of our database.  For a simple key-value store, all that
+we need is a simple map.  Let&amp;rsquo;s create a few aliases.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-haskell&#34; data-lang=&#34;haskell&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Value&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;ByteString&lt;/span&gt;
 &lt;span style=&#34;color:#66d9ef&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Key&lt;/span&gt;   &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;ByteString&lt;/span&gt;
 &lt;span style=&#34;color:#66d9ef&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;DB&lt;/span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Map&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Key&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Value&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Next, we will need to represent the commands that our server knows how to
-handle. The command data structure can be a &lt;code&gt;get&lt;/code&gt;, a &lt;code&gt;set&lt;/code&gt; or unknown.&lt;/p&gt;
+handle.  The command data structure can be a &lt;code&gt;get&lt;/code&gt;, a &lt;code&gt;set&lt;/code&gt; or unknown.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-haskell&#34; data-lang=&#34;haskell&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;data&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Command&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Get&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Key&lt;/span&gt;
              &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Set&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Key&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Value&lt;/span&gt;
              &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Unknown&lt;/span&gt;
              &lt;span style=&#34;color:#66d9ef&#34;&gt;deriving&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;Eq&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;Show&lt;/span&gt;)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;software-transactional-memory&#34;&gt;Software transactional memory&lt;/h2&gt;
 &lt;p&gt;Now that we have our types in places, we need to write a few functions to
-operate on them. We need a way to insert data and to query our database.&lt;/p&gt;
-&lt;p&gt;First things first though. Since by default everything in Haskell is immutable,
-how can we change the value of our in-memory database? We can&amp;rsquo;t simply
-overwrite the old value with the new one. The compiler won&amp;rsquo;t let us. The
+operate on them.  We need a way to insert data and to query our database.&lt;/p&gt;
+&lt;p&gt;First things first though.  Since by default everything in Haskell is immutable,
+how can we change the value of our in-memory database?  We can&amp;rsquo;t simply
+overwrite the old value with the new one.  The compiler won&amp;rsquo;t let us.  The
 answer is software transactional memory, or STM for short.&lt;/p&gt;
-&lt;p&gt;STM allows us to atomically change a value in our program. The atomic part is
-important. Many parts of the code can update this value and we have no way of
-knowing when and how often they might do so. STM allows us to perform atomic
-updates. This way any updates to our database will be run sequence even when
-coming from different threads. The only cost is that we have to perform any
+&lt;p&gt;STM allows us to atomically change a value in our program.  The atomic part is
+important.  Many parts of the code can update this value and we have no way of
+knowing when and how often they might do so.  STM allows us to perform atomic
+updates.  This way any updates to our database will be run sequence even when
+coming from different threads.  The only cost is that we have to perform any
 updates within the context of &lt;code&gt;IO&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Our &lt;code&gt;DB&lt;/code&gt; type will be become &lt;code&gt;TVar DB&lt;/code&gt;. The &lt;code&gt;TVar&lt;/code&gt; type represents the
-mutable reference. Next, let&amp;rsquo;s create the initial value in the &lt;code&gt;main&lt;/code&gt;
+&lt;p&gt;Our &lt;code&gt;DB&lt;/code&gt; type will be become &lt;code&gt;TVar DB&lt;/code&gt;.  The &lt;code&gt;TVar&lt;/code&gt; type represents the
+mutable reference.  Next, let&amp;rsquo;s create the initial value in the &lt;code&gt;main&lt;/code&gt;
 function:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-haskell&#34; data-lang=&#34;haskell&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;IO&lt;/span&gt; ()
 &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt;
     database &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; atomically &lt;span style=&#34;color:#f92672&#34;&gt;$&lt;/span&gt; newTVar &lt;span style=&#34;color:#f92672&#34;&gt;$&lt;/span&gt; fromList [(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;__version__&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;0.1.0&amp;#34;&lt;/span&gt;)]
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This will create a &lt;code&gt;Map&lt;/code&gt; with a key of &lt;code&gt;__version__&lt;/code&gt; which has the value
-&lt;code&gt;0.1.0&lt;/code&gt;. Then, it wraps that &lt;code&gt;Map&lt;/code&gt; in a &lt;code&gt;TVar&lt;/code&gt; and atomically assigns it
-to the &lt;code&gt;database&lt;/code&gt; variable. Each time we want to write or read the
-&lt;code&gt;database&lt;/code&gt; value, we have to use &lt;code&gt;IO&lt;/code&gt;. Let&amp;rsquo;s create a helper for atomically
+&lt;code&gt;0.1.0&lt;/code&gt;.  Then, it wraps that &lt;code&gt;Map&lt;/code&gt; in a &lt;code&gt;TVar&lt;/code&gt; and atomically assigns it
+to the &lt;code&gt;database&lt;/code&gt; variable.  Each time we want to write or read the
+&lt;code&gt;database&lt;/code&gt; value, we have to use &lt;code&gt;IO&lt;/code&gt;.  Let&amp;rsquo;s create a helper for atomically
 reading this value:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-haskell&#34; data-lang=&#34;haskell&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;atomRead&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;TVar&lt;/span&gt; a &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;IO&lt;/span&gt; a
 &lt;span style=&#34;color:#a6e22e&#34;&gt;atomRead&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; atomically &lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt; readTVar
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And let&amp;rsquo;s make a function to update a value in the database. This takes a
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And let&amp;rsquo;s make a function to update a value in the database.  This takes a
 function that does the updating and runs it through the STM machinery.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-haskell&#34; data-lang=&#34;haskell&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;updateValue&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;DB&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;DB&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;TVar&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;DB&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;IO&lt;/span&gt; ()
 &lt;span style=&#34;color:#a6e22e&#34;&gt;updateValue&lt;/span&gt; fn x &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; atomically &lt;span style=&#34;color:#f92672&#34;&gt;$&lt;/span&gt; modifyTVar x fn
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;reply-parsing&#34;&gt;Reply parsing&lt;/h2&gt;
-&lt;p&gt;Next, let&amp;rsquo;s talk about the Redis protocol. It&amp;rsquo;s a simple TCP scheme that looks
+&lt;p&gt;Next, let&amp;rsquo;s talk about the Redis protocol.  It&amp;rsquo;s a simple TCP scheme that looks
 like this:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;*2\r\n$3\r\nget\r\n$4\r\nname
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;It&amp;rsquo;s a bunch of keywords and arguments separated by newlines. If we clean it up
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;It&amp;rsquo;s a bunch of keywords and arguments separated by newlines.  If we clean it up
 and break each thing to its own line, we get:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;*2
 $3
 get
 $4
 name
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Let&amp;rsquo;s look at each line. &lt;code&gt;*2&lt;/code&gt; says to expect a command that has two
-arguments. &lt;code&gt;$3&lt;/code&gt; says that the first argument is three characters long.
-&lt;code&gt;get&lt;/code&gt; is the three-character argument from above. &lt;code&gt;$4&lt;/code&gt; is the length of the
-second argument, and &lt;code&gt;name&lt;/code&gt; is the value of the second argument. If you&amp;rsquo;re in
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Let&amp;rsquo;s look at each line.  &lt;code&gt;*2&lt;/code&gt; says to expect a command that has two
+arguments.  &lt;code&gt;$3&lt;/code&gt; says that the first argument is three characters long.
+&lt;code&gt;get&lt;/code&gt; is the three-character argument from above.  &lt;code&gt;$4&lt;/code&gt; is the length of the
+second argument, and &lt;code&gt;name&lt;/code&gt; is the value of the second argument.  If you&amp;rsquo;re in
 the REPL provided by &lt;code&gt;redis-cli&lt;/code&gt;, and you type &lt;code&gt;get name&lt;/code&gt;, Redis will
-translate those two words into the above representation. A &lt;code&gt;set&lt;/code&gt; command
+translate those two words into the above representation.  A &lt;code&gt;set&lt;/code&gt; command
 would look like this:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;*3
 $3
@@ -188,26 +188,26 @@ honza
 There are two other data types that Redis uses that will interest us: the OK and
 the error.&lt;/p&gt;
 &lt;p&gt;When Redis needs to tell you that it accepted request and everything went
-smoothly, it simply responds with &lt;code&gt;+OK&lt;/code&gt;. When Redis needs to indicate an
+smoothly, it simply responds with &lt;code&gt;+OK&lt;/code&gt;.  When Redis needs to indicate an
 error, it replies with &lt;code&gt;-ERR something went wrong&lt;/code&gt; (where &amp;ldquo;something went
 wrong&amp;rdquo; is the message).&lt;/p&gt;
-&lt;p&gt;This format is very simple and actually very effective. When we listen on a
-socket for incoming messages, we have a look at the very first character. &lt;code&gt;+&lt;/code&gt;
+&lt;p&gt;This format is very simple and actually very effective.  When we listen on a
+socket for incoming messages, we have a look at the very first character.  &lt;code&gt;+&lt;/code&gt;
 tells us that it&amp;rsquo;s OK, &lt;code&gt;-&lt;/code&gt; signals and error, and &lt;code&gt;*&lt;/code&gt; tells us to keep
-reading for commands. We incrementally read from the socket only as much data
+reading for commands.  We incrementally read from the socket only as much data
 as the protocol tells us.&lt;/p&gt;
-&lt;p&gt;In this section, we will write a parser for multibulk messages. We will use the
+&lt;p&gt;In this section, we will write a parser for multibulk messages.  We will use the
 amazing attoparsec library for this.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;The following code is heavily influenced by the &lt;a href=&#34;https://github.com/informatikr/hedis&#34;&gt;Hedis&lt;/a&gt; library. Credit goes
-to Falko Peters. Thanks!&lt;/p&gt;
+&lt;p&gt;The following code is heavily influenced by the &lt;a href=&#34;https://github.com/informatikr/hedis&#34;&gt;Hedis&lt;/a&gt; library.  Credit goes
+to Falko Peters.  Thanks!&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;A multibulk message is called a &lt;em&gt;reply&lt;/em&gt; in Redis lingo. Let&amp;rsquo;s make a type for it.&lt;/p&gt;
+&lt;p&gt;A multibulk message is called a &lt;em&gt;reply&lt;/em&gt; in Redis lingo.  Let&amp;rsquo;s make a type for it.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-haskell&#34; data-lang=&#34;haskell&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;data&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Reply&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Bulk&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;Maybe&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;ByteString&lt;/span&gt;)
            &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;MultiBulk&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;Maybe&lt;/span&gt; [&lt;span style=&#34;color:#66d9ef&#34;&gt;Reply&lt;/span&gt;])
            &lt;span style=&#34;color:#66d9ef&#34;&gt;deriving&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;Eq&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;Show&lt;/span&gt;)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;A &lt;code&gt;Bulk&lt;/code&gt; reply is a simple string like &lt;code&gt;get&lt;/code&gt; or &lt;code&gt;name&lt;/code&gt; above.
-&lt;code&gt;MultiBulk&lt;/code&gt; is the whole message. Let&amp;rsquo;s also write a function that attempts
+&lt;code&gt;MultiBulk&lt;/code&gt; is the whole message.  Let&amp;rsquo;s also write a function that attempts
 to convert a &lt;code&gt;Reply&lt;/code&gt; to a &lt;code&gt;Command&lt;/code&gt;.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-haskell&#34; data-lang=&#34;haskell&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;parseReply&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Reply&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Maybe&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Command&lt;/span&gt;
 &lt;span style=&#34;color:#a6e22e&#34;&gt;parseReply&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;MultiBulk&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;Just&lt;/span&gt; xs)) &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;
@@ -235,16 +235,16 @@ Let&amp;rsquo;s implement those:&lt;/p&gt;
         &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt; return &lt;span style=&#34;color:#66d9ef&#34;&gt;Nothing&lt;/span&gt;
         &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Just&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;$&amp;gt;&lt;/span&gt; count len replyParser
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;First, the parsers look at the first character to see what kind of message it
-is. If it starts with a &lt;code&gt;$&lt;/code&gt;, it&amp;rsquo;s a bulk. If it starts with a &lt;code&gt;*&lt;/code&gt;, it&amp;rsquo;s
-multibulk. Then, it reads as many characters from the input as the length
-indicator said. In the case of multibulk, it recurses because it can contain
+is.  If it starts with a &lt;code&gt;$&lt;/code&gt;, it&amp;rsquo;s a bulk.  If it starts with a &lt;code&gt;*&lt;/code&gt;, it&amp;rsquo;s
+multibulk.  Then, it reads as many characters from the input as the length
+indicator said.  In the case of multibulk, it recurses because it can contain
 bulk messages.&lt;/p&gt;
 &lt;p&gt;You can now run:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-haskell&#34; data-lang=&#34;haskell&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; parse replyParser &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;*2&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\r\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;$3&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\r\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;get&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\r\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;$4&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\r\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\r\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
 &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;MultiBulk&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;Just&lt;/span&gt; [(&lt;span style=&#34;color:#66d9ef&#34;&gt;Bulk&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;Just&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;get&amp;#34;&lt;/span&gt;)), (&lt;span style=&#34;color:#66d9ef&#34;&gt;Bulk&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;Just&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;))]))
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;networking&#34;&gt;Networking&lt;/h2&gt;
 &lt;p&gt;At this point, we have our data structures ready and we know how to parse
-incoming requests into them. Now we need to work on the networking part. Let&amp;rsquo;s
+incoming requests into them.  Now we need to work on the networking part.  Let&amp;rsquo;s
 teach our program how to listen on a socket and parse incoming text into
 something useful.&lt;/p&gt;
 &lt;p&gt;Let&amp;rsquo;s change our &lt;code&gt;main&lt;/code&gt; function to this:&lt;/p&gt;
@@ -254,8 +254,8 @@ something useful.&lt;/p&gt;
     sock &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; listenOn &lt;span style=&#34;color:#f92672&#34;&gt;$&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;PortNumber&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;7777&lt;/span&gt;
     putStrLn &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Listening on localhost 7777&amp;#34;&lt;/span&gt;
     sockHandler sock database
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This is pretty straight-forward. Ask for a socket and then listen on it. When
-something happens on the socket, run the function &lt;code&gt;socketHandler&lt;/code&gt;. Let&amp;rsquo;s
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This is pretty straight-forward.  Ask for a socket and then listen on it.  When
+something happens on the socket, run the function &lt;code&gt;socketHandler&lt;/code&gt;.  Let&amp;rsquo;s
 implement that next:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-haskell&#34; data-lang=&#34;haskell&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;sockHandler&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Socket&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;TVar&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;DB&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;IO&lt;/span&gt; ()
 &lt;span style=&#34;color:#a6e22e&#34;&gt;sockHandler&lt;/span&gt; sock db &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt;
@@ -265,9 +265,9 @@ implement that next:&lt;/p&gt;
     &lt;span style=&#34;color:#66d9ef&#34;&gt;_&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; forkIO &lt;span style=&#34;color:#f92672&#34;&gt;$&lt;/span&gt; commandProcessor handle db
     sockHandler sock db
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Given a socket and a reference to a mutable database, we can get a handle and
-start processing requests. For each new connection, run &lt;code&gt;forkIO&lt;/code&gt; which will
-do all this work of parsing and responding on a new lightweight thread. At the
-end, we simply recurse to accept new work. The &lt;code&gt;commandProcessor&lt;/code&gt; function
+start processing requests.  For each new connection, run &lt;code&gt;forkIO&lt;/code&gt; which will
+do all this work of parsing and responding on a new lightweight thread.  At the
+end, we simply recurse to accept new work.  The &lt;code&gt;commandProcessor&lt;/code&gt; function
 does the heavy lifting here, so let&amp;rsquo;s write that next.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-haskell&#34; data-lang=&#34;haskell&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;commandProcessor&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Handle&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;TVar&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;DB&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;IO&lt;/span&gt; ()
 &lt;span style=&#34;color:#a6e22e&#34;&gt;commandProcessor&lt;/span&gt; handle db &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt;
@@ -275,9 +275,9 @@ does the heavy lifting here, so let&amp;rsquo;s write that next.&lt;/p&gt;
     &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; command &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; parseReply reply
     runCommand handle command db
     commandProcessor handle db
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This function runs the &lt;code&gt;replyParser&lt;/code&gt; we wrote earlier. It uses a very clever
-function called &lt;code&gt;hGetReplies&lt;/code&gt; which we will look at in a minute. It will read
-as much data as necessary from the handle to get an instance of &lt;code&gt;Reply&lt;/code&gt;. We
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This function runs the &lt;code&gt;replyParser&lt;/code&gt; we wrote earlier.  It uses a very clever
+function called &lt;code&gt;hGetReplies&lt;/code&gt; which we will look at in a minute.  It will read
+as much data as necessary from the handle to get an instance of &lt;code&gt;Reply&lt;/code&gt;.  We
 then convert that reply to a command and run it.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-haskell&#34; data-lang=&#34;haskell&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;hGetReplies&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Handle&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Parser&lt;/span&gt; a &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;IO&lt;/span&gt; a
 &lt;span style=&#34;color:#a6e22e&#34;&gt;hGetReplies&lt;/span&gt; h parser &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; go &lt;span style=&#34;color:#66d9ef&#34;&gt;S&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;empty
@@ -290,9 +290,9 @@ then convert that reply to a command and run it.&lt;/p&gt;
             &lt;span style=&#34;color:#66d9ef&#34;&gt;Done&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;_&lt;/span&gt; r     &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt; return r
 
     readMore &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;S&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;hGetSome h (&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1024&lt;/span&gt;)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The &lt;code&gt;parseWith&lt;/code&gt; function does partial matching. When it can&amp;rsquo;t parse anything,
-it will use the &lt;code&gt;readMore&lt;/code&gt; function to get more data and try again. The
-&lt;code&gt;readMore&lt;/code&gt; function uses the handle to read more data. Once the parser can
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The &lt;code&gt;parseWith&lt;/code&gt; function does partial matching.  When it can&amp;rsquo;t parse anything,
+it will use the &lt;code&gt;readMore&lt;/code&gt; function to get more data and try again.  The
+&lt;code&gt;readMore&lt;/code&gt; function uses the handle to read more data.  Once the parser can
 match something, we are done.&lt;/p&gt;
 &lt;h2 id=&#34;running-commands&#34;&gt;Running commands&lt;/h2&gt;
 &lt;p&gt;Once we have a command, we can run it!&lt;/p&gt;
@@ -310,14 +310,14 @@ match something, we are done.&lt;/p&gt;
 &lt;span style=&#34;color:#a6e22e&#34;&gt;runCommand&lt;/span&gt; handle (&lt;span style=&#34;color:#66d9ef&#34;&gt;Just&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Unknown&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;_&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;
     &lt;span style=&#34;color:#66d9ef&#34;&gt;S&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;hPutStr handle &lt;span style=&#34;color:#f92672&#34;&gt;$&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;S&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;concat [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;-ERR &amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;unknown command&amp;#34;&lt;/span&gt;, crlf]
 &lt;span style=&#34;color:#a6e22e&#34;&gt;runCommand&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;_&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Nothing&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;_&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; return ()
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;When the command is a &lt;code&gt;get&lt;/code&gt;, we read the &lt;code&gt;DB&lt;/code&gt; atom. Then we construct a
-bulk reply and write it to the handle. The bulk reply is in the same format as
-our messages above: &lt;code&gt;$5\r\nhonza\r\n&lt;/code&gt;. The &lt;code&gt;getValue&lt;/code&gt; function is a lookup
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;When the command is a &lt;code&gt;get&lt;/code&gt;, we read the &lt;code&gt;DB&lt;/code&gt; atom.  Then we construct a
+bulk reply and write it to the handle.  The bulk reply is in the same format as
+our messages above: &lt;code&gt;$5\r\nhonza\r\n&lt;/code&gt;.  The &lt;code&gt;getValue&lt;/code&gt; function is a lookup
 function that returns &amp;ldquo;null&amp;rdquo; if a value can&amp;rsquo;t be found.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-haskell&#34; data-lang=&#34;haskell&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;getValue&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;DB&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Key&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Value&lt;/span&gt;
 &lt;span style=&#34;color:#a6e22e&#34;&gt;getValue&lt;/span&gt; db k &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; findWithDefault &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;null&amp;#34;&lt;/span&gt; k db
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;When the command is a &lt;code&gt;set&lt;/code&gt;, we use our &lt;code&gt;updateValue&lt;/code&gt; function from above
-and write the &lt;code&gt;ok&lt;/code&gt; to the handle. The &lt;code&gt;ok&lt;/code&gt; variable is just &lt;code&gt;+OK\r\n&lt;/code&gt;.&lt;/p&gt;
+and write the &lt;code&gt;ok&lt;/code&gt; to the handle.  The &lt;code&gt;ok&lt;/code&gt; variable is just &lt;code&gt;+OK\r\n&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;When the command is unknown, we write an error to the handle.&lt;/p&gt;
 &lt;h2 id=&#34;compiling-and-running&#34;&gt;Compiling and running&lt;/h2&gt;
 &lt;p&gt;You can now build your program with&lt;/p&gt;
@@ -334,7 +334,7 @@ OK
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You can test the performance with something silly, like:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;$ time redis-cli -r 10000 get name
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;You can see the finished product on &lt;a href=&#34;https://github.com/honza/redish&#34;&gt;GitHub&lt;/a&gt;. Feedback is welcome, so are
+&lt;p&gt;You can see the finished product on &lt;a href=&#34;https://github.com/honza/redish&#34;&gt;GitHub&lt;/a&gt;.  Feedback is welcome, so are
 questions.&lt;/p&gt;
 </description>
     </item>
@@ -383,9 +383,9 @@ questions.&lt;/p&gt;
       <pubDate>Tue, 12 Feb 2013 16:33:00 -0400</pubDate>
       
       <guid>https://honza.ca/2013/02/haskell-vs-clojure-syntax/</guid>
-      <description>&lt;p&gt;Clojure has virtually zero syntax. What I mean by that is that all structures
+      <description>&lt;p&gt;Clojure has virtually zero syntax.  What I mean by that is that all structures
 look the same: the first item in a list is the function and the rest are the
-arguments. This is true for variable assignment, if statements, data
+arguments.  This is true for variable assignment, if statements, data
 structures and functions themselves.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;(+ &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
 
@@ -404,9 +404,9 @@ monads, typeclasses, &amp;hellip;&lt;/p&gt;
     pure &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Just&lt;/span&gt;
     &lt;span style=&#34;color:#66d9ef&#34;&gt;Nothing&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;*&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;_&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Nothing&lt;/span&gt;
     (&lt;span style=&#34;color:#66d9ef&#34;&gt;Just&lt;/span&gt; f) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;*&amp;gt;&lt;/span&gt; something &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; fmap f something
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This is why I find Haskell extremely hard to learn. It&amp;rsquo;s not because of
-monads, recursion or functional programming concepts. It&amp;rsquo;s because of the huge
-amount of special syntax. And you need to learn a lot of it before you can do
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This is why I find Haskell extremely hard to learn.  It&amp;rsquo;s not because of
+monads, recursion or functional programming concepts.  It&amp;rsquo;s because of the huge
+amount of special syntax.  And you need to learn a lot of it before you can do
 something useful.&lt;/p&gt;
 </description>
     </item>
@@ -417,20 +417,20 @@ something useful.&lt;/p&gt;
       <pubDate>Wed, 24 Oct 2012 10:01:00 -0300</pubDate>
       
       <guid>https://honza.ca/2012/10/haskell-strings/</guid>
-      <description>&lt;p&gt;It continues to amaze me how bad Haskell is at processing strings. One of the
+      <description>&lt;p&gt;It continues to amaze me how bad Haskell is at processing strings.  One of the
 reasons I wanted to learn Haskell was to be able to write short,
-dynamic-language-like programs that execute fast once compiled. Somehow
-rather, Haskell has failed to deliver on its promise of &lt;em&gt;bare metal&lt;/em&gt; speed. I
+dynamic-language-like programs that execute fast once compiled.  Somehow
+rather, Haskell has failed to deliver on its promise of &lt;em&gt;bare metal&lt;/em&gt; speed.  I
 mostly write scripts and utilities meant to run on my machine&amp;mdash;these scripts
-mostly process text. Read a file, parse it and spit something out.&lt;/p&gt;
+mostly process text.  Read a file, parse it and spit something out.&lt;/p&gt;
 &lt;h2 id=&#34;example&#34;&gt;Example&lt;/h2&gt;
 &lt;p&gt;Let&amp;rsquo;s build a simple program that will show what I&amp;rsquo;m talking about.&lt;/p&gt;
 &lt;h3 id=&#34;read-a-file-called-file-which-contains-prose&#34;&gt;Read a file called &lt;code&gt;file&lt;/code&gt; which contains prose&lt;/h3&gt;
 &lt;h3 id=&#34;capitalize-every-word-in-that-body-of-text&#34;&gt;Capitalize every word in that body of text&lt;/h3&gt;
 &lt;h3 id=&#34;print-the-result-to-stdout&#34;&gt;Print the result to stdout&lt;/h3&gt;
 &lt;p&gt;We will be testing our programs with a file with about 1.2 million lines of
-Lorem Ipsum. This file is around 75MB.&lt;/p&gt;
-&lt;p&gt;Here is attemp number one. This is really simple Haskell.&lt;/p&gt;
+Lorem Ipsum.  This file is around 75MB.&lt;/p&gt;
+&lt;p&gt;Here is attemp number one.  This is really simple Haskell.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-haskell&#34; data-lang=&#34;haskell&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;-- Normal.hs&lt;/span&gt;
 
 &lt;span style=&#34;color:#66d9ef&#34;&gt;module&lt;/span&gt; Main &lt;span style=&#34;color:#66d9ef&#34;&gt;where&lt;/span&gt;
@@ -451,7 +451,7 @@ Lorem Ipsum. This file is around 75MB.&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Compile and execute with&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;ghc -O2 -o normal Normal.hs
 time ./normal &amp;gt; /dev/null
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This takes about 17 seconds. Let&amp;rsquo;s see if we can do any better. When you
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This takes about 17 seconds.  Let&amp;rsquo;s see if we can do any better.  When you
 complain about Strings in Haskell being slow on some neckbeard forum, people
 will tell you to use &lt;code&gt;Data.Text&lt;/code&gt;.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-haskell&#34; data-lang=&#34;haskell&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;-- Main.hs&lt;/span&gt;
@@ -474,12 +474,12 @@ will tell you to use &lt;code&gt;Data.Text&lt;/code&gt;.&lt;/p&gt;
 &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt;
     name &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;X&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;readFile &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;file&amp;#34;&lt;/span&gt;
     &lt;span style=&#34;color:#66d9ef&#34;&gt;X&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;putStr &lt;span style=&#34;color:#f92672&#34;&gt;$&lt;/span&gt; convert name
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This is mostly the same as above. Instead of using the &lt;code&gt;String&lt;/code&gt; type to work
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This is mostly the same as above.  Instead of using the &lt;code&gt;String&lt;/code&gt; type to work
 with text, we use the &lt;code&gt;Data.Text.Text&lt;/code&gt; type.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;ghc -O2 -o main Main.hs
 time ./main &amp;gt; /dev/null
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;How did it do? One entire minute, that&amp;rsquo;s 5 times slower. And it uses obscene
-amounts of memory (around 600MB on my machine). Let&amp;rsquo;s use lazy IO when reading
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;How did it do?  One entire minute, that&amp;rsquo;s 5 times slower.  And it uses obscene
+amounts of memory (around 600MB on my machine).  Let&amp;rsquo;s use lazy IO when reading
 the file, maybe it will improve.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-haskell&#34; data-lang=&#34;haskell&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;-- change this&lt;/span&gt;
 &lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;qualified&lt;/span&gt; Data.Text &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; T
@@ -488,7 +488,7 @@ the file, maybe it will improve.&lt;/p&gt;
 &lt;span style=&#34;color:#75715e&#34;&gt;-- to this&lt;/span&gt;
 &lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;qualified&lt;/span&gt; Data.Text.Lazy &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; T
 &lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;qualified&lt;/span&gt; Data.Text.Lazy.IO &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; X
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This clocks in at 27 seconds. Much better than the non-lazy version. Next
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This clocks in at 27 seconds.  Much better than the non-lazy version.  Next
 thing to try is to ignore unicode and go for the ultimate, bare-metal speed.
 Let&amp;rsquo;s use &lt;code&gt;ByteString&lt;/code&gt; instead of &lt;code&gt;Text&lt;/code&gt;.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-haskell&#34; data-lang=&#34;haskell&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;module&lt;/span&gt; Byte &lt;span style=&#34;color:#66d9ef&#34;&gt;where&lt;/span&gt;
@@ -509,8 +509,8 @@ Let&amp;rsquo;s use &lt;code&gt;ByteString&lt;/code&gt; instead of &lt;code&gt;T
 &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt;
     name &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;B&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;readFile &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;file&amp;#34;&lt;/span&gt;
     &lt;span style=&#34;color:#66d9ef&#34;&gt;B&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;putStr &lt;span style=&#34;color:#f92672&#34;&gt;$&lt;/span&gt; convert name
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Hm, not that much better. 27 seconds. That&amp;rsquo;s about as good as the lazy
-version when using &lt;code&gt;Text&lt;/code&gt;. Let&amp;rsquo;s see if we can squeeze more perfomance out
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Hm, not that much better.  27 seconds.  That&amp;rsquo;s about as good as the lazy
+version when using &lt;code&gt;Text&lt;/code&gt;.  Let&amp;rsquo;s see if we can squeeze more perfomance out
 of this with a lazy &lt;code&gt;ByteString&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-haskell&#34; data-lang=&#34;haskell&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;-- change this&lt;/span&gt;
 &lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;qualified&lt;/span&gt; Data.ByteString &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; B
@@ -519,10 +519,10 @@ of this with a lazy &lt;code&gt;ByteString&lt;/code&gt;&lt;/p&gt;
 &lt;span style=&#34;color:#75715e&#34;&gt;-- to this&lt;/span&gt;
 &lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;qualified&lt;/span&gt; Data.ByteString.Lazy &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; B
 &lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;qualified&lt;/span&gt; Data.ByteString.Lazy.Char8 &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; C
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This takes about 10 seconds. Awesome. This is the best I can do with Haskell.
-10 seconds to process 1.2 million lines of text. I guess that&amp;rsquo;s not too bad.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This takes about 10 seconds.  Awesome.  This is the best I can do with Haskell.
+10 seconds to process 1.2 million lines of text.  I guess that&amp;rsquo;s not too bad.&lt;/p&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;EDIT&lt;!-- raw HTML omitted --&gt;: Someone &lt;a href=&#34;http://www.reddit.com/r/haskell/comments/120h6i/why%5Fis%5Fthis%5Fsimple%5Ftext%5Fprocessing%5Fprogram%5Fso/c6r6rm1&#34;&gt;pointed out on Reddit&lt;/a&gt; that this whole thing can be
-accomplished as a simple one-liner. This is actually a pretty elegant
+accomplished as a simple one-liner.  This is actually a pretty elegant
 solution.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-haskell&#34; data-lang=&#34;haskell&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;module&lt;/span&gt; Main &lt;span style=&#34;color:#66d9ef&#34;&gt;where&lt;/span&gt;
 
@@ -536,7 +536,7 @@ solution.&lt;/p&gt;
 &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt;
     name &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;X&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;readFile &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;file&amp;#34;&lt;/span&gt;
     &lt;span style=&#34;color:#66d9ef&#34;&gt;X&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;putStr &lt;span style=&#34;color:#f92672&#34;&gt;$&lt;/span&gt; convert name
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This clocks in at 8.5 seconds. Not bad at all.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This clocks in at 8.5 seconds.  Not bad at all.&lt;/p&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;EDIT 5&lt;!-- raw HTML omitted --&gt;: Someone pointed out that I didn&amp;rsquo;t include a version of the
 one-liner that uses &lt;code&gt;ByteString&lt;/code&gt;.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-haskell&#34; data-lang=&#34;haskell&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;module&lt;/span&gt; Main &lt;span style=&#34;color:#66d9ef&#34;&gt;where&lt;/span&gt;
@@ -550,7 +550,7 @@ one-liner that uses &lt;code&gt;ByteString&lt;/code&gt;.&lt;/p&gt;
 &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt;
 &lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;T&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;readFile &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;file&amp;#34;&lt;/span&gt;
 &lt;span style=&#34;color:#66d9ef&#34;&gt;T&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;putStr &lt;span style=&#34;color:#f92672&#34;&gt;$&lt;/span&gt; convert name
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This clocks in at 3.5s on my machine. Pretty fast!&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This clocks in at 3.5s on my machine.  Pretty fast!&lt;/p&gt;
 &lt;h2 id=&#34;python&#34;&gt;Python&lt;/h2&gt;
 &lt;p&gt;Let&amp;rsquo;s try this in Python&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;process&lt;/span&gt;(data):
@@ -569,48 +569,48 @@ one-liner that uses &lt;code&gt;ByteString&lt;/code&gt;.&lt;/p&gt;
     &lt;span style=&#34;color:#66d9ef&#34;&gt;print&lt;/span&gt; process(data)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Execute with&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;$ time python main.py &amp;gt; /dev/null
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Six seconds! Six! How can a dynamic language be so much faster than compiled
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Six seconds!  Six!  How can a dynamic language be so much faster than compiled
 Haskell?&lt;/p&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;EDIT 4&lt;!-- raw HTML omitted --&gt;: There has been some discussion on Reddit about being able to
-accomplish this task in only one line in Haskell. It&amp;rsquo;s actually possible in
+accomplish this task in only one line in Haskell.  It&amp;rsquo;s actually possible in
 Python, too.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;print&lt;/span&gt; open(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;file&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;read()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;title()
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This clocks in at 2 seconds.&lt;/p&gt;
 &lt;h2 id=&#34;javascript-and-v8&#34;&gt;Javascript and V8&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// main.js
 &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;fs&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;require&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;fs&amp;#34;&lt;/span&gt;);
+&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;fs&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;require&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;fs&amp;#39;&lt;/span&gt;);
 
 &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;capitalize&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;string&lt;/span&gt;) {
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;string&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;charAt&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;).&lt;span style=&#34;color:#a6e22e&#34;&gt;toUpperCase&lt;/span&gt;() &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;string&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;slice&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;);
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;string&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;charAt&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;).&lt;span style=&#34;color:#a6e22e&#34;&gt;toUpperCase&lt;/span&gt;() &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;string&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;slice&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;);
 }
 
 &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;processLine&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;line&lt;/span&gt;) {
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;words&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;line&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;split&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt;);
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;words&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;length&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;) {
-    &lt;span style=&#34;color:#a6e22e&#34;&gt;words&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;capitalize&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;words&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;]);
-  }
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;words&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;line&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;split&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39; &amp;#39;&lt;/span&gt;);
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;words&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;length&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;) {
+        &lt;span style=&#34;color:#a6e22e&#34;&gt;words&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;capitalize&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;words&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;]);
+    }
 
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;words&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;join&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt;);
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;words&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;join&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39; &amp;#39;&lt;/span&gt;);
 }
 
 &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;run&lt;/span&gt;() {
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;fs&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;readFileSync&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;file&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;utf-8&amp;#34;&lt;/span&gt;);
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;lines&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;split&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;\n&amp;#34;&lt;/span&gt;);
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;fs&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;readFileSync&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;file&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;utf-8&amp;#39;&lt;/span&gt;);
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;lines&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;split&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;\n&amp;#39;&lt;/span&gt;);
 
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;lines&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;length&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;) {
-    &lt;span style=&#34;color:#a6e22e&#34;&gt;lines&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;processLine&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;lines&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;]);
-  }
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;lines&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;length&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;) {
+        &lt;span style=&#34;color:#a6e22e&#34;&gt;lines&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;processLine&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;lines&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;]);
+    }
 
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;lines&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;join&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;\n&amp;#34;&lt;/span&gt;);
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;lines&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;join&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;\n&amp;#34;&lt;/span&gt;);
 }
 
 &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;run&lt;/span&gt;());
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Execute it with:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;$ time node main.js &amp;gt; /dev/null
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Wait for it! 4.5 seconds. I have no words.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Wait for it!  4.5 seconds.  I have no words.&lt;/p&gt;
 &lt;h2 id=&#34;how-about-go&#34;&gt;How about Go?&lt;/h2&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;EDIT 3&lt;!-- raw HTML omitted --&gt;: (Add this section. Looks like this post is turning into a language
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;EDIT 3&lt;!-- raw HTML omitted --&gt;: (Add this section.  Looks like this post is turning into a language
 shootout, le sigh).&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;package&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;
 
@@ -628,11 +628,11 @@ shootout, le sigh).&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Put this into &lt;code&gt;title.go&lt;/code&gt;, compile and run with&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;$ go build title.go
 $ time ./title &amp;gt; /dev/null
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This is around 2 seconds. Pretty crazy performance. Only twice the time
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This is around 2 seconds.  Pretty crazy performance.  Only twice the time
 compared to C.&lt;/p&gt;
 &lt;h2 id=&#34;how-about-c&#34;&gt;How about C?&lt;/h2&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;EDIT 2&lt;!-- raw HTML omitted --&gt;: (Add this section)&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://twitter.com/andrewstwrt&#34;&gt;Andrew Stewart&lt;/a&gt; has graciously written a C version of this program. Like he
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/andrewstwrt&#34;&gt;Andrew Stewart&lt;/a&gt; has graciously written a C version of this program.  Like he
 &lt;a href=&#34;https://twitter.com/andrewstwrt/status/261282584263286784&#34;&gt;said&lt;/a&gt;, you should do all of your scripting in C.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// script.c
 &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
@@ -676,7 +676,7 @@ compared to C.&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Compile and run this with:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;$ gcc -o script script.c
 $ time ./script &amp;gt; /dev/null
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Of course, this is ripping fast. It takes about 1 second (1.05-1.15, never
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Of course, this is ripping fast.  It takes about 1 second (1.05-1.15, never
 below 1).&lt;/p&gt;
 &lt;h2 id=&#34;recap&#34;&gt;Recap&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-nil&#34; data-lang=&#34;nil&#34;&gt;Haskell - String              17s

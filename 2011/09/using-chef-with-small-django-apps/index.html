@@ -39,12 +39,12 @@ When I say small apps, I mean single-server deployments." />
 
 </head>
 <body>
-        <div id="banner" class="container">
-          <h1><a href="/">Honza Pokorny</a></h1>
-          <p><em>Thoughts of an open source developer with a theology degree</em></p>
-        </div>
+  <div id="banner" class="container">
+    <h1><a href="/">Honza Pokorny</a></h1>
+    <p><em>Thoughts of an open source developer with a theology degree</em></p>
+  </div>
 
-    <div id="wrap">
+  <div class="wrap">
 
 <div class="single-header">
   <h1>Using Chef with small Django apps</h1>
@@ -90,7 +90,7 @@ directory and the <em>fabfile</em>. Chef is a cook how prepares your server for
 dinner. So, Chef needs some cookbooks and recipes. Each cookbook is a directory
 that contains various configuration files for a specific application that you
 want installed. So for example, you will have a <em>PostgreSQL cookbook</em> and a
-<em>nginx cookbook</em>. The deploy directory will contain a directory called
+<em>nginx cookbook</em>. The  deploy directory will contain a directory called
 <em>cookbooks</em> which will contain all other cookbooks. Now, the good news is that
 you don&rsquo;t have to make the cookbooks yourself. <a href="http://www.opscode.com">Opscode</a>, the company behind
 Chef, maintains a large selection of cookbooks on <a href="https://github.com/opscode/cookbooks">Github</a>. You can copy and
@@ -177,17 +177,17 @@ run it!</p>
 <p>I am by no means a Chef expert&mdash;I learned how to use it a few days ago. If you
 have any feedback, do let me know.</p>
 
+
+  <p class="date">
+    This article was first published on September 20, 2011.  As you can see, there
+    are no comments.  I invite you to email me with your comments, criticisms,
+    and other suggestions.  Even better, write your own article as a response.
+    Blogging is awesome.
+  </p>
 </article>
 
-<p class="article_date date">
-  This article was first published on September 20, 2011.  As you can see, there
-  are no comments.  I invite you to email me with your comments, criticisms,
-  and other suggestions.  Even better, write your own article as a response.
-  Blogging is awesome.
-</p>
 
-
-    </div>
+  </div>
 
 </body>
 </html>

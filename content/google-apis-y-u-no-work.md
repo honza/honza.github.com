@@ -11,6 +11,7 @@ especially the Calendar API. The state of these APIs is rather _unfortunate_.
 Google is a web giant and you'd think that their APIs would be state-of-the-art
 given the number of professionals they employ.
 
+
 ## Documentation {#documentation}
 
 Before we go anywhere, let me just talk about the documentation for a minute.
@@ -21,6 +22,7 @@ like to know what data a call returns, you're better off just making the call
 and inspecting the response. This will actually save you time because the docs
 are probably wrong anyway.
 
+
 ## Reliability {#reliability}
 
 Google is like the master of scalability. They have an estimated one million
@@ -28,6 +30,7 @@ servers world-wide. And yet, they cannot consistently return a 200 to an API
 call. I have written horrible, horrible glue code and hacky workarounds to
 account for this unpredictability. Sometimes you will get a response, sometimes
 it will timeout, sometime you will get a 404...
+
 
 ## Engineering {#engineering}
 

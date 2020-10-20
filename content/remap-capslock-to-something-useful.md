@@ -11,6 +11,7 @@ can't remember the last time I had a real use for it. If are a programmer, you
 should remap it to something more useful. The rest of this post will describe
 how to remap your CapsLock on a Mac OSX installation.
 
+
 ## What we are going to do {#what-we-are-going-to-do}
 
 I'm a heavy vim user and reaching for the Esc key all the is a pain. We will
@@ -21,6 +22,7 @@ will send Ctrl. That way you can do things like Ctrl+F, etc.
 
 On Mac OSX, you will want to do use [Karabiner](https://pqrs.org/osx/karabiner/). It's an excellent
 piece of software that will allow you to take control of your keyboard.
+
 
 ## Settings {#settings}
 

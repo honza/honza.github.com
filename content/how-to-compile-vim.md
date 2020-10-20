@@ -14,12 +14,12 @@ a plugin tries to use Python to do some its work, vim will crash like this:
 ![](/images/vim-crash.png)Not pretty.
 
 Apparently, this is because vim will use the first Python it can find which in
-our case the homebrew-provided one. You can of course get a pre-compiled
-version and ignore this. But I like to use the latest version of vim and with
+our case the homebrew-provided one.  You can of course get a pre-compiled
+version and ignore this.  But I like to use the latest version of vim and with
 the 7.4 beta, I have been doing that a lot lately...
 
-So, what is one to do? We have to fix the `PATH`. Here is the script that I
-use to recompile vim. This goes in the root of the vim project.
+So, what is one to do?  We have to fix the `PATH`.  Here is the script that I
+use to recompile vim.  This goes in the root of the vim project.
 
 ```bash
 export PATH=/bin:/usr/sbin:/sbin:/usr/bin

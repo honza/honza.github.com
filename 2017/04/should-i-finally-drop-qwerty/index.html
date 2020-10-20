@@ -39,12 +39,12 @@ So, for me, it&rsquo;s a given that I should switch to something else. But what?
 
 </head>
 <body>
-        <div id="banner" class="container">
-          <h1><a href="/">Honza Pokorny</a></h1>
-          <p><em>Thoughts of an open source developer with a theology degree</em></p>
-        </div>
+  <div id="banner" class="container">
+    <h1><a href="/">Honza Pokorny</a></h1>
+    <p><em>Thoughts of an open source developer with a theology degree</em></p>
+  </div>
 
-    <div id="wrap">
+  <div class="wrap">
 
 <div class="single-header">
   <h1>Should I finally drop QWERTY?</h1>
@@ -53,56 +53,56 @@ So, for me, it&rsquo;s a given that I should switch to something else. But what?
 
 <article>
   <p>For years now, I have wanted to switch my keyboard layout from QWERTY to
-something more ergonomic. QWERTY was <a href="http://discovermagazine.com/1997/apr/thecurseofqwerty1099">designed</a> to prevent typewriters from
-jamming. Modern computers don&rsquo;t have this problem. So, why are we still using
+something more ergonomic.  QWERTY was <a href="http://discovermagazine.com/1997/apr/thecurseofqwerty1099">designed</a> to prevent typewriters from
+jamming.  Modern computers don&rsquo;t have this problem.  So, why are we still using
 QWERTY?</p>
-<p>So, for me, it&rsquo;s a given that I should switch to something else. But what? The
-Dvorak layout is the obvious choice. Most people who switch from QWERTY end up
-using Dvorak. Then there is Programmer Dvorak, and Colemak, and Programmer
+<p>So, for me, it&rsquo;s a given that I should switch to something else.  But what?  The
+Dvorak layout is the obvious choice.  Most people who switch from QWERTY end up
+using Dvorak.  Then there is Programmer Dvorak, and Colemak, and Programmer
 Colemak, and hosts of others.</p>
 <p>There are <a href="http://patorjk.com/keyboard-layout-analyzer/#/main">websites</a> that allow you analyze some text, and help you determine
-which layout is best for you. This is of limited utility because the text you
+which layout is best for you.  This is of limited utility because the text you
 past in won&rsquo;t be representative of your actually habits.</p>
 <h2 id="getting-down-to-business">Getting down to business</h2>
-<p>So, how can I hack this? I installed a <a href="https://github.com/kernc/logkeys">keylogger</a> on my laptop, and
-collected data for many days. Then, I wrote a little script to analyze the
-data. This is mostly because analysis websites won&rsquo;t let you paste in more
-than a few kilobytes of text. The most basic measure of how good a keyboard
-layout is is the percentage of keystrokes that are on the home row. The idea
+<p>So, how can I hack this?  I installed a <a href="https://github.com/kernc/logkeys">keylogger</a> on my laptop, and
+collected data for many days.  Then, I wrote a little script to analyze the
+data.  This is mostly because analysis websites won&rsquo;t let you paste in more
+than a few kilobytes of text.  The most basic measure of how good a keyboard
+layout is is the percentage of keystrokes that are on the home row.  The idea
 is that if you have to move your fingers less, you will be faster, less tired,
 and experience less pain.</p>
 <p>The script takes the output of the keylogger and gives you percentages of
-keystrokes that are on the home row for each layout. Here is what I got:</p>
+keystrokes that are on the home row for each layout.  Here is what I got:</p>
 <pre><code class="language-nil" data-lang="nil">qwerty: 38.69149%
 colemak: 35.601215%
 dvorak-programmer: 34.441067%
 dvorak: 34.441067%
-</code></pre><p>Wait, what? QWERTY is the most optimal keyboard layout for me? That can&rsquo;t be
-right. Surely, there must be a bug in my code somewhere. I went over
+</code></pre><p>Wait, what?  QWERTY is the most optimal keyboard layout for me?  That can&rsquo;t be
+right.  Surely, there must be a bug in my code somewhere.  I went over
 everything several times, tested my functions with dummy data, and so on.
-Everything seems to be correct. You can head over to <a href="https://github.com/honza/keylogger">GitHub</a> and prove me
+Everything seems to be correct.  You can head over to <a href="https://github.com/honza/keylogger">GitHub</a> and prove me
 wrong.</p>
-<p>I have been thinking about why I got this bizarre result. I think it&rsquo;s because
-most of my regular typing isn&rsquo;t necessarily writing prose. There is a lot of
+<p>I have been thinking about why I got this bizarre result.  I think it&rsquo;s because
+most of my regular typing isn&rsquo;t necessarily writing prose.  There is a lot of
 vim-style navigation (in <a href="https://github.com/syl20bnr/spacemacs">Spacemacs</a>, in the <a href="https://vimium.github.io/">browser</a>, etc), I use <a href="https://i3wm.org/">i3</a> as
-my window manager, &hellip; A lot of it is running commands, tab-completing things,
-keyboard shortcuts. Other layouts, like Colemak, are probably optimized for
-long-form writing. In those cases, it would probably win. But for
+my window manager, &hellip;  A lot of it is running commands, tab-completing things,
+keyboard shortcuts.  Other layouts, like Colemak, are probably optimized for
+long-form writing.  In those cases, it would probably win.  But for
 programmer-centric typing, QWERTY is likely to be king because everything is
 optimized for it.</p>
 <p>What do you think?</p>
 
+
+  <p class="date">
+    This article was first published on April 28, 2017.  As you can see, there
+    are no comments.  I invite you to email me with your comments, criticisms,
+    and other suggestions.  Even better, write your own article as a response.
+    Blogging is awesome.
+  </p>
 </article>
 
-<p class="article_date date">
-  This article was first published on April 28, 2017.  As you can see, there
-  are no comments.  I invite you to email me with your comments, criticisms,
-  and other suggestions.  Even better, write your own article as a response.
-  Blogging is awesome.
-</p>
 
-
-    </div>
+  </div>
 
 </body>
 </html>

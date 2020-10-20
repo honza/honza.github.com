@@ -18,7 +18,7 @@
       
       <guid>https://honza.ca/2015/02/markdown-editors-are-an-anti-pattern/</guid>
       <description>&lt;p&gt;In the last year or so, there seems to have been an explosion of markdown
-editors and markdown previewers. A quick Google search reveals &lt;a href=&#34;http://dillinger.io/&#34;&gt;so&lt;/a&gt;, &lt;a href=&#34;https://stackedit.io/&#34;&gt;many&lt;/a&gt;
+editors and markdown previewers.  A quick Google search reveals &lt;a href=&#34;http://dillinger.io/&#34;&gt;so&lt;/a&gt;, &lt;a href=&#34;https://stackedit.io/&#34;&gt;many&lt;/a&gt;
 of &lt;a href=&#34;http://jbt.github.io/markdown-editor/&#34;&gt;them&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The App Store is also full of these kinds of apps, promising you unrivaled
 productivity and writing bliss.&lt;/p&gt;
@@ -31,7 +31,7 @@ should be publishable as-is, as plain text, without looking like it&amp;rsquo;s 
 marked up with tags or formatting instructions.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;The syntax (or lack thereof) of the markdown format is so simple that there is
-no need to &amp;ldquo;preview&amp;rdquo; the result. A heading looks like a heading. A list looks
+no need to &amp;ldquo;preview&amp;rdquo; the result.  A heading looks like a heading.  A list looks
 like a list.&lt;/p&gt;
 &lt;p&gt;This is a prime example of creating a solution to a problem that doesn&amp;rsquo;t exist.
 The reason why these apps are popular and people buy them has less to do with

@@ -19,54 +19,54 @@
       <guid>https://honza.ca/2015/11/language-choice/</guid>
       <description>&lt;p&gt;&lt;em&gt;Warning: this is a rant&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Recently, I have made great progress in my journey towards Haskell
-enlightenment. I finally see how many of the little pieces of the Haskell
-puzzle fit together. At this point, I feel empowered to go forth and write
-useful programs. I &lt;a href=&#34;https://twitter.com/%5Fhonza/status/660421406698508288&#34;&gt;read&lt;/a&gt; through the source of &lt;a href=&#34;https://github.com/scotty-web/scotty&#34;&gt;Scotty&lt;/a&gt; the web framework
+enlightenment.  I finally see how many of the little pieces of the Haskell
+puzzle fit together.  At this point, I feel empowered to go forth and write
+useful programs.  I &lt;a href=&#34;https://twitter.com/%5Fhonza/status/660421406698508288&#34;&gt;read&lt;/a&gt; through the source of &lt;a href=&#34;https://github.com/scotty-web/scotty&#34;&gt;Scotty&lt;/a&gt; the web framework
 the other day, and I was very pleasantly surprised that I understood how it
-works. I absolutely &lt;em&gt;love&lt;/em&gt; Haskell. I love that it makes you think. One does
+works.  I absolutely &lt;em&gt;love&lt;/em&gt; Haskell.  I love that it makes you think.  One does
 not simply open a text editor and start banging at the keyboard to write a
-Haskell program. I love that Haskell encourages generalizations and
-abstractions. One of the biggest heureka moments in my journey was
+Haskell program.  I love that Haskell encourages generalizations and
+abstractions.  One of the biggest heureka moments in my journey was
 understanding the full implications of why a function of type &lt;code&gt;a -&amp;gt; a&lt;/code&gt; has a
-single implementation. I&amp;rsquo;m addicted to running my program for the first time
-(after fighting with the compiler for ages), and having it work. I think monad
-transformers and lenses are really clever. By many criteria, Haskell is the
+single implementation.  I&amp;rsquo;m addicted to running my program for the first time
+(after fighting with the compiler for ages), and having it work.  I think monad
+transformers and lenses are really clever.  By many criteria, Haskell is the
 perfect programming language.&lt;/p&gt;
 &lt;p&gt;It has taken me four years to get here.&lt;/p&gt;
 &lt;p&gt;I used to get so discouraged that I took breaks for weeks or months at a time
-because I didn&amp;rsquo;t see the point of continuing. But I always came back. Now I
-have finally arrived. I would say I&amp;rsquo;m an intermediate Haskeller. Naturally,
+because I didn&amp;rsquo;t see the point of continuing.  But I always came back. Now I
+have finally arrived.  I would say I&amp;rsquo;m an intermediate Haskeller.  Naturally,
 I&amp;rsquo;m thinking about writing some Haskell code at work which is going to be easy
 given our service-oriented architecture.&lt;/p&gt;
 &lt;p&gt;I have also been playing with &lt;a href=&#34;http://www.purescript.org/&#34;&gt;Purescript&lt;/a&gt; which is a Haskell dialect that
-compiles to javascript. In many ways, Purescript is a much better Haskell
-because it doesn&amp;rsquo;t come with the historical baggage. In speaking with my
+compiles to javascript.  In many ways, Purescript is a much better Haskell
+because it doesn&amp;rsquo;t come with the historical baggage.  In speaking with my
 colleague who doesn&amp;rsquo;t know Purescript about introducing it into our code base,
-I realized the gravity of what I was asking him to learn. It sounds great to
+I realized the gravity of what I was asking him to learn.  It sounds great to
 say &amp;ldquo;let&amp;rsquo;s rewrite this in purescript&amp;rdquo; and expect someone to come back from
 their weekend having learned enough to be dangerous when it took me four years
 to learn.&lt;/p&gt;
-&lt;p&gt;Another great example is the open source community. If you choose Haskell for
+&lt;p&gt;Another great example is the open source community.  If you choose Haskell for
 your open source project, you might be productive, safe to refactor, write
 little code &amp;mdash; but how many people will be willing to learn Haskell to
 contribute a fix or a new feature?&lt;/p&gt;
-&lt;p&gt;Many of my Haskell friends like to mock the &lt;a href=&#34;https://golang.org/&#34;&gt;Go&lt;/a&gt; programming language. Myself
-included at times. Mind you, the language is &lt;em&gt;objectively&lt;/em&gt; poorly designed.
+&lt;p&gt;Many of my Haskell friends like to mock the &lt;a href=&#34;https://golang.org/&#34;&gt;Go&lt;/a&gt; programming language.  Myself
+included at times.  Mind you, the language is &lt;em&gt;objectively&lt;/em&gt; poorly designed.
 The error handling, the lack of generics, the ridiculous package manager, the
-absurd type system, the &lt;code&gt;range&lt;/code&gt; thing, etc. It&amp;rsquo;s almost exactly the opposite
+absurd type system, the &lt;code&gt;range&lt;/code&gt; thing, etc.  It&amp;rsquo;s almost exactly the opposite
 of Haskell.&lt;/p&gt;
-&lt;p&gt;And yet, Go is a lot &lt;a href=&#34;http://adambard.com/blog/top-github-languages-2014/&#34;&gt;more popular&lt;/a&gt; than Haskell according to GitHub. Yet,
+&lt;p&gt;And yet, Go is a lot &lt;a href=&#34;http://adambard.com/blog/top-github-languages-2014/&#34;&gt;more popular&lt;/a&gt; than Haskell according to GitHub.  Yet,
 there are so many amazing projects written in Go, like Docker, Influxdb, etcd,
-consul, prometheus, packer, and many more. Unlike Haskell, if you ask your
+consul, prometheus, packer, and many more.  Unlike Haskell, if you ask your
 coworkers to learn Go over the weekend, everyone will come back with a little
-app they built. A clearly inferior tool is used by crowds of people to build
+app they built.  A clearly inferior tool is used by crowds of people to build
 cool things.&lt;/p&gt;
-&lt;p&gt;What should we conclude from this? The choice of programming language matters.
-Programming is a social activity. Fewer features seems to equal easier to
-learn. Generalization and programming language innovation seem to be out of
-favor. Creating software to solve real problems with blunt tools seems to be a
-lot more important than using a sharp axe. We&amp;rsquo;d much rather use an inferior
-tool whose manual we don&amp;rsquo;t have to read. We&amp;rsquo;d much rather snap a picture
+&lt;p&gt;What should we conclude from this?  The choice of programming language matters.
+Programming is a social activity.  Fewer features seems to equal easier to
+learn.  Generalization and programming language innovation seem to be out of
+favor.  Creating software to solve real problems with blunt tools seems to be a
+lot more important than using a sharp axe.  We&amp;rsquo;d much rather use an inferior
+tool whose manual we don&amp;rsquo;t have to read.  We&amp;rsquo;d much rather snap a picture
 with our smartphone than to learn how to use a DSLR.&lt;/p&gt;
 </description>
     </item>
@@ -118,20 +118,20 @@ with our smartphone than to learn how to use a DSLR.&lt;/p&gt;
       <description>&lt;p&gt;Junior programmers will often ask, &amp;ldquo;Which language should I use?&amp;rdquo;, &amp;ldquo;Which
 programming language is the best?&amp;rdquo;, and when they discover this new hip
 programming language that&amp;rsquo;s meant to solve all of their scaling problems, they
-get in your face and mock you for not using it for every single task. They
+get in your face and mock you for not using it for every single task.  They
 will write blog posts titled &amp;ldquo;X language for Y programmers&amp;rdquo; in hopes of
 converting the masses to their newfound toy.&lt;/p&gt;
 &lt;p&gt;Smug senior programmers will laugh at the junior programmers and say that you
-should learn a great many different languages to expand your horizons. A
-single language cannot possibly suffice in this day and age. Each language has
+should learn a great many different languages to expand your horizons.  A
+single language cannot possibly suffice in this day and age.  Each language has
 its own set of libraries, each is better suited for a particular task.
-Learning new languages will make you a better developer overall. Plus,
+Learning new languages will make you a better developer overall.  Plus,
 marketing yourself as an X language developer limits your choice of employer.&lt;/p&gt;
-&lt;p&gt;Business people will have yet another approach. Their product is obviously
+&lt;p&gt;Business people will have yet another approach.  Their product is obviously
 written in some language or another so they &lt;em&gt;need&lt;/em&gt; developer who can speak that
-language. Their platform is growing like crazy so they put up job posts
-screaming &amp;ldquo;X language developer needed!&amp;rdquo;. This creates a perceived demand for
-a certain kind of developer. Developer will start to feel the need to learn
+language.  Their platform is growing like crazy so they put up job posts
+screaming &amp;ldquo;X language developer needed!&amp;rdquo;.  This creates a perceived demand for
+a certain kind of developer.  Developer will start to feel the need to learn
 this newly popular technology and start by reading a &amp;ldquo;X language for Y
 programmers&amp;rdquo; post and thus completing the circle.&lt;/p&gt;
 </description>
@@ -143,45 +143,45 @@ programmers&amp;rdquo; post and thus completing the circle.&lt;/p&gt;
       <pubDate>Tue, 24 Apr 2012 09:29:00 -0300</pubDate>
       
       <guid>https://honza.ca/2012/04/standing-desk-first-impressions/</guid>
-      <description>&lt;p&gt;I have recently switched jobs and had to set up a home office. I have heard a
+      <description>&lt;p&gt;I have recently switched jobs and had to set up a home office.  I have heard a
 lot of good things about standing desks and thought this was the perfect
-opportunity to try one. I had looked for one online but those things aren&amp;rsquo;t
+opportunity to try one.  I had looked for one online but those things aren&amp;rsquo;t
 cheap (~ $800).&lt;/p&gt;
 &lt;p&gt;Instead of dropping some serious cash, I stacked up some bins and made a
-poorman&amp;rsquo;s standing desk. I have a laptop stand and a second monitor. Nothing
+poorman&amp;rsquo;s standing desk.  I have a laptop stand and a second monitor.  Nothing
 special, really.&lt;/p&gt;
 &lt;p&gt;I have been standing while programming for over a week now and I wanted to
-share a few thoughts. If you&amp;rsquo;re wondering if you should get a standing desk,
+share a few thoughts.  If you&amp;rsquo;re wondering if you should get a standing desk,
 I&amp;rsquo;d definitely recommend it.&lt;/p&gt;
 &lt;h2 id=&#34;incentives&#34;&gt;Incentives&lt;/h2&gt;
 &lt;p&gt;I have set up my desk in such a way that if I want to sit down to do some work
-I have to give up the second monitor and my Das keyboard. I use a 13&amp;rdquo; Macbook
-Pro so the number of pixels is rather limited. I &lt;em&gt;love&lt;/em&gt; my loud Das keyboard
-and want to use it as much as possible. This works extremely well.&lt;/p&gt;
+I have to give up the second monitor and my Das keyboard.  I use a 13&amp;rdquo; Macbook
+Pro so the number of pixels is rather limited.  I &lt;em&gt;love&lt;/em&gt; my loud Das keyboard
+and want to use it as much as possible.  This works extremely well.&lt;/p&gt;
 &lt;h2 id=&#34;breaks&#34;&gt;Breaks&lt;/h2&gt;
 &lt;p&gt;When I take a break to have lunch with my family (or something like that), I
-make it a point to sit down and rest my feet. When I get back in the office, I
+make it a point to sit down and rest my feet.  When I get back in the office, I
 don&amp;rsquo;t feel like I&amp;rsquo;m gonna die.&lt;/p&gt;
 &lt;h2 id=&#34;distractions&#34;&gt;Distractions&lt;/h2&gt;
 &lt;p&gt;I have found that when I&amp;rsquo;m standing I rarely check Hacker News or read
-articles. I think it&amp;rsquo;s because reading an article or two isn&amp;rsquo;t complex enough
+articles.  I think it&amp;rsquo;s because reading an article or two isn&amp;rsquo;t complex enough
 for my brain and it can do other things at the same time&amp;mdash;like think about how
-much my feet hurt. I find that when I&amp;rsquo;m standing I get a lot more done because
-I can focus a lot more. Near the end of the day when I&amp;rsquo;m tired and actually do
-sit down to work, I feel like I&amp;rsquo;m walking under water. Since I&amp;rsquo;m just getting
-started I have allowed myself some slack here and there. I don&amp;rsquo;t want to go
+much my feet hurt.  I find that when I&amp;rsquo;m standing I get a lot more done because
+I can focus a lot more.  Near the end of the day when I&amp;rsquo;m tired and actually do
+sit down to work, I feel like I&amp;rsquo;m walking under water.  Since I&amp;rsquo;m just getting
+started I have allowed myself some slack here and there.  I don&amp;rsquo;t want to go
 too fast and &lt;em&gt;burn out&lt;/em&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;dancing&#34;&gt;Dancing&lt;/h2&gt;
-&lt;p&gt;I have heard that people like to dance when they&amp;rsquo;re standing at their desk. I
-always thought this was pretty silly until I caught myself doing it. I listen
+&lt;p&gt;I have heard that people like to dance when they&amp;rsquo;re standing at their desk.  I
+always thought this was pretty silly until I caught myself doing it.  I listen
 to a lot of rock n roll so it&amp;rsquo;s not exactly surprising.&lt;/p&gt;
 &lt;h2 id=&#34;pain&#34;&gt;Pain&lt;/h2&gt;
-&lt;p&gt;Obviously, your feet will hurt. However, it&amp;rsquo;s not nearly as bad as I thought.
-I&amp;rsquo;m 23 and fairly fit so maybe that&amp;rsquo;s a factor. I have had some minor lower
+&lt;p&gt;Obviously, your feet will hurt.  However, it&amp;rsquo;s not nearly as bad as I thought.
+I&amp;rsquo;m 23 and fairly fit so maybe that&amp;rsquo;s a factor.  I have had some minor lower
 back pain which I think is caused by the fact that I now have good posture and
 the body isn&amp;rsquo;t used to it.&lt;/p&gt;
 &lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;Do you stand while working? Ever thought about getting a standing desk?&lt;/p&gt;
+&lt;p&gt;Do you stand while working?  Ever thought about getting a standing desk?&lt;/p&gt;
 </description>
     </item>
     

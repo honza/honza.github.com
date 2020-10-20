@@ -8,6 +8,7 @@ draft = false
 
 From his [Marrow of Sacred Divinity](https://www.monergism.com/marrow-sacred-divinity-ebook).
 
+
 ## Chapter 35. Of ordinary Ministers, and their Office in Preaching {#chapter-35-dot-of-ordinary-ministers-and-their-office-in-preaching}
 
 ORDINARY Ministry is that which has all its direction from the will of God

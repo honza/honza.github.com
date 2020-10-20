@@ -39,12 +39,12 @@ I want to talk about data-driven applications." />
 
 </head>
 <body>
-        <div id="banner" class="container">
-          <h1><a href="/">Honza Pokorny</a></h1>
-          <p><em>Thoughts of an open source developer with a theology degree</em></p>
-        </div>
+  <div id="banner" class="container">
+    <h1><a href="/">Honza Pokorny</a></h1>
+    <p><em>Thoughts of an open source developer with a theology degree</em></p>
+  </div>
 
-    <div id="wrap">
+  <div class="wrap">
 
 <div class="single-header">
   <h1>Data-driven javascript applications</h1>
@@ -75,15 +75,15 @@ display the data in a meaningful way to the user. For example, in our
 application, there is a list of albums in the sidebar. These are represented as
 list items with anchor tags:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">SidebarView</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Backbone</span>.<span style="color:#a6e22e">View</span>.<span style="color:#66d9ef">extends</span>({
-  <span style="color:#a6e22e">el</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#sidebar&#34;</span>),
+  <span style="color:#a6e22e">el</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;#sidebar&#39;</span>),
 
   <span style="color:#a6e22e">events</span><span style="color:#f92672">:</span> {
-    <span style="color:#e6db74">&#34;click #new-album-link&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;newAlbum&#34;</span>
+    <span style="color:#e6db74">&#39;click #new-album-link&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;newAlbum&#39;</span>
   },
 
   <span style="color:#a6e22e">initialize</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
-    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">collection</span>.<span style="color:#a6e22e">bind</span>(<span style="color:#e6db74">&#34;reset&#34;</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">render</span>, <span style="color:#66d9ef">this</span>);
-    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">collection</span>.<span style="color:#a6e22e">bind</span>(<span style="color:#e6db74">&#34;add&#34;</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">add</span>, <span style="color:#66d9ef">this</span>);
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">collection</span>.<span style="color:#a6e22e">bind</span>(<span style="color:#e6db74">&#39;reset&#39;</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">render</span>, <span style="color:#66d9ef">this</span>);
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">collection</span>.<span style="color:#a6e22e">bind</span>(<span style="color:#e6db74">&#39;add&#39;</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">add</span>, <span style="color:#66d9ef">this</span>);
   },
 
   <span style="color:#a6e22e">add</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">album</span>) {
@@ -94,7 +94,7 @@ list items with anchor tags:</p>
   },
 
   <span style="color:#a6e22e">render</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
-    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">collection</span>.<span style="color:#a6e22e">models</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">collection</span>.<span style="color:#a6e22e">models</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
       <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">collection</span>.<span style="color:#a6e22e">models</span>[<span style="color:#a6e22e">i</span>]);
     }
   }
@@ -118,11 +118,11 @@ collection based on predefined criteria. To get all photos that belong to the
 album with an ID of <code>1</code>, we would do:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">PhotoCollection</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Backbone</span>.<span style="color:#a6e22e">Collection</span>.<span style="color:#66d9ef">extends</span>({
   <span style="color:#a6e22e">model</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Photo</span>,
-  <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;/photos&#34;</span>,
+  <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;/photos&#39;</span>,
 
   <span style="color:#a6e22e">byAlbum</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">id</span>) {
     <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">photo</span>) {
-      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">_</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#a6e22e">photo</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;albums&#34;</span>), <span style="color:#a6e22e">id</span>) <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>;
+     <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">_</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#a6e22e">photo</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;albums&#39;</span>), <span style="color:#a6e22e">id</span>) <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>;
     });
   }
 });
@@ -140,17 +140,17 @@ this. The difficult part about this approach is deciding what your elementary
 data is and how you should get it. In the case of <code>rembrant</code> it was pretty
 simple.</p>
 
+
+  <p class="date">
+    This article was first published on October 25, 2011.  As you can see, there
+    are no comments.  I invite you to email me with your comments, criticisms,
+    and other suggestions.  Even better, write your own article as a response.
+    Blogging is awesome.
+  </p>
 </article>
 
-<p class="article_date date">
-  This article was first published on October 25, 2011.  As you can see, there
-  are no comments.  I invite you to email me with your comments, criticisms,
-  and other suggestions.  Even better, write your own article as a response.
-  Blogging is awesome.
-</p>
 
-
-    </div>
+  </div>
 
 </body>
 </html>

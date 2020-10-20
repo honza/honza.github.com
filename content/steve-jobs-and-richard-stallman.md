@@ -6,7 +6,7 @@ categories = ["commentary"]
 draft = false
 +++
 
-Today, news [broke](<http://stallman.org/archives/2011-jul-oct.html#06%5FOctober%5F2011%5F(Steve%5FJobs)>) about Richard Stallman's comment on Steve Job's death. The
+Today, news [broke](http://stallman.org/archives/2011-jul-oct.html#06%5FOctober%5F2011%5F(Steve%5FJobs)) about Richard Stallman's comment on Steve Job's death. The
 news of the giant's passing has stirred up a wave of emotions ranging from
 utter sadness to feelings of empowerment to do great things. Tributes were paid
 to Steve Jobs all over the internet. His life is described as one of a genius.

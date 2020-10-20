@@ -12,15 +12,16 @@ images = ["/images/calvin.png"]
 The way I see it, you have three options when selection an edition of John
 Calvin's Institutes of the Christian Religion.
 
-- The final edition of 1559 translated by Henry Beveridge, published in 1867.
-- The final edition of 1559 translated by Ford Lewis Battles, published in 1960.
-- The French edition of 1541 translated by Robert White, published in 2014.
+-   The final edition of 1559 translated by Henry Beveridge, published in 1867.
+-   The final edition of 1559 translated by Ford Lewis Battles, published in 1960.
+-   The French edition of 1541 translated by Robert White, published in 2014.
+
 
 ## Beveridge {#beveridge}
 
-With _Beveridge_, you get the full text of the _Institutes_. The language is
-somewhat archaic and a bit convoluted sometimes. It's a lot easier to read than
-the Puritans. This translation is in the public domain, so you can read it for
+With _Beveridge_, you get the full text of the _Institutes_.  The language is
+somewhat archaic and a bit convoluted sometimes.  It's a lot easier to read than
+the Puritans.  This translation is in the public domain, so you can read it for
 [free online](http://www.ccel.org/ccel/calvin/institutes.i.html), and printed editions are relatively cheap.
 
 Book 1, Chapter 1, Section 2
@@ -54,31 +55,32 @@ Book 1, Chapter 1, Section 2
 > righteousness, wisdom, and virtue; we address ourselves in the most
 > flattering terms, and seem only less than demigods.
 
+
 ## Battles {#battles}
 
-With _Battles_, you get the full text in its final form. This is the academic
-reference edition. If you are going to write a paper or a book, and you want to
-quote Calvin, use this. The language is much more modern than _Beveridge_ but
-still a bit technical at times. The biggest downside of this edition is that it
+With _Battles_, you get the full text in its final form.  This is the academic
+reference edition.  If you are going to write a paper or a book, and you want to
+quote Calvin, use this.  The language is much more modern than _Beveridge_ but
+still a bit technical at times.  The biggest downside of this edition is that it
 comes in two volumes and it's very expensive.
 
 Book 1, Chapter 1, Section 2
 
 > Again, it is certain that man never achieves a clear knowledge of himself
 > unless he has first looked upon God's face, and then descends from
-> contemplating him to scrutinize himself. For we always seem to ourselves
+> contemplating him to scrutinize himself.  For we always seem to ourselves
 > righteous and upright and wise and holy---this pride is innate in all of
 > us---unless by clear proofs we stand convinced of our own unrighteousness,
-> foulness, folly, and impurity. Moreover, we are not thus convinced if we
+> foulness, folly, and impurity.  Moreover, we are not thus convinced if we
 > look merely to ourselves and not also to the Lord, who is the sole standard
-> by which this judgment must be measured. For, because all of us are
+> by which this judgment must be measured.  For, because all of us are
 > inclined by nature to hypocrisy, a kind of empty image of righteousness in
-> place of righteousness itself abundantly satisfies us. And because nothing
+> place of righteousness itself abundantly satisfies us.  And because nothing
 > appears within or around us that has not been contaminated by great
 > immorality, what is a little less vile pleases us as a thing most pure---so
-> long as we confine our minds within the limits of human corruption. Just
+> long as we confine our minds within the limits of human corruption.  Just
 > so, an eye to which nothing is shown but black objects judges something
-> dirty white or even rather darkly mottle to be whiteness itself. Indeed, we
+> dirty white or even rather darkly mottle to be whiteness itself.  Indeed, we
 > can discern still more clearly from the bodily senses how much we are
 > deluded in estimating the powers of the soul.
 >
@@ -88,19 +90,20 @@ Book 1, Chapter 1, Section 2
 > straight at it, that power of sight which was particularly strong on earth
 > is at once blunted and confused by a great brilliance, and thus we are
 > compelled to admin that our keenness in looking upon things earthly is sheer
-> dullness when it comes to the sun. So it happens in estimating our
-> spiritual goods. As long as we do not look beyond the earth, being quite
+> dullness when it comes to the sun.  So it happens in estimating our
+> spiritual goods.  As long as we do not look beyond the earth, being quite
 > content with our own righteousness, wisdom and virtue, we flatter ourselves
 > most sweetly, and fancy ourselves all bug demigods.
 
+
 ## White {#white}
 
-With _White_, you get an earlier version of the _Institutes_. It's missing
-some sections from the final, but not much. This is translated from the French
-edition which is known for its lively prose. The biggest draw for this edition
-is its recency, only 2014. The language is very modern and flows nicely. The
+With _White_, you get an earlier version of the _Institutes_.  It's missing
+some sections from the final, but not much.  This is translated from the French
+edition which is known for its lively prose.  The biggest draw for this edition
+is its recency, only 2014. The language is very modern and flows nicely.  The
 printed edition costs a bit more than _Beverage_ but still a lot less than
-_Battles_. This edition will serve hobbyists well. The newness of the
+_Battles_.  This edition will serve hobbyists well.  The newness of the
 language will provide you with higher likelihood of finishing.
 
 Book 1, Chapter 1, Section 2
@@ -118,7 +121,7 @@ Book 1, Chapter 1, Section 2
 > whatever is a little less grubby appears to us as purity itself, as long as we
 > confine our attention to the limits of our own—debased—humanity. It is like the
 > eye which, used to seeing only objects that are dark, judges things which are
-> vaguely white or even semi-grey to be the whitest there is. An analogy based on
+> vaguely white or even semi-grey to be the whitest there is.  An analogy based on
 > physical sight will help us better understand how badly we misjudge our soul’s
 > powers.
 >
@@ -129,5 +132,19 @@ Book 1, Chapter 1, Section 2
 > that our ability clearly to see earthly objects is weak and feeble when it comes
 > to gazing at the sun. This is how it is when we try to estimate our spiritual
 > strengths. As long as we do not look beyond earth’s horizons, we are perfectly
-> content with our own righteousness, wisdom and power. We flatter and
+> content with our own righteousness, wisdom and power.  We flatter and
 > congratulate ourselves, and are not far from thinking we are demigods!
+
+
+## Conclusion {#conclusion}
+
+In conclusion, let me quote J.I. Packer on the subject of English translations
+of Calvin's _Institutes_:
+
+> No English translation fully matches Calvin's Latin; that of the Elizabethan,
+> Thomas Norton, perhaps gets closest; Beveridge gives us Calvin's feistiness but
+> not always his precision; Battles gives us the precision but not always the
+> punchiness, and fleetness of foot; Allen is smooth and clear, but low-key.
+
+David W. Hall and Peter A. Lillback, eds. _A Theological Guide to Calvin’s Institutes: Essays and Analysis.
+The Calvin 500 Series._ (Phillipsburg, N.J: P&R Pub, 2008), x

@@ -41,12 +41,12 @@ Recently, vim-fireplace received support for piggieback. Piggieback is a layer o
 
 </head>
 <body>
-        <div id="banner" class="container">
-          <h1><a href="/">Honza Pokorny</a></h1>
-          <p><em>Thoughts of an open source developer with a theology degree</em></p>
-        </div>
+  <div id="banner" class="container">
+    <h1><a href="/">Honza Pokorny</a></h1>
+    <p><em>Thoughts of an open source developer with a theology degree</em></p>
+  </div>
 
-    <div id="wrap">
+  <div class="wrap">
 
 <div class="single-header">
   <h1>How to use piggieback in vim-fireplace to hack cljs</h1>
@@ -56,12 +56,12 @@ Recently, vim-fireplace received support for piggieback. Piggieback is a layer o
 <article>
   <p>(That&rsquo;s quite a title, isn&rsquo;t it?)</p>
 <p>If you&rsquo;re using vim to write Clojure code, chances are that you&rsquo;re using Tim
-Pope&rsquo;s vim-fireplace plugin. It&rsquo;s really great. It stars an nREPL session in
-the background for you and lets you evaluate a form inside of vim. It&rsquo;s super
+Pope&rsquo;s vim-fireplace plugin.  It&rsquo;s really great.  It stars an nREPL session in
+the background for you and lets you evaluate a form inside of vim.  It&rsquo;s super
 fast because it keeps the session around and it&rsquo;s one of my favorite things
 about writing Clojure.</p>
-<p>Recently, vim-fireplace received support for <a href="https://github.com/cemerick/piggieback">piggieback</a>. Piggieback is a
-layer on top of nREPL that gives you support for ClojureScript. This is really
+<p>Recently, vim-fireplace received support for <a href="https://github.com/cemerick/piggieback">piggieback</a>.  Piggieback is a
+layer on top of nREPL that gives you support for ClojureScript.  This is really
 great because it gives you the ability to evaluate ClojureScript code in vim
 just like your normal Clojure code.</p>
 <p>Alright, here is how to set it up:</p>
@@ -83,23 +83,23 @@ just like your normal Clojure code.</p>
               <span style="color:#e6db74">:compiler</span> {
                 <span style="color:#e6db74">:target</span> <span style="color:#e6db74">:nodejs</span>
                 <span style="color:#e6db74">:optimizations</span> <span style="color:#e6db74">:simple</span>}}]})
-</code></pre></div><p>Pretty standard stuff. We&rsquo;re using the lein-cljsbuild plugin for automatic
+</code></pre></div><p>Pretty standard stuff.  We&rsquo;re using the lein-cljsbuild plugin for automatic
 compilation, we set up the source path and a nodejs compile target.</p>
 <p>Now you simply open a <code>.cljs</code> file and you can do your usual vim-fireplace
-magic. The first <code>cpr</code> (reload current buffer) command will connect to an
+magic.  The first <code>cpr</code> (reload current buffer) command will connect to an
 nREPL instance and initialize the piggieback wrapper.</p>
 
+
+  <p class="date">
+    This article was first published on March 20, 2014.  As you can see, there
+    are no comments.  I invite you to email me with your comments, criticisms,
+    and other suggestions.  Even better, write your own article as a response.
+    Blogging is awesome.
+  </p>
 </article>
 
-<p class="article_date date">
-  This article was first published on March 20, 2014.  As you can see, there
-  are no comments.  I invite you to email me with your comments, criticisms,
-  and other suggestions.  Even better, write your own article as a response.
-  Blogging is awesome.
-</p>
 
-
-    </div>
+  </div>
 
 </body>
 </html>

@@ -19,12 +19,12 @@
       <guid>https://honza.ca/2014/03/how-to-use-piggieback-in-vim-fireplace-to-hack-cljs/</guid>
       <description>&lt;p&gt;(That&amp;rsquo;s quite a title, isn&amp;rsquo;t it?)&lt;/p&gt;
 &lt;p&gt;If you&amp;rsquo;re using vim to write Clojure code, chances are that you&amp;rsquo;re using Tim
-Pope&amp;rsquo;s vim-fireplace plugin. It&amp;rsquo;s really great. It stars an nREPL session in
-the background for you and lets you evaluate a form inside of vim. It&amp;rsquo;s super
+Pope&amp;rsquo;s vim-fireplace plugin.  It&amp;rsquo;s really great.  It stars an nREPL session in
+the background for you and lets you evaluate a form inside of vim.  It&amp;rsquo;s super
 fast because it keeps the session around and it&amp;rsquo;s one of my favorite things
 about writing Clojure.&lt;/p&gt;
-&lt;p&gt;Recently, vim-fireplace received support for &lt;a href=&#34;https://github.com/cemerick/piggieback&#34;&gt;piggieback&lt;/a&gt;. Piggieback is a
-layer on top of nREPL that gives you support for ClojureScript. This is really
+&lt;p&gt;Recently, vim-fireplace received support for &lt;a href=&#34;https://github.com/cemerick/piggieback&#34;&gt;piggieback&lt;/a&gt;.  Piggieback is a
+layer on top of nREPL that gives you support for ClojureScript.  This is really
 great because it gives you the ability to evaluate ClojureScript code in vim
 just like your normal Clojure code.&lt;/p&gt;
 &lt;p&gt;Alright, here is how to set it up:&lt;/p&gt;
@@ -46,10 +46,10 @@ just like your normal Clojure code.&lt;/p&gt;
               &lt;span style=&#34;color:#e6db74&#34;&gt;:compiler&lt;/span&gt; {
                 &lt;span style=&#34;color:#e6db74&#34;&gt;:target&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;:nodejs&lt;/span&gt;
                 &lt;span style=&#34;color:#e6db74&#34;&gt;:optimizations&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;:simple&lt;/span&gt;}}]})
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Pretty standard stuff. We&amp;rsquo;re using the lein-cljsbuild plugin for automatic
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Pretty standard stuff.  We&amp;rsquo;re using the lein-cljsbuild plugin for automatic
 compilation, we set up the source path and a nodejs compile target.&lt;/p&gt;
 &lt;p&gt;Now you simply open a &lt;code&gt;.cljs&lt;/code&gt; file and you can do your usual vim-fireplace
-magic. The first &lt;code&gt;cpr&lt;/code&gt; (reload current buffer) command will connect to an
+magic.  The first &lt;code&gt;cpr&lt;/code&gt; (reload current buffer) command will connect to an
 nREPL instance and initialize the piggieback wrapper.&lt;/p&gt;
 </description>
     </item>
@@ -62,10 +62,10 @@ nREPL instance and initialize the piggieback wrapper.&lt;/p&gt;
       <guid>https://honza.ca/2013/05/text-editor-ui/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;What I don&amp;rsquo;t understand is: why should you ever care how your editor looks,
-unless you&amp;rsquo;re trying to win a screenshot competition? The primary factor
+unless you&amp;rsquo;re trying to win a screenshot competition?  The primary factor
 in looking good should be the choice of a good font at a comfortable size,
-and a syntax coloring theme that you like. And that is not something
-specific to an editor. Editors like Emacs and vi have almost no UI! If
+and a syntax coloring theme that you like.  And that is not something
+specific to an editor.  Editors like Emacs and vi have almost no UI!  If
 Emacs is configured right, the only UI it has is the modeline and the
 minibuffer.&lt;/p&gt;
 &lt;/blockquote&gt;

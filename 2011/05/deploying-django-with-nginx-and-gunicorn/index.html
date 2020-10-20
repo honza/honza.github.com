@@ -37,12 +37,12 @@
 
 </head>
 <body>
-        <div id="banner" class="container">
-          <h1><a href="/">Honza Pokorny</a></h1>
-          <p><em>Thoughts of an open source developer with a theology degree</em></p>
-        </div>
+  <div id="banner" class="container">
+    <h1><a href="/">Honza Pokorny</a></h1>
+    <p><em>Thoughts of an open source developer with a theology degree</em></p>
+  </div>
 
-    <div id="wrap">
+  <div class="wrap">
 
 <div class="single-header">
   <h1>Deploying Django with nginx and gunicorn</h1>
@@ -111,7 +111,7 @@ workers <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span
 <h2 id="running">Running</h2>
 <p>I then collected all the static files into the <code>static</code> directory:</p>
 <pre><code class="language-console" data-lang="console">$ (env) python manage.py collectstatic
-</code></pre><p>I restarted nginx:</p>
+</code></pre><p>I restarted  nginx:</p>
 <pre><code class="language-console" data-lang="console">$ sudo /etc/init.d/nginx restart
 </code></pre><p>And finally, I ran the <code>gunicorn</code> server:</p>
 <pre><code class="language-console" data-lang="console">$ (env) cd /home/webapp/app
@@ -124,17 +124,17 @@ monitoring service to start it. Think <code>runit</code> or <code>supervisord</c
 didn&rsquo;t include any database specific configurations since that&rsquo;s indentical to
 an Apache deployment.</p>
 
+
+  <p class="date">
+    This article was first published on May 30, 2011.  As you can see, there
+    are no comments.  I invite you to email me with your comments, criticisms,
+    and other suggestions.  Even better, write your own article as a response.
+    Blogging is awesome.
+  </p>
 </article>
 
-<p class="article_date date">
-  This article was first published on May 30, 2011.  As you can see, there
-  are no comments.  I invite you to email me with your comments, criticisms,
-  and other suggestions.  Even better, write your own article as a response.
-  Blogging is awesome.
-</p>
 
-
-    </div>
+  </div>
 
 </body>
 </html>

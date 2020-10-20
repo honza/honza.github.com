@@ -62,9 +62,12 @@ the legal language of the GPL is unnecessary. Starting today, I will make my
 projects available under the terms of a more permissive license. My current
 favorites are:
 
+
 ## [BSD](http://www.opensource.org/licenses/bsd-license) {#bsd}
 
+
 ## [MIT](http://www.opensource.org/licenses/mit-license.php) {#mit}
+
 
 ## [WTFPL](http://sam.zoy.org/wtfpl/) {#wtfpl}
 

@@ -12,12 +12,12 @@
 <meta name="twitter:title" content="Why you should be using CoffeeScript"/>
 <meta name="twitter:description" content="I&rsquo;m sure you&rsquo;ve heard of CoffeeScript. Everyone is talking about it, it seems. It&rsquo;s a beautiful language with a simple syntax that you use to write Javascript. CoffeeScript compiles to Javascript. Here is why I think you should be using it:
 Readability CoffeeScript is designed to be beautiful and readable. There is no unnecessary fluff. Less syntax boilerplate, fewer mistakes. Compare:
-// regular javascript var author = &#34;William Shakespeare&#34;; // coffeescript author = &#34;William Shakespeare&#34;; Indentation is also important in CoffeeScript - just like in Python."/>
+// regular javascript var author = &#34;William Shakespeare&#34;; // coffeescript author = &#34;William Shakespeare&#34; Indentation is also important in CoffeeScript - just like in Python."/>
 
   <meta property="og:title" content="Why you should be using CoffeeScript" />
 <meta property="og:description" content="I&rsquo;m sure you&rsquo;ve heard of CoffeeScript. Everyone is talking about it, it seems. It&rsquo;s a beautiful language with a simple syntax that you use to write Javascript. CoffeeScript compiles to Javascript. Here is why I think you should be using it:
 Readability CoffeeScript is designed to be beautiful and readable. There is no unnecessary fluff. Less syntax boilerplate, fewer mistakes. Compare:
-// regular javascript var author = &#34;William Shakespeare&#34;; // coffeescript author = &#34;William Shakespeare&#34;; Indentation is also important in CoffeeScript - just like in Python." />
+// regular javascript var author = &#34;William Shakespeare&#34;; // coffeescript author = &#34;William Shakespeare&#34; Indentation is also important in CoffeeScript - just like in Python." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://honza.ca/2011/04/why-you-should-be-using-coffeescript/" />
 <meta property="article:published_time" content="2011-04-11T16:45:00-03:00" />
@@ -41,12 +41,12 @@ Readability CoffeeScript is designed to be beautiful and readable. There is no u
 
 </head>
 <body>
-        <div id="banner" class="container">
-          <h1><a href="/">Honza Pokorny</a></h1>
-          <p><em>Thoughts of an open source developer with a theology degree</em></p>
-        </div>
+  <div id="banner" class="container">
+    <h1><a href="/">Honza Pokorny</a></h1>
+    <p><em>Thoughts of an open source developer with a theology degree</em></p>
+  </div>
 
-    <div id="wrap">
+  <div class="wrap">
 
 <div class="single-header">
   <h1>Why you should be using CoffeeScript</h1>
@@ -64,7 +64,7 @@ fluff. Less syntax boilerplate, fewer mistakes. Compare:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// regular javascript
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">author</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;William Shakespeare&#34;</span>;
 <span style="color:#75715e">// coffeescript
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">author</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;William Shakespeare&#34;</span>;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">author</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;William Shakespeare&#34;</span>
 </code></pre></div><p>Indentation is also important in CoffeeScript - just like in Python. This makes
 closures and blocks easier to spot.</p>
 <h2 id="valid-code">Valid Code</h2>
@@ -86,39 +86,36 @@ won&rsquo;t compile. It&rsquo;s a win-win. This is perhaps my favorite feature.<
         <span style="color:#66d9ef">super</span> <span style="color:#ae81ff">5</span>
 </code></pre></div><p>Compiles to this in Javascript:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">Animal</span>, <span style="color:#a6e22e">Dog</span>;
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">__hasProp</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">hasOwnProperty</span>,
-  <span style="color:#a6e22e">__extends</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">child</span>, <span style="color:#a6e22e">parent</span>) {
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">__hasProp</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">hasOwnProperty</span>, <span style="color:#a6e22e">__extends</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">child</span>, <span style="color:#a6e22e">parent</span>) {
     <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">key</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">parent</span>) {
-      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">__hasProp</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">parent</span>, <span style="color:#a6e22e">key</span>)) <span style="color:#a6e22e">child</span>[<span style="color:#a6e22e">key</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">parent</span>[<span style="color:#a6e22e">key</span>];
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">__hasProp</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">parent</span>, <span style="color:#a6e22e">key</span>)) <span style="color:#a6e22e">child</span>[<span style="color:#a6e22e">key</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">parent</span>[<span style="color:#a6e22e">key</span>];
     }
-    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">ctor</span>() {
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">constructor</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">child</span>;
-    }
+    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">ctor</span>() { <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">constructor</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">child</span>; }
     <span style="color:#a6e22e">ctor</span>.<span style="color:#a6e22e">prototype</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">parent</span>.<span style="color:#a6e22e">prototype</span>;
-    <span style="color:#a6e22e">child</span>.<span style="color:#a6e22e">prototype</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ctor</span>();
+    <span style="color:#a6e22e">child</span>.<span style="color:#a6e22e">prototype</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ctor</span>;
     <span style="color:#a6e22e">child</span>.<span style="color:#a6e22e">__super__</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">parent</span>.<span style="color:#a6e22e">prototype</span>;
     <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">child</span>;
-  };
+};
 <span style="color:#a6e22e">Animal</span> <span style="color:#f92672">=</span> (<span style="color:#66d9ef">function</span>() {
-  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Animal</span>(<span style="color:#a6e22e">name</span>) {
-    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">name</span>;
-  }
-  <span style="color:#a6e22e">Animal</span>.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">move</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">meters</span>) {
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">alert</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">+</span> (<span style="color:#e6db74">&#34; moved &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">meters</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;m.&#34;</span>));
-  };
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">Animal</span>;
+    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Animal</span>(<span style="color:#a6e22e">name</span>) {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">name</span>;
+    }
+    <span style="color:#a6e22e">Animal</span>.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">move</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">meters</span>) {
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">alert</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">+</span> (<span style="color:#e6db74">&#34; moved &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">meters</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;m.&#34;</span>));
+    };
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">Animal</span>;
 })();
 <span style="color:#a6e22e">Dog</span> <span style="color:#f92672">=</span> (<span style="color:#66d9ef">function</span>() {
-  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Dog</span>() {
-    <span style="color:#a6e22e">Dog</span>.<span style="color:#a6e22e">__super__</span>.<span style="color:#a6e22e">constructor</span>.<span style="color:#a6e22e">apply</span>(<span style="color:#66d9ef">this</span>, <span style="color:#a6e22e">arguments</span>);
-  }
-  <span style="color:#a6e22e">__extends</span>(<span style="color:#a6e22e">Dog</span>, <span style="color:#a6e22e">Animal</span>);
-  <span style="color:#a6e22e">Dog</span>.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">move</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-    <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;Whoof...&#34;</span>);
-    <span style="color:#66d9ef">return</span>;
-    <span style="color:#a6e22e">Dog</span>.<span style="color:#a6e22e">__super__</span>.<span style="color:#a6e22e">move</span>.<span style="color:#a6e22e">call</span>(<span style="color:#66d9ef">this</span>, <span style="color:#ae81ff">5</span>);
-  };
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">Dog</span>;
+    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Dog</span>() {
+        <span style="color:#a6e22e">Dog</span>.<span style="color:#a6e22e">__super__</span>.<span style="color:#a6e22e">constructor</span>.<span style="color:#a6e22e">apply</span>(<span style="color:#66d9ef">this</span>, <span style="color:#a6e22e">arguments</span>);
+    }
+    <span style="color:#a6e22e">__extends</span>(<span style="color:#a6e22e">Dog</span>, <span style="color:#a6e22e">Animal</span>);
+    <span style="color:#a6e22e">Dog</span>.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">move</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+        <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;Whoof...&#34;</span>);
+        <span style="color:#66d9ef">return</span>
+        <span style="color:#a6e22e">Dog</span>.<span style="color:#a6e22e">__super__</span>.<span style="color:#a6e22e">move</span>.<span style="color:#a6e22e">call</span>(<span style="color:#66d9ef">this</span>, <span style="color:#ae81ff">5</span>);
+    };
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">Dog</span>;
 })();
 </code></pre></div><p>Quite a difference, huh? Think how much time you&rsquo;d need to understand each
 version and make any changes required. In my mind, this encourages better code
@@ -132,17 +129,17 @@ whip up a quick server in no time. Genius.</p>
 <p>With tools like <a href="http://code.google.com/webtoolkit/">Google Web Toolkit</a>, your code compiles to <em>minified</em>
 javascript. Non-minified code is obviously easier (possible?) to read and debug.</p>
 
+
+  <p class="date">
+    This article was first published on April 11, 2011.  As you can see, there
+    are no comments.  I invite you to email me with your comments, criticisms,
+    and other suggestions.  Even better, write your own article as a response.
+    Blogging is awesome.
+  </p>
 </article>
 
-<p class="article_date date">
-  This article was first published on April 11, 2011.  As you can see, there
-  are no comments.  I invite you to email me with your comments, criticisms,
-  and other suggestions.  Even better, write your own article as a response.
-  Blogging is awesome.
-</p>
 
-
-    </div>
+  </div>
 
 </body>
 </html>

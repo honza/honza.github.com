@@ -35,15 +35,15 @@ list items with anchor tags:
 
 ```javascript
 var SidebarView = Backbone.View.extends({
-  el: $("#sidebar"),
+  el: $('#sidebar'),
 
   events: {
-    "click #new-album-link": "newAlbum"
+    'click #new-album-link': 'newAlbum'
   },
 
   initialize: function() {
-    this.collection.bind("reset", this.render, this);
-    this.collection.bind("add", this.add, this);
+    this.collection.bind('reset', this.render, this);
+    this.collection.bind('add', this.add, this);
   },
 
   add: function(album) {
@@ -54,7 +54,7 @@ var SidebarView = Backbone.View.extends({
   },
 
   render: function() {
-    for (var i = 0; i < this.collection.models.length; i++) {
+    for (var i=0; i < this.collection.models.length; i++) {
       this.add(this.collection.models[i]);
     }
   }
@@ -84,11 +84,11 @@ album with an ID of `1`, we would do:
 ```javascript
 var PhotoCollection = Backbone.Collection.extends({
   model: Photo,
-  url: "/photos",
+  url: '/photos',
 
   byAlbum: function(id) {
     this.filter(function(photo) {
-      return _.indexOf(photo.get("albums"), id) >= 0;
+     return _.indexOf(photo.get('albums'), id) >= 0;
     });
   }
 });

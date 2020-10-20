@@ -7,7 +7,7 @@ draft = false
 +++
 
 In the last year or so, there seems to have been an explosion of markdown
-editors and markdown previewers. A quick Google search reveals [so](http://dillinger.io/), [many](https://stackedit.io/)
+editors and markdown previewers.  A quick Google search reveals [so](http://dillinger.io/), [many](https://stackedit.io/)
 of [them](http://jbt.github.io/markdown-editor/).
 
 The App Store is also full of these kinds of apps, promising you unrivaled
@@ -22,7 +22,7 @@ From the [markdown project page](http://daringfireball.net/projects/markdown/):
 > marked up with tags or formatting instructions.
 
 The syntax (or lack thereof) of the markdown format is so simple that there is
-no need to "preview" the result. A heading looks like a heading. A list looks
+no need to "preview" the result.  A heading looks like a heading.  A list looks
 like a list.
 
 This is a prime example of creating a solution to a problem that doesn't exist.

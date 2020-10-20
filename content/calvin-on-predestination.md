@@ -27,7 +27,7 @@ draft = false
 > predestined according to the good pleasure of his will.
 >
 > If you say that he foresaw they would be holy, and therefore elected them,
-> you invert the order of Paul. You may, therefore, safely infer, If he
+> you invert the order of Paul.  You may, therefore, safely infer, If he
 > elected us that we might be holy, he did not elect us because he foresaw
 > that we would be holy.
 >

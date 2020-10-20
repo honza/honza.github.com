@@ -37,12 +37,12 @@
 
 </head>
 <body>
-        <div id="banner" class="container">
-          <h1><a href="/">Honza Pokorny</a></h1>
-          <p><em>Thoughts of an open source developer with a theology degree</em></p>
-        </div>
+  <div id="banner" class="container">
+    <h1><a href="/">Honza Pokorny</a></h1>
+    <p><em>Thoughts of an open source developer with a theology degree</em></p>
+  </div>
 
-    <div id="wrap">
+  <div class="wrap">
 
 <div class="single-header">
   <h1>When HN gets in the way</h1>
@@ -50,10 +50,10 @@
 </div>
 
 <article>
-  <p>Reading stuff online can become addictive. So addictive, in fact, that it can
-negatively affect your productivity as a programmer. Most of us go to Hacker
-News or Reddit to get our dose of news. We justify it by saying that it&rsquo;s
-<em>research</em> or that we are <em>trying to stay current in the community</em>. Whatever
+  <p>Reading stuff online can become addictive.  So addictive, in fact, that it can
+negatively affect your productivity as a programmer.  Most of us go to Hacker
+News or Reddit to get our dose of news.  We justify it by saying that it&rsquo;s
+<em>research</em> or that we are <em>trying to stay current in the community</em>.  Whatever
 your excuse, you know you have a problem when you check Hacker News every ten
 minutes just to see if anything new and awesome has been added.</p>
 <blockquote>
@@ -62,22 +62,22 @@ minutes just to see if anything new and awesome has been added.</p>
 </blockquote>
 <p>Maybe you have already gotten over the initial self-denial and you have added
 some entries to your <code>/etc/hosts</code> file to keep yourself from constantly going
-to those sites. That&rsquo;s all well and good but I think we can do better.</p>
+to those sites.  That&rsquo;s all well and good but I think we can do better.</p>
 <p>You&rsquo;ve already opened the tab and you are now staring at a blank error page.
 Why not put something more useful there?</p>
-<p>Me, I like to learn new things. There are way too many things I&rsquo;d like to
-learn. Why not show a list of things I&rsquo;d like to learn and allow me to click
+<p>Me, I like to learn new things.  There are way too many things I&rsquo;d like to
+learn.  Why not show a list of things I&rsquo;d like to learn and allow me to click
 through to the website?</p>
 <p>I have installed nginx on my machine and set up a simple static page with a few
 links things like <em>Learn You a Haskell for Great Good</em> or Steve Losh&rsquo;s <em>Learn
-Vimscript the Hardway</em>. Now every time I go to HN, I see those links and am
+Vimscript the Hardway</em>.  Now every time I go to HN, I see those links and am
 reminded that I wanted to spend some time learning those things&hellip;</p>
 <figure>
     <img src="/images/hn_nginx.png"/> 
 </figure>
 
 <h2 id="steps">Steps</h2>
-<p>Install nginx. <code>brew install nginx</code> or <code>sudo apt-get install nginx</code> or
+<p>Install nginx.  <code>brew install nginx</code> or <code>sudo apt-get install nginx</code> or
 whatever might apply to you.</p>
 <p>Stick this in your <code>nginx.conf</code>:</p>
 <pre><code class="language-nil" data-lang="nil">worker_processes  1;
@@ -114,7 +114,7 @@ http {
 
 }
 </code></pre><p>If any of the sites you are blocking are served over SSL, you will need to get
-a self-signed certificate. This is a one time setup and doesn&rsquo;t really take
+a self-signed certificate.  This is a one time setup and doesn&rsquo;t really take
 that long to do.</p>
 <pre><code class="language-nil" data-lang="nil">$ openssl req -new -x509 -nodes -out server.crt -keyout server.key
 $ chmod 600 server.key
@@ -141,17 +141,17 @@ anything.</p>
 <p>Hopefully, this will be helpful to you and nudge you every now and then to
 learn something you&rsquo;ve been putting off.</p>
 
+
+  <p class="date">
+    This article was first published on July 13, 2013.  As you can see, there
+    are no comments.  I invite you to email me with your comments, criticisms,
+    and other suggestions.  Even better, write your own article as a response.
+    Blogging is awesome.
+  </p>
 </article>
 
-<p class="article_date date">
-  This article was first published on July 13, 2013.  As you can see, there
-  are no comments.  I invite you to email me with your comments, criticisms,
-  and other suggestions.  Even better, write your own article as a response.
-  Blogging is awesome.
-</p>
 
-
-    </div>
+  </div>
 
 </body>
 </html>

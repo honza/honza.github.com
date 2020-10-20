@@ -10,6 +10,7 @@ If you are developing an application for the Android platform, and you need to
 interact with the Twitter API, you now have to use OAuth to authenticate the
 user. In this article, we will have a look on how you can do that.
 
+
 ## What is OAuth? {#what-is-oauth}
 
 OAuth is a way of accessing a user's data (e.g. tweets) without asking for the
@@ -18,15 +19,19 @@ will ask the user if they want to allow you to access their data. If they do,
 they are taken back to the application and can start using it. You can find
 more about OAuth all over the web.
 
+
 ## Prerequisites {#prerequisites}
 
 There are a couple of .jars that you will need for this to work.
 
+
 ### signpost-commonshttp4-1.2.1.1.jar {#signpost-commonshttp4-1-dot-2-dot-1-dot-1-dot-jar}
+
 
 ### signpost-core-1.2.1.1.jar {#signpost-core-1-dot-2-dot-1-dot-1-dot-jar}
 
 You can download them [here](https://github.com/kaeppler/signpost).
+
 
 ## Basic Activity {#basic-activity}
 

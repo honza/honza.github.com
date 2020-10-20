@@ -47,11 +47,11 @@ published.&lt;/p&gt;
 your &lt;code&gt;app.yaml&lt;/code&gt; file. In addition to your regular handlers, add the
 following:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;inbound_services&lt;/span&gt;:
-  - mail
+- mail
 
 &lt;span style=&#34;color:#66d9ef&#34;&gt;handlers&lt;/span&gt;:
-  - &lt;span style=&#34;color:#66d9ef&#34;&gt;url&lt;/span&gt;: /_ah/mail/.&lt;span style=&#34;color:#e6db74&#34;&gt;+
-&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    script: main.py&lt;/span&gt;
+- &lt;span style=&#34;color:#66d9ef&#34;&gt;url&lt;/span&gt;: /_ah/mail/.&lt;span style=&#34;color:#e6db74&#34;&gt;+
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;  script: main.py&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The first line enables incoming email for your application. The second part is
 the important part. On App Engine, an incoming email message is processed as a
 HTTP POST request. Since it&amp;rsquo;s a regular HTTP request, we will need a handler

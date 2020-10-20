@@ -10,12 +10,14 @@ My employer, [SheepDogInc](http://www.sheepdoginc.ca/), sent me and a colleague 
 2011](http://djangocon.us/). It was my first developer conference and I had a blast. Here a few
 quick points about what the conference has clarified for me.
 
+
 ## Deploying Django {#deploying-django}
 
 Despite the Django official documentation's recommendation to use Apache and
-mod_wsgi, most people seem to deploy Django with nginx and gunicorn. This has
+mod\_wsgi, most people seem to deploy Django with nginx and gunicorn. This has
 been a pleasant surprise to me because I like it but though that it was too
 simple (or less robust than Apache).
+
 
 ## Provisioning servers {#provisioning-servers}
 
@@ -27,16 +29,21 @@ error-prone. Also, you're more likely to spin up a new VM on your development
 machine to try things out because you don't have to thing about setting it up.
 Especially with tools like [vagrant](http://vagrantup.com/), it's dead easy.
 
+
 ## Pronouncing things {#pronouncing-things}
 
 When you read names of technical products, you can't always be sure how it's
 supposed to be pronounced.
 
+
 ### PyPI: pie-pee-eye {#pypi-pie-pee-eye}
+
 
 ### PyPy: pie-pie {#pypy-pie-pie}
 
+
 ### wsgi: wizz-gy {#wsgi-wizz-gy}
+
 
 ### nginx: engine-x {#nginx-engine-x}
 
