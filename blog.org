@@ -12594,6 +12594,21 @@ content with our own righteousness, wisdom and power.  We flatter and
 congratulate ourselves, and are not far from thinking we are demigods!
 #+END_QUOTE
 
+** Conclusion
+
+In conclusion, let me quote J.I. Packer on the subject of English translations
+of Calvin's /Institutes/:
+
+#+BEGIN_QUOTE
+No English translation fully matches Calvin's Latin; that of the Elizabethan,
+Thomas Norton, perhaps gets closest; Beveridge gives us Calvin's feistiness but
+not always his precision; Battles gives us the precision but not always the
+punchiness, and fleetness of foot; Allen is smooth and clear, but low-key.
+#+END_QUOTE
+
+David W. Hall and Peter A. Lillback, eds. /A Theological Guide to Calvin’s Institutes: Essays and Analysis.
+The Calvin 500 Series./ (Phillipsburg, N.J: P&R Pub, 2008), x
+
 * Red-letter theology   :@theology:
 :PROPERTIES:
 :EXPORT_FILE_NAME: red-letter-theology
