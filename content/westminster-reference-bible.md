@@ -6,6 +6,8 @@ draft = false
 images = ["/images/wrb.jpg"]
 +++
 
+{{< figure src="/images/wrb.jpg" >}}
+
 I will argue that the [Westminster Reference Bible](https://can.tbsbibles.org/store/viewproduct.aspx?id=11712549) in black calfskin published
 by the Trinitarian Bible Society (TBS) is the best all-around printed bible
 that you can buy today in the English language.
