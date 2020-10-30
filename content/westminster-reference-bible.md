@@ -8,9 +8,9 @@ images = ["/images/wrb.jpg"]
 
 {{< figure src="/images/wrb.jpg" >}}
 
-I will argue that the [Westminster Reference Bible](https://can.tbsbibles.org/store/viewproduct.aspx?id=11712549) in black calfskin published
-by the Trinitarian Bible Society (TBS) is the best all-around printed bible
-that you can buy today in the English language.
+I will argue that the [Westminster Reference Bible](https://www.heritagebooks.org/products/westminster-reference-bible-kjv-calfskin.html) in black calfskin published by
+the Trinitarian Bible Society (TBS) is the best all-around printed bible that
+you can buy today in the English language.
 
 I will not be considering digital bibles, or bibles in languages other than
 English.  And by _all-around_, I will mean _all-purpose_.  The bible should work
