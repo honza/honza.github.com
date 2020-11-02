@@ -35,11 +35,14 @@ English language as many of its phrases have entered into common speech.
 
 The KJV was translated from the Reformation-era text of Scripture.  Unlike most
 modern English translations of the Bible, the KJV uses the Received Text, as
-opposed to the Critical Text as its underlying source.  This means that the KJV
-doesn't need to be updated when textual-critical scholarship decides that new
-evidence warrants a change of the wording of the Holy Scriptures.  The KJV
-unashamedly and proudly includes all of the text of Scripture, and doesn't
-neglect any of the contested passages, like Mark 16:9-20 or John 7:53-8:11.
+opposed to the Critical Text as its underlying source.  The Received Text is the
+providentially preserved Word of God, without spot or blemish.  This means that
+the KJV doesn't need to be updated when textual-critical scholarship decides
+that new manuscript evidence warrants a change of the wording of the Holy
+Scriptures.  The KJV presents in English what the apostles wrote in Greek.  The
+KJV unashamedly and proudly includes all of the text of Scripture, and doesn't
+neglect any of the contested passages, like Mark 16:9-20 or John 7:53-8:11.  The
+KJV as a translation is driven by the ideals of the Reformation.
 
 
 ### Transliteration {#transliteration}
@@ -175,11 +178,11 @@ these summaries are original to the KJV, and as such are full of Reformed
 theology.  This perhaps most obvious in the Psalms, e.g. the summary of Psalm
 110 reads:
 
-> 1.A prediction of the kingdom, 4. priesthood, 5. triumphs, 7. and sufferings of Christ.
+> 1.  A prediction of the kingdom, 4. priesthood, 5. triumphs, 7. and sufferings of Christ.
 
 Or, the Song of Solomon, chapter 1:
 
-> 1.The church's love unto Christ
+> 1.  The church's love unto Christ
 
 Chapter summaries are arguably more useful than headings in the text.  If
 nothing else, they don't introduce uninspired breaks in the text.
@@ -219,7 +222,8 @@ Modern bibles introduce un-inspired quotation marks into the text to indicate
 when a person starts speaking.  The problem is that sometimes these decisions
 are wrong, and affect doctrine in negative ways.  An example of this can be
 found in [Acts 19](https://purelypresbyterian.com/2016/04/24/was-johns-baptism-christian/).  The Westminster Reference Bible omits these quotation marks
-just like the original text.
+just like the original text, allowing the diligent student of the Scriptures to
+advance without distractions.
 
 
 ### Epistle to the reader {#epistle-to-the-reader}
@@ -234,7 +238,7 @@ concept called _KJV Onlyism_.
 
 If this is to be the best all-around bible, a reading plan is a must.  It keeps
 the serious student of the word of God on grounded, and on track.  No external
-tools are necessary.
+tools are necessary.  It would make the perfect desert island bible.
 
 
 ### Digital font {#digital-font}
@@ -248,7 +252,8 @@ crisp and clean.
 
 The publisher's high view of Scripture can be seen in their including three
 separate pages with quotes from the Bible which highlight the Bible's purity,
-and excellence.  Psalm 119:18, Psalm 19:7-11, and 2 Timothy 3:16-17
+and excellence.  Not one, but three:  Psalm 119:18, Psalm 19:7-11, and 2 Timothy
+3:16-17
 
 
 ### Explanation of thees and thous {#explanation-of-thees-and-thous}
@@ -259,12 +264,16 @@ personal pronouns work.
 
 ### Reformed theology {#reformed-theology}
 
+This bible is called the _Westminster_ Reference Bible: it's built on the ideals
+of the English reformation of the 17th century.  The Westminster Reference Bible
+is as Reformed as the Westminster Confession of Faith.
+
 The title page of the Old Testament reads _The Old Testament of Jesus Christ_.
 As mentioned above, many of the Old Testament chapter summaries mention.
 
 
 ## Conclusion {#conclusion}
 
-If you want a premium bible for not-much money, a bible with high standards, a
-pure text, and a great set of study features, look no further than the
-Westminster Reference Bible.
+If you want a premium bible for not-much money, a reformed bible with high
+standards, a pure text, and a great set of study features, look no further than
+the Westminster Reference Bible.
