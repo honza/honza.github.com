@@ -268,8 +268,10 @@ This bible is called the _Westminster_ Reference Bible: it's built on the ideals
 of the English reformation of the 17th century.  The Westminster Reference Bible
 is as Reformed as the Westminster Confession of Faith.
 
-The title page of the Old Testament reads _The Old Testament of Jesus Christ_.
-As mentioned above, many of the Old Testament chapter summaries mention.
+Another example is that the title page of the Old Testament reads _The Old
+Testament of Jesus Christ_.  And as mentioned above, many of the Old Testament
+chapter summaries mention Christ or the church.  The whole bible is about him,
+and the Westminster Reference Bible reminds you of it every now and then.
 
 
 ## Conclusion {#conclusion}
